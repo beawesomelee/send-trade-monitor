@@ -12,11 +12,8 @@ def send_summary(stats: dict, candidates: list[dict], sheet_url: str,
     Like Telegram, skips entirely if no actionable news (new + verified +
     dismissed all zero).
     """
-    has_news = (stats.get("new_pending", 0) > 0
-                or stats.get("auto_verified", 0) > 0
-                or stats.get("dismissed", 0) > 0)
-    if not has_news:
-        print("no changes this run, skipping Discord")
+    if stats.get("new_pending", 0) == 0:
+        print("no new tokens this run, skipping Discord")
         return
 
     new_candidates = [c for c in candidates if c.get("_is_new")]

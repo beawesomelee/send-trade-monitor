@@ -15,11 +15,8 @@ def send_summary(stats: dict, candidates: list[dict], sheet_url: str,
     """
     today = dt.date.today().isoformat()
 
-    has_news = (stats.get("new_pending", 0) > 0
-                or stats.get("auto_verified", 0) > 0
-                or stats.get("dismissed", 0) > 0)
-    if not has_news:
-        print("no changes this run, skipping Telegram")
+    if stats.get("new_pending", 0) == 0:
+        print("no new tokens this run, skipping Telegram")
         return
 
     msg = _build_message(stats, candidates, sheet_url, today, top_n)

@@ -1,0 +1,56 @@
+name: Send.Trade Scan
+
+on:
+  schedule:
+    # Every 2 hours from 12:12 UTC to 22:12 UTC = 8am-6pm ET (DST)
+    # During EST (winter) this is 7am-5pm ET — minor drift accepted
+    - cron: "12 12-22/2 * * *"
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "Run exhaustive backfill via GeckoTerminal (slower, one-time)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run scan
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
+        run: |
+          if [ "${{ inputs.backfill }}" = "true" ]; then
+            python daily_scan.py --backfill
+          else
+            python daily_scan.py
+          fi
+
+      - name: Commit snapshot
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f data/snapshots/ data/decimals_cache.json data/dismissed.json
+          if git diff --staged --quiet; then echo "No changes"; else
+            git commit -m "Daily snapshot $(date -u +%Y-%m-%d)"
+            git push
+          fi

@@ -1,0 +1,26 @@
+{
+  "thresholds": {
+    "min_market_cap_usd": 1000000,
+    "min_volume_24h_usd": 1000000,
+    "min_liquidity_usd": 30000,
+    "max_volume_to_liquidity_ratio": 30,
+    "max_market_cap_usd": 1000000000000,
+    "require_logo_uri_incremental": true
+  },
+  "chains": [
+    {"slug": "base", "chain_id": 8453, "dexscreener_query": "base"},
+    {"slug": "solana", "chain_id": 501474, "dexscreener_query": "solana"}
+  ],
+  "endpoints": {
+    "send_trade_verified": "https://api.send.trade/assets/verified",
+    "dexscreener_search": "https://api.dexscreener.com/latest/dex/search",
+    "dexscreener_pairs": "https://api.dexscreener.com/latest/dex/tokens"
+  },
+  "google_sheet": {
+    "sheet_id": "1donVWAn4XfVpz0sqzYExVwGRyVi98-6McZ6mz7NPvtg",
+    "tab_name": "Candidates"
+  },
+  "telegram": {
+    "top_n": 5
+  }
+}

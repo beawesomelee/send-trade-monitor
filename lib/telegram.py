@@ -63,8 +63,6 @@ def _build_message(stats: dict, candidates: list[dict], sheet_url: str,
         lines.append(f"{auto_verified} now verified on Send.Trade (removed from list)")
     if dismissed:
         lines.append(f"{dismissed} dismissed")
-    if still_pending and not (new_pending or auto_verified or dismissed):
-        lines.append(f"{still_pending} tokens still pending review")
 
     new_candidates = [c for c in candidates if c.get("_is_new")]
     if new_candidates:

@@ -36,7 +36,8 @@ from lib.dexscreener import (
 from lib.send_trade import fetch_verified
 from lib.decimals import get_decimals
 from lib.sheets import load_sheet, upsert
-from lib.telegram import send_summary
+from lib.telegram import send_summary as send_telegram
+from lib.discord import send_summary as send_discord
 
 NEW_TOKEN_MAX_AGE_DAYS = 7
 
@@ -118,8 +119,10 @@ def main():
             "auto_verified": 0,
             "dismissed": 0,
         }
-        send_summary(stats, candidates, "https://docs.google.com/spreadsheets/d/DRY_RUN",
-                     top_n=config["telegram"].get("top_n", 5), dry_run=True)
+        send_telegram(stats, candidates, "https://docs.google.com/spreadsheets/d/DRY_RUN",
+                      top_n=config["telegram"].get("top_n", 5), dry_run=True)
+        send_discord(stats, candidates, "https://docs.google.com/spreadsheets/d/DRY_RUN",
+                     dry_run=True)
         print("done (dry-run)")
         return
 
@@ -131,10 +134,12 @@ def main():
     print(f"   new={stats['new_pending']}, updated={stats['updated']}, "
           f"verified={stats['auto_verified']}, dismissed={stats['dismissed']}")
 
-    # 7. telegram summary
+    # 7. notifications
     print("6. sending Telegram summary...")
-    send_summary(stats, candidates, sheet_url,
-                 top_n=config["telegram"].get("top_n", 5))
+    send_telegram(stats, candidates, sheet_url,
+                  top_n=config["telegram"].get("top_n", 5))
+    print("7. sending Discord summary...")
+    send_discord(stats, candidates, sheet_url)
 
     print("=== done ===")
 

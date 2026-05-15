@@ -217,10 +217,17 @@ def _resolve_decimals(candidates: list[dict]) -> list[dict]:
 def _fetch_gt_token_info(chain_slug: str, address: str) -> tuple:
     """Fetch decimals + image from GeckoTerminal token endpoint."""
     import requests
+    import os
     network = {"base": "base", "solana": "solana"}.get(chain_slug, chain_slug)
-    url = f"https://api.geckoterminal.com/api/v2/networks/{network}/tokens/{address}"
+    key = os.environ.get("GECKOTERMINAL_API_KEY") or os.environ.get("COINGECKO_API_KEY")
+    if key:
+        url = f"https://pro-api.coingecko.com/api/v3/onchain/networks/{network}/tokens/{address}"
+        headers = {"x-cg-pro-api-key": key}
+    else:
+        url = f"https://api.geckoterminal.com/api/v2/networks/{network}/tokens/{address}"
+        headers = {}
     try:
-        r = requests.get(url, timeout=15)
+        r = requests.get(url, headers=headers, timeout=15)
         r.raise_for_status()
         attrs = r.json().get("data", {}).get("attributes", {})
         dec = attrs.get("decimals")

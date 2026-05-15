@@ -8,10 +8,32 @@ Two modes:
     (pairCreatedAt within last N days). Used for daily runs.
 """
 
+import os
 import time
 from collections import defaultdict
 
 import requests
+
+
+def _gt_endpoint() -> tuple:
+    """Return (base_url, headers, delay_seconds) for GT requests.
+
+    Uses CoinGecko Pro API + key if GECKOTERMINAL_API_KEY is set (300 req/min
+    on Basic tier). Falls back to free public endpoint (30 req/min) otherwise.
+    """
+    key = os.environ.get("GECKOTERMINAL_API_KEY") or os.environ.get("COINGECKO_API_KEY")
+    if key:
+        return (
+            "https://pro-api.coingecko.com/api/v3/onchain/networks/{network}/pools",
+            {"x-cg-pro-api-key": key},
+            0.5,  # 120 req/min with delay — well under 300/min Basic limit
+        )
+    return (
+        "https://api.geckoterminal.com/api/v2/networks/{network}/pools",
+        {},
+        4.0,  # ~15 req/min — under free tier 30/min
+    )
+
 
 GT_POOLS = "https://api.geckoterminal.com/api/v2/networks/{network}/pools"
 DS_TOKENS = "https://api.dexscreener.com/tokens/v1/{chain}/{addresses}"
@@ -32,10 +54,11 @@ DS_WIDE_QUERIES = [
     "trump", "pepe", "shib", "doge",
 ]
 
-GT_DELAY = 4.0   # ~15 req/min, conservatively under GeckoTerminal 30/min
 DS_DELAY = 1.2   # safely under DexScreener 60/min
 DS_BATCH = 30     # DexScreener accepts up to 30 addresses per request
 MAX_PAGES = 15
+GT_DAILY_PAGES_PRO = 10  # deeper scan when on Pro tier
+GT_DAILY_PAGES_FREE = 5  # safer for free tier
 
 SUPPORTED_DS_CHAINS = {"base", "solana"}
 CHAIN_ID_MAP = {"base": 8453, "solana": 501474}
@@ -59,10 +82,13 @@ def fetch_candidates(config: dict) -> list[dict]:
     max_vol_liq = config["thresholds"].get("max_volume_to_liquidity_ratio", 0)
     max_mc = config["thresholds"].get("max_market_cap_usd", 0)
 
+    is_pro = bool(os.environ.get("GECKOTERMINAL_API_KEY") or os.environ.get("COINGECKO_API_KEY"))
+    inter_chain_wait = 2 if is_pro else 30
+
     raw_pools = []
     for i, chain_cfg in enumerate(config["chains"]):
         if i > 0:
-            time.sleep(30)  # long pause between chains to avoid GeckoTerminal 429
+            time.sleep(inter_chain_wait)
         slug = chain_cfg["slug"]
         network = NETWORK_MAP.get(slug, {}).get("gt_network", slug)
         print(f"  fetching GeckoTerminal pools for {slug}...")
@@ -115,17 +141,18 @@ def _fetch_gt_pools(network: str) -> list[dict]:
     capture tokens whose volume is distributed across many smaller pools.
     Stops paginating only when the top pool on a page is below PAGINATE_VOL_FLOOR.
     """
+    url_template, headers, base_delay = _gt_endpoint()
     all_pools = []
     for page in range(1, MAX_PAGES + 1):
-        url = GT_POOLS.format(network=network)
+        url = url_template.format(network=network)
         params = {"page": page, "sort": "h24_volume_usd_desc"}
 
         r = None
         for attempt in range(3):
-            delay = GT_DELAY * (2 ** attempt)
+            delay = base_delay * (2 ** attempt)
             time.sleep(delay)
             try:
-                r = requests.get(url, params=params, timeout=20)
+                r = requests.get(url, params=params, headers=headers, timeout=20)
                 if r.status_code == 429:
                     print(f"    page {page} rate-limited, retrying in {delay*2:.0f}s...")
                     continue
@@ -279,12 +306,22 @@ def _fallback_logos_from_gt(candidates: list[dict]):
     if not missing:
         return
     print(f"    fetching GT logos for {len(missing)} tokens missing DS logo...")
+
+    key = os.environ.get("GECKOTERMINAL_API_KEY") or os.environ.get("COINGECKO_API_KEY")
+    if key:
+        base = "https://pro-api.coingecko.com/api/v3/onchain/networks/{chain}/tokens/{addr}"
+        headers = {"x-cg-pro-api-key": key}
+        delay = 0.5
+    else:
+        base = "https://api.geckoterminal.com/api/v2/networks/{chain}/tokens/{addr}"
+        headers = {}
+        delay = 2.5
+
     for c in missing:
-        chain = c["chain_slug"]
-        url = f"https://api.geckoterminal.com/api/v2/networks/{chain}/tokens/{c['address']}"
-        time.sleep(2.5)
+        url = base.format(chain=c["chain_slug"], addr=c["address"])
+        time.sleep(delay)
         try:
-            r = requests.get(url, timeout=15)
+            r = requests.get(url, headers=headers, timeout=15)
             if r.status_code != 200:
                 continue
             attrs = r.json().get("data", {}).get("attributes", {})
@@ -578,27 +615,35 @@ def _ds_addresses_to_pools(addresses_by_chain: dict) -> list[dict]:
 
 
 def _gt_top_addresses_daily(chains: list[dict]) -> dict:
-    """Lightweight GT scan for daily runs: top GT_DAILY_PAGES pages per chain.
+    """Lightweight GT scan for daily runs: top N pages per chain.
+
+    Pro-tier (GECKOTERMINAL_API_KEY set): scans 10 pages per chain.
+    Free-tier: 5 pages per chain, with longer delays.
 
     Returns {chain_slug: [base_token_addresses]} — token discovery only, no
     aggregation or filtering here. The DS batch fetch downstream gets the actual
     pair metrics.
     """
+    url_template, headers, base_delay = _gt_endpoint()
+    is_pro = bool(headers)
+    max_pages = GT_DAILY_PAGES_PRO if is_pro else GT_DAILY_PAGES_FREE
+    inter_chain = 1 if is_pro else 8
+
     addrs_by_chain = defaultdict(set)
     for i, chain_cfg in enumerate(chains):
         if i > 0:
-            time.sleep(8)  # spacing between chains (less than backfill's 30s — fewer pages)
+            time.sleep(inter_chain)
         slug = chain_cfg["slug"]
         if slug not in SUPPORTED_DS_CHAINS:
             continue
         network = NETWORK_MAP.get(slug, {}).get("gt_network", slug)
 
-        for page in range(1, GT_DAILY_PAGES + 1):
-            url = GT_POOLS.format(network=network)
+        for page in range(1, max_pages + 1):
+            url = url_template.format(network=network)
             params = {"page": page, "sort": "h24_volume_usd_desc"}
-            time.sleep(GT_DELAY)
+            time.sleep(base_delay)
             try:
-                r = requests.get(url, params=params, timeout=15)
+                r = requests.get(url, params=params, headers=headers, timeout=15)
                 if r.status_code == 429:
                     print(f"    GT daily {slug} page {page} rate-limited, skipping rest")
                     break

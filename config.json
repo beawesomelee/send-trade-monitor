@@ -8,7 +8,9 @@
     "require_logo_uri_incremental": true
   },
   "chains": [
-    {"slug": "base", "chain_id": 8453, "dexscreener_query": "base"},
+    {"slug": "base", "chain_id": 8453, "dexscreener_query": "base"}
+  ],
+  "_chains_disabled": [
     {"slug": "solana", "chain_id": 501474, "dexscreener_query": "solana"}
   ],
   "endpoints": {
@@ -19,6 +21,14 @@
   "google_sheet": {
     "sheet_id": "1donVWAn4XfVpz0sqzYExVwGRyVi98-6McZ6mz7NPvtg",
     "tab_name": "Candidates"
+  },
+  "movement": {
+    "pump_threshold_pct": 80,
+    "dump_threshold_pct": -50,
+    "min_market_cap_usd": 1000000,
+    "min_liquidity_usd": 30000,
+    "cooldown_hours": 4,
+    "gt_pages": 10
   },
   "telegram": {
     "top_n": 5

@@ -83,3 +83,47 @@ def _fmt_usd(val: float) -> str:
     elif val >= 1_000:
         return f"${val / 1_000:.0f}K"
     return f"${val:.0f}"
+
+
+def send_movement_alert(movers: list[dict], sheet_url: str = "", dry_run: bool = False):
+    """Send a movement alert (pumps + dumps) summary to Telegram."""
+    if not movers:
+        return
+
+    pumps = [m for m in movers if m["direction"] == "pump"]
+    dumps = [m for m in movers if m["direction"] == "dump"]
+
+    lines = []
+    for m in pumps + dumps:
+        emoji = "🚀" if m["direction"] == "pump" else "🔻"
+        sym = m.get("symbol") or "?"
+        change = m["price_change_h1_pct"]
+        mc = m["market_cap_usd"]
+        liq = m["liquidity_usd"]
+        vol = m["volume_h1_usd"]
+        lines.append(f"{emoji} {sym} {change:+.0f}% in 1h")
+        lines.append(f"   MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · h1 vol ${vol/1e3:.0f}K")
+        lines.append(f"   {m['dexscreener_url']}")
+        lines.append("")
+
+    msg = "\n".join(lines).rstrip()
+
+    if dry_run:
+        print(f"[dry-run] would send Telegram movement alert:\n{msg}")
+        return
+
+    token = os.environ.get("TELEGRAM_BOT_TOKEN")
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+    if not token or not chat_id:
+        print("WARNING: TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID not set, skipping movement alert")
+        return
+
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+    payload = {
+        "chat_id": chat_id,
+        "text": msg,
+        "disable_web_page_preview": True,
+    }
+    r = requests.post(url, json=payload, timeout=15)
+    r.raise_for_status()
+    print("Telegram movement alert sent")

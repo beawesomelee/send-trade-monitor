@@ -72,3 +72,54 @@ def _build_message(new_candidates: list[dict], sheet_url: str, stats: dict) -> s
 
     lines.append(f"full list: {sheet_url}")
     return "\n".join(lines)
+
+
+def send_movement_alert(movers: list[dict], sheet_url: str = "", dry_run: bool = False):
+    """Send a movement alert (pumps + dumps) summary to Discord."""
+    if not movers:
+        return
+
+    pumps = [m for m in movers if m["direction"] == "pump"]
+    dumps = [m for m in movers if m["direction"] == "dump"]
+
+    lines = []
+    if pumps:
+        lines.append("**🚀 Pumps (1h)**")
+        lines.append("")
+        for m in pumps:
+            sym = m.get("symbol") or "?"
+            change = m["price_change_h1_pct"]
+            mc = m["market_cap_usd"]
+            liq = m["liquidity_usd"]
+            vol = m["volume_h1_usd"]
+            lines.append(f"* **{sym}** `{change:+.0f}%`  ·  MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · h1 vol ${vol/1e3:.0f}K  ·  [Dexscreener](<{m['dexscreener_url']}>)")
+        lines.append("")
+
+    if dumps:
+        lines.append("**🔻 Dumps (1h)**")
+        lines.append("")
+        for m in dumps:
+            sym = m.get("symbol") or "?"
+            change = m["price_change_h1_pct"]
+            mc = m["market_cap_usd"]
+            liq = m["liquidity_usd"]
+            vol = m["volume_h1_usd"]
+            lines.append(f"* **{sym}** `{change:+.0f}%`  ·  MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · h1 vol ${vol/1e3:.0f}K  ·  [Dexscreener](<{m['dexscreener_url']}>)")
+        lines.append("")
+
+    msg = "\n".join(lines).rstrip()
+
+    if dry_run:
+        print(f"[dry-run] would post movement alert to Discord:\n{msg}")
+        return
+
+    webhook = os.environ.get("DISCORD_WEBHOOK_URL")
+    if not webhook:
+        print("WARNING: DISCORD_WEBHOOK_URL not set, skipping movement alert")
+        return
+
+    r = requests.post(webhook, json={"content": msg}, timeout=15)
+    if r.status_code in (200, 204):
+        print("Discord movement alert sent")
+    else:
+        print(f"Discord post failed: {r.status_code} {r.text}")

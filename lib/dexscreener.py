@@ -15,6 +15,7 @@ import requests
 
 GT_POOLS = "https://api.geckoterminal.com/api/v2/networks/{network}/pools"
 DS_TOKENS = "https://api.dexscreener.com/tokens/v1/{chain}/{addresses}"
+DS_TOKEN_PAIRS = "https://api.dexscreener.com/token-pairs/v1/{chain}/{address}"
 DS_SEARCH = "https://api.dexscreener.com/latest/dex/search"
 DS_PROFILES = "https://api.dexscreener.com/token-profiles/latest/v1"
 DS_BOOSTS_LATEST = "https://api.dexscreener.com/token-boosts/latest/v1"
@@ -298,12 +299,17 @@ def _fallback_logos_from_gt(candidates: list[dict]):
 # DexScreener-based incremental discovery (for daily runs)
 # ============================================================================
 
+GT_DAILY_PAGES = 5  # how many GT pages to scan in daily mode (vs MAX_PAGES for backfill)
+
+
 def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
                              skip_addresses: set | None = None) -> list[dict]:
     """
-    Discover new tokens via DexScreener profiles + boosts endpoints,
-    filtered to pairs younger than max_age_days, meeting MC + vol thresholds.
+    Discover new tokens via DexScreener profiles + boosts + search queries,
+    PLUS a lightweight GeckoTerminal top-pool scan (catches tokens whose volume
+    is spread across many pools and don't surface via DS search keywords).
 
+    Filtered to pairs younger than max_age_days, meeting MC + vol + liq thresholds.
     skip_addresses: set of (chain_slug, lowercase_address) to skip (already in sheet).
     """
     min_mc = config["thresholds"]["min_market_cap_usd"]
@@ -316,8 +322,18 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
     skip_addresses = skip_addresses or set()
 
     discovery_addrs = _ds_wide_discovery()
-    print(f"  collected {sum(len(v) for v in discovery_addrs.values())} addresses "
-          f"across {len(discovery_addrs)} chains from DS profiles + boosts + search queries")
+    ds_total = sum(len(v) for v in discovery_addrs.values())
+
+    # supplement with GT top-pool scan (catches tokens DS search misses)
+    gt_addrs = _gt_top_addresses_daily(config["chains"])
+    for chain_slug, addrs in gt_addrs.items():
+        existing = set(discovery_addrs.get(chain_slug, []))
+        new = [a for a in addrs if a not in existing]
+        if new:
+            discovery_addrs.setdefault(chain_slug, []).extend(new)
+    gt_total = sum(len(v) for v in gt_addrs.values())
+    print(f"  collected {ds_total} addresses from DS, +{gt_total} from GT top pools "
+          f"({sum(len(v) for v in discovery_addrs.values())} unique total)")
 
     cutoff_ms = int((time.time() - max_age_days * 86400) * 1000)
     candidates = []
@@ -335,10 +351,7 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
             if not agg:
                 continue
 
-            oldest_ms = min((p.get("pairCreatedAt") or 0) for p in pairs)
-            if oldest_ms == 0 or oldest_ms < cutoff_ms:
-                continue  # too old (or unknown age)
-
+            # Initial filter screen on rough data from /tokens/v1
             if (agg["market_cap_usd"] < min_mc or agg["volume_24h_usd"] < min_vol
                     or agg["liquidity_usd"] < min_liq):
                 continue
@@ -346,6 +359,19 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
                 continue
             if require_logo and not agg.get("logo_uri"):
                 continue
+
+            # Age check: /tokens/v1 returns only the primary pair (often missing
+            # pairCreatedAt). Fetch the full pair list to find a valid creation
+            # date for the token's oldest known pair.
+            full_pairs = _fetch_all_token_pairs_ds(chain_slug, addr)
+            check_pairs = full_pairs if full_pairs else pairs
+            valid_created = [p.get("pairCreatedAt") for p in check_pairs
+                             if p.get("pairCreatedAt")]
+            if not valid_created:
+                continue  # no creation date anywhere — can't verify recency
+            oldest_ms = min(valid_created)
+            if oldest_ms < cutoff_ms:
+                continue  # too old
 
             candidates.append({
                 "chain_slug": chain_slug,
@@ -549,3 +575,65 @@ def _ds_addresses_to_pools(addresses_by_chain: dict) -> list[dict]:
                     "_chain_id": CHAIN_ID_MAP[chain_slug],
                 })
     return all_pools
+
+
+def _gt_top_addresses_daily(chains: list[dict]) -> dict:
+    """Lightweight GT scan for daily runs: top GT_DAILY_PAGES pages per chain.
+
+    Returns {chain_slug: [base_token_addresses]} — token discovery only, no
+    aggregation or filtering here. The DS batch fetch downstream gets the actual
+    pair metrics.
+    """
+    addrs_by_chain = defaultdict(set)
+    for i, chain_cfg in enumerate(chains):
+        if i > 0:
+            time.sleep(8)  # spacing between chains (less than backfill's 30s — fewer pages)
+        slug = chain_cfg["slug"]
+        if slug not in SUPPORTED_DS_CHAINS:
+            continue
+        network = NETWORK_MAP.get(slug, {}).get("gt_network", slug)
+
+        for page in range(1, GT_DAILY_PAGES + 1):
+            url = GT_POOLS.format(network=network)
+            params = {"page": page, "sort": "h24_volume_usd_desc"}
+            time.sleep(GT_DELAY)
+            try:
+                r = requests.get(url, params=params, timeout=15)
+                if r.status_code == 429:
+                    print(f"    GT daily {slug} page {page} rate-limited, skipping rest")
+                    break
+                if r.status_code != 200:
+                    break
+                pools = r.json().get("data", [])
+                if not pools:
+                    break
+                for p in pools:
+                    rels = p.get("relationships", {})
+                    base_id = rels.get("base_token", {}).get("data", {}).get("id", "")
+                    addr = base_id.split("_", 1)[1] if "_" in base_id else ""
+                    if addr:
+                        addrs_by_chain[slug].add(_norm(addr, slug))
+            except Exception as e:
+                print(f"    GT daily {slug} page {page} err: {e}")
+                break
+
+    return {k: list(v) for k, v in addrs_by_chain.items()}
+
+
+def _fetch_all_token_pairs_ds(chain_slug: str, address: str) -> list:
+    """Fetch ALL pairs for a single token via /token-pairs/v1.
+
+    /tokens/v1 only returns the primary pair (sometimes missing pairCreatedAt).
+    /token-pairs/v1 returns every pool the token trades in — used to discover
+    a valid creation date for age filtering.
+    """
+    url = DS_TOKEN_PAIRS.format(chain=chain_slug, address=address)
+    time.sleep(DS_DELAY)
+    try:
+        r = requests.get(url, timeout=15)
+        r.raise_for_status()
+        data = r.json()
+        return data if isinstance(data, list) else data.get("pairs", []) or []
+    except Exception as e:
+        print(f"    /token-pairs/v1 err for {address[:10]}: {e}")
+        return []

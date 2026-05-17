@@ -82,29 +82,31 @@ def send_movement_alert(movers: list[dict], sheet_url: str = "", dry_run: bool =
     pumps = [m for m in movers if m["direction"] == "pump"]
     dumps = [m for m in movers if m["direction"] == "dump"]
 
+    # group by window so the header reads "Pumps (1h)" or "Pumps (6h)" correctly
+    def _row(m):
+        sym = m.get("symbol") or "?"
+        change = m["price_change_pct"]
+        window = m["price_change_window"]
+        win_label = window[1:] + "h"
+        mc = m["market_cap_usd"]
+        liq = m["liquidity_usd"]
+        vol = m[f"volume_{window}_usd"]
+        return f"* **{sym}** `{change:+.0f}%`  ·  MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · {win_label} vol ${vol/1e3:.0f}K  ·  [Dexscreener](<{m['dexscreener_url']}>)"
+
+    window_label = (pumps + dumps)[0]["price_change_window"][1:] + "h"
     lines = []
     if pumps:
-        lines.append("**🚀 Pumps (1h)**")
+        lines.append(f"**🚀 Pumps ({window_label})**")
         lines.append("")
         for m in pumps:
-            sym = m.get("symbol") or "?"
-            change = m["price_change_h1_pct"]
-            mc = m["market_cap_usd"]
-            liq = m["liquidity_usd"]
-            vol = m["volume_h1_usd"]
-            lines.append(f"* **{sym}** `{change:+.0f}%`  ·  MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · h1 vol ${vol/1e3:.0f}K  ·  [Dexscreener](<{m['dexscreener_url']}>)")
+            lines.append(_row(m))
         lines.append("")
 
     if dumps:
-        lines.append("**🔻 Dumps (1h)**")
+        lines.append(f"**🔻 Dumps ({window_label})**")
         lines.append("")
         for m in dumps:
-            sym = m.get("symbol") or "?"
-            change = m["price_change_h1_pct"]
-            mc = m["market_cap_usd"]
-            liq = m["liquidity_usd"]
-            vol = m["volume_h1_usd"]
-            lines.append(f"* **{sym}** `{change:+.0f}%`  ·  MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · h1 vol ${vol/1e3:.0f}K  ·  [Dexscreener](<{m['dexscreener_url']}>)")
+            lines.append(_row(m))
         lines.append("")
 
     msg = "\n".join(lines).rstrip()

@@ -27,8 +27,12 @@ SCRIPT_DIR = Path(__file__).resolve().parent.parent
 ALERTS_FILE = SCRIPT_DIR / "data" / "movement_alerts.json"
 
 
-def find_movers(config: dict) -> list[dict]:
-    """Scan GT pools across configured chains, return tokens that pumped or dumped."""
+def find_movers(config: dict, window: str = "h1") -> list[dict]:
+    """Scan GT pools across configured chains, return tokens that pumped or dumped.
+
+    window: which price_change_percentage field to use ("h1", "h6", etc.).
+    Default h1. Use h6 as fallback when h1 is empty.
+    """
     cfg = config["movement"]
     min_mc = cfg["min_market_cap_usd"]
     min_liq = cfg["min_liquidity_usd"]
@@ -44,7 +48,7 @@ def find_movers(config: dict) -> list[dict]:
         if slug not in SUPPORTED_DS_CHAINS:
             continue
         network = NETWORK_MAP.get(slug, {}).get("gt_network", slug)
-        print(f"  scanning GT pools for {slug}...")
+        print(f"  scanning GT pools for {slug} (window={window})...")
 
         for page in range(1, max_pages + 1):
             url = url_template.format(network=network)
@@ -71,8 +75,9 @@ def find_movers(config: dict) -> list[dict]:
                 if not addr:
                     continue
 
-                pc_h1 = _safe_float((attrs.get("price_change_percentage") or {}).get("h1"))
-                if pc_h1 < dump_thr or (dump_thr < pc_h1 < pump_thr):
+                price_changes = attrs.get("price_change_percentage") or {}
+                pc = _safe_float(price_changes.get(window))
+                if pc < dump_thr or (dump_thr < pc < pump_thr):
                     continue  # not enough movement either direction
 
                 mc = _safe_float(attrs.get("market_cap_usd")) or _safe_float(attrs.get("fdv_usd"))
@@ -81,6 +86,7 @@ def find_movers(config: dict) -> list[dict]:
                     continue
 
                 vol_h1 = _safe_float((attrs.get("volume_usd") or {}).get("h1"))
+                vol_h6 = _safe_float((attrs.get("volume_usd") or {}).get("h6"))
                 vol_h24 = _safe_float((attrs.get("volume_usd") or {}).get("h24"))
 
                 pools_by_token[(slug, _norm(addr, slug))].append({
@@ -90,18 +96,23 @@ def find_movers(config: dict) -> list[dict]:
                     "market_cap_usd": mc,
                     "liquidity_usd": liq,
                     "volume_h1_usd": vol_h1,
+                    "volume_h6_usd": vol_h6,
                     "volume_h24_usd": vol_h24,
-                    "price_change_h1_pct": pc_h1,
+                    "price_change_pct": pc,
+                    "price_change_h1_pct": _safe_float(price_changes.get("h1")),
+                    "price_change_h6_pct": _safe_float(price_changes.get("h6")),
+                    "price_change_window": window,
                     "price_usd": _safe_float(attrs.get("base_token_price_usd")),
                 })
 
     movers = []
+    sort_vol_key = "volume_h1_usd" if window == "h1" else "volume_h6_usd"
     for (slug, addr), pool_list in pools_by_token.items():
-        best = max(pool_list, key=lambda x: x["volume_h1_usd"])
-        direction = "pump" if best["price_change_h1_pct"] >= pump_thr else "dump"
+        best = max(pool_list, key=lambda x: x[sort_vol_key])
+        direction = "pump" if best["price_change_pct"] >= pump_thr else "dump"
         movers.append({**best, "direction": direction})
 
-    movers.sort(key=lambda m: abs(m["price_change_h1_pct"]), reverse=True)
+    movers.sort(key=lambda m: abs(m["price_change_pct"]), reverse=True)
     return movers
 
 

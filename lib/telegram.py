@@ -97,12 +97,14 @@ def send_movement_alert(movers: list[dict], sheet_url: str = "", dry_run: bool =
     for m in pumps + dumps:
         emoji = "🚀" if m["direction"] == "pump" else "🔻"
         sym = m.get("symbol") or "?"
-        change = m["price_change_h1_pct"]
+        change = m["price_change_pct"]
+        window = m["price_change_window"]
+        win_label = window[1:] + "h"
         mc = m["market_cap_usd"]
         liq = m["liquidity_usd"]
-        vol = m["volume_h1_usd"]
-        lines.append(f"{emoji} {sym} {change:+.0f}% in 1h")
-        lines.append(f"   MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · h1 vol ${vol/1e3:.0f}K")
+        vol = m[f"volume_{window}_usd"]
+        lines.append(f"{emoji} {sym} {change:+.0f}% in {win_label}")
+        lines.append(f"   MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · {win_label} vol ${vol/1e3:.0f}K")
         lines.append(f"   {m['dexscreener_url']}")
         lines.append("")
 

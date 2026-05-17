@@ -44,12 +44,18 @@ def main():
     today = time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())
     print(f"=== Movement scan: {today} ===")
 
-    print("1. fetching GT pools for movement signal...")
-    movers = find_movers(config)
+    # h1 primary, h6 fallback when h1 finds nothing
+    print("1. fetching GT pools for h1 movers...")
+    movers = find_movers(config, window="h1")
     print(f"   {len(movers)} unique tokens passed MC + liq + h1-change filters")
 
     if not movers:
-        print("\nno movers this run")
+        print("   no h1 movers — falling back to h6...")
+        movers = find_movers(config, window="h6")
+        print(f"   {len(movers)} unique tokens passed MC + liq + h6-change filters")
+
+    if not movers:
+        print("\nno movers this run (h1 or h6)")
         return
 
     print("2. enriching with DS data + logo filter...")
@@ -91,13 +97,16 @@ def _print_movers(movers: list[dict]):
     for m in movers:
         emoji = "🚀" if m["direction"] == "pump" else "🔻"
         sym = m.get("symbol") or "?"
-        change = m["price_change_h1_pct"]
+        change = m["price_change_pct"]
+        window = m["price_change_window"]
+        win_label = window[1:] + "h"
         mc = m["market_cap_usd"]
         liq = m["liquidity_usd"]
-        vol = m["volume_h1_usd"]
+        vol = m[f"volume_{window}_usd"]
         print()
-        print(f"  {emoji} {sym} {change:+.1f}% in 1h  ({m['chain_slug']})")
-        print(f"     MC ${mc/1e6:.2f}M · liq ${liq/1e3:.0f}K · h1 vol ${vol/1e3:.0f}K")
+        print(f"  {emoji} {sym} {change:+.1f}% in {win_label}  ({m['chain_slug']})")
+        print(f"     MC ${mc/1e6:.2f}M · liq ${liq/1e3:.0f}K · {win_label} vol ${vol/1e3:.0f}K")
+        print(f"     also: h1={m['price_change_h1_pct']:+.1f}%, h6={m['price_change_h6_pct']:+.1f}%")
         print(f"     {m['dexscreener_url']}")
         # research prompts for manual triage
         sym_enc = urllib.parse.quote(sym)

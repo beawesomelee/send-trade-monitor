@@ -145,14 +145,19 @@ def main():
 
 
 def _incremental_discovery(config: dict, existing_rows: list) -> list[dict]:
-    """Refresh known pending tokens via DS, then discover new tokens (<7d)."""
+    """Refresh known pending tokens via DS, then discover new tokens (<7d).
+
+    Only chains active in config.chains are processed — disabled chains are
+    skipped during both refresh and new-token discovery.
+    """
+    active_chains = {c["slug"] for c in config["chains"]}
     refresh_addrs = defaultdict(list)
     existing_set = set()
     for row in existing_rows:
         chain = (row.get("chain_name") or "").lower()
         addr = row.get("address", "")
         status = (row.get("status") or "").lower().strip()
-        if chain not in {"base", "solana"} or not addr:
+        if chain not in active_chains or not addr:
             continue
         existing_set.add((chain, addr.lower() if chain == "base" else addr))
         if status == "pending":

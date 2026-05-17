@@ -357,8 +357,10 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
     # Note: max_volume_to_liquidity_ratio intentionally NOT applied here.
     # New tokens going viral can briefly hit very high vol/liq ratios — not necessarily wash-trade.
     skip_addresses = skip_addresses or set()
+    # Honor the active chains from config — never process disabled chains
+    active_chains = {c["slug"] for c in config["chains"]}
 
-    discovery_addrs = _ds_wide_discovery()
+    discovery_addrs = _ds_wide_discovery(active_chains=active_chains)
     ds_total = sum(len(v) for v in discovery_addrs.values())
 
     # supplement with GT top-pool scan (catches tokens DS search misses)
@@ -376,7 +378,7 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
     candidates = []
 
     for chain_slug, addrs in discovery_addrs.items():
-        if chain_slug not in SUPPORTED_DS_CHAINS:
+        if chain_slug not in active_chains or chain_slug not in SUPPORTED_DS_CHAINS:
             continue
         addrs = [a for a in addrs if (chain_slug, _norm(a, chain_slug)) not in skip_addresses]
         if not addrs:
@@ -528,13 +530,16 @@ def _norm(address: str, chain_slug: str) -> str:
     return address or ""
 
 
-def _ds_wide_discovery() -> dict:
+def _ds_wide_discovery(active_chains: set | None = None) -> dict:
     """Cast a wide DexScreener net for candidate addresses.
 
     Pulls from profiles + boosts (latest + top) and runs many search queries
     across chain names, common quote tokens, popular symbols, and categories.
-    Returns {chain_slug: [addresses]} for Base + Solana only.
+
+    active_chains: restrict results to these chain slugs (default: all SUPPORTED_DS_CHAINS).
+    Use this to honor config-level chain disabling.
     """
+    keep_chains = active_chains & SUPPORTED_DS_CHAINS if active_chains is not None else SUPPORTED_DS_CHAINS
     addresses_by_chain = defaultdict(set)
 
     # profiles + boosts
@@ -551,7 +556,7 @@ def _ds_wide_discovery() -> dict:
         for entry in entries:
             chain = (entry.get("chainId") or "").lower()
             addr = entry.get("tokenAddress") or ""
-            if chain in SUPPORTED_DS_CHAINS and addr:
+            if chain in keep_chains and addr:
                 addresses_by_chain[chain].add(_norm(addr, chain))
 
     # search queries (each returns up to 30 pairs across all chains)
@@ -568,7 +573,7 @@ def _ds_wide_discovery() -> dict:
             chain = (p.get("chainId") or "").lower()
             bt = p.get("baseToken") or {}
             addr = bt.get("address") or ""
-            if chain in SUPPORTED_DS_CHAINS and addr:
+            if chain in keep_chains and addr:
                 addresses_by_chain[chain].add(_norm(addr, chain))
 
     return {k: list(v) for k, v in addresses_by_chain.items()}

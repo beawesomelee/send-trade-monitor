@@ -1,0 +1,15 @@
+[
+  {
+    "chain_slug": "base",
+    "chain_id": 8453,
+    "address": "0xeae13ea73bec936664a51734c8c01ec7c3b0699c",
+    "symbol": "PITCH",
+    "name": "Pitch World Cup",
+    "market_cap_usd": 2658775,
+    "volume_24h_usd": 8232529,
+    "liquidity_usd": 1306306,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/pd6Hab87ZiBQFIJj?width=800&height=800&quality=95&format=auto",
+    "dexscreener_url": "https://dexscreener.com/base/0xeae13ea73bec936664a51734c8c01ec7c3b0699c",
+    "decimals": 18
+  }
+]

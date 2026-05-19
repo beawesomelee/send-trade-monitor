@@ -5,6 +5,18 @@
   },
   {
     "chain_slug": "base",
+    "address": "0x0b2558bdbc7ffec0f327fb3579c23dabd1699706"
+  },
+  {
+    "chain_slug": "base",
+    "address": "0x4823aa725ce227e4d05e1c042a70a29ff56bdb69"
+  },
+  {
+    "chain_slug": "base",
     "address": "0xb3d7e0c3c39a1d3f1b304663065a2f83ddf56d8e"
+  },
+  {
+    "chain_slug": "base",
+    "address": "0xec70de7fc351a41815ccabb4994d19881a1d14ad"
   }
 ]

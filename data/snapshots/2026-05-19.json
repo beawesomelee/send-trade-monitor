@@ -2,53 +2,14 @@
   {
     "chain_slug": "base",
     "chain_id": 8453,
-    "address": "0x4c433f4ef87fe506a7eed2fd1d822cbed411eba3",
-    "symbol": "TSG",
-    "name": "the sleeping giant",
-    "market_cap_usd": 3118879,
-    "volume_24h_usd": 10125790,
-    "liquidity_usd": 624092,
-    "logo_uri": "https://cdn.dexscreener.com/cms/images/05woCbQRYONn2UBT?width=800&height=800&quality=95&format=auto",
-    "dexscreener_url": "https://dexscreener.com/base/0x4c433f4ef87fe506a7eed2fd1d822cbed411eba3",
-    "decimals": 18
-  },
-  {
-    "chain_slug": "base",
-    "chain_id": 8453,
     "address": "0xeae13ea73bec936664a51734c8c01ec7c3b0699c",
     "symbol": "PITCH",
     "name": "Pitch World Cup",
-    "market_cap_usd": 2071022,
-    "volume_24h_usd": 4075712,
-    "liquidity_usd": 1217705,
+    "market_cap_usd": 2006460,
+    "volume_24h_usd": 3900092,
+    "liquidity_usd": 1193732,
     "logo_uri": "https://cdn.dexscreener.com/cms/images/pd6Hab87ZiBQFIJj?width=800&height=800&quality=95&format=auto",
     "dexscreener_url": "https://dexscreener.com/base/0xeae13ea73bec936664a51734c8c01ec7c3b0699c",
-    "decimals": 18
-  },
-  {
-    "chain_slug": "base",
-    "chain_id": 8453,
-    "address": "0x38298138dd4389013962d8492feaa5879408dba3",
-    "symbol": "openhuman",
-    "name": "openhuman",
-    "market_cap_usd": 1576318,
-    "volume_24h_usd": 2880175,
-    "liquidity_usd": 401916,
-    "logo_uri": "https://cdn.dexscreener.com/cms/images/lmGI8TM2laV5yFOO?width=800&height=800&quality=95&format=auto",
-    "dexscreener_url": "https://dexscreener.com/base/0x38298138dd4389013962d8492feaa5879408dba3",
-    "decimals": 18
-  },
-  {
-    "chain_slug": "base",
-    "chain_id": 8453,
-    "address": "0x0fb07c88bc6d195c196279523957c004eb868248",
-    "symbol": "SPARK",
-    "name": "SPARK",
-    "market_cap_usd": 1784993,
-    "volume_24h_usd": 1777122,
-    "liquidity_usd": 89343,
-    "logo_uri": "https://cdn.dexscreener.com/cms/images/2kWlmP1yDJomOOT5?width=800&height=800&quality=95&format=auto",
-    "dexscreener_url": "https://dexscreener.com/base/0x0fb07c88bc6d195c196279523957c004eb868248",
     "decimals": 18
   }
 ]

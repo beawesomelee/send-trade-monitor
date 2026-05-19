@@ -162,6 +162,12 @@ def upsert(ws: gspread.Worksheet, existing: list[dict], candidates: list[dict],
                 stats["auto_verified"] += 1
                 continue
 
+            # Preserve manual status edits — if user set anything other than
+            # "pending" (e.g. typed "verified" before Send.Trade caught up),
+            # don't overwrite. We only refresh rows that are still in pending state.
+            if status != "pending":
+                continue
+
             stats["still_pending"] += 1
             first_seen = row.get("first_seen_utc", today)
             days = _days_between(first_seen, today)
@@ -173,7 +179,10 @@ def upsert(ws: gspread.Worksheet, existing: list[dict], candidates: list[dict],
             stats["new_pending"] += 1
             new_rows.append(_build_row(c, "pending", today, today, 0))
 
-    # audit existing rows not in today's scan
+    # audit existing rows not in today's scan.
+    # Any row whose address is in Send.Trade's verified list gets deleted,
+    # regardless of stored status (handles manual "Verified" edits + verified
+    # tokens that dropped below thresholds and stopped being rediscovered).
     candidate_keys = {(str(c["chain_id"]), c["address"].lower()) for c in candidates}
     for key, (idx, row) in index.items():
         if key in candidate_keys:
@@ -190,8 +199,7 @@ def upsert(ws: gspread.Worksheet, existing: list[dict], candidates: list[dict],
             stats["dismissed"] += 1
             continue
 
-        if status != "pending":
-            continue
+        # Verified-by-Send.Trade check applies to ANY non-dismissed row.
         chain_id_val = key[0]
         try:
             chain_id_parsed = int(chain_id_val)
@@ -200,6 +208,9 @@ def upsert(ws: gspread.Worksheet, existing: list[dict], candidates: list[dict],
         if (chain_id_parsed, addr_lower) in verified_set:
             rows_to_delete.append(idx + 2)
             stats["auto_verified"] += 1
+            continue
+
+        # Leave rows with unrecognized status alone (don't overwrite manual edits)
 
     if updates:
         batch = [{

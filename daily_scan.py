@@ -102,14 +102,23 @@ def main():
     # 5. save snapshot
     _save_snapshot(candidates, today)
 
-    # mark _is_new for telegram summary
+    # mark _is_new only for tokens that will actually be inserted as pending —
+    # i.e. NOT in the sheet AND NOT already verified by Send.Trade AND NOT dismissed.
+    # Prevents Discord/Telegram from announcing rediscovered already-verified tokens.
     existing_keys = {
         (str(row.get("chain_id", "")), row.get("address", "").lower())
         for row in existing_rows
     }
+    from lib.send_trade import is_verified
+    dismissed_now = _load_dismissed()
     for c in candidates:
         key = (str(c["chain_id"]), c["address"].lower())
-        c["_is_new"] = key not in existing_keys
+        chain_addr = (c["chain_slug"], c["address"].lower())
+        c["_is_new"] = (
+            key not in existing_keys
+            and not is_verified(c, verified_set)
+            and chain_addr not in dismissed_now
+        )
 
     if args.dry_run:
         print("\n[dry-run] skipping sheet update and Telegram")

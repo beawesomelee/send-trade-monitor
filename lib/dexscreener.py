@@ -363,9 +363,16 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
     discovery_addrs = _ds_wide_discovery(active_chains=active_chains)
     ds_total = sum(len(v) for v in discovery_addrs.values())
 
-    # supplement with GT top-pool scan (catches tokens DS search misses)
+    # supplement with GT top-pool scan (catches tokens DS search misses).
+    # Track which addresses came from GT so we can exempt them from the
+    # <max_age_days> age filter below — top-pool ranking is already a strong
+    # volume signal, so older but currently-active tokens (e.g., MiroShark,
+    # BRETT) shouldn't be excluded just for being more than 7 days old.
     gt_addrs = _gt_top_addresses_daily(config["chains"])
+    gt_addr_set = set()
     for chain_slug, addrs in gt_addrs.items():
+        for a in addrs:
+            gt_addr_set.add((chain_slug, _norm(a, chain_slug)))
         existing = set(discovery_addrs.get(chain_slug, []))
         new = [a for a in addrs if a not in existing]
         if new:
@@ -399,18 +406,21 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
             if require_logo and not agg.get("logo_uri"):
                 continue
 
-            # Age check: /tokens/v1 returns only the primary pair (often missing
-            # pairCreatedAt). Fetch the full pair list to find a valid creation
-            # date for the token's oldest known pair.
-            full_pairs = _fetch_all_token_pairs_ds(chain_slug, addr)
-            check_pairs = full_pairs if full_pairs else pairs
-            valid_created = [p.get("pairCreatedAt") for p in check_pairs
-                             if p.get("pairCreatedAt")]
-            if not valid_created:
-                continue  # no creation date anywhere — can't verify recency
-            oldest_ms = min(valid_created)
-            if oldest_ms < cutoff_ms:
-                continue  # too old
+            # Age check: skipped for GT top-pool addresses (already volume-gated
+            # by being on the top pages). For DS-keyword-discovered addresses,
+            # /tokens/v1 returns only the primary pair (often missing
+            # pairCreatedAt), so we fetch the full pair list to find a valid
+            # creation date for the token's oldest known pair.
+            if (chain_slug, addr) not in gt_addr_set:
+                full_pairs = _fetch_all_token_pairs_ds(chain_slug, addr)
+                check_pairs = full_pairs if full_pairs else pairs
+                valid_created = [p.get("pairCreatedAt") for p in check_pairs
+                                 if p.get("pairCreatedAt")]
+                if not valid_created:
+                    continue  # no creation date anywhere — can't verify recency
+                oldest_ms = min(valid_created)
+                if oldest_ms < cutoff_ms:
+                    continue  # too old
 
             candidates.append({
                 "chain_slug": chain_slug,

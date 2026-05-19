@@ -2,10 +2,11 @@ name: Send.Trade Scan
 
 on:
   schedule:
-    # Every hour at :12, 24/7. Send.Trade verifications and dismissals can
-    # happen any time of day; hourly scan minimizes the lag between an event
-    # and us reflecting it in the sheet + notifications.
-    - cron: "12 * * * *"
+    # Day (8am-8pm ET DST = 12-23 UTC): every hour at :12
+    # Night (8pm ET -> 8am ET): every 3 hours — 8pm, 11pm, 2am, 5am ET
+    #                          = 00:12, 03:12, 06:12, 09:12 UTC
+    # 16 runs/day total. During EST (winter) the windows drift back 1hr in ET.
+    - cron: "12 0,3,6,9,12-23 * * *"
   workflow_dispatch:
     inputs:
       backfill:

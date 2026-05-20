@@ -406,27 +406,30 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
             if require_logo and not agg.get("logo_uri"):
                 continue
 
-            # Age check: skipped for GT top-pool addresses (already volume-gated
-            # by being on the top pages). For DS-keyword-discovered addresses,
-            # /tokens/v1 returns only the primary pair (often missing
-            # pairCreatedAt), so we fetch the full pair list to find a valid
-            # creation date for the token's oldest known pair.
-            if (chain_slug, addr) not in gt_addr_set:
+            # Determine pair age. /tokens/v1 returns only the primary pair (often
+            # missing pairCreatedAt) so fall back to /token-pairs/v1 if needed.
+            # For GT-discovered addresses this is informational only (no age
+            # filter); for DS-keyword addresses it's the gate.
+            primary_created = [p.get("pairCreatedAt") for p in pairs
+                               if p.get("pairCreatedAt")]
+            oldest_ms = min(primary_created) if primary_created else None
+            if oldest_ms is None:
                 full_pairs = _fetch_all_token_pairs_ds(chain_slug, addr)
-                check_pairs = full_pairs if full_pairs else pairs
-                valid_created = [p.get("pairCreatedAt") for p in check_pairs
-                                 if p.get("pairCreatedAt")]
-                if not valid_created:
-                    continue  # no creation date anywhere — can't verify recency
-                oldest_ms = min(valid_created)
-                if oldest_ms < cutoff_ms:
-                    continue  # too old
+                full_valid = [p.get("pairCreatedAt") for p in full_pairs
+                              if p.get("pairCreatedAt")]
+                if full_valid:
+                    oldest_ms = min(full_valid)
+
+            if (chain_slug, addr) not in gt_addr_set:
+                if oldest_ms is None or oldest_ms < cutoff_ms:
+                    continue  # too old or unknown age — keyword path requires <max_age_days
 
             candidates.append({
                 "chain_slug": chain_slug,
                 "chain_id": CHAIN_ID_MAP[chain_slug],
                 "address": addr,
                 **agg,
+                "pair_created_at_ms": oldest_ms,
                 "dexscreener_url": f"https://dexscreener.com/{chain_slug}/{addr}",
             })
 

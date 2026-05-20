@@ -1,8 +1,11 @@
 """Send daily summary to a Discord channel via webhook."""
 
 import os
+import time
 
 import requests
+
+RECENT_THRESHOLD_DAYS = 7
 
 
 def send_summary(stats: dict, candidates: list[dict], sheet_url: str,
@@ -51,10 +54,17 @@ def _build_message(new_candidates: list[dict], sheet_url: str, stats: dict) -> s
     if new_candidates:
         lines.append("**New Tokens to Verify**")
         lines.append("")
+        now_ms = int(time.time() * 1000)
+        recent_cutoff_ms = now_ms - RECENT_THRESHOLD_DAYS * 86400 * 1000
         for c in new_candidates:
             sym = c.get("symbol", "?")
             url = c.get("dexscreener_url", "")
-            lines.append(f"* {sym}: [Dexscreener Link](<{url}>)")
+            created = c.get("pair_created_at_ms")
+            age_tag = ""
+            if created and created >= recent_cutoff_ms:
+                age_days = max(1, (now_ms - created) // (86400 * 1000))
+                age_tag = f" **({age_days}d old)**"
+            lines.append(f"* {sym}{age_tag}: [Dexscreener Link](<{url}>)")
         lines.append("")
 
     # Auxiliary status lines (only when other things changed but no new tokens)

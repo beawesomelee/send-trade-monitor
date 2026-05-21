@@ -38,24 +38,27 @@ def main():
                         help="Actually send to Telegram + Discord and record cooldown")
     parser.add_argument("--no-cooldown", action="store_true",
                         help="Ignore cooldown filter (for testing)")
+    parser.add_argument("--h6-fallback", action="store_true",
+                        help="Fall back to h6 window if h1 finds nothing (manual runs only)")
     args = parser.parse_args()
 
     config = json.loads((SCRIPT_DIR / "config.json").read_text())
     today = time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())
     print(f"=== Movement scan: {today} ===")
 
-    # h1 primary, h6 fallback when h1 finds nothing
+    # h1 is the primary window. h6 fallback only runs on manual --h6-fallback
+    # invocations (testing phase) so the scheduled cron sticks to h1 only.
     print("1. fetching GT pools for h1 movers...")
     movers = find_movers(config, window="h1")
     print(f"   {len(movers)} unique tokens passed MC + liq + h1-change filters")
 
-    if not movers:
-        print("   no h1 movers — falling back to h6...")
+    if not movers and args.h6_fallback:
+        print("   no h1 movers — falling back to h6 (manual run)...")
         movers = find_movers(config, window="h6")
         print(f"   {len(movers)} unique tokens passed MC + liq + h6-change filters")
 
     if not movers:
-        print("\nno movers this run (h1 or h6)")
+        print("\nno movers this run")
         return
 
     print("2. enriching with DS data + logo filter...")

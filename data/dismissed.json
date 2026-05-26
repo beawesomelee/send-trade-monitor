@@ -5,6 +5,10 @@
   },
   {
     "chain_slug": "base",
+    "address": "0x0326b14b5744e160b9269c6a4a028c30c851d362"
+  },
+  {
+    "chain_slug": "base",
     "address": "0x0b2558bdbc7ffec0f327fb3579c23dabd1699706"
   },
   {
@@ -13,10 +17,22 @@
   },
   {
     "chain_slug": "base",
+    "address": "0x572c4fa77623652411574c51b5ddb7e1b750aba3"
+  },
+  {
+    "chain_slug": "base",
+    "address": "0x753f2af0f46361c9ae6fc347797f99b0c9e82ba3"
+  },
+  {
+    "chain_slug": "base",
     "address": "0xb3d7e0c3c39a1d3f1b304663065a2f83ddf56d8e"
   },
   {
     "chain_slug": "base",
     "address": "0xec70de7fc351a41815ccabb4994d19881a1d14ad"
+  },
+  {
+    "chain_slug": "base",
+    "address": "0xf1e9baa65d418a9025e1851dd2d37f1ad208bba3"
   }
 ]

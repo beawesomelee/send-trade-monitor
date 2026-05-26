@@ -30,6 +30,7 @@ from lib.movement import (
     filter_by_cooldown,
     record_alerts,
 )
+from lib.lore import fetch_lore
 
 
 def main():
@@ -83,6 +84,16 @@ def main():
         print("\nall movers within cooldown window")
         return
 
+    # Best-effort lore enrichment via Grok + live X search. Silently skipped
+    # if XAI_API_KEY isn't set (returns "").
+    print("4. fetching lore for each mover (Grok + live X search)...")
+    for m in new_movers:
+        m["lore"] = fetch_lore(m)
+        if m["lore"]:
+            print(f"   {m.get('symbol')}: lore captured ({len(m['lore'])} chars)")
+        else:
+            print(f"   {m.get('symbol')}: no lore returned")
+
     _print_movers(new_movers)
 
     if args.alert:
@@ -111,7 +122,9 @@ def _print_movers(movers: list[dict]):
         print(f"     MC ${mc/1e6:.2f}M · liq ${liq/1e3:.0f}K · {win_label} vol ${vol/1e3:.0f}K")
         print(f"     also: h1={m['price_change_h1_pct']:+.1f}%, h6={m['price_change_h6_pct']:+.1f}%")
         print(f"     {m['dexscreener_url']}")
-        # research prompts for manual triage
+        if m.get("lore"):
+            print(f"     lore: {m['lore']}")
+        # research prompts for manual triage (also useful when lore is missing)
         sym_enc = urllib.parse.quote(sym)
         print(f"     X search:   https://twitter.com/search?q=${sym_enc}&src=typed_query&f=live")
         print(f"     Web search: https://www.google.com/search?q=${sym_enc}+crypto+token+base&tbs=qdr:d")

@@ -106,6 +106,8 @@ def send_movement_alert(movers: list[dict], sheet_url: str = "", dry_run: bool =
         lines.append(f"{emoji} {sym} {change:+.0f}% in {win_label}")
         lines.append(f"   MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · {win_label} vol ${vol/1e3:.0f}K")
         lines.append(f"   {m['dexscreener_url']}")
+        if m.get("lore"):
+            lines.append(f"   {m['lore']}")
         lines.append("")
 
     msg = "\n".join(lines).rstrip()

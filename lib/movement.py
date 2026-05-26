@@ -134,10 +134,26 @@ def enrich_movers(movers: list[dict]) -> list[dict]:
             bt = p.get("baseToken") or {}
             info = p.get("info") or {}
             logo = (info or {}).get("imageUrl") if isinstance(info, dict) else None
+
+            x_handle = ""
+            website_url = ""
+            if isinstance(info, dict):
+                for s in (info.get("socials") or []):
+                    if (s.get("type") or "").lower() in ("twitter", "x"):
+                        url = s.get("url") or ""
+                        # extract handle from URL like https://x.com/foo or twitter.com/foo
+                        x_handle = url.rstrip("/").rsplit("/", 1)[-1] if url else ""
+                        break
+                websites = info.get("websites") or []
+                if websites:
+                    website_url = websites[0].get("url", "")
+
             enriched_addrs[(chain_slug, addr.lower())] = {
                 "symbol": bt.get("symbol", ""),
                 "name": bt.get("name", ""),
                 "logo_uri": logo or "",
+                "x_handle": x_handle,
+                "website_url": website_url,
             }
 
     out = []

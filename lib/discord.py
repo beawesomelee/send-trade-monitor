@@ -101,7 +101,11 @@ def send_movement_alert(movers: list[dict], sheet_url: str = "", dry_run: bool =
         mc = m["market_cap_usd"]
         liq = m["liquidity_usd"]
         vol = m[f"volume_{window}_usd"]
-        return f"* **{sym}** `{change:+.0f}%`  ·  MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · {win_label} vol ${vol/1e3:.0f}K  ·  [Dexscreener](<{m['dexscreener_url']}>)"
+        lore = m.get("lore") or ""
+        line = f"* **{sym}** `{change:+.0f}%`  ·  MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · {win_label} vol ${vol/1e3:.0f}K  ·  [Dexscreener](<{m['dexscreener_url']}>)"
+        if lore:
+            line += f"\n  _{lore}_"
+        return line
 
     window_label = (pumps + dumps)[0]["price_change_window"][1:] + "h"
     lines = []

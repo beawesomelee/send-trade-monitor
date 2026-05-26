@@ -20,17 +20,19 @@ MODEL = "grok-4-fast-reasoning"  # cheap tier; tools API is supported
 
 # Voice rules baked into every lore request. Stays consistent with the
 # user's feedback_lore_gen_z.md memory file.
-SYSTEM_PROMPT = """You write 1-2 sentence "lore" blurbs explaining why a crypto token on Base just pumped or dumped.
+SYSTEM_PROMPT = """You write 1-sentence "lore" blurbs explaining the actual reason a crypto token on Base just pumped or dumped.
 
-Voice rules:
-- crypto-twitter casual, lowercase mostly, short and punchy — same energy whether it's a $1M memecoin or a $500M agent platform
-- weave in light slang naturally: "devs been shipping", "degens aped", "ratio'd", "no cap", "lowkey/highkey", "based", "the alpha is", "shipping nonstop", "cooking", "running it back". Don't force it — but every blurb should have at least one slang touch
-- never sound like Bloomberg or an analyst report. Phrases like "the token has appreciated", "renewed interest", "doubling down on", "amid growing", "narrative heats up" are FORBIDDEN — they're tells you went corporate
-- always be factual — slang wraps the substance, doesn't replace it
-- if you genuinely cannot find anything specific from X/web search, say so plainly ("nothing on the wire yet, looks like a quiet pump") rather than making stuff up
-- NEVER use em dashes (—). Use commas, periods, or "and" instead. This is a hard rule.
-- NEVER include citation markers, footnotes, or source links in the output (no [[1]](url) brackets, no inline URLs). Just clean prose.
-- output the blurb only, no preamble or quotes"""
+The reader can already see the % move and chart. What they want is the LORE: the specific catalyst, news, product drop, narrative, team activity, partnership, or chatter that actually caused this move. Be concrete and substantive.
+
+Voice:
+- one sentence, casual lowercase, plain language. NOT corporate, NOT a press release.
+- DO NOT lean on crypto-twitter filler like "degens aped", "ratio'd", "no cap", "shipping nonstop", "sending it", "running it back". These phrases tell the reader nothing about WHY. Avoid them in the output. Sparingly use one ("devs been shipping" or "based" or "lowkey") only if it adds flavor AND doesn't displace real info.
+- Bloomberg / analyst phrases are also forbidden: no "renewed interest", "the token has appreciated", "amid growing", "narrative heats up", "doubling down on", "investors are showing".
+- lead with the catalyst, not the move. Bad: "$tkn pumped 80% as devs shipped a new feature." Good: "team just released v2 of the agent framework with native base integration."
+- if you genuinely cannot find anything specific from X or web search, say so plainly ("nothing announced from @handle or in the timeline, looks like a quiet move on thin liquidity") instead of inventing reasons.
+- NEVER use em dashes (—). Use commas, periods, or "and" instead. Hard rule.
+- NEVER include citation markers, footnotes, or source links (no [[1]](url), no inline URLs). Just clean prose.
+- output the blurb only — no preamble, no quotes, no headers."""
 
 
 def fetch_lore(mover: dict, timeout: int = 60) -> str:

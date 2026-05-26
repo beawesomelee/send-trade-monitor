@@ -93,22 +93,28 @@ def send_movement_alert(movers: list[dict], sheet_url: str = "", dry_run: bool =
     pumps = [m for m in movers if m["direction"] == "pump"]
     dumps = [m for m in movers if m["direction"] == "dump"]
 
+    window_label = (pumps + dumps)[0]["price_change_window"][1:] + "h"
     lines = []
-    for m in pumps + dumps:
-        emoji = "🚀" if m["direction"] == "pump" else "🔻"
-        sym = m.get("symbol") or "?"
-        change = m["price_change_pct"]
-        window = m["price_change_window"]
-        win_label = window[1:] + "h"
-        mc = m["market_cap_usd"]
-        liq = m["liquidity_usd"]
-        vol = m[f"volume_{window}_usd"]
-        lines.append(f"{emoji} {sym} {change:+.0f}% in {win_label}")
-        lines.append(f"   MC ${mc/1e6:.1f}M · liq ${liq/1e3:.0f}K · {win_label} vol ${vol/1e3:.0f}K")
-        lines.append(f"   {m['dexscreener_url']}")
-        if m.get("lore"):
-            lines.append(f"   {m['lore']}")
+    if pumps:
+        lines.append(f"🚀 Pumps ({window_label})")
         lines.append("")
+        for m in pumps:
+            sym = m.get("symbol") or "?"
+            change = m["price_change_pct"]
+            lines.append(f"{sym} {change:+.0f}% - {m['dexscreener_url']}")
+            if m.get("lore"):
+                lines.append(m["lore"])
+            lines.append("")
+    if dumps:
+        lines.append(f"🔻 Dumps ({window_label})")
+        lines.append("")
+        for m in dumps:
+            sym = m.get("symbol") or "?"
+            change = m["price_change_pct"]
+            lines.append(f"{sym} {change:+.0f}% - {m['dexscreener_url']}")
+            if m.get("lore"):
+                lines.append(m["lore"])
+            lines.append("")
 
     msg = "\n".join(lines).rstrip()
 

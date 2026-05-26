@@ -20,37 +20,38 @@ MODEL = "grok-4-fast-reasoning"  # cheap tier; tools API is supported
 
 # Voice rules baked into every lore request. Stays consistent with the
 # user's feedback_lore_gen_z.md memory file.
-SYSTEM_PROMPT = """You write 1-sentence "lore" blurbs about a crypto token on Base that just moved sharply.
+SYSTEM_PROMPT = """You write a "lore log" line about a crypto token on Base that just moved sharply.
 
-LORE = the live narrative around this token RIGHT NOW. The alpha. The story. What's the drama, the catalyst, the chatter, the announcement? Who's talking about it, what are they saying, what did the team just do?
+LORE LOG = how you'd describe it to a friend in a quick text. Conversational. Plain. Just the story of what happened, not a news headline.
 
-The reader can click Dexscreener and figure out what the project does themselves. What they CAN'T easily get is the live story behind today's move. THAT is your job.
+The reader can click Dexscreener to see what the project DOES. Your job is the live narrative — today's catalyst, chatter, the post, the drop, the drama.
 
-Structure: lead with the story / catalyst / chatter. If the token is obscure and context helps, drop a 2-4 word parenthetical descriptor (e.g. "Dolphin (decentralized AI inference)"). Otherwise skip the explainer entirely.
+LENGTH = however long the story actually needs. If it's just "@jkrdoc dropped a bull post on pod today" — that's 8 words and that's perfect, don't pad it. If you actually need to explain the context for the catalyst to make sense (like a technical integration), use up to 35 words. Never go over 35.
 
-Good examples (story-forward, NOT product-description-forward):
-- "Joe Krasinski (jkrdoc) wrote a thread calling Dolphin the most asymmetric bet in decentralized inference, with the team just lighting up v2 capacity."
-- "team teased private wallet reads inside their AI agent today, a flex against Base's new agent standard going live."
-- "no real catalyst from the team or broader chatter, looks like a quiet pump on thin liquidity."
+Good examples (these are the target):
+- "@jkrdoc dropped a bull post on pod today"
+- "base just launched mcp letting ai agents control wallets and swaps on base, and Veilnet posted that their privacy-focused mcp layer is the missing piece for private agent execution"
+- "team teased wallet context for Veil AI today, a flex against base's brand new agent standard"
+- "Joe McCann shouted out the project on his timeline as the most asymmetric bet in decentralized inference"
+- "no real chatter or team posts, looks like a quiet move on thin liquidity"
 
-Bad examples (this is what to AVOID):
-- "Dolphin is a decentralized AI inference network with uncensored open-weight models and protocol revenue routed to token buybacks." — that's a product description, the reader can get this from Dexscreener
-- "Veilnet builds an encrypted execution layer on Base for private onchain compute using homomorphic encryption and zero knowledge proofs." — same problem, reads like a pitch deck
-- "degens aped, devs shipped" — filler, no lore
-- "the token has appreciated amid renewed interest" — Bloomberg, forbidden
-
-LENGTH: 20-35 words. ONE sentence.
+Bad examples (what NOT to write):
+- "Dolphin is a decentralized AI inference network with uncensored open-weight models and protocol revenue routed to token buybacks" — Wikipedia entry, not lore
+- "jkrdoc just posted the dolphin emoji with $POD and $VVV, amplifying chatter that it is the default model behind Venice and captures revenue as that platform grows" — too packed, sounds like a news brief. The simple version "jkrdoc just posted the dolphin emoji about pod" is better
+- "the team has been doubling down on AI agent narratives amid renewed interest" — Bloomberg, forbidden
+- "degens aped, devs shipped" — pure filler
 
 CRITICAL rules:
-- Lore = NEWS / STORY, not project explanation. If you describe the product for more than 2-4 words, you went the wrong direction.
-- Use the project's NAME (Dolphin, Veilnet, Grantr), not its @handle.
-- If a notable account posted about it (Uniswap, Coinbase, Base, a known founder or KOL like jkrdoc), name them in plain text without the @. Quote or paraphrase their actual take if you have it.
-- Plain English only. If a technical term sneaks in, gloss it briefly in the same sentence. Max one acronym per blurb.
-- Banned phrases: "degens aped", "ratio'd", "shipping nonstop", "sending it", "running it back", "renewed interest", "the token has appreciated", "amid growing", "narrative heats up", "doubling down on".
-- If X and web search return nothing actionable, say so plainly: "no real catalyst and no chatter from the team or broader X, looks like a quiet move on thin liquidity."
+- Match the length to the story complexity. Don't pad simple events.
+- Use the project's plain NAME (Dolphin, Veilnet, Grantr) — never the project's @handle or $TICKER.
+- For external accounts (KOLs, big founders, other protocols), the @handle is FINE and reads naturally ("@jkrdoc", "@elonmusk"). Use it.
+- If you name a person directly (Joe McCann, jkrdoc, Brian Armstrong), no @ needed unless that's the form you've seen them go by online.
+- Plain English. Max one acronym per blurb. If it sneaks in, gloss it briefly.
+- Banned phrases: "degens aped", "ratio'd", "shipping nonstop", "sending it", "running it back", "renewed interest", "the token has appreciated", "amid growing", "narrative heats up", "doubling down on", "amplifying chatter".
+- If X and web search return nothing actionable, say plainly: "no real chatter or team posts, looks like a quiet move on thin liquidity"
 - NEVER use em dashes (—). Use commas, periods, or "and".
 - NEVER include citation markers ([[1]](url), [1]) or inline URLs.
-- Output the single blurb only — no preamble, no quotes, no headers."""
+- Output the single line only — no preamble, no quotes, no headers."""
 
 
 def fetch_lore(mover: dict, timeout: int = 60) -> str:
@@ -118,57 +119,69 @@ def fetch_lore(mover: dict, timeout: int = 60) -> str:
             print(f"    Grok lore HTTP {r.status_code}: {r.text[:300]}")
             return ""
         data = r.json()
-        return _extract_text(data)
+        return _extract_text(data, project_handle=x_handle)
     except Exception as e:
         print(f"    Grok lore err: {e}")
         return ""
 
 
-def _extract_text(data: dict) -> str:
+def _extract_text(data: dict, project_handle: str = "") -> str:
     """Pull the model's text output out of the Responses API JSON.
 
     The /v1/responses payload can put the answer in a few shapes depending on
     tool use. Handles:
       - top-level `output_text` (short-circuit field)
       - `output[].content[].text` for message-type items
+
+    project_handle: the X handle of the project itself. Stripped from output
+    so blurbs read "Veilnet posted" instead of "@Veilnet_ posted". External
+    @handles (KOLs, big founders) are left intact since they read naturally.
     """
     if isinstance(data.get("output_text"), str) and data["output_text"].strip():
-        return data["output_text"].strip()
-
-    output = data.get("output") or []
-    chunks = []
-    for item in output:
-        if item.get("type") != "message":
-            continue
-        for c in item.get("content") or []:
-            text = c.get("text")
-            if isinstance(text, str):
-                chunks.append(text)
-    raw = "\n".join(chunks).strip()
-    return _scrub(raw)
+        raw = data["output_text"].strip()
+    else:
+        output = data.get("output") or []
+        chunks = []
+        for item in output:
+            if item.get("type") != "message":
+                continue
+            for c in item.get("content") or []:
+                text = c.get("text")
+                if isinstance(text, str):
+                    chunks.append(text)
+        raw = "\n".join(chunks).strip()
+    return _scrub(raw, project_handle=project_handle)
 
 
 _CITATION_RE = re.compile(r"\[\[?\d+\]?\]\([^)]*\)")  # [[1]](url) or [1](url)
 _BARE_URL_RE = re.compile(r"https?://\S+")
-# @handles only when they're standalone (not part of an email).
-# Strips the @ but keeps the name word so the sentence stays readable.
-_AT_HANDLE_RE = re.compile(r"(?<![a-zA-Z0-9_])@([A-Za-z0-9_]{1,15})")
 
 
-def _scrub(text: str) -> str:
-    """Final-pass cleanup: strip citation markers, bare URLs, em dashes, @handles.
+def _scrub(text: str, project_handle: str = "") -> str:
+    """Final-pass cleanup: strip citation markers, bare URLs, em dashes, and
+    the PROJECT'S own @handle (external @s preserved — they read naturally
+    like "@jkrdoc dropped a post").
 
-    The system prompt asks Grok to skip these but it doesn't always listen,
-    so we enforce the formatting here as a hard guarantee.
+    The system prompt asks Grok to follow these rules but it doesn't always
+    listen, so we enforce them here as a hard guarantee.
     """
     text = _CITATION_RE.sub("", text)
     text = _BARE_URL_RE.sub("", text)
-    # Drop the @ but keep the handle's name body — so "@jkrdoc dropped" becomes
-    # "jkrdoc dropped". Most handles are recognizable proper nouns already.
-    text = _AT_HANDLE_RE.sub(r"\1", text)
+
+    # Only strip the project's own @handle, leaving external handles intact.
+    ph = (project_handle or "").lstrip("@").strip()
+    if ph:
+        # case-insensitive: "@Veilnet_" or "@veilnet_" both get stripped to "Veilnet_"
+        text = re.sub(
+            rf"(?<![a-zA-Z0-9_])@({re.escape(ph)})\b",
+            r"\1",
+            text,
+            flags=re.IGNORECASE,
+        )
+
     text = text.replace("—", ", ").replace("–", ", ")
     # collapse double spaces and trailing-space artifacts from substitutions
     text = re.sub(r"\s+", " ", text).strip()
-    # tidy up ", ." or " ." artifacts from URL strip
+    # tidy up ", ." or " ." artifacts
     text = re.sub(r"\s*([.,;:!?])", r"\1", text)
     return text

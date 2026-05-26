@@ -1,0 +1,63 @@
+name: Movement Scan (h1)
+
+on:
+  schedule:
+    # 8am-8pm CT (CDT during DST = UTC-5; CST in winter = UTC-6)
+    # We anchor to CDT for now: 8am-8pm CT = 13:00-01:00 UTC.
+    # Two cron lines because the 7-8pm CT window wraps into the next UTC day.
+    #
+    # 8am-6pm CT (Mon-Fri) = 13:00-23:00 UTC same day (Mon-Fri)
+    - cron: "22 13-23 * * 1-5"
+    # 7-8pm CT (Mon-Fri) = 00:00-01:00 UTC next day (Tue-Sat)
+    - cron: "22 0,1 * * 2-6"
+    # During CST (winter) each window shifts back 1 hour in CT.
+    # Total: 13 runs/day x 5 days = 65 runs/week.
+  workflow_dispatch:
+    inputs:
+      h6_fallback:
+        description: "Also try h6 window if h1 finds nothing (manual testing)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  movement:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run movement scan
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GECKOTERMINAL_API_KEY: ${{ secrets.GECKOTERMINAL_API_KEY }}
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+        run: |
+          if [ "${{ inputs.h6_fallback }}" = "true" ]; then
+            python movement_scan.py --alert --h6-fallback
+          else
+            python movement_scan.py --alert
+          fi
+
+      - name: Commit alert state
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f data/movement_alerts.json || true
+          if git diff --staged --quiet; then echo "No alert state changes"; else
+            git commit -m "Movement alert state $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi

@@ -22,17 +22,24 @@ MODEL = "grok-4-fast-reasoning"  # cheap tier; tools API is supported
 # user's feedback_lore_gen_z.md memory file.
 SYSTEM_PROMPT = """You write 1-sentence "lore" blurbs explaining the actual reason a crypto token on Base just pumped or dumped.
 
-The reader can already see the % move and chart. What they want is the LORE: the specific catalyst, news, product drop, narrative, team activity, partnership, or chatter that actually caused this move. Be concrete and substantive.
+The reader is scanning quickly. They can already see the % move and chart. What they need is the LORE: the specific catalyst that caused this move, in plain English.
+
+CRITICAL — clarity over cleverness:
+- A reader who is NOT deep in the project's world should understand the blurb on first read.
+- If you mention a technical term or acronym (MCP, MEV, ZK, RWA, restaking, intent solver, etc.), give a 3-5 word plain-English gloss in the same sentence. Don't make the reader Google it.
+  - Bad: "team tied veilnet MCP directly to base's MCP launch as the privacy layer"
+  - Good: "Base just launched MCP (a new way for AI agents to read wallets and trade onchain), and Veil is positioning their version as the privacy layer for it"
+- If a big crypto-twitter account (Uniswap, Coinbase, Base, a known KOL, a major founder) posted about the token, NAME THEM. That IS the lore. e.g. "Uniswap shared the project + @jkrdoc called it the most asymmetric bet in decentralized inference."
+- Lead with the catalyst, not the move. Don't write "$tkn pumped because…" — write "team shipped X" or "Uniswap posted Y" directly.
 
 Voice:
-- one sentence, casual lowercase, plain language. NOT corporate, NOT a press release.
-- DO NOT lean on crypto-twitter filler like "degens aped", "ratio'd", "no cap", "shipping nonstop", "sending it", "running it back". These phrases tell the reader nothing about WHY. Avoid them in the output. Sparingly use one ("devs been shipping" or "based" or "lowkey") only if it adds flavor AND doesn't displace real info.
-- Bloomberg / analyst phrases are also forbidden: no "renewed interest", "the token has appreciated", "amid growing", "narrative heats up", "doubling down on", "investors are showing".
-- lead with the catalyst, not the move. Bad: "$tkn pumped 80% as devs shipped a new feature." Good: "team just released v2 of the agent framework with native base integration."
-- if you genuinely cannot find anything specific from X or web search, say so plainly ("nothing announced from @handle or in the timeline, looks like a quiet move on thin liquidity") instead of inventing reasons.
-- NEVER use em dashes (—). Use commas, periods, or "and" instead. Hard rule.
-- NEVER include citation markers, footnotes, or source links (no [[1]](url), no inline URLs). Just clean prose.
-- output the blurb only — no preamble, no quotes, no headers."""
+- one sentence, casual lowercase, plain language
+- DO NOT lean on filler like "degens aped", "ratio'd", "shipping nonstop", "sending it", "running it back". They tell the reader nothing.
+- Bloomberg / analyst phrases also forbidden: "renewed interest", "the token has appreciated", "amid growing", "narrative heats up", "doubling down on".
+- If you genuinely cannot find anything in X or web search (including from broader accounts, not just the project handle), say so plainly: "nothing in the timeline from @handle or broader X chatter, looks like a quiet move on thin liquidity." Don't invent reasons.
+- NEVER use em dashes (—). Use commas, periods, or "and" instead.
+- NEVER include citation markers, footnotes, or source links (no [[1]](url), no inline URLs).
+- Output the blurb only, no preamble, no quotes, no headers."""
 
 
 def fetch_lore(mover: dict, timeout: int = 60) -> str:
@@ -62,25 +69,29 @@ def fetch_lore(mover: dict, timeout: int = 60) -> str:
     if website:
         user_prompt += f"Website: {website}. "
     user_prompt += (
-        "Search X for recent posts from this handle and any crypto-twitter chatter about "
-        f"${symbol} on Base in the last 24-48h. Then give me the lore — why is this moving? "
-        "1-2 sentences, casual."
+        f"Search ALL of X broadly for ${symbol} chatter in the last 24-48h — "
+        "not just the project's own handle. Specifically check if any large crypto-twitter "
+        "accounts, founders, KOLs, or protocols (e.g. Uniswap, Coinbase, Base, well-known traders) "
+        "posted about it. Also check the project's own handle"
+    )
+    if x_handle:
+        user_prompt += f" (@{x_handle})"
+    user_prompt += (
+        ". Then give me the lore — the single most important reason this is moving. "
+        "1 sentence, casual, plain English."
     )
 
-    # Tools API: x_search restricted to project handle when known, plus web_search
-    # as a fallback for context outside the handle. Keep tool count minimal so
-    # search cost stays bounded ($25/1k tool calls).
-    x_search_tool = {"type": "x_search"}
-    if x_handle:
-        x_search_tool["allowed_x_handles"] = [x_handle]
-
+    # Tools API: x_search is UNRESTRICTED — we want it to find chatter from
+    # anyone (Uniswap, big crypto-twitter accounts, etc.), not just the
+    # project's own handle. The handle is named in the prompt for guidance
+    # but not locked via allowed_x_handles, which would hide everyone else.
     payload = {
         "model": MODEL,
         "input": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},
         ],
-        "tools": [x_search_tool, {"type": "web_search"}],
+        "tools": [{"type": "x_search"}, {"type": "web_search"}],
         "temperature": 0.6,
         "max_output_tokens": 200,
     }

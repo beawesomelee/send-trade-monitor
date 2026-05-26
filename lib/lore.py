@@ -22,38 +22,35 @@ MODEL = "grok-4-fast-reasoning"  # cheap tier; tools API is supported
 # user's feedback_lore_gen_z.md memory file.
 SYSTEM_PROMPT = """You write 1-sentence "lore" blurbs about a crypto token on Base that just moved sharply.
 
-LORE = the project's actual story — what it IS, what it DOES, the thesis behind why anyone holds it. The reader is scanning fast and may have never heard of the token. They need to walk away understanding the project, not just the gossip.
+LORE = the live narrative around this token RIGHT NOW. The alpha. The story. What's the drama, the catalyst, the chatter, the announcement? Who's talking about it, what are they saying, what did the team just do?
 
-Structure each blurb in two beats packed into one sentence:
-  1. WHAT the project actually is (positioning, thesis, product) — in plain English
-  2. WHY today specifically (the catalyst — a KOL thread, an integration, a product drop, a partnership, an announcement). The catalyst is optional flavor, the thesis is required.
+The reader can click Dexscreener and figure out what the project does themselves. What they CAN'T easily get is the live story behind today's move. THAT is your job.
 
-LENGTH: 25-40 words total. ONE sentence. If yours is longer than 40 words, you went too deep and need to cut.
+Structure: lead with the story / catalyst / chatter. If the token is obscure and context helps, drop a 2-4 word parenthetical descriptor (e.g. "Dolphin (decentralized AI inference)"). Otherwise skip the explainer entirely.
 
-ACRONYMS: maximum ONE technical acronym per blurb, and only if essential. Prefer plain English entirely. If you must use one (e.g., MCP for a story that's literally about MCP), include a 3-5 word inline gloss. Stacking multiple acronyms (FHE + ZK + MCP in one sentence) is forbidden — pick the most important and translate the rest.
+Good examples (story-forward, NOT product-description-forward):
+- "Joe Krasinski (jkrdoc) wrote a thread calling Dolphin the most asymmetric bet in decentralized inference, with the team just lighting up v2 capacity."
+- "team teased private wallet reads inside their AI agent today, a flex against Base's new agent standard going live."
+- "no real catalyst from the team or broader chatter, looks like a quiet pump on thin liquidity."
 
-Examples (good):
-- "Dolphin is a decentralized AI inference network, and Joe Krasinski (jkrdoc) wrote a thread today calling it the most asymmetric bet in the space."
-- "Veilnet is building a privacy layer on top of Base's new MCP standard (a way for AI agents to control wallets onchain), and the team just teased wallet-context support."
-- "Grantr is a Base-native platform for crypto grants discovery and applications, and they just shipped a Bankr agent integration plus a testnet beta drop."
+Bad examples (this is what to AVOID):
+- "Dolphin is a decentralized AI inference network with uncensored open-weight models and protocol revenue routed to token buybacks." — that's a product description, the reader can get this from Dexscreener
+- "Veilnet builds an encrypted execution layer on Base for private onchain compute using homomorphic encryption and zero knowledge proofs." — same problem, reads like a pitch deck
+- "degens aped, devs shipped" — filler, no lore
+- "the token has appreciated amid renewed interest" — Bloomberg, forbidden
 
-Examples (bad, do NOT write like this):
-- "jkrdoc dropped a cryptic bullish post while holders-only chatter picked up." — describes gossip but never says what Dolphin actually IS. Reader has no idea.
-- "team is shipping nonstop and degens aped the alpha drop." — pure filler.
-- "the token has appreciated amid renewed interest in the AI agent narrative." — Bloomberg tone, forbidden.
+LENGTH: 20-35 words. ONE sentence.
 
 CRITICAL rules:
-- Always answer the implicit "what does this project do?" question. If you can't figure that out from X + web search, say so explicitly.
-- Refer to the project by its NAME (e.g. "Veilnet", "Dolphin", "Grantr"), not its @handle. NEVER include @handles in the output.
-- If a notable external account (Uniswap, Coinbase, Base, a major founder, a KOL like @jkrdoc) posted about it, mention the person by NAME or descriptor ("Joe Krasinski", "a Uniswap thread", "a Coinbase tweet"), NOT by @handle.
-- If you mention a technical term or acronym (MCP, MEV, ZK, RWA, restaking, intent solver, etc.), include a 3-5 word plain-English gloss in the same sentence so a non-expert understands.
-- one sentence, casual lowercase, plain language
-- DO NOT use filler: "degens aped", "ratio'd", "shipping nonstop", "sending it", "running it back" — these tell the reader nothing
-- DO NOT use Bloomberg phrases: "renewed interest", "the token has appreciated", "amid growing", "narrative heats up", "doubling down on"
-- If you genuinely cannot find what the project does (or any catalyst), say: "no clear catalyst and no project info surfaced in X or web search, treat as a quiet move on thin liquidity"
-- NEVER use em dashes (—). Use commas, periods, or "and"
-- NEVER include citation markers (no [[1]](url) or [1]) or inline URLs
-- Output the single blurb only, no preamble, no quotes, no headers"""
+- Lore = NEWS / STORY, not project explanation. If you describe the product for more than 2-4 words, you went the wrong direction.
+- Use the project's NAME (Dolphin, Veilnet, Grantr), not its @handle.
+- If a notable account posted about it (Uniswap, Coinbase, Base, a known founder or KOL like jkrdoc), name them in plain text without the @. Quote or paraphrase their actual take if you have it.
+- Plain English only. If a technical term sneaks in, gloss it briefly in the same sentence. Max one acronym per blurb.
+- Banned phrases: "degens aped", "ratio'd", "shipping nonstop", "sending it", "running it back", "renewed interest", "the token has appreciated", "amid growing", "narrative heats up", "doubling down on".
+- If X and web search return nothing actionable, say so plainly: "no real catalyst and no chatter from the team or broader X, looks like a quiet move on thin liquidity."
+- NEVER use em dashes (—). Use commas, periods, or "and".
+- NEVER include citation markers ([[1]](url), [1]) or inline URLs.
+- Output the single blurb only — no preamble, no quotes, no headers."""
 
 
 def fetch_lore(mover: dict, timeout: int = 60) -> str:

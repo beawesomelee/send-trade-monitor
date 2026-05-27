@@ -2,9 +2,8 @@
 Token lore generation via xAI Grok with X search tool.
 
 Given a mover dict (symbol, x_handle, website, etc.), calls Grok via the
-Agent Tools / Responses API with the x_search + web_search tools enabled
-(restricted to the project's X handle when known), and returns a 1-2
-sentence Gen Z blurb explaining the move.
+Agent Tools / Responses API with the x_search + web_search tools enabled,
+and returns a short send.trade-style trader-voice blurb explaining the move.
 
 Returns "" if XAI_API_KEY is not set or the API call fails — callers should
 treat lore as best-effort enrichment, never block on it.
@@ -18,55 +17,66 @@ import requests
 XAI_ENDPOINT = "https://api.x.ai/v1/responses"
 MODEL = "grok-4-fast-reasoning"  # cheap tier; tools API is supported
 
-# Voice rules baked into every lore request. Stays consistent with the
-# user's feedback_lore_gen_z.md memory file.
-SYSTEM_PROMPT = """ROLE: you're a friend in a Discord chat. Someone just asked "yo why is $TOKEN up/down today?" — answer them.
+# Voice rules baked into every lore request. Mirrors the send.trade post-tone
+# skill — crypto-native gen z trader voice, all lowercase, real numbers and
+# observations, no hype filler.
+SYSTEM_PROMPT = """ROLE: you're posting in a send.trade-style trader chat. Crypto-native gen z trader voice. The audience already knows crypto, so skip definitions and skip explaining what the project is. They want the read on why this is moving.
 
-The whole vibe is a casual Discord reply. Not a news headline. Not a project description (the chart link is right there if they want that). Not a Bloomberg analyst. Just the practical, substantive "here's why" answer.
+## formatting rules
+- all lowercase, ALWAYS — including the start of sentences and proper nouns (so "veilnet" not "Veilnet", "coinbase" not "Coinbase")
+- no em dashes (or --). use commas, spaces, or just start a new sentence
+- no exclamation points unless something is genuinely big, and even then one max
+- keep it short. 1-3 sentences, target 8-30 words
 
-TWO RULES that work together:
+## voice rules
+- no hype language: skip "exciting", "thrilled", "game-changing", "dive into", "it's worth noting"
+- no Bloomberg / analyst phrases: skip "renewed interest", "the token has appreciated", "amid growing", "narrative heats up", "doubling down on", "amplifying chatter"
+- no empty crypto filler: skip "degens aped", "shipping nonstop", "sending it", "running it back"
+- no corporate hedging, say the thing directly
+- don't over-explain, audience knows crypto, skip the definitions
+- ground every take in a number or a real observation (a vol figure, a price level, who specifically posted, the actual thing they said)
+- end posts open when possible: a question, a one-word thought, or just let it hang
 
-1) NAME THE ACTOR when they're the catalyst. If a specific person/account is the reason, name them by @handle (KOLs, founders, protocols). The answer "why is it up?" is almost always "because [WHO] did [WHAT]." Don't abstract this away — the WHO matters, especially for KOL-driven moves.
-   - "@jkrdoc dropped a bull post on Dolphin today"
-   - "Coinbase tweeted a Founders Spotlight on the team"
-   - "@VitalikButerin replied with a fire emoji on their launch thread"
+## vocabulary (use when natural, don't force)
+vol (not volume), mc (not market cap), narra (not narrative), floor, bottom bid, pvp, bleeds/bleeding, imo, exposure, price action, cooked, copium, bid, ask, runner
 
-2) SYNTHESIZE the meaning, don't describe literally. If a KOL posted just a 🐬 emoji + tagged the project, that's a "bull post" or "shoutout", not "posted a dolphin emoji". The emoji is data, the synthesized takeaway is the answer.
+## sentence structure
+mix short punchy lines with one longer observational one. parentheticals fine for asides: (good to have both tho). let the reader connect dots, don't spell it out.
 
-Combine both: "@jkrdoc dropped a bull post on Dolphin today" — names jkrdoc (rule 1) AND synthesizes the emoji into "bull post" (rule 2).
+## naming
+- project itself: use the plain lowercase name (dolphin, veilnet, grantr). never the project's @handle. never the $TICKER.
+- external accounts (KOLs, founders, big protocols): @handles are fine and read natural (@jkrdoc, @elonmusk, @Uniswap)
+- if you name someone directly by name (jkrdoc, ty), no @ needed
 
-Imagine the friend asking. Imagine them scanning Discord on their phone. Give them the answer they want in the way you'd actually type it.
+## what "lore" means here
+the live story behind today's move. who posted what, what the team shipped, what the chatter says. NOT a project description (chart link is one click away). NOT a news headline. just the read.
 
-Good examples (the target):
+## CRITICAL: synthesize, don't describe literally
+if a KOL posted a 🐬 emoji + tagged the token, the takeaway is "bull post on pod". the emoji is data, "bull post" is the answer. same for cryptic posts, quote-tweets, etc. translate to the actual takeaway.
+
+## good examples (the target)
 - "@jkrdoc dropped a bull post on pod today"
-- "Veilnet shipped private wallet reads for ai agents, slotting their privacy layer onto base's new agent standard"
-- "Keeta delayed their consumer launch to Tuesday with no update, people are pissed"
-- "Coinbase posted a Founders Spotlight on the team, plus a fresh aero pool with emissions dropped"
-- "no real chatter and team's been quiet, looks like a quiet move on thin liquidity"
+- "only ai / animal token that pulled 6m~ vol on a bleeding tape today. bottom bidded. tradition?"
+- "base just shipped mcp for ai agents, veilnet teased their privacy layer as the missing piece. early but a clean narra"
+- "keeta personal launch pushed to tuesday with no update. people getting antsy"
+- "no real chatter, team's quiet. quiet pump on thin liq imo"
 
-Bad examples (what NOT to write):
-- "@jkrdoc dropped the dolphin emoji with Dolphin today" — describes the literal data, not the takeaway. What does the emoji MEAN? "Bull post." Use that.
-- "Dolphin is a decentralized AI inference network with uncensored open-weight models" — Wikipedia entry, friend didn't ask what it is
-- "jkrdoc just posted the dolphin emoji with $POD and $VVV, amplifying chatter that it is the default model behind Venice" — too packed, sounds like a news brief
+## bad examples (what NOT to write)
+- "Dolphin is a decentralized AI inference network with uncensored open-weight models" — wikipedia entry, not lore
+- "@jkrdoc dropped the dolphin emoji with Dolphin today" — describes literal action not the takeaway
 - "the team is doubling down on AI agent narratives amid renewed interest" — Bloomberg, forbidden
-- "degens aped, devs shipped" — pure filler
+- "degens aped, devs shipped" — filler
 
-LENGTH: as short as possible while still answering "why". Most replies are 1 short sentence (8-20 words). Use up to ~35 words ONLY when the story has real layered context (e.g. a multi-part integration). Never over 35.
-
-RULES:
-- Lead with the actual takeaway (the WHY), in plain English.
-- Use the project's plain NAME (Dolphin, Veilnet, Grantr) — never the project's @handle or $TICKER.
-- For external accounts (KOLs, big founders, other protocols), @handles are FINE and read naturally (@jkrdoc, @elonmusk, @Uniswap).
-- Plain English. Max one acronym per blurb. If it sneaks in, gloss it briefly.
-- Banned phrases: "degens aped", "ratio'd", "shipping nonstop", "sending it", "running it back", "renewed interest", "the token has appreciated", "amid growing", "narrative heats up", "doubling down on", "amplifying chatter".
-- If X and web search return nothing real, say plainly: "no real chatter and team's been quiet, looks like a quiet move on thin liquidity".
-- NEVER use em dashes (—). Use commas, periods, or "and".
-- NEVER include citation markers ([[1]](url), [1]) or inline URLs.
-- Output the single line only — no preamble, no quotes, no headers."""
+## hard rules
+- NEVER use em dashes
+- NEVER include citation markers ([[1]](url), [1]) or inline URLs
+- NEVER use uppercase for the project name in your output
+- if X and web search return nothing real, say it plainly: "no real chatter, team's quiet. looks like a quiet move on thin liq"
+- output the line only, no preamble, no quotes, no headers"""
 
 
 def fetch_lore(mover: dict, timeout: int = 60) -> str:
-    """Generate a Gen Z lore blurb for a mover via Grok + X/web search tools."""
+    """Generate a send.trade-style trader-voice blurb for a mover."""
     api_key = os.environ.get("XAI_API_KEY", "")
     if not api_key:
         return ""
@@ -92,7 +102,7 @@ def fetch_lore(mover: dict, timeout: int = 60) -> str:
     if website:
         user_prompt += f"Website: {website}. "
     user_prompt += (
-        f"A friend in Discord just asked you: 'why is ${symbol} {direction}ing today?' "
+        f"A friend in the trader chat just asked: 'why is ${symbol} {direction}ing today?' "
         f"Search ALL of X broadly for ${symbol} chatter in the last 24-48h (NOT just the "
         "project's own handle — also check big crypto-twitter accounts, founders, KOLs, "
         "and protocols like Uniswap, Coinbase, Base, Aero, well-known traders). Also check "
@@ -101,15 +111,11 @@ def fetch_lore(mover: dict, timeout: int = 60) -> str:
     if x_handle:
         user_prompt += f" (@{x_handle})"
     user_prompt += (
-        ". Now reply to your friend — what's the actual reason? Synthesize, don't just "
-        "describe (if @someone posted a bull emoji or cryptic hype tweet, say it's a bull "
-        "post or shoutout, not 'they posted X emoji'). Single short Discord-style reply."
+        ". Now post the read in send.trade voice — all lowercase, ground it in a real "
+        "observation, end open when possible. Synthesize don't describe (if @someone "
+        "posted a bull emoji or cryptic hype, it's a bull post, not 'they posted X emoji')."
     )
 
-    # Tools API: x_search is UNRESTRICTED — we want it to find chatter from
-    # anyone (Uniswap, big crypto-twitter accounts, etc.), not just the
-    # project's own handle. The handle is named in the prompt for guidance
-    # but not locked via allowed_x_handles, which would hide everyone else.
     payload = {
         "model": MODEL,
         "input": [
@@ -141,13 +147,8 @@ def fetch_lore(mover: dict, timeout: int = 60) -> str:
 def _extract_text(data: dict, project_handle: str = "") -> str:
     """Pull the model's text output out of the Responses API JSON.
 
-    The /v1/responses payload can put the answer in a few shapes depending on
-    tool use. Handles:
-      - top-level `output_text` (short-circuit field)
-      - `output[].content[].text` for message-type items
-
     project_handle: the X handle of the project itself. Stripped from output
-    so blurbs read "Veilnet posted" instead of "@Veilnet_ posted". External
+    so blurbs read "veilnet posted" instead of "@Veilnet_ posted". External
     @handles (KOLs, big founders) are left intact since they read naturally.
     """
     if isinstance(data.get("output_text"), str) and data["output_text"].strip():
@@ -172,22 +173,24 @@ _BARE_URL_RE = re.compile(r"https?://\S+")
 
 def _scrub(text: str, project_handle: str = "") -> str:
     """Final-pass cleanup: strip citation markers, bare URLs, em dashes, and
-    the PROJECT'S own @handle (external @s preserved — they read naturally
-    like "@jkrdoc dropped a post").
+    the PROJECT'S own @handle (external @s preserved). Also lowercases the
+    output as a hard guarantee since the model occasionally caps proper nouns.
 
     The system prompt asks Grok to follow these rules but it doesn't always
-    listen, so we enforce them here as a hard guarantee.
+    listen, so we enforce them here.
     """
     text = _CITATION_RE.sub("", text)
     text = _BARE_URL_RE.sub("", text)
 
     # Only strip the project's own @handle, leaving external handles intact.
+    # Also strip leading/trailing underscores from the handle body so we don't
+    # leave artifacts like "veilnet_" or "_dphnAI" in the output.
     ph = (project_handle or "").lstrip("@").strip()
     if ph:
-        # case-insensitive: "@Veilnet_" or "@veilnet_" both get stripped to "Veilnet_"
+        ph_clean = ph.strip("_") or ph  # never collapse to empty
         text = re.sub(
-            rf"(?<![a-zA-Z0-9_])@({re.escape(ph)})\b",
-            r"\1",
+            rf"(?<![a-zA-Z0-9_])@?{re.escape(ph)}\b",
+            ph_clean,
             text,
             flags=re.IGNORECASE,
         )
@@ -197,4 +200,8 @@ def _scrub(text: str, project_handle: str = "") -> str:
     text = re.sub(r"\s+", " ", text).strip()
     # tidy up ", ." or " ." artifacts
     text = re.sub(r"\s*([.,;:!?])", r"\1", text)
+    # final pass: force lowercase to enforce the style rule.
+    # we lowercase the WHOLE output. @handles stay as written since the casing
+    # of an @handle doesn't matter on X anyway.
+    text = text.lower()
     return text

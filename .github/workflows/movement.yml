@@ -1,8 +1,12 @@
 name: Movement Scan (h1)
 
 on:
+  # External hourly trigger via cron-job.org -> repository_dispatch webhook.
+  # PRIMARY trigger (GH native cron is unreliable; drops runs under load).
+  repository_dispatch:
+    types: [hourly-movement]
+  # Native GH cron as a backstop in case the external service is down.
   schedule:
-    # Hourly, 24/7. Single cron at :22 past each hour.
     - cron: "22 * * * *"
   workflow_dispatch:
     inputs:

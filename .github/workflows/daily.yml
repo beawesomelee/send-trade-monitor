@@ -1,8 +1,13 @@
 name: Send.Trade Scan
 
 on:
+  # External hourly trigger via cron-job.org -> repository_dispatch webhook.
+  # This is the PRIMARY trigger because GH's native cron silently drops runs
+  # under platform load.
+  repository_dispatch:
+    types: [hourly-scan]
+  # Native GH cron as a backstop in case the external service is down.
   schedule:
-    # Hourly, 24/7. Single cron at :12 past each hour.
     - cron: "12 * * * *"
   workflow_dispatch:
     inputs:

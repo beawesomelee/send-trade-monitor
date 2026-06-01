@@ -2,16 +2,12 @@ name: Movement Scan (h1)
 
 on:
   schedule:
-    # 8am-8pm CT (CDT during DST = UTC-5; CST in winter = UTC-6)
-    # We anchor to CDT for now: 8am-8pm CT = 13:00-01:00 UTC.
-    # Two cron lines because the 7-8pm CT window wraps into the next UTC day.
-    #
-    # 8am-6pm CT (Mon-Fri) = 13:00-23:00 UTC same day (Mon-Fri)
-    - cron: "22 13-23 * * 1-5"
-    # 7-8pm CT (Mon-Fri) = 00:00-01:00 UTC next day (Tue-Sat)
-    - cron: "22 0,1 * * 2-6"
-    # During CST (winter) each window shifts back 1 hour in CT.
-    # Total: 13 runs/day x 5 days = 65 runs/week.
+    # Hourly, 24/7, every day of the week. Two staggered crons so GH Actions
+    # scheduler drops at most one of any given hour pair (it routinely
+    # silently skips cron runs under platform load — staggering gives the
+    # hour redundancy).
+    - cron: "22 * * * *"
+    - cron: "52 * * * *"
   workflow_dispatch:
     inputs:
       h6_fallback:

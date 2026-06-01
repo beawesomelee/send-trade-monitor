@@ -2,11 +2,8 @@ name: Send.Trade Scan
 
 on:
   schedule:
-    # Hourly, 24/7, every day. Two staggered crons so GH Actions scheduler
-    # drops at most one of any given hour pair (it routinely silently skips
-    # cron runs under platform load — staggering gives the hour redundancy).
+    # Hourly, 24/7. Single cron at :12 past each hour.
     - cron: "12 * * * *"
-    - cron: "42 * * * *"
   workflow_dispatch:
     inputs:
       backfill:

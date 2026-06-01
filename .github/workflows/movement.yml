@@ -2,12 +2,8 @@ name: Movement Scan (h1)
 
 on:
   schedule:
-    # Hourly, 24/7, every day of the week. Two staggered crons so GH Actions
-    # scheduler drops at most one of any given hour pair (it routinely
-    # silently skips cron runs under platform load — staggering gives the
-    # hour redundancy).
+    # Hourly, 24/7. Single cron at :22 past each hour.
     - cron: "22 * * * *"
-    - cron: "52 * * * *"
   workflow_dispatch:
     inputs:
       h6_fallback:

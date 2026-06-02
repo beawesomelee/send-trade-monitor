@@ -60,15 +60,6 @@ def push_lore(mover: dict, timeout: int = 15) -> dict | None:
     if not address:
         return None
 
-    # The endpoint validates tokenAddress as `0x-prefixed 40-char hex` even
-    # though docs claim Solana base58 (≤44 chars) is supported. As of
-    # 2026-06-02 the API rejects Solana addresses with HTTP 400. Skip them
-    # client-side so we don't log noise on every Solana mover. Revisit when
-    # Send.Trade adds Solana support.
-    chain_slug = (mover.get("chain_slug") or "").lower()
-    if chain_slug == "solana" or not address.startswith("0x") or len(address) != 42:
-        return None
-
     payload = {
         "tokenAddress": address,
         "description": description,

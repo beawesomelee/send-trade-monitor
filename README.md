@@ -8,7 +8,7 @@ Two cron-driven scanners that automate token discovery and pump/dump tracking fo
 Surfaces tokens that meet the Send.Trade verification bar but aren't yet on the verified list. Posts new pending candidates to a Google Sheet and pings Discord.
 
 ### 2. Movement scanner (`movement_scan.py`)
-Detects sharp 1-hour pumps (≥+80%) and dumps (≤-50%) on Base + Solana, generates a 1-sentence lore blurb via Grok (live X search) explaining the move, and pings Discord. For Base tokens, the lore is also auto-posted to Send.Trade's admin panel via `POST /admin/lore/logs` so it lands directly in the product UI. The Discord alert surfaces the resulting lore ID so Austin can delete from the admin panel if a particular auto-post isn't relevant. Solana tokens are skipped client-side until Send.Trade's endpoint accepts base58 addresses (currently it validates `tokenAddress` as `0x`-prefixed 40-char hex).
+Detects sharp 1-hour pumps (≥+80%) and dumps (≤-50%) on Base + Solana, generates a 1-sentence lore blurb via Grok (live X search) explaining the move, and pings Discord. The lore is also auto-posted to Send.Trade's admin panel via `POST /admin/lore/logs` so it lands directly in the product UI (both Base and Solana addresses supported). The Discord alert surfaces the resulting lore ID so Austin can delete from the admin panel if a particular auto-post isn't relevant.
 
 Both run hourly 24/7.
 
@@ -59,9 +59,9 @@ flowchart TD
     J -->|yes| Z2[Drop, already alerted recently]
     J -->|no| K[For each surviving mover:<br/>call Grok with x_search + web_search tools]
     K --> L[Grok returns 1-sentence lore<br/>send.trade trader voice]
-    L --> M{Base chain &amp; lore non-empty?}
-    M -->|yes| N[POST to Send.Trade /admin/lore/logs<br/>get back lore_id]
-    M -->|no Solana, or empty lore| O[Skip Send.Trade push]
+    L --> M{Lore non-empty?}
+    M -->|yes| N[POST to Send.Trade /admin/lore/logs<br/>Base + Solana both supported<br/>get back lore_id]
+    M -->|no| O[Skip Send.Trade push]
     N --> P[POST Discord alert with lore + Send.Trade lore_id]
     O --> P
     P --> Q[Update cooldown state]

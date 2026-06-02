@@ -116,18 +116,24 @@ def upsert(ws: gspread.Worksheet, existing: list[dict], candidates: list[dict],
            dismissed_set: set[tuple] | None = None) -> dict:
     """Upsert candidates into the sheet. Returns stats dict.
 
-    dismissed_set: set of (chain_slug, lowercase_address) that Austin has dismissed.
+    dismissed_set: set of (chain_slug, normalized_address) that Austin has dismissed.
     These are added to from any existing rows with status=dismissed (those rows
     get deleted and recorded), and used to skip future re-discovery.
+
+    Address case rules:
+    - Base (chain_id 8453): EVM hex, case-insensitive, lowercased for matching.
+    - Solana (chain_id 501474): base58, CASE-SENSITIVE, preserved as-is.
     """
-    from lib.send_trade import is_verified
+    from lib.send_trade import is_verified, _norm_addr
 
     if dismissed_set is None:
         dismissed_set = set()
 
     index = {}
     for i, row in enumerate(existing):
-        key = (str(row.get("chain_id", "")), row.get("address", "").lower())
+        cid = row.get("chain_id", "")
+        addr = _norm_addr(cid, row.get("address", ""))
+        key = (str(cid), addr)
         index[key] = (i, row)
 
     stats = {"new_pending": 0, "updated": 0, "auto_verified": 0, "dismissed": 0, "still_pending": 0}
@@ -136,8 +142,9 @@ def upsert(ws: gspread.Worksheet, existing: list[dict], candidates: list[dict],
     rows_to_delete = []
 
     for c in candidates:
-        key = (str(c["chain_id"]), c["address"].lower())
-        chain_addr = (c["chain_slug"], c["address"].lower())
+        addr = _norm_addr(c["chain_id"], c["address"])
+        key = (str(c["chain_id"]), addr)
+        chain_addr = (c["chain_slug"], addr)
 
         # never re-add anything previously dismissed
         if chain_addr in dismissed_set:
@@ -183,18 +190,21 @@ def upsert(ws: gspread.Worksheet, existing: list[dict], candidates: list[dict],
     # Any row whose address is in Send.Trade's verified list gets deleted,
     # regardless of stored status (handles manual "Verified" edits + verified
     # tokens that dropped below thresholds and stopped being rediscovered).
-    candidate_keys = {(str(c["chain_id"]), c["address"].lower()) for c in candidates}
+    candidate_keys = {
+        (str(c["chain_id"]), _norm_addr(c["chain_id"], c["address"]))
+        for c in candidates
+    }
     for key, (idx, row) in index.items():
         if key in candidate_keys:
             continue
         status = row.get("status", "pending").strip().lower()
-        addr_lower = key[1]
+        addr_norm = key[1]  # already normalized when index was built
         chain_name = (row.get("chain_name") or "").lower().strip()
 
         if status == "dismissed":
             # record + delete dismissed rows we didn't touch above
             if chain_name:
-                dismissed_set.add((chain_name, addr_lower))
+                dismissed_set.add((chain_name, addr_norm))
             rows_to_delete.append(idx + 2)
             stats["dismissed"] += 1
             continue
@@ -205,7 +215,7 @@ def upsert(ws: gspread.Worksheet, existing: list[dict], candidates: list[dict],
             chain_id_parsed = int(chain_id_val)
         except ValueError:
             chain_id_parsed = chain_id_val
-        if (chain_id_parsed, addr_lower) in verified_set:
+        if (chain_id_parsed, addr_norm) in verified_set:
             rows_to_delete.append(idx + 2)
             stats["auto_verified"] += 1
             continue

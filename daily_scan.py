@@ -105,15 +105,17 @@ def main():
     # mark _is_new only for tokens that will actually be inserted as pending —
     # i.e. NOT in the sheet AND NOT already verified by Send.Trade AND NOT dismissed.
     # Prevents Discord/Telegram from announcing rediscovered already-verified tokens.
+    # Address normalization is chain-aware: Solana base58 is case-sensitive.
+    from lib.send_trade import is_verified, _norm_addr
     existing_keys = {
-        (str(row.get("chain_id", "")), row.get("address", "").lower())
+        (str(row.get("chain_id", "")), _norm_addr(row.get("chain_id", ""), row.get("address", "")))
         for row in existing_rows
     }
-    from lib.send_trade import is_verified
     dismissed_now = _load_dismissed()
     for c in candidates:
-        key = (str(c["chain_id"]), c["address"].lower())
-        chain_addr = (c["chain_slug"], c["address"].lower())
+        addr = _norm_addr(c["chain_id"], c["address"])
+        key = (str(c["chain_id"]), addr)
+        chain_addr = (c["chain_slug"], addr)
         c["_is_new"] = (
             key not in existing_keys
             and not is_verified(c, verified_set)
@@ -180,7 +182,9 @@ def _incremental_discovery(config: dict, existing_rows: list) -> list[dict]:
     seen = set()
     out = []
     for c in refreshed + new_candidates:
-        k = (c["chain_slug"], c["address"].lower())
+        # Solana addresses are case-sensitive — only lowercase Base
+        addr_key = c["address"].lower() if c["chain_slug"] == "base" else c["address"]
+        k = (c["chain_slug"], addr_key)
         if k in seen:
             continue
         seen.add(k)
@@ -252,13 +256,21 @@ def _fetch_gt_token_info(chain_slug: str, address: str) -> tuple:
 
 
 def _load_dismissed() -> set:
-    """Load the persistent set of (chain_slug, address_lower) dismissed by Austin."""
+    """Load the persistent set of (chain_slug, normalized_address) dismissed by Austin.
+
+    Solana addresses are case-sensitive (base58); Base addresses are lowercased.
+    """
     path = SCRIPT_DIR / "data" / "dismissed.json"
     if not path.exists():
         return set()
     try:
         data = json.loads(path.read_text())
-        return {(item["chain_slug"], item["address"].lower()) for item in data}
+        out = set()
+        for item in data:
+            slug = item["chain_slug"]
+            addr = item["address"]
+            out.add((slug, addr.lower() if slug == "base" else addr))
+        return out
     except Exception:
         return set()
 

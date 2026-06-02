@@ -97,7 +97,7 @@ def main():
     _print_movers(new_movers)
 
     if args.alert:
-        print("\n4. sending alerts...")
+        print("\n5. sending alerts...")
         _send_alerts(new_movers, config)
         record_alerts(new_movers, retained)
         print("   recorded cooldown state")

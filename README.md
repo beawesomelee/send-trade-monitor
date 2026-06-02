@@ -24,7 +24,7 @@ flowchart TD
     D --> E[Refresh known pending tokens<br/>via DexScreener]
     E --> F[Discover new candidates<br/>from 4 sources combined]
     F --> F1[DS token-profiles + boosts]
-    F --> F2[DS keyword search<br/>~40 queries]
+    F --> F2[DS keyword search<br/>45 queries]
     F --> F3[GT top-volume pools<br/>pages 1-10]
     F --> F4[GT trending_pools]
     F1 & F2 & F3 & F4 --> G[Dedupe by chain + address]
@@ -105,7 +105,7 @@ A token must clear all of:
 | Min market cap | $1,000,000 |
 | Min liquidity per pool | $30,000 |
 | Logo on DexScreener | required (filters wash-trade scams) |
-| Cooldown | 4h per (chain, address, direction) |
+| Cooldown | 4h per (chain, address, direction). Entries older than 48h are pruned from `data/movement_alerts.json` but the active cooldown window is 4h |
 
 Surviving alerts get a 1-sentence "lore log" via Grok with live X search. Voice spec lives in `lib/lore.py` `SYSTEM_PROMPT` — send.trade trader voice (all lowercase, slang vocab, end-open).
 
@@ -114,7 +114,7 @@ Surviving alerts get a 1-sentence "lore log" via Grok with live X search. Voice 
 The verification scanner combines four discovery channels per run, deduping by `(chain, address)`:
 
 1. **DexScreener token-profiles + token-boosts (latest + top)** — curated trending tokens DS surfaces
-2. **DexScreener keyword search** — ~40 queries (chain names, popular tokens, meme tags)
+2. **DexScreener keyword search** — 45 queries defined in `DS_WIDE_QUERIES` (chain names, popular tokens, meme tags)
 3. **GeckoTerminal top-volume pools** — pages 1-10 per chain (CoinGecko Pro caps at page 10)
 4. **GeckoTerminal trending pools** — different sort algorithm, surfaces meme tokens that are buried by stablecoin pairs on top-vol pages
 
@@ -138,7 +138,7 @@ These are gotchas we hit and fixed during build — calling them out so they don
 ### 1. Solana base58 addresses are case-sensitive
 The original code lowercased addresses uniformly for matching. `EPjFWdd5...` lowercased becomes `epjfwdd5...` — a completely different address in base58. Solana tokens were falsely appearing as "new pending" instead of being matched against Send.Trade's verified list.
 
-Fix lives in `lib/send_trade.py._norm_addr()`. Always use this helper when keying on `(chain_id, address)`. It lowercases only for Base (chain_id 8453) and preserves case for Solana (501474). All callers updated: `is_verified()`, `sheets.upsert()`, `daily_scan._is_new` flag, dedup logic.
+Fix lives in `lib/send_trade.py._norm_addr()`. It lowercases only for Base (chain_id 8453) and preserves case for Solana (501474). Callers: `is_verified()`, `sheets.upsert()`, and `daily_scan._is_new` flag use `_norm_addr` directly. The `_incremental_discovery` dedup uses an equivalent inline expression (`addr.lower() if chain == "base" else addr`) — same behavior, just hasn't been refactored to call `_norm_addr`. When extending: prefer `_norm_addr` over duplicating the logic.
 
 ### 2. CoinGecko Pro caps GT pool pagination at page 10
 You cannot paginate `/networks/{chain}/pools` past page 10 on the Basic tier ($29/mo). Page 11+ returns 401. This matters for Solana because the top 200 pools are dominated by stablecoin pairs (SOL/USDC at $100M+/day each) — meme tokens with $1-5M/day vol live on pages 30+.
@@ -170,10 +170,14 @@ DS keyword search produces a lot of long-tail noise, so we age-gate it. But GT t
 ### 6. Lore voice iteration
 The Grok system prompt went through several rewrites. Final voice = "send.trade trader chat" — all lowercase, ground in numbers, end-open posts, banned filler list ("degens aped", "shipping nonstop", etc.). See `lib/lore.py` `SYSTEM_PROMPT`. The scrub layer (`_scrub`) enforces lowercasing + strips citation markers + project-handle @s before output.
 
-External KOL @handles (`@jkrdoc`, `@Uniswap`) are kept. Project's own @handle is stripped (`@dphnAI` → `dphnAI`). The handle to strip is passed at call-site from `mover["x_handle"]`.
+External KOL @handles are kept (the `@` survives), but `_scrub` lowercases the entire output as a final pass, so `@Uniswap` will render as `@uniswap`. Project's own @handle is stripped entirely (`@dphnAI` → `dphnai` after lowercasing). The project handle to strip is passed at call-site from `mover["x_handle"]`.
 
 ### 7. Workflows can auto-disable after 60 days inactivity
-GH disables scheduled workflows in repos with no commits for 60 days. Both workflows commit data files (`data/snapshots/`, `data/movement_alerts.json`, `data/dismissed.json`) every run, which prevents this. Don't strip those commit steps.
+GH disables scheduled workflows in repos with no commits for 60 days. Each workflow has a final "commit data files" step:
+- `daily.yml` commits `data/snapshots/`, `data/decimals_cache.json`, `data/dismissed.json`
+- `movement.yml` commits `data/movement_alerts.json`
+
+Between them there's at least one commit per hour, which keeps both workflows armed. Don't strip those commit steps.
 
 ### 8. Solana memes' total vol can be aggregated, but top-10 GT page floor is ~$8M/pool
 Even with the fix in (3), the discovery step won't surface mid-cap Solana memes whose top single pool has <$8M/day vol. They simply never enter the `discovery_addrs` set. The trending_pools endpoint partially addresses this, but if you want truly comprehensive Solana coverage, additional discovery (Raydium/Orca-specific pool listings, DS profile/boosts heavier weighting) would help.
@@ -204,9 +208,9 @@ send-trade-monitor/
 │   └── lore.py                # Grok lore generation via xAI Responses API
 ├── data/
 │   ├── snapshots/             # daily JSON snapshots (auto-committed by daily.yml)
-│   ├── dismissed.json         # sticky dismiss list (auto-committed)
-│   ├── movement_alerts.json   # 48h cooldown state (auto-committed by movement.yml)
-│   └── decimals_cache.json    # decimals lookup cache (auto-committed)
+│   ├── dismissed.json         # sticky dismiss list (auto-committed by daily.yml)
+│   ├── movement_alerts.json   # 4h cooldown state, 48h prune horizon (created on first movement run, auto-committed by movement.yml)
+│   └── decimals_cache.json    # decimals lookup cache (auto-committed by daily.yml)
 └── credentials/               # gitignored — local OAuth client_secret JSON only
 ```
 
@@ -223,7 +227,7 @@ send-trade-monitor/
 | `ALCHEMY_API_KEY` *(optional)* | On-chain Base decimals | [alchemy.com](https://www.alchemy.com) |
 | `HELIUS_API_KEY` *(optional)* | On-chain Solana decimals | [helius.dev](https://www.helius.dev) |
 
-`GOOGLE_SHEETS_CREDENTIALS` is unused (we use user OAuth, not service account). Can be removed.
+`GOOGLE_SHEETS_CREDENTIALS` is unused at runtime (we use user OAuth), but `lib/sheets.py` still has the service-account fallback code path (`_load_service_account_creds`). If you keep the GH Actions secret empty, the fallback no-ops and the OAuth path takes over. To fully retire it: delete the secret, remove the env line from `daily.yml`, and delete `_load_service_account_creds` + its caller branch.
 
 ## External cron (cron-job.org)
 
@@ -252,8 +256,8 @@ python daily_scan.py --dry-run
 python movement_scan.py --h6-fallback   # falls back to h6 if h1 is empty
 
 # Real runs
-python daily_scan.py
-python movement_scan.py --alert
+python daily_scan.py                     # always posts to Discord if new_pending > 0
+python movement_scan.py --alert          # production cron always passes --alert; without it, the scanner just prints to console
 ```
 
 ---
@@ -270,7 +274,7 @@ Some keys were pasted in Claude conversations during build and should be rotated
   → update GH Actions secret `XAI_API_KEY`
 - [ ] **GitHub PAT** (used by cron-job.org)
   → [github.com/settings/personal-access-tokens](https://github.com/settings/personal-access-tokens) → revoke old + generate new fine-grained PAT
-  → scopes needed: `Contents: Read+Write`, `Actions: Read+Write`, repo scope = `send-trade-monitor`
+  → scope needed: `Contents: Read and write` (only this — the `repository_dispatch` endpoint reads it). Resource: `send-trade-monitor` only.
   → update the Authorization header value on BOTH cron-job.org jobs (use `Bearer <new_pat>`)
 - [ ] **Google OAuth token** *(only if Austin wants to disconnect his personal Google account)*
   → revoke at [myaccount.google.com → Security → Third-party apps](https://myaccount.google.com/permissions)
@@ -284,9 +288,9 @@ Some keys were pasted in Claude conversations during build and should be rotated
 
 ### 🗑 Delete from GH secrets (no longer used)
 
-- `TELEGRAM_BOT_TOKEN`
-- `TELEGRAM_CHAT_ID`
-- `GOOGLE_SHEETS_CREDENTIALS` (we use OAuth, not service account)
+- `TELEGRAM_BOT_TOKEN` (Telegram integration removed)
+- `TELEGRAM_CHAT_ID` (Telegram integration removed)
+- `GOOGLE_SHEETS_CREDENTIALS` (only needed if you want to use the service-account fallback path; we use user OAuth)
 
 ---
 
@@ -366,16 +370,18 @@ The system is silent when:
 - All discovered candidates are either already verified, already in sheet, or below thresholds
 - Filters dropped a candidate (e.g., no logo = wash-trade scam)
 
-A run that shows `new=0, updated=N, verified=N` is HEALTHY, not broken. Notifications gate on `new_pending > 0` for daily, and `survives all filters` for movement.
+A run that shows `new=0, updated=N, verified=N` is healthy, not broken. Notifications gate on `new_pending > 0` for daily (see `lib/discord.py.send_summary`, which silently returns when zero) and on at-least-one-mover-survives-all-filters for movement.
 
 ### Costs
 
 | service | tier | cost |
 |---|---|---|
-| GitHub Actions | Free (private repo, ~2000 min/mo cap) | $0 |
+| GitHub Actions (private repo) | Free, 2,000 min/mo cap | likely $0, possibly throttle-risky |
 | CoinGecko Pro | Basic | $29/mo |
 | cron-job.org | Free | $0 |
 | xAI Grok | Pay-per-token (opt into data sharing for $175/mo credits) | $0-5/mo |
 | DexScreener | Free | $0 |
 
 Total: ~$30/mo assuming the xAI free credits are active.
+
+GH Actions usage estimate: 24 daily.yml runs/day × ~2 min + 24 movement.yml runs/day × ~30s = ~60 min/day = ~1,800 min/mo. That's right at the 2,000-min Free-tier cap for private repos. If the daily scan slows down (Solana per-token aggregation already added ~3 min) you may need to upgrade to GitHub Pro ($4/mo, 3,000 min) or make the repo public (unlimited free Actions). The minute cap is the only real cost pressure point.

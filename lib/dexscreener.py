@@ -378,7 +378,23 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
         if new:
             discovery_addrs.setdefault(chain_slug, []).extend(new)
     gt_total = sum(len(v) for v in gt_addrs.values())
-    print(f"  collected {ds_total} addresses from DS, +{gt_total} from GT top pools "
+
+    # ALSO pull GT trending_pools. On chains like Solana, the top-vol pages
+    # are saturated by stablecoin pairs so meme tokens with $1-5M/day vol
+    # never make our pagination cap. trending_pools surfaces those by
+    # momentum instead of raw rank. Same age-bypass as top-pool addresses.
+    trending_addrs = _gt_trending_addresses(config["chains"])
+    for chain_slug, addrs in trending_addrs.items():
+        for a in addrs:
+            gt_addr_set.add((chain_slug, _norm(a, chain_slug)))
+        existing = set(discovery_addrs.get(chain_slug, []))
+        new = [a for a in addrs if a not in existing]
+        if new:
+            discovery_addrs.setdefault(chain_slug, []).extend(new)
+    trending_total = sum(len(v) for v in trending_addrs.values())
+
+    print(f"  collected {ds_total} addresses from DS, +{gt_total} from GT top pools, "
+          f"+{trending_total} from GT trending "
           f"({sum(len(v) for v in discovery_addrs.values())} unique total)")
 
     cutoff_ms = int((time.time() - max_age_days * 86400) * 1000)
@@ -695,6 +711,50 @@ def _gt_top_addresses_daily(chains: list[dict]) -> dict:
             except Exception as e:
                 print(f"    GT daily {slug} page {page} err: {e}")
                 break
+
+    return {k: list(v) for k, v in addrs_by_chain.items()}
+
+
+def _gt_trending_addresses(chains: list[dict]) -> dict:
+    """Discovery via GT's trending_pools endpoint.
+
+    Complements _gt_top_addresses_daily (which sorts by raw 24h vol) — on
+    chains like Solana, the top-vol pages are dominated by stablecoin pairs,
+    so meme tokens never make page 10. trending_pools uses GT's own
+    momentum heuristic which surfaces fresh / accelerating tokens regardless
+    of where their TOTAL volume ranks.
+
+    Returns {chain_slug: [base_token_addresses]}.
+    """
+    url_template, headers, base_delay = _gt_endpoint()
+    # trending_pools is a different endpoint path, swap "pools" -> "trending_pools"
+    trending_template = url_template.replace("/pools", "/trending_pools")
+
+    addrs_by_chain = defaultdict(set)
+    for chain_cfg in chains:
+        slug = chain_cfg["slug"]
+        if slug not in SUPPORTED_DS_CHAINS:
+            continue
+        network = NETWORK_MAP.get(slug, {}).get("gt_network", slug)
+        time.sleep(base_delay)
+        try:
+            r = requests.get(
+                trending_template.format(network=network),
+                params={"page": 1},
+                headers=headers,
+                timeout=15,
+            )
+            if r.status_code != 200:
+                print(f"    GT trending {slug}: HTTP {r.status_code}")
+                continue
+            for p in r.json().get("data", []):
+                rels = p.get("relationships", {})
+                base_id = (rels.get("base_token") or {}).get("data", {}).get("id", "")
+                addr = base_id.split("_", 1)[1] if "_" in base_id else ""
+                if addr:
+                    addrs_by_chain[slug].add(_norm(addr, slug))
+        except Exception as e:
+            print(f"    GT trending {slug} err: {e}")
 
     return {k: list(v) for k, v in addrs_by_chain.items()}
 

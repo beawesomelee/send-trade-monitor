@@ -12,7 +12,7 @@ Steps:
   3. Fetch decimals (cached)
   4. Upsert into Google Sheet
   5. Save daily snapshot
-  6. Send Telegram summary
+  6. Send Discord summary
 """
 
 import argparse
@@ -36,7 +36,6 @@ from lib.dexscreener import (
 from lib.send_trade import fetch_verified
 from lib.decimals import get_decimals
 from lib.sheets import load_sheet, upsert
-from lib.telegram import send_summary as send_telegram
 from lib.discord import send_summary as send_discord
 
 NEW_TOKEN_MAX_AGE_DAYS = 7
@@ -49,7 +48,7 @@ def load_config() -> dict:
 def main():
     parser = argparse.ArgumentParser(description="Send.Trade verification monitor")
     parser.add_argument("--dry-run", action="store_true",
-                        help="Fetch data but don't write to sheet or send Telegram")
+                        help="Fetch data but don't write to sheet or send Discord")
     parser.add_argument("--backfill", action="store_true",
                         help="Exhaustive backfill via GeckoTerminal (use for first run)")
     args = parser.parse_args()
@@ -104,7 +103,7 @@ def main():
 
     # mark _is_new only for tokens that will actually be inserted as pending —
     # i.e. NOT in the sheet AND NOT already verified by Send.Trade AND NOT dismissed.
-    # Prevents Discord/Telegram from announcing rediscovered already-verified tokens.
+    # Prevents Discord from announcing rediscovered already-verified tokens.
     # Address normalization is chain-aware: Solana base58 is case-sensitive.
     from lib.send_trade import is_verified, _norm_addr
     existing_keys = {
@@ -123,15 +122,13 @@ def main():
         )
 
     if args.dry_run:
-        print("\n[dry-run] skipping sheet update and Telegram")
+        print("\n[dry-run] skipping sheet update and Discord")
         stats = {
             "new_pending": sum(1 for c in candidates if c["_is_new"]),
             "still_pending": sum(1 for c in candidates if not c["_is_new"]),
             "auto_verified": 0,
             "dismissed": 0,
         }
-        send_telegram(stats, candidates, "https://docs.google.com/spreadsheets/d/DRY_RUN",
-                      top_n=config["telegram"].get("top_n", 5), dry_run=True)
         send_discord(stats, candidates, "https://docs.google.com/spreadsheets/d/DRY_RUN",
                      dry_run=True)
         print("done (dry-run)")
@@ -145,11 +142,8 @@ def main():
     print(f"   new={stats['new_pending']}, updated={stats['updated']}, "
           f"verified={stats['auto_verified']}, dismissed={stats['dismissed']}")
 
-    # 7. notifications
-    print("6. sending Telegram summary...")
-    send_telegram(stats, candidates, sheet_url,
-                  top_n=config["telegram"].get("top_n", 5))
-    print("7. sending Discord summary...")
+    # 6. notification
+    print("6. sending Discord summary...")
     send_discord(stats, candidates, sheet_url)
 
     print("=== done ===")

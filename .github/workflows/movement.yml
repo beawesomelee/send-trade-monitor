@@ -36,8 +36,6 @@ jobs:
 
       - name: Run movement scan
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           GECKOTERMINAL_API_KEY: ${{ secrets.GECKOTERMINAL_API_KEY }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}

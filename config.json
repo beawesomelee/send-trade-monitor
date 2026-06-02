@@ -28,8 +28,5 @@
     "min_liquidity_usd": 30000,
     "cooldown_hours": 4,
     "gt_pages": 10
-  },
-  "telegram": {
-    "top_n": 5
   }
 }

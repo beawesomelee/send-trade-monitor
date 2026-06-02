@@ -9,7 +9,7 @@ The operator reviews and decides which to alert via --alert flag.
 
 Usage:
     python movement_scan.py             # detect + print, no alerts sent
-    python movement_scan.py --alert     # also send to Telegram + Discord and record cooldown
+    python movement_scan.py --alert     # also send to Discord and record cooldown
 """
 
 import argparse
@@ -36,7 +36,7 @@ from lib.lore import fetch_lore
 def main():
     parser = argparse.ArgumentParser(description="Base movement scanner")
     parser.add_argument("--alert", action="store_true",
-                        help="Actually send to Telegram + Discord and record cooldown")
+                        help="Actually send to Discord and record cooldown")
     parser.add_argument("--no-cooldown", action="store_true",
                         help="Ignore cooldown filter (for testing)")
     parser.add_argument("--h6-fallback", action="store_true",
@@ -134,10 +134,8 @@ def _send_alerts(movers: list[dict], config: dict):
     sheet_id = config["google_sheet"]["sheet_id"]
     sheet_url = f"https://docs.google.com/spreadsheets/d/{sheet_id}"
 
-    from lib.telegram import send_movement_alert as send_tg
     from lib.discord import send_movement_alert as send_dc
 
-    send_tg(movers, sheet_url)
     send_dc(movers, sheet_url)
 
 

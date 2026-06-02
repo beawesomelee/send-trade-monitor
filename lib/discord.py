@@ -12,8 +12,7 @@ def send_summary(stats: dict, candidates: list[dict], sheet_url: str,
                  dry_run: bool = False):
     """Post a Discord-formatted summary to the configured webhook.
 
-    Like Telegram, skips entirely if no actionable news (new + verified +
-    dismissed all zero).
+    Skips entirely if no actionable news (new + verified + dismissed all zero).
     """
     if stats.get("new_pending", 0) == 0:
         print("no new tokens this run, skipping Discord")

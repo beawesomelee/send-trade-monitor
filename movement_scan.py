@@ -31,6 +31,7 @@ from lib.movement import (
     record_alerts,
 )
 from lib.lore import fetch_lore
+from lib.send_trade_lore import push_lore
 
 
 def main():
@@ -97,12 +98,26 @@ def main():
     _print_movers(new_movers)
 
     if args.alert:
-        print("\n5. sending alerts...")
+        # Push lore to Send.Trade FIRST so Discord alerts can include the
+        # resulting lore ID (Austin uses it to delete from Send.Trade admin
+        # if the auto-posted lore turns out irrelevant).
+        print("\n5. pushing lore to Send.Trade...")
+        for m in new_movers:
+            resp = push_lore(m)
+            m["send_trade_lore"] = resp
+            sym = m.get("symbol")
+            if resp:
+                lid = resp.get("id") or resp.get("_id") or "(no id in response)"
+                print(f"   {sym}: posted, lore id={lid}")
+            else:
+                print(f"   {sym}: skipped or failed")
+
+        print("6. sending Discord alerts...")
         _send_alerts(new_movers, config)
         record_alerts(new_movers, retained)
         print("   recorded cooldown state")
     else:
-        print("\n(use --alert to send notifications and lock cooldown)")
+        print("\n(use --alert to send notifications, push send.trade lore, and lock cooldown)")
 
 
 def _print_movers(movers: list[dict]):

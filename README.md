@@ -8,7 +8,7 @@ Two cron-driven scanners that automate token discovery and pump/dump tracking fo
 Surfaces tokens that meet the Send.Trade verification bar but aren't yet on the verified list. Posts new pending candidates to a Google Sheet and pings Discord.
 
 ### 2. Movement scanner (`movement_scan.py`)
-Detects sharp 1-hour pumps (≥+80%) and dumps (≤-50%) on Base + Solana, generates a 1-sentence lore blurb via Grok (live X search) explaining the move, and pings Discord.
+Detects sharp 1-hour pumps (≥+80%) and dumps (≤-50%) on Base + Solana, generates a 1-sentence lore blurb via Grok (live X search) explaining the move, and pings Discord. For Base tokens, the lore is also auto-posted to Send.Trade's admin panel via `POST /admin/lore/logs` so it lands directly in the product UI. The Discord alert surfaces the resulting lore ID so Austin can delete from the admin panel if a particular auto-post isn't relevant. Solana tokens are skipped client-side until Send.Trade's endpoint accepts base58 addresses (currently it validates `tokenAddress` as `0x`-prefixed 40-char hex).
 
 Both run hourly 24/7.
 
@@ -59,9 +59,13 @@ flowchart TD
     J -->|yes| Z2[Drop, already alerted recently]
     J -->|no| K[For each surviving mover:<br/>call Grok with x_search + web_search tools]
     K --> L[Grok returns 1-sentence lore<br/>send.trade trader voice]
-    L --> M[POST Discord alert with lore]
-    M --> N[Update cooldown state]
-    N --> O[Commit alerts file, push, done]
+    L --> M{Base chain &amp; lore non-empty?}
+    M -->|yes| N[POST to Send.Trade /admin/lore/logs<br/>get back lore_id]
+    M -->|no Solana, or empty lore| O[Skip Send.Trade push]
+    N --> P[POST Discord alert with lore + Send.Trade lore_id]
+    O --> P
+    P --> Q[Update cooldown state]
+    Q --> R[Commit alerts file, push, done]
 ```
 
 ## Schedule
@@ -224,6 +228,7 @@ send-trade-monitor/
 | `GOOGLE_OAUTH_TOKEN` | Write to candidate sheet | Run `python auth.py` locally → contents of `token.json` |
 | `GECKOTERMINAL_API_KEY` | CoinGecko Pro tier (300 req/min) | [pro.coingecko.com](https://pro.coingecko.com) |
 | `XAI_API_KEY` | Grok lore generation | [console.x.ai](https://console.x.ai) |
+| `DOCS_PASSWORD` | Auth for Send.Trade `/admin/lore/logs` auto-post | provided by the Send.Trade team |
 
 On-chain decimal lookups go through the public RPC endpoints (mainnet.base.org and api.mainnet-beta.solana.com — both free, no auth). Volume is low (mostly cached). If rate limits ever bite, add an Alchemy or Helius path back into `lib/decimals.py`.
 
@@ -298,76 +303,53 @@ Some keys were pasted in Claude conversations during build and should be rotated
 
 Areas the dev can take this further. Items without a star came from Austin's original handoff brief. Items marked ⭐ were added by Claude with rationale below.
 
-### 1. Push lore automatically to Send.Trade via `/admin/lore/logs`
-Right now the movement scanner generates a 1-sentence lore blurb but only posts to Discord. Send.Trade has a write endpoint that takes the same content:
-
-```
-POST /admin/lore/logs
-Authorization: Basic <base64(":" + DOCS_PASSWORD)>
-Content-Type: application/json
-{
-  "tokenAddress": "0x...",      // required, 40-char hex (lowercased server-side)
-  "description": "...",          // required, 1-4000 chars
-  "image": "https://...",        // optional, ≤1024 chars
-  "category": "genesis|team|cto|partnership|milestone|listing|incident|update|community",
-  "sortOrder": 0                 // optional, int
-}
-```
-
-Wire `lib/lore.py`'s output (or a richer version) into this endpoint after the movement scanner detects + lore-generates a token. Suggested category mapping:
-- new pump with team activity → `update` or `milestone`
-- dump with no clear catalyst → skip (don't post)
-- KOL shoutout → `community`
-
-Needs `DOCS_PASSWORD` as a new GH Actions secret.
-
-### 2. Auto-verification (if Send.Trade exposes a write API for it)
+### 1. Auto-verification (if Send.Trade exposes a write API for it)
 If there's an `/admin/verify` or similar endpoint, this scanner already has all the signal needed to flag candidates as ready-to-verify. Right now it just dumps them in a Google Sheet for manual review.
 
-### 3. ⭐ Per-chain configurable thresholds
+### 2. ⭐ Per-chain configurable thresholds
 Today thresholds are global. Solana memes might benefit from looser MC/liq floors (smaller absolute size but real interest) while Base bluechips should stay at $1M+. Move thresholds into `config.json` → `chains[].thresholds` and have `dexscreener.py` read per-chain.
 
 *Why ⭐: Solana and Base have meaningfully different volume profiles. A single threshold set tuned for Base under-catches Solana memes. Cheapest way to improve Solana hit rate without re-architecting discovery.*
 
-### 4. A/B test framework for criteria
+### 3. A/B test framework for criteria
 Add a `--criteria-shadow` mode that runs an alternative threshold set in parallel and reports what WOULD have surfaced. Lets you tune thresholds against real data without flipping the live config.
 
-### 5. Performance: parallelize API calls
+### 4. Performance: parallelize API calls
 `fetch_new_candidates_ds` runs API calls sequentially with 1.2s delays. For ~700 addresses across both chains, that's ~14 minutes. Switching to `asyncio` + `aiohttp` with bounded concurrency (10-20 parallel) would cut this to ~1-2 minutes. Important context: we're at ~1,800 GH Actions min/mo against the 2,000-min Free-tier cap. Parallelizing buys headroom and lets the dev tighten the cron schedule if needed.
 
-### 6. ⭐ Migrate `dismissed.json` + `movement_alerts.json` to a real DB
+### 5. ⭐ Migrate `dismissed.json` + `movement_alerts.json` to a real DB
 Both files get committed back to the repo every run, which churns git history (we're already up to dozens of commits/day from the workflows). SQLite via Litestream, Supabase, or even Redis would be cleaner. Trade-off: more infra.
 
 *Why ⭐: as the system scales, the git-as-DB pattern becomes a real liability — large diffs slow down `git pull`, commit history becomes unreadable, and concurrent runs can produce merge conflicts.*
 
-### 7. ⭐ Add `repository_dispatch` event-type validation
+### 6. ⭐ Add `repository_dispatch` event-type validation
 Currently any `repository_dispatch` event with any `event_type` will trigger the workflow. Lock it down by adding `if: github.event.action == 'hourly-scan'` to the job to prevent rogue dispatches from running it.
 
 *Why ⭐: 5-minute security hardening. If the GH PAT ever leaks, an attacker can't trigger arbitrary runs without knowing the event_type. Cheap, no downside.*
 
-### 8. ⭐ GH Actions Node.js 24 migration
+### 7. ⭐ GH Actions Node.js 24 migration
 `actions/checkout@v4` and `actions/setup-python@v5` are on Node 20, which GH will force to Node 24 by mid-2026. Bump to latest before September 2026 when Node 20 is removed.
 
 *Why ⭐: hard deadline. If you don't migrate, workflows break. Trivial fix (bump action versions).*
 
-### 9. ⭐ Movement scanner trending_pools for Solana
+### 8. ⭐ Movement scanner trending_pools for Solana
 The verification scanner uses `_gt_trending_addresses` to catch Solana memes hidden behind stablecoin pools. The movement scanner does NOT. If you want better coverage of Solana h1 pumps, add the same trending source to `find_movers`.
 
 *Why ⭐: the same fix that materially improved the daily scan's Solana coverage will likely do the same for h1 movement alerts. Direct, proven pattern to copy.*
 
-### 10. ⭐ Discord thread per-token
+### 9. ⭐ Discord thread per-token
 Right now all alerts post into the same channel. Consider creating a thread per detected mover so follow-up discussion stays scoped. Discord webhook supports `thread_id` and `thread_name` params.
 
 *Why ⭐: as alert volume grows, scrolling the main channel gets noisy. Threads keep each token's lore + chart + team discussion together.*
 
-### 11. ⭐ Test coverage
+### 10. ⭐ Test coverage
 There are zero tests right now. The trickiest path (`lib/dexscreener.py` filter logic, especially the Solana case-sensitivity + aggregation) would benefit from snapshot tests against fixed DS/GT response fixtures.
 
 *Why ⭐: the chain-normalization bug we caught and fixed (Solana base58 lowercasing) would have been a 5-line snapshot test. Future schema or filter changes deserve regression protection.*
 
 ### Summary
 
-Four items (1, 2, 4, 5) came directly from Austin's handoff brief — those are the user-prioritized work. Seven items (3, 6, 7, 8, 9, 10, 11) were added by Claude with rationale in each section. If the dev wants a sensible ordering across both: tackle Austin's #1 and #5 first (highest leverage), Claude's #8 next (hard deadline), then work down by impact.
+Three items (1, 3, 4) came directly from Austin's handoff brief — those are the user-prioritized work. Seven items (2, 5, 6, 7, 8, 9, 10) were added by Claude with rationale in each section. If the dev wants a sensible ordering across both: tackle Austin's #4 (parallelization) first since it unlocks GH Actions minute headroom, Claude's #7 (Node 24) next because of the hard deadline, then work down by impact. Note: a fourth Austin ask — auto-push lore to Send.Trade — is already live (see the "Live ops" section below), so don't re-implement it.
 
 ---
 

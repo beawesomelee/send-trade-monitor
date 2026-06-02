@@ -39,6 +39,7 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           GECKOTERMINAL_API_KEY: ${{ secrets.GECKOTERMINAL_API_KEY }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          DOCS_PASSWORD: ${{ secrets.DOCS_PASSWORD }}
         run: |
           if [ "${{ inputs.h6_fallback }}" = "true" ]; then
             python movement_scan.py --alert --h6-fallback

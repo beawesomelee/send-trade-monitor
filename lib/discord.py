@@ -99,6 +99,13 @@ def send_movement_alert(movers: list[dict], sheet_url: str = "", dry_run: bool =
         line = f"**{sym}** {change:+.0f}% - [Dexscreener](<{m['dexscreener_url']}>)"
         if lore:
             line += f"\n{lore}"
+        # Surface the Send.Trade lore ID if auto-posted, so Austin can review
+        # and delete from the admin panel if the auto-lore isn't relevant.
+        stl = m.get("send_trade_lore") or {}
+        if isinstance(stl, dict):
+            lid = stl.get("id") or stl.get("_id")
+            if lid:
+                line += f"\n_posted to send.trade — lore id `{lid}` (delete via admin if not relevant)_"
         return line
 
     window_label = (pumps + dumps)[0]["price_change_window"][1:] + "h"

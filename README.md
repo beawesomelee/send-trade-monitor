@@ -296,9 +296,9 @@ Some keys were pasted in Claude conversations during build and should be rotated
 
 # Future improvements
 
-Areas the dev can take this further. Items marked ⭐ are the ones Claude recommends tackling first based on impact, time-sensitivity, or low effort.
+Areas the dev can take this further. Items without a star came from Austin's original handoff brief. Items marked ⭐ were added by Claude with rationale below.
 
-### 1. ⭐ Push lore automatically to Send.Trade via `/admin/lore/logs`
+### 1. Push lore automatically to Send.Trade via `/admin/lore/logs`
 Right now the movement scanner generates a 1-sentence lore blurb but only posts to Discord. Send.Trade has a write endpoint that takes the same content:
 
 ```
@@ -321,29 +321,29 @@ Wire `lib/lore.py`'s output (or a richer version) into this endpoint after the m
 
 Needs `DOCS_PASSWORD` as a new GH Actions secret.
 
-*Why ⭐: highest-leverage feature on the list. The scanner already does the expensive work of detecting movers and synthesizing lore — wiring it into the existing Send.Trade write endpoint closes the loop end-to-end.*
-
 ### 2. Auto-verification (if Send.Trade exposes a write API for it)
 If there's an `/admin/verify` or similar endpoint, this scanner already has all the signal needed to flag candidates as ready-to-verify. Right now it just dumps them in a Google Sheet for manual review.
 
-### 3. Per-chain configurable thresholds
+### 3. ⭐ Per-chain configurable thresholds
 Today thresholds are global. Solana memes might benefit from looser MC/liq floors (smaller absolute size but real interest) while Base bluechips should stay at $1M+. Move thresholds into `config.json` → `chains[].thresholds` and have `dexscreener.py` read per-chain.
+
+*Why ⭐: Solana and Base have meaningfully different volume profiles. A single threshold set tuned for Base under-catches Solana memes. Cheapest way to improve Solana hit rate without re-architecting discovery.*
 
 ### 4. A/B test framework for criteria
 Add a `--criteria-shadow` mode that runs an alternative threshold set in parallel and reports what WOULD have surfaced. Lets you tune thresholds against real data without flipping the live config.
 
-### 5. ⭐ Performance: parallelize API calls
-`fetch_new_candidates_ds` runs API calls sequentially with 1.2s delays. For ~700 addresses across both chains, that's ~14 minutes. Switching to `asyncio` + `aiohttp` with bounded concurrency (10-20 parallel) would cut this to ~1-2 minutes.
+### 5. Performance: parallelize API calls
+`fetch_new_candidates_ds` runs API calls sequentially with 1.2s delays. For ~700 addresses across both chains, that's ~14 minutes. Switching to `asyncio` + `aiohttp` with bounded concurrency (10-20 parallel) would cut this to ~1-2 minutes. Important context: we're at ~1,800 GH Actions min/mo against the 2,000-min Free-tier cap. Parallelizing buys headroom and lets the dev tighten the cron schedule if needed.
 
-*Why ⭐: we're at ~1,800 GH Actions min/mo against the 2,000-min Free-tier cap. The daily scan is the heaviest run. Parallelizing buys headroom AND lets the dev tighten the cron schedule if needed.*
+### 6. ⭐ Migrate `dismissed.json` + `movement_alerts.json` to a real DB
+Both files get committed back to the repo every run, which churns git history (we're already up to dozens of commits/day from the workflows). SQLite via Litestream, Supabase, or even Redis would be cleaner. Trade-off: more infra.
 
-### 6. Migrate `dismissed.json` + `movement_alerts.json` to a real DB
-Both files get committed back to the repo every run, which churns git history. SQLite via Litestream, Supabase, or even Redis would be cleaner. Trade-off: more infra.
+*Why ⭐: as the system scales, the git-as-DB pattern becomes a real liability — large diffs slow down `git pull`, commit history becomes unreadable, and concurrent runs can produce merge conflicts.*
 
 ### 7. ⭐ Add `repository_dispatch` event-type validation
 Currently any `repository_dispatch` event with any `event_type` will trigger the workflow. Lock it down by adding `if: github.event.action == 'hourly-scan'` to the job to prevent rogue dispatches from running it.
 
-*Why ⭐: 5-minute security hardening. Cheap, no downside.*
+*Why ⭐: 5-minute security hardening. If the GH PAT ever leaks, an attacker can't trigger arbitrary runs without knowing the event_type. Cheap, no downside.*
 
 ### 8. ⭐ GH Actions Node.js 24 migration
 `actions/checkout@v4` and `actions/setup-python@v5` are on Node 20, which GH will force to Node 24 by mid-2026. Bump to latest before September 2026 when Node 20 is removed.
@@ -355,22 +355,19 @@ The verification scanner uses `_gt_trending_addresses` to catch Solana memes hid
 
 *Why ⭐: the same fix that materially improved the daily scan's Solana coverage will likely do the same for h1 movement alerts. Direct, proven pattern to copy.*
 
-### 10. Discord thread per-token
+### 10. ⭐ Discord thread per-token
 Right now all alerts post into the same channel. Consider creating a thread per detected mover so follow-up discussion stays scoped. Discord webhook supports `thread_id` and `thread_name` params.
 
-### 11. Test coverage
+*Why ⭐: as alert volume grows, scrolling the main channel gets noisy. Threads keep each token's lore + chart + team discussion together.*
+
+### 11. ⭐ Test coverage
 There are zero tests right now. The trickiest path (`lib/dexscreener.py` filter logic, especially the Solana case-sensitivity + aggregation) would benefit from snapshot tests against fixed DS/GT response fixtures.
 
-### Summary of ⭐ recommendations
+*Why ⭐: the chain-normalization bug we caught and fixed (Solana base58 lowercasing) would have been a 5-line snapshot test. Future schema or filter changes deserve regression protection.*
 
-Five items above are starred. If the dev does only those five, the system gets:
-- a real second output channel (auto-lore push) instead of just Discord
-- a faster daily run (parallelization)
-- a forward-compatible workflow (Node.js 24)
-- a security hardening (event-type validation)
-- broader Solana movement coverage (trending source)
+### Summary
 
-Unstarred items (2, 3, 4, 6, 10, 11) are nice-to-haves — solid engineering improvements but not required for the system to run well as-is.
+Four items (1, 2, 4, 5) came directly from Austin's handoff brief — those are the user-prioritized work. Seven items (3, 6, 7, 8, 9, 10, 11) were added by Claude with rationale in each section. If the dev wants a sensible ordering across both: tackle Austin's #1 and #5 first (highest leverage), Claude's #8 next (hard deadline), then work down by impact.
 
 ---
 

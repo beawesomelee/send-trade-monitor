@@ -116,7 +116,7 @@ The verification scanner combines three discovery channels per run, deduping by 
 2. **GeckoTerminal top-volume pools** — pages 1-10 per chain (CoinGecko Pro caps at page 10)
 3. **GeckoTerminal trending pools** — different sort algorithm, surfaces meme tokens that are buried by stablecoin pairs on top-vol pages
 
-A fourth source — DexScreener keyword search across ~45 queries — used to run here but was removed after attribution showed it contributed zero unique candidates that survived our filters (every hit was also reachable via GT). The `DS_SEARCH` and `DS_WIDE_QUERIES` constants are still defined in `lib/dexscreener.py` if a future change wants to reintroduce it.
+An earlier version had a fourth source — DexScreener keyword search across ~45 queries — but it was removed after attribution showed it contributed zero unique candidates that survived our filters (every hit was also reachable via GT). To revive: hit `https://api.dexscreener.com/latest/dex/search?q=<term>` per term and merge into the discovery set in `_ds_wide_discovery`.
 
 The movement scanner only uses GT top pools (per-pool h1/h6 price-change fields are what it needs).
 

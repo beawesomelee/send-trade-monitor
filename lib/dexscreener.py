@@ -13,10 +13,12 @@ Discovery sources combined per incremental run, deduped by (chain, address):
   3. GT trending_pools (different sort algorithm; surfaces tokens hidden behind
      stablecoin pools on Solana)
 
-The old keyword-search pass (DS_WIDE_QUERIES against DS_SEARCH) was removed
-after empirical attribution showed 0 of 28 candidates needed it on a sample
-day — every keyword hit was also reachable via GT. The constants remain
-defined below in case a future change wants to reintroduce it.
+An earlier version of this module ran a fourth source — a DexScreener
+keyword-search pass across ~45 queries — but it was removed after empirical
+attribution showed 0 of 28 candidates required it on a sample day (every
+hit was also reachable via GT). If you want to revive it, hit
+`https://api.dexscreener.com/latest/dex/search?q=<term>` per term and merge
+the resulting addresses into the discovery set.
 
 Two quirks the dev should know:
   - Solana addresses are CASE-SENSITIVE (base58). Use _norm() which preserves
@@ -56,21 +58,9 @@ def _gt_endpoint() -> tuple:
 GT_POOLS = "https://api.geckoterminal.com/api/v2/networks/{network}/pools"
 DS_TOKENS = "https://api.dexscreener.com/tokens/v1/{chain}/{addresses}"
 DS_TOKEN_PAIRS = "https://api.dexscreener.com/token-pairs/v1/{chain}/{address}"
-DS_SEARCH = "https://api.dexscreener.com/latest/dex/search"
 DS_PROFILES = "https://api.dexscreener.com/token-profiles/latest/v1"
 DS_BOOSTS_LATEST = "https://api.dexscreener.com/token-boosts/latest/v1"
 DS_BOOSTS_TOP = "https://api.dexscreener.com/token-boosts/top/v1"
-
-DS_WIDE_QUERIES = [
-    "base", "solana",
-    "WETH", "USDC", "USDT", "DAI", "ETH", "SOL", "WSOL",
-    "wstETH", "cbETH", "cbBTC", "stETH", "rETH",
-    "FRAX", "frxUSD", "USDS", "PYUSD",
-    "ai", "agent", "meme", "depin", "rwa", "defi", "pump",
-    "AERO", "BRETT", "TOSHI", "DEGEN", "MOG", "KEYCAT", "VIRTUAL", "B3",
-    "BONK", "WIF", "POPCAT", "JTO", "JUP", "PYTH", "RAY", "ORCA",
-    "trump", "pepe", "shib", "doge",
-]
 
 DS_DELAY = 1.2   # safely under DexScreener 60/min
 DS_BATCH = 30     # DexScreener accepts up to 30 addresses per request
@@ -595,12 +585,7 @@ def _norm(address: str, chain_slug: str) -> str:
 def _ds_wide_discovery(active_chains: set | None = None) -> dict:
     """Cast a DexScreener net for candidate addresses via profiles + boosts.
 
-    Pulls from token-profiles + token-boosts (latest + top). The old keyword-
-    search pass over DS_WIDE_QUERIES was dropped after empirical attribution
-    showed it contributed zero unique candidates that survived our filters
-    (every hit was also reachable via GT top pools or GT trending). The
-    constant DS_SEARCH + DS_WIDE_QUERIES are kept defined above in case a
-    future change wants to reintroduce keyword search.
+    Pulls from token-profiles + token-boosts (latest + top).
 
     active_chains: restrict results to these chain slugs (default: all SUPPORTED_DS_CHAINS).
     Use this to honor config-level chain disabling.

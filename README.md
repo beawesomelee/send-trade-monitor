@@ -5,59 +5,64 @@ Two cron-driven scanners that automate token discovery and pump/dump tracking fo
 ## What it does
 
 ### 1. Verification scanner (`daily_scan.py`)
-Surfaces tokens that **meet the Send.Trade verification bar but aren't yet on the verified list**. Posts new pending candidates to a Google Sheet and pings Discord.
+Surfaces tokens that meet the Send.Trade verification bar but aren't yet on the verified list. Posts new pending candidates to a Google Sheet and pings Discord.
 
 ### 2. Movement scanner (`movement_scan.py`)
-Detects **sharp 1-hour pumps (+80%) and dumps (-50%)** on Base + Solana, generates a "lore" blurb via Grok (live X search) explaining the move, and pings Discord.
+Detects sharp 1-hour pumps (≥+80%) and dumps (≤-50%) on Base + Solana, generates a 1-sentence lore blurb via Grok (live X search) explaining the move, and pings Discord.
 
 Both run hourly 24/7.
 
 ## Architecture
 
+### Verification scanner flow (daily.yml + daily_scan.py)
+
 ```mermaid
 flowchart TD
-    subgraph external["External services"]
-        CRON[cron-job.org]
-        DS[DexScreener API]
-        GT[GeckoTerminal API<br/>CoinGecko Pro]
-        ST[Send.Trade<br/>verified-list API]
-        GROK[xAI Grok<br/>+ live X search]
-        GS[Google Sheet]
-        DISC[Discord webhook]
-    end
+    A[cron-job.org POSTs hourly at :12<br/>to GitHub repository_dispatch] --> B[GitHub Actions starts daily.yml]
+    B --> C[Fetch Send.Trade verified list<br/>api.send.trade/assets/verified]
+    C --> D[Load existing rows from Google Sheet]
+    D --> E[Refresh known pending tokens<br/>via DexScreener]
+    E --> F[Discover new candidates<br/>from 4 sources combined]
+    F --> F1[DS token-profiles + boosts]
+    F --> F2[DS keyword search<br/>~40 queries]
+    F --> F3[GT top-volume pools<br/>pages 1-10]
+    F --> F4[GT trending_pools]
+    F1 & F2 & F3 & F4 --> G[Dedupe by chain + address]
+    G --> H{Solana token?}
+    H -->|yes| I[Re-fetch via /token-pairs/v1<br/>aggregate across all DEXs]
+    H -->|no| J[Use primary pair from /tokens/v1]
+    I --> K[Apply filters: MC, vol, liq, age, logo]
+    J --> K
+    K --> L[Fetch token decimals]
+    L --> M[Save daily snapshot to data/snapshots/]
+    M --> N[Upsert into Google Sheet<br/>auto-clear already-verified]
+    N --> O{new_pending &gt; 0?}
+    O -->|yes| P[POST Discord summary]
+    O -->|no| Q[Skip Discord, exit silently]
+    P --> R[Commit data files, push, done]
+    Q --> R
+```
 
-    subgraph github["GitHub Actions"]
-        WD[daily.yml<br/>repository_dispatch + native cron]
-        WM[movement.yml<br/>repository_dispatch + native cron]
-    end
+### Movement scanner flow (movement.yml + movement_scan.py)
 
-    subgraph daily["Verification scanner"]
-        DSCAN[daily_scan.py]
-        DLIB[lib/dexscreener.py<br/>lib/sheets.py<br/>lib/send_trade.py<br/>lib/discord.py]
-    end
-
-    subgraph movement["Movement scanner"]
-        MSCAN[movement_scan.py]
-        MLIB[lib/movement.py<br/>lib/lore.py<br/>lib/discord.py]
-    end
-
-    CRON -->|POST hourly :12| WD
-    CRON -->|POST hourly :22| WM
-    WD --> DSCAN
-    WM --> MSCAN
-
-    DSCAN --> DLIB
-    DLIB --> DS
-    DLIB --> GT
-    DLIB --> ST
-    DLIB --> GS
-    DLIB --> DISC
-
-    MSCAN --> MLIB
-    MLIB --> GT
-    MLIB --> DS
-    MLIB --> GROK
-    MLIB --> DISC
+```mermaid
+flowchart TD
+    A[cron-job.org POSTs hourly at :22<br/>to GitHub repository_dispatch] --> B[GitHub Actions starts movement.yml]
+    B --> C[Scan GT top-volume pools<br/>10 pages per chain Base + Solana]
+    C --> D[For each pool: check h1 price change<br/>pump &ge;+80% or dump &le;-50%]
+    D --> E[Apply MC and liquidity floors]
+    E --> F[Aggregate per token<br/>pick best pool by h1 volume]
+    F --> G[Enrich via DexScreener<br/>symbol, name, logo, X handle]
+    G --> H{Has logo on DS?}
+    H -->|no| Z1[Drop, filter out scam]
+    H -->|yes| I[Check cooldown<br/>movement_alerts.json, 4h per token+direction]
+    I --> J{In cooldown?}
+    J -->|yes| Z2[Drop, already alerted recently]
+    J -->|no| K[For each surviving mover:<br/>call Grok with x_search + web_search tools]
+    K --> L[Grok returns 1-sentence lore<br/>send.trade trader voice]
+    L --> M[POST Discord alert with lore]
+    M --> N[Update cooldown state]
+    N --> O[Commit alerts file, push, done]
 ```
 
 ## Schedule
@@ -120,7 +125,7 @@ The movement scanner only uses #3 (GT pool data has the per-pool h1/h6 price-cha
 | chain | id | notes |
 |---|---|---|
 | Base | 8453 | EVM, hex addresses (case-insensitive) |
-| Solana | 501474 (Send.Trade convention, **not** 101) | base58 addresses (CASE-SENSITIVE) |
+| Solana | 501474 (Send.Trade convention, not the standard 101) | base58 addresses, case-sensitive |
 
 Both chains active in `config.json` → `chains`. To disable a chain, move its block into `_chains_disabled`.
 
@@ -133,7 +138,7 @@ These are gotchas we hit and fixed during build — calling them out so they don
 ### 1. Solana base58 addresses are case-sensitive
 The original code lowercased addresses uniformly for matching. `EPjFWdd5...` lowercased becomes `epjfwdd5...` — a completely different address in base58. Solana tokens were falsely appearing as "new pending" instead of being matched against Send.Trade's verified list.
 
-Fix lives in `lib/send_trade.py._norm_addr()`. **Always use this helper when keying on `(chain_id, address)`.** Lowercase only for Base (chain_id 8453); preserve case for Solana (501474). All callers updated: `is_verified()`, `sheets.upsert()`, `daily_scan._is_new` flag, dedup logic.
+Fix lives in `lib/send_trade.py._norm_addr()`. Always use this helper when keying on `(chain_id, address)`. It lowercases only for Base (chain_id 8453) and preserves case for Solana (501474). All callers updated: `is_verified()`, `sheets.upsert()`, `daily_scan._is_new` flag, dedup logic.
 
 ### 2. CoinGecko Pro caps GT pool pagination at page 10
 You cannot paginate `/networks/{chain}/pools` past page 10 on the Basic tier ($29/mo). Page 11+ returns 401. This matters for Solana because the top 200 pools are dominated by stablecoin pairs (SOL/USDC at $100M+/day each) — meme tokens with $1-5M/day vol live on pages 30+.
@@ -146,7 +151,7 @@ For chains like Base where most volume is on one Uniswap/Aerodrome pool, this is
 Mitigation: for Solana candidates ONLY, we re-fetch via `/token-pairs/v1/solana/{addr}` to get the full pair list and aggregate properly. Adds ~1.2s per Solana candidate. See `fetch_new_candidates_ds()` and `refresh_addresses_ds()`.
 
 ### 4. GitHub Actions cron is unreliable
-GH silently drops scheduled runs under platform load. We were getting maybe 6 of 24 expected hourly runs per day. **The fix is NOT a GH paid tier** — even Enterprise customers hit this.
+GH silently drops scheduled runs under platform load. We were getting maybe 6 of 24 expected hourly runs per day. A GH paid tier does not fix this, the issue is documented across all tiers including Enterprise.
 
 Solution: external scheduler ([cron-job.org](https://cron-job.org), free) POSTs to GH's `repository_dispatch` endpoint every hour. Both workflows have `on: repository_dispatch` triggers; native cron is kept as a backstop.
 
@@ -157,7 +162,7 @@ Setup of the external scheduler is manual (one-time). Two jobs:
 - Body: `{"event_type": "hourly-scan"}` for daily, `{"event_type": "hourly-movement"}` for movement
 - Schedule: `12 * * * *` and `22 * * * *` respectively
 
-The GH PAT needs **Contents: Read and write** permission for the repository — common gotcha is using Read-only which 403s. See "Credential rotation" section for setup.
+The GH PAT needs Contents: Read and write permission for the repository. A common gotcha is using Read-only, which returns 403. See "Credential rotation" section for setup.
 
 ### 5. The `<7d age` filter is bypassed for GT-discovered tokens
 DS keyword search produces a lot of long-tail noise, so we age-gate it. But GT top-pool addresses are already volume-validated — established tokens like MiroShark (56 days old) that grew into our thresholds shouldn't be excluded for being "too old." Tracked via `gt_addr_set` membership in `fetch_new_candidates_ds`.
@@ -224,7 +229,7 @@ send-trade-monitor/
 
 Two jobs configured, both POSTing to GitHub's repository_dispatch endpoint (see edge case #4 for the exact body/headers).
 
-The cron-job.org account is currently in Austin's name. **For the credential rotation, the dev will need to either get added to that account or set up their own.**
+The cron-job.org account is currently in Austin's name. For the credential rotation, the dev will need to either get added to that account or set up their own with new jobs pointing at this repo's dispatches endpoint.
 
 ## Local development
 
@@ -373,4 +378,4 @@ A run that shows `new=0, updated=N, verified=N` is HEALTHY, not broken. Notifica
 | xAI Grok | Pay-per-token (opt into data sharing for $175/mo credits) | $0-5/mo |
 | DexScreener | Free | $0 |
 
-**Total: ~$30/mo** assuming the xAI free credits are active.
+Total: ~$30/mo assuming the xAI free credits are active.

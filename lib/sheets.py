@@ -1,8 +1,22 @@
 """Google Sheets upsert logic for Send.Trade verification candidates.
 
 Supports two auth modes:
-  - OAuth user credentials (default): set GOOGLE_OAUTH_TOKEN env or place token.json next to script
-  - Service account: set GOOGLE_SHEETS_CREDENTIALS to service-account JSON (path or contents)
+  - OAuth user credentials (default): set GOOGLE_OAUTH_TOKEN env or place
+    token.json next to script. This is what's used in production.
+  - Service account: set GOOGLE_SHEETS_CREDENTIALS to service-account JSON
+    (path or contents). Not used; available as fallback.
+
+Status lifecycle of each sheet row:
+  - "pending"   — system default; resurfaces every run until acted on
+  - "verified"  — auto-removed when Send.Trade verifies the token
+  - "dismissed" — manual edit in sheet; permanently excluded (sticky via
+                  data/dismissed.json)
+  - any other manual edit ("Verified", "watching", etc.) — preserved, not
+                  overwritten by the scanner
+
+IMPORTANT: address comparisons go through lib.send_trade._norm_addr because
+Solana base58 addresses are CASE-SENSITIVE. Lowercasing them silently breaks
+matching against the Send.Trade verified list.
 """
 
 import json

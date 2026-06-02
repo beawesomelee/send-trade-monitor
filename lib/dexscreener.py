@@ -4,8 +4,22 @@ Token discovery for Send.Trade monitor.
 Two modes:
   - Backfill (GeckoTerminal): exhaustive scan of pools sorted by 24h volume.
     Used once on first run; thereafter only when forced via --backfill.
-  - Incremental (DexScreener): refresh known tokens + discover new launches
-    (pairCreatedAt within last N days). Used for daily runs.
+  - Incremental (DexScreener + GeckoTerminal): refresh known tokens + discover
+    new launches (pairCreatedAt within last N days). Used for hourly runs.
+
+Discovery sources combined per incremental run, deduped by (chain, address):
+  1. DS token-profiles + token-boosts (latest + top)
+  2. DS keyword search (~40 queries spanning chain names, popular tokens, memes)
+  3. GT top-volume pools (pages 1-10 — CoinGecko Pro caps at page 10)
+  4. GT trending_pools (different sort algorithm; surfaces tokens hidden behind
+     stablecoin pools on Solana)
+
+Two quirks the dev should know:
+  - Solana addresses are CASE-SENSITIVE (base58). Use _norm() which preserves
+    case for solana and lowercases for base.
+  - For solana ONLY, DS /tokens/v1 returns only the PRIMARY pair, which
+    drastically undershoots vol/liq on fragmented Solana DEX liquidity.
+    We re-fetch via /token-pairs/v1 per solana candidate to aggregate properly.
 """
 
 import os

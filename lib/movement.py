@@ -1,11 +1,16 @@
 """
-Base ecosystem movement scanner.
+Base + Solana movement scanner.
 
-Scans GeckoTerminal pools for tokens with significant 1-hour price movement
-(pumps or dumps) that meet MC + liquidity floors.
+Scans GeckoTerminal pools across all chains in config.json for tokens with
+significant 1-hour price movement (pumps ≥+80% or dumps ≤-50%) that meet
+MC + liquidity floors AND have a logo set on DexScreener (anti-wash-trade).
 
-Designed to run hourly. Uses CoinGecko Pro tier via the existing
-GECKOTERMINAL_API_KEY env var.
+Surviving alerts get a Grok-generated lore blurb (see lib/lore.py).
+
+Designed to run hourly. Uses CoinGecko Pro tier via GECKOTERMINAL_API_KEY.
+
+Cooldown state in data/movement_alerts.json so the same (chain, address,
+direction) doesn't ping repeatedly within cooldown_hours.
 """
 
 import json

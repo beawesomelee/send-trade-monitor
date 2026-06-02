@@ -131,9 +131,9 @@ Both chains active in `config.json` → `chains`. To disable a chain, move its b
 
 ---
 
-# Edge cases the dev should know about
+# Edge Cases
 
-These are gotchas we hit and fixed during build — calling them out so they don't bite again.
+Gotchas we hit and fixed during build, called out so they don't bite again.
 
 ### 1. Solana base58 addresses are case-sensitive
 The original code lowercased addresses uniformly for matching. `EPjFWdd5...` lowercased becomes `epjfwdd5...` — a completely different address in base58. Solana tokens were falsely appearing as "new pending" instead of being matched against Send.Trade's verified list.
@@ -350,6 +350,9 @@ Right now all alerts post into the same channel. Consider creating a thread per 
 
 ### 11. Test coverage
 There are zero tests right now. The trickiest path (`lib/dexscreener.py` filter logic, especially the Solana case-sensitivity + aggregation) would benefit from snapshot tests against fixed DS/GT response fixtures.
+
+### 12. Prune `DS_WIDE_QUERIES`
+The 45-query keyword search in `lib/dexscreener.py` includes a lot of redundant terms — tickers like `BONK`, `BRETT`, `WIF` mostly surface tokens that are already on Send.Trade's verified list (auto-filtered downstream). Category queries (`ai`, `agent`, `meme`, `depin`, `rwa`, `defi`, `pump`) and chain-name queries are the real signal source. Pruning the popular-ticker queries would cut ~20 API calls per run with little discovery loss.
 
 ---
 

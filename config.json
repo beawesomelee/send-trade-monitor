@@ -8,11 +8,10 @@
     "require_logo_uri_incremental": true
   },
   "chains": [
-    {"slug": "base", "chain_id": 8453, "dexscreener_query": "base"}
-  ],
-  "_chains_disabled": [
+    {"slug": "base", "chain_id": 8453, "dexscreener_query": "base"},
     {"slug": "solana", "chain_id": 501474, "dexscreener_query": "solana"}
   ],
+  "_chains_disabled": [],
   "endpoints": {
     "send_trade_verified": "https://api.send.trade/assets/verified",
     "dexscreener_search": "https://api.dexscreener.com/latest/dex/search",

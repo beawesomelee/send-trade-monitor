@@ -55,5 +55,13 @@ jobs:
           git add -f data/snapshots/ data/decimals_cache.json data/dismissed.json
           if git diff --staged --quiet; then echo "No changes"; else
             git commit -m "Daily snapshot $(date -u +%Y-%m-%d)"
-            git push
+            # Retry push with rebase to handle race condition with the
+            # movement.yml workflow (or any concurrent push to main).
+            for attempt in 1 2 3; do
+              if git push; then exit 0; fi
+              echo "push attempt $attempt failed, pulling + rebasing..."
+              git pull --rebase origin main
+            done
+            echo "push failed after 3 retries"
+            exit 1
           fi

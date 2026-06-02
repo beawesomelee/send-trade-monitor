@@ -393,11 +393,21 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
 
         pairs_by_addr = _ds_batch_fetch_pairs(chain_slug, addrs)
         for addr, pairs in pairs_by_addr.items():
+            # Solana liquidity is fragmented across Raydium/Orca/Meteora/etc.
+            # DS /tokens/v1 returns only the PRIMARY pair, which dramatically
+            # undershoots aggregate volume for fragmented chains. Fetch the
+            # full pair list before filtering so big tokens (BONK, WIF, JUP,
+            # JTO) don't get nuked at the vol threshold.
+            if chain_slug == "solana":
+                full_pairs = _fetch_all_token_pairs_ds(chain_slug, addr)
+                if full_pairs:
+                    pairs = full_pairs
+
             agg = _aggregate_token_pairs(pairs)
             if not agg:
                 continue
 
-            # Initial filter screen on rough data from /tokens/v1
+            # Initial filter screen
             if (agg["market_cap_usd"] < min_mc or agg["volume_24h_usd"] < min_vol
                     or agg["liquidity_usd"] < min_liq):
                 continue
@@ -445,6 +455,12 @@ def refresh_addresses_ds(addresses_by_chain: dict) -> list[dict]:
             continue
         pairs_by_addr = _ds_batch_fetch_pairs(chain_slug, addrs)
         for addr, pairs in pairs_by_addr.items():
+            # Same fragmented-DEX fix as fetch_new_candidates_ds: for Solana
+            # we need the full pair set, not just the primary pair.
+            if chain_slug == "solana":
+                full_pairs = _fetch_all_token_pairs_ds(chain_slug, addr)
+                if full_pairs:
+                    pairs = full_pairs
             agg = _aggregate_token_pairs(pairs)
             if not agg:
                 continue

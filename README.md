@@ -22,12 +22,11 @@ flowchart TD
     B --> C[Fetch Send.Trade verified list<br/>api.send.trade/assets/verified]
     C --> D[Load existing rows from Google Sheet]
     D --> E[Refresh known pending tokens<br/>via DexScreener]
-    E --> F[Discover new candidates<br/>from 4 sources combined]
+    E --> F[Discover new candidates<br/>from 3 sources combined]
     F --> F1[DS token-profiles + boosts]
-    F --> F2[DS keyword search<br/>45 queries]
     F --> F3[GT top-volume pools<br/>pages 1-10]
     F --> F4[GT trending_pools]
-    F1 & F2 & F3 & F4 --> G[Dedupe by chain + address]
+    F1 & F3 & F4 --> G[Dedupe by chain + address]
     G --> H{Solana token?}
     H -->|yes| I[Re-fetch via /token-pairs/v1<br/>aggregate across all DEXs]
     H -->|no| J[Use primary pair from /tokens/v1]
@@ -111,14 +110,15 @@ Surviving alerts get a 1-sentence "lore log" via Grok with live X search. Voice 
 
 ## Discovery sources
 
-The verification scanner combines four discovery channels per run, deduping by `(chain, address)`:
+The verification scanner combines three discovery channels per run, deduping by `(chain, address)`:
 
 1. **DexScreener token-profiles + token-boosts (latest + top)** — curated trending tokens DS surfaces
-2. **DexScreener keyword search** — 45 queries defined in `DS_WIDE_QUERIES` (chain names, popular tokens, meme tags)
-3. **GeckoTerminal top-volume pools** — pages 1-10 per chain (CoinGecko Pro caps at page 10)
-4. **GeckoTerminal trending pools** — different sort algorithm, surfaces meme tokens that are buried by stablecoin pairs on top-vol pages
+2. **GeckoTerminal top-volume pools** — pages 1-10 per chain (CoinGecko Pro caps at page 10)
+3. **GeckoTerminal trending pools** — different sort algorithm, surfaces meme tokens that are buried by stablecoin pairs on top-vol pages
 
-The movement scanner only uses #3 (GT pool data has the per-pool h1/h6 price-change fields we need).
+A fourth source — DexScreener keyword search across ~45 queries — used to run here but was removed after attribution showed it contributed zero unique candidates that survived our filters (every hit was also reachable via GT). The `DS_SEARCH` and `DS_WIDE_QUERIES` constants are still defined in `lib/dexscreener.py` if a future change wants to reintroduce it.
+
+The movement scanner only uses GT top pools (per-pool h1/h6 price-change fields are what it needs).
 
 ## Chain coverage
 
@@ -165,7 +165,7 @@ Setup of the external scheduler is manual (one-time). Two jobs:
 The GH PAT needs Contents: Read and write permission for the repository. A common gotcha is using Read-only, which returns 403. See "Credential rotation" section for setup.
 
 ### 5. The `<7d age` filter is bypassed for GT-discovered tokens
-DS keyword search produces a lot of long-tail noise, so we age-gate it. But GT top-pool addresses are already volume-validated — established tokens like MiroShark (56 days old) that grew into our thresholds shouldn't be excluded for being "too old." Tracked via `gt_addr_set` membership in `fetch_new_candidates_ds`.
+DS profile/boost discoveries can include long-tail tokens, so we age-gate that path. But GT top-pool addresses are already volume-validated — established tokens like MiroShark (56 days old) that grew into our thresholds shouldn't be excluded for being "too old." Tracked via `gt_addr_set` membership in `fetch_new_candidates_ds`.
 
 ### 6. Lore voice iteration
 The Grok system prompt went through several rewrites. Final voice = "send.trade trader chat" — all lowercase, ground in numbers, end-open posts, banned filler list ("degens aped", "shipping nonstop", etc.). See `lib/lore.py` `SYSTEM_PROMPT`. The scrub layer (`_scrub`) enforces lowercasing + strips citation markers + project-handle @s before output.
@@ -361,22 +361,11 @@ Right now all alerts post into the same channel. Consider creating a thread per 
 ### 11. Test coverage
 There are zero tests right now. The trickiest path (`lib/dexscreener.py` filter logic, especially the Solana case-sensitivity + aggregation) would benefit from snapshot tests against fixed DS/GT response fixtures.
 
-### 12. ⭐ Prune or drop `DS_WIDE_QUERIES`
-The 45-query keyword search in `lib/dexscreener.py` is mostly dead weight. Empirical attribution against the 2026-06-02 snapshot showed **0 of 28 candidates came uniquely from keyword search** — every candidate it surfaced was also findable via GT top pools, GT trending, or DS profiles+boosts.
-
-The keyword search currently costs ~45 API calls and ~54s of runtime per run (24 runs/day = 1,080 wasted API calls daily). Options:
-- Drop entirely (simplest, ~1 min saved per run)
-- Trim to just category queries (`ai`, `agent`, `meme`, `depin`, `rwa`, `defi`, `pump`) on the theory that they MIGHT catch fresh launches on a different day's sample
-
-The ticker queries (`BONK`, `BRETT`, `WIF`, etc.) almost all surface tokens that are already on Send.Trade's verified list, so they get auto-filtered downstream — pure waste.
-
-*Why ⭐: actual measurement showed zero unique value-add today. The 1 minute saved per scan also helps with the GH Actions minute budget mentioned above.*
-
 ### Summary of ⭐ recommendations
 
-Six items above are starred. If the dev does only those six, the system gets:
+Five items above are starred. If the dev does only those five, the system gets:
 - a real second output channel (auto-lore push) instead of just Discord
-- a faster + cheaper daily run (parallelization + keyword prune)
+- a faster daily run (parallelization)
 - a forward-compatible workflow (Node.js 24)
 - a security hardening (event-type validation)
 - broader Solana movement coverage (trending source)

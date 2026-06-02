@@ -9,10 +9,14 @@ Two modes:
 
 Discovery sources combined per incremental run, deduped by (chain, address):
   1. DS token-profiles + token-boosts (latest + top)
-  2. DS keyword search (~40 queries spanning chain names, popular tokens, memes)
-  3. GT top-volume pools (pages 1-10 — CoinGecko Pro caps at page 10)
-  4. GT trending_pools (different sort algorithm; surfaces tokens hidden behind
+  2. GT top-volume pools (pages 1-10 — CoinGecko Pro caps at page 10)
+  3. GT trending_pools (different sort algorithm; surfaces tokens hidden behind
      stablecoin pools on Solana)
+
+The old keyword-search pass (DS_WIDE_QUERIES against DS_SEARCH) was removed
+after empirical attribution showed 0 of 28 candidates needed it on a sample
+day — every keyword hit was also reachable via GT. The constants remain
+defined below in case a future change wants to reintroduce it.
 
 Two quirks the dev should know:
   - Solana addresses are CASE-SENSITIVE (base58). Use _norm() which preserves
@@ -114,7 +118,7 @@ def fetch_candidates(config: dict) -> list[dict]:
         print(f"    {len(pools)} total pools collected")
 
     # DS wide discovery: expand the candidate pool with addresses GT may have missed
-    print("  expanding via DexScreener profiles + boosts + search queries...")
+    print("  expanding via DexScreener profiles + boosts...")
     ds_addrs = _ds_wide_discovery()
     print(f"    {sum(len(v) for v in ds_addrs.values())} unique addresses from DS")
 
@@ -356,12 +360,11 @@ GT_DAILY_PAGES = 5  # how many GT pages to scan in daily mode (vs MAX_PAGES for 
 def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
                              skip_addresses: set | None = None) -> list[dict]:
     """
-    Discover new tokens via DexScreener profiles + boosts + search queries,
-    PLUS a lightweight GeckoTerminal top-pool scan (catches tokens whose volume
-    is spread across many pools and don't surface via DS search keywords).
+    Discover new tokens via DexScreener profiles + boosts PLUS a GeckoTerminal
+    top-pool scan PLUS the GT trending_pools endpoint. The combined discovery
+    pool is filtered against MC, vol, liq, age, and logo thresholds.
 
-    Filtered to pairs younger than max_age_days, meeting MC + vol + liq thresholds.
-    skip_addresses: set of (chain_slug, lowercase_address) to skip (already in sheet).
+    skip_addresses: set of (chain_slug, normalized_address) to skip (already in sheet).
     """
     min_mc = config["thresholds"]["min_market_cap_usd"]
     min_vol = config["thresholds"]["min_volume_24h_usd"]
@@ -449,7 +452,7 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
             # Determine pair age. /tokens/v1 returns only the primary pair (often
             # missing pairCreatedAt) so fall back to /token-pairs/v1 if needed.
             # For GT-discovered addresses this is informational only (no age
-            # filter); for DS-keyword addresses it's the gate.
+            # filter); for DS-profile/boost addresses it's the gate.
             primary_created = [p.get("pairCreatedAt") for p in pairs
                                if p.get("pairCreatedAt")]
             oldest_ms = min(primary_created) if primary_created else None
@@ -462,7 +465,7 @@ def fetch_new_candidates_ds(config: dict, max_age_days: int = 7,
 
             if (chain_slug, addr) not in gt_addr_set:
                 if oldest_ms is None or oldest_ms < cutoff_ms:
-                    continue  # too old or unknown age — keyword path requires <max_age_days
+                    continue  # too old or unknown age — DS-profile/boost path requires <max_age_days
 
             candidates.append({
                 "chain_slug": chain_slug,
@@ -590,10 +593,14 @@ def _norm(address: str, chain_slug: str) -> str:
 
 
 def _ds_wide_discovery(active_chains: set | None = None) -> dict:
-    """Cast a wide DexScreener net for candidate addresses.
+    """Cast a DexScreener net for candidate addresses via profiles + boosts.
 
-    Pulls from profiles + boosts (latest + top) and runs many search queries
-    across chain names, common quote tokens, popular symbols, and categories.
+    Pulls from token-profiles + token-boosts (latest + top). The old keyword-
+    search pass over DS_WIDE_QUERIES was dropped after empirical attribution
+    showed it contributed zero unique candidates that survived our filters
+    (every hit was also reachable via GT top pools or GT trending). The
+    constant DS_SEARCH + DS_WIDE_QUERIES are kept defined above in case a
+    future change wants to reintroduce keyword search.
 
     active_chains: restrict results to these chain slugs (default: all SUPPORTED_DS_CHAINS).
     Use this to honor config-level chain disabling.
@@ -601,7 +608,6 @@ def _ds_wide_discovery(active_chains: set | None = None) -> dict:
     keep_chains = active_chains & SUPPORTED_DS_CHAINS if active_chains is not None else SUPPORTED_DS_CHAINS
     addresses_by_chain = defaultdict(set)
 
-    # profiles + boosts
     for url in (DS_PROFILES, DS_BOOSTS_LATEST, DS_BOOSTS_TOP):
         time.sleep(DS_DELAY)
         try:
@@ -615,23 +621,6 @@ def _ds_wide_discovery(active_chains: set | None = None) -> dict:
         for entry in entries:
             chain = (entry.get("chainId") or "").lower()
             addr = entry.get("tokenAddress") or ""
-            if chain in keep_chains and addr:
-                addresses_by_chain[chain].add(_norm(addr, chain))
-
-    # search queries (each returns up to 30 pairs across all chains)
-    for q in DS_WIDE_QUERIES:
-        time.sleep(DS_DELAY)
-        try:
-            r = requests.get(DS_SEARCH, params={"q": q}, timeout=15)
-            r.raise_for_status()
-            pairs = r.json().get("pairs", []) or []
-        except Exception as e:
-            print(f"    search '{q}' err: {e}")
-            continue
-        for p in pairs:
-            chain = (p.get("chainId") or "").lower()
-            bt = p.get("baseToken") or {}
-            addr = bt.get("address") or ""
             if chain in keep_chains and addr:
                 addresses_by_chain[chain].add(_norm(addr, chain))
 

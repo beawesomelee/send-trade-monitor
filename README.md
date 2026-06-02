@@ -224,8 +224,8 @@ send-trade-monitor/
 | `GOOGLE_OAUTH_TOKEN` | Write to candidate sheet | Run `python auth.py` locally → contents of `token.json` |
 | `GECKOTERMINAL_API_KEY` | CoinGecko Pro tier (300 req/min) | [pro.coingecko.com](https://pro.coingecko.com) |
 | `XAI_API_KEY` | Grok lore generation | [console.x.ai](https://console.x.ai) |
-| `ALCHEMY_API_KEY` *(optional)* | On-chain Base decimals | [alchemy.com](https://www.alchemy.com) |
-| `HELIUS_API_KEY` *(optional)* | On-chain Solana decimals | [helius.dev](https://www.helius.dev) |
+
+On-chain decimal lookups go through the public RPC endpoints (mainnet.base.org and api.mainnet-beta.solana.com — both free, no auth). Volume is low (mostly cached). If rate limits ever bite, add an Alchemy or Helius path back into `lib/decimals.py`.
 
 `GOOGLE_SHEETS_CREDENTIALS` is unused at runtime (we use user OAuth), but `lib/sheets.py` still has the service-account fallback code path (`_load_service_account_creds`). If you keep the GH Actions secret empty, the fallback no-ops and the OAuth path takes over. To fully retire it: delete the secret, remove the env line from `daily.yml`, and delete `_load_service_account_creds` + its caller branch.
 
@@ -296,9 +296,9 @@ Some keys were pasted in Claude conversations during build and should be rotated
 
 # Future improvements
 
-Areas the dev can take this further.
+Areas the dev can take this further. Items marked ⭐ are the ones Claude recommends tackling first based on impact, time-sensitivity, or low effort.
 
-### 1. Push lore automatically to Send.Trade via `/admin/lore/logs`
+### 1. ⭐ Push lore automatically to Send.Trade via `/admin/lore/logs`
 Right now the movement scanner generates a 1-sentence lore blurb but only posts to Discord. Send.Trade has a write endpoint that takes the same content:
 
 ```
@@ -321,6 +321,8 @@ Wire `lib/lore.py`'s output (or a richer version) into this endpoint after the m
 
 Needs `DOCS_PASSWORD` as a new GH Actions secret.
 
+*Why ⭐: highest-leverage feature on the list. The scanner already does the expensive work of detecting movers and synthesizing lore — wiring it into the existing Send.Trade write endpoint closes the loop end-to-end.*
+
 ### 2. Auto-verification (if Send.Trade exposes a write API for it)
 If there's an `/admin/verify` or similar endpoint, this scanner already has all the signal needed to flag candidates as ready-to-verify. Right now it just dumps them in a Google Sheet for manual review.
 
@@ -330,20 +332,28 @@ Today thresholds are global. Solana memes might benefit from looser MC/liq floor
 ### 4. A/B test framework for criteria
 Add a `--criteria-shadow` mode that runs an alternative threshold set in parallel and reports what WOULD have surfaced. Lets you tune thresholds against real data without flipping the live config.
 
-### 5. Performance: parallelize API calls
+### 5. ⭐ Performance: parallelize API calls
 `fetch_new_candidates_ds` runs API calls sequentially with 1.2s delays. For ~700 addresses across both chains, that's ~14 minutes. Switching to `asyncio` + `aiohttp` with bounded concurrency (10-20 parallel) would cut this to ~1-2 minutes.
+
+*Why ⭐: we're at ~1,800 GH Actions min/mo against the 2,000-min Free-tier cap. The daily scan is the heaviest run. Parallelizing buys headroom AND lets the dev tighten the cron schedule if needed.*
 
 ### 6. Migrate `dismissed.json` + `movement_alerts.json` to a real DB
 Both files get committed back to the repo every run, which churns git history. SQLite via Litestream, Supabase, or even Redis would be cleaner. Trade-off: more infra.
 
-### 7. Add `repository_dispatch` event-type validation
+### 7. ⭐ Add `repository_dispatch` event-type validation
 Currently any `repository_dispatch` event with any `event_type` will trigger the workflow. Lock it down by adding `if: github.event.action == 'hourly-scan'` to the job to prevent rogue dispatches from running it.
 
-### 8. GH Actions Node.js 24 migration
+*Why ⭐: 5-minute security hardening. Cheap, no downside.*
+
+### 8. ⭐ GH Actions Node.js 24 migration
 `actions/checkout@v4` and `actions/setup-python@v5` are on Node 20, which GH will force to Node 24 by mid-2026. Bump to latest before September 2026 when Node 20 is removed.
 
-### 9. Movement scanner trending_pools for Solana
+*Why ⭐: hard deadline. If you don't migrate, workflows break. Trivial fix (bump action versions).*
+
+### 9. ⭐ Movement scanner trending_pools for Solana
 The verification scanner uses `_gt_trending_addresses` to catch Solana memes hidden behind stablecoin pools. The movement scanner does NOT. If you want better coverage of Solana h1 pumps, add the same trending source to `find_movers`.
+
+*Why ⭐: the same fix that materially improved the daily scan's Solana coverage will likely do the same for h1 movement alerts. Direct, proven pattern to copy.*
 
 ### 10. Discord thread per-token
 Right now all alerts post into the same channel. Consider creating a thread per detected mover so follow-up discussion stays scoped. Discord webhook supports `thread_id` and `thread_name` params.
@@ -351,8 +361,27 @@ Right now all alerts post into the same channel. Consider creating a thread per 
 ### 11. Test coverage
 There are zero tests right now. The trickiest path (`lib/dexscreener.py` filter logic, especially the Solana case-sensitivity + aggregation) would benefit from snapshot tests against fixed DS/GT response fixtures.
 
-### 12. Prune `DS_WIDE_QUERIES`
-The 45-query keyword search in `lib/dexscreener.py` includes a lot of redundant terms — tickers like `BONK`, `BRETT`, `WIF` mostly surface tokens that are already on Send.Trade's verified list (auto-filtered downstream). Category queries (`ai`, `agent`, `meme`, `depin`, `rwa`, `defi`, `pump`) and chain-name queries are the real signal source. Pruning the popular-ticker queries would cut ~20 API calls per run with little discovery loss.
+### 12. ⭐ Prune or drop `DS_WIDE_QUERIES`
+The 45-query keyword search in `lib/dexscreener.py` is mostly dead weight. Empirical attribution against the 2026-06-02 snapshot showed **0 of 28 candidates came uniquely from keyword search** — every candidate it surfaced was also findable via GT top pools, GT trending, or DS profiles+boosts.
+
+The keyword search currently costs ~45 API calls and ~54s of runtime per run (24 runs/day = 1,080 wasted API calls daily). Options:
+- Drop entirely (simplest, ~1 min saved per run)
+- Trim to just category queries (`ai`, `agent`, `meme`, `depin`, `rwa`, `defi`, `pump`) on the theory that they MIGHT catch fresh launches on a different day's sample
+
+The ticker queries (`BONK`, `BRETT`, `WIF`, etc.) almost all surface tokens that are already on Send.Trade's verified list, so they get auto-filtered downstream — pure waste.
+
+*Why ⭐: actual measurement showed zero unique value-add today. The 1 minute saved per scan also helps with the GH Actions minute budget mentioned above.*
+
+### Summary of ⭐ recommendations
+
+Six items above are starred. If the dev does only those six, the system gets:
+- a real second output channel (auto-lore push) instead of just Discord
+- a faster + cheaper daily run (parallelization + keyword prune)
+- a forward-compatible workflow (Node.js 24)
+- a security hardening (event-type validation)
+- broader Solana movement coverage (trending source)
+
+Unstarred items (2, 3, 4, 6, 10, 11) are nice-to-haves — solid engineering improvements but not required for the system to run well as-is.
 
 ---
 

@@ -41,8 +41,6 @@ jobs:
           GOOGLE_OAUTH_TOKEN: ${{ secrets.GOOGLE_OAUTH_TOKEN }}
           GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
           GECKOTERMINAL_API_KEY: ${{ secrets.GECKOTERMINAL_API_KEY }}
-          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
-          HELIUS_API_KEY: ${{ secrets.HELIUS_API_KEY }}
         run: |
           if [ "${{ inputs.backfill }}" = "true" ]; then
             python daily_scan.py --backfill

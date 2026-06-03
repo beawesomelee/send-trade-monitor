@@ -13,6 +13,10 @@
   },
   {
     "chain_slug": "base",
+    "address": "0x14f2e6badd0cc566d5283a8f75110458c67f1261"
+  },
+  {
+    "chain_slug": "base",
     "address": "0x4823aa725ce227e4d05e1c042a70a29ff56bdb69"
   },
   {
@@ -34,5 +38,25 @@
   {
     "chain_slug": "base",
     "address": "0xf1e9baa65d418a9025e1851dd2d37f1ad208bba3"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "61aNNrrRp81a3ZztDL69dNyrcshBsqWZdWVSrpYpump"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "6gwoNDv86bDCmJWZPyvYyhor1en1YxS13sbBo6zdpump"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "So11111111111111111111111111111111111111112"
   }
 ]

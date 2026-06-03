@@ -1,13 +1,16 @@
 name: Movement Scan (h1)
 
 on:
-  # External hourly trigger via cron-job.org -> repository_dispatch webhook.
-  # PRIMARY trigger (GH native cron is unreliable; drops runs under load).
+  # External trigger via cron-job.org -> repository_dispatch webhook is the
+  # PRIMARY scheduler (GH native cron is unreliable; drops runs under load).
+  # Movement runs every 15 min so the rolling-h1 sample lands close to a
+  # pump's peak instead of only checking once an hour (see README "h1 is
+  # rolling, not a fixed candle" note).
   repository_dispatch:
     types: [hourly-movement]
-  # Native GH cron as a backstop in case the external service is down.
+  # Native GH cron backstop, also every 15 min (offset from daily.yml's :12).
   schedule:
-    - cron: "22 * * * *"
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
     inputs:
       h6_fallback:

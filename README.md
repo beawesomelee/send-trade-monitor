@@ -46,7 +46,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[cron-job.org POSTs hourly at :22<br/>to GitHub repository_dispatch] --> B[GitHub Actions starts movement.yml]
+    A[cron-job.org POSTs every 15 min<br/>to GitHub repository_dispatch] --> B[GitHub Actions starts movement.yml]
     B --> C[Scan GT top-volume pools<br/>10 pages per chain Base + Solana]
     C --> D[For each pool: check h1 price change<br/>pump &ge;+80% or dump &le;-50%]
     D --> E[Apply MC and liquidity floors]
@@ -73,7 +73,7 @@ flowchart TD
 | What | When | Trigger |
 |---|---|---|
 | Verification scan | hourly :12 | cron-job.org webhook → `repository_dispatch: hourly-scan` (primary), GH native cron at `:12 * * * *` (backstop) |
-| Movement scan | hourly :22 | cron-job.org webhook → `repository_dispatch: hourly-movement` (primary), GH native cron at `:22 * * * *` (backstop) |
+| Movement scan | every 15 min | cron-job.org webhook → `repository_dispatch: hourly-movement` (primary), GH native cron at `7,22,37,52 * * * *` (backstop) |
 
 GH Actions native cron silently drops scheduled runs under platform load (often 50%+ on busy days). External cron-job.org is the reliable primary; native is the fallback.
 
@@ -185,6 +185,11 @@ Between them there's at least one commit per hour, which keeps both workflows ar
 
 ### 8. Solana memes' total vol can be aggregated, but top-10 GT page floor is ~$8M/pool
 Even with the fix in (3), the discovery step won't surface mid-cap Solana memes whose top single pool has <$8M/day vol. They simply never enter the `discovery_addrs` set. The trending_pools endpoint partially addresses this, but if you want truly comprehensive Solana coverage, additional discovery (Raydium/Orca-specific pool listings, DS profile/boosts heavier weighting) would help.
+
+### 9. The movement h1 is a rolling window, but we only sample it on a schedule
+GeckoTerminal's `price_change_percentage.h1` is a *rolling* 1-hour window (price now vs ~60 min ago), NOT a fixed UTC candle that resets at the top of the hour. So a token up 80% over the trailing hour reads 80% whenever we check it.
+
+The limitation is sampling frequency, not the metric. The scanner snapshots that rolling field on a schedule — so a pump that spikes and reverts between two samples can be missed (the trailing-hour value decays as the spike ages out of the window). We run the movement scanner every 15 min specifically to shrink that blind spot (≈4 chances to catch any 1-hour-window pump before it washes out). If you still miss fast spikes, the next lever is reading the `m15`/`m30` fields alongside `h1` — but those are sharper/noisier (single-block fakeouts), so add them deliberately, not by default.
 
 ---
 

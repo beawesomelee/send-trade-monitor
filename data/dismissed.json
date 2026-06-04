@@ -53,7 +53,15 @@
   },
   {
     "chain_slug": "solana",
+    "address": "EhHyfjRwj2jhmSE7GW5uJfizaLcNDa5C4HWPiSqjpump"
+  },
+  {
+    "chain_slug": "solana",
     "address": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "J4x1EMmQjF6WEzXq2tUtzY89x5aMhYz5CzfevcJEpump"
   },
   {
     "chain_slug": "solana",

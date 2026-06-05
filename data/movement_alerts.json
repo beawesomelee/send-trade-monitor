@@ -1,10 +1,10 @@
 [
   {
     "chain_slug": "base",
-    "address": "0x2d57c47bc5d2432feeedf2c9150162a9862d3ccf",
-    "symbol": "DICKBUTT",
+    "address": "0x296eb9c4d8fcbd00fbc6d5027e4202bf955fa76f",
+    "symbol": "PEAK",
     "direction": "pump",
-    "price_change_h1_pct": 773.079,
-    "timestamp": 1780525357.155348
+    "price_change_h1_pct": 181.849,
+    "timestamp": 1780671642.473744
   }
 ]

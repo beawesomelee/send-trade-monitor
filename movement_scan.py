@@ -30,8 +30,9 @@ from lib.movement import (
     filter_by_cooldown,
     record_alerts,
 )
-from lib.lore import fetch_lore
 from lib.send_trade_lore import push_lore
+from lib.lore import fetch_lore_packet
+from lib.watcher_state import record_signals
 
 
 def main():
@@ -89,7 +90,8 @@ def main():
     # if XAI_API_KEY isn't set (returns "").
     print("4. fetching lore for each mover (Grok + live X search)...")
     for m in new_movers:
-        m["lore"] = fetch_lore(m)
+        m["lore_packet"] = fetch_lore_packet(m)
+        m["lore"] = m["lore_packet"].get("lore", "")
         if m["lore"]:
             print(f"   {m.get('symbol')}: lore captured ({len(m['lore'])} chars)")
         else:
@@ -114,6 +116,8 @@ def main():
 
         print("6. sending Discord alerts...")
         _send_alerts(new_movers, config)
+        signals = record_signals(new_movers)
+        print(f"   recorded {len(signals)} watcher signals")
         record_alerts(new_movers, retained)
         print("   recorded cooldown state")
     else:

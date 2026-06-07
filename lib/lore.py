@@ -10,12 +10,85 @@ treat lore as best-effort enrichment, never block on it.
 """
 
 import os
+import json
 import re
 
 import requests
 
 XAI_ENDPOINT = "https://api.x.ai/v1/responses"
 MODEL = "grok-4-fast-reasoning"  # cheap tier; tools API is supported
+LORE_PACKET_SCHEMA_VERSION = "lore_packet_v1"
+
+
+LORE_PACKET_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "properties": {
+        "lore": {
+            "type": "string",
+            "description": "The final short send.trade-style lore blurb.",
+        },
+        "references": {
+            "type": "array",
+            "description": "Source posts or links that support the lore. Empty if no reliable source was found.",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": ["x_post", "web_page", "unknown"],
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "Canonical URL for the source when available.",
+                    },
+                    "author_handle": {
+                        "type": "string",
+                        "description": "X handle for posts, including @ when known. Empty when unknown.",
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "Short relevant quote or paraphrase from the source.",
+                    },
+                    "relevance": {
+                        "type": "string",
+                        "description": "Why this source matters for the token move.",
+                    },
+                },
+                "required": ["type", "url", "author_handle", "text", "relevance"],
+            },
+        },
+        "watcher_clues": {
+            "type": "object",
+            "additionalProperties": False,
+            "properties": {
+                "accounts": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "X accounts worth considering as watcher candidates.",
+                },
+                "phrases": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Multi-word phrases worth considering as watcher candidates.",
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Single-token keywords, tickers, memes, or project names.",
+                },
+                "catalysts": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Short catalyst tags like kol_post, listing, team_update, meme_reactivation.",
+                },
+            },
+            "required": ["accounts", "phrases", "keywords", "catalysts"],
+        },
+    },
+    "required": ["lore", "references", "watcher_clues"],
+}
 
 # Voice rules baked into every lore request. Mirrors the send.trade post-tone
 # skill — crypto-native gen z trader voice, all lowercase, real numbers and
@@ -77,9 +150,14 @@ if a KOL posted a 🐬 emoji + tagged the token, the takeaway is "bull post on p
 
 def fetch_lore(mover: dict, timeout: int = 60) -> str:
     """Generate a send.trade-style trader-voice blurb for a mover."""
+    return fetch_lore_packet(mover, timeout=timeout).get("lore", "")
+
+
+def fetch_lore_packet(mover: dict, timeout: int = 60) -> dict:
+    """Generate lore plus source references and watcher clues for a mover."""
     api_key = os.environ.get("XAI_API_KEY", "")
     if not api_key:
-        return ""
+        return _empty_lore_packet()
 
     symbol = mover.get("symbol") or "?"
     x_handle = (mover.get("x_handle") or "").lstrip("@")
@@ -113,7 +191,12 @@ def fetch_lore(mover: dict, timeout: int = 60) -> str:
     user_prompt += (
         ". Now post the read in send.trade voice — all lowercase, ground it in a real "
         "observation, end open when possible. Synthesize don't describe (if @someone "
-        "posted a bull emoji or cryptic hype, it's a bull post, not 'they posted X emoji')."
+        "posted a bull emoji or cryptic hype, it's a bull post, not 'they posted X emoji'). "
+        "Also return watcher clues from the sources you used: X accounts, exact phrases, "
+        "keywords, catalyst tags, and source references. For X references, include the "
+        "post URL, author handle, and a short relevant text snippet when available. "
+        "Do not invent source URLs, handles, or quotes. If you cannot verify a source, "
+        "leave references empty and say so plainly in the lore."
     )
 
     payload = {
@@ -123,8 +206,16 @@ def fetch_lore(mover: dict, timeout: int = 60) -> str:
             {"role": "user", "content": user_prompt},
         ],
         "tools": [{"type": "x_search"}, {"type": "web_search"}],
+        "text": {
+            "format": {
+                "type": "json_schema",
+                "name": "send_trade_lore_packet",
+                "schema": LORE_PACKET_SCHEMA,
+                "strict": True,
+            }
+        },
         "temperature": 0.6,
-        "max_output_tokens": 200,
+        "max_output_tokens": 700,
     }
 
     headers = {
@@ -136,12 +227,46 @@ def fetch_lore(mover: dict, timeout: int = 60) -> str:
         r = requests.post(XAI_ENDPOINT, json=payload, headers=headers, timeout=timeout)
         if r.status_code != 200:
             print(f"    Grok lore HTTP {r.status_code}: {r.text[:300]}")
-            return ""
+            return _empty_lore_packet()
         data = r.json()
-        return _extract_text(data, project_handle=x_handle)
+        return _parse_lore_packet(data, project_handle=x_handle)
     except Exception as e:
         print(f"    Grok lore err: {e}")
-        return ""
+        return _empty_lore_packet()
+
+
+def _empty_lore_packet() -> dict:
+    return {
+        "schema_version": LORE_PACKET_SCHEMA_VERSION,
+        "model": MODEL,
+        "lore": "",
+        "references": [],
+        "watcher_clues": {
+            "accounts": [],
+            "phrases": [],
+            "keywords": [],
+            "catalysts": [],
+        },
+    }
+
+
+def _parse_lore_packet(data: dict, project_handle: str = "") -> dict:
+    raw = _extract_raw_text(data)
+    if not raw:
+        return _empty_lore_packet()
+
+    try:
+        parsed = json.loads(raw)
+    except json.JSONDecodeError:
+        packet = _empty_lore_packet()
+        packet["lore"] = _scrub(raw, project_handle=project_handle)
+        return packet
+
+    packet = _empty_lore_packet()
+    packet["lore"] = _scrub(str(parsed.get("lore") or ""), project_handle=project_handle)
+    packet["references"] = _clean_references(parsed.get("references") or [])
+    packet["watcher_clues"] = _clean_watcher_clues(parsed.get("watcher_clues") or {})
+    return packet
 
 
 def _extract_text(data: dict, project_handle: str = "") -> str:
@@ -151,20 +276,65 @@ def _extract_text(data: dict, project_handle: str = "") -> str:
     so blurbs read "veilnet posted" instead of "@Veilnet_ posted". External
     @handles (KOLs, big founders) are left intact since they read naturally.
     """
-    if isinstance(data.get("output_text"), str) and data["output_text"].strip():
-        raw = data["output_text"].strip()
-    else:
-        output = data.get("output") or []
-        chunks = []
-        for item in output:
-            if item.get("type") != "message":
-                continue
-            for c in item.get("content") or []:
-                text = c.get("text")
-                if isinstance(text, str):
-                    chunks.append(text)
-        raw = "\n".join(chunks).strip()
+    raw = _extract_raw_text(data)
     return _scrub(raw, project_handle=project_handle)
+
+
+def _extract_raw_text(data: dict) -> str:
+    if isinstance(data.get("output_text"), str) and data["output_text"].strip():
+        return data["output_text"].strip()
+
+    output = data.get("output") or []
+    chunks = []
+    for item in output:
+        if item.get("type") != "message":
+            continue
+        for c in item.get("content") or []:
+            text = c.get("text")
+            if isinstance(text, str):
+                chunks.append(text)
+    return "\n".join(chunks).strip()
+
+
+def _clean_references(refs) -> list[dict]:
+    if not isinstance(refs, list):
+        return []
+
+    out = []
+    for ref in refs[:5]:
+        if not isinstance(ref, dict):
+            continue
+        out.append({
+            "type": _string(ref.get("type")) or "unknown",
+            "url": _string(ref.get("url")),
+            "author_handle": _string(ref.get("author_handle")),
+            "text": _string(ref.get("text")),
+            "relevance": _string(ref.get("relevance")),
+        })
+    return out
+
+
+def _clean_watcher_clues(clues) -> dict:
+    if not isinstance(clues, dict):
+        clues = {}
+    return {
+        "accounts": _string_list(clues.get("accounts")),
+        "phrases": _string_list(clues.get("phrases")),
+        "keywords": _string_list(clues.get("keywords")),
+        "catalysts": _string_list(clues.get("catalysts")),
+    }
+
+
+def _string_list(value) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    return [_string(v) for v in value if _string(v)][:12]
+
+
+def _string(value) -> str:
+    if value is None:
+        return ""
+    return str(value).strip()
 
 
 _CITATION_RE = re.compile(r"\[\[?\d+\]?\]\([^)]*\)")  # [[1]](url) or [1](url)

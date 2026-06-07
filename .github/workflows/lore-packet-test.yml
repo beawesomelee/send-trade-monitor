@@ -1,0 +1,33 @@
+name: Lore Packet Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: "Sample mover to test"
+        type: choice
+        options:
+          - dickbutt
+        default: dickbutt
+
+jobs:
+  test-lore-packet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Fetch Grok lore packet
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          LORE_TEST_SAMPLE: ${{ inputs.sample }}
+        run: python scripts/test_lore_packet.py

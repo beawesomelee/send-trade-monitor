@@ -6,9 +6,12 @@ on:
   # under platform load.
   repository_dispatch:
     types: [hourly-scan]
-  # Native GH cron as a backstop in case the external service is down.
+  # Native GH cron as an infrequent backstop in case cron-job.org is down.
+  # Runs 4x/day at :42 — deliberately offset from cron-job.org's :12 so the
+  # two schedulers never fire in the same minute and race on the snapshot
+  # commit. (cron-job.org is the primary hourly trigger.)
   schedule:
-    - cron: "12 * * * *"
+    - cron: "42 */6 * * *"
   workflow_dispatch:
     inputs:
       backfill:
@@ -55,13 +58,18 @@ jobs:
           git add -f data/snapshots/ data/decimals_cache.json data/dismissed.json
           if git diff --staged --quiet; then echo "No changes"; else
             git commit -m "Daily snapshot $(date -u +%Y-%m-%d)"
-            # Retry push with rebase to handle race condition with the
-            # movement.yml workflow (or any concurrent push to main).
-            for attempt in 1 2 3; do
+            # Retry push, handling races with concurrent runs (cron-job.org +
+            # GH native cron can both fire this workflow in the same minute and
+            # rewrite the same snapshot file). On rejection, merge remote with
+            # -X ours so our just-generated data wins on conflict, then retry.
+            # Merge (not rebase) is used because rebase halts mid-operation on
+            # a data-file conflict and leaves the repo in a broken state.
+            for attempt in 1 2 3 4 5; do
               if git push; then exit 0; fi
-              echo "push attempt $attempt failed, pulling + rebasing..."
-              git pull --rebase origin main
+              echo "push attempt $attempt rejected, merging remote (ours wins)..."
+              git fetch origin main
+              git merge -X ours --no-edit origin/main || true
             done
-            echo "push failed after 3 retries"
+            echo "push failed after 5 retries"
             exit 1
           fi

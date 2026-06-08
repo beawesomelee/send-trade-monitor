@@ -8,9 +8,11 @@ on:
   # rolling, not a fixed candle" note).
   repository_dispatch:
     types: [hourly-movement]
-  # Native GH cron backstop, also every 15 min (offset from daily.yml's :12).
+  # Native GH cron as an infrequent backstop in case cron-job.org is down.
+  # Runs hourly at :37, offset from cron-job.org's :00/:15/:30/:45 marks so
+  # the two never race. (cron-job.org is the primary every-15-min trigger.)
   schedule:
-    - cron: "7,22,37,52 * * * *"
+    - cron: "37 * * * *"
   workflow_dispatch:
     inputs:
       h6_fallback:
@@ -57,13 +59,16 @@ jobs:
           git add -f data/movement_alerts.json data/watcher.json || true
           if git diff --staged --quiet; then echo "No alert state changes"; else
             git commit -m "Movement alert state $(date -u +%Y-%m-%dT%H:%MZ)"
-            # Retry push with rebase to handle race condition with daily.yml
-            # or any concurrent push to main.
-            for attempt in 1 2 3; do
+            # Retry push, handling races with concurrent runs. On rejection,
+            # merge remote with -X ours so our just-written alert state wins,
+            # then retry. Merge (not rebase) avoids the halt-on-conflict that
+            # leaves the repo broken mid-operation.
+            for attempt in 1 2 3 4 5; do
               if git push; then exit 0; fi
-              echo "push attempt $attempt failed, pulling + rebasing..."
-              git pull --rebase origin main
+              echo "push attempt $attempt rejected, merging remote (ours wins)..."
+              git fetch origin main
+              git merge -X ours --no-edit origin/main || true
             done
-            echo "push failed after 3 retries"
+            echo "push failed after 5 retries"
             exit 1
           fi

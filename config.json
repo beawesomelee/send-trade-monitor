@@ -22,10 +22,11 @@
     "tab_name": "Candidates"
   },
   "movement": {
-    "pump_threshold_pct": 80,
+    "pump_threshold_pct": 50,
     "dump_threshold_pct": -50,
     "min_market_cap_usd": 1000000,
     "min_liquidity_usd": 30000,
+    "min_volume_24h_usd": 500000,
     "cooldown_hours": 4,
     "gt_pages": 10
   }

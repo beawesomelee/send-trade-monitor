@@ -41,6 +41,7 @@ def find_movers(config: dict, window: str = "h1") -> list[dict]:
     cfg = config["movement"]
     min_mc = cfg["min_market_cap_usd"]
     min_liq = cfg["min_liquidity_usd"]
+    min_vol_24h = cfg.get("min_volume_24h_usd", 0)
     pump_thr = cfg["pump_threshold_pct"]
     dump_thr = cfg["dump_threshold_pct"]
     max_pages = cfg.get("gt_pages", 10)
@@ -113,6 +114,11 @@ def find_movers(config: dict, window: str = "h1") -> list[dict]:
     movers = []
     sort_vol_key = "volume_h1_usd" if window == "h1" else "volume_h6_usd"
     for (slug, addr), pool_list in pools_by_token.items():
+        # 24h volume floor: sum across all of the token's pools (real total
+        # 24h volume), filter out thin tokens whose move isn't backed by trade.
+        total_vol_24h = sum(p["volume_h24_usd"] for p in pool_list)
+        if min_vol_24h > 0 and total_vol_24h < min_vol_24h:
+            continue
         best = max(pool_list, key=lambda x: x[sort_vol_key])
         direction = "pump" if best["price_change_pct"] >= pump_thr else "dump"
         movers.append({**best, "direction": direction})

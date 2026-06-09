@@ -51,6 +51,10 @@ jobs:
           fi
 
       - name: Sync watcher rules to X
+        # Non-blocking: this is optional enrichment. If X_BEARER_TOKEN isn't
+        # set (or the X API errors), don't fail the whole workflow or skip the
+        # cooldown-state commit below — the core movement scan already ran.
+        continue-on-error: true
         env:
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: python scripts/sync_watcher_rules.py --apply

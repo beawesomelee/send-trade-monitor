@@ -88,8 +88,9 @@ def main() -> int:
                 rule for rule in list_rules(token, timeout=args.timeout)
                 if (rule.get("tag") or "").startswith(MANAGED_TAG_PREFIX)
             ]
-            store_rule_snapshot(args.state, current)
+            stored = store_rule_snapshot(args.state, current)
             result["stored_snapshot_count"] = len(current)
+            result["stored_snapshot"] = stored
     except XRulesError as exc:
         print(str(exc), file=sys.stderr)
         return 1

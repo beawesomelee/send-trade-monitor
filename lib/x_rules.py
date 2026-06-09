@@ -157,8 +157,8 @@ def sync_rules(
     }
 
 
-def store_rule_snapshot(state_path: Path, rules: list[dict]) -> None:
-    """Store the latest managed X rule snapshot in watcher state."""
+def store_rule_snapshot(state_path: Path, rules: list[dict]) -> bool:
+    """Store the latest managed X rule snapshot in watcher state when useful."""
     try:
         state = json.loads(state_path.read_text()) if state_path.exists() else {}
     except Exception:
@@ -166,11 +166,18 @@ def store_rule_snapshot(state_path: Path, rules: list[dict]) -> None:
     if not isinstance(state, dict):
         state = {}
 
-    state["rules"] = _normalize_rules(rules)
+    normalized_rules = _normalize_rules(rules)
+    if not normalized_rules and not _has_watcher_state(state):
+        if state_path.exists():
+            state_path.unlink()
+        return False
+
+    state["rules"] = normalized_rules
     state["rules_synced_at"] = _now_iso()
     state["updated_at"] = state["rules_synced_at"]
     state_path.parent.mkdir(parents=True, exist_ok=True)
     state_path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
+    return True
 
 
 def _headers(bearer_token: str) -> dict:
@@ -210,6 +217,16 @@ def _normalize_rules(rules: Iterable[dict]) -> list[dict]:
             item["id"] = str(rule["id"])
         normalized.append(item)
     return normalized
+
+
+def _has_watcher_state(state: dict) -> bool:
+    signals = state.get("signals")
+    watch_accounts = state.get("watch_accounts")
+    return (
+        isinstance(signals, list) and bool(signals)
+    ) or (
+        isinstance(watch_accounts, dict) and bool(watch_accounts)
+    )
 
 
 def _dedupe_rules(rules: list[dict]) -> list[dict]:

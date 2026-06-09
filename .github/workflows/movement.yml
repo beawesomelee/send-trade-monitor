@@ -1,22 +1,20 @@
-name: Movement Scan (h1)
+name: Movement Scan (h6)
 
 on:
   # External trigger via cron-job.org -> repository_dispatch webhook is the
   # PRIMARY scheduler (GH native cron is unreliable; drops runs under load).
-  # Movement runs every 15 min so the rolling-h1 sample lands close to a
-  # pump's peak instead of only checking once an hour (see README "h1 is
-  # rolling, not a fixed candle" note).
+  # Detection uses the 6h window, which decays slowly enough that checking
+  # once an hour gives ~6 looks at any move — no need for sub-hourly cadence.
   repository_dispatch:
     types: [hourly-movement]
-  # Native GH cron as an infrequent backstop in case cron-job.org is down.
-  # Runs hourly at :37, offset from cron-job.org's :00/:15/:30/:45 marks so
-  # the two never race. (cron-job.org is the primary every-15-min trigger.)
+  # Native GH cron as a backstop in case cron-job.org is down. Hourly at :37,
+  # offset from the daily scan and cron-job.org's minute so they never race.
   schedule:
     - cron: "37 * * * *"
   workflow_dispatch:
     inputs:
-      h6_fallback:
-        description: "Also try h6 window if h1 finds nothing (manual testing)"
+      h1:
+        description: "Use the 1h window instead of the default 6h (testing)"
         type: boolean
         default: false
 
@@ -46,8 +44,8 @@ jobs:
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           DOCS_PASSWORD: ${{ secrets.DOCS_PASSWORD }}
         run: |
-          if [ "${{ inputs.h6_fallback }}" = "true" ]; then
-            python movement_scan.py --alert --h6-fallback
+          if [ "${{ inputs.h1 }}" = "true" ]; then
+            python movement_scan.py --alert --h1
           else
             python movement_scan.py --alert
           fi

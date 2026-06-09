@@ -1,8 +1,8 @@
 """
-movement_scan.py — Base ecosystem hourly movement scanner.
+movement_scan.py — Base + Solana ecosystem hourly movement scanner.
 
-Detects tokens with significant 1-hour price movement (pumps ≥ +80%, dumps ≤ -50%)
-that meet MC + liquidity floors AND have a logo set.
+Detects tokens with significant 6-hour price movement (pumps ≥ +50%, dumps ≤ -50%)
+that meet MC + liquidity + 24h-volume floors AND have a logo set.
 
 Manual phase (current): outputs detected movers + a research prompt for each.
 The operator reviews and decides which to alert via --alert flag.
@@ -41,24 +41,22 @@ def main():
                         help="Actually send to Discord and record cooldown")
     parser.add_argument("--no-cooldown", action="store_true",
                         help="Ignore cooldown filter (for testing)")
-    parser.add_argument("--h6-fallback", action="store_true",
-                        help="Fall back to h6 window if h1 finds nothing (manual runs only)")
+    parser.add_argument("--h1", action="store_true",
+                        help="Use the 1h window instead of the default 6h (testing)")
     args = parser.parse_args()
 
     config = json.loads((SCRIPT_DIR / "config.json").read_text())
     today = time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())
     print(f"=== Movement scan: {today} ===")
 
-    # h1 is the primary window. h6 fallback only runs on manual --h6-fallback
-    # invocations (testing phase) so the scheduled cron sticks to h1 only.
-    print("1. fetching GT pools for h1 movers...")
-    movers = find_movers(config, window="h1")
-    print(f"   {len(movers)} unique tokens passed MC + liq + h1-change filters")
-
-    if not movers and args.h6_fallback:
-        print("   no h1 movers — falling back to h6 (manual run)...")
-        movers = find_movers(config, window="h6")
-        print(f"   {len(movers)} unique tokens passed MC + liq + h6-change filters")
+    # h6 is the primary detection window — sustained 6h moves. The 6h rolling
+    # window decays slowly, so an hourly cron samples it ~6x per move (no need
+    # for the old 15-min cadence the 1h window required). Pass --h1 to test
+    # the faster window manually.
+    window = "h1" if args.h1 else "h6"
+    print(f"1. fetching GT pools for {window} movers...")
+    movers = find_movers(config, window=window)
+    print(f"   {len(movers)} unique tokens passed MC + liq + vol + {window}-change filters")
 
     if not movers:
         print("\nno movers this run")

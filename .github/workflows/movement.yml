@@ -52,6 +52,11 @@ jobs:
             python movement_scan.py --alert
           fi
 
+      - name: Sync watcher rules to X
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: python scripts/sync_watcher_rules.py --apply
+
       - name: Commit alert state
         run: |
           git config user.name  "github-actions[bot]"

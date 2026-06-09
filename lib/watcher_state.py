@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -26,6 +27,7 @@ def record_signals(movers: list[dict], detected_at: str | None = None) -> list[d
         if signal["id"] in seen:
             continue
         state["signals"].append(signal)
+        _merge_watch_accounts(state, signal)
         seen.add(signal["id"])
         created.append(signal)
 
@@ -42,6 +44,7 @@ def _load_state() -> dict:
         "schema_version": SCHEMA_VERSION,
         "updated_at": "",
         "signals": [],
+        "watch_accounts": {},
         "rules": [],
     }
     if not WATCHER_FILE.exists():
@@ -56,6 +59,9 @@ def _load_state() -> dict:
         "schema_version": data.get("schema_version") or SCHEMA_VERSION,
         "updated_at": data.get("updated_at") or "",
         "signals": data.get("signals") if isinstance(data.get("signals"), list) else [],
+        "watch_accounts": (
+            data.get("watch_accounts") if isinstance(data.get("watch_accounts"), dict) else {}
+        ),
         "rules": data.get("rules") if isinstance(data.get("rules"), list) else [],
     }
 
@@ -100,6 +106,99 @@ def _signal_id(mover: dict, detected_at: str) -> str:
         detected_at[:13],
     ])
     return "signal_" + hashlib.sha1(body.encode("utf-8")).hexdigest()[:12]
+
+
+def _merge_watch_accounts(state: dict, signal: dict):
+    accounts = _signal_accounts(signal)
+    terms = _signal_terms(signal)
+    if not accounts or not terms:
+        return
+
+    watch_accounts = state.setdefault("watch_accounts", {})
+    for account in accounts:
+        existing = watch_accounts.get(account)
+        if not isinstance(existing, dict):
+            existing = {}
+
+        existing_terms = existing.get("terms") if isinstance(existing.get("terms"), list) else []
+        source_ids = existing.get("source_signal_ids")
+        if not isinstance(source_ids, list):
+            source_ids = []
+
+        watch_accounts[account] = {
+            "status": existing.get("status") or "active",
+            "terms": _dedupe(existing_terms + terms)[:120],
+            "source_signal_ids": _dedupe(source_ids + [signal["id"]]),
+            "updated_at": _now_iso(),
+        }
+
+
+def _signal_accounts(signal: dict) -> list[str]:
+    clues = signal.get("watcher_clues") if isinstance(signal.get("watcher_clues"), dict) else {}
+    refs = signal.get("references") if isinstance(signal.get("references"), list) else []
+
+    accounts = []
+    accounts.extend(clues.get("accounts") if isinstance(clues.get("accounts"), list) else [])
+    for ref in refs:
+        if isinstance(ref, dict):
+            accounts.append(ref.get("author_handle"))
+
+    return [_normalize_handle(a) for a in _dedupe(accounts) if _normalize_handle(a)]
+
+
+def _signal_terms(signal: dict) -> list[str]:
+    clues = signal.get("watcher_clues") if isinstance(signal.get("watcher_clues"), dict) else {}
+    token = signal.get("token") if isinstance(signal.get("token"), dict) else {}
+    symbol = _clean_term(token.get("symbol"))
+
+    terms = []
+    if symbol:
+        terms.extend([symbol, f"${symbol}"])
+    terms.extend(clues.get("keywords") if isinstance(clues.get("keywords"), list) else [])
+    terms.extend(clues.get("phrases") if isinstance(clues.get("phrases"), list) else [])
+
+    catalysts = clues.get("catalysts") if isinstance(clues.get("catalysts"), list) else []
+    terms.extend(str(c).replace("_", " ") for c in catalysts)
+
+    cleaned = []
+    for term in terms:
+        t = _clean_term(term)
+        if t and len(t) >= 3:
+            cleaned.append(t)
+    return _dedupe(cleaned)[:80]
+
+
+def _normalize_handle(value) -> str:
+    if value is None:
+        return ""
+    handle = str(value).strip().lower()
+    if not handle:
+        return ""
+    handle = handle.rsplit("/", 1)[-1] if "/" in handle else handle
+    handle = handle.lstrip("@")
+    handle = re.sub(r"[^a-z0-9_]", "", handle)
+    return f"@{handle}" if handle else ""
+
+
+def _clean_term(value) -> str:
+    if value is None:
+        return ""
+    text = str(value).strip().lower()
+    return re.sub(r"\s+", " ", text)
+
+
+def _dedupe(values: list) -> list:
+    out = []
+    seen = set()
+    for value in values:
+        if value is None:
+            continue
+        key = str(value).strip().lower()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        out.append(value)
+    return out
 
 
 def _now_iso() -> str:

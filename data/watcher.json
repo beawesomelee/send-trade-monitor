@@ -1,0 +1,195 @@
+{
+  "rules": [
+    {
+      "id": "2064470082407829504",
+      "tag": "send_watcher:jotchuathememe",
+      "value": "from:jotchuathememe (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
+    },
+    {
+      "id": "2064470082407829505",
+      "tag": "send_watcher:cryptojunzy",
+      "value": "from:cryptojunzy (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
+    },
+    {
+      "id": "2064470082407829506",
+      "tag": "send_watcher:smol_intern",
+      "value": "from:smol_intern (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
+    },
+    {
+      "id": "2064470082407829507",
+      "tag": "send_watcher:trencherrzalt",
+      "value": "from:trencherrzalt (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
+    },
+    {
+      "id": "2064470082407829508",
+      "tag": "send_watcher:onlyljc",
+      "value": "from:onlyljc (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
+    }
+  ],
+  "rules_synced_at": "2026-06-09T22:10:00Z",
+  "schema_version": "watcher_state_v1",
+  "signals": [
+    {
+      "detected_at": "2026-06-09T22:09:57Z",
+      "id": "signal_1d74d4dec010",
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump"
+      },
+      "lore": "jotchuans reporting for duty after ansem team post, moonshot votes stacking, onlyljc and smol_intern credited on the run",
+      "movement": {
+        "change_pct": 83.3,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@JotchuaTheMeme",
+          "relevance": "project account replying to ansem with community meme, timing aligns with pump",
+          "text": "Jutchuans reporting for duty \ud83e\udee1",
+          "type": "x_post",
+          "url": "https://x.com/JotchuaTheMeme/status/2064447789581680791"
+        },
+        {
+          "author_handle": "@trencherrzalt",
+          "relevance": "trader crediting specific accounts for the move and vol return",
+          "text": "Good shit @OnlyLJC @smol_intern you guys are killing it fr",
+          "type": "x_post",
+          "url": "https://x.com/trencherrzalt/status/2064470011394281944"
+        },
+        {
+          "author_handle": "@CryptoJunzy",
+          "relevance": "chart update and pump confirmation from active poster",
+          "text": "$Jotchua update 45% pump so far",
+          "type": "x_post",
+          "url": "https://x.com/CryptoJunzy/status/2064469984655339864"
+        }
+      ],
+      "token": {
+        "address": "BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump",
+        "symbol": "Jotchua"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@JotchuaTheMeme",
+          "@OnlyLJC",
+          "@smol_intern",
+          "@CryptoJunzy",
+          "@trencherrzalt"
+        ],
+        "catalysts": [
+          "kol_post",
+          "moonshot_vote",
+          "community_meme"
+        ],
+        "keywords": [
+          "Jotchua",
+          "jotchuans",
+          "moonshot"
+        ],
+        "phrases": [
+          "jotchuans reporting for duty",
+          "moonshot spotlight",
+          "killing it fr"
+        ]
+      }
+    }
+  ],
+  "updated_at": "2026-06-09T22:10:00Z",
+  "watch_accounts": {
+    "@cryptojunzy": {
+      "source_signal_ids": [
+        "signal_1d74d4dec010"
+      ],
+      "status": "active",
+      "terms": [
+        "jotchua",
+        "$jotchua",
+        "jotchuans",
+        "moonshot",
+        "jotchuans reporting for duty",
+        "moonshot spotlight",
+        "killing it fr",
+        "kol post",
+        "moonshot vote",
+        "community meme"
+      ],
+      "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@jotchuathememe": {
+      "source_signal_ids": [
+        "signal_1d74d4dec010"
+      ],
+      "status": "active",
+      "terms": [
+        "jotchua",
+        "$jotchua",
+        "jotchuans",
+        "moonshot",
+        "jotchuans reporting for duty",
+        "moonshot spotlight",
+        "killing it fr",
+        "kol post",
+        "moonshot vote",
+        "community meme"
+      ],
+      "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@onlyljc": {
+      "source_signal_ids": [
+        "signal_1d74d4dec010"
+      ],
+      "status": "active",
+      "terms": [
+        "jotchua",
+        "$jotchua",
+        "jotchuans",
+        "moonshot",
+        "jotchuans reporting for duty",
+        "moonshot spotlight",
+        "killing it fr",
+        "kol post",
+        "moonshot vote",
+        "community meme"
+      ],
+      "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@smol_intern": {
+      "source_signal_ids": [
+        "signal_1d74d4dec010"
+      ],
+      "status": "active",
+      "terms": [
+        "jotchua",
+        "$jotchua",
+        "jotchuans",
+        "moonshot",
+        "jotchuans reporting for duty",
+        "moonshot spotlight",
+        "killing it fr",
+        "kol post",
+        "moonshot vote",
+        "community meme"
+      ],
+      "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@trencherrzalt": {
+      "source_signal_ids": [
+        "signal_1d74d4dec010"
+      ],
+      "status": "active",
+      "terms": [
+        "jotchua",
+        "$jotchua",
+        "jotchuans",
+        "moonshot",
+        "jotchuans reporting for duty",
+        "moonshot spotlight",
+        "killing it fr",
+        "kol post",
+        "moonshot vote",
+        "community meme"
+      ],
+      "updated_at": "2026-06-09T22:09:57Z"
+    }
+  }
+}

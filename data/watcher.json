@@ -41,7 +41,7 @@
       "value": "from:vegasnipes (velvet OR $velvet OR defai OR \"onchain terminal\" OR \"new app\" OR \"ai superpowers\" OR \"team update\" OR \"app launch\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-10T22:22:33Z",
+  "rules_synced_at": "2026-06-10T22:29:09Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -163,7 +163,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-10T22:22:33Z",
+  "updated_at": "2026-06-10T22:29:09Z",
   "watch_accounts": {
     "@cryptojunzy": {
       "source_signal_ids": [

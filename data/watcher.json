@@ -26,7 +26,7 @@
       "value": "from:onlyljc (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-10T00:22:28Z",
+  "rules_synced_at": "2026-06-10T01:22:34Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -94,7 +94,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-10T00:22:28Z",
+  "updated_at": "2026-06-10T01:22:34Z",
   "watch_accounts": {
     "@cryptojunzy": {
       "source_signal_ids": [

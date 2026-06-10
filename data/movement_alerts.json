@@ -1,10 +1,10 @@
 [
   {
-    "chain_slug": "solana",
-    "address": "bcheaatcvycpwwsj9yqtxdhp9x2gclkzndbz8vyspump",
-    "symbol": "Jotchua",
+    "chain_slug": "base",
+    "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+    "symbol": "VELVET",
     "direction": "pump",
-    "price_change_h1_pct": 14.604,
-    "timestamp": 1781042997.9409451
+    "price_change_h1_pct": 28.903,
+    "timestamp": 1781119366.5249164
   }
 ]

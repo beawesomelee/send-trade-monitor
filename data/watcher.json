@@ -24,9 +24,24 @@
       "id": "2064470082407829508",
       "tag": "send_watcher:onlyljc",
       "value": "from:onlyljc (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
+    },
+    {
+      "id": "2064790395913932800",
+      "tag": "send_watcher:velvet_capital",
+      "value": "from:velvet_capital (velvet OR $velvet OR defai OR \"onchain terminal\" OR \"new app\" OR \"ai superpowers\" OR \"team update\" OR \"app launch\") -is:retweet"
+    },
+    {
+      "id": "2064790395913932801",
+      "tag": "send_watcher:degen_mike14",
+      "value": "from:degen_mike14 (velvet OR $velvet OR defai OR \"onchain terminal\" OR \"new app\" OR \"ai superpowers\" OR \"team update\" OR \"app launch\") -is:retweet"
+    },
+    {
+      "id": "2064790395913932802",
+      "tag": "send_watcher:vegasnipes",
+      "value": "from:vegasnipes (velvet OR $velvet OR defai OR \"onchain terminal\" OR \"new app\" OR \"ai superpowers\" OR \"team update\" OR \"app launch\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-10T18:22:29Z",
+  "rules_synced_at": "2026-06-10T19:22:48Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -92,9 +107,63 @@
           "killing it fr"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-10T19:22:46Z",
+      "id": "signal_d025f5481cc6",
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xbf927b841994731c573bdf09ceb0c6b0aa887cdd"
+      },
+      "lore": "no real chatter from big accounts or kols on the pump. project dropped a new app video this morning with generic replies. quiet move on thin liq",
+      "movement": {
+        "change_pct": 100.5,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@Velvet_Capital",
+          "relevance": "project's own post today, no explanation of price move",
+          "text": "NEW \u203c\ufe0f (video of app update)",
+          "type": "x_post",
+          "url": "https://x.com/Velvet_Capital/status/2064637097584017892"
+        },
+        {
+          "author_handle": "@VegaSnipes",
+          "relevance": "team adjacent account noting price strength yesterday",
+          "text": "another day another ath for $VELVET... fundamentals look stronger",
+          "type": "x_post",
+          "url": "https://x.com/VegaSnipes/status/2064368036748923322"
+        }
+      ],
+      "token": {
+        "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+        "symbol": "VELVET"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Velvet_Capital",
+          "@VegaSnipes",
+          "@degen_mike14"
+        ],
+        "catalysts": [
+          "team_update",
+          "app_launch"
+        ],
+        "keywords": [
+          "velvet",
+          "deFAI",
+          "onchain terminal"
+        ],
+        "phrases": [
+          "new app",
+          "onchain terminal",
+          "ai superpowers"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-10T18:22:29Z",
+  "updated_at": "2026-06-10T19:22:48Z",
   "watch_accounts": {
     "@cryptojunzy": {
       "source_signal_ids": [
@@ -114,6 +183,23 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@degen_mike14": {
+      "source_signal_ids": [
+        "signal_d025f5481cc6"
+      ],
+      "status": "active",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "defai",
+        "onchain terminal",
+        "new app",
+        "ai superpowers",
+        "team update",
+        "app launch"
+      ],
+      "updated_at": "2026-06-10T19:22:46Z"
     },
     "@jotchuathememe": {
       "source_signal_ids": [
@@ -190,6 +276,40 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@vegasnipes": {
+      "source_signal_ids": [
+        "signal_d025f5481cc6"
+      ],
+      "status": "active",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "defai",
+        "onchain terminal",
+        "new app",
+        "ai superpowers",
+        "team update",
+        "app launch"
+      ],
+      "updated_at": "2026-06-10T19:22:46Z"
+    },
+    "@velvet_capital": {
+      "source_signal_ids": [
+        "signal_d025f5481cc6"
+      ],
+      "status": "active",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "defai",
+        "onchain terminal",
+        "new app",
+        "ai superpowers",
+        "team update",
+        "app launch"
+      ],
+      "updated_at": "2026-06-10T19:22:46Z"
     }
   }
 }

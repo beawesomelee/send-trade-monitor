@@ -10,3 +10,4 @@ client_secret*.json
 token.json
 data/watcher_tweets.jsonl
 data/watcher_ingest_state.json
+data/watcher_stream.lock

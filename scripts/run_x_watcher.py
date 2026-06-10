@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from lib.x_rules import XRulesError, bearer_token_from_env
-from lib.x_watcher import STATE_FILE, TWEETS_FILE, stream_watcher_posts
+from lib.x_watcher import LOCK_FILE, STATE_FILE, TWEETS_FILE, stream_watcher_posts
 from scripts.sync_watcher_rules import load_env
 
 
@@ -41,6 +41,12 @@ def main() -> int:
         help="JSON state file for ingest dedupe/checkpoints",
     )
     parser.add_argument(
+        "--lock-file",
+        type=Path,
+        default=LOCK_FILE,
+        help="Lock file preventing multiple simultaneous streams for this app",
+    )
+    parser.add_argument(
         "--read-timeout",
         type=int,
         default=30,
@@ -65,6 +71,7 @@ def main() -> int:
             max_seconds=args.max_seconds,
             tweets_path=args.tweets_file,
             state_path=args.state_file,
+            lock_path=args.lock_file,
             read_timeout=args.read_timeout,
         )
     except KeyboardInterrupt:

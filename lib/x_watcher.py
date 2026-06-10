@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import fcntl
 import json
 import time
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterator
@@ -17,6 +19,7 @@ STREAM_ENDPOINT = "https://api.x.com/2/tweets/search/stream"
 ROOT = Path(__file__).resolve().parent.parent
 TWEETS_FILE = ROOT / "data" / "watcher_tweets.jsonl"
 STATE_FILE = ROOT / "data" / "watcher_ingest_state.json"
+LOCK_FILE = ROOT / "data" / "watcher_stream.lock"
 MAX_SEEN_IDS = 5000
 
 
@@ -52,12 +55,14 @@ def stream_watcher_posts(
     max_seconds: int | None = None,
     tweets_path: Path = TWEETS_FILE,
     state_path: Path = STATE_FILE,
+    lock_path: Path = LOCK_FILE,
     connect_timeout: int = 10,
     read_timeout: int = 90,
 ) -> dict:
     """Read filtered-stream posts and persist unseen payloads."""
     state = _load_state(state_path)
-    seen_ids = set(state.get("seen_tweet_ids") or [])
+    recent_seen_ids = _seen_tweet_ids(state)
+    seen_ids = set(recent_seen_ids)
     started = time.monotonic()
     deadline = started + max_seconds if max_seconds is not None else None
     stored = 0
@@ -65,47 +70,49 @@ def stream_watcher_posts(
     connection_errors = 0
     reconnects = 0
 
-    while not _deadline_passed(deadline):
-        remaining = _remaining_seconds(deadline)
-        current_read_timeout = _bounded_read_timeout(read_timeout, remaining)
-        try:
-            for payload in iter_stream_payloads(
-                bearer_token,
-                connect_timeout=connect_timeout,
-                read_timeout=current_read_timeout,
-            ):
-                if _deadline_passed(deadline):
-                    break
+    with _exclusive_stream_lock(lock_path):
+        while not _deadline_passed(deadline):
+            remaining = _remaining_seconds(deadline)
+            current_read_timeout = _bounded_read_timeout(read_timeout, remaining)
+            try:
+                for payload in iter_stream_payloads(
+                    bearer_token,
+                    connect_timeout=connect_timeout,
+                    read_timeout=current_read_timeout,
+                ):
+                    if _deadline_passed(deadline):
+                        break
 
-                tweet_id = _tweet_id(payload)
-                if not tweet_id:
-                    continue
-                if tweet_id in seen_ids:
-                    skipped_duplicates += 1
-                    continue
+                    tweet_id = _tweet_id(payload)
+                    if not tweet_id:
+                        continue
+                    if tweet_id in seen_ids:
+                        skipped_duplicates += 1
+                        continue
 
-                seen_ids.add(tweet_id)
-                _append_tweet(tweets_path, payload)
-                stored += 1
-                state["last_seen_tweet_id"] = tweet_id
-                state["last_seen_at"] = _now_iso()
-                state["last_matching_rules"] = payload.get("matching_rules") or []
-                _save_state(state_path, state, seen_ids)
+                    seen_ids.add(tweet_id)
+                    recent_seen_ids.append(tweet_id)
+                    _append_tweet(tweets_path, payload)
+                    stored += 1
+                    state["last_seen_tweet_id"] = tweet_id
+                    state["last_seen_at"] = _now_iso()
+                    state["last_matching_rules"] = payload.get("matching_rules") or []
+                    _save_state(state_path, state, recent_seen_ids)
 
-                if max_posts is not None and stored >= max_posts:
-                    break
-        except requests.exceptions.RequestException as exc:
-            connection_errors += 1
-            state["last_error"] = str(exc)[:500]
-            state["last_error_at"] = _now_iso()
+                    if max_posts is not None and stored >= max_posts:
+                        break
+            except requests.exceptions.RequestException as exc:
+                connection_errors += 1
+                state["last_error"] = str(exc)[:500]
+                state["last_error_at"] = _now_iso()
 
-        if max_posts is not None and stored >= max_posts:
-            break
-        if _deadline_passed(deadline):
-            break
+            if max_posts is not None and stored >= max_posts:
+                break
+            if _deadline_passed(deadline):
+                break
 
-        reconnects += 1
-        time.sleep(min(30, 2 ** min(reconnects, 5)))
+            reconnects += 1
+            time.sleep(_backoff_seconds(reconnects, deadline))
 
     return {
         "stored": stored,
@@ -174,11 +181,18 @@ def _load_state(path: Path) -> dict:
     return data if isinstance(data, dict) else {"seen_tweet_ids": []}
 
 
-def _save_state(path: Path, state: dict, seen_ids: set[str]) -> None:
+def _save_state(path: Path, state: dict, seen_ids: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    state["seen_tweet_ids"] = sorted(seen_ids)[-MAX_SEEN_IDS:]
+    state["seen_tweet_ids"] = seen_ids[-MAX_SEEN_IDS:]
     state["updated_at"] = _now_iso()
     path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
+
+
+def _seen_tweet_ids(state: dict) -> list[str]:
+    ids = state.get("seen_tweet_ids") or []
+    if not isinstance(ids, list):
+        return []
+    return [str(tweet_id) for tweet_id in ids if tweet_id]
 
 
 def _tweet_id(payload: dict) -> str:
@@ -200,6 +214,30 @@ def _bounded_read_timeout(read_timeout: int, remaining: float | None) -> float:
     if remaining is None:
         return read_timeout
     return max(1.0, min(float(read_timeout), remaining))
+
+
+def _backoff_seconds(reconnects: int, deadline: float | None) -> float:
+    delay = min(30.0, float(2 ** min(reconnects, 5)))
+    remaining = _remaining_seconds(deadline)
+    if remaining is None:
+        return delay
+    return max(0.0, min(delay, remaining))
+
+
+@contextmanager
+def _exclusive_stream_lock(path: Path) -> Iterator[None]:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w") as lock_file:
+        try:
+            fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as exc:
+            raise XRulesError(
+                f"Another X watcher stream appears to be running; lock is held at {path}"
+            ) from exc
+        try:
+            yield
+        finally:
+            fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
 
 
 def _now_iso() -> str:

@@ -126,9 +126,10 @@ def _merge_watch_accounts(state: dict, signal: dict):
             source_ids = []
 
         watch_accounts[account] = {
-            "status": existing.get("status") or "active",
+            "status": existing.get("status") or "pending",
             "terms": _dedupe(existing_terms + terms)[:120],
             "source_signal_ids": _dedupe(source_ids + [signal["id"]]),
+            "reason_added": existing.get("reason_added") or _reason_added(signal),
             "updated_at": _now_iso(),
         }
 
@@ -166,6 +167,20 @@ def _signal_terms(signal: dict) -> list[str]:
         if t and len(t) >= 3:
             cleaned.append(t)
     return _dedupe(cleaned)[:80]
+
+
+def _reason_added(signal: dict) -> str:
+    raw_token = signal.get("token")
+    token = raw_token if isinstance(raw_token, dict) else {}
+    raw_movement = signal.get("movement")
+    movement = raw_movement if isinstance(raw_movement, dict) else {}
+    symbol = token.get("symbol") or "unknown token"
+    change_pct = movement.get("change_pct")
+    window = movement.get("window") or "unknown window"
+    return (
+        f"Suggested by movement explanation for {symbol}; "
+        f"movement {change_pct}% over {window}; requires manual approval before rule sync."
+    )
 
 
 def _normalize_handle(value) -> str:

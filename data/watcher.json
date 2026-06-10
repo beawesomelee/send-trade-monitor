@@ -1,47 +1,6 @@
 {
-  "rules": [
-    {
-      "id": "2064470082407829504",
-      "tag": "send_watcher:jotchuathememe",
-      "value": "from:jotchuathememe (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
-    },
-    {
-      "id": "2064470082407829505",
-      "tag": "send_watcher:cryptojunzy",
-      "value": "from:cryptojunzy (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
-    },
-    {
-      "id": "2064470082407829506",
-      "tag": "send_watcher:smol_intern",
-      "value": "from:smol_intern (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
-    },
-    {
-      "id": "2064470082407829507",
-      "tag": "send_watcher:trencherrzalt",
-      "value": "from:trencherrzalt (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
-    },
-    {
-      "id": "2064470082407829508",
-      "tag": "send_watcher:onlyljc",
-      "value": "from:onlyljc (jotchua OR $jotchua OR jotchuans OR moonshot OR \"jotchuans reporting for duty\" OR \"moonshot spotlight\" OR \"killing it fr\" OR \"kol post\" OR \"moonshot vote\" OR \"community meme\") -is:retweet"
-    },
-    {
-      "id": "2064790395913932800",
-      "tag": "send_watcher:velvet_capital",
-      "value": "from:velvet_capital (velvet OR $velvet OR defai OR \"onchain terminal\" OR \"new app\" OR \"ai superpowers\" OR \"team update\" OR \"app launch\") -is:retweet"
-    },
-    {
-      "id": "2064790395913932801",
-      "tag": "send_watcher:degen_mike14",
-      "value": "from:degen_mike14 (velvet OR $velvet OR defai OR \"onchain terminal\" OR \"new app\" OR \"ai superpowers\" OR \"team update\" OR \"app launch\") -is:retweet"
-    },
-    {
-      "id": "2064790395913932802",
-      "tag": "send_watcher:vegasnipes",
-      "value": "from:vegasnipes (velvet OR $velvet OR defai OR \"onchain terminal\" OR \"new app\" OR \"ai superpowers\" OR \"team update\" OR \"app launch\") -is:retweet"
-    }
-  ],
-  "rules_synced_at": "2026-06-10T23:22:30Z",
+  "rules": [],
+  "rules_synced_at": "2026-06-10T23:28:54Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -163,13 +122,14 @@
       }
     }
   ],
-  "updated_at": "2026-06-10T23:22:30Z",
+  "updated_at": "2026-06-10T23:28:54Z",
   "watch_accounts": {
     "@cryptojunzy": {
+      "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "active",
+      "status": "pending",
       "terms": [
         "jotchua",
         "$jotchua",
@@ -185,10 +145,11 @@
       "updated_at": "2026-06-09T22:09:57Z"
     },
     "@degen_mike14": {
+      "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_d025f5481cc6"
       ],
-      "status": "active",
+      "status": "pending",
       "terms": [
         "velvet",
         "$velvet",
@@ -202,10 +163,11 @@
       "updated_at": "2026-06-10T19:22:46Z"
     },
     "@jotchuathememe": {
+      "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "active",
+      "status": "pending",
       "terms": [
         "jotchua",
         "$jotchua",
@@ -221,10 +183,11 @@
       "updated_at": "2026-06-09T22:09:57Z"
     },
     "@onlyljc": {
+      "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "active",
+      "status": "pending",
       "terms": [
         "jotchua",
         "$jotchua",
@@ -240,10 +203,11 @@
       "updated_at": "2026-06-09T22:09:57Z"
     },
     "@smol_intern": {
+      "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "active",
+      "status": "pending",
       "terms": [
         "jotchua",
         "$jotchua",
@@ -259,10 +223,11 @@
       "updated_at": "2026-06-09T22:09:57Z"
     },
     "@trencherrzalt": {
+      "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "active",
+      "status": "pending",
       "terms": [
         "jotchua",
         "$jotchua",
@@ -278,10 +243,11 @@
       "updated_at": "2026-06-09T22:09:57Z"
     },
     "@vegasnipes": {
+      "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_d025f5481cc6"
       ],
-      "status": "active",
+      "status": "pending",
       "terms": [
         "velvet",
         "$velvet",
@@ -295,10 +261,11 @@
       "updated_at": "2026-06-10T19:22:46Z"
     },
     "@velvet_capital": {
+      "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_d025f5481cc6"
       ],
-      "status": "active",
+      "status": "pending",
       "terms": [
         "velvet",
         "$velvet",

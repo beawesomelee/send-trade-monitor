@@ -27,7 +27,7 @@ def build_desired_rules(state: dict, max_rule_chars: int = MAX_RULE_CHARS) -> li
 
     rules = []
     for account, config in sorted(watch_accounts.items()):
-        if not isinstance(config, dict) or config.get("status") != "active":
+        if not isinstance(config, dict) or config.get("status") != "approved":
             continue
 
         handle = _handle_for_rule(account)

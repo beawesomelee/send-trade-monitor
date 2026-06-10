@@ -12,6 +12,7 @@ from typing import Iterator
 
 import requests
 
+from lib.discord import send_x_watcher_hit
 from lib.x_rules import XRulesError
 
 
@@ -58,6 +59,8 @@ def stream_watcher_posts(
     lock_path: Path = LOCK_FILE,
     connect_timeout: int = 10,
     read_timeout: int = 90,
+    discord: bool = True,
+    discord_dry_run: bool = False,
 ) -> dict:
     """Read filtered-stream posts and persist unseen payloads."""
     state = _load_state(state_path)
@@ -92,12 +95,15 @@ def stream_watcher_posts(
 
                     seen_ids.add(tweet_id)
                     recent_seen_ids.append(tweet_id)
-                    _append_tweet(tweets_path, payload)
+                    ingested_at = _now_iso()
+                    _append_tweet(tweets_path, payload, ingested_at=ingested_at)
                     stored += 1
                     state["last_seen_tweet_id"] = tweet_id
-                    state["last_seen_at"] = _now_iso()
+                    state["last_seen_at"] = ingested_at
                     state["last_matching_rules"] = payload.get("matching_rules") or []
                     _save_state(state_path, state, recent_seen_ids)
+                    if discord:
+                        send_x_watcher_hit(payload, ingested_at, dry_run=discord_dry_run)
 
                     if max_posts is not None and stored >= max_posts:
                         break
@@ -159,10 +165,10 @@ def iter_stream_payloads(
                 yield payload
 
 
-def _append_tweet(path: Path, payload: dict) -> None:
+def _append_tweet(path: Path, payload: dict, ingested_at: str | None = None) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     record = {
-        "ingested_at": _now_iso(),
+        "ingested_at": ingested_at or _now_iso(),
         "tweet_id": _tweet_id(payload),
         "matching_rules": payload.get("matching_rules") or [],
         "payload": payload,

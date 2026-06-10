@@ -6,6 +6,7 @@ import time
 import requests
 
 RECENT_THRESHOLD_DAYS = 7
+DISCORD_CONTENT_LIMIT = 2000
 
 
 def send_summary(stats: dict, candidates: list[dict], sheet_url: str,
@@ -140,3 +141,111 @@ def send_movement_alert(movers: list[dict], sheet_url: str = "", dry_run: bool =
         print("Discord movement alert sent")
     else:
         print(f"Discord post failed: {r.status_code} {r.text}")
+
+
+def send_x_watcher_hit(payload: dict, ingested_at: str, dry_run: bool = False):
+    """Post a compact raw X watcher hit notification to Discord."""
+    msg = _build_x_watcher_hit_message(payload, ingested_at)
+
+    if dry_run:
+        print(f"[dry-run] would post raw X watcher hit to Discord:\n{msg}")
+        return
+
+    webhook = os.environ.get("DISCORD_WEBHOOK_URL")
+    if not webhook:
+        print("WARNING: DISCORD_WEBHOOK_URL not set, skipping raw X watcher hit")
+        return
+
+    payload = {"content": msg, "allowed_mentions": {"parse": []}}
+    try:
+        r = requests.post(webhook, json=payload, timeout=15)
+    except requests.exceptions.RequestException as exc:
+        print(f"WARNING: Discord raw X watcher hit failed: {exc}")
+        return
+    if r.status_code in (200, 204):
+        print("Discord raw X watcher hit sent")
+    else:
+        print(f"Discord post failed: {r.status_code} {r.text}")
+
+
+def _build_x_watcher_hit_message(payload: dict, ingested_at: str) -> str:
+    raw_data = payload.get("data")
+    data = raw_data if isinstance(raw_data, dict) else {}
+    tweet_id = str(data.get("id") or "")
+    text = str(data.get("text") or "")
+    user = _x_watcher_author(payload)
+    username = str(user.get("username") or "") if user else ""
+    display_name = str(user.get("name") or "") if user else ""
+    author_label = _x_watcher_author_label(display_name, username, data.get("author_id"))
+    raw_rules = payload.get("matching_rules")
+    rule_tags = _x_watcher_rule_tags(raw_rules if isinstance(raw_rules, list) else [])
+    tweet_url = _x_tweet_url(tweet_id, username)
+
+    lines = [
+        "**Raw X watcher hit**",
+        "_not yet AI-classified lore; review before treating as signal._",
+        f"Ingested: `{ingested_at}`",
+    ]
+    if author_label:
+        lines.append(f"Author: {author_label}")
+    if rule_tags:
+        lines.append(f"Rules: {', '.join(rule_tags)}")
+    if tweet_url:
+        lines.append(f"Tweet: <{tweet_url}>")
+    if text:
+        lines.extend(["", _truncate_text(text, 1200)])
+
+    return _truncate_text("\n".join(lines), DISCORD_CONTENT_LIMIT)
+
+
+def _x_watcher_author(payload: dict) -> dict:
+    raw_data = payload.get("data")
+    data = raw_data if isinstance(raw_data, dict) else {}
+    author_id = str(data.get("author_id") or "")
+    raw_includes = payload.get("includes")
+    includes = raw_includes if isinstance(raw_includes, dict) else {}
+    raw_users = includes.get("users")
+    users = raw_users if isinstance(raw_users, list) else []
+    for user in users:
+        if not isinstance(user, dict):
+            continue
+        if author_id and str(user.get("id") or "") == author_id:
+            return user
+    return users[0] if users and isinstance(users[0], dict) else {}
+
+
+def _x_watcher_author_label(name: str, username: str, author_id: object) -> str:
+    if name and username:
+        return f"{_truncate_text(name, 80)} (@{_truncate_text(username, 40)})"
+    if username:
+        return f"@{_truncate_text(username, 40)}"
+    if name:
+        return _truncate_text(name, 80)
+    if author_id:
+        return f"author_id `{author_id}`"
+    return ""
+
+
+def _x_watcher_rule_tags(rules: list) -> list[str]:
+    tags = []
+    for rule in rules:
+        if isinstance(rule, dict):
+            tag = str(rule.get("tag") or rule.get("id") or "").strip()
+        else:
+            tag = str(rule).strip()
+        if tag:
+            tags.append(_truncate_text(tag, 80))
+    return tags[:10]
+
+
+def _x_tweet_url(tweet_id: str, username: str) -> str:
+    if not tweet_id:
+        return ""
+    handle = username or "i"
+    return f"https://x.com/{handle}/status/{tweet_id}"
+
+
+def _truncate_text(value: str, limit: int) -> str:
+    if len(value) <= limit:
+        return value
+    return value[: max(0, limit - 1)].rstrip() + "…"

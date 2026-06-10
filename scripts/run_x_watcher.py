@@ -52,6 +52,16 @@ def main() -> int:
         default=30,
         help="Stream read timeout in seconds before reconnecting",
     )
+    parser.add_argument(
+        "--no-discord",
+        action="store_true",
+        help="Store matching posts without posting raw watcher hits to Discord",
+    )
+    parser.add_argument(
+        "--discord-dry-run",
+        action="store_true",
+        help="Print raw watcher Discord messages instead of posting them",
+    )
     args = parser.parse_args()
 
     load_env(ROOT / ".env")
@@ -73,6 +83,8 @@ def main() -> int:
             state_path=args.state_file,
             lock_path=args.lock_file,
             read_timeout=args.read_timeout,
+            discord=not args.no_discord,
+            discord_dry_run=args.discord_dry_run,
         )
     except KeyboardInterrupt:
         print("Watcher stopped")

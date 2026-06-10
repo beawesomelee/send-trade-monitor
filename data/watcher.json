@@ -1,6 +1,6 @@
 {
   "rules": [],
-  "rules_synced_at": "2026-06-10T23:28:54Z",
+  "rules_synced_at": "2026-06-10T23:59:30Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -120,10 +120,110 @@
           "ai superpowers"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-10T23:59:29Z",
+      "id": "signal_3a43a86ca477",
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xbf927b841994731c573bdf09ceb0c6b0aa887cdd"
+      },
+      "lore": "velvet leading base tape with 27% daily on 6.7m vol. ai narra runners separating from noise. breakout from pullback zone?",
+      "movement": {
+        "change_pct": 84.4,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@deluquant",
+          "relevance": "highlights volume and performance driving attention",
+          "text": "base velocity check. velvet leading with 27% daily expansion on 6.7m volume.",
+          "type": "x_post",
+          "url": "https://x.com/deluquant/status/2064770508428861501"
+        },
+        {
+          "author_handle": "@chartexpt",
+          "relevance": "notes the technical breakout and gains",
+          "text": "$VELVET Insane breakout, 8x pump from the pullback zone",
+          "type": "x_post",
+          "url": "https://x.com/chartexpt/status/2064823795945525593"
+        },
+        {
+          "author_handle": "@JuliusElum",
+          "relevance": "ties to ai narrative and ongoing pump",
+          "text": "$VELVET is not stopping the pump. Over 260% pump since call. Binance Alpha TGEs and Ai narratives tokens",
+          "type": "x_post",
+          "url": "https://x.com/JuliusElum/status/2063955296075002164"
+        }
+      ],
+      "token": {
+        "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+        "symbol": "VELVET"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@deluquant",
+          "@chartexpt",
+          "@boggyagent",
+          "@JuliusElum"
+        ],
+        "catalysts": [
+          "kol_post",
+          "narrative_rotation"
+        ],
+        "keywords": [
+          "$VELVET",
+          "ai narra",
+          "base tape"
+        ],
+        "phrases": [
+          "velvet leading",
+          "base velocity check",
+          "insane breakout"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-10T23:28:54Z",
+  "updated_at": "2026-06-10T23:59:30Z",
   "watch_accounts": {
+    "@boggyagent": {
+      "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_3a43a86ca477"
+      ],
+      "status": "pending",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "ai narra",
+        "base tape",
+        "velvet leading",
+        "base velocity check",
+        "insane breakout",
+        "kol post",
+        "narrative rotation"
+      ],
+      "updated_at": "2026-06-10T23:59:29Z"
+    },
+    "@chartexpt": {
+      "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_3a43a86ca477"
+      ],
+      "status": "pending",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "ai narra",
+        "base tape",
+        "velvet leading",
+        "base velocity check",
+        "insane breakout",
+        "kol post",
+        "narrative rotation"
+      ],
+      "updated_at": "2026-06-10T23:59:29Z"
+    },
     "@cryptojunzy": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -162,6 +262,25 @@
       ],
       "updated_at": "2026-06-10T19:22:46Z"
     },
+    "@deluquant": {
+      "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_3a43a86ca477"
+      ],
+      "status": "pending",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "ai narra",
+        "base tape",
+        "velvet leading",
+        "base velocity check",
+        "insane breakout",
+        "kol post",
+        "narrative rotation"
+      ],
+      "updated_at": "2026-06-10T23:59:29Z"
+    },
     "@jotchuathememe": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -181,6 +300,25 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@juliuselum": {
+      "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_3a43a86ca477"
+      ],
+      "status": "pending",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "ai narra",
+        "base tape",
+        "velvet leading",
+        "base velocity check",
+        "insane breakout",
+        "kol post",
+        "narrative rotation"
+      ],
+      "updated_at": "2026-06-10T23:59:29Z"
     },
     "@onlyljc": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",

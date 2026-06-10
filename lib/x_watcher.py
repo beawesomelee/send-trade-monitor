@@ -1,0 +1,206 @@
+"""Ingest matching posts from the X filtered stream."""
+
+from __future__ import annotations
+
+import json
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Iterator
+
+import requests
+
+from lib.x_rules import XRulesError
+
+
+STREAM_ENDPOINT = "https://api.x.com/2/tweets/search/stream"
+ROOT = Path(__file__).resolve().parent.parent
+TWEETS_FILE = ROOT / "data" / "watcher_tweets.jsonl"
+STATE_FILE = ROOT / "data" / "watcher_ingest_state.json"
+MAX_SEEN_IDS = 5000
+
+
+STREAM_PARAMS = {
+    "tweet.fields": ",".join([
+        "author_id",
+        "conversation_id",
+        "created_at",
+        "entities",
+        "lang",
+        "possibly_sensitive",
+        "referenced_tweets",
+    ]),
+    "expansions": ",".join([
+        "author_id",
+        "referenced_tweets.id",
+        "referenced_tweets.id.author_id",
+    ]),
+    "user.fields": ",".join([
+        "id",
+        "name",
+        "username",
+        "verified",
+        "verified_type",
+    ]),
+}
+
+
+def stream_watcher_posts(
+    bearer_token: str,
+    *,
+    max_posts: int | None = None,
+    max_seconds: int | None = None,
+    tweets_path: Path = TWEETS_FILE,
+    state_path: Path = STATE_FILE,
+    connect_timeout: int = 10,
+    read_timeout: int = 90,
+) -> dict:
+    """Read filtered-stream posts and persist unseen payloads."""
+    state = _load_state(state_path)
+    seen_ids = set(state.get("seen_tweet_ids") or [])
+    started = time.monotonic()
+    deadline = started + max_seconds if max_seconds is not None else None
+    stored = 0
+    skipped_duplicates = 0
+    connection_errors = 0
+    reconnects = 0
+
+    while not _deadline_passed(deadline):
+        remaining = _remaining_seconds(deadline)
+        current_read_timeout = _bounded_read_timeout(read_timeout, remaining)
+        try:
+            for payload in iter_stream_payloads(
+                bearer_token,
+                connect_timeout=connect_timeout,
+                read_timeout=current_read_timeout,
+            ):
+                if _deadline_passed(deadline):
+                    break
+
+                tweet_id = _tweet_id(payload)
+                if not tweet_id:
+                    continue
+                if tweet_id in seen_ids:
+                    skipped_duplicates += 1
+                    continue
+
+                seen_ids.add(tweet_id)
+                _append_tweet(tweets_path, payload)
+                stored += 1
+                state["last_seen_tweet_id"] = tweet_id
+                state["last_seen_at"] = _now_iso()
+                state["last_matching_rules"] = payload.get("matching_rules") or []
+                _save_state(state_path, state, seen_ids)
+
+                if max_posts is not None and stored >= max_posts:
+                    break
+        except requests.exceptions.RequestException as exc:
+            connection_errors += 1
+            state["last_error"] = str(exc)[:500]
+            state["last_error_at"] = _now_iso()
+
+        if max_posts is not None and stored >= max_posts:
+            break
+        if _deadline_passed(deadline):
+            break
+
+        reconnects += 1
+        time.sleep(min(30, 2 ** min(reconnects, 5)))
+
+    return {
+        "stored": stored,
+        "skipped_duplicates": skipped_duplicates,
+        "connection_errors": connection_errors,
+        "reconnects": reconnects,
+        "last_seen_tweet_id": state.get("last_seen_tweet_id") or "",
+        "tweets_path": str(tweets_path),
+        "state_path": str(state_path),
+    }
+
+
+def iter_stream_payloads(
+    bearer_token: str,
+    *,
+    connect_timeout: int = 10,
+    read_timeout: int = 90,
+) -> Iterator[dict]:
+    """Yield decoded JSON objects from the X filtered stream."""
+    headers = {
+        "Authorization": f"Bearer {bearer_token}",
+        "User-Agent": "send-trade-monitor-x-watcher",
+    }
+    with requests.get(
+        STREAM_ENDPOINT,
+        params=STREAM_PARAMS,
+        headers=headers,
+        timeout=(connect_timeout, read_timeout),
+        stream=True,
+    ) as response:
+        if response.status_code < 200 or response.status_code >= 300:
+            raise XRulesError(
+                f"X stream HTTP {response.status_code}: {response.text[:1000]}"
+            )
+
+        for line in response.iter_lines(decode_unicode=True):
+            if line is None or not line.strip():
+                continue
+            try:
+                payload = json.loads(line)
+            except ValueError:
+                continue
+            if isinstance(payload, dict):
+                yield payload
+
+
+def _append_tweet(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    record = {
+        "ingested_at": _now_iso(),
+        "tweet_id": _tweet_id(payload),
+        "matching_rules": payload.get("matching_rules") or [],
+        "payload": payload,
+    }
+    with path.open("a") as f:
+        f.write(json.dumps(record, sort_keys=True) + "\n")
+
+
+def _load_state(path: Path) -> dict:
+    if not path.exists():
+        return {"seen_tweet_ids": []}
+    try:
+        data = json.loads(path.read_text())
+    except Exception:
+        return {"seen_tweet_ids": []}
+    return data if isinstance(data, dict) else {"seen_tweet_ids": []}
+
+
+def _save_state(path: Path, state: dict, seen_ids: set[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    state["seen_tweet_ids"] = sorted(seen_ids)[-MAX_SEEN_IDS:]
+    state["updated_at"] = _now_iso()
+    path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
+
+
+def _tweet_id(payload: dict) -> str:
+    data = payload.get("data") if isinstance(payload.get("data"), dict) else {}
+    return str(data.get("id") or "")
+
+
+def _deadline_passed(deadline: float | None) -> bool:
+    return deadline is not None and time.monotonic() >= deadline
+
+
+def _remaining_seconds(deadline: float | None) -> float | None:
+    if deadline is None:
+        return None
+    return max(0.1, deadline - time.monotonic())
+
+
+def _bounded_read_timeout(read_timeout: int, remaining: float | None) -> float:
+    if remaining is None:
+        return read_timeout
+    return max(1.0, min(float(read_timeout), remaining))
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")

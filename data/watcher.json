@@ -1,6 +1,6 @@
 {
   "rules": [],
-  "rules_synced_at": "2026-06-11T18:22:37Z",
+  "rules_synced_at": "2026-06-11T19:22:42Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -182,9 +182,74 @@
           "insane breakout"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-11T19:22:41Z",
+      "id": "signal_cb5d73fe77f5",
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xbf927b841994731c573bdf09ceb0c6b0aa887cdd"
+      },
+      "lore": "pre ipo narra with spacex openai mentions driving the tape, team dropping velvet x app update for live kol positions. onchain outflows 6m+ and fresh inflows showing up",
+      "movement": {
+        "change_pct": 56.3,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@Eveningtraders",
+          "relevance": "flags the pre-ipo narrative and backing as drivers amid the parabolic move",
+          "text": "$VELVET completely mocks the whales, printing another massive leg up despite heavy distribution signals. backed by YZI Labs (formerly Binance Labs) and Gate Labs",
+          "type": "x_post",
+          "url": "https://x.com/Eveningtraders/status/2064881242059989302"
+        },
+        {
+          "author_handle": "@De_Okwutex",
+          "relevance": "directly ties the pump to the pre-ipo spacex openai narra",
+          "text": "$VELVET is up over 670% in 7 days after attention exploded around its pre-IPO trading narrative tied to names like SpaceX and OpenAI",
+          "type": "x_post",
+          "url": "https://x.com/De_Okwutex/status/2064936858023346296"
+        },
+        {
+          "author_handle": "@VegaSnipes",
+          "relevance": "team member update on app feature that aligns with timing of the move",
+          "text": "Right now on @Velvet_Capital X app you will be able to see KOL and trader activity directly on the chart. velvet-x app is still invite-only",
+          "type": "x_post",
+          "url": "https://x.com/VegaSnipes/status/2065151944935563389"
+        }
+      ],
+      "token": {
+        "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+        "symbol": "VELVET"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Eveningtraders",
+          "@VegaSnipes",
+          "@rumadotfun",
+          "@marvellousdefi"
+        ],
+        "catalysts": [
+          "kol_post",
+          "team_update",
+          "narrative"
+        ],
+        "keywords": [
+          "$VELVET",
+          "spacex",
+          "openai",
+          "deFAI"
+        ],
+        "phrases": [
+          "pre ipo trading",
+          "velvet x app",
+          "kol positions",
+          "onchain outflows"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-11T18:22:37Z",
+  "updated_at": "2026-06-11T19:22:42Z",
   "watch_accounts": {
     "@boggyagent": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
@@ -244,6 +309,28 @@
       ],
       "updated_at": "2026-06-09T22:09:57Z"
     },
+    "@de_okwutex": {
+      "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_cb5d73fe77f5"
+      ],
+      "status": "pending",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "spacex",
+        "openai",
+        "defai",
+        "pre ipo trading",
+        "velvet x app",
+        "kol positions",
+        "onchain outflows",
+        "kol post",
+        "team update",
+        "narrative"
+      ],
+      "updated_at": "2026-06-11T19:22:41Z"
+    },
     "@degen_mike14": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -280,6 +367,28 @@
         "narrative rotation"
       ],
       "updated_at": "2026-06-10T23:59:29Z"
+    },
+    "@eveningtraders": {
+      "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_cb5d73fe77f5"
+      ],
+      "status": "pending",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "spacex",
+        "openai",
+        "defai",
+        "pre ipo trading",
+        "velvet x app",
+        "kol positions",
+        "onchain outflows",
+        "kol post",
+        "team update",
+        "narrative"
+      ],
+      "updated_at": "2026-06-11T19:22:41Z"
     },
     "@jotchuathememe": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
@@ -320,6 +429,28 @@
       ],
       "updated_at": "2026-06-10T23:59:29Z"
     },
+    "@marvellousdefi": {
+      "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_cb5d73fe77f5"
+      ],
+      "status": "pending",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "spacex",
+        "openai",
+        "defai",
+        "pre ipo trading",
+        "velvet x app",
+        "kol positions",
+        "onchain outflows",
+        "kol post",
+        "team update",
+        "narrative"
+      ],
+      "updated_at": "2026-06-11T19:22:41Z"
+    },
     "@onlyljc": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -339,6 +470,28 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@rumadotfun": {
+      "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_cb5d73fe77f5"
+      ],
+      "status": "pending",
+      "terms": [
+        "velvet",
+        "$velvet",
+        "spacex",
+        "openai",
+        "defai",
+        "pre ipo trading",
+        "velvet x app",
+        "kol positions",
+        "onchain outflows",
+        "kol post",
+        "team update",
+        "narrative"
+      ],
+      "updated_at": "2026-06-11T19:22:41Z"
     },
     "@smol_intern": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
@@ -383,7 +536,8 @@
     "@vegasnipes": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
-        "signal_d025f5481cc6"
+        "signal_d025f5481cc6",
+        "signal_cb5d73fe77f5"
       ],
       "status": "pending",
       "terms": [
@@ -394,9 +548,17 @@
         "new app",
         "ai superpowers",
         "team update",
-        "app launch"
+        "app launch",
+        "spacex",
+        "openai",
+        "pre ipo trading",
+        "velvet x app",
+        "kol positions",
+        "onchain outflows",
+        "kol post",
+        "narrative"
       ],
-      "updated_at": "2026-06-10T19:22:46Z"
+      "updated_at": "2026-06-11T19:22:41Z"
     },
     "@velvet_capital": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",

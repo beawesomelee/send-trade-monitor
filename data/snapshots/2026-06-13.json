@@ -180,6 +180,19 @@
   {
     "chain_slug": "solana",
     "chain_id": 501474,
+    "address": "CQMwk88SSp84aECqjk7xfVXwcMEQouymwG7acibMpump",
+    "symbol": "WORLDKINS",
+    "name": "World Kintara Coin",
+    "market_cap_usd": 381850,
+    "volume_24h_usd": 4833571,
+    "liquidity_usd": 5365,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/pCjU3g_PAWpOo867?width=800&height=800&quality=95&format=auto",
+    "dexscreener_url": "https://dexscreener.com/solana/CQMwk88SSp84aECqjk7xfVXwcMEQouymwG7acibMpump",
+    "decimals": 6
+  },
+  {
+    "chain_slug": "solana",
+    "chain_id": 501474,
     "address": "E6ifp2mJy8cYQehUGUtFvrXriRKxRuonLmrvTFypump",
     "symbol": "SPCX",
     "name": "SpaceX",

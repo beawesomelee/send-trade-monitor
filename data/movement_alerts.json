@@ -1,10 +1,10 @@
 [
   {
     "chain_slug": "base",
-    "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
-    "symbol": "VELVET",
+    "address": "0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb",
+    "symbol": "OPG",
     "direction": "pump",
-    "price_change_h1_pct": 10.053,
-    "timestamp": 1781205761.9475021
+    "price_change_h1_pct": 15.363,
+    "timestamp": 1781479357.8565238
   }
 ]

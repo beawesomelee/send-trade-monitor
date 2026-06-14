@@ -1,6 +1,6 @@
 {
   "rules": [],
-  "rules_synced_at": "2026-06-14T22:45:31Z",
+  "rules_synced_at": "2026-06-14T23:22:38Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -247,10 +247,120 @@
           "onchain outflows"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-14T23:22:37Z",
+      "id": "signal_e90969c08d96",
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb"
+      },
+      "lore": "@0xalwaysonchain called bottom on opg with cbventures ties and sized in, elliotscrypto article from 2 days ago timed the #1 gainer move. vote count ticking up on sharemarketcap too",
+      "movement": {
+        "change_pct": 52.5,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@0xalwaysonchain",
+          "relevance": "direct callout on the bottom and catalyst ties driving the pump",
+          "text": "+44% but thats only the beginning for @OpenGradient i except it to run back to ATH. Study the teams connections with @cbventures",
+          "type": "x_post",
+          "url": "https://x.com/0xalwaysonchain/status/2066250453088612671"
+        },
+        {
+          "author_handle": "@ElliotsCrypto",
+          "relevance": "article timing matches the move and trader action",
+          "text": "spent time to create an article about Open Gradient ( $OPG ) 2 days ago and today they #1 on gainers",
+          "type": "x_post",
+          "url": "https://x.com/ElliotsCrypto/status/2066125019013333488"
+        },
+        {
+          "author_handle": "@BronxETHi",
+          "relevance": "onchain vote activity as real-time signal",
+          "text": "$OPG vote count moving.. keep clicking",
+          "type": "x_post",
+          "url": "https://x.com/BronxETHi/status/2066298289901936955"
+        }
+      ],
+      "token": {
+        "address": "0xfbc2051ae2265686a469421b2c5a2d5462fbf5eb",
+        "symbol": "OPG"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@0xalwaysonchain",
+          "@ElliotsCrypto",
+          "@BronxETHi",
+          "@aixbt_agent",
+          "@TokenRadarCo"
+        ],
+        "catalysts": [
+          "kol_call",
+          "article_timing",
+          "vote_activity"
+        ],
+        "keywords": [
+          "opg",
+          "opengradient",
+          "cbventures"
+        ],
+        "phrases": [
+          "called the bottom",
+          "cbventures ties",
+          "#1 on gainers",
+          "vote count moving",
+          "zkML infrastructure play"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-14T22:45:31Z",
+  "updated_at": "2026-06-14T23:22:38Z",
   "watch_accounts": {
+    "@0xalwaysonchain": {
+      "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_e90969c08d96"
+      ],
+      "status": "pending",
+      "terms": [
+        "opg",
+        "$opg",
+        "opengradient",
+        "cbventures",
+        "called the bottom",
+        "cbventures ties",
+        "#1 on gainers",
+        "vote count moving",
+        "zkml infrastructure play",
+        "kol call",
+        "article timing",
+        "vote activity"
+      ],
+      "updated_at": "2026-06-14T23:22:37Z"
+    },
+    "@aixbt_agent": {
+      "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_e90969c08d96"
+      ],
+      "status": "pending",
+      "terms": [
+        "opg",
+        "$opg",
+        "opengradient",
+        "cbventures",
+        "called the bottom",
+        "cbventures ties",
+        "#1 on gainers",
+        "vote count moving",
+        "zkml infrastructure play",
+        "kol call",
+        "article timing",
+        "vote activity"
+      ],
+      "updated_at": "2026-06-14T23:22:37Z"
+    },
     "@boggyagent": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -269,6 +379,28 @@
         "narrative rotation"
       ],
       "updated_at": "2026-06-10T23:59:29Z"
+    },
+    "@bronxethi": {
+      "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_e90969c08d96"
+      ],
+      "status": "pending",
+      "terms": [
+        "opg",
+        "$opg",
+        "opengradient",
+        "cbventures",
+        "called the bottom",
+        "cbventures ties",
+        "#1 on gainers",
+        "vote count moving",
+        "zkml infrastructure play",
+        "kol call",
+        "article timing",
+        "vote activity"
+      ],
+      "updated_at": "2026-06-14T23:22:37Z"
     },
     "@chartexpt": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
@@ -367,6 +499,28 @@
         "narrative rotation"
       ],
       "updated_at": "2026-06-10T23:59:29Z"
+    },
+    "@elliotscrypto": {
+      "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_e90969c08d96"
+      ],
+      "status": "pending",
+      "terms": [
+        "opg",
+        "$opg",
+        "opengradient",
+        "cbventures",
+        "called the bottom",
+        "cbventures ties",
+        "#1 on gainers",
+        "vote count moving",
+        "zkml infrastructure play",
+        "kol call",
+        "article timing",
+        "vote activity"
+      ],
+      "updated_at": "2026-06-14T23:22:37Z"
     },
     "@eveningtraders": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
@@ -512,6 +666,28 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@tokenradarco": {
+      "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_e90969c08d96"
+      ],
+      "status": "pending",
+      "terms": [
+        "opg",
+        "$opg",
+        "opengradient",
+        "cbventures",
+        "called the bottom",
+        "cbventures ties",
+        "#1 on gainers",
+        "vote count moving",
+        "zkml infrastructure play",
+        "kol call",
+        "article timing",
+        "vote activity"
+      ],
+      "updated_at": "2026-06-14T23:22:37Z"
     },
     "@trencherrzalt": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",

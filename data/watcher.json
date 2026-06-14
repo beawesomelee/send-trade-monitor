@@ -1,6 +1,6 @@
 {
   "rules": [],
-  "rules_synced_at": "2026-06-14T17:22:33Z",
+  "rules_synced_at": "2026-06-14T18:22:30Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -249,7 +249,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-14T17:22:33Z",
+  "updated_at": "2026-06-14T18:22:30Z",
   "watch_accounts": {
     "@boggyagent": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",

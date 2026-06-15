@@ -6,6 +6,8 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+from lib.movement_events import enrich_signal_timing
+
 
 SCRIPT_DIR = Path(__file__).resolve().parent.parent
 WATCHER_FILE = SCRIPT_DIR / "data" / "watcher.json"
@@ -70,7 +72,7 @@ def _build_signal(mover: dict, detected_at: str) -> dict:
     lore_packet = mover.get("lore_packet") if isinstance(mover.get("lore_packet"), dict) else {}
     watcher_clues = lore_packet.get("watcher_clues") if isinstance(lore_packet.get("watcher_clues"), dict) else {}
 
-    return {
+    signal = {
         "id": _signal_id(mover, detected_at),
         "detected_at": detected_at,
         "token": {
@@ -94,6 +96,7 @@ def _build_signal(mover: dict, detected_at: str) -> dict:
             "dexscreener": mover.get("dexscreener_url") or "",
         },
     }
+    return enrich_signal_timing(signal)
 
 
 def _signal_id(mover: dict, detected_at: str) -> str:

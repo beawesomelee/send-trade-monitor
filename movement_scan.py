@@ -33,6 +33,7 @@ from lib.movement import (
 from lib.send_trade_lore import push_lore
 from lib.lore import fetch_lore_packet
 from lib.watcher_state import record_signals
+from lib.movement_events import upsert_events_from_signals
 
 
 def main():
@@ -116,6 +117,8 @@ def main():
         _send_alerts(new_movers, config)
         signals = record_signals(new_movers)
         print(f"   recorded {len(signals)} watcher signals")
+        events = upsert_events_from_signals(signals)
+        print(f"   recorded {len(events)} movement events")
         record_alerts(new_movers, retained)
         print("   recorded cooldown state")
     else:

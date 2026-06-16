@@ -1,6 +1,6 @@
 {
   "rules": [],
-  "rules_synced_at": "2026-06-16T19:22:38Z",
+  "rules_synced_at": "2026-06-16T20:22:46Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -313,9 +313,73 @@
           "zkML infrastructure play"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-16T20:22:46Z",
+      "id": "signal_62b0f07aaf79",
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x23a2847d772803f9efc64b4277b782b06296fe51"
+      },
+      "lore": "team dropped dotcode private agent loop update today with real time asset gen inside privacy boundary. traders quoting and noting the privacy angle on base. whale buy at 1.5m mc",
+      "movement": {
+        "change_pct": 76.9,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@usedotai",
+          "relevance": "main team update driving chatter",
+          "text": "DotCode now runs a first-of-its-kind, fully private, agentic loop that can see exactly what it is building, in real time.",
+          "type": "x_post",
+          "url": "https://x.com/usedotai/status/2066933637065404634"
+        },
+        {
+          "author_handle": "@CryptoLuche_",
+          "relevance": "trader quote and bullish take on the update",
+          "text": "\ud83d\udd12 AI is becoming smarter. $DOT is making it private.",
+          "type": "x_post",
+          "url": "https://x.com/CryptoLuche_/status/2066951180786270689"
+        },
+        {
+          "author_handle": "@BaseWhaleAlert",
+          "relevance": "on-chain buy observation tied to timing",
+          "text": "A SURPLUS whale just bought $1.72K of $DOT at $1.53M MC \ud83d\udc33",
+          "type": "x_post",
+          "url": "https://x.com/BaseWhaleAlert/status/2066936868457877580"
+        }
+      ],
+      "token": {
+        "address": "0x23a2847d772803f9efc64b4277b782b06296fe51",
+        "symbol": "DOT"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@usedotai",
+          "@CryptoLuche_",
+          "@CryptoHawk19",
+          "@BillionAireDau",
+          "@BaseWhaleAlert"
+        ],
+        "catalysts": [
+          "team_update",
+          "kol_quote",
+          "whale_buy"
+        ],
+        "keywords": [
+          "dotcode",
+          "supercharged",
+          "private inference"
+        ],
+        "phrases": [
+          "dotcode private agentic loop",
+          "dot supercharged",
+          "privacy boundary"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-16T19:22:38Z",
+  "updated_at": "2026-06-16T20:22:46Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
@@ -360,6 +424,48 @@
         "vote activity"
       ],
       "updated_at": "2026-06-14T23:22:37Z"
+    },
+    "@basewhalealert": {
+      "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "status": "pending",
+      "terms": [
+        "dot",
+        "$dot",
+        "dotcode",
+        "supercharged",
+        "private inference",
+        "dotcode private agentic loop",
+        "dot supercharged",
+        "privacy boundary",
+        "team update",
+        "kol quote",
+        "whale buy"
+      ],
+      "updated_at": "2026-06-16T20:22:46Z"
+    },
+    "@billionairedau": {
+      "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "status": "pending",
+      "terms": [
+        "dot",
+        "$dot",
+        "dotcode",
+        "supercharged",
+        "private inference",
+        "dotcode private agentic loop",
+        "dot supercharged",
+        "privacy boundary",
+        "team update",
+        "kol quote",
+        "whale buy"
+      ],
+      "updated_at": "2026-06-16T20:22:46Z"
     },
     "@boggyagent": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
@@ -421,6 +527,27 @@
       ],
       "updated_at": "2026-06-10T23:59:29Z"
     },
+    "@cryptohawk19": {
+      "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "status": "pending",
+      "terms": [
+        "dot",
+        "$dot",
+        "dotcode",
+        "supercharged",
+        "private inference",
+        "dotcode private agentic loop",
+        "dot supercharged",
+        "privacy boundary",
+        "team update",
+        "kol quote",
+        "whale buy"
+      ],
+      "updated_at": "2026-06-16T20:22:46Z"
+    },
     "@cryptojunzy": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -440,6 +567,27 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@cryptoluche_": {
+      "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "status": "pending",
+      "terms": [
+        "dot",
+        "$dot",
+        "dotcode",
+        "supercharged",
+        "private inference",
+        "dotcode private agentic loop",
+        "dot supercharged",
+        "privacy boundary",
+        "team update",
+        "kol quote",
+        "whale buy"
+      ],
+      "updated_at": "2026-06-16T20:22:46Z"
     },
     "@de_okwutex": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
@@ -708,6 +856,27 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@usedotai": {
+      "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "status": "pending",
+      "terms": [
+        "dot",
+        "$dot",
+        "dotcode",
+        "supercharged",
+        "private inference",
+        "dotcode private agentic loop",
+        "dot supercharged",
+        "privacy boundary",
+        "team update",
+        "kol quote",
+        "whale buy"
+      ],
+      "updated_at": "2026-06-16T20:22:46Z"
     },
     "@vegasnipes": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",

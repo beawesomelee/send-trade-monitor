@@ -1,6 +1,6 @@
 {
   "rules": [],
-  "rules_synced_at": "2026-06-16T23:22:29Z",
+  "rules_synced_at": "2026-06-16T23:59:17Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -379,7 +379,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-16T23:22:29Z",
+  "updated_at": "2026-06-16T23:59:17Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",

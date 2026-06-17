@@ -1,6 +1,6 @@
 {
   "rules": [],
-  "rules_synced_at": "2026-06-17T14:22:38Z",
+  "rules_synced_at": "2026-06-17T15:22:42Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -377,9 +377,61 @@
           "privacy boundary"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-17T15:22:41Z",
+      "id": "signal_3e17cdde0a68",
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x11dc28d01984079b7efe7763b533e6ed9e3722b9"
+      },
+      "lore": "cexscan dropping multiple alerts on synd ripping quick on coinbase spot, dead coin narrative from last month's shutdown talk but still pulling vol. why the bid?",
+      "movement": {
+        "change_pct": 668.7,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@cexscan",
+          "relevance": "multiple cex alerts showing repeated quick gains driving attention",
+          "text": "$SYND just ripped +8.44% on #Coinbase",
+          "type": "x_post",
+          "url": "https://x.com/cexscan/status/2067258356125868044"
+        },
+        {
+          "author_handle": "@BASEGEMSLLC",
+          "relevance": "highlights the contrast with shutdown news vs current pump",
+          "text": "Who is buying SYND? Dead coin. They are shutting down.",
+          "type": "x_post",
+          "url": "https://x.com/BASEGEMSLLC/status/2067258356125868044"
+        }
+      ],
+      "token": {
+        "address": "0x11dc28d01984079b7efe7763b533e6ed9e3722b9",
+        "symbol": "SYND"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@cexscan",
+          "@BASEGEMSLLC"
+        ],
+        "catalysts": [
+          "cex_rip",
+          "delist_vol"
+        ],
+        "keywords": [
+          "$SYND",
+          "synd",
+          "shutdown"
+        ],
+        "phrases": [
+          "dead coin",
+          "ripped on coinbase"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-17T14:22:38Z",
+  "updated_at": "2026-06-17T15:22:42Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
@@ -424,6 +476,23 @@
         "vote activity"
       ],
       "updated_at": "2026-06-14T23:22:37Z"
+    },
+    "@basegemsllc": {
+      "reason_added": "Suggested by movement explanation for SYND; movement 668.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_3e17cdde0a68"
+      ],
+      "status": "pending",
+      "terms": [
+        "synd",
+        "$synd",
+        "shutdown",
+        "dead coin",
+        "ripped on coinbase",
+        "cex rip",
+        "delist vol"
+      ],
+      "updated_at": "2026-06-17T15:22:41Z"
     },
     "@basewhalealert": {
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
@@ -507,6 +576,23 @@
         "vote activity"
       ],
       "updated_at": "2026-06-14T23:22:37Z"
+    },
+    "@cexscan": {
+      "reason_added": "Suggested by movement explanation for SYND; movement 668.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_3e17cdde0a68"
+      ],
+      "status": "pending",
+      "terms": [
+        "synd",
+        "$synd",
+        "shutdown",
+        "dead coin",
+        "ripped on coinbase",
+        "cex rip",
+        "delist vol"
+      ],
+      "updated_at": "2026-06-17T15:22:41Z"
     },
     "@chartexpt": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",

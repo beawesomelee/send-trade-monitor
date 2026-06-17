@@ -1,10 +1,10 @@
 [
   {
     "chain_slug": "base",
-    "address": "0x23a2847d772803f9efc64b4277b782b06296fe51",
-    "symbol": "DOT",
+    "address": "0x11dc28d01984079b7efe7763b533e6ed9e3722b9",
+    "symbol": "SYND",
     "direction": "pump",
-    "price_change_h1_pct": -15.23,
-    "timestamp": 1781641366.4073813
+    "price_change_h1_pct": 42.137,
+    "timestamp": 1781709761.961241
   }
 ]

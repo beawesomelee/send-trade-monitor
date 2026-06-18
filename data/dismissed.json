@@ -69,6 +69,10 @@
   },
   {
     "chain_slug": "solana",
+    "address": "6kdHr9g2Pg2ZXCY4Dm1v7NpNqpTBTEiaRgATLR3Ppump"
+  },
+  {
+    "chain_slug": "solana",
     "address": "B6f27ETGcjgGNB1fqULJbXVmw9FnL8HgBp7R83hmpump"
   },
   {
@@ -106,6 +110,10 @@
   {
     "chain_slug": "solana",
     "address": "So11111111111111111111111111111111111111112"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "p4xfbiJJUk42rCTkNTV8U7hp33ny1oohMpRrKwGpump"
   },
   {
     "chain_slug": "solana",

@@ -226,6 +226,20 @@
   {
     "chain_slug": "solana",
     "chain_id": 501474,
+    "address": "BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump",
+    "symbol": "Jotchua",
+    "name": "Jotchua",
+    "market_cap_usd": 7282048,
+    "volume_24h_usd": 2807038,
+    "liquidity_usd": 352437,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/NPs1Oxrt4x4Il_WB?width=800&height=800&quality=95&format=auto",
+    "pair_created_at_ms": 1780807581000,
+    "dexscreener_url": "https://dexscreener.com/solana/BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump",
+    "decimals": 6
+  },
+  {
+    "chain_slug": "solana",
+    "chain_id": 501474,
     "address": "6ehEcTMCc85aNF4x9CWx8HuvWGhxQtvKdhKVf2HDpump",
     "symbol": "TOESCOIN",
     "name": "TOES",

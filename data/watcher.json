@@ -1,6 +1,6 @@
 {
   "rules": [],
-  "rules_synced_at": "2026-06-19T09:22:34Z",
+  "rules_synced_at": "2026-06-19T10:22:41Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -429,9 +429,72 @@
           "ripped on coinbase"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-19T10:22:40Z",
+      "id": "signal_02890fa65739",
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump"
+      },
+      "lore": "rockstar dropped the gta vi site and box art, $gtavi caught the immediate attention from 23k mc straight to 800k",
+      "movement": {
+        "change_pct": 114.6,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@Techgaged_news",
+          "relevance": "directly ties the launch/pump to the rockstar release",
+          "text": "Right after Rockstar released the GTA VI site, a meme coin $GTAVI went from 23K mcap straight to 800K",
+          "type": "x_post",
+          "url": "https://x.com/Techgaged_news/status/2067698671320289288"
+        },
+        {
+          "author_handle": "@hailey_cryptoo",
+          "relevance": "confirms the timing and scale of the move",
+          "text": "Rockstar released the GTA VI site $GTAVI immediately did 36x 23K \u2192 800K MC",
+          "type": "x_post",
+          "url": "https://x.com/hailey_cryptoo/status/2067742067065811001"
+        },
+        {
+          "author_handle": "@stitchdegen",
+          "relevance": "explains the narrative trigger and why it stuck",
+          "text": "after Rockstar officially revealed the GTA VI box art, it wasn\u2019t surprising to see a memecoin emerge around the event",
+          "type": "x_post",
+          "url": "https://x.com/stitchdegen/status/2067861722191519890"
+        }
+      ],
+      "token": {
+        "address": "EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump",
+        "symbol": "GTAVI"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Techgaged_news",
+          "@hailey_cryptoo",
+          "@stitchdegen",
+          "@DEXCHAD003"
+        ],
+        "catalysts": [
+          "kol_post",
+          "site_release",
+          "narrative_reactivation"
+        ],
+        "keywords": [
+          "$gtavi",
+          "gta vi",
+          "rockstar"
+        ],
+        "phrases": [
+          "rockstar released the gta vi site",
+          "gta vi box art reveal",
+          "gtavi narrative"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-19T09:22:34Z",
+  "updated_at": "2026-06-19T10:22:41Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
@@ -734,6 +797,26 @@
       ],
       "updated_at": "2026-06-10T23:59:29Z"
     },
+    "@dexchad003": {
+      "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "status": "pending",
+      "terms": [
+        "gtavi",
+        "$gtavi",
+        "gta vi",
+        "rockstar",
+        "rockstar released the gta vi site",
+        "gta vi box art reveal",
+        "gtavi narrative",
+        "kol post",
+        "site release",
+        "narrative reactivation"
+      ],
+      "updated_at": "2026-06-19T10:22:40Z"
+    },
     "@elliotscrypto": {
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -777,6 +860,26 @@
         "narrative"
       ],
       "updated_at": "2026-06-11T19:22:41Z"
+    },
+    "@hailey_cryptoo": {
+      "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "status": "pending",
+      "terms": [
+        "gtavi",
+        "$gtavi",
+        "gta vi",
+        "rockstar",
+        "rockstar released the gta vi site",
+        "gta vi box art reveal",
+        "gtavi narrative",
+        "kol post",
+        "site release",
+        "narrative reactivation"
+      ],
+      "updated_at": "2026-06-19T10:22:40Z"
     },
     "@jotchuathememe": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
@@ -900,6 +1003,46 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@stitchdegen": {
+      "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "status": "pending",
+      "terms": [
+        "gtavi",
+        "$gtavi",
+        "gta vi",
+        "rockstar",
+        "rockstar released the gta vi site",
+        "gta vi box art reveal",
+        "gtavi narrative",
+        "kol post",
+        "site release",
+        "narrative reactivation"
+      ],
+      "updated_at": "2026-06-19T10:22:40Z"
+    },
+    "@techgaged_news": {
+      "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "status": "pending",
+      "terms": [
+        "gtavi",
+        "$gtavi",
+        "gta vi",
+        "rockstar",
+        "rockstar released the gta vi site",
+        "gta vi box art reveal",
+        "gtavi narrative",
+        "kol post",
+        "site release",
+        "narrative reactivation"
+      ],
+      "updated_at": "2026-06-19T10:22:40Z"
     },
     "@tokenradarco": {
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",

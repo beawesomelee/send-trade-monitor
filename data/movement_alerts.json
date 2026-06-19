@@ -1,10 +1,10 @@
 [
   {
-    "chain_slug": "base",
-    "address": "0x11dc28d01984079b7efe7763b533e6ed9e3722b9",
-    "symbol": "SYND",
+    "chain_slug": "solana",
+    "address": "epvhykk8oxclmp2c2nhaos1odxgbnriw3wslsozypump",
+    "symbol": "GTAVI",
     "direction": "pump",
-    "price_change_h1_pct": 42.137,
-    "timestamp": 1781709761.961241
+    "price_change_h1_pct": 2.03,
+    "timestamp": 1781864560.7097816
   }
 ]

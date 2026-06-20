@@ -1,6 +1,6 @@
 {
   "rules": [],
-  "rules_synced_at": "2026-06-20T17:22:33Z",
+  "rules_synced_at": "2026-06-20T18:22:45Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -492,9 +492,78 @@
           "gtavi narrative"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-20T18:22:45Z",
+      "id": "signal_9658c91f8493",
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/2JcqSpiK8e8F8dkqaQtkyb9umoJdzGz3qemnMKXApump"
+      },
+      "lore": "moonshot listing vote push with a few low-engagement calls, no big kol posts or team updates. bundled launch flagged earlier, thin liq runner on the vote noise. what triggered the 3k% move",
+      "movement": {
+        "change_pct": 3091.7,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@ffac6f3abd1e440",
+          "relevance": "direct vote campaign post tied to the token",
+          "text": "$PEVOLUTION is only 57 votes away from getting listed on Moonshot",
+          "type": "x_post",
+          "url": "https://x.com/ffac6f3abd1e440/status/2068399137368813910"
+        },
+        {
+          "author_handle": "@ChuchuSwag1",
+          "relevance": "similar vote push post",
+          "text": "$PEVOLUTION is only 124 votes away from getting listed on Moonshot",
+          "type": "x_post",
+          "url": "https://x.com/ChuchuSwag1/status/2068399086680633454"
+        },
+        {
+          "author_handle": "@pevolutionsol",
+          "relevance": "project's own jupiter update post same day",
+          "text": "PEVOLUTION TOKEN DATA UPDATED... waiting for review. More visibility.",
+          "type": "x_post",
+          "url": "https://x.com/pevolutionsol/status/2068399011157958916"
+        },
+        {
+          "author_handle": "@devs_hunter",
+          "relevance": "scam flag on launch structure pre-pump",
+          "text": "$PEVOLUTION ... is a SCAM token... Massive coordinated Wallet Distribution",
+          "type": "x_post",
+          "url": "https://x.com/devs_hunter/status/2068369850171371915"
+        }
+      ],
+      "token": {
+        "address": "2JcqSpiK8e8F8dkqaQtkyb9umoJdzGz3qemnMKXApump",
+        "symbol": "PEVOLUTION"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@pevolutionsol",
+          "@devs_hunter",
+          "@DeFade_"
+        ],
+        "catalysts": [
+          "kol_post",
+          "listing_vote",
+          "scam_flag"
+        ],
+        "keywords": [
+          "$PEVOLUTION",
+          "pevolution",
+          "moonshot"
+        ],
+        "phrases": [
+          "moonshot listing vote",
+          "only x votes away",
+          "bundled at launch"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-20T17:22:33Z",
+  "updated_at": "2026-06-20T18:22:45Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
@@ -676,6 +745,25 @@
       ],
       "updated_at": "2026-06-10T23:59:29Z"
     },
+    "@chuchuswag1": {
+      "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "status": "pending",
+      "terms": [
+        "pevolution",
+        "$pevolution",
+        "moonshot",
+        "moonshot listing vote",
+        "only x votes away",
+        "bundled at launch",
+        "kol post",
+        "listing vote",
+        "scam flag"
+      ],
+      "updated_at": "2026-06-20T18:22:45Z"
+    },
     "@cryptohawk19": {
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -760,6 +848,25 @@
       ],
       "updated_at": "2026-06-11T19:22:41Z"
     },
+    "@defade_": {
+      "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "status": "pending",
+      "terms": [
+        "pevolution",
+        "$pevolution",
+        "moonshot",
+        "moonshot listing vote",
+        "only x votes away",
+        "bundled at launch",
+        "kol post",
+        "listing vote",
+        "scam flag"
+      ],
+      "updated_at": "2026-06-20T18:22:45Z"
+    },
     "@degen_mike14": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -796,6 +903,25 @@
         "narrative rotation"
       ],
       "updated_at": "2026-06-10T23:59:29Z"
+    },
+    "@devs_hunter": {
+      "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "status": "pending",
+      "terms": [
+        "pevolution",
+        "$pevolution",
+        "moonshot",
+        "moonshot listing vote",
+        "only x votes away",
+        "bundled at launch",
+        "kol post",
+        "listing vote",
+        "scam flag"
+      ],
+      "updated_at": "2026-06-20T18:22:45Z"
     },
     "@dexchad003": {
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
@@ -860,6 +986,25 @@
         "narrative"
       ],
       "updated_at": "2026-06-11T19:22:41Z"
+    },
+    "@ffac6f3abd1e440": {
+      "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "status": "pending",
+      "terms": [
+        "pevolution",
+        "$pevolution",
+        "moonshot",
+        "moonshot listing vote",
+        "only x votes away",
+        "bundled at launch",
+        "kol post",
+        "listing vote",
+        "scam flag"
+      ],
+      "updated_at": "2026-06-20T18:22:45Z"
     },
     "@hailey_cryptoo": {
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
@@ -961,6 +1106,25 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@pevolutionsol": {
+      "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "status": "pending",
+      "terms": [
+        "pevolution",
+        "$pevolution",
+        "moonshot",
+        "moonshot listing vote",
+        "only x votes away",
+        "bundled at launch",
+        "kol post",
+        "listing vote",
+        "scam flag"
+      ],
+      "updated_at": "2026-06-20T18:22:45Z"
     },
     "@rumadotfun": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",

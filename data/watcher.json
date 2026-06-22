@@ -1,6 +1,42 @@
 {
-  "rules": [],
-  "rules_synced_at": "2026-06-22T17:22:34Z",
+  "rules": [
+    {
+      "id": "2069122556754280449",
+      "tag": "send_watcher:velvet_capital",
+      "value": "from:velvet_capital (velvet) -is:retweet"
+    },
+    {
+      "id": "2069122556754280450",
+      "tag": "send_watcher:de_okwutex",
+      "value": "from:de_okwutex (velvet OR $velvet) -is:retweet"
+    },
+    {
+      "id": "2069122556754280451",
+      "tag": "send_watcher:deluquant",
+      "value": "from:deluquant (velvet OR \"velvet leading\") -is:retweet"
+    },
+    {
+      "id": "2069122556754280452",
+      "tag": "send_watcher:hailey_cryptoo",
+      "value": "from:hailey_cryptoo (gtavi OR $gtavi OR \"gta vi\" OR \"rockstar released the gta vi site\") -is:retweet"
+    },
+    {
+      "id": "2069122556754280453",
+      "tag": "send_watcher:0xalwaysonchain",
+      "value": "from:0xalwaysonchain (opengradient) -is:retweet"
+    },
+    {
+      "id": "2069122556754280454",
+      "tag": "send_watcher:elliotscrypto",
+      "value": "from:elliotscrypto (opg OR $opg) -is:retweet"
+    },
+    {
+      "id": "2069122556754280455",
+      "tag": "send_watcher:techgaged_news",
+      "value": "from:techgaged_news (gtavi OR $gtavi OR \"gta vi\" OR \"rockstar released the gta vi site\") -is:retweet"
+    }
+  ],
+  "rules_synced_at": "2026-06-22T18:22:36Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -563,7 +599,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-22T17:45:57Z",
+  "updated_at": "2026-06-22T18:22:36Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "approval_evidence_urls": [

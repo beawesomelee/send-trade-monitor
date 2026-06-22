@@ -155,6 +155,22 @@ def upsert_events_from_signals(
     """Upsert movement events for the supplied watcher signals."""
     if not signals:
         return []
+    events = [
+        build_event_from_signal(signal)
+        for signal in signals
+        if isinstance(signal, dict)
+    ]
+    return upsert_events(events, path=path)
+
+
+def upsert_events(
+    events: list[dict],
+    *,
+    path: Path = MOVEMENT_EVENTS_FILE,
+) -> list[dict]:
+    """Upsert already-built movement events."""
+    if not events:
+        return []
     data = load_events(path)
     by_id = {
         event.get("event_id"): event
@@ -162,9 +178,8 @@ def upsert_events_from_signals(
         if isinstance(event, dict) and event.get("event_id")
     }
     updated = []
-    for signal in signals:
-        event = build_event_from_signal(signal)
-        if not event["event_id"]:
+    for event in events:
+        if not event.get("event_id"):
             continue
         by_id[event["event_id"]] = event
         updated.append(event)

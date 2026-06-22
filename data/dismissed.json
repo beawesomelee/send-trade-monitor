@@ -41,6 +41,10 @@
   },
   {
     "chain_slug": "solana",
+    "address": "2JcqSpiK8e8F8dkqaQtkyb9umoJdzGz3qemnMKXApump"
+  },
+  {
+    "chain_slug": "solana",
     "address": "2Mcwccy7Ckf6C2BUfwG9Z6kcYp8Mj5tKFBHEEoYCpump"
   },
   {
@@ -53,11 +57,23 @@
   },
   {
     "chain_slug": "solana",
+    "address": "37Bk2fdJ4gNGXrYTjMdriaZUbBbhmoQGeQjHyih3pump"
+  },
+  {
+    "chain_slug": "solana",
     "address": "3Dkwrjfmt3ReqB1dTgj1qhGAJPhczQ5Sdg6UCfqxpump"
   },
   {
     "chain_slug": "solana",
+    "address": "3HHTWR8mSdWGmNfH1gSpsFWvysWJ2DUwpmTsnTz1pump"
+  },
+  {
+    "chain_slug": "solana",
     "address": "43RuMKo4KTNekqjGSBM4NTsnL2dA8kf2MopF12eEpump"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "489fWM9Ur6m3N6KBHUc3BegesUSH6Z3J5UH1USZnpump"
   },
   {
     "chain_slug": "solana",
@@ -73,6 +89,10 @@
   },
   {
     "chain_slug": "solana",
+    "address": "9G4Z9wkL851RZfMFHQETQ6v5GSNqkUTXC5oBtUXcXw1W"
+  },
+  {
+    "chain_slug": "solana",
     "address": "B6f27ETGcjgGNB1fqULJbXVmw9FnL8HgBp7R83hmpump"
   },
   {
@@ -85,6 +105,14 @@
   },
   {
     "chain_slug": "solana",
+    "address": "DtgneYfuPv3Jt8PzfMXYq9opRNU2UVtgrLYFdC4Vpump"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "E8UXwqhNiiMwVRRV4F81rUBUYXNUd4bA78ZxpQxZpump"
+  },
+  {
+    "chain_slug": "solana",
     "address": "EHy9cokEsx7jMXZJQSvv9kueTPXRVK8WVQdAA35nmoon"
   },
   {
@@ -94,6 +122,10 @@
   {
     "chain_slug": "solana",
     "address": "EhHyfjRwj2jhmSE7GW5uJfizaLcNDa5C4HWPiSqjpump"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "EkHFmmqJMz95jaeNGj9onEAtzWdLtjqmRNsqov28BAGS"
   },
   {
     "chain_slug": "solana",
@@ -110,6 +142,10 @@
   {
     "chain_slug": "solana",
     "address": "So11111111111111111111111111111111111111112"
+  },
+  {
+    "chain_slug": "solana",
+    "address": "hYfm7JwKcpEfdh41c2bwHT5AsJF8At3rPuvu8avpump"
   },
   {
     "chain_slug": "solana",

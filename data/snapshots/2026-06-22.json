@@ -344,6 +344,19 @@
   {
     "chain_slug": "solana",
     "chain_id": 501474,
+    "address": "489fWM9Ur6m3N6KBHUc3BegesUSH6Z3J5UH1USZnpump",
+    "symbol": "Harvest Hank",
+    "name": "Harvest Hank",
+    "market_cap_usd": 15001,
+    "volume_24h_usd": 796795,
+    "liquidity_usd": 6726,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/L8keO9aazPTBEGIA?width=800&height=800&quality=95&format=auto",
+    "dexscreener_url": "https://dexscreener.com/solana/489fWM9Ur6m3N6KBHUc3BegesUSH6Z3J5UH1USZnpump",
+    "decimals": 6
+  },
+  {
+    "chain_slug": "solana",
+    "chain_id": 501474,
     "address": "ACpzkGJV3DDU8HXy8yjab7RL9qNmDGym2GwLkzNppump",
     "symbol": "SON",
     "name": "Are Ya Winning, Son?",

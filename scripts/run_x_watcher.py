@@ -29,6 +29,11 @@ def main() -> int:
         help="Stop after this many seconds",
     )
     parser.add_argument(
+        "--forever",
+        action="store_true",
+        help="Run without max post/time limits for production supervisors",
+    )
+    parser.add_argument(
         "--tweets-file",
         type=Path,
         default=TWEETS_FILE,
@@ -73,6 +78,8 @@ def main() -> int:
         help="Skip price verification. Use only for raw ingest/debug runs.",
     )
     args = parser.parse_args()
+    max_posts = None if args.forever else args.max_posts
+    max_seconds = None if args.forever else args.max_seconds
 
     load_env(ROOT / ".env")
     token = bearer_token_from_env()
@@ -87,8 +94,8 @@ def main() -> int:
     try:
         result = stream_watcher_posts(
             token,
-            max_posts=args.max_posts,
-            max_seconds=args.max_seconds,
+            max_posts=max_posts,
+            max_seconds=max_seconds,
             tweets_path=args.tweets_file,
             state_path=args.state_file,
             lock_path=args.lock_file,

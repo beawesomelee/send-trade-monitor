@@ -1,6 +1,10 @@
 import json
 
-from lib.watcher_review import build_pre_move_candidates
+from lib.watcher_review import (
+    build_pre_move_candidates,
+    build_pre_move_candidates_from_events,
+    upsert_review_candidates,
+)
 
 
 def test_build_pre_move_candidates_uses_estimated_start(tmp_path):
@@ -80,6 +84,59 @@ def test_build_pre_move_candidates_applies_max_lookback(tmp_path):
     )
 
     assert [candidate["account"] for candidate in candidates] == ["@timely"]
+
+
+def test_build_pre_move_candidates_from_events_uses_supplied_events_only():
+    events = [
+        _event(
+            estimated_start_at="2026-06-10T12:00:00Z",
+            evidence=[
+                _evidence("@Timely", "2026-06-10T11:00:00Z", "https://x.com/Timely/status/2"),
+            ],
+        )
+    ]
+
+    candidates = build_pre_move_candidates_from_events(events, watch_accounts={})
+
+    assert len(candidates) == 1
+    assert candidates[0]["account"] == "@timely"
+
+
+def test_upsert_review_candidates_writes_compact_rows(tmp_path):
+    review_path = tmp_path / "watcher_review.json"
+    candidate = {
+        "candidate_id": "watch_candidate_abc",
+        "account": "@timely",
+        "token_symbol": "ALPHA",
+        "token_address": "0xalpha",
+        "chain_slug": "base",
+        "event_id": "signal_test",
+        "source_signal_id": "signal_test",
+        "movement_direction": "pump",
+        "movement_change_pct": 80,
+        "tweet_at": "2026-06-10T11:00:00Z",
+        "pre_move_cutoff_at": "2026-06-10T12:00:00Z",
+        "source_evidence_url": "https://x.com/Timely/status/2",
+        "tweet_text": "x" * 400,
+        "terms": ["alpha", "$alpha"],
+        "grok": {
+            "label": "maybe_alpha",
+            "implied_direction": "pump",
+            "reason": "specific catalyst before move",
+            "suggested_terms": ["alpha"],
+        },
+        "recommendation": "manual_review",
+    }
+
+    assert upsert_review_candidates([candidate], path=review_path) == 1
+    assert upsert_review_candidates([candidate], path=review_path) == 1
+    data = json.loads(review_path.read_text())
+
+    assert data["candidate_count"] == 1
+    row = data["candidates"][0]
+    assert row["candidate_id"] == "watch_candidate_abc"
+    assert row["grok_label"] == "maybe_alpha"
+    assert len(row["tweet_text"]) <= 280
 
 
 def _event(*, estimated_start_at: str, evidence: list[dict]) -> dict:

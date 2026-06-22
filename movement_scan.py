@@ -35,6 +35,7 @@ from lib.lore import fetch_lore_packet
 from lib.watcher_state import record_signals
 from lib.movement_events import upsert_events, upsert_events_from_signals
 from lib.movement_start import enrich_events_with_estimated_starts
+from lib.watcher_review import review_recent_watcher_candidates
 
 
 def main():
@@ -124,6 +125,7 @@ def main():
             try:
                 enriched_events, stats = enrich_events_with_estimated_starts(events)
                 upsert_events(enriched_events)
+                events = enriched_events
                 print(
                     "   enriched movement starts "
                     f"(updated={stats.get('updated', 0)}, "
@@ -134,6 +136,17 @@ def main():
                 print(f"   movement start enrichment skipped: {exc}")
         record_alerts(new_movers, retained)
         print("   recorded cooldown state")
+        if events:
+            stats = review_recent_watcher_candidates(events, classify=True, timeout=20)
+            if stats.get("error"):
+                print(f"   watcher review skipped: {stats['error']}")
+            else:
+                print(
+                    "   reviewed watcher candidates "
+                    f"(candidates={stats.get('candidate_count', 0)}, "
+                    f"classified={stats.get('classified_count', 0)}, "
+                    f"written={stats.get('written', 0)})"
+                )
     else:
         print("\n(use --alert to send notifications, push send.trade lore, and lock cooldown)")
 

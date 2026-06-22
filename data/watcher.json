@@ -1,6 +1,6 @@
 {
   "rules": [],
-  "rules_synced_at": "2026-06-15T13:22:37Z",
+  "rules_synced_at": "2026-06-22T15:22:34Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -313,9 +313,257 @@
           "zkML infrastructure play"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-16T20:22:46Z",
+      "id": "signal_62b0f07aaf79",
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x23a2847d772803f9efc64b4277b782b06296fe51"
+      },
+      "lore": "team dropped dotcode private agent loop update today with real time asset gen inside privacy boundary. traders quoting and noting the privacy angle on base. whale buy at 1.5m mc",
+      "movement": {
+        "change_pct": 76.9,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@usedotai",
+          "relevance": "main team update driving chatter",
+          "text": "DotCode now runs a first-of-its-kind, fully private, agentic loop that can see exactly what it is building, in real time.",
+          "type": "x_post",
+          "url": "https://x.com/usedotai/status/2066933637065404634"
+        },
+        {
+          "author_handle": "@CryptoLuche_",
+          "relevance": "trader quote and bullish take on the update",
+          "text": "\ud83d\udd12 AI is becoming smarter. $DOT is making it private.",
+          "type": "x_post",
+          "url": "https://x.com/CryptoLuche_/status/2066951180786270689"
+        },
+        {
+          "author_handle": "@BaseWhaleAlert",
+          "relevance": "on-chain buy observation tied to timing",
+          "text": "A SURPLUS whale just bought $1.72K of $DOT at $1.53M MC \ud83d\udc33",
+          "type": "x_post",
+          "url": "https://x.com/BaseWhaleAlert/status/2066936868457877580"
+        }
+      ],
+      "token": {
+        "address": "0x23a2847d772803f9efc64b4277b782b06296fe51",
+        "symbol": "DOT"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@usedotai",
+          "@CryptoLuche_",
+          "@CryptoHawk19",
+          "@BillionAireDau",
+          "@BaseWhaleAlert"
+        ],
+        "catalysts": [
+          "team_update",
+          "kol_quote",
+          "whale_buy"
+        ],
+        "keywords": [
+          "dotcode",
+          "supercharged",
+          "private inference"
+        ],
+        "phrases": [
+          "dotcode private agentic loop",
+          "dot supercharged",
+          "privacy boundary"
+        ]
+      }
+    },
+    {
+      "detected_at": "2026-06-17T15:22:41Z",
+      "id": "signal_3e17cdde0a68",
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x11dc28d01984079b7efe7763b533e6ed9e3722b9"
+      },
+      "lore": "cexscan dropping multiple alerts on synd ripping quick on coinbase spot, dead coin narrative from last month's shutdown talk but still pulling vol. why the bid?",
+      "movement": {
+        "change_pct": 668.7,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@cexscan",
+          "relevance": "multiple cex alerts showing repeated quick gains driving attention",
+          "text": "$SYND just ripped +8.44% on #Coinbase",
+          "type": "x_post",
+          "url": "https://x.com/cexscan/status/2067258356125868044"
+        },
+        {
+          "author_handle": "@BASEGEMSLLC",
+          "relevance": "highlights the contrast with shutdown news vs current pump",
+          "text": "Who is buying SYND? Dead coin. They are shutting down.",
+          "type": "x_post",
+          "url": "https://x.com/BASEGEMSLLC/status/2067258356125868044"
+        }
+      ],
+      "token": {
+        "address": "0x11dc28d01984079b7efe7763b533e6ed9e3722b9",
+        "symbol": "SYND"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@cexscan",
+          "@BASEGEMSLLC"
+        ],
+        "catalysts": [
+          "cex_rip",
+          "delist_vol"
+        ],
+        "keywords": [
+          "$SYND",
+          "synd",
+          "shutdown"
+        ],
+        "phrases": [
+          "dead coin",
+          "ripped on coinbase"
+        ]
+      }
+    },
+    {
+      "detected_at": "2026-06-19T10:22:40Z",
+      "id": "signal_02890fa65739",
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump"
+      },
+      "lore": "rockstar dropped the gta vi site and box art, $gtavi caught the immediate attention from 23k mc straight to 800k",
+      "movement": {
+        "change_pct": 114.6,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@Techgaged_news",
+          "relevance": "directly ties the launch/pump to the rockstar release",
+          "text": "Right after Rockstar released the GTA VI site, a meme coin $GTAVI went from 23K mcap straight to 800K",
+          "type": "x_post",
+          "url": "https://x.com/Techgaged_news/status/2067698671320289288"
+        },
+        {
+          "author_handle": "@hailey_cryptoo",
+          "relevance": "confirms the timing and scale of the move",
+          "text": "Rockstar released the GTA VI site $GTAVI immediately did 36x 23K \u2192 800K MC",
+          "type": "x_post",
+          "url": "https://x.com/hailey_cryptoo/status/2067742067065811001"
+        },
+        {
+          "author_handle": "@stitchdegen",
+          "relevance": "explains the narrative trigger and why it stuck",
+          "text": "after Rockstar officially revealed the GTA VI box art, it wasn\u2019t surprising to see a memecoin emerge around the event",
+          "type": "x_post",
+          "url": "https://x.com/stitchdegen/status/2067861722191519890"
+        }
+      ],
+      "token": {
+        "address": "EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump",
+        "symbol": "GTAVI"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Techgaged_news",
+          "@hailey_cryptoo",
+          "@stitchdegen",
+          "@DEXCHAD003"
+        ],
+        "catalysts": [
+          "kol_post",
+          "site_release",
+          "narrative_reactivation"
+        ],
+        "keywords": [
+          "$gtavi",
+          "gta vi",
+          "rockstar"
+        ],
+        "phrases": [
+          "rockstar released the gta vi site",
+          "gta vi box art reveal",
+          "gtavi narrative"
+        ]
+      }
+    },
+    {
+      "detected_at": "2026-06-20T18:22:45Z",
+      "id": "signal_9658c91f8493",
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/2JcqSpiK8e8F8dkqaQtkyb9umoJdzGz3qemnMKXApump"
+      },
+      "lore": "moonshot listing vote push with a few low-engagement calls, no big kol posts or team updates. bundled launch flagged earlier, thin liq runner on the vote noise. what triggered the 3k% move",
+      "movement": {
+        "change_pct": 3091.7,
+        "direction": "pump",
+        "window": "h6"
+      },
+      "references": [
+        {
+          "author_handle": "@ffac6f3abd1e440",
+          "relevance": "direct vote campaign post tied to the token",
+          "text": "$PEVOLUTION is only 57 votes away from getting listed on Moonshot",
+          "type": "x_post",
+          "url": "https://x.com/ffac6f3abd1e440/status/2068399137368813910"
+        },
+        {
+          "author_handle": "@ChuchuSwag1",
+          "relevance": "similar vote push post",
+          "text": "$PEVOLUTION is only 124 votes away from getting listed on Moonshot",
+          "type": "x_post",
+          "url": "https://x.com/ChuchuSwag1/status/2068399086680633454"
+        },
+        {
+          "author_handle": "@pevolutionsol",
+          "relevance": "project's own jupiter update post same day",
+          "text": "PEVOLUTION TOKEN DATA UPDATED... waiting for review. More visibility.",
+          "type": "x_post",
+          "url": "https://x.com/pevolutionsol/status/2068399011157958916"
+        },
+        {
+          "author_handle": "@devs_hunter",
+          "relevance": "scam flag on launch structure pre-pump",
+          "text": "$PEVOLUTION ... is a SCAM token... Massive coordinated Wallet Distribution",
+          "type": "x_post",
+          "url": "https://x.com/devs_hunter/status/2068369850171371915"
+        }
+      ],
+      "token": {
+        "address": "2JcqSpiK8e8F8dkqaQtkyb9umoJdzGz3qemnMKXApump",
+        "symbol": "PEVOLUTION"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@pevolutionsol",
+          "@devs_hunter",
+          "@DeFade_"
+        ],
+        "catalysts": [
+          "kol_post",
+          "listing_vote",
+          "scam_flag"
+        ],
+        "keywords": [
+          "$PEVOLUTION",
+          "pevolution",
+          "moonshot"
+        ],
+        "phrases": [
+          "moonshot listing vote",
+          "only x votes away",
+          "bundled at launch"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-15T13:22:37Z",
+  "updated_at": "2026-06-22T15:22:34Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
@@ -361,6 +609,65 @@
       ],
       "updated_at": "2026-06-14T23:22:37Z"
     },
+    "@basegemsllc": {
+      "reason_added": "Suggested by movement explanation for SYND; movement 668.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_3e17cdde0a68"
+      ],
+      "status": "pending",
+      "terms": [
+        "synd",
+        "$synd",
+        "shutdown",
+        "dead coin",
+        "ripped on coinbase",
+        "cex rip",
+        "delist vol"
+      ],
+      "updated_at": "2026-06-17T15:22:41Z"
+    },
+    "@basewhalealert": {
+      "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "status": "pending",
+      "terms": [
+        "dot",
+        "$dot",
+        "dotcode",
+        "supercharged",
+        "private inference",
+        "dotcode private agentic loop",
+        "dot supercharged",
+        "privacy boundary",
+        "team update",
+        "kol quote",
+        "whale buy"
+      ],
+      "updated_at": "2026-06-16T20:22:46Z"
+    },
+    "@billionairedau": {
+      "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "status": "pending",
+      "terms": [
+        "dot",
+        "$dot",
+        "dotcode",
+        "supercharged",
+        "private inference",
+        "dotcode private agentic loop",
+        "dot supercharged",
+        "privacy boundary",
+        "team update",
+        "kol quote",
+        "whale buy"
+      ],
+      "updated_at": "2026-06-16T20:22:46Z"
+    },
     "@boggyagent": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -402,6 +709,23 @@
       ],
       "updated_at": "2026-06-14T23:22:37Z"
     },
+    "@cexscan": {
+      "reason_added": "Suggested by movement explanation for SYND; movement 668.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_3e17cdde0a68"
+      ],
+      "status": "pending",
+      "terms": [
+        "synd",
+        "$synd",
+        "shutdown",
+        "dead coin",
+        "ripped on coinbase",
+        "cex rip",
+        "delist vol"
+      ],
+      "updated_at": "2026-06-17T15:22:41Z"
+    },
     "@chartexpt": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -420,6 +744,46 @@
         "narrative rotation"
       ],
       "updated_at": "2026-06-10T23:59:29Z"
+    },
+    "@chuchuswag1": {
+      "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "status": "pending",
+      "terms": [
+        "pevolution",
+        "$pevolution",
+        "moonshot",
+        "moonshot listing vote",
+        "only x votes away",
+        "bundled at launch",
+        "kol post",
+        "listing vote",
+        "scam flag"
+      ],
+      "updated_at": "2026-06-20T18:22:45Z"
+    },
+    "@cryptohawk19": {
+      "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "status": "pending",
+      "terms": [
+        "dot",
+        "$dot",
+        "dotcode",
+        "supercharged",
+        "private inference",
+        "dotcode private agentic loop",
+        "dot supercharged",
+        "privacy boundary",
+        "team update",
+        "kol quote",
+        "whale buy"
+      ],
+      "updated_at": "2026-06-16T20:22:46Z"
     },
     "@cryptojunzy": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
@@ -440,6 +804,27 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@cryptoluche_": {
+      "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "status": "pending",
+      "terms": [
+        "dot",
+        "$dot",
+        "dotcode",
+        "supercharged",
+        "private inference",
+        "dotcode private agentic loop",
+        "dot supercharged",
+        "privacy boundary",
+        "team update",
+        "kol quote",
+        "whale buy"
+      ],
+      "updated_at": "2026-06-16T20:22:46Z"
     },
     "@de_okwutex": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
@@ -462,6 +847,25 @@
         "narrative"
       ],
       "updated_at": "2026-06-11T19:22:41Z"
+    },
+    "@defade_": {
+      "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "status": "pending",
+      "terms": [
+        "pevolution",
+        "$pevolution",
+        "moonshot",
+        "moonshot listing vote",
+        "only x votes away",
+        "bundled at launch",
+        "kol post",
+        "listing vote",
+        "scam flag"
+      ],
+      "updated_at": "2026-06-20T18:22:45Z"
     },
     "@degen_mike14": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
@@ -499,6 +903,45 @@
         "narrative rotation"
       ],
       "updated_at": "2026-06-10T23:59:29Z"
+    },
+    "@devs_hunter": {
+      "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "status": "pending",
+      "terms": [
+        "pevolution",
+        "$pevolution",
+        "moonshot",
+        "moonshot listing vote",
+        "only x votes away",
+        "bundled at launch",
+        "kol post",
+        "listing vote",
+        "scam flag"
+      ],
+      "updated_at": "2026-06-20T18:22:45Z"
+    },
+    "@dexchad003": {
+      "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "status": "pending",
+      "terms": [
+        "gtavi",
+        "$gtavi",
+        "gta vi",
+        "rockstar",
+        "rockstar released the gta vi site",
+        "gta vi box art reveal",
+        "gtavi narrative",
+        "kol post",
+        "site release",
+        "narrative reactivation"
+      ],
+      "updated_at": "2026-06-19T10:22:40Z"
     },
     "@elliotscrypto": {
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
@@ -543,6 +986,45 @@
         "narrative"
       ],
       "updated_at": "2026-06-11T19:22:41Z"
+    },
+    "@ffac6f3abd1e440": {
+      "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "status": "pending",
+      "terms": [
+        "pevolution",
+        "$pevolution",
+        "moonshot",
+        "moonshot listing vote",
+        "only x votes away",
+        "bundled at launch",
+        "kol post",
+        "listing vote",
+        "scam flag"
+      ],
+      "updated_at": "2026-06-20T18:22:45Z"
+    },
+    "@hailey_cryptoo": {
+      "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "status": "pending",
+      "terms": [
+        "gtavi",
+        "$gtavi",
+        "gta vi",
+        "rockstar",
+        "rockstar released the gta vi site",
+        "gta vi box art reveal",
+        "gtavi narrative",
+        "kol post",
+        "site release",
+        "narrative reactivation"
+      ],
+      "updated_at": "2026-06-19T10:22:40Z"
     },
     "@jotchuathememe": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
@@ -625,6 +1107,25 @@
       ],
       "updated_at": "2026-06-09T22:09:57Z"
     },
+    "@pevolutionsol": {
+      "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "status": "pending",
+      "terms": [
+        "pevolution",
+        "$pevolution",
+        "moonshot",
+        "moonshot listing vote",
+        "only x votes away",
+        "bundled at launch",
+        "kol post",
+        "listing vote",
+        "scam flag"
+      ],
+      "updated_at": "2026-06-20T18:22:45Z"
+    },
     "@rumadotfun": {
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -667,6 +1168,46 @@
       ],
       "updated_at": "2026-06-09T22:09:57Z"
     },
+    "@stitchdegen": {
+      "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "status": "pending",
+      "terms": [
+        "gtavi",
+        "$gtavi",
+        "gta vi",
+        "rockstar",
+        "rockstar released the gta vi site",
+        "gta vi box art reveal",
+        "gtavi narrative",
+        "kol post",
+        "site release",
+        "narrative reactivation"
+      ],
+      "updated_at": "2026-06-19T10:22:40Z"
+    },
+    "@techgaged_news": {
+      "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "status": "pending",
+      "terms": [
+        "gtavi",
+        "$gtavi",
+        "gta vi",
+        "rockstar",
+        "rockstar released the gta vi site",
+        "gta vi box art reveal",
+        "gtavi narrative",
+        "kol post",
+        "site release",
+        "narrative reactivation"
+      ],
+      "updated_at": "2026-06-19T10:22:40Z"
+    },
     "@tokenradarco": {
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
@@ -708,6 +1249,27 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@usedotai": {
+      "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "status": "pending",
+      "terms": [
+        "dot",
+        "$dot",
+        "dotcode",
+        "supercharged",
+        "private inference",
+        "dotcode private agentic loop",
+        "dot supercharged",
+        "privacy boundary",
+        "team update",
+        "kol quote",
+        "whale buy"
+      ],
+      "updated_at": "2026-06-16T20:22:46Z"
     },
     "@vegasnipes": {
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",

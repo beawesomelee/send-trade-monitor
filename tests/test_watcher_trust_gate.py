@@ -38,6 +38,30 @@ def test_model_suggested_accounts_are_pending_not_active(monkeypatch, tmp_path):
     assert "reason_added" in state["watch_accounts"]["@candidatekol"]
 
 
+def test_record_signals_preserves_extra_watcher_metadata(monkeypatch, tmp_path):
+    watcher_file = tmp_path / "watcher.json"
+    watcher_file.write_text(
+        """
+{
+  "schema_version": "watcher_state_v1",
+  "updated_at": "2026-06-10T00:00:00Z",
+  "signals": [],
+  "watch_accounts": {},
+  "rules": [],
+  "rules_synced_at": "2026-06-10T00:00:00Z",
+  "watcher_approval": {"method": "existing"}
+}
+"""
+    )
+    monkeypatch.setattr(watcher_state, "WATCHER_FILE", watcher_file)
+
+    watcher_state.record_signals([_mover()], detected_at="2026-06-10T01:00:00Z")
+    state = watcher_state._load_state()
+
+    assert state["rules_synced_at"] == "2026-06-10T00:00:00Z"
+    assert state["watcher_approval"] == {"method": "existing"}
+
+
 def test_rule_builder_uses_only_approved_watch_accounts():
     state = {
         "watch_accounts": {

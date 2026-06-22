@@ -168,6 +168,36 @@ def send_x_watcher_hit(payload: dict, ingested_at: str, dry_run: bool = False):
         print(f"Discord post failed: {r.status_code} {r.text}")
 
 
+def send_verified_x_watcher_hit(
+    payload: dict,
+    ingested_at: str,
+    verification: dict,
+    dry_run: bool = False,
+):
+    """Post a price-verified X watcher notification to Discord."""
+    msg = _build_verified_x_watcher_hit_message(payload, ingested_at, verification)
+
+    if dry_run:
+        print(f"[dry-run] would post verified X watcher hit to Discord:\n{msg}")
+        return
+
+    webhook = os.environ.get("DISCORD_WEBHOOK_URL")
+    if not webhook:
+        print("WARNING: DISCORD_WEBHOOK_URL not set, skipping verified X watcher hit")
+        return
+
+    payload = {"content": msg, "allowed_mentions": {"parse": []}}
+    try:
+        r = requests.post(webhook, json=payload, timeout=15)
+    except requests.exceptions.RequestException as exc:
+        print(f"WARNING: Discord verified X watcher hit failed: {exc}")
+        return
+    if r.status_code in (200, 204):
+        print("Discord verified X watcher hit sent")
+    else:
+        print(f"Discord post failed: {r.status_code} {r.text}")
+
+
 def _build_x_watcher_hit_message(payload: dict, ingested_at: str) -> str:
     raw_data = payload.get("data")
     data = raw_data if isinstance(raw_data, dict) else {}
@@ -194,6 +224,46 @@ def _build_x_watcher_hit_message(payload: dict, ingested_at: str) -> str:
         lines.append(f"Tweet: <{tweet_url}>")
     if text:
         lines.extend(["", _truncate_text(text, 1200)])
+
+    return _truncate_text("\n".join(lines), DISCORD_CONTENT_LIMIT)
+
+
+def _build_verified_x_watcher_hit_message(
+    payload: dict,
+    ingested_at: str,
+    verification: dict,
+) -> str:
+    raw_data = payload.get("data")
+    data = raw_data if isinstance(raw_data, dict) else {}
+    tweet_id = str(data.get("id") or "")
+    text = str(data.get("text") or "")
+    user = _x_watcher_author(payload)
+    username = str(user.get("username") or "") if user else ""
+    display_name = str(user.get("name") or "") if user else ""
+    author_label = _x_watcher_author_label(display_name, username, data.get("author_id"))
+    tweet_url = _x_tweet_url(tweet_id, username)
+    token = verification.get("token") or {}
+    market = verification.get("market") or {}
+    symbol = market.get("symbol") or token.get("symbol") or "?"
+    direction = verification.get("direction") or "movement"
+    h1 = market.get("price_change_h1_pct")
+    h6 = market.get("price_change_h6_pct")
+    ds_url = market.get("dexscreener_url") or token.get("dexscreener_url") or ""
+
+    lines = [
+        "**Verified X watcher hit**",
+        f"Token: **{symbol}** `{direction}`",
+        f"Move: h1 `{_format_pct(h1)}` h6 `{_format_pct(h6)}`",
+        f"Ingested: `{ingested_at}`",
+    ]
+    if author_label:
+        lines.append(f"Author: {author_label}")
+    if tweet_url:
+        lines.append(f"Tweet: <{tweet_url}>")
+    if ds_url:
+        lines.append(f"Dexscreener: <{ds_url}>")
+    if text:
+        lines.extend(["", _truncate_text(text, 1000)])
 
     return _truncate_text("\n".join(lines), DISCORD_CONTENT_LIMIT)
 
@@ -249,3 +319,10 @@ def _truncate_text(value: str, limit: int) -> str:
     if len(value) <= limit:
         return value
     return value[: max(0, limit - 1)].rstrip() + "…"
+
+
+def _format_pct(value) -> str:
+    try:
+        return f"{float(value):+.1f}%"
+    except (TypeError, ValueError):
+        return "?"

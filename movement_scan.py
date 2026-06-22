@@ -35,6 +35,7 @@ from lib.lore import fetch_lore_packet
 from lib.watcher_state import record_signals
 from lib.movement_events import upsert_events, upsert_events_from_signals
 from lib.movement_start import enrich_events_with_estimated_starts
+from lib.watcher_approval import apply_watcher_approvals
 
 
 def main():
@@ -124,6 +125,7 @@ def main():
             try:
                 enriched_events, stats = enrich_events_with_estimated_starts(events)
                 upsert_events(enriched_events)
+                events = enriched_events
                 print(
                     "   enriched movement starts "
                     f"(updated={stats.get('updated', 0)}, "
@@ -132,6 +134,16 @@ def main():
                 )
             except Exception as exc:
                 print(f"   movement start enrichment skipped: {exc}")
+            try:
+                approval_stats = apply_watcher_approvals()
+                print(
+                    "   applied watcher approvals "
+                    f"(approved={approval_stats.get('watch_accounts_approved', 0)}, "
+                    f"pending={approval_stats.get('watch_accounts_pending', 0)}, "
+                    f"rejected={approval_stats.get('watch_accounts_rejected', 0)})"
+                )
+            except Exception as exc:
+                print(f"   watcher approval labeling skipped: {exc}")
         record_alerts(new_movers, retained)
         print("   recorded cooldown state")
     else:

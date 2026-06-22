@@ -6,7 +6,7 @@ on:
       target_ref:
         description: "Branch/ref containing the enrichment code and dataset"
         type: string
-        default: "feature/movement-event-timing"
+        default: "main"
       threshold_pct:
         description: "Percent move from local extreme used as start threshold"
         type: string

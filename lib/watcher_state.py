@@ -57,15 +57,15 @@ def _load_state() -> dict:
         return empty
     if not isinstance(data, dict):
         return empty
-    return {
-        "schema_version": data.get("schema_version") or SCHEMA_VERSION,
-        "updated_at": data.get("updated_at") or "",
-        "signals": data.get("signals") if isinstance(data.get("signals"), list) else [],
-        "watch_accounts": (
-            data.get("watch_accounts") if isinstance(data.get("watch_accounts"), dict) else {}
-        ),
-        "rules": data.get("rules") if isinstance(data.get("rules"), list) else [],
-    }
+    out = dict(data)
+    out["schema_version"] = out.get("schema_version") or SCHEMA_VERSION
+    out["updated_at"] = out.get("updated_at") or ""
+    out["signals"] = out.get("signals") if isinstance(out.get("signals"), list) else []
+    out["watch_accounts"] = (
+        out.get("watch_accounts") if isinstance(out.get("watch_accounts"), dict) else {}
+    )
+    out["rules"] = out.get("rules") if isinstance(out.get("rules"), list) else []
+    return out
 
 
 def _build_signal(mover: dict, detected_at: str) -> dict:

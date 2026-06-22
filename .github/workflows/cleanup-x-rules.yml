@@ -1,0 +1,58 @@
+name: Cleanup X Rules
+
+on:
+  workflow_dispatch:
+    inputs:
+      managed_stale:
+        description: "Delete all current send_watcher:* rules"
+        type: boolean
+        default: true
+      rule_ids:
+        description: "Optional comma-separated explicit rule IDs to delete"
+        type: string
+        default: ""
+      apply:
+        description: "Actually delete rules. false runs X API dry_run=true"
+        type: boolean
+        default: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Cleanup X rules
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          MANAGED_STALE: ${{ inputs.managed_stale }}
+          RULE_IDS: ${{ inputs.rule_ids }}
+          APPLY: ${{ inputs.apply }}
+        run: |
+          args=()
+          if [ "$MANAGED_STALE" = "true" ]; then
+            args+=(--managed-stale)
+          fi
+          if [ "$APPLY" = "true" ]; then
+            args+=(--apply)
+          fi
+          if [ -n "$RULE_IDS" ]; then
+            IFS=',' read -ra ids <<< "$RULE_IDS"
+            for id in "${ids[@]}"; do
+              id="$(echo "$id" | xargs)"
+              if [ -n "$id" ]; then
+                args+=(--rule-id "$id")
+              fi
+            done
+          fi
+          python scripts/cleanup_x_rules.py "${args[@]}"

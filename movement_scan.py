@@ -33,6 +33,8 @@ from lib.movement import (
 from lib.send_trade_lore import push_lore
 from lib.lore import fetch_lore_packet
 from lib.watcher_state import record_signals
+from lib.movement_events import upsert_events, upsert_events_from_signals
+from lib.movement_start import enrich_events_with_estimated_starts
 
 
 def main():
@@ -116,6 +118,20 @@ def main():
         _send_alerts(new_movers, config)
         signals = record_signals(new_movers)
         print(f"   recorded {len(signals)} watcher signals")
+        events = upsert_events_from_signals(signals)
+        print(f"   recorded {len(events)} movement events")
+        if events:
+            try:
+                enriched_events, stats = enrich_events_with_estimated_starts(events)
+                upsert_events(enriched_events)
+                print(
+                    "   enriched movement starts "
+                    f"(updated={stats.get('updated', 0)}, "
+                    f"skipped={stats.get('skipped', 0)}, "
+                    f"errors={stats.get('errors', 0)})"
+                )
+            except Exception as exc:
+                print(f"   movement start enrichment skipped: {exc}")
         record_alerts(new_movers, retained)
         print("   recorded cooldown state")
     else:

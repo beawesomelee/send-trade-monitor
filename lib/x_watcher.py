@@ -87,6 +87,7 @@ def stream_watcher_posts(
                     bearer_token,
                     connect_timeout=connect_timeout,
                     read_timeout=current_read_timeout,
+                    stop_at_monotonic=deadline,
                 ):
                     if _deadline_passed(deadline):
                         break
@@ -158,6 +159,7 @@ def iter_stream_payloads(
     *,
     connect_timeout: int = 10,
     read_timeout: int = 90,
+    stop_at_monotonic: float | None = None,
 ) -> Iterator[dict]:
     """Yield decoded JSON objects from the X filtered stream."""
     headers = {
@@ -177,6 +179,8 @@ def iter_stream_payloads(
             )
 
         for line in response.iter_lines(decode_unicode=True):
+            if _deadline_passed(stop_at_monotonic):
+                return
             if line is None or not line.strip():
                 continue
             try:

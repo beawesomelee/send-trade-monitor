@@ -419,9 +419,8 @@ RAG is useful for the learning loop, but it should come after deterministic clea
 2. Keep new accounts `pending` by default.
 3. Add a generic-term denylist to prevent obvious noisy rules.
 4. Add term and account prior scoring.
-5. Add a review script that prints recommended `keep/drop/active/reject`.
-6. Add optional `--apply` to write cleaned watcher state after review.
-7. Add outcome tracking from captured watcher tweets.
+5. Add verified watcher-hit processing before Discord alerts.
+6. Add outcome tracking from captured watcher tweets.
 8. Compute precision, SNR, cost per useful signal, and lead time.
 9. Add Bayesian account/term/rule updates after enough observations.
 10. Add Grok reviewer for ambiguous candidates.
@@ -432,26 +431,33 @@ RAG is useful for the learning loop, but it should come after deterministic clea
 Build:
 
 ```text
-scripts/review_watcher_candidates.py
+lib/watcher_verify.py
 ```
 
 It should read:
 
 ```text
-data/watcher.json
+X stream payload
+latest token snapshots
+movement_events.json
 ```
 
-And output recommendations:
+And output a verification decision:
 
 ```json
 {
-  "account": "@vegasnipes",
-  "current_status": "pending",
-  "recommended_status": "active",
-  "keep_terms": ["velvet", "$velvet", "velvet x app", "pre ipo trading"],
-  "drop_terms": ["team update", "narrative", "kol post"],
-  "reason": "team-adjacent account with token-specific terms"
+  "verified": true,
+  "reason": "verified_price_movement",
+  "direction": "pump",
+  "token": {
+    "symbol": "OPG",
+    "address": "0x..."
+  },
+  "market": {
+    "price_change_h1_pct": 25.4,
+    "price_change_h6_pct": 42.0
+  }
 }
 ```
 
-The first version should be dry-run only. Add `--apply` only after the recommendations look good.
+The first version should store every raw stream hit, but Discord should only receive verified movement hits.

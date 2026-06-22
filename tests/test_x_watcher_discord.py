@@ -43,7 +43,7 @@ def _run_stream(tmp_path, monkeypatch, payloads, **kwargs):
     return result, tweets_path, state_path
 
 
-def test_unique_watcher_tweet_posts_discord_once_after_storage(tmp_path, monkeypatch):
+def test_unique_watcher_tweet_stores_without_discord_when_unverified(tmp_path, monkeypatch):
     sent = []
 
     def fake_post(webhook, json, timeout):
@@ -66,18 +66,62 @@ def test_unique_watcher_tweet_posts_discord_once_after_storage(tmp_path, monkeyp
     )
 
     assert result["stored"] == 1
+    assert result["verified"] == 0
+    assert result["unverified"] == 1
+    assert sent == []
+    assert tweets_path.exists()
+    assert json.loads(tweets_path.read_text().splitlines()[0])["tweet_id"] == "100"
+    assert json.loads(state_path.read_text())["last_seen_tweet_id"] == "100"
+
+
+def test_verified_watcher_tweet_posts_discord_after_storage(tmp_path, monkeypatch):
+    sent = []
+
+    def fake_post(webhook, json, timeout):
+        sent.append(json)
+
+        class Response:
+            status_code = 204
+            text = ""
+
+        return Response()
+
+    monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://discord.invalid/webhook")
+    monkeypatch.setattr(discord_module.requests, "post", fake_post)
+    monkeypatch.setattr(
+        x_watcher,
+        "verify_watcher_hit",
+        lambda payload: {
+            "verified": True,
+            "reason": "verified_price_movement",
+            "direction": "pump",
+            "token": {"symbol": "ALPHA", "dexscreener_url": "https://dexscreener.com/base/0x1"},
+            "market": {
+                "symbol": "ALPHA",
+                "price_change_h1_pct": 25,
+                "price_change_h6_pct": 40,
+                "dexscreener_url": "https://dexscreener.com/base/0x1",
+            },
+        },
+    )
+
+    result, tweets_path, state_path = _run_stream(
+        tmp_path,
+        monkeypatch,
+        [_payload("100", text="$ALPHA up 25%")],
+        max_posts=1,
+    )
+
+    assert result["stored"] == 1
+    assert result["verified"] == 1
     assert len(sent) == 1
     assert sent[0]["allowed_mentions"] == {"parse": []}
     content = sent[0]["content"]
-    assert "Raw X watcher hit" in content
-    assert "not yet AI-classified" in content
-    assert "alpha watcher says @everyone buy the dip @here" in content
+    assert "Verified X watcher hit" in content
+    assert "**ALPHA**" in content
+    assert "h1 `+25.0%`" in content
     assert "https://x.com/alice/status/100" in content
-    assert "alpha" in content
-    assert "Alice Example (@alice)" in content
-    assert "2026-06-10T08:01:00Z" in content
     assert tweets_path.exists()
-    assert json.loads(tweets_path.read_text().splitlines()[0])["tweet_id"] == "100"
     assert json.loads(state_path.read_text())["last_seen_tweet_id"] == "100"
 
 
@@ -99,11 +143,9 @@ def test_duplicate_tweet_id_is_stored_and_posted_only_once(tmp_path, monkeypatch
     )
 
     assert result["stored"] == 2
+    assert result["verified"] == 0
     assert result["skipped_duplicates"] == 1
-    assert len(sent) == 2
-    assert "status/100" in sent[0]
-    assert "duplicate" not in "\n".join(sent)
-    assert "status/101" in sent[1]
+    assert sent == []
     assert len(tweets_path.read_text().splitlines()) == 2
 
 
@@ -142,19 +184,21 @@ def test_discord_post_error_does_not_fail_ingest(tmp_path, monkeypatch):
     assert json.loads(state_path.read_text())["last_seen_tweet_id"] == "250"
 
 
-def test_discord_can_be_disabled_for_local_runs(tmp_path, monkeypatch):
+def test_raw_discord_can_be_enabled_for_debug_runs(tmp_path, monkeypatch):
     sent = []
     monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://discord.invalid/webhook")
-    monkeypatch.setattr(discord_module.requests, "post", lambda *args, **kwargs: sent.append(args))
+    monkeypatch.setattr(discord_module.requests, "post", lambda webhook, json, timeout: sent.append(json["content"]) or type("Response", (), {"status_code": 204, "text": ""})())
 
     result, tweets_path, _state_path = _run_stream(
         tmp_path,
         monkeypatch,
         [_payload("300")],
         max_posts=1,
-        discord=False,
+        raw_discord=True,
+        verify_hits=False,
     )
 
     assert result["stored"] == 1
     assert tweets_path.exists()
-    assert sent == []
+    assert len(sent) == 1
+    assert "Raw X watcher hit" in sent[0]

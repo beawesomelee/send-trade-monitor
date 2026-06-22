@@ -55,12 +55,22 @@ def main() -> int:
     parser.add_argument(
         "--no-discord",
         action="store_true",
-        help="Store matching posts without posting raw watcher hits to Discord",
+        help="Store matching posts without posting verified watcher hits to Discord",
     )
     parser.add_argument(
         "--discord-dry-run",
         action="store_true",
-        help="Print raw watcher Discord messages instead of posting them",
+        help="Print watcher Discord messages instead of posting them",
+    )
+    parser.add_argument(
+        "--raw-discord",
+        action="store_true",
+        help="Also post raw watcher hits for debugging",
+    )
+    parser.add_argument(
+        "--no-verify",
+        action="store_true",
+        help="Skip price verification. Use only for raw ingest/debug runs.",
     )
     args = parser.parse_args()
 
@@ -85,6 +95,8 @@ def main() -> int:
             read_timeout=args.read_timeout,
             discord=not args.no_discord,
             discord_dry_run=args.discord_dry_run,
+            raw_discord=args.raw_discord,
+            verify_hits=not args.no_verify,
         )
     except KeyboardInterrupt:
         print("Watcher stopped")

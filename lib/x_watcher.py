@@ -12,7 +12,8 @@ from typing import Iterator
 
 import requests
 
-from lib.discord import send_x_watcher_hit
+from lib.discord import send_verified_x_watcher_hit, send_x_watcher_hit
+from lib.watcher_verify import verify_watcher_hit
 from lib.x_rules import XRulesError
 
 
@@ -61,6 +62,8 @@ def stream_watcher_posts(
     read_timeout: int = 90,
     discord: bool = True,
     discord_dry_run: bool = False,
+    raw_discord: bool = False,
+    verify_hits: bool = True,
 ) -> dict:
     """Read filtered-stream posts and persist unseen payloads."""
     state = _load_state(state_path)
@@ -69,6 +72,8 @@ def stream_watcher_posts(
     started = time.monotonic()
     deadline = started + max_seconds if max_seconds is not None else None
     stored = 0
+    verified = 0
+    unverified = 0
     skipped_duplicates = 0
     connection_errors = 0
     reconnects = 0
@@ -102,7 +107,22 @@ def stream_watcher_posts(
                     state["last_seen_at"] = ingested_at
                     state["last_matching_rules"] = payload.get("matching_rules") or []
                     _save_state(state_path, state, recent_seen_ids)
-                    if discord:
+                    verification = {}
+                    if verify_hits:
+                        verification = verify_watcher_hit(payload)
+                        state["last_verification"] = verification
+                        _save_state(state_path, state, recent_seen_ids)
+                    if discord and verification.get("verified"):
+                        verified += 1
+                        send_verified_x_watcher_hit(
+                            payload,
+                            ingested_at,
+                            verification,
+                            dry_run=discord_dry_run,
+                        )
+                    elif verification:
+                        unverified += 1
+                    if raw_discord:
                         send_x_watcher_hit(payload, ingested_at, dry_run=discord_dry_run)
 
                     if max_posts is not None and stored >= max_posts:
@@ -122,6 +142,8 @@ def stream_watcher_posts(
 
     return {
         "stored": stored,
+        "verified": verified,
+        "unverified": unverified,
         "skipped_duplicates": skipped_duplicates,
         "connection_errors": connection_errors,
         "reconnects": reconnects,

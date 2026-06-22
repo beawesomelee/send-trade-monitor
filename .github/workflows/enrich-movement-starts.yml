@@ -33,6 +33,9 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
+      - name: Backfill movement events from watcher state
+        run: python scripts/backfill_movement_events.py --apply
+
       - name: Enrich movement starts
         env:
           GECKOTERMINAL_API_KEY: ${{ secrets.GECKOTERMINAL_API_KEY }}

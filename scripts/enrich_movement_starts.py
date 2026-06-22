@@ -8,6 +8,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+try:
+    from dotenv import load_dotenv
+except ModuleNotFoundError:
+    load_dotenv = None
+
+if load_dotenv:
+    load_dotenv(ROOT / ".env")
 
 from lib.movement_events import MOVEMENT_EVENTS_FILE, load_events, now_iso
 from lib.movement_start import DEFAULT_THRESHOLD_PCT, enrich_events_with_estimated_starts

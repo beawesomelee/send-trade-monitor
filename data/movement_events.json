@@ -147,17 +147,9 @@
         "change_pct": 83.3,
         "detected_at": "2026-06-09T22:09:57Z",
         "direction": "pump",
-        "estimated_peak_at": "2026-06-09T22:05:00Z",
-        "estimated_start_at": "2026-06-09T16:55:00Z",
-        "estimated_start_confidence": 0.65,
-        "estimated_start_method": "ohlcv_local_extreme_15pct",
-        "estimated_start_reason": "local_low_threshold_cross",
-        "estimated_start_threshold_pct": 15.0,
-        "estimated_trough_at": "",
-        "ohlcv_candle_count": 200,
-        "pool_address": "AKQyQgEifBBhQmANuKzrRuRGoKSkKBv8NVdccc87FrR8",
-        "pool_name": "Jotchua / USDC",
-        "pool_network": "solana",
+        "estimated_start_at": "",
+        "estimated_start_confidence": null,
+        "estimated_start_method": "",
         "window": "h6",
         "window_end_at": "2026-06-09T22:09:57Z",
         "window_start_at": "2026-06-09T16:09:57Z"
@@ -284,17 +276,9 @@
         "change_pct": 100.5,
         "detected_at": "2026-06-10T19:22:46Z",
         "direction": "pump",
-        "estimated_peak_at": "2026-06-10T19:20:00Z",
-        "estimated_start_at": "2026-06-10T13:50:00Z",
-        "estimated_start_confidence": 0.65,
-        "estimated_start_method": "ohlcv_local_extreme_15pct",
-        "estimated_start_reason": "local_low_threshold_cross",
-        "estimated_start_threshold_pct": 15.0,
-        "estimated_trough_at": "",
-        "ohlcv_candle_count": 200,
-        "pool_address": "0x6b0f53cbd9272d8117e9535fe25371dedf39a1be",
-        "pool_name": "VELVET / USDC 0.01%",
-        "pool_network": "base",
+        "estimated_start_at": "",
+        "estimated_start_confidence": null,
+        "estimated_start_method": "",
         "window": "h6",
         "window_end_at": "2026-06-10T19:22:46Z",
         "window_start_at": "2026-06-10T13:22:46Z"
@@ -452,17 +436,9 @@
         "change_pct": 84.4,
         "detected_at": "2026-06-10T23:59:29Z",
         "direction": "pump",
-        "estimated_peak_at": "2026-06-10T23:40:00Z",
-        "estimated_start_at": "2026-06-10T18:50:00Z",
-        "estimated_start_confidence": 0.65,
-        "estimated_start_method": "ohlcv_local_extreme_15pct",
-        "estimated_start_reason": "local_low_threshold_cross",
-        "estimated_start_threshold_pct": 15.0,
-        "estimated_trough_at": "",
-        "ohlcv_candle_count": 200,
-        "pool_address": "0x6b0f53cbd9272d8117e9535fe25371dedf39a1be",
-        "pool_name": "VELVET / USDC 0.01%",
-        "pool_network": "base",
+        "estimated_start_at": "",
+        "estimated_start_confidence": null,
+        "estimated_start_method": "",
         "window": "h6",
         "window_end_at": "2026-06-10T23:59:29Z",
         "window_start_at": "2026-06-10T17:59:29Z"
@@ -653,17 +629,9 @@
         "change_pct": 56.3,
         "detected_at": "2026-06-11T19:22:41Z",
         "direction": "pump",
-        "estimated_peak_at": "2026-06-11T18:50:00Z",
-        "estimated_start_at": "2026-06-11T14:40:00Z",
-        "estimated_start_confidence": 0.65,
-        "estimated_start_method": "ohlcv_local_extreme_15pct",
-        "estimated_start_reason": "local_low_threshold_cross",
-        "estimated_start_threshold_pct": 15.0,
-        "estimated_trough_at": "",
-        "ohlcv_candle_count": 200,
-        "pool_address": "0x6b0f53cbd9272d8117e9535fe25371dedf39a1be",
-        "pool_name": "VELVET / USDC 0.01%",
-        "pool_network": "base",
+        "estimated_start_at": "",
+        "estimated_start_confidence": null,
+        "estimated_start_method": "",
         "window": "h6",
         "window_end_at": "2026-06-11T19:22:41Z",
         "window_start_at": "2026-06-11T13:22:41Z"
@@ -857,17 +825,9 @@
         "change_pct": 52.5,
         "detected_at": "2026-06-14T23:22:37Z",
         "direction": "pump",
-        "estimated_peak_at": "2026-06-14T23:10:00Z",
-        "estimated_start_at": "2026-06-14T21:10:00Z",
-        "estimated_start_confidence": 0.65,
-        "estimated_start_method": "ohlcv_local_extreme_15pct",
-        "estimated_start_reason": "local_low_threshold_cross",
-        "estimated_start_threshold_pct": 15.0,
-        "estimated_trough_at": "",
-        "ohlcv_candle_count": 200,
-        "pool_address": "0x2b75b90fb01e5fc87d4d263033841397b015ceeb",
-        "pool_name": "OPG / VIRTUAL 1%",
-        "pool_network": "base",
+        "estimated_start_at": "",
+        "estimated_start_confidence": null,
+        "estimated_start_method": "",
         "window": "h6",
         "window_end_at": "2026-06-14T23:22:37Z",
         "window_start_at": "2026-06-14T17:22:37Z"
@@ -904,18 +864,663 @@
           "zkML infrastructure play"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@usedotai",
+          "initial_value_label": "during_move_not_proven_predictive",
+          "source_evidence_urls": [
+            "https://x.com/usedotai/status/2066933637065404634"
+          ],
+          "terms": [
+            "dot",
+            "$dot",
+            "dotcode",
+            "supercharged",
+            "private inference",
+            "dotcode private agentic loop",
+            "dot supercharged",
+            "privacy boundary",
+            "team update",
+            "kol quote",
+            "whale buy"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cryptoluche_",
+          "initial_value_label": "during_move_not_proven_predictive",
+          "source_evidence_urls": [
+            "https://x.com/CryptoLuche_/status/2066951180786270689"
+          ],
+          "terms": [
+            "dot",
+            "$dot",
+            "dotcode",
+            "supercharged",
+            "private inference",
+            "dotcode private agentic loop",
+            "dot supercharged",
+            "privacy boundary",
+            "team update",
+            "kol quote",
+            "whale buy"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cryptohawk19",
+          "initial_value_label": "unknown_timing",
+          "source_evidence_urls": [],
+          "terms": [
+            "dot",
+            "$dot",
+            "dotcode",
+            "supercharged",
+            "private inference",
+            "dotcode private agentic loop",
+            "dot supercharged",
+            "privacy boundary",
+            "team update",
+            "kol quote",
+            "whale buy"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@billionairedau",
+          "initial_value_label": "unknown_timing",
+          "source_evidence_urls": [],
+          "terms": [
+            "dot",
+            "$dot",
+            "dotcode",
+            "supercharged",
+            "private inference",
+            "dotcode private agentic loop",
+            "dot supercharged",
+            "privacy boundary",
+            "team update",
+            "kol quote",
+            "whale buy"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@basewhalealert",
+          "initial_value_label": "during_move_not_proven_predictive",
+          "source_evidence_urls": [
+            "https://x.com/BaseWhaleAlert/status/2066936868457877580"
+          ],
+          "terms": [
+            "dot",
+            "$dot",
+            "dotcode",
+            "supercharged",
+            "private inference",
+            "dotcode private agentic loop",
+            "dot supercharged",
+            "privacy boundary",
+            "team update",
+            "kol quote",
+            "whale buy"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-16T20:22:46Z",
+      "event_id": "signal_62b0f07aaf79",
+      "evidence": [
+        {
+          "author_handle": "@usedotai",
+          "minutes_before_detection": 183.51,
+          "minutes_from_window_start": 176.49,
+          "relevance": "main team update driving chatter",
+          "text": "DotCode now runs a first-of-its-kind, fully private, agentic loop that can see exactly what it is building, in real time.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-16T17:19:15Z",
+          "tweet_id": "2066933637065404634",
+          "type": "x_post",
+          "url": "https://x.com/usedotai/status/2066933637065404634"
+        },
+        {
+          "author_handle": "@CryptoLuche_",
+          "minutes_before_detection": 113.8,
+          "minutes_from_window_start": 246.2,
+          "relevance": "trader quote and bullish take on the update",
+          "text": "\ud83d\udd12 AI is becoming smarter. $DOT is making it private.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-16T18:28:58Z",
+          "tweet_id": "2066951180786270689",
+          "type": "x_post",
+          "url": "https://x.com/CryptoLuche_/status/2066951180786270689"
+        },
+        {
+          "author_handle": "@BaseWhaleAlert",
+          "minutes_before_detection": 170.67,
+          "minutes_from_window_start": 189.33,
+          "relevance": "on-chain buy observation tied to timing",
+          "text": "A SURPLUS whale just bought $1.72K of $DOT at $1.53M MC \ud83d\udc33",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-16T17:32:05Z",
+          "tweet_id": "2066936868457877580",
+          "type": "x_post",
+          "url": "https://x.com/BaseWhaleAlert/status/2066936868457877580"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x23a2847d772803f9efc64b4277b782b06296fe51"
+      },
+      "lore": "team dropped dotcode private agent loop update today with real time asset gen inside privacy boundary. traders quoting and noting the privacy angle on base. whale buy at 1.5m mc",
+      "movement": {
+        "change_pct": 76.9,
+        "detected_at": "2026-06-16T20:22:46Z",
+        "direction": "pump",
+        "estimated_start_at": "",
+        "estimated_start_confidence": null,
+        "estimated_start_method": "",
+        "window": "h6",
+        "window_end_at": "2026-06-16T20:22:46Z",
+        "window_start_at": "2026-06-16T14:22:46Z"
+      },
+      "source_signal_id": "signal_62b0f07aaf79",
+      "token": {
+        "address": "0x23a2847d772803f9efc64b4277b782b06296fe51",
+        "chain_slug": "base",
+        "symbol": "DOT"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@usedotai",
+          "@CryptoLuche_",
+          "@CryptoHawk19",
+          "@BillionAireDau",
+          "@BaseWhaleAlert"
+        ],
+        "catalysts": [
+          "team_update",
+          "kol_quote",
+          "whale_buy"
+        ],
+        "keywords": [
+          "dotcode",
+          "supercharged",
+          "private inference"
+        ],
+        "phrases": [
+          "dotcode private agentic loop",
+          "dot supercharged",
+          "privacy boundary"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@cexscan",
+          "initial_value_label": "during_move_not_proven_predictive",
+          "source_evidence_urls": [
+            "https://x.com/cexscan/status/2067258356125868044"
+          ],
+          "terms": [
+            "synd",
+            "$synd",
+            "shutdown",
+            "dead coin",
+            "ripped on coinbase",
+            "cex rip",
+            "delist vol"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@basegemsllc",
+          "initial_value_label": "during_move_not_proven_predictive",
+          "source_evidence_urls": [
+            "https://x.com/BASEGEMSLLC/status/2067258356125868044"
+          ],
+          "terms": [
+            "synd",
+            "$synd",
+            "shutdown",
+            "dead coin",
+            "ripped on coinbase",
+            "cex rip",
+            "delist vol"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-17T15:22:41Z",
+      "event_id": "signal_3e17cdde0a68",
+      "evidence": [
+        {
+          "author_handle": "@cexscan",
+          "minutes_before_detection": 33.11,
+          "minutes_from_window_start": 326.89,
+          "relevance": "multiple cex alerts showing repeated quick gains driving attention",
+          "text": "$SYND just ripped +8.44% on #Coinbase",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-17T14:49:34Z",
+          "tweet_id": "2067258356125868044",
+          "type": "x_post",
+          "url": "https://x.com/cexscan/status/2067258356125868044"
+        },
+        {
+          "author_handle": "@BASEGEMSLLC",
+          "minutes_before_detection": 33.11,
+          "minutes_from_window_start": 326.89,
+          "relevance": "highlights the contrast with shutdown news vs current pump",
+          "text": "Who is buying SYND? Dead coin. They are shutting down.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-17T14:49:34Z",
+          "tweet_id": "2067258356125868044",
+          "type": "x_post",
+          "url": "https://x.com/BASEGEMSLLC/status/2067258356125868044"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x11dc28d01984079b7efe7763b533e6ed9e3722b9"
+      },
+      "lore": "cexscan dropping multiple alerts on synd ripping quick on coinbase spot, dead coin narrative from last month's shutdown talk but still pulling vol. why the bid?",
+      "movement": {
+        "change_pct": 668.7,
+        "detected_at": "2026-06-17T15:22:41Z",
+        "direction": "pump",
+        "estimated_start_at": "",
+        "estimated_start_confidence": null,
+        "estimated_start_method": "",
+        "window": "h6",
+        "window_end_at": "2026-06-17T15:22:41Z",
+        "window_start_at": "2026-06-17T09:22:41Z"
+      },
+      "source_signal_id": "signal_3e17cdde0a68",
+      "token": {
+        "address": "0x11dc28d01984079b7efe7763b533e6ed9e3722b9",
+        "chain_slug": "base",
+        "symbol": "SYND"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@cexscan",
+          "@BASEGEMSLLC"
+        ],
+        "catalysts": [
+          "cex_rip",
+          "delist_vol"
+        ],
+        "keywords": [
+          "$SYND",
+          "synd",
+          "shutdown"
+        ],
+        "phrases": [
+          "dead coin",
+          "ripped on coinbase"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@techgaged_news",
+          "initial_value_label": "potentially_predictive",
+          "source_evidence_urls": [
+            "https://x.com/Techgaged_news/status/2067698671320289288"
+          ],
+          "terms": [
+            "gtavi",
+            "$gtavi",
+            "gta vi",
+            "rockstar",
+            "rockstar released the gta vi site",
+            "gta vi box art reveal",
+            "gtavi narrative",
+            "kol post",
+            "site release",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@hailey_cryptoo",
+          "initial_value_label": "potentially_predictive",
+          "source_evidence_urls": [
+            "https://x.com/hailey_cryptoo/status/2067742067065811001"
+          ],
+          "terms": [
+            "gtavi",
+            "$gtavi",
+            "gta vi",
+            "rockstar",
+            "rockstar released the gta vi site",
+            "gta vi box art reveal",
+            "gtavi narrative",
+            "kol post",
+            "site release",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@stitchdegen",
+          "initial_value_label": "during_move_not_proven_predictive",
+          "source_evidence_urls": [
+            "https://x.com/stitchdegen/status/2067861722191519890"
+          ],
+          "terms": [
+            "gtavi",
+            "$gtavi",
+            "gta vi",
+            "rockstar",
+            "rockstar released the gta vi site",
+            "gta vi box art reveal",
+            "gtavi narrative",
+            "kol post",
+            "site release",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@dexchad003",
+          "initial_value_label": "unknown_timing",
+          "source_evidence_urls": [],
+          "terms": [
+            "gtavi",
+            "$gtavi",
+            "gta vi",
+            "rockstar",
+            "rockstar released the gta vi site",
+            "gta vi box art reveal",
+            "gtavi narrative",
+            "kol post",
+            "site release",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-06-19T10:22:40Z",
+      "event_id": "signal_02890fa65739",
+      "evidence": [
+        {
+          "author_handle": "@Techgaged_news",
+          "minutes_before_detection": 863.44,
+          "minutes_from_window_start": -503.44,
+          "relevance": "directly ties the launch/pump to the rockstar release",
+          "text": "Right after Rockstar released the GTA VI site, a meme coin $GTAVI went from 23K mcap straight to 800K",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-06-18T19:59:13Z",
+          "tweet_id": "2067698671320289288",
+          "type": "x_post",
+          "url": "https://x.com/Techgaged_news/status/2067698671320289288"
+        },
+        {
+          "author_handle": "@hailey_cryptoo",
+          "minutes_before_detection": 691.0,
+          "minutes_from_window_start": -331.0,
+          "relevance": "confirms the timing and scale of the move",
+          "text": "Rockstar released the GTA VI site $GTAVI immediately did 36x 23K \u2192 800K MC",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-06-18T22:51:40Z",
+          "tweet_id": "2067742067065811001",
+          "type": "x_post",
+          "url": "https://x.com/hailey_cryptoo/status/2067742067065811001"
+        },
+        {
+          "author_handle": "@stitchdegen",
+          "minutes_before_detection": 215.53,
+          "minutes_from_window_start": 144.47,
+          "relevance": "explains the narrative trigger and why it stuck",
+          "text": "after Rockstar officially revealed the GTA VI box art, it wasn\u2019t surprising to see a memecoin emerge around the event",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-19T06:47:08Z",
+          "tweet_id": "2067861722191519890",
+          "type": "x_post",
+          "url": "https://x.com/stitchdegen/status/2067861722191519890"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump"
+      },
+      "lore": "rockstar dropped the gta vi site and box art, $gtavi caught the immediate attention from 23k mc straight to 800k",
+      "movement": {
+        "change_pct": 114.6,
+        "detected_at": "2026-06-19T10:22:40Z",
+        "direction": "pump",
+        "estimated_start_at": "",
+        "estimated_start_confidence": null,
+        "estimated_start_method": "",
+        "window": "h6",
+        "window_end_at": "2026-06-19T10:22:40Z",
+        "window_start_at": "2026-06-19T04:22:40Z"
+      },
+      "source_signal_id": "signal_02890fa65739",
+      "token": {
+        "address": "EpVHyKK8oxcLmp2C2NhAos1oDxgBNriw3wSLSozYpump",
+        "chain_slug": "solana",
+        "symbol": "GTAVI"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Techgaged_news",
+          "@hailey_cryptoo",
+          "@stitchdegen",
+          "@DEXCHAD003"
+        ],
+        "catalysts": [
+          "kol_post",
+          "site_release",
+          "narrative_reactivation"
+        ],
+        "keywords": [
+          "$gtavi",
+          "gta vi",
+          "rockstar"
+        ],
+        "phrases": [
+          "rockstar released the gta vi site",
+          "gta vi box art reveal",
+          "gtavi narrative"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@pevolutionsol",
+          "initial_value_label": "during_move_not_proven_predictive",
+          "source_evidence_urls": [
+            "https://x.com/pevolutionsol/status/2068399011157958916"
+          ],
+          "terms": [
+            "pevolution",
+            "$pevolution",
+            "moonshot",
+            "moonshot listing vote",
+            "only x votes away",
+            "bundled at launch",
+            "kol post",
+            "listing vote",
+            "scam flag"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@devs_hunter",
+          "initial_value_label": "during_move_not_proven_predictive",
+          "source_evidence_urls": [
+            "https://x.com/devs_hunter/status/2068369850171371915"
+          ],
+          "terms": [
+            "pevolution",
+            "$pevolution",
+            "moonshot",
+            "moonshot listing vote",
+            "only x votes away",
+            "bundled at launch",
+            "kol post",
+            "listing vote",
+            "scam flag"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@defade_",
+          "initial_value_label": "unknown_timing",
+          "source_evidence_urls": [],
+          "terms": [
+            "pevolution",
+            "$pevolution",
+            "moonshot",
+            "moonshot listing vote",
+            "only x votes away",
+            "bundled at launch",
+            "kol post",
+            "listing vote",
+            "scam flag"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@ffac6f3abd1e440",
+          "initial_value_label": "during_move_not_proven_predictive",
+          "source_evidence_urls": [
+            "https://x.com/ffac6f3abd1e440/status/2068399137368813910"
+          ],
+          "terms": [
+            "pevolution",
+            "$pevolution",
+            "moonshot",
+            "moonshot listing vote",
+            "only x votes away",
+            "bundled at launch",
+            "kol post",
+            "listing vote",
+            "scam flag"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@chuchuswag1",
+          "initial_value_label": "during_move_not_proven_predictive",
+          "source_evidence_urls": [
+            "https://x.com/ChuchuSwag1/status/2068399086680633454"
+          ],
+          "terms": [
+            "pevolution",
+            "$pevolution",
+            "moonshot",
+            "moonshot listing vote",
+            "only x votes away",
+            "bundled at launch",
+            "kol post",
+            "listing vote",
+            "scam flag"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-20T18:22:45Z",
+      "event_id": "signal_9658c91f8493",
+      "evidence": [
+        {
+          "author_handle": "@ffac6f3abd1e440",
+          "minutes_before_detection": 0.12,
+          "minutes_from_window_start": 359.88,
+          "relevance": "direct vote campaign post tied to the token",
+          "text": "$PEVOLUTION is only 57 votes away from getting listed on Moonshot",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-20T18:22:38Z",
+          "tweet_id": "2068399137368813910",
+          "type": "x_post",
+          "url": "https://x.com/ffac6f3abd1e440/status/2068399137368813910"
+        },
+        {
+          "author_handle": "@ChuchuSwag1",
+          "minutes_before_detection": 0.32,
+          "minutes_from_window_start": 359.68,
+          "relevance": "similar vote push post",
+          "text": "$PEVOLUTION is only 124 votes away from getting listed on Moonshot",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-20T18:22:25Z",
+          "tweet_id": "2068399086680633454",
+          "type": "x_post",
+          "url": "https://x.com/ChuchuSwag1/status/2068399086680633454"
+        },
+        {
+          "author_handle": "@pevolutionsol",
+          "minutes_before_detection": 0.62,
+          "minutes_from_window_start": 359.38,
+          "relevance": "project's own jupiter update post same day",
+          "text": "PEVOLUTION TOKEN DATA UPDATED... waiting for review. More visibility.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-20T18:22:07Z",
+          "tweet_id": "2068399011157958916",
+          "type": "x_post",
+          "url": "https://x.com/pevolutionsol/status/2068399011157958916"
+        },
+        {
+          "author_handle": "@devs_hunter",
+          "minutes_before_detection": 116.49,
+          "minutes_from_window_start": 243.51,
+          "relevance": "scam flag on launch structure pre-pump",
+          "text": "$PEVOLUTION ... is a SCAM token... Massive coordinated Wallet Distribution",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-20T16:26:15Z",
+          "tweet_id": "2068369850171371915",
+          "type": "x_post",
+          "url": "https://x.com/devs_hunter/status/2068369850171371915"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/2JcqSpiK8e8F8dkqaQtkyb9umoJdzGz3qemnMKXApump"
+      },
+      "lore": "moonshot listing vote push with a few low-engagement calls, no big kol posts or team updates. bundled launch flagged earlier, thin liq runner on the vote noise. what triggered the 3k% move",
+      "movement": {
+        "change_pct": 3091.7,
+        "detected_at": "2026-06-20T18:22:45Z",
+        "direction": "pump",
+        "estimated_start_at": "",
+        "estimated_start_confidence": null,
+        "estimated_start_method": "",
+        "window": "h6",
+        "window_end_at": "2026-06-20T18:22:45Z",
+        "window_start_at": "2026-06-20T12:22:45Z"
+      },
+      "source_signal_id": "signal_9658c91f8493",
+      "token": {
+        "address": "2JcqSpiK8e8F8dkqaQtkyb9umoJdzGz3qemnMKXApump",
+        "chain_slug": "solana",
+        "symbol": "PEVOLUTION"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@pevolutionsol",
+          "@devs_hunter",
+          "@DeFade_"
+        ],
+        "catalysts": [
+          "kol_post",
+          "listing_vote",
+          "scam_flag"
+        ],
+        "keywords": [
+          "$PEVOLUTION",
+          "pevolution",
+          "moonshot"
+        ],
+        "phrases": [
+          "moonshot listing vote",
+          "only x votes away",
+          "bundled at launch"
+        ]
+      }
     }
   ],
-  "movement_start_enrichment": {
-    "method": "ohlcv_local_extreme_threshold",
-    "stats": {
-      "errors": 0,
-      "events": 5,
-      "skipped": 0,
-      "updated": 5
-    },
-    "threshold_pct": 15.0
-  },
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-15T14:03:48Z"
+  "source": "data/watcher.json",
+  "updated_at": "2026-06-22T15:54:09Z"
 }

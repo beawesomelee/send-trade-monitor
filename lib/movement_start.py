@@ -24,7 +24,7 @@ def enrich_events_with_estimated_starts(
     threshold_pct: float = DEFAULT_THRESHOLD_PCT,
     aggregate: int = 5,
     limit: int = 200,
-    sleep_seconds: float = 0.6,
+    sleep_seconds: float = 1.5,
 ) -> tuple[list[dict], dict]:
     """Return events enriched with estimated movement starts."""
     enriched = []
@@ -119,14 +119,13 @@ def fetch_top_pool(chain_slug: str, token_address: str) -> dict | None:
     """Fetch the top GeckoTerminal/CoinGecko pool for a token."""
     network = NETWORK_MAP.get(chain_slug, {}).get("gt_network", chain_slug)
     base_url, headers = _onchain_base()
-    response = requests.get(
+    payload = _request_json(
         f"{base_url}/networks/{network}/tokens/{token_address}/pools",
         headers=headers,
         params={"page": 1},
         timeout=20,
     )
-    response.raise_for_status()
-    pools = response.json().get("data") or []
+    pools = payload.get("data") or []
     if not pools:
         return None
 
@@ -149,7 +148,7 @@ def fetch_pool_ohlcv(
 ) -> list[dict]:
     """Fetch 5m-ish OHLCV candles for a pool before a timestamp."""
     base_url, headers = _onchain_base()
-    response = requests.get(
+    payload = _request_json(
         f"{base_url}/networks/{network}/pools/{pool_address}/ohlcv/minute",
         headers=headers,
         params={
@@ -161,9 +160,8 @@ def fetch_pool_ohlcv(
         },
         timeout=30,
     )
-    response.raise_for_status()
     rows = (
-        response.json()
+        payload
         .get("data", {})
         .get("attributes", {})
         .get("ohlcv_list", [])
@@ -285,3 +283,32 @@ def _onchain_base() -> tuple[str, dict]:
     if key:
         return PRO_BASE_URL, {"x-cg-pro-api-key": key}
     return PUBLIC_BASE_URL, {}
+
+
+def _request_json(
+    url: str,
+    *,
+    headers: dict,
+    params: dict,
+    timeout: int,
+    max_attempts: int = 4,
+) -> dict:
+    """Request JSON with basic backoff for public API rate limits."""
+    last_response = None
+    for attempt in range(1, max_attempts + 1):
+        response = requests.get(url, headers=headers, params=params, timeout=timeout)
+        last_response = response
+        if response.status_code != 429:
+            response.raise_for_status()
+            return response.json()
+
+        retry_after = response.headers.get("Retry-After")
+        try:
+            wait_seconds = float(retry_after) if retry_after else 2**attempt
+        except ValueError:
+            wait_seconds = 2**attempt
+        time.sleep(min(wait_seconds, 30))
+
+    assert last_response is not None
+    last_response.raise_for_status()
+    return {}

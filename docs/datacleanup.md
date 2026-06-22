@@ -417,8 +417,8 @@ RAG is useful for the learning loop, but it should come after deterministic clea
 
 1. Define the outcome labels: `useful`, `maybe`, `noise`.
 2. Keep new accounts `pending` by default.
-3. Add a generic-term denylist to prevent obvious noisy rules.
-4. Add term and account prior scoring.
+3. Add timing-based watcher approval from movement events.
+4. Add a generic-term denylist to prevent obvious noisy rules.
 5. Add verified watcher-hit processing before Discord alerts.
 6. Add outcome tracking from captured watcher tweets.
 8. Compute precision, SNR, cost per useful signal, and lead time.
@@ -431,10 +431,30 @@ RAG is useful for the learning loop, but it should come after deterministic clea
 Build:
 
 ```text
+lib/watcher_approval.py
+scripts/apply_watcher_approvals.py
 lib/watcher_verify.py
 ```
 
-It should read:
+`lib/watcher_approval.py` should read:
+
+```text
+movement_events.json
+watcher.json
+```
+
+And label candidate accounts by comparing tweet time to estimated movement start:
+
+```json
+{
+  "approval_label": "approved_alpha_source",
+  "approval_status": "approved",
+  "minutes_from_estimated_start": -65.48,
+  "approved_terms": ["opg", "$opg", "opengradient"]
+}
+```
+
+`lib/watcher_verify.py` should read:
 
 ```text
 X stream payload

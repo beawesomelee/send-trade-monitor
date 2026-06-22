@@ -37,6 +37,33 @@ def test_match_token_from_payload_uses_unique_cashtag(monkeypatch):
     assert token["address"] == "0xabc"
 
 
+def test_match_token_from_payload_uses_approved_alias(monkeypatch):
+    monkeypatch.setattr(
+        watcher_verify,
+        "load_token_index",
+        lambda: {
+            "by_address": {},
+            "by_symbol": {},
+            "by_alias": {
+                "opengradient": [
+                    {
+                        "chain_slug": "base",
+                        "address": "0xopg",
+                        "symbol": "OPG",
+                        "liquidity_usd": 100000,
+                        "volume_24h_usd": 1000000,
+                    }
+                ]
+            },
+        },
+    )
+
+    token = watcher_verify.match_token_from_payload(_payload("OpenGradient is running hard"))
+
+    assert token["symbol"] == "OPG"
+    assert token["address"] == "0xopg"
+
+
 def test_verify_watcher_hit_requires_price_confirmation(monkeypatch):
     monkeypatch.setattr(
         watcher_verify,

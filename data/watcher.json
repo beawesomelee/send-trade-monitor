@@ -563,36 +563,41 @@
       }
     }
   ],
-  "updated_at": "2026-06-22T17:22:34Z",
+  "updated_at": "2026-06-22T17:45:57Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
+      "approval_evidence_urls": [
+        "https://x.com/0xalwaysonchain/status/2066250453088612671"
+      ],
+      "approval_label": "approved_alpha_source",
+      "approval_reason": "tweet was 65.5 minutes before the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_e90969c08d96"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "status": "pending",
+      "status": "approved",
       "terms": [
-        "opg",
-        "$opg",
-        "opengradient",
-        "cbventures",
-        "called the bottom",
-        "cbventures ties",
-        "#1 on gainers",
-        "vote count moving",
-        "zkml infrastructure play",
-        "kol call",
-        "article timing",
-        "vote activity"
+        "opengradient"
       ],
       "updated_at": "2026-06-14T23:22:37Z"
     },
     "@aixbt_agent": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_e90969c08d96"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "opg",
         "$opg",
@@ -610,11 +615,20 @@
       "updated_at": "2026-06-14T23:22:37Z"
     },
     "@basegemsllc": {
+      "approval_evidence_urls": [
+        "https://x.com/BASEGEMSLLC/status/2067258356125868044"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 249.6 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_3e17cdde0a68"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for SYND; movement 668.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3e17cdde0a68"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "synd",
         "$synd",
@@ -627,11 +641,20 @@
       "updated_at": "2026-06-17T15:22:41Z"
     },
     "@basewhalealert": {
+      "approval_evidence_urls": [
+        "https://x.com/BaseWhaleAlert/status/2066936868457877580"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 67.1 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "dot",
         "$dot",
@@ -648,11 +671,18 @@
       "updated_at": "2026-06-16T20:22:46Z"
     },
     "@billionairedau": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "dot",
         "$dot",
@@ -669,11 +699,18 @@
       "updated_at": "2026-06-16T20:22:46Z"
     },
     "@boggyagent": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_3a43a86ca477"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "velvet",
         "$velvet",
@@ -688,11 +725,20 @@
       "updated_at": "2026-06-10T23:59:29Z"
     },
     "@bronxethi": {
+      "approval_evidence_urls": [
+        "https://x.com/BronxETHi/status/2066298289901936955"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 124.6 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_e90969c08d96"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "opg",
         "$opg",
@@ -710,11 +756,20 @@
       "updated_at": "2026-06-14T23:22:37Z"
     },
     "@cexscan": {
+      "approval_evidence_urls": [
+        "https://x.com/cexscan/status/2067258356125868044"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 249.6 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_3e17cdde0a68"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for SYND; movement 668.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3e17cdde0a68"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "synd",
         "$synd",
@@ -727,11 +782,20 @@
       "updated_at": "2026-06-17T15:22:41Z"
     },
     "@chartexpt": {
+      "approval_evidence_urls": [
+        "https://x.com/chartexpt/status/2064823795945525593"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 165.5 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_3a43a86ca477"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "velvet",
         "$velvet",
@@ -746,11 +810,20 @@
       "updated_at": "2026-06-10T23:59:29Z"
     },
     "@chuchuswag1": {
+      "approval_evidence_urls": [
+        "https://x.com/ChuchuSwag1/status/2068399086680633454"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 182.4 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "pevolution",
         "$pevolution",
@@ -765,11 +838,18 @@
       "updated_at": "2026-06-20T18:22:45Z"
     },
     "@cryptohawk19": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "dot",
         "$dot",
@@ -786,11 +866,20 @@
       "updated_at": "2026-06-16T20:22:46Z"
     },
     "@cryptojunzy": {
+      "approval_evidence_urls": [
+        "https://x.com/CryptoJunzy/status/2064469984655339864"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 314.6 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_1d74d4dec010"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "jotchua",
         "$jotchua",
@@ -806,11 +895,20 @@
       "updated_at": "2026-06-09T22:09:57Z"
     },
     "@cryptoluche_": {
+      "approval_evidence_urls": [
+        "https://x.com/CryptoLuche_/status/2066951180786270689"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 124.0 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "dot",
         "$dot",
@@ -827,33 +925,39 @@
       "updated_at": "2026-06-16T20:22:46Z"
     },
     "@de_okwutex": {
+      "approval_evidence_urls": [
+        "https://x.com/De_Okwutex/status/2064936858023346296"
+      ],
+      "approval_label": "approved_alpha_source",
+      "approval_reason": "tweet was 575.2 minutes before the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_cb5d73fe77f5"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "status": "pending",
+      "status": "approved",
       "terms": [
         "velvet",
-        "$velvet",
-        "spacex",
-        "openai",
-        "defai",
-        "pre ipo trading",
-        "velvet x app",
-        "kol positions",
-        "onchain outflows",
-        "kol post",
-        "team update",
-        "narrative"
+        "$velvet"
       ],
       "updated_at": "2026-06-11T19:22:41Z"
     },
     "@defade_": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "pevolution",
         "$pevolution",
@@ -868,11 +972,18 @@
       "updated_at": "2026-06-20T18:22:45Z"
     },
     "@degen_mike14": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_d025f5481cc6"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_d025f5481cc6"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "velvet",
         "$velvet",
@@ -886,30 +997,41 @@
       "updated_at": "2026-06-10T19:22:46Z"
     },
     "@deluquant": {
+      "approval_evidence_urls": [
+        "https://x.com/deluquant/status/2064770508428861501"
+      ],
+      "approval_label": "approved_alpha_source",
+      "approval_reason": "tweet was 46.2 minutes before the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_3a43a86ca477"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "status": "pending",
+      "status": "approved",
       "terms": [
         "velvet",
-        "$velvet",
-        "ai narra",
-        "base tape",
-        "velvet leading",
-        "base velocity check",
-        "insane breakout",
-        "kol post",
-        "narrative rotation"
+        "velvet leading"
       ],
       "updated_at": "2026-06-10T23:59:29Z"
     },
     "@devs_hunter": {
+      "approval_evidence_urls": [
+        "https://x.com/devs_hunter/status/2068369850171371915"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 66.2 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "pevolution",
         "$pevolution",
@@ -924,11 +1046,18 @@
       "updated_at": "2026-06-20T18:22:45Z"
     },
     "@dexchad003": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "gtavi",
         "$gtavi",
@@ -944,33 +1073,41 @@
       "updated_at": "2026-06-19T10:22:40Z"
     },
     "@elliotscrypto": {
+      "approval_evidence_urls": [
+        "https://x.com/ElliotsCrypto/status/2066125019013333488"
+      ],
+      "approval_label": "approved_alpha_source",
+      "approval_reason": "tweet was 563.9 minutes before the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_e90969c08d96"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "status": "pending",
+      "status": "approved",
       "terms": [
         "opg",
-        "$opg",
-        "opengradient",
-        "cbventures",
-        "called the bottom",
-        "cbventures ties",
-        "#1 on gainers",
-        "vote count moving",
-        "zkml infrastructure play",
-        "kol call",
-        "article timing",
-        "vote activity"
+        "$opg"
       ],
       "updated_at": "2026-06-14T23:22:37Z"
     },
     "@eveningtraders": {
+      "approval_evidence_urls": [
+        "https://x.com/Eveningtraders/status/2064881242059989302"
+      ],
+      "approval_label": "rejected_stale_pre_move",
+      "approval_reason": "tweet was 796.2 minutes before the estimated move start, outside the freshness window",
+      "approval_source_signal_ids": [
+        "signal_cb5d73fe77f5"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "velvet",
         "$velvet",
@@ -988,11 +1125,20 @@
       "updated_at": "2026-06-11T19:22:41Z"
     },
     "@ffac6f3abd1e440": {
+      "approval_evidence_urls": [
+        "https://x.com/ffac6f3abd1e440/status/2068399137368813910"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 182.6 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "pevolution",
         "$pevolution",
@@ -1007,31 +1153,43 @@
       "updated_at": "2026-06-20T18:22:45Z"
     },
     "@hailey_cryptoo": {
+      "approval_evidence_urls": [
+        "https://x.com/hailey_cryptoo/status/2067742067065811001"
+      ],
+      "approval_label": "approved_alpha_source",
+      "approval_reason": "tweet was 398.3 minutes before the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "status": "pending",
+      "status": "approved",
       "terms": [
         "gtavi",
         "$gtavi",
         "gta vi",
-        "rockstar",
-        "rockstar released the gta vi site",
-        "gta vi box art reveal",
-        "gtavi narrative",
-        "kol post",
-        "site release",
-        "narrative reactivation"
+        "rockstar released the gta vi site"
       ],
       "updated_at": "2026-06-19T10:22:40Z"
     },
     "@jotchuathememe": {
+      "approval_evidence_urls": [
+        "https://x.com/JotchuaTheMeme/status/2064447789581680791"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 226.4 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_1d74d4dec010"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "jotchua",
         "$jotchua",
@@ -1047,11 +1205,20 @@
       "updated_at": "2026-06-09T22:09:57Z"
     },
     "@juliuselum": {
+      "approval_evidence_urls": [
+        "https://x.com/JuliusElum/status/2063955296075002164"
+      ],
+      "approval_label": "rejected_stale_pre_move",
+      "approval_reason": "tweet was 3285.6 minutes before the estimated move start, outside the freshness window",
+      "approval_source_signal_ids": [
+        "signal_3a43a86ca477"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "velvet",
         "$velvet",
@@ -1066,11 +1233,18 @@
       "updated_at": "2026-06-10T23:59:29Z"
     },
     "@marvellousdefi": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_cb5d73fe77f5"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "velvet",
         "$velvet",
@@ -1088,11 +1262,18 @@
       "updated_at": "2026-06-11T19:22:41Z"
     },
     "@onlyljc": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_1d74d4dec010"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "jotchua",
         "$jotchua",
@@ -1108,11 +1289,20 @@
       "updated_at": "2026-06-09T22:09:57Z"
     },
     "@pevolutionsol": {
+      "approval_evidence_urls": [
+        "https://x.com/pevolutionsol/status/2068399011157958916"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 182.1 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_9658c91f8493"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "pevolution",
         "$pevolution",
@@ -1127,11 +1317,18 @@
       "updated_at": "2026-06-20T18:22:45Z"
     },
     "@rumadotfun": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_cb5d73fe77f5"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "velvet",
         "$velvet",
@@ -1149,11 +1346,18 @@
       "updated_at": "2026-06-11T19:22:41Z"
     },
     "@smol_intern": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_1d74d4dec010"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "jotchua",
         "$jotchua",
@@ -1169,11 +1373,20 @@
       "updated_at": "2026-06-09T22:09:57Z"
     },
     "@stitchdegen": {
+      "approval_evidence_urls": [
+        "https://x.com/stitchdegen/status/2067861722191519890"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 77.1 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "gtavi",
         "$gtavi",
@@ -1189,31 +1402,41 @@
       "updated_at": "2026-06-19T10:22:40Z"
     },
     "@techgaged_news": {
+      "approval_evidence_urls": [
+        "https://x.com/Techgaged_news/status/2067698671320289288"
+      ],
+      "approval_label": "approved_alpha_source",
+      "approval_reason": "tweet was 570.8 minutes before the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_02890fa65739"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "status": "pending",
+      "status": "approved",
       "terms": [
         "gtavi",
         "$gtavi",
         "gta vi",
-        "rockstar",
-        "rockstar released the gta vi site",
-        "gta vi box art reveal",
-        "gtavi narrative",
-        "kol post",
-        "site release",
-        "narrative reactivation"
+        "rockstar released the gta vi site"
       ],
       "updated_at": "2026-06-19T10:22:40Z"
     },
     "@tokenradarco": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_e90969c08d96"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "opg",
         "$opg",
@@ -1231,11 +1454,20 @@
       "updated_at": "2026-06-14T23:22:37Z"
     },
     "@trencherrzalt": {
+      "approval_evidence_urls": [
+        "https://x.com/trencherrzalt/status/2064470011394281944"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 314.7 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_1d74d4dec010"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "jotchua",
         "$jotchua",
@@ -1251,11 +1483,20 @@
       "updated_at": "2026-06-09T22:09:57Z"
     },
     "@usedotai": {
+      "approval_evidence_urls": [
+        "https://x.com/usedotai/status/2066933637065404634"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 54.2 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_62b0f07aaf79"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "dot",
         "$dot",
@@ -1272,12 +1513,21 @@
       "updated_at": "2026-06-16T20:22:46Z"
     },
     "@vegasnipes": {
+      "approval_evidence_urls": [
+        "https://x.com/VegaSnipes/status/2064368036748923322"
+      ],
+      "approval_label": "rejected_stale_pre_move",
+      "approval_reason": "tweet was 1345.5 minutes before the estimated move start, outside the freshness window",
+      "approval_source_signal_ids": [
+        "signal_d025f5481cc6"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_d025f5481cc6",
         "signal_cb5d73fe77f5"
       ],
-      "status": "pending",
+      "status": "rejected",
       "terms": [
         "velvet",
         "$velvet",
@@ -1299,22 +1549,43 @@
       "updated_at": "2026-06-11T19:22:41Z"
     },
     "@velvet_capital": {
+      "approval_evidence_urls": [
+        "https://x.com/Velvet_Capital/status/2064637097584017892"
+      ],
+      "approval_label": "approved_alpha_source",
+      "approval_reason": "tweet was 276.4 minutes before the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_d025f5481cc6"
+      ],
+      "approval_updated_at": "2026-06-22T17:45:57Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_d025f5481cc6"
       ],
-      "status": "pending",
+      "status": "approved",
       "terms": [
-        "velvet",
-        "$velvet",
-        "defai",
-        "onchain terminal",
-        "new app",
-        "ai superpowers",
-        "team update",
-        "app launch"
+        "velvet"
       ],
       "updated_at": "2026-06-10T19:22:46Z"
     }
+  },
+  "watcher_approval": {
+    "early_after_start_minutes": 30.0,
+    "max_pre_start_lead_minutes": 720.0,
+    "method": "tweet_timing_vs_estimated_start",
+    "stats": {
+      "candidate_labels": {
+        "approved_alpha_source": 7,
+        "rejected_late_reaction": 16,
+        "rejected_no_tweet_evidence": 12,
+        "rejected_stale_pre_move": 3
+      },
+      "candidate_rules": 38,
+      "watch_accounts_approved": 7,
+      "watch_accounts_pending": 0,
+      "watch_accounts_rejected": 30,
+      "watch_accounts_unchanged": 0
+    },
+    "updated_at": "2026-06-22T17:45:57Z"
   }
 }

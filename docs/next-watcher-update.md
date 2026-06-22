@@ -8,7 +8,9 @@ The movement scan remains the hourly learning loop:
 movement_scan.py
 -> detect pumps/dumps
 -> explain movement with lore
--> store watcher accounts/terms as pending
+-> estimate movement start time
+-> compare source tweet time against movement start
+-> approve/reject watcher accounts using timing evidence
 -> approved watcher accounts become X filtered-stream rules
 ```
 
@@ -35,12 +37,37 @@ The X stream watcher should run on one long-lived host, such as a VPS, because X
 - Store every unique stream hit locally for replay/debug.
 - Do not post raw stream hits to Discord by default.
 - Do not auto-approve watcher accounts from verifier output.
+- Auto-approval happens only after movement scan enrichment, using tweet timing versus estimated movement start.
+- Approval requires direct tweet evidence from the candidate account.
+- Pre-start tweets and tweets within the early movement window can become rule-eligible.
+- Late reactions, stale pre-move tweets, and accounts without direct tweet evidence are rejected.
 - Discord alerts require all of:
   - matched known token
   - price movement language in tweet text
   - current token market data above liquidity/volume/MC floors
   - h1/h6 movement above configured watcher thresholds
 - Ambiguous symbols or unmatched tokens are stored only.
+- Approved rule terms from movement events are also used as token aliases during verification, so project-name hits like `opengradient` can still resolve to `OPG`.
+
+## Approval Command
+
+Dry-run approval labels against the stored dataset:
+
+```bash
+python3 scripts/apply_watcher_approvals.py
+```
+
+Apply labels to `data/movement_events.json` and `data/watcher.json`:
+
+```bash
+python3 scripts/apply_watcher_approvals.py --apply
+```
+
+Preview the X rules that would be synced:
+
+```bash
+python3 scripts/dry_run_watcher_rules.py
+```
 
 ## MVP Command
 

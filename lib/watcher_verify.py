@@ -95,6 +95,12 @@ def match_token_from_payload(payload: dict) -> dict | None:
         for word in words:
             candidates.extend(index["by_symbol"].get(word, []))
 
+    if not candidates:
+        lowered = text.lower()
+        for alias, alias_tokens in index.get("by_alias", {}).items():
+            if contains_term(lowered, alias):
+                candidates.extend(alias_tokens)
+
     return choose_unique_token(candidates)
 
 
@@ -109,6 +115,7 @@ def load_token_index() -> dict:
 
     by_address = {}
     by_symbol = defaultdict(list)
+    by_alias = defaultdict(list)
     for token in tokens.values():
         key = token_key(token)
         if not key:
@@ -117,7 +124,11 @@ def load_token_index() -> dict:
         symbol = str(token.get("symbol") or "").strip().lower().lstrip("$")
         if symbol:
             by_symbol[symbol].append(token)
-    return {"by_address": by_address, "by_symbol": dict(by_symbol)}
+        for alias in token.get("aliases") or []:
+            clean = clean_alias(alias)
+            if clean and clean != symbol:
+                by_alias[clean].append(token)
+    return {"by_address": by_address, "by_symbol": dict(by_symbol), "by_alias": dict(by_alias)}
 
 
 def latest_snapshot_tokens() -> list[dict]:
@@ -142,8 +153,26 @@ def movement_event_tokens(path: Path = MOVEMENT_EVENTS_FILE) -> list[dict]:
     for event in data.get("events", []) if isinstance(data, dict) else []:
         token = event.get("token") if isinstance(event, dict) else {}
         if isinstance(token, dict):
-            out.append(token)
+            aliases = []
+            for candidate in event.get("candidate_watch_rules") or []:
+                if not isinstance(candidate, dict):
+                    continue
+                if candidate.get("approval_status") == "approved":
+                    aliases.extend(
+                        candidate.get("approved_terms")
+                        if isinstance(candidate.get("approved_terms"), list)
+                        else []
+                    )
+            out.append({**token, "aliases": aliases})
     return out
+
+
+def clean_alias(value) -> str:
+    text = str(value or "").strip().lower().lstrip("$")
+    text = re.sub(r"\s+", " ", text)
+    if len(text) < 3:
+        return ""
+    return text
 
 
 def match_direct_address(text: str, index: dict) -> dict | None:

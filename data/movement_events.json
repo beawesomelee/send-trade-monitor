@@ -1879,10 +1879,211 @@
           "bundled at launch"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@girls_devsol",
+          "approval_evidence_url": "https://x.com/girls_devsol/status/2069456145710796934",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 62.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-23T16:22:48Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 62.8,
+          "source_evidence_urls": [
+            "https://x.com/girls_devsol/status/2069456145710796934"
+          ],
+          "terms": [
+            "girls",
+            "$girls",
+            "moonshot",
+            "listing",
+            "moonshot vote",
+            "only votes away",
+            "community support",
+            "kol post",
+            "community vote",
+            "team update"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@wecztribe",
+          "approval_evidence_url": "https://x.com/wecztribe/status/2069484702608855239",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 176.3 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-23T18:16:16Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 176.27,
+          "source_evidence_urls": [
+            "https://x.com/wecztribe/status/2069484702608855239"
+          ],
+          "terms": [
+            "girls",
+            "$girls",
+            "moonshot",
+            "listing",
+            "moonshot vote",
+            "only votes away",
+            "community support",
+            "kol post",
+            "community vote",
+            "team update"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@nova_trade1",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "girls",
+            "$girls",
+            "moonshot",
+            "listing",
+            "moonshot vote",
+            "only votes away",
+            "community support",
+            "kol post",
+            "community vote",
+            "team update"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@ashilla_kiponk",
+          "approval_evidence_url": "https://x.com/Ashilla_kiponk/status/2069501134763376933",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 241.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-23T19:21:34Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 241.57,
+          "source_evidence_urls": [
+            "https://x.com/Ashilla_kiponk/status/2069501134763376933"
+          ],
+          "terms": [
+            "girls",
+            "$girls",
+            "moonshot",
+            "listing",
+            "moonshot vote",
+            "only votes away",
+            "community support",
+            "kol post",
+            "community vote",
+            "team update"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-23T19:22:44Z",
+      "event_id": "signal_7821774ff59e",
+      "evidence": [
+        {
+          "author_handle": "@girls_devsol",
+          "minutes_before_detection": 179.93,
+          "minutes_from_window_start": 180.07,
+          "relevance": "dev post urging engagement right before the pump",
+          "text": "Community, we need your support! ... Create quality posts, share your thoughts",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-23T16:22:48Z",
+          "tweet_id": "2069456145710796934",
+          "type": "x_post",
+          "url": "https://x.com/girls_devsol/status/2069456145710796934"
+        },
+        {
+          "author_handle": "@Ashilla_kiponk",
+          "minutes_before_detection": 1.16,
+          "minutes_from_window_start": 358.84,
+          "relevance": "direct vote countdown post tying to listing catalyst",
+          "text": "$GIRLS is only 170 votes away ... once this lists it's going to rip",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-23T19:21:34Z",
+          "tweet_id": "2069501134763376933",
+          "type": "x_post",
+          "url": "https://x.com/Ashilla_kiponk/status/2069501134763376933"
+        },
+        {
+          "author_handle": "@wecztribe",
+          "minutes_before_detection": 66.45,
+          "minutes_from_window_start": 293.55,
+          "relevance": "KOL observation on momentum and dev activity",
+          "text": "Been watching $GIRLS on SOL. Dev seems committed ... close to bonding",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-23T18:16:16Z",
+          "tweet_id": "2069484702608855239",
+          "type": "x_post",
+          "url": "https://x.com/wecztribe/status/2069484702608855239"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/8cDPjCoxhM4iMGqKbU3CPG8oyTSGtBPRrHwb2Csipump"
+      },
+      "lore": "moonshot vote push, ~100-170 votes left per multiple posts today. girls_devsol asked for community posts and cmc boosts. quiet on big accounts",
+      "movement": {
+        "change_pct": 3054.9,
+        "detected_at": "2026-06-23T19:22:44Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-23T18:45:00Z",
+        "estimated_start_at": "2026-06-23T15:20:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 50,
+        "pool_address": "EPA5svDmLGEANaJensLdcBpLsDBDB8zBupfeiaGSqy3n",
+        "pool_name": "GIRLS / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-23T19:22:44Z",
+        "window_start_at": "2026-06-23T13:22:44Z"
+      },
+      "source_signal_id": "signal_7821774ff59e",
+      "token": {
+        "address": "8cDPjCoxhM4iMGqKbU3CPG8oyTSGtBPRrHwb2Csipump",
+        "chain_slug": "solana",
+        "symbol": "GIRLS"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@girls_devsol",
+          "@wecztribe",
+          "@nova_trade1"
+        ],
+        "catalysts": [
+          "kol_post",
+          "community_vote",
+          "team_update"
+        ],
+        "keywords": [
+          "$GIRLS",
+          "moonshot",
+          "listing"
+        ],
+        "phrases": [
+          "moonshot vote",
+          "only votes away",
+          "community support"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-22T17:45:57Z",
+  "updated_at": "2026-06-23T19:22:46Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -1890,16 +2091,16 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 7,
-        "rejected_late_reaction": 16,
-        "rejected_no_tweet_evidence": 12,
+        "rejected_late_reaction": 19,
+        "rejected_no_tweet_evidence": 13,
         "rejected_stale_pre_move": 3
       },
-      "candidate_rules": 38,
+      "candidate_rules": 42,
       "watch_accounts_approved": 7,
       "watch_accounts_pending": 0,
-      "watch_accounts_rejected": 30,
+      "watch_accounts_rejected": 34,
       "watch_accounts_unchanged": 0
     },
-    "updated_at": "2026-06-22T17:45:57Z"
+    "updated_at": "2026-06-23T19:22:46Z"
   }
 }

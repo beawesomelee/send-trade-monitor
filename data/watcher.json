@@ -36,7 +36,7 @@
       "value": "from:techgaged_news (gtavi OR $gtavi OR \"gta vi\" OR \"rockstar released the gta vi site\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-23T18:22:41Z",
+  "rules_synced_at": "2026-06-23T19:22:47Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -597,9 +597,89 @@
           "bundled at launch"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-23T19:22:44Z",
+      "id": "signal_7821774ff59e",
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/8cDPjCoxhM4iMGqKbU3CPG8oyTSGtBPRrHwb2Csipump"
+      },
+      "lore": "moonshot vote push, ~100-170 votes left per multiple posts today. girls_devsol asked for community posts and cmc boosts. quiet on big accounts",
+      "movement": {
+        "change_pct": 3054.9,
+        "detected_at": "2026-06-23T19:22:44Z",
+        "direction": "pump",
+        "window": "h6",
+        "window_end_at": "2026-06-23T19:22:44Z",
+        "window_start_at": "2026-06-23T13:22:44Z"
+      },
+      "references": [
+        {
+          "author_handle": "@girls_devsol",
+          "minutes_before_detection": 179.93,
+          "minutes_from_window_start": 180.07,
+          "relevance": "dev post urging engagement right before the pump",
+          "text": "Community, we need your support! ... Create quality posts, share your thoughts",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-23T16:22:48Z",
+          "tweet_id": "2069456145710796934",
+          "type": "x_post",
+          "url": "https://x.com/girls_devsol/status/2069456145710796934"
+        },
+        {
+          "author_handle": "@Ashilla_kiponk",
+          "minutes_before_detection": 1.16,
+          "minutes_from_window_start": 358.84,
+          "relevance": "direct vote countdown post tying to listing catalyst",
+          "text": "$GIRLS is only 170 votes away ... once this lists it's going to rip",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-23T19:21:34Z",
+          "tweet_id": "2069501134763376933",
+          "type": "x_post",
+          "url": "https://x.com/Ashilla_kiponk/status/2069501134763376933"
+        },
+        {
+          "author_handle": "@wecztribe",
+          "minutes_before_detection": 66.45,
+          "minutes_from_window_start": 293.55,
+          "relevance": "KOL observation on momentum and dev activity",
+          "text": "Been watching $GIRLS on SOL. Dev seems committed ... close to bonding",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-23T18:16:16Z",
+          "tweet_id": "2069484702608855239",
+          "type": "x_post",
+          "url": "https://x.com/wecztribe/status/2069484702608855239"
+        }
+      ],
+      "token": {
+        "address": "8cDPjCoxhM4iMGqKbU3CPG8oyTSGtBPRrHwb2Csipump",
+        "symbol": "GIRLS"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@girls_devsol",
+          "@wecztribe",
+          "@nova_trade1"
+        ],
+        "catalysts": [
+          "kol_post",
+          "community_vote",
+          "team_update"
+        ],
+        "keywords": [
+          "$GIRLS",
+          "moonshot",
+          "listing"
+        ],
+        "phrases": [
+          "moonshot vote",
+          "only votes away",
+          "community support"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-23T18:22:41Z",
+  "updated_at": "2026-06-23T19:22:47Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "approval_evidence_urls": [
@@ -610,7 +690,7 @@
       "approval_source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_e90969c08d96"
@@ -628,7 +708,7 @@
       "approval_source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_e90969c08d96"
@@ -650,6 +730,35 @@
       ],
       "updated_at": "2026-06-14T23:22:37Z"
     },
+    "@ashilla_kiponk": {
+      "approval_evidence_urls": [
+        "https://x.com/Ashilla_kiponk/status/2069501134763376933"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 241.6 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_7821774ff59e"
+      ],
+      "approval_updated_at": "2026-06-23T19:22:46Z",
+      "reason_added": "Suggested by movement explanation for GIRLS; movement 3054.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_7821774ff59e"
+      ],
+      "status": "rejected",
+      "terms": [
+        "girls",
+        "$girls",
+        "moonshot",
+        "listing",
+        "moonshot vote",
+        "only votes away",
+        "community support",
+        "kol post",
+        "community vote",
+        "team update"
+      ],
+      "updated_at": "2026-06-23T19:22:44Z"
+    },
     "@basegemsllc": {
       "approval_evidence_urls": [
         "https://x.com/BASEGEMSLLC/status/2067258356125868044"
@@ -659,7 +768,7 @@
       "approval_source_signal_ids": [
         "signal_3e17cdde0a68"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for SYND; movement 668.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3e17cdde0a68"
@@ -685,7 +794,7 @@
       "approval_source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_62b0f07aaf79"
@@ -713,7 +822,7 @@
       "approval_source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_62b0f07aaf79"
@@ -741,7 +850,7 @@
       "approval_source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3a43a86ca477"
@@ -769,7 +878,7 @@
       "approval_source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_e90969c08d96"
@@ -800,7 +909,7 @@
       "approval_source_signal_ids": [
         "signal_3e17cdde0a68"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for SYND; movement 668.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3e17cdde0a68"
@@ -826,7 +935,7 @@
       "approval_source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3a43a86ca477"
@@ -854,7 +963,7 @@
       "approval_source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_9658c91f8493"
@@ -880,7 +989,7 @@
       "approval_source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_62b0f07aaf79"
@@ -910,7 +1019,7 @@
       "approval_source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
@@ -939,7 +1048,7 @@
       "approval_source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_62b0f07aaf79"
@@ -969,7 +1078,7 @@
       "approval_source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_cb5d73fe77f5"
@@ -988,7 +1097,7 @@
       "approval_source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_9658c91f8493"
@@ -1014,7 +1123,7 @@
       "approval_source_signal_ids": [
         "signal_d025f5481cc6"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_d025f5481cc6"
@@ -1041,7 +1150,7 @@
       "approval_source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3a43a86ca477"
@@ -1062,7 +1171,7 @@
       "approval_source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_9658c91f8493"
@@ -1088,7 +1197,7 @@
       "approval_source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_02890fa65739"
@@ -1117,7 +1226,7 @@
       "approval_source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_e90969c08d96"
@@ -1138,7 +1247,7 @@
       "approval_source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_cb5d73fe77f5"
@@ -1169,7 +1278,7 @@
       "approval_source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_9658c91f8493"
@@ -1188,6 +1297,35 @@
       ],
       "updated_at": "2026-06-20T18:22:45Z"
     },
+    "@girls_devsol": {
+      "approval_evidence_urls": [
+        "https://x.com/girls_devsol/status/2069456145710796934"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 62.8 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_7821774ff59e"
+      ],
+      "approval_updated_at": "2026-06-23T19:22:46Z",
+      "reason_added": "Suggested by movement explanation for GIRLS; movement 3054.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_7821774ff59e"
+      ],
+      "status": "rejected",
+      "terms": [
+        "girls",
+        "$girls",
+        "moonshot",
+        "listing",
+        "moonshot vote",
+        "only votes away",
+        "community support",
+        "kol post",
+        "community vote",
+        "team update"
+      ],
+      "updated_at": "2026-06-23T19:22:44Z"
+    },
     "@hailey_cryptoo": {
       "approval_evidence_urls": [
         "https://x.com/hailey_cryptoo/status/2067742067065811001"
@@ -1197,7 +1335,7 @@
       "approval_source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_02890fa65739"
@@ -1220,7 +1358,7 @@
       "approval_source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
@@ -1249,7 +1387,7 @@
       "approval_source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_3a43a86ca477"
@@ -1275,7 +1413,7 @@
       "approval_source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_cb5d73fe77f5"
@@ -1297,6 +1435,33 @@
       ],
       "updated_at": "2026-06-11T19:22:41Z"
     },
+    "@nova_trade1": {
+      "approval_evidence_urls": [],
+      "approval_label": "rejected_no_tweet_evidence",
+      "approval_reason": "candidate account has no direct tweet evidence",
+      "approval_source_signal_ids": [
+        "signal_7821774ff59e"
+      ],
+      "approval_updated_at": "2026-06-23T19:22:46Z",
+      "reason_added": "Suggested by movement explanation for GIRLS; movement 3054.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_7821774ff59e"
+      ],
+      "status": "rejected",
+      "terms": [
+        "girls",
+        "$girls",
+        "moonshot",
+        "listing",
+        "moonshot vote",
+        "only votes away",
+        "community support",
+        "kol post",
+        "community vote",
+        "team update"
+      ],
+      "updated_at": "2026-06-23T19:22:44Z"
+    },
     "@onlyljc": {
       "approval_evidence_urls": [],
       "approval_label": "rejected_no_tweet_evidence",
@@ -1304,7 +1469,7 @@
       "approval_source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
@@ -1333,7 +1498,7 @@
       "approval_source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_9658c91f8493"
@@ -1359,7 +1524,7 @@
       "approval_source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_cb5d73fe77f5"
@@ -1388,7 +1553,7 @@
       "approval_source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
@@ -1417,7 +1582,7 @@
       "approval_source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_02890fa65739"
@@ -1446,7 +1611,7 @@
       "approval_source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_02890fa65739"
@@ -1467,7 +1632,7 @@
       "approval_source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_e90969c08d96"
@@ -1498,7 +1663,7 @@
       "approval_source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_1d74d4dec010"
@@ -1527,7 +1692,7 @@
       "approval_source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_62b0f07aaf79"
@@ -1557,7 +1722,7 @@
       "approval_source_signal_ids": [
         "signal_d025f5481cc6"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_d025f5481cc6",
@@ -1593,7 +1758,7 @@
       "approval_source_signal_ids": [
         "signal_d025f5481cc6"
       ],
-      "approval_updated_at": "2026-06-22T17:45:57Z",
+      "approval_updated_at": "2026-06-23T19:22:46Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_d025f5481cc6"
@@ -1603,6 +1768,35 @@
         "velvet"
       ],
       "updated_at": "2026-06-10T19:22:46Z"
+    },
+    "@wecztribe": {
+      "approval_evidence_urls": [
+        "https://x.com/wecztribe/status/2069484702608855239"
+      ],
+      "approval_label": "rejected_late_reaction",
+      "approval_reason": "tweet was 176.3 minutes after the estimated pump start",
+      "approval_source_signal_ids": [
+        "signal_7821774ff59e"
+      ],
+      "approval_updated_at": "2026-06-23T19:22:46Z",
+      "reason_added": "Suggested by movement explanation for GIRLS; movement 3054.9% over h6; requires manual approval before rule sync.",
+      "source_signal_ids": [
+        "signal_7821774ff59e"
+      ],
+      "status": "rejected",
+      "terms": [
+        "girls",
+        "$girls",
+        "moonshot",
+        "listing",
+        "moonshot vote",
+        "only votes away",
+        "community support",
+        "kol post",
+        "community vote",
+        "team update"
+      ],
+      "updated_at": "2026-06-23T19:22:44Z"
     }
   },
   "watcher_approval": {
@@ -1612,16 +1806,16 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 7,
-        "rejected_late_reaction": 16,
-        "rejected_no_tweet_evidence": 12,
+        "rejected_late_reaction": 19,
+        "rejected_no_tweet_evidence": 13,
         "rejected_stale_pre_move": 3
       },
-      "candidate_rules": 38,
+      "candidate_rules": 42,
       "watch_accounts_approved": 7,
       "watch_accounts_pending": 0,
-      "watch_accounts_rejected": 30,
+      "watch_accounts_rejected": 34,
       "watch_accounts_unchanged": 0
     },
-    "updated_at": "2026-06-22T17:45:57Z"
+    "updated_at": "2026-06-23T19:22:46Z"
   }
 }

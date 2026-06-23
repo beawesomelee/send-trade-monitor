@@ -36,7 +36,7 @@
       "value": "from:techgaged_news (gtavi OR $gtavi OR \"gta vi\" OR \"rockstar released the gta vi site\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-23T19:22:47Z",
+  "rules_synced_at": "2026-06-23T19:29:00Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -679,7 +679,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-23T19:22:47Z",
+  "updated_at": "2026-06-23T19:29:00Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "approval_evidence_urls": [

@@ -2080,27 +2080,211 @@
           "community support"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@wendy_awakened",
+          "approval_evidence_url": "https://x.com/wendy_awakened/status/2069788131885494642",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 207.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-24T14:22:00Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 207.0,
+          "source_evidence_urls": [
+            "https://x.com/wendy_awakened/status/2069788131885494642"
+          ],
+          "terms": [
+            "wen",
+            "$wen",
+            "gme",
+            "wsb",
+            "next gme",
+            "wsb moment",
+            "short interest",
+            "retail coordination",
+            "kol thread",
+            "retail narrative",
+            "short squeeze"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@theultimator5",
+          "approval_evidence_url": "https://x.com/TheUltimator5/status/2069734471163605350",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 6.2 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-06-24T10:48:46Z",
+          "approved_terms": [
+            "wen",
+            "$wen"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": -6.23,
+          "source_evidence_urls": [
+            "https://x.com/TheUltimator5/status/2069734471163605350"
+          ],
+          "terms": [
+            "wen",
+            "$wen",
+            "gme",
+            "wsb",
+            "next gme",
+            "wsb moment",
+            "short interest",
+            "retail coordination",
+            "kol thread",
+            "retail narrative",
+            "short squeeze"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@nextbigtrade",
+          "approval_evidence_url": "https://x.com/nextbigtrade/status/2069779740697788861",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 173.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-24T13:48:39Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 173.65,
+          "source_evidence_urls": [
+            "https://x.com/nextbigtrade/status/2069779740697788861"
+          ],
+          "terms": [
+            "wen",
+            "$wen",
+            "gme",
+            "wsb",
+            "next gme",
+            "wsb moment",
+            "short interest",
+            "retail coordination",
+            "kol thread",
+            "retail narrative",
+            "short squeeze"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-24T14:22:43Z",
+      "event_id": "signal_66bbd1ef857a",
+      "evidence": [
+        {
+          "author_handle": "@wendy_awakened",
+          "minutes_before_detection": 0.71,
+          "minutes_from_window_start": 359.29,
+          "relevance": "main thread sparking the retail gme narrative on the stock",
+          "text": "$WEN is up 30%+ today and wsb just found their next GME",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-24T14:22:00Z",
+          "tweet_id": "2069788131885494642",
+          "type": "x_post",
+          "url": "https://x.com/wendy_awakened/status/2069788131885494642"
+        },
+        {
+          "author_handle": "@TheUltimator5",
+          "minutes_before_detection": 213.94,
+          "minutes_from_window_start": 146.06,
+          "relevance": "explains the algo/retail pump dynamic",
+          "text": "WEN moon. Apparently $WEN is pumping because of retail traders. algo picked it up",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-24T10:48:46Z",
+          "tweet_id": "2069734471163605350",
+          "type": "x_post",
+          "url": "https://x.com/TheUltimator5/status/2069734471163605350"
+        },
+        {
+          "author_handle": "@nextbigtrade",
+          "minutes_before_detection": 34.06,
+          "minutes_from_window_start": 325.94,
+          "relevance": "notes the breakout volume and meme overlay",
+          "text": "$WEN don't be fooled by meme traders hijacking a Stage 2 investor breakout",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-24T13:48:39Z",
+          "tweet_id": "2069779740697788861",
+          "type": "x_post",
+          "url": "https://x.com/nextbigtrade/status/2069779740697788861"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/66pQgfLHEfbHSBgYSZSrKEdJHHaGiYbgCtNbz48Apump"
+      },
+      "lore": "wsb thread framing $wen as next gme with real rev, shorts, and retail checklist. stock up 27%+ after hours on the narrative. algo mentions too",
+      "movement": {
+        "change_pct": 105.5,
+        "detected_at": "2026-06-24T14:22:43Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-24T13:35:00Z",
+        "estimated_start_at": "2026-06-24T10:55:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 151,
+        "pool_address": "HZyqZRuAUCLdJaHqBfnoFHVBwXmuH3Sm1LyXnWu8Ee15",
+        "pool_name": "WEN / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-24T14:22:43Z",
+        "window_start_at": "2026-06-24T08:22:43Z"
+      },
+      "source_signal_id": "signal_66bbd1ef857a",
+      "token": {
+        "address": "66pQgfLHEfbHSBgYSZSrKEdJHHaGiYbgCtNbz48Apump",
+        "chain_slug": "solana",
+        "symbol": "WEN"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@wendy_awakened",
+          "@TheUltimator5",
+          "@nextbigtrade"
+        ],
+        "catalysts": [
+          "kol_thread",
+          "retail_narrative",
+          "short_squeeze"
+        ],
+        "keywords": [
+          "$wen",
+          "wen",
+          "gme",
+          "wsb"
+        ],
+        "phrases": [
+          "next gme",
+          "wsb moment",
+          "short interest",
+          "retail coordination"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-23T19:22:46Z",
+  "updated_at": "2026-06-24T14:22:45Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 7,
-        "rejected_late_reaction": 19,
+        "approved_alpha_source": 8,
+        "rejected_late_reaction": 21,
         "rejected_no_tweet_evidence": 13,
         "rejected_stale_pre_move": 3
       },
-      "candidate_rules": 42,
-      "watch_accounts_approved": 7,
+      "candidate_rules": 45,
+      "watch_accounts_approved": 8,
       "watch_accounts_pending": 0,
-      "watch_accounts_rejected": 34,
+      "watch_accounts_rejected": 36,
       "watch_accounts_unchanged": 0
     },
-    "updated_at": "2026-06-23T19:22:46Z"
+    "updated_at": "2026-06-24T14:22:45Z"
   }
 }

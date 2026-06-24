@@ -1,10 +1,10 @@
 [
   {
     "chain_slug": "solana",
-    "address": "8cdpjcoxhm4imgqkbu3cpg8oytsgtbprrhwb2csipump",
-    "symbol": "GIRLS",
+    "address": "66pqgflhefbhsbgyszsrkedjhhagiybgctnbz48apump",
+    "symbol": "WEN",
     "direction": "pump",
-    "price_change_h1_pct": -5.366,
-    "timestamp": 1782242566.8898315
+    "price_change_h1_pct": 33.633,
+    "timestamp": 1782310965.266657
   }
 ]

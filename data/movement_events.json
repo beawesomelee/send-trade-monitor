@@ -2264,10 +2264,169 @@
           "retail coordination"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@koalasgoofsland",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "kog",
+            "$kog",
+            "moonshot",
+            "goofslandlore",
+            "$kog (koalas of goofsland)",
+            "moonshot vote",
+            "30x from entry",
+            "lore drop",
+            "trader call",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@libertysoltrade",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "kog",
+            "$kog",
+            "moonshot",
+            "goofslandlore",
+            "$kog (koalas of goofsland)",
+            "moonshot vote",
+            "30x from entry",
+            "lore drop",
+            "trader call",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@workwork1629",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "kog",
+            "$kog",
+            "moonshot",
+            "goofslandlore",
+            "$kog (koalas of goofsland)",
+            "moonshot vote",
+            "30x from entry",
+            "lore drop",
+            "trader call",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@0xzerocall",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "kog",
+            "$kog",
+            "moonshot",
+            "goofslandlore",
+            "$kog (koalas of goofsland)",
+            "moonshot vote",
+            "30x from entry",
+            "lore drop",
+            "trader call",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-06-25T21:22:42Z",
+      "event_id": "signal_f3e8bdb3735d",
+      "evidence": [],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/8ExMqkAWaDgqB5V4kS5s1yrLtwjoGQtRz6C2NuoZpump"
+      },
+      "lore": "koalasgoofsland dropping fresh lore posts while multiple sol callers track 30x from 50k to 1.6m mc on heavy vol and moonshot votes stacking",
+      "movement": {
+        "change_pct": 3760.2,
+        "detected_at": "2026-06-25T21:22:42Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-25T21:15:00Z",
+        "estimated_start_at": "2026-06-25T15:45:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 70,
+        "pool_address": "4YwwhDJwZHHvAZ33w1Syeh6qVThS7tpkzKDshsYwZvZ8",
+        "pool_name": "KOG / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-25T21:22:42Z",
+        "window_start_at": "2026-06-25T15:22:42Z"
+      },
+      "source_signal_id": "signal_f3e8bdb3735d",
+      "token": {
+        "address": "8ExMqkAWaDgqB5V4kS5s1yrLtwjoGQtRz6C2NuoZpump",
+        "chain_slug": "solana",
+        "symbol": "KOG"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@KoalasGoofsland",
+          "@libertysoltrade",
+          "@WorkWork1629",
+          "@0xzerocall"
+        ],
+        "catalysts": [
+          "lore_drop",
+          "trader_call",
+          "listing_vote"
+        ],
+        "keywords": [
+          "$KOG",
+          "moonshot",
+          "goofslandlore"
+        ],
+        "phrases": [
+          "$KOG (Koalas of Goofsland)",
+          "moonshot vote",
+          "30x from entry"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-24T14:22:45Z",
+  "updated_at": "2026-06-25T21:22:44Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -2276,15 +2435,15 @@
       "candidate_labels": {
         "approved_alpha_source": 8,
         "rejected_late_reaction": 21,
-        "rejected_no_tweet_evidence": 13,
+        "rejected_no_tweet_evidence": 17,
         "rejected_stale_pre_move": 3
       },
-      "candidate_rules": 45,
+      "candidate_rules": 49,
       "watch_accounts_approved": 8,
       "watch_accounts_pending": 0,
-      "watch_accounts_rejected": 36,
+      "watch_accounts_rejected": 40,
       "watch_accounts_unchanged": 0
     },
-    "updated_at": "2026-06-24T14:22:45Z"
+    "updated_at": "2026-06-25T21:22:44Z"
   }
 }

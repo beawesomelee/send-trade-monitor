@@ -99,6 +99,20 @@
   {
     "chain_slug": "base",
     "chain_id": 8453,
+    "address": "0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+    "symbol": "VVV",
+    "name": "Venice Token",
+    "market_cap_usd": 640018200,
+    "volume_24h_usd": 5082953,
+    "liquidity_usd": 2650932,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/a581d4cf10079a278196c97485dda06cf4fb77d539a94f8d986be6d1f2445ddc?width=800&height=800&quality=95&format=auto",
+    "pair_created_at_ms": 1737996283000,
+    "dexscreener_url": "https://dexscreener.com/base/0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+    "decimals": 18
+  },
+  {
+    "chain_slug": "base",
+    "chain_id": 8453,
     "address": "0x940181a94a35a4569e4529a3cdfb74e38fd98631",
     "symbol": "AERO",
     "name": "Aerodrome",

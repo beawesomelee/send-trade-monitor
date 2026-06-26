@@ -13,6 +13,7 @@ from typing import Iterator
 import requests
 
 from lib.discord import send_verified_x_watcher_hit, send_x_watcher_hit
+from lib.watcher_outcomes import OUTCOMES_FILE, record_watcher_outcome
 from lib.watcher_verify import verify_watcher_hit
 from lib.x_rules import XRulesError
 
@@ -64,6 +65,7 @@ def stream_watcher_posts(
     discord_dry_run: bool = False,
     raw_discord: bool = False,
     verify_hits: bool = True,
+    outcomes_path: Path = OUTCOMES_FILE,
 ) -> dict:
     """Read filtered-stream posts and persist unseen payloads."""
     state = _load_state(state_path)
@@ -113,14 +115,16 @@ def stream_watcher_posts(
                         verification = verify_watcher_hit(payload)
                         state["last_verification"] = verification
                         _save_state(state_path, state, recent_seen_ids)
-                    if discord and verification.get("verified"):
+                    if verification.get("verified"):
                         verified += 1
-                        send_verified_x_watcher_hit(
-                            payload,
-                            ingested_at,
-                            verification,
-                            dry_run=discord_dry_run,
-                        )
+                        record_watcher_outcome(payload, verification, ingested_at, path=outcomes_path)
+                        if discord:
+                            send_verified_x_watcher_hit(
+                                payload,
+                                ingested_at,
+                                verification,
+                                dry_run=discord_dry_run,
+                            )
                     elif verification:
                         unverified += 1
                     if raw_discord:

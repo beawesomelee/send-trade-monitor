@@ -41,7 +41,7 @@
       "value": "from:theultimator5 (wen OR $wen) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-26T16:22:33Z",
+  "rules_synced_at": "2026-06-26T17:18:00Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -810,7 +810,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-26T16:22:33Z",
+  "updated_at": "2026-06-26T17:18:00Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "approval_evidence_urls": [

@@ -32,6 +32,7 @@ def _run_stream(tmp_path, monkeypatch, payloads, **kwargs):
     tweets_path = tmp_path / "watcher_tweets.jsonl"
     state_path = tmp_path / "watcher_ingest_state.json"
     lock_path = tmp_path / "watcher_stream.lock"
+    kwargs.setdefault("outcomes_path", tmp_path / "watcher_outcomes.json")
     result = x_watcher.stream_watcher_posts(
         "token",
         tweets_path=tweets_path,
@@ -123,6 +124,48 @@ def test_verified_watcher_tweet_posts_discord_after_storage(tmp_path, monkeypatc
     assert "https://x.com/alice/status/100" in content
     assert tweets_path.exists()
     assert json.loads(state_path.read_text())["last_seen_tweet_id"] == "100"
+    outcome = json.loads((tmp_path / "watcher_outcomes.json").read_text())["outcomes"][0]
+    assert outcome["tweet_id"] == "100"
+    assert outcome["account"] == "@alice"
+    assert outcome["token"]["symbol"] == "ALPHA"
+    assert outcome["market_at_ingest"]["price_change_h1_pct"] == 25.0
+
+
+def test_verified_watcher_tweet_records_outcome_without_discord(tmp_path, monkeypatch):
+    monkeypatch.setattr(
+        x_watcher,
+        "verify_watcher_hit",
+        lambda payload: {
+            "verified": True,
+            "reason": "verified_price_movement",
+            "direction": "pump",
+            "market": {
+                "symbol": "ALPHA",
+                "address": "0x1",
+                "chain_slug": "base",
+                "price_change_h1_pct": 25,
+                "price_change_h6_pct": 40,
+                "liquidity_usd": 1_500_000,
+                "market_cap_usd": 25_000_000,
+                "volume_24h_usd": 2_000_000,
+                "dexscreener_url": "https://dexscreener.com/base/0x1",
+            },
+        },
+    )
+
+    result, _tweets_path, _state_path = _run_stream(
+        tmp_path,
+        monkeypatch,
+        [_payload("101", text="$ALPHA up 25%")],
+        discord=False,
+        max_posts=1,
+    )
+
+    assert result["verified"] == 1
+    outcome = json.loads((tmp_path / "watcher_outcomes.json").read_text())["outcomes"][0]
+    assert outcome["tweet_id"] == "101"
+    assert outcome["token"]["address"] == "0x1"
+    assert outcome["market_at_ingest"]["liquidity_usd"] == 1_500_000.0
 
 
 def test_duplicate_tweet_id_is_stored_and_posted_only_once(tmp_path, monkeypatch):

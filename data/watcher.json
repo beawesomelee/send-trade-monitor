@@ -1,11 +1,6 @@
 {
   "rules": [
     {
-      "id": "2070690604476989441",
-      "tag": "send_watcher:official:velvet_capital",
-      "value": "from:velvet_capital -is:retweet"
-    },
-    {
       "id": "2070690604476989442",
       "tag": "send_watcher:community:0xalwaysonchain",
       "value": "from:0xalwaysonchain (opengradient) -is:retweet"
@@ -39,9 +34,24 @@
       "id": "2070690604476989448",
       "tag": "send_watcher:community:techgaged_news",
       "value": "from:techgaged_news (gtavi OR $gtavi OR \"gta vi\" OR \"rockstar released the gta vi site\") -is:retweet"
+    },
+    {
+      "id": "2070697252675362816",
+      "tag": "send_watcher:official:1",
+      "value": "(from:0xzerebro OR from:_proxystudio OR from:aeonframework OR from:aerodromefi OR from:anichessgame OR from:asksurplus OR from:askvenice OR from:atlasorafi OR from:austen OR from:avantisfi OR from:b3dotfun OR from:backpack OR from:bankrbot OR from:basedbrett OR from:blackbull_sol OR from:bonk_inu OR from:burniesendersx OR from:buttcoin OR from:c0mputeai OR from:caspius_ai OR from:centrifuge OR from:chillguycto OR from:citrea_xyz OR from:clashofcoins OR from:collector_crypt OR from:dassetsol OR from:dcaibydynachain OR from:degentokenbase OR from:derivexyz OR from:dickbuttcto OR from:dogeogcreator OR from:doginme OR from:dogwifcoin OR from:dphnai OR from:falkordb OR from:fartcoinofsol OR from:fragsonsol OR from:gettrumpmemes OR from:gigachad OR from:gitbank_io OR from:gitlawb OR from:goblinspl OR from:hermesworldai OR from:hivraos OR from:horizenglobal OR from:hydrexfi) -is:retweet"
+    },
+    {
+      "id": "2070697252675362817",
+      "tag": "send_watcher:official:2",
+      "value": "(from:iamspcxmeme OR from:icnt_onbase OR from:internspc69x OR from:jantomasekdev OR from:jatevoid OR from:jellyvideochats OR from:joinsapien OR from:jotchuathememe OR from:jupiterexchange OR from:katch_live OR from:keetanetwork OR from:lienfiapp OR from:manifestingxs OR from:metacade_ OR from:miroshark_ OR from:morpho OR from:mrdn_finance OR from:mrmigglesonbase OR from:mumu_bull OR from:neet_sol OR from:nestusd OR from:nockchain OR from:nookplot OR from:openhumanbase OR from:openservai OR from:openvpp OR from:orca_so OR from:parqxchange OR from:peptai_ OR from:percolatortrade OR from:pitch_erc OR from:playfarmtown OR from:playkintara OR from:popcatworld OR from:powergacha_sol OR from:pudgypenguins OR from:pumpfun OR from:quillcomputer OR from:raydiumprotocol OR from:rei_labs OR from:reppo OR from:researchhub OR from:rkccoin OR from:rollxfi OR from:root_edge) -is:retweet"
+    },
+    {
+      "id": "2070697252675362818",
+      "tag": "send_watcher:official:3",
+      "value": "(from:sedaprotocol OR from:solana OR from:solangelestv OR from:spark_coded OR from:sportfun OR from:spx6900 OR from:superformxyz OR from:thepippinco OR from:theuselesscoin OR from:thsleepinggiant OR from:toescoinsol OR from:toshi OR from:tripletsol OR from:troll_ OR from:trylimitless OR from:trythreews OR from:veildotcash OR from:velvet_capital OR from:virtuals_io OR from:winningson_ OR from:woclaudecraft OR from:worldcuponpump OR from:xmaquina OR from:zora) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-27T02:22:29Z",
+  "rules_synced_at": "2026-06-27T03:22:27Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -810,7 +820,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-27T02:33:35Z",
+  "updated_at": "2026-06-27T03:22:27Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "account_type": "community_account",

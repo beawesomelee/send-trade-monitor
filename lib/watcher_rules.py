@@ -26,6 +26,7 @@ def build_desired_rules(state: dict, max_rule_chars: int = MAX_RULE_CHARS) -> li
         return []
 
     rules = []
+    official_handles = []
     for account, config in sorted(watch_accounts.items()):
         if not isinstance(config, dict) or config.get("status") != "approved":
             continue
@@ -35,10 +36,7 @@ def build_desired_rules(state: dict, max_rule_chars: int = MAX_RULE_CHARS) -> li
             continue
 
         if _account_type(config) == "official_token_account":
-            rules.append({
-                "value": _official_rule_value(handle),
-                "tag": f"send_watcher:official:{handle}",
-            })
+            official_handles.append(handle)
             continue
 
         terms = _clean_terms(config.get("terms") or [])
@@ -53,6 +51,12 @@ def build_desired_rules(state: dict, max_rule_chars: int = MAX_RULE_CHARS) -> li
                 "tag": f"send_watcher:community:{handle}{suffix}",
             })
 
+    for idx, chunk in enumerate(_chunk_official_handles(official_handles, max_rule_chars=max_rule_chars), start=1):
+        rules.append({
+            "value": _official_rule_value(chunk),
+            "tag": f"send_watcher:official:{idx}",
+        })
+
     return rules
 
 
@@ -63,7 +67,8 @@ def official_token_for_payload(payload: dict, state: dict | None = None) -> dict
     if not isinstance(watch_accounts, dict):
         return None
 
-    for handle in _matched_rule_handles(payload):
+    handles = _payload_author_handles(payload) + _matched_rule_handles(payload)
+    for handle in handles:
         config = watch_accounts.get(f"@{handle}") or watch_accounts.get(handle)
         if not isinstance(config, dict):
             continue
@@ -99,8 +104,23 @@ def _chunk_terms(handle: str, terms: list[str], max_rule_chars: int) -> list[lis
     return chunks
 
 
-def _official_rule_value(handle: str) -> str:
-    return f"from:{handle} -is:retweet"
+def _chunk_official_handles(handles: list[str], max_rule_chars: int) -> list[list[str]]:
+    chunks = []
+    current = []
+    for handle in sorted(_dedupe(handles)):
+        candidate = current + [handle]
+        if current and len(_official_rule_value(candidate)) > max_rule_chars:
+            chunks.append(current)
+            current = [handle]
+        else:
+            current = candidate
+    if current:
+        chunks.append(current)
+    return chunks
+
+
+def _official_rule_value(handles: list[str]) -> str:
+    return f"({' OR '.join(f'from:{handle}' for handle in handles)}) -is:retweet"
 
 
 def _community_rule_value(handle: str, terms: list[str]) -> str:
@@ -135,6 +155,18 @@ def _clean_terms(values) -> list[str]:
     return out
 
 
+def _dedupe(values: list[str]) -> list[str]:
+    out = []
+    seen = set()
+    for value in values:
+        key = str(value or "").strip().lower()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        out.append(value)
+    return out
+
+
 def _account_type(config: dict) -> str:
     raw = str(config.get("account_type") or "").strip().lower()
     if raw == "official_token_account":
@@ -165,4 +197,21 @@ def _matched_rule_handles(payload: dict) -> list[str]:
         clean = _handle_for_rule(handle)
         if clean and clean not in handles:
             handles.append(clean)
+    return handles
+
+
+def _payload_author_handles(payload: dict) -> list[str]:
+    data = payload.get("data") if isinstance(payload.get("data"), dict) else {}
+    author_id = str(data.get("author_id") or "")
+    includes = payload.get("includes") if isinstance(payload.get("includes"), dict) else {}
+    users = includes.get("users") if isinstance(includes.get("users"), list) else []
+    handles = []
+    for user in users:
+        if not isinstance(user, dict):
+            continue
+        if author_id and str(user.get("id") or "") != author_id:
+            continue
+        handle = _handle_for_rule(user.get("username"))
+        if handle and handle not in handles:
+            handles.append(handle)
     return handles

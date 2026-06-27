@@ -810,7 +810,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-27T02:22:29Z",
+  "updated_at": "2026-06-27T02:33:35Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "account_type": "community_account",
@@ -833,6 +833,24 @@
         "opengradient"
       ],
       "updated_at": "2026-06-14T23:22:37Z"
+    },
+    "@0xzerebro": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "zerebro",
+        "$zerebro"
+      ],
+      "token": {
+        "address": "8x5VqbHA8D7NkD52uNuS5nnt3PwA8pLD34ymskeSo2Wn",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/8x5VqbHA8D7NkD52uNuS5nnt3PwA8pLD34ymskeSo2Wn",
+        "name": "zerebro",
+        "symbol": "ZEREBRO"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@0xzerocall": {
       "account_type": "community_account",
@@ -862,6 +880,60 @@
         "listing vote"
       ],
       "updated_at": "2026-06-25T21:22:42Z"
+    },
+    "@_proxystudio": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "liq",
+        "$liq"
+      ],
+      "token": {
+        "address": "0x09b8903abf2ea0721e34427353988c2f43c6d64f",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x09b8903abf2ea0721e34427353988c2f43c6d64f",
+        "name": "LIQUID",
+        "symbol": "LIQ"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@aeonframework": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "aeon",
+        "$aeon"
+      ],
+      "token": {
+        "address": "0xbf8e8f0e8866a7052f948c16508644347c57aba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xbf8e8f0e8866a7052f948c16508644347c57aba3",
+        "name": "aeon",
+        "symbol": "aeon"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@aerodromefi": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "aero",
+        "$aero"
+      ],
+      "token": {
+        "address": "0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x940181a94a35a4569e4529a3cdfb74e38fd98631",
+        "name": "Aerodrome",
+        "symbol": "AERO"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@aixbt_agent": {
       "account_type": "community_account",
@@ -894,6 +966,24 @@
       ],
       "updated_at": "2026-06-14T23:22:37Z"
     },
+    "@anichessgame": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "check",
+        "$check"
+      ],
+      "token": {
+        "address": "0x9126236476efba9ad8ab77855c60eb5bf37586eb",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x9126236476efba9ad8ab77855c60eb5bf37586eb",
+        "name": "Checkmate",
+        "symbol": "CHECK"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@ashilla_kiponk": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -924,6 +1014,168 @@
         "team update"
       ],
       "updated_at": "2026-06-23T19:22:44Z"
+    },
+    "@asksurplus": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "surplus",
+        "$surplus"
+      ],
+      "token": {
+        "address": "0xc52aedec3374422d7510e294cfaa90799595cba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xc52aedec3374422d7510e294cfaa90799595cba3",
+        "name": "Surplus Intelligence",
+        "symbol": "Surplus"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@askvenice": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "vvv",
+        "$vvv"
+      ],
+      "token": {
+        "address": "0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+        "name": "Venice Token",
+        "symbol": "VVV"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@atlasorafi": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "aora",
+        "$aora"
+      ],
+      "token": {
+        "address": "0x6e84030fa86ebf585e3e18fe557e5612f7e93bff",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x6e84030fa86ebf585e3e18fe557e5612f7e93bff",
+        "name": "AtlasOra",
+        "symbol": "AORA"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@austen": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "kellyclaude",
+        "$kellyclaude"
+      ],
+      "token": {
+        "address": "0x50d2280441372486beecdd328c1854743ebacb07",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x50d2280441372486beecdd328c1854743ebacb07",
+        "name": "KellyClaude",
+        "symbol": "KellyClaude"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@avantisfi": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "avnt",
+        "$avnt"
+      ],
+      "token": {
+        "address": "0x696f9436b67233384889472cd7cd58a6fb5df4f1",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x696f9436b67233384889472cd7cd58a6fb5df4f1",
+        "name": "Avantis",
+        "symbol": "AVNT"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@b3dotfun": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "b3",
+        "$b3"
+      ],
+      "token": {
+        "address": "0xb3b32f9f8827d4634fe7d973fa1034ec9fddb3b3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xb3b32f9f8827d4634fe7d973fa1034ec9fddb3b3",
+        "name": "B3",
+        "symbol": "B3"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@backpack": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "bp",
+        "$bp"
+      ],
+      "token": {
+        "address": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+        "name": "Backpack",
+        "symbol": "BP"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@bankrbot": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "bnkr",
+        "$bnkr"
+      ],
+      "token": {
+        "address": "0x22af33fe49fd1fa80c7149773dde5890d3c76f3b",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x22af33fe49fd1fa80c7149773dde5890d3c76f3b",
+        "name": "BankrCoin",
+        "symbol": "BNKR"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@basedbrett": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "brett",
+        "$brett"
+      ],
+      "token": {
+        "address": "0x532f27101965dd16442e59d40670faf5ebb142e4",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x532f27101965dd16442e59d40670faf5ebb142e4",
+        "name": "Brett",
+        "symbol": "BRETT"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@basegemsllc": {
       "account_type": "community_account",
@@ -1015,6 +1267,24 @@
       ],
       "updated_at": "2026-06-16T20:22:46Z"
     },
+    "@blackbull_sol": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "ansem",
+        "$ansem"
+      ],
+      "token": {
+        "address": "6KDh3wLSZMg37nnU7prtKZr7Rut7WQGSf33Vp1G7pump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/6KDh3wLSZMg37nnU7prtKZr7Rut7WQGSf33Vp1G7pump",
+        "name": "The Black Bull",
+        "symbol": "ANSEM"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@boggyagent": {
       "account_type": "community_account",
       "approval_evidence_urls": [],
@@ -1042,6 +1312,24 @@
         "narrative rotation"
       ],
       "updated_at": "2026-06-10T23:59:29Z"
+    },
+    "@bonk_inu": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "bonk",
+        "$bonk"
+      ],
+      "token": {
+        "address": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+        "name": "Bonk",
+        "symbol": "BONK"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@bronxethi": {
       "account_type": "community_account",
@@ -1075,6 +1363,96 @@
         "vote activity"
       ],
       "updated_at": "2026-06-14T23:22:37Z"
+    },
+    "@burniesendersx": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "burnie",
+        "$burnie"
+      ],
+      "token": {
+        "address": "CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/CGEDT9QZDvvH5GmVkWJH2BXiMJqMJySC9ihWyr7Spump",
+        "name": "Burnie Senders",
+        "symbol": "BURNIE"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@buttcoin": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "buttcoin",
+        "$buttcoin"
+      ],
+      "token": {
+        "address": "Cm6fNnMk7NfzStP9CZpsQA2v3jjzbcYGAxdJySmHpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/Cm6fNnMk7NfzStP9CZpsQA2v3jjzbcYGAxdJySmHpump",
+        "name": "Buttcoin",
+        "symbol": "Buttcoin"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@c0mputeai": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "zero",
+        "$zero"
+      ],
+      "token": {
+        "address": "EmcxFTNVDqyLHp11NvwvLZ4D7LKGbG9i7B8RF7dwpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/EmcxFTNVDqyLHp11NvwvLZ4D7LKGbG9i7B8RF7dwpump",
+        "name": "c0mpute",
+        "symbol": "ZERO"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@caspius_ai": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "cas",
+        "$cas"
+      ],
+      "token": {
+        "address": "0xf1070fd43cd11af8da18ff4edfb1a18279cd6f67",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xf1070fd43cd11af8da18ff4edfb1a18279cd6f67",
+        "name": "Caspius",
+        "symbol": "CAS"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@centrifuge": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "despxa",
+        "$despxa"
+      ],
+      "token": {
+        "address": "0x9c5c365e764829876243d0b289733b9d2b729685",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x9c5c365e764829876243d0b289733b9d2b729685",
+        "name": "DeFi Janus Henderson Anemoy S&P500\u00ae Fund Token",
+        "symbol": "deSPXA"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@cexscan": {
       "account_type": "community_account",
@@ -1134,6 +1512,24 @@
       ],
       "updated_at": "2026-06-10T23:59:29Z"
     },
+    "@chillguycto": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "chillguy",
+        "$chillguy"
+      ],
+      "token": {
+        "address": "Df6yfrKC8kZE3KNkrHERKzAetSxbrWeniQfyJY4Jpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/Df6yfrKC8kZE3KNkrHERKzAetSxbrWeniQfyJY4Jpump",
+        "name": "Just a chill guy",
+        "symbol": "CHILLGUY"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@chuchuswag1": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -1163,6 +1559,60 @@
         "scam flag"
       ],
       "updated_at": "2026-06-20T18:22:45Z"
+    },
+    "@citrea_xyz": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "ctr",
+        "$ctr"
+      ],
+      "token": {
+        "address": "0x11030f79109269d796fd0fb956d6244e502757f7",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x11030f79109269d796fd0fb956d6244e502757f7",
+        "name": "CTR",
+        "symbol": "CTR"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@clashofcoins": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "owb",
+        "$owb"
+      ],
+      "token": {
+        "address": "0xef5997c2cf2f6c138196f8a6203afc335206b3c1",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xef5997c2cf2f6c138196f8a6203afc335206b3c1",
+        "name": "OWB",
+        "symbol": "OWB"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@collector_crypt": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "cards",
+        "$cards"
+      ],
+      "token": {
+        "address": "CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp",
+        "name": "Collector Crypt",
+        "symbol": "CARDS"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@cryptohawk19": {
       "account_type": "community_account",
@@ -1257,6 +1707,42 @@
       ],
       "updated_at": "2026-06-16T20:22:46Z"
     },
+    "@dassetsol": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "sv151",
+        "$sv151"
+      ],
+      "token": {
+        "address": "SV151D5pjygAKA8aJJcKzm4wFnRX5G92Fye94jQJk7g",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/SV151D5pjygAKA8aJJcKzm4wFnRX5G92Fye94jQJk7g",
+        "name": "Scarlet & Violet 151",
+        "symbol": "SV151"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@dcaibydynachain": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "dcai",
+        "$dcai"
+      ],
+      "token": {
+        "address": "0xb8147ce9b0dac5f8165785dec6494e57748e4b78",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xb8147ce9b0dac5f8165785dec6494e57748e4b78",
+        "name": "DCAI",
+        "symbol": "DCAI"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@de_okwutex": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -1335,6 +1821,24 @@
       ],
       "updated_at": "2026-06-10T19:22:46Z"
     },
+    "@degentokenbase": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "degen",
+        "$degen"
+      ],
+      "token": {
+        "address": "0x4ed4e862860bed51a9570b96d89af5e1b0efefed",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x4ed4e862860bed51a9570b96d89af5e1b0efefed",
+        "name": "Degen",
+        "symbol": "DEGEN"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@deluquant": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -1357,6 +1861,24 @@
         "velvet leading"
       ],
       "updated_at": "2026-06-10T23:59:29Z"
+    },
+    "@derivexyz": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "drv",
+        "$drv"
+      ],
+      "token": {
+        "address": "0x9d0e8f5b25384c7310cb8c6ae32c8fbeb645d083",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x9d0e8f5b25384c7310cb8c6ae32c8fbeb645d083",
+        "name": "Derive",
+        "symbol": "DRV"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@devs_hunter": {
       "account_type": "community_account",
@@ -1417,6 +1939,96 @@
       ],
       "updated_at": "2026-06-19T10:22:40Z"
     },
+    "@dickbuttcto": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "dickbutt",
+        "$dickbutt"
+      ],
+      "token": {
+        "address": "0x2d57c47bc5d2432feeedf2c9150162a9862d3ccf",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x2d57c47bc5d2432feeedf2c9150162a9862d3ccf",
+        "name": "Dickbutt",
+        "symbol": "DICKBUTT"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@dogeogcreator": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "ogdoge",
+        "$ogdoge"
+      ],
+      "token": {
+        "address": "utLyQQCPvjuCc6zeaXdsFeEC3JNdxKS3vxaZWoGdoge",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/utLyQQCPvjuCc6zeaXdsFeEC3JNdxKS3vxaZWoGdoge",
+        "name": "The Original Doge",
+        "symbol": "OGDOGE"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@doginme": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "doginme",
+        "$doginme"
+      ],
+      "token": {
+        "address": "0x6921b130d297cc43754afba22e5eac0fbf8db75b",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x6921b130d297cc43754afba22e5eac0fbf8db75b",
+        "name": "doginme",
+        "symbol": "doginme"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@dogwifcoin": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "wif",
+        "$wif"
+      ],
+      "token": {
+        "address": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "name": "dogwifhat",
+        "symbol": "WIF"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@dphnai": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "pod",
+        "$pod"
+      ],
+      "token": {
+        "address": "0xed664536023d8e4b1640c394777d34abaff1df8f",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xed664536023d8e4b1640c394777d34abaff1df8f",
+        "name": "Dolphin",
+        "symbol": "POD"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@elliotscrypto": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -1473,6 +2085,42 @@
       ],
       "updated_at": "2026-06-11T19:22:41Z"
     },
+    "@falkordb": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "flkr",
+        "$flkr"
+      ],
+      "token": {
+        "address": "C1mg2ddme7Hpwjmxngr1AfrwRSmLqL1CVHPzUmapEory",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/C1mg2ddme7Hpwjmxngr1AfrwRSmLqL1CVHPzUmapEory",
+        "name": "FalkorDB",
+        "symbol": "FLKR"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@fartcoinofsol": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "fartcoin",
+        "$fartcoin"
+      ],
+      "token": {
+        "address": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "name": "Fartcoin",
+        "symbol": "FARTCOIN"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@ffac6f3abd1e440": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -1502,6 +2150,60 @@
         "scam flag"
       ],
       "updated_at": "2026-06-20T18:22:45Z"
+    },
+    "@fragsonsol": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "frag",
+        "$frag"
+      ],
+      "token": {
+        "address": "J4Y92jy5Lr9ho1aV41bhguytnzBbsPhZJahmaVszpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/J4Y92jy5Lr9ho1aV41bhguytnzBbsPhZJahmaVszpump",
+        "name": "frags.fun Game",
+        "symbol": "FRAG"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@gettrumpmemes": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "trump",
+        "$trump"
+      ],
+      "token": {
+        "address": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+        "name": "Official Trump",
+        "symbol": "TRUMP"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@gigachad": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "giga",
+        "$giga"
+      ],
+      "token": {
+        "address": "63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9",
+        "name": "Gigachad",
+        "symbol": "GIGA"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@girls_devsol": {
       "account_type": "community_account",
@@ -1534,6 +2236,60 @@
       ],
       "updated_at": "2026-06-23T19:22:44Z"
     },
+    "@gitbank_io": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "gitbank",
+        "$gitbank"
+      ],
+      "token": {
+        "address": "0xc21dd0ee043930711c2a3e55f39c7d3144d09b07",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xc21dd0ee043930711c2a3e55f39c7d3144d09b07",
+        "name": "Gitbank",
+        "symbol": "GITBANK"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@gitlawb": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "gitlawb",
+        "$gitlawb"
+      ],
+      "token": {
+        "address": "0x5f980dcfc4c0fa3911554cf5ab288ed0eb13dba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x5f980dcfc4c0fa3911554cf5ab288ed0eb13dba3",
+        "name": "gitlawb",
+        "symbol": "GITLAWB"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@goblinspl": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "goblin",
+        "$goblin"
+      ],
+      "token": {
+        "address": "3KHMZhpthXuiCcgfTv7vVu9PpEz64KAEURFwi6Lopump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/3KHMZhpthXuiCcgfTv7vVu9PpEz64KAEURFwi6Lopump",
+        "name": "GoblinCoin",
+        "symbol": "GOBLIN"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@hailey_cryptoo": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -1559,8 +2315,206 @@
       ],
       "updated_at": "2026-06-19T10:22:40Z"
     },
+    "@hermesworldai": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "hermesworld",
+        "$hermesworld"
+      ],
+      "token": {
+        "address": "2YF1qxgYVY9x6UWVfampZp9er7PHXRYRDKi3isFnYhH9",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/2YF1qxgYVY9x6UWVfampZp9er7PHXRYRDKi3isFnYhH9",
+        "name": "HermesWorld",
+        "symbol": "HermesWorld"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@hivraos": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "hermesos",
+        "$hermesos"
+      ],
+      "token": {
+        "address": "0x95ccfd2b81a9667b0cc979992632f98fc853eba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x95ccfd2b81a9667b0cc979992632f98fc853eba3",
+        "name": "Hermes OS",
+        "symbol": "HermesOS"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@horizenglobal": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "zen",
+        "$zen"
+      ],
+      "token": {
+        "address": "0xf43eb8de897fbc7f2502483b2bef7bb9ea179229",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xf43eb8de897fbc7f2502483b2bef7bb9ea179229",
+        "name": "Horizen",
+        "symbol": "ZEN"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@hydrexfi": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "hydx",
+        "$hydx"
+      ],
+      "token": {
+        "address": "0x00000e7efa313f4e11bfff432471ed9423ac6b30",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x00000e7efa313f4e11bfff432471ed9423ac6b30",
+        "name": "Hydrex",
+        "symbol": "HYDX"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@iamspcxmeme": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "spcx",
+        "$spcx"
+      ],
+      "token": {
+        "address": "E6ifp2mJy8cYQehUGUtFvrXriRKxRuonLmrvTFypump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/E6ifp2mJy8cYQehUGUtFvrXriRKxRuonLmrvTFypump",
+        "name": "SpaceX",
+        "symbol": "SPCX"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@icnt_onbase": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "icnt",
+        "$icnt"
+      ],
+      "token": {
+        "address": "0xe0cd4cacddcbf4f36e845407ce53e87717b6601d",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xe0cd4cacddcbf4f36e845407ce53e87717b6601d",
+        "name": "Impossible Cloud Network Token",
+        "symbol": "ICNT"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@internspc69x": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "spcx69",
+        "$spcx69"
+      ],
+      "token": {
+        "address": "SPCXwBHVrKpRqMRawL3NNvt1sXP2Yf3edwRbta53N69",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/SPCXwBHVrKpRqMRawL3NNvt1sXP2Yf3edwRbta53N69",
+        "name": "SPCX69",
+        "symbol": "SPCX69"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@jantomasekdev": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "a0t",
+        "$a0t"
+      ],
+      "token": {
+        "address": "0xcc4adb618253ed0d4d8a188fb901d70c54735e03",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xcc4adb618253ed0d4d8a188fb901d70c54735e03",
+        "name": "Agent Zero Token",
+        "symbol": "A0T"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@jatevoid": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "jtvo",
+        "$jtvo"
+      ],
+      "token": {
+        "address": "9VY2rDbtsBmTsBxoRF8hWSEUKGqnoQoe9V6W3JnjNgfm",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/9VY2rDbtsBmTsBxoRF8hWSEUKGqnoQoe9V6W3JnjNgfm",
+        "name": "Jatevo",
+        "symbol": "JTVO"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@jellyvideochats": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "jellyjelly",
+        "$jellyjelly"
+      ],
+      "token": {
+        "address": "FeR8VBqNRSUD5NtXAj2n3j1dAHkZHfyDktKuLXD4pump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/FeR8VBqNRSUD5NtXAj2n3j1dAHkZHfyDktKuLXD4pump",
+        "name": "jelly-my-jelly",
+        "symbol": "jellyjelly"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@joinsapien": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "sapien",
+        "$sapien"
+      ],
+      "token": {
+        "address": "0xc729777d0470f30612b1564fd96e8dd26f5814e3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xc729777d0470f30612b1564fd96e8dd26f5814e3",
+        "name": "Sapien",
+        "symbol": "SAPIEN"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@jotchuathememe": {
-      "account_type": "community_account",
+      "account_type": "official_token_account",
       "approval_evidence_urls": [
         "https://x.com/JotchuaTheMeme/status/2064447789581680791"
       ],
@@ -1571,24 +2525,25 @@
       ],
       "approval_updated_at": "2026-06-25T21:22:44Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
-      "rule_mode": "account_plus_terms",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
       "source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "status": "rejected",
+      "status": "approved",
       "terms": [
         "jotchua",
-        "$jotchua",
-        "jotchuans",
-        "moonshot",
-        "jotchuans reporting for duty",
-        "moonshot spotlight",
-        "killing it fr",
-        "kol post",
-        "moonshot vote",
-        "community meme"
+        "$jotchua"
       ],
-      "updated_at": "2026-06-09T22:09:57Z"
+      "token": {
+        "address": "BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump",
+        "name": "Jotchua",
+        "symbol": "Jotchua"
+      },
+      "updated_at": "2026-06-09T22:09:57Z",
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@juliuselum": {
       "account_type": "community_account",
@@ -1619,6 +2574,60 @@
         "narrative rotation"
       ],
       "updated_at": "2026-06-10T23:59:29Z"
+    },
+    "@jupiterexchange": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "jup",
+        "$jup"
+      ],
+      "token": {
+        "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+        "name": "Jupiter",
+        "symbol": "JUP"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@katch_live": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "katch",
+        "$katch"
+      ],
+      "token": {
+        "address": "0xd570281a7595faa936acf7aa3e3eaae7f476eba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xd570281a7595faa936acf7aa3e3eaae7f476eba3",
+        "name": "Katch live",
+        "symbol": "Katch"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@keetanetwork": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "kta",
+        "$kta"
+      ],
+      "token": {
+        "address": "0xc0634090f2fe6c6d75e61be2b949464abb498973",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xc0634090f2fe6c6d75e61be2b949464abb498973",
+        "name": "Keeta",
+        "symbol": "KTA"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@koalasgoofsland": {
       "account_type": "community_account",
@@ -1678,6 +2687,42 @@
       ],
       "updated_at": "2026-06-25T21:22:42Z"
     },
+    "@lienfiapp": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "lfi",
+        "$lfi"
+      ],
+      "token": {
+        "address": "0x3722264ab15a1dfce5a5af89e6547f7949a8aba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x3722264ab15a1dfce5a5af89e6547f7949a8aba3",
+        "name": "LienFi",
+        "symbol": "LFI"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@manifestingxs": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "manifest",
+        "$manifest"
+      ],
+      "token": {
+        "address": "BCdwQBAn8dYB5YjTsoB6TdHAWokxv28k2oZUodERpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/BCdwQBAn8dYB5YjTsoB6TdHAWokxv28k2oZUodERpump",
+        "name": "Manifesting",
+        "symbol": "MANIFEST"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@marvellousdefi": {
       "account_type": "community_account",
       "approval_evidence_urls": [],
@@ -1708,6 +2753,150 @@
         "narrative"
       ],
       "updated_at": "2026-06-11T19:22:41Z"
+    },
+    "@metacade_": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "mcade",
+        "$mcade"
+      ],
+      "token": {
+        "address": "0xc48823ec67720a04a9dfd8c7d109b2c3d6622094",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xc48823ec67720a04a9dfd8c7d109b2c3d6622094",
+        "name": "Metacade",
+        "symbol": "MCADE"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@miroshark_": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "miroshark",
+        "$miroshark"
+      ],
+      "token": {
+        "address": "0xd7bc6a05a56655fb2052f742b012d1dfd66e1ba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xd7bc6a05a56655fb2052f742b012d1dfd66e1ba3",
+        "name": "MiroShark",
+        "symbol": "MiroShark"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@morpho": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "morpho",
+        "$morpho"
+      ],
+      "token": {
+        "address": "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842",
+        "name": "Morpho Token",
+        "symbol": "MORPHO"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@mrdn_finance": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "mrdn",
+        "$mrdn"
+      ],
+      "token": {
+        "address": "0xe57e601c06689d3e2bf7db7bebb14b4ff28400c6",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xe57e601c06689d3e2bf7db7bebb14b4ff28400c6",
+        "name": "Meridian",
+        "symbol": "MRDN"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@mrmigglesonbase": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "miggles",
+        "$miggles"
+      ],
+      "token": {
+        "address": "0xb1a03eda10342529bbf8eb700a06c60441fef25d",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xb1a03eda10342529bbf8eb700a06c60441fef25d",
+        "name": "Mister Miggles",
+        "symbol": "MIGGLES"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@mumu_bull": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "mumu",
+        "$mumu"
+      ],
+      "token": {
+        "address": "hf34pZHnV4entu9bdp4pFEmeKpivEUeSUhASgWopump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/hf34pZHnV4entu9bdp4pFEmeKpivEUeSUhASgWopump",
+        "name": "Mumu the Bull",
+        "symbol": "MUMU"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@neet_sol": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "neet",
+        "$neet"
+      ],
+      "token": {
+        "address": "Ce2gx9KGXJ6C9Mp5b5x1sn9Mg87JwEbrQby4Zqo3pump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/Ce2gx9KGXJ6C9Mp5b5x1sn9Mg87JwEbrQby4Zqo3pump",
+        "name": "NotInEmploymentEducationTraining",
+        "symbol": "NEET"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@nestusd": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "nest",
+        "$nest"
+      ],
+      "token": {
+        "address": "68Nq68CrtLVpyvK5Un7UADiNczaGf39hBbj3diRsYj6D",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/68Nq68CrtLVpyvK5Un7UADiNczaGf39hBbj3diRsYj6D",
+        "name": "Nest",
+        "symbol": "NEST"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@nextbigtrade": {
       "account_type": "community_account",
@@ -1740,6 +2929,42 @@
         "short squeeze"
       ],
       "updated_at": "2026-06-24T14:22:43Z"
+    },
+    "@nockchain": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "nock",
+        "$nock"
+      ],
+      "token": {
+        "address": "0x9b5e262cf9bb04869ab40b19af91d2dc85761722",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x9b5e262cf9bb04869ab40b19af91d2dc85761722",
+        "name": "Nockchain",
+        "symbol": "NOCK"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@nookplot": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "nook",
+        "$nook"
+      ],
+      "token": {
+        "address": "0xb233bdffd437e60fa451f62c6c09d3804d285ba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xb233bdffd437e60fa451f62c6c09d3804d285ba3",
+        "name": "nookplot",
+        "symbol": "NOOK"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@nova_trade1": {
       "account_type": "community_account",
@@ -1799,6 +3024,132 @@
       ],
       "updated_at": "2026-06-09T22:09:57Z"
     },
+    "@openhumanbase": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "openhuman",
+        "$openhuman"
+      ],
+      "token": {
+        "address": "0x38298138dd4389013962d8492feaa5879408dba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x38298138dd4389013962d8492feaa5879408dba3",
+        "name": "openhuman",
+        "symbol": "openhuman"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@openservai": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "serv",
+        "$serv"
+      ],
+      "token": {
+        "address": "0x5576d6ed9181f2225aff5282ac0ed29f755437ea",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x5576d6ed9181f2225aff5282ac0ed29f755437ea",
+        "name": "OpenServ",
+        "symbol": "SERV"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@openvpp": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "ovpp",
+        "$ovpp"
+      ],
+      "token": {
+        "address": "0x8c0d3adcf8ce094e1ae437557ec90a6374dc9bdd",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x8c0d3adcf8ce094e1ae437557ec90a6374dc9bdd",
+        "name": "OpenVPP",
+        "symbol": "OVPP"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@orca_so": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "orca",
+        "$orca"
+      ],
+      "token": {
+        "address": "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
+        "name": "Orca",
+        "symbol": "ORCA"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@parqxchange": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "parq",
+        "$parq"
+      ],
+      "token": {
+        "address": "VtwGKv7dcpY7aFb8H7MvZfEtUAKwtsHcXSkejCAparq",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/VtwGKv7dcpY7aFb8H7MvZfEtUAKwtsHcXSkejCAparq",
+        "name": "Parquet",
+        "symbol": "PARQ"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@peptai_": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "peptai",
+        "$peptai"
+      ],
+      "token": {
+        "address": "0x54f16bd3996169914c84dbb2a16635100cf48a0a",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x54f16bd3996169914c84dbb2a16635100cf48a0a",
+        "name": "Peptai",
+        "symbol": "PEPTAI"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@percolatortrade": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "percolator",
+        "$percolator"
+      ],
+      "token": {
+        "address": "8PzFWyLpCVEmbZmVJcaRTU5r69XKJx1rd7YGpWvnpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/8PzFWyLpCVEmbZmVJcaRTU5r69XKJx1rd7YGpWvnpump",
+        "name": "Percolator",
+        "symbol": "Percolator"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@pevolutionsol": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -1828,6 +3179,276 @@
         "scam flag"
       ],
       "updated_at": "2026-06-20T18:22:45Z"
+    },
+    "@pitch_erc": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "pitch",
+        "$pitch"
+      ],
+      "token": {
+        "address": "0xeae13ea73bec936664a51734c8c01ec7c3b0699c",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xeae13ea73bec936664a51734c8c01ec7c3b0699c",
+        "name": "Pitch World Cup",
+        "symbol": "PITCH"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@playfarmtown": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "farm",
+        "$farm"
+      ],
+      "token": {
+        "address": "yMJPZbnhoHib3ib8n8PfiVcp9yauk1vnaGKLx7epump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/yMJPZbnhoHib3ib8n8PfiVcp9yauk1vnaGKLx7epump",
+        "name": "FarmTown",
+        "symbol": "FARM"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@playkintara": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "kins",
+        "$kins"
+      ],
+      "token": {
+        "address": "Tqj8yFmagrg7oorpQkVGYR52r96RFTamvWfth9bpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/Tqj8yFmagrg7oorpQkVGYR52r96RFTamvWfth9bpump",
+        "name": "Kintara",
+        "symbol": "KINS"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@popcatworld": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "popcat",
+        "$popcat"
+      ],
+      "token": {
+        "address": "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+        "name": "Popcat",
+        "symbol": "POPCAT"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@powergacha_sol": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "gacha",
+        "$gacha"
+      ],
+      "token": {
+        "address": "DnnmrZnCTqQn7bYbVAiWdJLreqrhg7HaSTkmhtzu8THy",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/DnnmrZnCTqQn7bYbVAiWdJLreqrhg7HaSTkmhtzu8THy",
+        "name": "PowerGacha",
+        "symbol": "GACHA"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@pudgypenguins": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "pengu",
+        "$pengu"
+      ],
+      "token": {
+        "address": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+        "name": "Pudgy Penguins",
+        "symbol": "PENGU"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@pumpfun": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "pump",
+        "$pump"
+      ],
+      "token": {
+        "address": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+        "name": "Pump.Fun",
+        "symbol": "PUMP"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@quillcomputer": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "quill",
+        "$quill"
+      ],
+      "token": {
+        "address": "0x60a646e3fd75cde4c5b604b22d4fcd04639913c8",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x60a646e3fd75cde4c5b604b22d4fcd04639913c8",
+        "name": "Quill",
+        "symbol": "QUILL"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@raydiumprotocol": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "ray",
+        "$ray"
+      ],
+      "token": {
+        "address": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+        "name": "Raydium",
+        "symbol": "RAY"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@rei_labs": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "rei",
+        "$rei"
+      ],
+      "token": {
+        "address": "0x6b2504a03ca4d43d0d73776f6ad46dab2f2a4cfd",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x6b2504a03ca4d43d0d73776f6ad46dab2f2a4cfd",
+        "name": "REI",
+        "symbol": "REI"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@reppo": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "reppo",
+        "$reppo"
+      ],
+      "token": {
+        "address": "0xff8104251e7761163fac3211ef5583fb3f8583d6",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xff8104251e7761163fac3211ef5583fb3f8583d6",
+        "name": "REPPO",
+        "symbol": "REPPO"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@researchhub": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "rsc",
+        "$rsc"
+      ],
+      "token": {
+        "address": "0xfbb75a59193a3525a8825bebe7d4b56899e2f7e1",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xfbb75a59193a3525a8825bebe7d4b56899e2f7e1",
+        "name": "ResearchCoin",
+        "symbol": "RSC"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@rkccoin": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "rkc",
+        "$rkc"
+      ],
+      "token": {
+        "address": "7HgfXftRBBqsYtAEYcqjGLQrNJLL6Tww9ek4rE3Apump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/7HgfXftRBBqsYtAEYcqjGLQrNJLL6Tww9ek4rE3Apump",
+        "name": "Red Kitten Crew",
+        "symbol": "RKC"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@rollxfi": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "roll",
+        "$roll"
+      ],
+      "token": {
+        "address": "0xab6363da0c80cef3ae105bd6241e30872355d021",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xab6363da0c80cef3ae105bd6241e30872355d021",
+        "name": "Roll",
+        "symbol": "ROLL"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@root_edge": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "rootai",
+        "$rootai"
+      ],
+      "token": {
+        "address": "0x461d3c96d170e551611f54fa466d3d74a680aba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x461d3c96d170e551611f54fa466d3d74a680aba3",
+        "name": "Root Edge",
+        "symbol": "rootai"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@rumadotfun": {
       "account_type": "community_account",
@@ -1860,6 +3481,24 @@
       ],
       "updated_at": "2026-06-11T19:22:41Z"
     },
+    "@sedaprotocol": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "seda",
+        "$seda"
+      ],
+      "token": {
+        "address": "0x306acd0c07c430abbbb2e74ef7bde94f32a898c0",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x306acd0c07c430abbbb2e74ef7bde94f32a898c0",
+        "name": "SEDA",
+        "symbol": "SEDA"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@smol_intern": {
       "account_type": "community_account",
       "approval_evidence_urls": [],
@@ -1888,6 +3527,96 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@solana": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "sol",
+        "$sol"
+      ],
+      "token": {
+        "address": "0x311935cd80b76769bf2ecc9d8ab7635b2139cf82",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x311935cd80b76769bf2ecc9d8ab7635b2139cf82",
+        "name": "Solana",
+        "symbol": "SOL"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@solangelestv": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "solangeles",
+        "$solangeles"
+      ],
+      "token": {
+        "address": "8wxkvAfEns76yBzu4MnbV7VnXWjg3iDPA9uwAQ6cpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/8wxkvAfEns76yBzu4MnbV7VnXWjg3iDPA9uwAQ6cpump",
+        "name": "SolAngeles",
+        "symbol": "SOLANGELES"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@spark_coded": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "spark",
+        "$spark"
+      ],
+      "token": {
+        "address": "0x0fb07c88bc6d195c196279523957c004eb868248",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x0fb07c88bc6d195c196279523957c004eb868248",
+        "name": "SPARK",
+        "symbol": "SPARK"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@sportfun": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "fun",
+        "$fun"
+      ],
+      "token": {
+        "address": "0x16ee7ecac70d1028e7712751e2ee6ba808a7dd92",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x16ee7ecac70d1028e7712751e2ee6ba808a7dd92",
+        "name": "Sport.fun",
+        "symbol": "FUN"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@spx6900": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "spx",
+        "$spx"
+      ],
+      "token": {
+        "address": "0x50da645f148798f68ef2d7db7c1cb22a6819bb2c",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x50da645f148798f68ef2d7db7c1cb22a6819bb2c",
+        "name": "SPX6900",
+        "symbol": "SPX"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@stitchdegen": {
       "account_type": "community_account",
@@ -1920,6 +3649,24 @@
       ],
       "updated_at": "2026-06-19T10:22:40Z"
     },
+    "@superformxyz": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "up",
+        "$up"
+      ],
+      "token": {
+        "address": "0x5b2193fdc451c1f847be09ca9d13a4bf60f8c86b",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x5b2193fdc451c1f847be09ca9d13a4bf60f8c86b",
+        "name": "Superform",
+        "symbol": "UP"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@techgaged_news": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -1945,6 +3692,24 @@
       ],
       "updated_at": "2026-06-19T10:22:40Z"
     },
+    "@thepippinco": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "pippin",
+        "$pippin"
+      ],
+      "token": {
+        "address": "Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump",
+        "name": "Pippin",
+        "symbol": "pippin"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@theultimator5": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -1967,6 +3732,60 @@
         "$wen"
       ],
       "updated_at": "2026-06-24T14:22:43Z"
+    },
+    "@theuselesscoin": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "useless",
+        "$useless"
+      ],
+      "token": {
+        "address": "Dz9mQ9NzkBcCsuGPFJ3r1bS4wgqKMHBPiVuniW8Mbonk",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/Dz9mQ9NzkBcCsuGPFJ3r1bS4wgqKMHBPiVuniW8Mbonk",
+        "name": "Useless Coin",
+        "symbol": "USELESS"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@thsleepinggiant": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "tsg",
+        "$tsg"
+      ],
+      "token": {
+        "address": "0x4c433f4ef87fe506a7eed2fd1d822cbed411eba3",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x4c433f4ef87fe506a7eed2fd1d822cbed411eba3",
+        "name": "the sleeping giant",
+        "symbol": "TSG"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@toescoinsol": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "toescoin",
+        "$toescoin"
+      ],
+      "token": {
+        "address": "6ehEcTMCc85aNF4x9CWx8HuvWGhxQtvKdhKVf2HDpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/6ehEcTMCc85aNF4x9CWx8HuvWGhxQtvKdhKVf2HDpump",
+        "name": "TOES",
+        "symbol": "TOESCOIN"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@tokenradarco": {
       "account_type": "community_account",
@@ -1999,6 +3818,24 @@
       ],
       "updated_at": "2026-06-14T23:22:37Z"
     },
+    "@toshi": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "toshi",
+        "$toshi"
+      ],
+      "token": {
+        "address": "0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4",
+        "name": "Toshi",
+        "symbol": "TOSHI"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@trencherrzalt": {
       "account_type": "community_account",
       "approval_evidence_urls": [
@@ -2029,6 +3866,78 @@
         "community meme"
       ],
       "updated_at": "2026-06-09T22:09:57Z"
+    },
+    "@tripletsol": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "triplet",
+        "$triplet"
+      ],
+      "token": {
+        "address": "J8PSdNP3QewKq2Z1JJJFDMaqF7KcaiJhR7gbr5KZpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/J8PSdNP3QewKq2Z1JJJFDMaqF7KcaiJhR7gbr5KZpump",
+        "name": "Tung Tung Tung Sahur",
+        "symbol": "TripleT"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@troll_": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "troll",
+        "$troll"
+      ],
+      "token": {
+        "address": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
+        "name": "Troll",
+        "symbol": "TROLL"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@trylimitless": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "lmts",
+        "$lmts"
+      ],
+      "token": {
+        "address": "0x9eadbe35f3ee3bf3e28180070c429298a1b02f93",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x9eadbe35f3ee3bf3e28180070c429298a1b02f93",
+        "name": "Limitless Official Token",
+        "symbol": "LMTS"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@trythreews": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "three",
+        "$three"
+      ],
+      "token": {
+        "address": "FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump",
+        "name": "three.ws",
+        "symbol": "three"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@usedotai": {
       "account_type": "community_account",
@@ -2100,6 +4009,24 @@
       ],
       "updated_at": "2026-06-11T19:22:41Z"
     },
+    "@veildotcash": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "veil",
+        "$veil"
+      ],
+      "token": {
+        "address": "0x767a739d1a152639e9ea1d8c1bd55fdc5b217d7f",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x767a739d1a152639e9ea1d8c1bd55fdc5b217d7f",
+        "name": "Veil Token",
+        "symbol": "VEIL"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@velvet_capital": {
       "account_type": "official_token_account",
       "approval_evidence_urls": [
@@ -2119,15 +4046,36 @@
       ],
       "status": "approved",
       "terms": [
-        "velvet"
+        "velvet",
+        "$velvet"
       ],
       "token": {
         "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
         "chain_slug": "base",
         "dexscreener_url": "https://dexscreener.com/base/0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+        "name": "Velvet",
         "symbol": "VELVET"
       },
-      "updated_at": "2026-06-10T19:22:46Z"
+      "updated_at": "2026-06-10T19:22:46Z",
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@virtuals_io": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "virtual",
+        "$virtual"
+      ],
+      "token": {
+        "address": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
+        "name": "Virtual Protocol",
+        "symbol": "VIRTUAL"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@wecztribe": {
       "account_type": "community_account",
@@ -2192,6 +4140,42 @@
       ],
       "updated_at": "2026-06-24T14:22:43Z"
     },
+    "@winningson_": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "son",
+        "$son"
+      ],
+      "token": {
+        "address": "ACpzkGJV3DDU8HXy8yjab7RL9qNmDGym2GwLkzNppump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/ACpzkGJV3DDU8HXy8yjab7RL9qNmDGym2GwLkzNppump",
+        "name": "Are Ya Winning, Son?",
+        "symbol": "SON"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@woclaudecraft": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "woc",
+        "$woc"
+      ],
+      "token": {
+        "address": "3WjLscH2JsXLEFJZRA9z8ti8yRGxWGKbqymPd7UicRth",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/3WjLscH2JsXLEFJZRA9z8ti8yRGxWGKbqymPd7UicRth",
+        "name": "World Of Claudecraft",
+        "symbol": "WOC"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
     "@workwork1629": {
       "account_type": "community_account",
       "approval_evidence_urls": [],
@@ -2220,6 +4204,60 @@
         "listing vote"
       ],
       "updated_at": "2026-06-25T21:22:42Z"
+    },
+    "@worldcuponpump": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "worldcup",
+        "$worldcup"
+      ],
+      "token": {
+        "address": "33eum82LaAhtv5YkUq1BdwEviSErH5CnFxqVNLT5pump",
+        "chain_slug": "solana",
+        "dexscreener_url": "https://dexscreener.com/solana/33eum82LaAhtv5YkUq1BdwEviSErH5CnFxqVNLT5pump",
+        "name": "World Cup Coin",
+        "symbol": "WORLDCUP"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@xmaquina": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "deus",
+        "$deus"
+      ],
+      "token": {
+        "address": "0x940a319b75861014a220d9c6c144d108552b089b",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x940a319b75861014a220d9c6c144d108552b089b",
+        "name": "DEUS Token",
+        "symbol": "DEUS"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
+    },
+    "@zora": {
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
+      "status": "approved",
+      "terms": [
+        "zora",
+        "$zora"
+      ],
+      "token": {
+        "address": "0x1111111111166b7fe7bd91427724b487980afc69",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0x1111111111166b7fe7bd91427724b487980afc69",
+        "name": "Zora",
+        "symbol": "ZORA"
+      },
+      "verified_source_updated_at": "2026-06-27T02:33:35Z"
     }
   },
   "watcher_approval": {

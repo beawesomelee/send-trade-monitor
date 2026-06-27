@@ -61,7 +61,7 @@
       "value": "from:henryvo_ttt (velvet) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-27T14:15:26Z",
+  "rules_synced_at": "2026-06-27T14:22:29Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -990,7 +990,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-27T14:15:26Z",
+  "updated_at": "2026-06-27T14:22:29Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "account_type": "community_account",

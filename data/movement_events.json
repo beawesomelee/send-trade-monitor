@@ -2585,28 +2585,240 @@
           "from my private call"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@velvet_capital",
+          "approval_evidence_url": "https://x.com/Velvet_Capital/status/2070796526868369627",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 9.0 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-06-27T09:09:00Z",
+          "approved_terms": [
+            "velvet"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 9.0,
+          "source_evidence_urls": [
+            "https://x.com/Velvet_Capital/status/2070796526868369627"
+          ],
+          "terms": [
+            "velvet",
+            "$velvet",
+            "defai",
+            "perps",
+            "ai terminal",
+            "this time is different",
+            "satoshi nakamoto wouldn\u2019t believe",
+            "pure low-float rotation",
+            "kol post",
+            "team update",
+            "price action"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@henryvo_ttt",
+          "approval_evidence_url": "https://x.com/HenryVo_TTT/status/2070769401356247112",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 98.8 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-06-27T07:21:12Z",
+          "approved_terms": [
+            "velvet"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -98.8,
+          "source_evidence_urls": [
+            "https://x.com/HenryVo_TTT/status/2070769401356247112"
+          ],
+          "terms": [
+            "velvet",
+            "$velvet",
+            "defai",
+            "perps",
+            "ai terminal",
+            "this time is different",
+            "satoshi nakamoto wouldn\u2019t believe",
+            "pure low-float rotation",
+            "kol post",
+            "team update",
+            "price action"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@vegasnipes",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "velvet",
+            "$velvet",
+            "defai",
+            "perps",
+            "ai terminal",
+            "this time is different",
+            "satoshi nakamoto wouldn\u2019t believe",
+            "pure low-float rotation",
+            "kol post",
+            "team update",
+            "price action"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@cryptothebossx",
+          "approval_evidence_url": "https://x.com/CryptoTheBossX/status/2070841644056789365",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 188.3 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-27T12:08:16Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 188.27,
+          "source_evidence_urls": [
+            "https://x.com/CryptoTheBossX/status/2070841644056789365"
+          ],
+          "terms": [
+            "velvet",
+            "$velvet",
+            "defai",
+            "perps",
+            "ai terminal",
+            "this time is different",
+            "satoshi nakamoto wouldn\u2019t believe",
+            "pure low-float rotation",
+            "kol post",
+            "team update",
+            "price action"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-27T13:22:44Z",
+      "event_id": "signal_ae16415eb952",
+      "evidence": [
+        {
+          "author_handle": "@Velvet_Capital",
+          "minutes_before_detection": 253.73,
+          "minutes_from_window_start": 106.27,
+          "relevance": "cryptic team post contributing to hype",
+          "text": "Satoshi Nakamoto wouldn\u2019t believe what he created\u2026",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-27T09:09:00Z",
+          "tweet_id": "2070796526868369627",
+          "type": "x_post",
+          "url": "https://x.com/Velvet_Capital/status/2070796526868369627"
+        },
+        {
+          "author_handle": "@HenryVo_TTT",
+          "minutes_before_detection": 361.52,
+          "minutes_from_window_start": -1.52,
+          "relevance": "detailed observation on the move and narrative",
+          "text": "velvet:native +89% in 24h. Pure low-float rotation... Today\u2019s pump is pure FOMO + momentum, no fresh catalyst.",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-06-27T07:21:12Z",
+          "tweet_id": "2070769401356247112",
+          "type": "x_post",
+          "url": "https://x.com/HenryVo_TTT/status/2070769401356247112"
+        },
+        {
+          "author_handle": "@CryptoTheBossX",
+          "minutes_before_detection": 74.45,
+          "minutes_from_window_start": 285.55,
+          "relevance": "chart based attention driver",
+          "text": "$VELVET is once again attracting attention after defending the lower structure",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-27T12:08:16Z",
+          "tweet_id": "2070841644056789365",
+          "type": "x_post",
+          "url": "https://x.com/CryptoTheBossX/status/2070841644056789365"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xbf927b841994731c573bdf09ceb0c6b0aa887cdd"
+      },
+      "lore": "team dropped cryptic memes like satoshi nakamoto line and this time is different. low float rotation with fomo on perps ai updates and recent volume spike no fresh catalyst just momentum",
+      "movement": {
+        "change_pct": 55.2,
+        "detected_at": "2026-06-27T13:22:44Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-27T13:20:00Z",
+        "estimated_start_at": "2026-06-27T09:00:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x6b0f53cbd9272d8117e9535fe25371dedf39a1be",
+        "pool_name": "VELVET / USDC 0.01%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-06-27T13:22:44Z",
+        "window_start_at": "2026-06-27T07:22:44Z"
+      },
+      "source_signal_id": "signal_ae16415eb952",
+      "token": {
+        "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+        "chain_slug": "base",
+        "symbol": "VELVET"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Velvet_Capital",
+          "@HenryVo_TTT",
+          "@VegaSnipes",
+          "@CryptoTheBossX"
+        ],
+        "catalysts": [
+          "kol_post",
+          "team_update",
+          "price_action"
+        ],
+        "keywords": [
+          "velvet",
+          "defai",
+          "perps",
+          "ai terminal"
+        ],
+        "phrases": [
+          "this time is different",
+          "satoshi nakamoto wouldn\u2019t believe",
+          "pure low-float rotation"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-27T11:22:39Z",
+  "updated_at": "2026-06-27T13:22:46Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 8,
-        "rejected_late_reaction": 21,
-        "rejected_no_tweet_evidence": 18,
+        "approved_alpha_source": 9,
+        "approved_movement_chatter": 1,
+        "rejected_late_reaction": 22,
+        "rejected_no_tweet_evidence": 19,
         "rejected_stale_pre_move": 3,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 52,
+      "candidate_rules": 56,
       "watch_accounts_approved": 8,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 39,
-      "watch_accounts_unchanged": 114
+      "watch_accounts_rejected": 40,
+      "watch_accounts_unchanged": 115
     },
-    "updated_at": "2026-06-27T11:22:39Z"
+    "updated_at": "2026-06-27T13:22:46Z"
   }
 }

@@ -1,5 +1,13 @@
 [
   {
+    "chain_slug": "base",
+    "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+    "symbol": "VELVET",
+    "direction": "pump",
+    "price_change_h1_pct": 4.621,
+    "timestamp": 1782566566.1471436
+  },
+  {
     "chain_slug": "solana",
     "address": "bbydpty2qdlnjoehtwifjbfibbvbkxk84aghuu2rpump",
     "symbol": "TRADER",

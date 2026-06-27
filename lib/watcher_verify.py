@@ -16,6 +16,7 @@ from lib.dexscreener import (
     _norm,
 )
 from lib.movement_events import MOVEMENT_EVENTS_FILE
+from lib.watcher_rules import official_token_for_payload
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -50,11 +51,12 @@ def verify_watcher_hit(
 ) -> dict:
     """Return verification result for one X stream payload."""
     text = tweet_text(payload)
+    mapped_token = official_token_for_payload(payload)
     direction_hint = movement_language_direction(text)
-    if direction_hint == "none":
+    if direction_hint == "none" and not mapped_token:
         return _result(False, "no_price_movement_language", text=text)
 
-    token = match_token_from_payload(payload)
+    token = mapped_token or match_token_from_payload(payload)
     if not token:
         return _result(False, "no_unique_token_match", text=text, direction=direction_hint)
 
@@ -231,11 +233,17 @@ def fetch_token_market(token: dict) -> dict | None:
 
     h1_values = [_safe_float((pair.get("priceChange") or {}).get("h1")) for pair in pairs]
     h6_values = [_safe_float((pair.get("priceChange") or {}).get("h6")) for pair in pairs]
+    h24_values = [_safe_float((pair.get("priceChange") or {}).get("h24")) for pair in pairs]
+    price_values = [_safe_float(pair.get("priceUsd")) for pair in pairs if pair.get("priceUsd")]
+    volumes = _aggregate_pair_volumes(pairs)
     return {
         **token,
         **agg,
+        **volumes,
+        "price_usd": price_values[0] if price_values else 0.0,
         "price_change_h1_pct": max(h1_values, key=abs) if h1_values else 0.0,
         "price_change_h6_pct": max(h6_values, key=abs) if h6_values else 0.0,
+        "price_change_h24_pct": max(h24_values, key=abs) if h24_values else 0.0,
         "dexscreener_url": f"https://dexscreener.com/{chain}/{address}",
     }
 
@@ -283,7 +291,39 @@ def verified_direction(
             return "pump"
         if dump and not pump:
             return "dump"
+    if hint == "none":
+        if pump and not dump:
+            return "pump"
+        if dump and not pump:
+            return "dump"
     return ""
+
+
+def watcher_score(
+    market: dict,
+    direction: str,
+    *,
+    account_type: str = "community_account",
+    pump_h1_pct: float = 20.0,
+    pump_h6_pct: float = 35.0,
+    dump_h1_pct: float = -20.0,
+    dump_h6_pct: float = -35.0,
+) -> float:
+    """Return an initial 0-100 watcher quality score for a verified hit."""
+    direction = str(direction or "").lower()
+    if direction == "dump":
+        h1_ratio = abs(_safe_float(market.get("price_change_h1_pct")) / dump_h1_pct) if dump_h1_pct else 0
+        h6_ratio = abs(_safe_float(market.get("price_change_h6_pct")) / dump_h6_pct) if dump_h6_pct else 0
+    else:
+        h1_ratio = _safe_float(market.get("price_change_h1_pct")) / pump_h1_pct if pump_h1_pct else 0
+        h6_ratio = _safe_float(market.get("price_change_h6_pct")) / pump_h6_pct if pump_h6_pct else 0
+
+    movement_ratio = max(0.0, h1_ratio, h6_ratio)
+    movement_score = 40.0 * min(movement_ratio, 1.5) / 1.5
+    volume_score = 25.0 * min(_safe_float(market.get("volume_h6_usd")) / 1_000_000, 1.0)
+    liquidity_score = 15.0 * min(_safe_float(market.get("liquidity_usd")) / 1_000_000, 1.0)
+    account_score = 20.0 if account_type == "official_token_account" else 10.0
+    return round(min(movement_score + volume_score + liquidity_score + account_score, 100.0), 1)
 
 
 def token_quality_failure(
@@ -324,14 +364,32 @@ def _result(
     token: dict | None = None,
     market: dict | None = None,
 ) -> dict:
+    account_type = str((token or {}).get("account_type") or "community_account")
+    score = watcher_score(market or {}, direction, account_type=account_type) if verified else 0.0
     return {
         "verified": verified,
         "reason": reason,
         "direction": direction,
+        "account_type": account_type,
+        "score": score,
         "text": text,
         "token": token or {},
         "market": market or {},
         "checked_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+    }
+
+
+def _aggregate_pair_volumes(pairs: list[dict]) -> dict:
+    totals = {"m5": 0.0, "h1": 0.0, "h6": 0.0, "h24": 0.0}
+    for pair in pairs:
+        volume = pair.get("volume") if isinstance(pair.get("volume"), dict) else {}
+        for window in totals:
+            totals[window] += _safe_float(volume.get(window))
+    return {
+        "volume_m5_usd": round(totals["m5"], 2),
+        "volume_h1_usd": round(totals["h1"], 2),
+        "volume_h6_usd": round(totals["h6"], 2),
+        "volume_24h_usd": round(totals["h24"]),
     }
 
 

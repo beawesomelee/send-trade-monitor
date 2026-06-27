@@ -74,5 +74,32 @@ def test_rule_builder_uses_only_approved_watch_accounts():
 
     rules = build_desired_rules(state)
 
-    assert [rule["tag"] for rule in rules] == ["send_watcher:approved"]
+    assert [rule["tag"] for rule in rules] == ["send_watcher:community:approved"]
     assert rules[0]["value"] == "from:approved (alpha) -is:retweet"
+
+
+def test_rule_builder_uses_account_only_rules_for_official_token_accounts():
+    state = {
+        "watch_accounts": {
+            "@velvet_capital": {
+                "status": "approved",
+                "account_type": "official_token_account",
+                "rule_mode": "account_only",
+                "terms": ["velvet"],
+                "token": {
+                    "symbol": "VELVET",
+                    "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+                    "chain_slug": "base",
+                },
+            },
+        }
+    }
+
+    rules = build_desired_rules(state)
+
+    assert rules == [
+        {
+            "tag": "send_watcher:official:velvet_capital",
+            "value": "from:velvet_capital -is:retweet",
+        }
+    ]

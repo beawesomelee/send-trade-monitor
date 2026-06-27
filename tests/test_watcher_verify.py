@@ -112,3 +112,41 @@ def test_verify_watcher_hit_rejects_below_threshold(monkeypatch):
 
     assert result["verified"] is False
     assert result["reason"] == "price_movement_below_threshold"
+
+
+def test_verify_watcher_hit_uses_official_account_token_without_movement_language(monkeypatch):
+    monkeypatch.setattr(
+        watcher_verify,
+        "official_token_for_payload",
+        lambda payload: {
+            "chain_slug": "base",
+            "address": "0xvelvet",
+            "symbol": "VELVET",
+            "account_type": "official_token_account",
+            "source_account": "@velvet_capital",
+        },
+    )
+    monkeypatch.setattr(
+        watcher_verify,
+        "fetch_token_market",
+        lambda token: {
+            **token,
+            "market_cap_usd": 290_000_000,
+            "liquidity_usd": 4_500_000,
+            "volume_h1_usd": 193_000,
+            "volume_h6_usd": 1_300_000,
+            "volume_24h_usd": 3_100_000,
+            "price_change_h1_pct": 22.1,
+            "price_change_h6_pct": 29.3,
+        },
+    )
+
+    result = watcher_verify.verify_watcher_hit(
+        _payload("chain abstraction now lets traders move across chains")
+    )
+
+    assert result["verified"] is True
+    assert result["direction"] == "pump"
+    assert result["account_type"] == "official_token_account"
+    assert result["score"] == 89.5
+    assert result["token"]["symbol"] == "VELVET"

@@ -246,14 +246,21 @@ def _build_verified_x_watcher_hit_message(
     market = verification.get("market") or {}
     symbol = market.get("symbol") or token.get("symbol") or "?"
     direction = verification.get("direction") or "movement"
+    score = verification.get("score")
     h1 = market.get("price_change_h1_pct")
     h6 = market.get("price_change_h6_pct")
+    h24 = market.get("price_change_h24_pct")
+    volume_h1 = market.get("volume_h1_usd")
+    volume_h6 = market.get("volume_h6_usd")
+    volume_h24 = market.get("volume_24h_usd")
     ds_url = market.get("dexscreener_url") or token.get("dexscreener_url") or ""
 
     lines = [
         "**Verified X watcher hit**",
         f"Token: **{symbol}** `{direction}`",
-        f"Move: h1 `{_format_pct(h1)}` h6 `{_format_pct(h6)}`",
+        f"Score: `{_format_score(score)}`",
+        f"Move: h1 `{_format_pct(h1)}` h6 `{_format_pct(h6)}` h24 `{_format_pct(h24)}`",
+        f"Volume: h1 `{_format_usd(volume_h1)}` h6 `{_format_usd(volume_h6)}` h24 `{_format_usd(volume_h24)}`",
         f"Ingested: `{ingested_at}`",
     ]
     if author_label:
@@ -326,3 +333,22 @@ def _format_pct(value) -> str:
         return f"{float(value):+.1f}%"
     except (TypeError, ValueError):
         return "?"
+
+
+def _format_score(value) -> str:
+    try:
+        return f"{float(value):.1f}/100"
+    except (TypeError, ValueError):
+        return "?/100"
+
+
+def _format_usd(value) -> str:
+    try:
+        amount = float(value)
+    except (TypeError, ValueError):
+        return "?"
+    if abs(amount) >= 1_000_000:
+        return f"${amount / 1_000_000:.2f}M"
+    if abs(amount) >= 1_000:
+        return f"${amount / 1_000:.1f}K"
+    return f"${amount:.0f}"

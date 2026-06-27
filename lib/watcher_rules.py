@@ -34,6 +34,13 @@ def build_desired_rules(state: dict, max_rule_chars: int = MAX_RULE_CHARS) -> li
         if not handle:
             continue
 
+        if _account_type(config) == "official_token_account":
+            rules.append({
+                "value": _official_rule_value(handle),
+                "tag": f"send_watcher:official:{handle}",
+            })
+            continue
+
         terms = _clean_terms(config.get("terms") or [])
         if not terms:
             continue
@@ -42,11 +49,37 @@ def build_desired_rules(state: dict, max_rule_chars: int = MAX_RULE_CHARS) -> li
         for idx, chunk in enumerate(chunks, start=1):
             suffix = f":{idx}" if len(chunks) > 1 else ""
             rules.append({
-                "value": _rule_value(handle, chunk),
-                "tag": f"send_watcher:{handle}{suffix}",
+                "value": _community_rule_value(handle, chunk),
+                "tag": f"send_watcher:community:{handle}{suffix}",
             })
 
     return rules
+
+
+def official_token_for_payload(payload: dict, state: dict | None = None) -> dict | None:
+    """Return the mapped token when a payload matched an official account rule."""
+    state = state if isinstance(state, dict) else load_watcher_state()
+    watch_accounts = state.get("watch_accounts")
+    if not isinstance(watch_accounts, dict):
+        return None
+
+    for handle in _matched_rule_handles(payload):
+        config = watch_accounts.get(f"@{handle}") or watch_accounts.get(handle)
+        if not isinstance(config, dict):
+            continue
+        if _account_type(config) != "official_token_account":
+            continue
+        token = config.get("token") if isinstance(config.get("token"), dict) else {}
+        if token.get("address") and token.get("chain_slug"):
+            return {
+                "symbol": token.get("symbol") or "",
+                "address": token.get("address") or "",
+                "chain_slug": token.get("chain_slug") or "",
+                "dexscreener_url": token.get("dexscreener_url") or "",
+                "account_type": "official_token_account",
+                "source_account": f"@{handle}",
+            }
+    return None
 
 
 def _chunk_terms(handle: str, terms: list[str], max_rule_chars: int) -> list[list[str]]:
@@ -55,7 +88,7 @@ def _chunk_terms(handle: str, terms: list[str], max_rule_chars: int) -> list[lis
 
     for term in terms:
         candidate = current + [term]
-        if current and len(_rule_value(handle, candidate)) > max_rule_chars:
+        if current and len(_community_rule_value(handle, candidate)) > max_rule_chars:
             chunks.append(current)
             current = [term]
         else:
@@ -66,7 +99,11 @@ def _chunk_terms(handle: str, terms: list[str], max_rule_chars: int) -> list[lis
     return chunks
 
 
-def _rule_value(handle: str, terms: list[str]) -> str:
+def _official_rule_value(handle: str) -> str:
+    return f"from:{handle} -is:retweet"
+
+
+def _community_rule_value(handle: str, terms: list[str]) -> str:
     return f"from:{handle} ({' OR '.join(_format_term(t) for t in terms)}) -is:retweet"
 
 
@@ -96,3 +133,36 @@ def _clean_terms(values) -> list[str]:
         seen.add(term)
         out.append(term)
     return out
+
+
+def _account_type(config: dict) -> str:
+    raw = str(config.get("account_type") or "").strip().lower()
+    if raw == "official_token_account":
+        return "official_token_account"
+    return "community_account"
+
+
+def _matched_rule_handles(payload: dict) -> list[str]:
+    rules = payload.get("matching_rules")
+    if not isinstance(rules, list):
+        return []
+
+    handles = []
+    for rule in rules:
+        if not isinstance(rule, dict):
+            continue
+        tag = str(rule.get("tag") or "")
+        if not tag.startswith("send_watcher:"):
+            continue
+        parts = tag.split(":")
+        if len(parts) >= 3 and parts[1] in {"official", "community"}:
+            handle = parts[2]
+        elif len(parts) >= 2:
+            handle = parts[1]
+        else:
+            handle = ""
+        handle = handle.split(":", 1)[0]
+        clean = _handle_for_rule(handle)
+        if clean and clean not in handles:
+            handles.append(clean)
+    return handles

@@ -4,15 +4,7 @@
     "address": "9crcn9rgt8v2imem2baks13yhmeais3rum3rpvtgpump",
     "symbol": "ANSEM",
     "direction": "pump",
-    "price_change_h1_pct": -21.86,
-    "timestamp": 1782575435.887243
-  },
-  {
-    "chain_slug": "base",
-    "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
-    "symbol": "VELVET",
-    "direction": "pump",
-    "price_change_h1_pct": 4.621,
-    "timestamp": 1782566566.1471436
+    "price_change_h1_pct": 10.576,
+    "timestamp": 1782590084.7431808
   }
 ]

@@ -2971,29 +2971,205 @@
           "flywheel"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@blackbullsol",
+          "approval_evidence_url": "https://x.com/BlackBullSol/status/2070935282598232081",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 260.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-27T18:20:22Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 260.37,
+          "source_evidence_urls": [
+            "https://x.com/BlackBullSol/status/2070935282598232081"
+          ],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "blackbullsol",
+            "flywheel is cooking",
+            "ansem agrees to airdrop",
+            "bought back 1m+",
+            "team buyback",
+            "lp add",
+            "airdrop"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cryptothannos",
+          "approval_evidence_url": "https://x.com/CryptoThannos/status/2070844398145822780",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 100.8 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-06-27T12:19:13Z",
+          "approved_terms": [
+            "ansem",
+            "$ansem"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -100.78,
+          "source_evidence_urls": [
+            "https://x.com/CryptoThannos/status/2070844398145822780"
+          ],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "blackbullsol",
+            "flywheel is cooking",
+            "ansem agrees to airdrop",
+            "bought back 1m+",
+            "team buyback",
+            "lp add",
+            "airdrop"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@yakuza_crypto_",
+          "approval_evidence_url": "https://x.com/Yakuza_Crypto_/status/2070936978988958125",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 267.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-27T18:27:06Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 267.1,
+          "source_evidence_urls": [
+            "https://x.com/Yakuza_Crypto_/status/2070936978988958125"
+          ],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "blackbullsol",
+            "flywheel is cooking",
+            "ansem agrees to airdrop",
+            "bought back 1m+",
+            "team buyback",
+            "lp add",
+            "airdrop"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-27T19:54:42Z",
+      "event_id": "signal_8168be171a95",
+      "evidence": [
+        {
+          "author_handle": "@BlackBullSol",
+          "minutes_before_detection": 94.33,
+          "minutes_from_window_start": 265.67,
+          "relevance": "direct team buyback and lp add driving the move",
+          "text": "We just market bought another 100k ... added it to the LP. The flywheel is cooking!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-27T18:20:22Z",
+          "tweet_id": "2070935282598232081",
+          "type": "x_post",
+          "url": "https://x.com/BlackBullSol/status/2070935282598232081"
+        },
+        {
+          "author_handle": "@Yakuza_Crypto_",
+          "minutes_before_detection": 87.59,
+          "minutes_from_window_start": 272.41,
+          "relevance": "ansem airdrop narrative tied to fees and supply",
+          "text": "Ansem agrees to airdrop the portion of the creator fees ... 65% of the $ANSEM supply is directed to him",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-27T18:27:06Z",
+          "tweet_id": "2070936978988958125",
+          "type": "x_post",
+          "url": "https://x.com/Yakuza_Crypto_/status/2070936978988958125"
+        },
+        {
+          "author_handle": "@CryptoThannos",
+          "minutes_before_detection": 455.47,
+          "minutes_from_window_start": -95.47,
+          "relevance": "buyback and staking details confirming flywheel",
+          "text": "team has just bought back 1M+ $ANSEM tokens and added into LP ... distributed over $3K to stakers",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-06-27T12:19:13Z",
+          "tweet_id": "2070844398145822780",
+          "type": "x_post",
+          "url": "https://x.com/CryptoThannos/status/2070844398145822780"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump"
+      },
+      "lore": "blackbullsol team market bought another 100k into lp with more 25k adds, staking rewards flowing. ansem reportedly directing creator fees for airdrop, flywheel cooking on buybacks. ansem energy back?",
+      "movement": {
+        "change_pct": 2692.3,
+        "detected_at": "2026-06-27T19:54:42Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-27T14:30:00Z",
+        "estimated_start_at": "2026-06-27T14:00:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "FnzKY6x7entQ1eR3D225dQyT7ybfka4PskBMQhb8L3CC",
+        "pool_name": "ANSEM / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-27T19:54:42Z",
+        "window_start_at": "2026-06-27T13:54:42Z"
+      },
+      "source_signal_id": "signal_8168be171a95",
+      "token": {
+        "address": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+        "chain_slug": "solana",
+        "symbol": "ANSEM"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@BlackBullSol",
+          "@CryptoThannos",
+          "@Yakuza_Crypto_"
+        ],
+        "catalysts": [
+          "team_buyback",
+          "lp_add",
+          "airdrop"
+        ],
+        "keywords": [
+          "$ANSEM",
+          "blackbullsol",
+          "ansem"
+        ],
+        "phrases": [
+          "flywheel is cooking",
+          "ansem agrees to airdrop",
+          "bought back 1M+"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-27T15:50:35Z",
+  "updated_at": "2026-06-27T19:54:44Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 10,
+        "approved_alpha_source": 11,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 23,
+        "rejected_late_reaction": 25,
         "rejected_no_tweet_evidence": 20,
         "rejected_stale_pre_move": 3,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 59,
-      "watch_accounts_approved": 9,
+      "candidate_rules": 62,
+      "watch_accounts_approved": 8,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 42,
-      "watch_accounts_unchanged": 115
+      "watch_accounts_rejected": 43,
+      "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-27T15:50:35Z"
+    "updated_at": "2026-06-27T19:54:44Z"
   }
 }

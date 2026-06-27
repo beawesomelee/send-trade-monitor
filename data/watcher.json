@@ -51,7 +51,7 @@
       "value": "(from:sedaprotocol OR from:solana OR from:solangelestv OR from:spark_coded OR from:sportfun OR from:spx6900 OR from:superformxyz OR from:thepippinco OR from:theuselesscoin OR from:thsleepinggiant OR from:toescoinsol OR from:toshi OR from:tripletsol OR from:troll_ OR from:trylimitless OR from:trythreews OR from:veildotcash OR from:velvet_capital OR from:virtuals_io OR from:winningson_ OR from:woclaudecraft OR from:worldcuponpump OR from:xmaquina OR from:zora) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-27T08:11:19Z",
+  "rules_synced_at": "2026-06-27T08:22:27Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -820,7 +820,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-27T08:11:19Z",
+  "updated_at": "2026-06-27T08:22:27Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "account_type": "community_account",

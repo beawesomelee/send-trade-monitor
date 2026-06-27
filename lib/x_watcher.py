@@ -24,6 +24,8 @@ TWEETS_FILE = ROOT / "data" / "watcher_tweets.jsonl"
 STATE_FILE = ROOT / "data" / "watcher_ingest_state.json"
 LOCK_FILE = ROOT / "data" / "watcher_stream.lock"
 MAX_SEEN_IDS = 5000
+DISCORD_MIN_SCORE = 45.0
+DISCORD_WATCH_ONLY_MIN_SCORE = 60.0
 
 
 STREAM_PARAMS = {
@@ -76,6 +78,7 @@ def stream_watcher_posts(
     stored = 0
     verified = 0
     unverified = 0
+    suppressed_discord = 0
     skipped_duplicates = 0
     connection_errors = 0
     reconnects = 0
@@ -118,13 +121,15 @@ def stream_watcher_posts(
                     if verification.get("verified"):
                         verified += 1
                         record_watcher_outcome(payload, verification, ingested_at, path=outcomes_path)
-                        if discord:
+                        if discord and should_post_verified_watcher_hit(verification):
                             send_verified_x_watcher_hit(
                                 payload,
                                 ingested_at,
                                 verification,
                                 dry_run=discord_dry_run,
                             )
+                        elif discord:
+                            suppressed_discord += 1
                     elif verification:
                         unverified += 1
                     if raw_discord:
@@ -149,6 +154,7 @@ def stream_watcher_posts(
         "stored": stored,
         "verified": verified,
         "unverified": unverified,
+        "suppressed_discord": suppressed_discord,
         "skipped_duplicates": skipped_duplicates,
         "connection_errors": connection_errors,
         "reconnects": reconnects,
@@ -156,6 +162,19 @@ def stream_watcher_posts(
         "tweets_path": str(tweets_path),
         "state_path": str(state_path),
     }
+
+
+def should_post_verified_watcher_hit(verification: dict) -> bool:
+    """Return whether a verified watcher hit is strong enough for Discord."""
+    try:
+        score = float(verification.get("score") or 0)
+    except (TypeError, ValueError):
+        score = 0.0
+    if score < DISCORD_MIN_SCORE:
+        return False
+    if verification.get("watchOnly") and score < DISCORD_WATCH_ONLY_MIN_SCORE:
+        return False
+    return True
 
 
 def iter_stream_payloads(

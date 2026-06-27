@@ -96,6 +96,7 @@ def test_verified_watcher_tweet_posts_discord_after_storage(tmp_path, monkeypatc
             "verified": True,
             "reason": "verified_price_movement",
             "direction": "pump",
+            "score": 74.5,
             "priceReliability": "medium",
             "trendState": "early_momentum",
             "watchOnly": False,
@@ -147,6 +148,7 @@ def test_verified_watcher_tweet_records_outcome_without_discord(tmp_path, monkey
             "verified": True,
             "reason": "verified_price_movement",
             "direction": "pump",
+            "score": 74.5,
             "market": {
                 "symbol": "ALPHA",
                 "address": "0x1",
@@ -174,6 +176,65 @@ def test_verified_watcher_tweet_records_outcome_without_discord(tmp_path, monkey
     assert outcome["tweet_id"] == "101"
     assert outcome["token"]["address"] == "0x1"
     assert outcome["market_at_ingest"]["liquidity_usd"] == 1_500_000.0
+
+
+def test_low_score_verified_watcher_hit_records_but_suppresses_discord(tmp_path, monkeypatch):
+    sent = []
+    monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://discord.invalid/webhook")
+    monkeypatch.setattr(discord_module.requests, "post", lambda webhook, json, timeout: sent.append(json) or type("Response", (), {"status_code": 204, "text": ""})())
+    monkeypatch.setattr(
+        x_watcher,
+        "verify_watcher_hit",
+        lambda payload: {
+            "verified": True,
+            "reason": "verified_price_movement",
+            "direction": "pump",
+            "score": 44.9,
+            "watchOnly": False,
+            "market": {"symbol": "ALPHA", "address": "0x1", "chain_slug": "base"},
+        },
+    )
+
+    result, _tweets_path, _state_path = _run_stream(
+        tmp_path,
+        monkeypatch,
+        [_payload("102", text="$ALPHA up 25%")],
+        max_posts=1,
+    )
+
+    assert result["verified"] == 1
+    assert result["suppressed_discord"] == 1
+    assert sent == []
+    assert json.loads((tmp_path / "watcher_outcomes.json").read_text())["outcomes"][0]["tweet_id"] == "102"
+
+
+def test_watch_only_mid_score_verified_watcher_hit_suppresses_discord(tmp_path, monkeypatch):
+    sent = []
+    monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://discord.invalid/webhook")
+    monkeypatch.setattr(discord_module.requests, "post", lambda webhook, json, timeout: sent.append(json) or type("Response", (), {"status_code": 204, "text": ""})())
+    monkeypatch.setattr(
+        x_watcher,
+        "verify_watcher_hit",
+        lambda payload: {
+            "verified": True,
+            "reason": "verified_price_movement",
+            "direction": "pump",
+            "score": 59.9,
+            "watchOnly": True,
+            "market": {"symbol": "ALPHA", "address": "0x1", "chain_slug": "base"},
+        },
+    )
+
+    result, _tweets_path, _state_path = _run_stream(
+        tmp_path,
+        monkeypatch,
+        [_payload("103", text="$ALPHA up 25%")],
+        max_posts=1,
+    )
+
+    assert result["verified"] == 1
+    assert result["suppressed_discord"] == 1
+    assert sent == []
 
 
 def test_duplicate_tweet_id_is_stored_and_posted_only_once(tmp_path, monkeypatch):

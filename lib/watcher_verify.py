@@ -37,6 +37,11 @@ DUMP_WORDS = {
     "bleeding", "crash", "crashed", "scam", "delist", "delisted",
 }
 
+LOW_LIQUIDITY_USD = 150_000
+EXTREME_UP_PCT = 5_000
+ABSURD_UP_PCT = 10_000
+NEAR_ZERO_DRAWDOWN_PCT = -95
+
 
 def verify_watcher_hit(
     payload: dict,
@@ -311,6 +316,9 @@ def watcher_score(
 ) -> float:
     """Return an initial 0-100 watcher quality score for a verified hit."""
     direction = str(direction or "").lower()
+    if _safe_float(market.get("liquidity_usd")) < LOW_LIQUIDITY_USD:
+        return low_liquidity_watcher_score(market, direction, account_type=account_type)
+
     if direction == "dump":
         h1_ratio = abs(_safe_float(market.get("price_change_h1_pct")) / dump_h1_pct) if dump_h1_pct else 0
         h6_ratio = abs(_safe_float(market.get("price_change_h6_pct")) / dump_h6_pct) if dump_h6_pct else 0
@@ -324,6 +332,112 @@ def watcher_score(
     liquidity_score = 15.0 * min(_safe_float(market.get("liquidity_usd")) / 1_000_000, 1.0)
     account_score = 20.0 if account_type == "official_token_account" else 10.0
     return round(min(movement_score + volume_score + liquidity_score + account_score, 100.0), 1)
+
+
+def low_liquidity_watcher_score(
+    market: dict,
+    direction: str,
+    *,
+    account_type: str = "community_account",
+) -> float:
+    """Score thin tokens by early momentum instead of raw h1/h6 price change."""
+    h24 = _safe_float(market.get("price_change_h24_pct"))
+    h6 = _safe_float(market.get("price_change_h6_pct"))
+    h1 = _safe_float(market.get("price_change_h1_pct"))
+    liquidity = _safe_float(market.get("liquidity_usd"))
+    volume_h24 = _safe_float(market.get("volume_24h_usd"))
+    turnover = volume_to_liquidity_ratio(market)
+
+    if str(direction or "").lower() == "dump":
+        movement = abs(min(h1, h6, h24, 0.0))
+        movement_score = 30.0 * min(movement / 95.0, 1.0)
+    else:
+        movement_score = h24_movement_score(h24)
+        if h24 < 50:
+            movement_score = max(movement_score, 15.0 * min(max(h1, h6, 0.0) / 200.0, 1.0))
+
+    turnover_score = 25.0 * min(turnover / 5.0, 1.0)
+    volume_score = 15.0 * min(volume_h24 / 1_000_000.0, 1.0)
+    liquidity_score = 10.0 * min(liquidity / LOW_LIQUIDITY_USD, 1.0)
+    account_score = 20.0 if account_type == "official_token_account" else 10.0
+    score = movement_score + turnover_score + volume_score + liquidity_score + account_score
+
+    reliability = price_reliability(market)
+    if reliability["priceReliability"] == "low":
+        score -= 12.0
+    elif reliability["priceReliability"] == "invalid":
+        score -= 25.0
+    if reliability["trendState"] == "volatile_price_reset":
+        score -= 8.0
+
+    return round(max(0.0, min(score, 100.0)), 1)
+
+
+def h24_movement_score(h24_pct: float) -> float:
+    """Bucket h24 moves so huge thin-token percentages do not dominate linearly."""
+    h24 = max(0.0, _safe_float(h24_pct))
+    if h24 < 50:
+        return 0.0
+    if h24 < 200:
+        return 12.0
+    if h24 < 1_000:
+        return 22.0
+    if h24 < EXTREME_UP_PCT:
+        return 30.0
+    if h24 < ABSURD_UP_PCT:
+        return 24.0
+    return 18.0
+
+
+def volume_to_liquidity_ratio(market: dict) -> float:
+    liquidity = _safe_float(market.get("liquidity_usd"))
+    if liquidity <= 0:
+        return 0.0
+    return _safe_float(market.get("volume_24h_usd")) / liquidity
+
+
+def price_reliability(market: dict) -> dict:
+    liquidity = _safe_float(market.get("liquidity_usd"))
+    volume_h24 = _safe_float(market.get("volume_24h_usd"))
+    h1 = _safe_float(market.get("price_change_h1_pct"))
+    h6 = _safe_float(market.get("price_change_h6_pct"))
+    h24 = _safe_float(market.get("price_change_h24_pct"))
+    changes = [h1, h6, h24]
+    positive_extreme = any(value >= EXTREME_UP_PCT for value in changes)
+    absurd_positive = any(value >= ABSURD_UP_PCT for value in changes)
+    near_zero = any(value <= NEAR_ZERO_DRAWDOWN_PCT for value in changes)
+    turnover = volume_to_liquidity_ratio(market)
+
+    if liquidity <= 0 or volume_h24 <= 0:
+        reliability = "invalid"
+        reasons = ["missing_liquidity_or_volume"]
+    elif absurd_positive or (positive_extreme and (liquidity < LOW_LIQUIDITY_USD or near_zero)):
+        reliability = "low"
+        reasons = ["extreme_move_on_thin_or_reset_chart"]
+    elif positive_extreme or near_zero or liquidity < LOW_LIQUIDITY_USD:
+        reliability = "medium"
+        reasons = ["thin_or_extreme_price_action"]
+    else:
+        reliability = "high"
+        reasons = []
+
+    trend_state = "normal"
+    if positive_extreme and near_zero:
+        trend_state = "volatile_price_reset"
+    elif h24 <= NEAR_ZERO_DRAWDOWN_PCT and max(h1, h6) > 0:
+        trend_state = "possible_dead_cat"
+    elif liquidity < LOW_LIQUIDITY_USD and h24 >= 200 and turnover >= 3:
+        trend_state = "early_momentum"
+    elif max(h1, h6, h24) >= 200:
+        trend_state = "strong_momentum"
+
+    return {
+        "priceReliability": reliability,
+        "trendState": trend_state,
+        "watchOnly": reliability in {"low", "invalid"} or trend_state in {"volatile_price_reset", "possible_dead_cat"},
+        "volumeToLiquidity": round(turnover, 2),
+        "reasons": reasons,
+    }
 
 
 def token_quality_failure(
@@ -365,16 +479,28 @@ def _result(
     market: dict | None = None,
 ) -> dict:
     account_type = str((token or {}).get("account_type") or "community_account")
-    score = watcher_score(market or {}, direction, account_type=account_type) if verified else 0.0
+    market_payload = dict(market or {})
+    signal = price_reliability(market_payload) if market_payload else {}
+    if signal:
+        market_payload["priceReliability"] = signal["priceReliability"]
+        market_payload["trendState"] = signal["trendState"]
+        market_payload["watchOnly"] = signal["watchOnly"]
+        market_payload["volumeToLiquidity"] = signal["volumeToLiquidity"]
+        market_payload["priceReliabilityReasons"] = signal["reasons"]
+    score = watcher_score(market_payload, direction, account_type=account_type) if verified else 0.0
     return {
         "verified": verified,
         "reason": reason,
         "direction": direction,
         "account_type": account_type,
         "score": score,
+        "priceReliability": signal.get("priceReliability", ""),
+        "trendState": signal.get("trendState", ""),
+        "watchOnly": bool(signal.get("watchOnly", False)),
+        "volumeToLiquidity": signal.get("volumeToLiquidity", 0.0),
         "text": text,
         "token": token or {},
-        "market": market or {},
+        "market": market_payload,
         "checked_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
     }
 

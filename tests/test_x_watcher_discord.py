@@ -96,11 +96,18 @@ def test_verified_watcher_tweet_posts_discord_after_storage(tmp_path, monkeypatc
             "verified": True,
             "reason": "verified_price_movement",
             "direction": "pump",
+            "priceReliability": "medium",
+            "trendState": "early_momentum",
+            "watchOnly": False,
+            "volumeToLiquidity": 12.5,
             "token": {"symbol": "ALPHA", "dexscreener_url": "https://dexscreener.com/base/0x1"},
             "market": {
                 "symbol": "ALPHA",
                 "price_change_h1_pct": 25,
                 "price_change_h6_pct": 40,
+                "priceReliability": "medium",
+                "trendState": "early_momentum",
+                "volumeToLiquidity": 12.5,
                 "dexscreener_url": "https://dexscreener.com/base/0x1",
             },
         },
@@ -121,6 +128,7 @@ def test_verified_watcher_tweet_posts_discord_after_storage(tmp_path, monkeypatc
     assert "Verified X watcher hit" in content
     assert "**ALPHA**" in content
     assert "h1 `+25.0%`" in content
+    assert "Signal: reliability `medium` trend `early_momentum` vol/liq `12.5x`" in content
     assert "https://x.com/alice/status/100" in content
     assert tweets_path.exists()
     assert json.loads(state_path.read_text())["last_seen_tweet_id"] == "100"

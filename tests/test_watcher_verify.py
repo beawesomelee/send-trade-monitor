@@ -150,3 +150,66 @@ def test_verify_watcher_hit_uses_official_account_token_without_movement_languag
     assert result["account_type"] == "official_token_account"
     assert result["score"] == 89.5
     assert result["token"]["symbol"] == "VELVET"
+
+
+def test_low_liquidity_score_uses_h24_move_and_turnover():
+    market = {
+        "market_cap_usd": 2_000_000,
+        "liquidity_usd": 60_000,
+        "volume_h1_usd": 75_000,
+        "volume_h6_usd": 300_000,
+        "volume_24h_usd": 900_000,
+        "price_change_h1_pct": 25,
+        "price_change_h6_pct": 80,
+        "price_change_h24_pct": 650,
+    }
+
+    score = watcher_verify.watcher_score(market, "pump")
+    signal = watcher_verify.price_reliability(market)
+
+    assert score >= 70
+    assert signal["priceReliability"] == "medium"
+    assert signal["trendState"] == "early_momentum"
+    assert signal["volumeToLiquidity"] == 15.0
+
+
+def test_extreme_low_liquidity_reset_is_watch_only():
+    market = {
+        "market_cap_usd": 2_000_000,
+        "liquidity_usd": 55_000,
+        "volume_24h_usd": 3_300_000,
+        "price_change_h1_pct": -100,
+        "price_change_h6_pct": -100,
+        "price_change_h24_pct": 357_577,
+    }
+
+    result = watcher_verify.price_reliability(market)
+
+    assert result["priceReliability"] == "low"
+    assert result["trendState"] == "volatile_price_reset"
+    assert result["watchOnly"] is True
+
+
+def test_verified_result_carries_signal_metadata():
+    market = {
+        "market_cap_usd": 2_000_000,
+        "liquidity_usd": 55_000,
+        "volume_24h_usd": 3_300_000,
+        "price_change_h1_pct": -100,
+        "price_change_h6_pct": -100,
+        "price_change_h24_pct": 357_577,
+    }
+
+    result = watcher_verify._result(
+        True,
+        "verified_price_movement",
+        text="$ALPHA update",
+        token={"symbol": "ALPHA"},
+        market=market,
+        direction="pump",
+    )
+
+    assert result["priceReliability"] == "low"
+    assert result["trendState"] == "volatile_price_reset"
+    assert result["watchOnly"] is True
+    assert result["market"]["priceReliability"] == "low"

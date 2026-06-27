@@ -253,6 +253,10 @@ def _build_verified_x_watcher_hit_message(
     volume_h1 = market.get("volume_h1_usd")
     volume_h6 = market.get("volume_h6_usd")
     volume_h24 = market.get("volume_24h_usd")
+    reliability = verification.get("priceReliability") or market.get("priceReliability")
+    trend_state = verification.get("trendState") or market.get("trendState")
+    watch_only = bool(verification.get("watchOnly") or market.get("watchOnly"))
+    volume_to_liquidity = verification.get("volumeToLiquidity") or market.get("volumeToLiquidity")
     ds_url = market.get("dexscreener_url") or token.get("dexscreener_url") or ""
 
     lines = [
@@ -263,6 +267,13 @@ def _build_verified_x_watcher_hit_message(
         f"Volume: h1 `{_format_usd(volume_h1)}` h6 `{_format_usd(volume_h6)}` h24 `{_format_usd(volume_h24)}`",
         f"Ingested: `{ingested_at}`",
     ]
+    if reliability or trend_state:
+        line = f"Signal: reliability `{reliability or '?'}` trend `{trend_state or '?'}`"
+        if volume_to_liquidity:
+            line += f" vol/liq `{_format_ratio(volume_to_liquidity)}x`"
+        if watch_only:
+            line += " `watch_only`"
+        lines.append(line)
     if author_label:
         lines.append(f"Author: {author_label}")
     if tweet_url:
@@ -352,3 +363,10 @@ def _format_usd(value) -> str:
     if abs(amount) >= 1_000:
         return f"${amount / 1_000:.1f}K"
     return f"${amount:.0f}"
+
+
+def _format_ratio(value) -> str:
+    try:
+        return f"{float(value):.1f}"
+    except (TypeError, ValueError):
+        return "?"

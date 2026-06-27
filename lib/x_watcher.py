@@ -25,7 +25,6 @@ STATE_FILE = ROOT / "data" / "watcher_ingest_state.json"
 LOCK_FILE = ROOT / "data" / "watcher_stream.lock"
 MAX_SEEN_IDS = 5000
 DISCORD_MIN_SCORE = 45.0
-DISCORD_WATCH_ONLY_MIN_SCORE = 60.0
 DISCORD_DIRECTION_COOLDOWN_SECONDS = 6 * 60 * 60
 
 
@@ -180,7 +179,7 @@ def should_post_verified_watcher_hit(verification: dict) -> bool:
         score = 0.0
     if score < DISCORD_MIN_SCORE:
         return False
-    if verification.get("watchOnly") and score < DISCORD_WATCH_ONLY_MIN_SCORE:
+    if verification.get("watchOnly"):
         return False
     return True
 

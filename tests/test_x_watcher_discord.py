@@ -208,7 +208,7 @@ def test_low_score_verified_watcher_hit_records_but_suppresses_discord(tmp_path,
     assert json.loads((tmp_path / "watcher_outcomes.json").read_text())["outcomes"][0]["tweet_id"] == "102"
 
 
-def test_watch_only_mid_score_verified_watcher_hit_suppresses_discord(tmp_path, monkeypatch):
+def test_watch_only_verified_watcher_hit_suppresses_discord_regardless_of_score(tmp_path, monkeypatch):
     sent = []
     monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://discord.invalid/webhook")
     monkeypatch.setattr(discord_module.requests, "post", lambda webhook, json, timeout: sent.append(json) or type("Response", (), {"status_code": 204, "text": ""})())
@@ -219,7 +219,7 @@ def test_watch_only_mid_score_verified_watcher_hit_suppresses_discord(tmp_path, 
             "verified": True,
             "reason": "verified_price_movement",
             "direction": "pump",
-            "score": 59.9,
+            "score": 100.0,
             "watchOnly": True,
             "market": {"symbol": "ALPHA", "address": "0x1", "chain_slug": "base"},
         },

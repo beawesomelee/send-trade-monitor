@@ -190,6 +190,39 @@ def test_extreme_low_liquidity_reset_is_watch_only():
     assert result["watchOnly"] is True
 
 
+def test_near_zero_price_window_is_watch_only_even_with_high_volume():
+    market = {
+        "market_cap_usd": 200_000_000,
+        "liquidity_usd": 58_000_000,
+        "volume_24h_usd": 87_360_000,
+        "price_change_h1_pct": -4.2,
+        "price_change_h6_pct": -100,
+        "price_change_h24_pct": 7.5,
+    }
+
+    result = watcher_verify.price_reliability(market)
+
+    assert result["priceReliability"] == "medium"
+    assert result["trendState"] == "near_zero_window_reset"
+    assert result["watchOnly"] is True
+
+
+def test_full_near_zero_drawdown_is_watch_only():
+    market = {
+        "market_cap_usd": 2_000_000,
+        "liquidity_usd": 300_000,
+        "volume_24h_usd": 1_360_000,
+        "price_change_h1_pct": -100,
+        "price_change_h6_pct": -100,
+        "price_change_h24_pct": -100,
+    }
+
+    result = watcher_verify.price_reliability(market)
+
+    assert result["trendState"] == "near_zero_drawdown"
+    assert result["watchOnly"] is True
+
+
 def test_verified_result_carries_signal_metadata():
     market = {
         "market_cap_usd": 2_000_000,

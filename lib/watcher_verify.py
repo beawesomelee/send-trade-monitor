@@ -426,6 +426,10 @@ def price_reliability(market: dict) -> dict:
         trend_state = "volatile_price_reset"
     elif h24 <= NEAR_ZERO_DRAWDOWN_PCT and max(h1, h6) > 0:
         trend_state = "possible_dead_cat"
+    elif near_zero and max(h1, h6, h24) <= 0:
+        trend_state = "near_zero_drawdown"
+    elif near_zero:
+        trend_state = "near_zero_window_reset"
     elif liquidity < LOW_LIQUIDITY_USD and h24 >= 200 and turnover >= 3:
         trend_state = "early_momentum"
     elif max(h1, h6, h24) >= 200:
@@ -434,7 +438,15 @@ def price_reliability(market: dict) -> dict:
     return {
         "priceReliability": reliability,
         "trendState": trend_state,
-        "watchOnly": reliability in {"low", "invalid"} or trend_state in {"volatile_price_reset", "possible_dead_cat"},
+        "watchOnly": (
+            reliability in {"low", "invalid"}
+            or trend_state in {
+                "volatile_price_reset",
+                "possible_dead_cat",
+                "near_zero_drawdown",
+                "near_zero_window_reset",
+            }
+        ),
         "volumeToLiquidity": round(turnover, 2),
         "reasons": reasons,
     }

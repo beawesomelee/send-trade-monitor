@@ -237,6 +237,96 @@ def test_watch_only_mid_score_verified_watcher_hit_suppresses_discord(tmp_path, 
     assert sent == []
 
 
+def test_same_token_direction_verified_hits_use_discord_cooldown(tmp_path, monkeypatch):
+    sent = []
+    monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://discord.invalid/webhook")
+    monkeypatch.setattr(
+        discord_module.requests,
+        "post",
+        lambda webhook, json, timeout: sent.append(json["content"])
+        or type("Response", (), {"status_code": 204, "text": ""})(),
+    )
+    monkeypatch.setattr(
+        x_watcher,
+        "verify_watcher_hit",
+        lambda payload: {
+            "verified": True,
+            "reason": "verified_price_movement",
+            "direction": "pump",
+            "score": 90.0,
+            "watchOnly": False,
+            "token": {"symbol": "VELVET"},
+            "market": {
+                "symbol": "VELVET",
+                "chain_slug": "base",
+                "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+                "price_change_h1_pct": 12,
+                "price_change_h6_pct": 55,
+            },
+        },
+    )
+
+    result, _tweets_path, state_path = _run_stream(
+        tmp_path,
+        monkeypatch,
+        [_payload("110", text="$VELVET running"), _payload("111", text="$VELVET still running")],
+        max_posts=2,
+    )
+
+    assert result["stored"] == 2
+    assert result["verified"] == 2
+    assert result["suppressed_discord"] == 1
+    assert len(sent) == 1
+    state = json.loads(state_path.read_text())
+    assert state["verified_watcher_discord_cooldowns"] == {
+        "base:0xbf927b841994731c573bdf09ceb0c6b0aa887cdd:pump": "2026-06-10T08:01:00Z"
+    }
+    outcomes = json.loads((tmp_path / "watcher_outcomes.json").read_text())["outcomes"]
+    assert [outcome["tweet_id"] for outcome in outcomes] == ["110", "111"]
+
+
+def test_same_token_opposite_direction_bypasses_discord_cooldown(tmp_path, monkeypatch):
+    sent = []
+    monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://discord.invalid/webhook")
+    monkeypatch.setattr(
+        discord_module.requests,
+        "post",
+        lambda webhook, json, timeout: sent.append(json["content"])
+        or type("Response", (), {"status_code": 204, "text": ""})(),
+    )
+
+    def fake_verify(payload):
+        direction = "pump" if payload["data"]["id"] == "120" else "dump"
+        return {
+            "verified": True,
+            "reason": "verified_price_movement",
+            "direction": direction,
+            "score": 90.0,
+            "watchOnly": False,
+            "token": {"symbol": "VELVET"},
+            "market": {
+                "symbol": "VELVET",
+                "chain_slug": "base",
+                "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+                "price_change_h1_pct": 55 if direction == "pump" else -55,
+                "price_change_h6_pct": 60 if direction == "pump" else -60,
+            },
+        }
+
+    monkeypatch.setattr(x_watcher, "verify_watcher_hit", fake_verify)
+
+    result, _tweets_path, _state_path = _run_stream(
+        tmp_path,
+        monkeypatch,
+        [_payload("120", text="$VELVET running"), _payload("121", text="$VELVET dumping")],
+        max_posts=2,
+    )
+
+    assert result["verified"] == 2
+    assert result["suppressed_discord"] == 0
+    assert len(sent) == 2
+
+
 def test_duplicate_tweet_id_is_stored_and_posted_only_once(tmp_path, monkeypatch):
     sent = []
     monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://discord.invalid/webhook")

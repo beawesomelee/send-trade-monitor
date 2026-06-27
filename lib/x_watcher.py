@@ -26,6 +26,7 @@ LOCK_FILE = ROOT / "data" / "watcher_stream.lock"
 MAX_SEEN_IDS = 5000
 DISCORD_MIN_SCORE = 45.0
 DISCORD_WATCH_ONLY_MIN_SCORE = 60.0
+DISCORD_DIRECTION_COOLDOWN_SECONDS = 6 * 60 * 60
 
 
 STREAM_PARAMS = {
@@ -121,13 +122,20 @@ def stream_watcher_posts(
                     if verification.get("verified"):
                         verified += 1
                         record_watcher_outcome(payload, verification, ingested_at, path=outcomes_path)
-                        if discord and should_post_verified_watcher_hit(verification):
+                        cooldown_key = verified_watcher_cooldown_key(verification)
+                        if (
+                            discord
+                            and should_post_verified_watcher_hit(verification)
+                            and not verified_watcher_on_cooldown(state, cooldown_key, ingested_at)
+                        ):
                             send_verified_x_watcher_hit(
                                 payload,
                                 ingested_at,
                                 verification,
                                 dry_run=discord_dry_run,
                             )
+                            record_verified_watcher_cooldown(state, cooldown_key, ingested_at)
+                            _save_state(state_path, state, recent_seen_ids)
                         elif discord:
                             suppressed_discord += 1
                     elif verification:
@@ -175,6 +183,47 @@ def should_post_verified_watcher_hit(verification: dict) -> bool:
     if verification.get("watchOnly") and score < DISCORD_WATCH_ONLY_MIN_SCORE:
         return False
     return True
+
+
+def verified_watcher_cooldown_key(verification: dict) -> str:
+    """Return the per-token/per-direction Discord cooldown key."""
+    market = verification.get("market") if isinstance(verification.get("market"), dict) else {}
+    token = verification.get("token") if isinstance(verification.get("token"), dict) else {}
+    direction = str(verification.get("direction") or "movement").strip().lower()
+    chain = str(market.get("chain_slug") or token.get("chain_slug") or "").strip().lower()
+    address = str(market.get("address") or token.get("address") or "").strip().lower()
+    symbol = str(market.get("symbol") or token.get("symbol") or "").strip().lower()
+    identity = f"{chain}:{address}" if chain and address else symbol
+    if not identity:
+        identity = "unknown"
+    return f"{identity}:{direction}"
+
+
+def verified_watcher_on_cooldown(state: dict, key: str, now_iso: str) -> bool:
+    if not key:
+        return False
+    cooldowns = state.get("verified_watcher_discord_cooldowns")
+    if not isinstance(cooldowns, dict):
+        return False
+    last_posted = str(cooldowns.get(key) or "")
+    if not last_posted:
+        return False
+    elapsed = _parse_iso_seconds(now_iso) - _parse_iso_seconds(last_posted)
+    return elapsed < DISCORD_DIRECTION_COOLDOWN_SECONDS
+
+
+def record_verified_watcher_cooldown(state: dict, key: str, posted_at: str) -> None:
+    if not key:
+        return
+    cooldowns = state.setdefault("verified_watcher_discord_cooldowns", {})
+    if not isinstance(cooldowns, dict):
+        cooldowns = {}
+        state["verified_watcher_discord_cooldowns"] = cooldowns
+    cutoff = _parse_iso_seconds(posted_at) - DISCORD_DIRECTION_COOLDOWN_SECONDS * 4
+    for existing_key, timestamp in list(cooldowns.items()):
+        if _parse_iso_seconds(str(timestamp or "")) < cutoff:
+            cooldowns.pop(existing_key, None)
+    cooldowns[key] = posted_at
 
 
 def iter_stream_payloads(
@@ -297,3 +346,11 @@ def _exclusive_stream_lock(path: Path) -> Iterator[None]:
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def _parse_iso_seconds(value: str) -> float:
+    try:
+        normalized = value.replace("Z", "+00:00")
+        return datetime.fromisoformat(normalized).timestamp()
+    except (TypeError, ValueError):
+        return 0.0

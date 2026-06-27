@@ -2423,10 +2423,172 @@
           "30x from entry"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@calvincalls",
+          "approval_evidence_url": "",
+          "approval_label": "unknown_tweet_timing",
+          "approval_reason": "candidate account has no tweet timestamp",
+          "approval_status": "pending",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "trader",
+            "$trader",
+            "moonshot",
+            "listing",
+            "private call on $trader",
+            "from my private call",
+            "kol post",
+            "private call"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@nova_trade1",
+          "approval_evidence_url": "",
+          "approval_label": "unknown_tweet_timing",
+          "approval_reason": "candidate account has no tweet timestamp",
+          "approval_status": "pending",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "trader",
+            "$trader",
+            "moonshot",
+            "listing",
+            "private call on $trader",
+            "from my private call",
+            "kol post",
+            "private call"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@0xvoidapenft",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "trader",
+            "$trader",
+            "moonshot",
+            "listing",
+            "private call on $trader",
+            "from my private call",
+            "kol post",
+            "private call"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-06-27T11:22:37Z",
+      "event_id": "signal_becfecee73f4",
+      "evidence": [
+        {
+          "author_handle": "@Calvincalls",
+          "minutes_before_detection": null,
+          "minutes_from_window_start": null,
+          "relevance": "shows KOL highlighting massive gains driving chatter",
+          "text": "213x from my private call on $TRADER",
+          "timing_bucket": "unknown",
+          "tweet_at": "",
+          "tweet_id": "",
+          "type": "x_post",
+          "url": ""
+        },
+        {
+          "author_handle": "@Calvincalls",
+          "minutes_before_detection": null,
+          "minutes_from_window_start": null,
+          "relevance": "follow up post reinforcing the call performance",
+          "text": "400x from my private call on $TRADER",
+          "timing_bucket": "unknown",
+          "tweet_at": "",
+          "tweet_id": "",
+          "type": "x_post",
+          "url": ""
+        },
+        {
+          "author_handle": "@nova_trade1",
+          "minutes_before_detection": null,
+          "minutes_from_window_start": null,
+          "relevance": "another trader posting real time gains",
+          "text": "$TRADER Up 15.0x from $80k >> $1.2m MC",
+          "timing_bucket": "unknown",
+          "tweet_at": "",
+          "tweet_id": "",
+          "type": "x_post",
+          "url": ""
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/BbydPty2qDLNjoeHtWiFjBfibBvBkXK84agHuU2rpump"
+      },
+      "lore": "@calvincalls posting 200-400x gains from private calls on $trader with matching ca. multiple updates today on the runner",
+      "movement": {
+        "change_pct": 359.4,
+        "detected_at": "2026-06-27T11:22:37Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-27T11:00:00Z",
+        "estimated_start_at": "2026-06-27T05:30:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 88,
+        "pool_address": "5LSTGoUgA7ghhDBgWG1Ego2Eq839x5yZUDqoXxsPztwz",
+        "pool_name": "TRADER / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-27T11:22:37Z",
+        "window_start_at": "2026-06-27T05:22:37Z"
+      },
+      "source_signal_id": "signal_becfecee73f4",
+      "token": {
+        "address": "BbydPty2qDLNjoeHtWiFjBfibBvBkXK84agHuU2rpump",
+        "chain_slug": "solana",
+        "symbol": "TRADER"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Calvincalls",
+          "@nova_trade1",
+          "@0xVoidApeNFT"
+        ],
+        "catalysts": [
+          "kol_post",
+          "private_call"
+        ],
+        "keywords": [
+          "$TRADER",
+          "moonshot",
+          "listing"
+        ],
+        "phrases": [
+          "private call on $TRADER",
+          "from my private call"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-25T21:22:44Z",
+  "updated_at": "2026-06-27T11:22:39Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -2435,15 +2597,16 @@
       "candidate_labels": {
         "approved_alpha_source": 8,
         "rejected_late_reaction": 21,
-        "rejected_no_tweet_evidence": 17,
-        "rejected_stale_pre_move": 3
+        "rejected_no_tweet_evidence": 18,
+        "rejected_stale_pre_move": 3,
+        "unknown_tweet_timing": 2
       },
-      "candidate_rules": 49,
+      "candidate_rules": 52,
       "watch_accounts_approved": 8,
-      "watch_accounts_pending": 0,
-      "watch_accounts_rejected": 40,
-      "watch_accounts_unchanged": 0
+      "watch_accounts_pending": 2,
+      "watch_accounts_rejected": 39,
+      "watch_accounts_unchanged": 114
     },
-    "updated_at": "2026-06-25T21:22:44Z"
+    "updated_at": "2026-06-27T11:22:39Z"
   }
 }

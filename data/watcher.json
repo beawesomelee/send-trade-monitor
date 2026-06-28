@@ -71,7 +71,7 @@
       "value": "from:blackbullsol (ansem OR $ansem) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-28T14:22:33Z",
+  "rules_synced_at": "2026-06-28T14:24:43Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -1433,7 +1433,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-28T14:22:33Z",
+  "updated_at": "2026-06-28T14:24:43Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "account_type": "community_account",

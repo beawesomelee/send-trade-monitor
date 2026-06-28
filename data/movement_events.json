@@ -3451,10 +3451,189 @@
           "black bull"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@rtmsol",
+          "approval_evidence_url": "https://x.com/rtmsol/status/2071103937793409239",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 140.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-28T05:30:32Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 140.53,
+          "source_evidence_urls": [
+            "https://x.com/rtmsol/status/2071107017217896453",
+            "https://x.com/rtmsol/status/2071103937793409239"
+          ],
+          "terms": [
+            "rtm",
+            "$rtm",
+            "moonshot",
+            "fomo",
+            "pumpfun",
+            "racers start your engines",
+            "were coming for that airdrop pumpfun",
+            "lets ride",
+            "kol quote",
+            "listing vote",
+            "team post"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@blknoiz06",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "rtm",
+            "$rtm",
+            "moonshot",
+            "fomo",
+            "pumpfun",
+            "racers start your engines",
+            "were coming for that airdrop pumpfun",
+            "lets ride",
+            "kol quote",
+            "listing vote",
+            "team post"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@freddsolchef",
+          "approval_evidence_url": "https://x.com/Freddsolchef/status/2071132114595000483",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 252.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-28T07:22:30Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 252.5,
+          "source_evidence_urls": [
+            "https://x.com/Freddsolchef/status/2071132114595000483"
+          ],
+          "terms": [
+            "rtm",
+            "$rtm",
+            "moonshot",
+            "fomo",
+            "pumpfun",
+            "racers start your engines",
+            "were coming for that airdrop pumpfun",
+            "lets ride",
+            "kol quote",
+            "listing vote",
+            "team post"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-28T07:22:40Z",
+      "event_id": "signal_c7e5a4fb0627",
+      "evidence": [
+        {
+          "author_handle": "@rtmsol",
+          "minutes_before_detection": 99.89,
+          "minutes_from_window_start": 260.11,
+          "relevance": "project post coinciding with pump timing",
+          "text": "racers start your engines",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T05:42:46Z",
+          "tweet_id": "2071107017217896453",
+          "type": "x_post",
+          "url": "https://x.com/rtmsol/status/2071107017217896453"
+        },
+        {
+          "author_handle": "@rtmsol",
+          "minutes_before_detection": 112.12,
+          "minutes_from_window_start": 247.88,
+          "relevance": "direct reply to ansem post driving engagement",
+          "text": "were coming for that airdrop pumpfun",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T05:30:32Z",
+          "tweet_id": "2071103937793409239",
+          "type": "x_post",
+          "url": "https://x.com/rtmsol/status/2071103937793409239"
+        },
+        {
+          "author_handle": "@Freddsolchef",
+          "minutes_before_detection": 0.16,
+          "minutes_from_window_start": 359.84,
+          "relevance": "early entry observation",
+          "text": "Made a quick buy into $RTM with the cartel at $22K market cap",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T07:22:30Z",
+          "tweet_id": "2071132114595000483",
+          "type": "x_post",
+          "url": "https://x.com/Freddsolchef/status/2071132114595000483"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/3d1qHSAkQhoN7kN1C6tvpAArCkXWxwYdBng6taXCDM6u"
+      },
+      "lore": "rtmsol quoted ansem's let's ride and posted racers start your engines plus airdrop pumpfun talk. community flooding moonshot and fomo votes with the ca. early callers showing 10-40x runs",
+      "movement": {
+        "change_pct": 75.5,
+        "detected_at": "2026-06-28T07:22:40Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-28T07:15:00Z",
+        "estimated_start_at": "2026-06-28T03:10:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "EBNUexqpB5WjKXJsfm3ruFt7zb7ZbXHZGR7YdhYuvuyy",
+        "pool_name": "RTM / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-28T07:22:40Z",
+        "window_start_at": "2026-06-28T01:22:40Z"
+      },
+      "source_signal_id": "signal_c7e5a4fb0627",
+      "token": {
+        "address": "3d1qHSAkQhoN7kN1C6tvpAArCkXWxwYdBng6taXCDM6u",
+        "chain_slug": "solana",
+        "symbol": "RTM"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@rtmsol",
+          "@blknoiz06",
+          "@Freddsolchef"
+        ],
+        "catalysts": [
+          "kol_quote",
+          "listing_vote",
+          "team_post"
+        ],
+        "keywords": [
+          "$RTM",
+          "moonshot",
+          "fomo",
+          "pumpfun"
+        ],
+        "phrases": [
+          "racers start your engines",
+          "were coming for that airdrop pumpfun",
+          "lets ride"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-28T05:22:47Z",
+  "updated_at": "2026-06-28T07:22:42Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -3463,17 +3642,17 @@
       "candidate_labels": {
         "approved_alpha_source": 11,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 28,
-        "rejected_no_tweet_evidence": 23,
+        "rejected_late_reaction": 30,
+        "rejected_no_tweet_evidence": 24,
         "rejected_stale_pre_move": 3,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 68,
+      "candidate_rules": 71,
       "watch_accounts_approved": 8,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 45,
+      "watch_accounts_rejected": 47,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-28T05:22:47Z"
+    "updated_at": "2026-06-28T07:22:42Z"
   }
 }

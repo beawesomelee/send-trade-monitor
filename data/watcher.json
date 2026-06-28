@@ -66,7 +66,7 @@
       "value": "from:cryptothannos (ansem OR $ansem OR blackbullsol OR \"flywheel is cooking\" OR \"ansem agrees to airdrop\" OR \"bought back 1m+\" OR \"team buyback\" OR \"lp add\" OR airdrop) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-28T05:59:36Z",
+  "rules_synced_at": "2026-06-28T06:22:32Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -1279,7 +1279,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-28T05:59:36Z",
+  "updated_at": "2026-06-28T06:22:32Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "account_type": "community_account",

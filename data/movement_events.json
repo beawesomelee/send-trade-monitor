@@ -3630,29 +3630,194 @@
           "lets ride"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@blackbullsol",
+          "approval_evidence_url": "https://x.com/BlackBullSol/status/2071079697463554365",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 5.8 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-06-28T03:54:13Z",
+          "approved_terms": [
+            "ansem",
+            "$ansem"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": -5.78,
+          "source_evidence_urls": [
+            "https://x.com/BlackBullSol/status/2071079697463554365"
+          ],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "pumpfun",
+            "blknoiz06",
+            "first coin on pumpfun hit 60m",
+            "adding to the lp",
+            "insane motion",
+            "kol motion",
+            "lp buy",
+            "milestone high"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@blknoiz06",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "pumpfun",
+            "blknoiz06",
+            "first coin on pumpfun hit 60m",
+            "adding to the lp",
+            "insane motion",
+            "kol motion",
+            "lp buy",
+            "milestone high"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@eagerbtc",
+          "approval_evidence_url": "https://x.com/eagerbtc/status/2071167663167168871",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 343.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-28T09:43:45Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 343.75,
+          "source_evidence_urls": [
+            "https://x.com/eagerbtc/status/2071167663167168871"
+          ],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "pumpfun",
+            "blknoiz06",
+            "first coin on pumpfun hit 60m",
+            "adding to the lp",
+            "insane motion",
+            "kol motion",
+            "lp buy",
+            "milestone high"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-28T09:44:28Z",
+      "event_id": "signal_34b3af6132aa",
+      "evidence": [
+        {
+          "author_handle": "@BlackBullSol",
+          "minutes_before_detection": 350.24,
+          "minutes_from_window_start": 9.76,
+          "relevance": "direct community lp action coinciding with pump",
+          "text": "We just bought another 10k in $ANSEM off the open market and added to the LP",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T03:54:13Z",
+          "tweet_id": "2071079697463554365",
+          "type": "x_post",
+          "url": "https://x.com/BlackBullSol/status/2071079697463554365"
+        },
+        {
+          "author_handle": "@eagerbtc",
+          "minutes_before_detection": 0.7,
+          "minutes_from_window_start": 359.3,
+          "relevance": "ties the high to blknoiz06 and pumpfun milestone",
+          "text": "$ansem the black bull becomes the first coin on pumpfun hit 60M in over 413 days @blknoiz06 has some insane motion wtf",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T09:43:45Z",
+          "tweet_id": "2071167663167168871",
+          "type": "x_post",
+          "url": "https://x.com/eagerbtc/status/2071167663167168871"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump"
+      },
+      "lore": "@blknoiz06 motion behind ansem first pumpfun coin over 60m in 413 days. fan acct adding lp buys. hits 67m",
+      "movement": {
+        "change_pct": 278.4,
+        "detected_at": "2026-06-28T09:44:28Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-28T09:35:00Z",
+        "estimated_start_at": "2026-06-28T04:00:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "FnzKY6x7entQ1eR3D225dQyT7ybfka4PskBMQhb8L3CC",
+        "pool_name": "ANSEM / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-28T09:44:28Z",
+        "window_start_at": "2026-06-28T03:44:28Z"
+      },
+      "source_signal_id": "signal_34b3af6132aa",
+      "token": {
+        "address": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+        "chain_slug": "solana",
+        "symbol": "ANSEM"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@BlackBullSol",
+          "@blknoiz06",
+          "@eagerbtc"
+        ],
+        "catalysts": [
+          "kol_motion",
+          "lp_buy",
+          "milestone_high"
+        ],
+        "keywords": [
+          "$ANSEM",
+          "pumpfun",
+          "blknoiz06"
+        ],
+        "phrases": [
+          "first coin on pumpfun hit 60M",
+          "adding to the LP",
+          "insane motion"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-28T07:22:42Z",
+  "updated_at": "2026-06-28T09:44:30Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 11,
+        "approved_alpha_source": 12,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 30,
-        "rejected_no_tweet_evidence": 24,
+        "rejected_late_reaction": 31,
+        "rejected_no_tweet_evidence": 25,
         "rejected_stale_pre_move": 3,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 71,
-      "watch_accounts_approved": 8,
+      "candidate_rules": 74,
+      "watch_accounts_approved": 9,
       "watch_accounts_pending": 2,
       "watch_accounts_rejected": 47,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-28T07:22:42Z"
+    "updated_at": "2026-06-28T09:44:30Z"
   }
 }

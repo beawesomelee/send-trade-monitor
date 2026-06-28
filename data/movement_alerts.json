@@ -1,18 +1,18 @@
 [
   {
     "chain_slug": "solana",
+    "address": "9crcn9rgt8v2imem2baks13yhmeais3rum3rpvtgpump",
+    "symbol": "ANSEM",
+    "direction": "pump",
+    "price_change_h1_pct": 32.633,
+    "timestamp": 1782639870.8972533
+  },
+  {
+    "chain_slug": "solana",
     "address": "3d1qhsakqhon7kn1c6tvpaarckxwxwydbng6taxcdm6u",
     "symbol": "RTM",
     "direction": "pump",
     "price_change_h1_pct": 19.715,
     "timestamp": 1782631362.202559
-  },
-  {
-    "chain_slug": "solana",
-    "address": "9crcn9rgt8v2imem2baks13yhmeais3rum3rpvtgpump",
-    "symbol": "ANSEM",
-    "direction": "pump",
-    "price_change_h1_pct": 1.17,
-    "timestamp": 1782624167.2867913
   }
 ]

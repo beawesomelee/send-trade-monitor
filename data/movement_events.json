@@ -3862,10 +3862,389 @@
         ],
         "phrases": []
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@sol_skulli",
+          "approval_evidence_url": "https://x.com/sol_skulli/status/2071292185220174268",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 98.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-28T17:58:34Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 98.57,
+          "source_evidence_urls": [
+            "https://x.com/sol_skulli/status/2071295349361180804",
+            "https://x.com/sol_skulli/status/2071292185220174268"
+          ],
+          "terms": [
+            "skully",
+            "$skully",
+            "moonshot",
+            "jupiter",
+            "moonshot listing votes",
+            "jupiter verification",
+            "fomo listing",
+            "listing vote",
+            "verification",
+            "pool add"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@ali7264ali",
+          "approval_evidence_url": "https://x.com/Ali7264Ali/status/2071313148788019439",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 181.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-28T19:21:52Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 181.87,
+          "source_evidence_urls": [
+            "https://x.com/Ali7264Ali/status/2071313148788019439"
+          ],
+          "terms": [
+            "skully",
+            "$skully",
+            "moonshot",
+            "jupiter",
+            "moonshot listing votes",
+            "jupiter verification",
+            "fomo listing",
+            "listing vote",
+            "verification",
+            "pool add"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@myrozana",
+          "approval_evidence_url": "https://x.com/MyRozana/status/2071312888912818617",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 180.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-28T19:20:50Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 180.83,
+          "source_evidence_urls": [
+            "https://x.com/MyRozana/status/2071312888912818617"
+          ],
+          "terms": [
+            "skully",
+            "$skully",
+            "moonshot",
+            "jupiter",
+            "moonshot listing votes",
+            "jupiter verification",
+            "fomo listing",
+            "listing vote",
+            "verification",
+            "pool add"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@memnicholas",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "skully",
+            "$skully",
+            "moonshot",
+            "jupiter",
+            "moonshot listing votes",
+            "jupiter verification",
+            "fomo listing",
+            "listing vote",
+            "verification",
+            "pool add"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-06-28T19:22:53Z",
+      "event_id": "signal_dc66c89d8fa6",
+      "evidence": [
+        {
+          "author_handle": "@sol_skulli",
+          "minutes_before_detection": 71.74,
+          "minutes_from_window_start": 288.26,
+          "relevance": "project's own post on verification driving attention",
+          "text": "The SKULLY verification request is live on Jupiter",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T18:11:08Z",
+          "tweet_id": "2071295349361180804",
+          "type": "x_post",
+          "url": "https://x.com/sol_skulli/status/2071295349361180804"
+        },
+        {
+          "author_handle": "@sol_skulli",
+          "minutes_before_detection": 84.31,
+          "minutes_from_window_start": 275.69,
+          "relevance": "new liquidity pool announcement",
+          "text": "And we have pool on Meteora!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T17:58:34Z",
+          "tweet_id": "2071292185220174268",
+          "type": "x_post",
+          "url": "https://x.com/sol_skulli/status/2071292185220174268"
+        },
+        {
+          "author_handle": "@Ali7264Ali",
+          "minutes_before_detection": 1.01,
+          "minutes_from_window_start": 358.99,
+          "relevance": "example of ongoing listing vote campaign",
+          "text": "I just voted YES for $SKULLY to get listed on FOMO!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T19:21:52Z",
+          "tweet_id": "2071313148788019439",
+          "type": "x_post",
+          "url": "https://x.com/Ali7264Ali/status/2071313148788019439"
+        },
+        {
+          "author_handle": "@MyRozana",
+          "minutes_before_detection": 2.04,
+          "minutes_from_window_start": 357.96,
+          "relevance": "moonshot vote momentum observation",
+          "text": "$SKULLY almost on moonshot, only 92 votes to go",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T19:20:50Z",
+          "tweet_id": "2071312888912818617",
+          "type": "x_post",
+          "url": "https://x.com/MyRozana/status/2071312888912818617"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/FE9v2QJfNPmgNf5yGFu4MJvafVrPCtPCDRxeS5mipump"
+      },
+      "lore": "moonshot and fomo listing votes climbing fast, jupiter verification live and meteora pool added. community push on thin chatter",
+      "movement": {
+        "change_pct": 6354.6,
+        "detected_at": "2026-06-28T19:22:53Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-28T19:15:00Z",
+        "estimated_start_at": "2026-06-28T16:20:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 38,
+        "pool_address": "J9D2Q27oFSfebBEoRoTXJiqVsULKdEsfNnVoeCrw6ZHL",
+        "pool_name": "SKULLY / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-28T19:22:53Z",
+        "window_start_at": "2026-06-28T13:22:53Z"
+      },
+      "source_signal_id": "signal_dc66c89d8fa6",
+      "token": {
+        "address": "FE9v2QJfNPmgNf5yGFu4MJvafVrPCtPCDRxeS5mipump",
+        "chain_slug": "solana",
+        "symbol": "SKULLY"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@sol_skulli",
+          "@Ali7264Ali",
+          "@MyRozana",
+          "@MemNicholas"
+        ],
+        "catalysts": [
+          "listing_vote",
+          "verification",
+          "pool_add"
+        ],
+        "keywords": [
+          "$SKULLY",
+          "skully",
+          "moonshot",
+          "jupiter"
+        ],
+        "phrases": [
+          "moonshot listing votes",
+          "jupiter verification",
+          "fomo listing"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@fanxiongsol",
+          "approval_evidence_url": "https://x.com/fanxiongsol/status/2071305140842188896",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 275.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-28T18:50:03Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 275.05,
+          "source_evidence_urls": [
+            "https://x.com/fanxiongsol/status/2071305140842188896"
+          ],
+          "terms": [
+            "$\u70e6",
+            "$$\u70e6",
+            "fanxiong",
+            "deeveloper said he'll pay for a x500 boost dex",
+            "crazy growth is here",
+            "team update",
+            "shill spam"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@pumpviewfun",
+          "approval_evidence_url": "https://x.com/pumpviewfun/status/2071311917503623246",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 302.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-28T19:16:58Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 301.97,
+          "source_evidence_urls": [
+            "https://x.com/pumpviewfun/status/2071311917503623246"
+          ],
+          "terms": [
+            "$\u70e6",
+            "$$\u70e6",
+            "fanxiong",
+            "deeveloper said he'll pay for a x500 boost dex",
+            "crazy growth is here",
+            "team update",
+            "shill spam"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@ahmet_guntekin",
+          "approval_evidence_url": "https://x.com/ahmet_guntekin/status/2071313283672387713",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 307.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-28T19:22:24Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 307.4,
+          "source_evidence_urls": [
+            "https://x.com/ahmet_guntekin/status/2071313283672387713"
+          ],
+          "terms": [
+            "$\u70e6",
+            "$$\u70e6",
+            "fanxiong",
+            "deeveloper said he'll pay for a x500 boost dex",
+            "crazy growth is here",
+            "team update",
+            "shill spam"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-28T19:22:53Z",
+      "event_id": "signal_8c229588230f",
+      "evidence": [
+        {
+          "author_handle": "@fanxiongsol",
+          "minutes_before_detection": 32.83,
+          "minutes_from_window_start": 327.17,
+          "relevance": "project's own post on momentum",
+          "text": "CRAZY GROWTH IS HERE ... the community stayed strong - and now growth is accelerating again",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T18:50:03Z",
+          "tweet_id": "2071305140842188896",
+          "type": "x_post",
+          "url": "https://x.com/fanxiongsol/status/2071305140842188896"
+        },
+        {
+          "author_handle": "@pumpviewfun",
+          "minutes_before_detection": 5.9,
+          "minutes_from_window_start": 354.1,
+          "relevance": "analyzer call on the move",
+          "text": "$$\u70e6 just hit x20! ... Entry: $92.0K \u2192 Now: $1.9M",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T19:16:58Z",
+          "tweet_id": "2071311917503623246",
+          "type": "x_post",
+          "url": "https://x.com/pumpviewfun/status/2071311917503623246"
+        },
+        {
+          "author_handle": "@ahmet_guntekin",
+          "minutes_before_detection": 0.47,
+          "minutes_from_window_start": 359.53,
+          "relevance": "example of shill posts driving chatter",
+          "text": "$$\u70e6 deeveloper said he'll pay for a x500 boost dex after 10 new members",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-28T19:22:24Z",
+          "tweet_id": "2071313283672387713",
+          "type": "x_post",
+          "url": "https://x.com/ahmet_guntekin/status/2071313283672387713"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/7yK2FtUHZQ4LHLRv6s9dPtbcZ7s2tqDkvZcYh2e6pump"
+      },
+      "lore": "team posted on growth after weak hands left (15 likes). repeated shills claiming dev paying for dex boosts after community joins. pumpview noted x20 from 92k mc",
+      "movement": {
+        "change_pct": 3036.0,
+        "detected_at": "2026-06-28T19:22:53Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-28T19:05:00Z",
+        "estimated_start_at": "2026-06-28T14:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 63,
+        "pool_address": "6VAcAgSjo3JssdVwTbRKosufJ3zGgEcC1LhmoAX8hkWx",
+        "pool_name": "$\u70e6 / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-28T19:22:53Z",
+        "window_start_at": "2026-06-28T13:22:53Z"
+      },
+      "source_signal_id": "signal_8c229588230f",
+      "token": {
+        "address": "7yK2FtUHZQ4LHLRv6s9dPtbcZ7s2tqDkvZcYh2e6pump",
+        "chain_slug": "solana",
+        "symbol": "$\u70e6"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@fanxiongsol",
+          "@pumpviewfun"
+        ],
+        "catalysts": [
+          "team_update",
+          "shill_spam"
+        ],
+        "keywords": [
+          "$$\u70e6",
+          "fanxiong"
+        ],
+        "phrases": [
+          "deeveloper said he'll pay for a x500 boost dex",
+          "CRAZY GROWTH IS HERE"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-28T15:53:38Z",
+  "updated_at": "2026-06-28T19:22:57Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -3874,17 +4253,17 @@
       "candidate_labels": {
         "approved_alpha_source": 12,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 31,
-        "rejected_no_tweet_evidence": 26,
+        "rejected_late_reaction": 37,
+        "rejected_no_tweet_evidence": 27,
         "rejected_stale_pre_move": 3,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 75,
+      "candidate_rules": 82,
       "watch_accounts_approved": 9,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 48,
+      "watch_accounts_rejected": 55,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-28T15:53:38Z"
+    "updated_at": "2026-06-28T19:22:57Z"
   }
 }

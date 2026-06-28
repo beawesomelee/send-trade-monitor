@@ -180,6 +180,19 @@
   {
     "chain_slug": "solana",
     "chain_id": 501474,
+    "address": "3d1qHSAkQhoN7kN1C6tvpAArCkXWxwYdBng6taXCDM6u",
+    "symbol": "RTM",
+    "name": "RETURN TO MEMES",
+    "market_cap_usd": 2129315,
+    "volume_24h_usd": 3138535,
+    "liquidity_usd": 143564,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/U7ulfES7yFuRW7GP?width=800&height=800&quality=95&format=auto",
+    "dexscreener_url": "https://dexscreener.com/solana/3d1qHSAkQhoN7kN1C6tvpAArCkXWxwYdBng6taXCDM6u",
+    "decimals": 6
+  },
+  {
+    "chain_slug": "solana",
+    "chain_id": 501474,
     "address": "BJb7vDusXmgMGLSYgLmhQNPNuHwVTBKxDcoYodk9pump",
     "symbol": "Groyper",
     "name": "Groyper",

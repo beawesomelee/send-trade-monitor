@@ -66,7 +66,7 @@
       "value": "from:cryptothannos (ansem OR $ansem OR blackbullsol OR \"flywheel is cooking\" OR \"ansem agrees to airdrop\" OR \"bought back 1m+\" OR \"team buyback\" OR \"lp add\" OR airdrop) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-27T23:36:03Z",
+  "rules_synced_at": "2026-06-28T00:22:43Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -1153,9 +1153,52 @@
           "bought back 1M+"
         ]
       }
+    },
+    {
+      "detected_at": "2026-06-28T00:22:40Z",
+      "id": "signal_fec5a845a5c2",
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump"
+      },
+      "lore": "blackbullsol added 25k to lp and submitted moonshot app, tagged blknoiz06 in wallet update. community pushing fomo listing vote too. next leg or fade",
+      "movement": {
+        "change_pct": 105.8,
+        "detected_at": "2026-06-28T00:22:40Z",
+        "direction": "pump",
+        "window": "h6",
+        "window_end_at": "2026-06-28T00:22:40Z",
+        "window_start_at": "2026-06-27T18:22:40Z"
+      },
+      "references": [],
+      "token": {
+        "address": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+        "symbol": "ANSEM"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@BlackBullSol",
+          "@blknoiz06"
+        ],
+        "catalysts": [
+          "lp_buy",
+          "listing_vote",
+          "kol_tag"
+        ],
+        "keywords": [
+          "$ANSEM",
+          "blackbullsol",
+          "fomo",
+          "moonshot"
+        ],
+        "phrases": [
+          "added it to the LP",
+          "moonshot application submitted",
+          "voted YES for $ANSEM to get listed on FOMO"
+        ]
+      }
     }
   ],
-  "updated_at": "2026-06-27T23:36:03Z",
+  "updated_at": "2026-06-28T00:22:43Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "account_type": "community_account",
@@ -1167,7 +1210,7 @@
       "approval_source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1186,7 +1229,7 @@
       "approval_source_signal_ids": [
         "signal_becfecee73f4"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for TRADER; movement 359.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_becfecee73f4"
@@ -1230,7 +1273,7 @@
       "approval_source_signal_ids": [
         "signal_f3e8bdb3735d"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for KOG; movement 3760.2% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1313,7 +1356,7 @@
       "approval_source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1364,7 +1407,7 @@
       "approval_source_signal_ids": [
         "signal_7821774ff59e"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for GIRLS; movement 3054.9% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1557,7 +1600,7 @@
       "approval_source_signal_ids": [
         "signal_3e17cdde0a68"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for SYND; movement 668.7% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1585,7 +1628,7 @@
       "approval_source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1615,7 +1658,7 @@
       "approval_source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1666,11 +1709,12 @@
         "signal_cdde089559c7",
         "signal_8168be171a95"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for ANSEM; movement 2568.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_cdde089559c7",
-        "signal_8168be171a95"
+        "signal_8168be171a95",
+        "signal_fec5a845a5c2"
       ],
       "status": "rejected",
       "terms": [
@@ -1689,21 +1733,31 @@
         "bought back 1m+",
         "team buyback",
         "lp add",
-        "airdrop"
+        "airdrop",
+        "fomo",
+        "moonshot",
+        "added it to the lp",
+        "moonshot application submitted",
+        "voted yes for $ansem to get listed on fomo",
+        "lp buy",
+        "listing vote",
+        "kol tag"
       ],
-      "updated_at": "2026-06-27T19:54:42Z"
+      "updated_at": "2026-06-28T00:22:40Z"
     },
     "@blknoiz06": {
       "approval_evidence_urls": [],
       "approval_label": "rejected_no_tweet_evidence",
       "approval_reason": "candidate account has no direct tweet evidence",
       "approval_source_signal_ids": [
-        "signal_cdde089559c7"
+        "signal_cdde089559c7",
+        "signal_fec5a845a5c2"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for ANSEM; movement 2568.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
-        "signal_cdde089559c7"
+        "signal_cdde089559c7",
+        "signal_fec5a845a5c2"
       ],
       "status": "rejected",
       "terms": [
@@ -1715,9 +1769,18 @@
         "flywheel",
         "team update",
         "buyback",
-        "kol post"
+        "kol post",
+        "blackbullsol",
+        "fomo",
+        "moonshot",
+        "added it to the lp",
+        "moonshot application submitted",
+        "voted yes for $ansem to get listed on fomo",
+        "lp buy",
+        "listing vote",
+        "kol tag"
       ],
-      "updated_at": "2026-06-27T15:50:33Z"
+      "updated_at": "2026-06-28T00:22:40Z"
     },
     "@boggyagent": {
       "account_type": "community_account",
@@ -1727,7 +1790,7 @@
       "approval_source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1775,7 +1838,7 @@
       "approval_source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1859,7 +1922,7 @@
       "approval_source_signal_ids": [
         "signal_becfecee73f4"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for TRADER; movement 359.4% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_becfecee73f4"
@@ -1923,7 +1986,7 @@
       "approval_source_signal_ids": [
         "signal_3e17cdde0a68"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for SYND; movement 668.7% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1951,7 +2014,7 @@
       "approval_source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -1999,7 +2062,7 @@
       "approval_source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2081,7 +2144,7 @@
       "approval_source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2113,7 +2176,7 @@
       "approval_source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2144,7 +2207,7 @@
       "approval_source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2195,7 +2258,7 @@
       "approval_source_signal_ids": [
         "signal_ae16415eb952"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 55.2% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_ae16415eb952"
@@ -2262,7 +2325,7 @@
       "approval_source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2283,7 +2346,7 @@
       "approval_source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2311,7 +2374,7 @@
       "approval_source_signal_ids": [
         "signal_d025f5481cc6"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2358,7 +2421,7 @@
       "approval_source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2399,7 +2462,7 @@
       "approval_source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2427,7 +2490,7 @@
       "approval_source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2548,7 +2611,7 @@
       "approval_source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2571,7 +2634,7 @@
       "approval_source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2640,7 +2703,7 @@
       "approval_source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2724,7 +2787,7 @@
       "approval_source_signal_ids": [
         "signal_7821774ff59e"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for GIRLS; movement 3054.9% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2809,7 +2872,7 @@
       "approval_source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -2833,7 +2896,7 @@
       "approval_source_signal_ids": [
         "signal_ae16415eb952"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 55.2% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_ae16415eb952"
@@ -3084,7 +3147,7 @@
       "approval_source_signal_ids": [
         "signal_3a43a86ca477"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 84.4% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -3166,7 +3229,7 @@
       "approval_source_signal_ids": [
         "signal_f3e8bdb3735d"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for KOG; movement 3760.2% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -3195,7 +3258,7 @@
       "approval_source_signal_ids": [
         "signal_f3e8bdb3735d"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for KOG; movement 3760.2% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -3260,7 +3323,7 @@
       "approval_source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -3437,7 +3500,7 @@
       "approval_source_signal_ids": [
         "signal_66bbd1ef857a"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for WEN; movement 105.5% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -3503,7 +3566,7 @@
         "signal_7821774ff59e",
         "signal_becfecee73f4"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for GIRLS; movement 3054.9% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_7821774ff59e",
@@ -3537,7 +3600,7 @@
       "approval_source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -3694,7 +3757,7 @@
       "approval_source_signal_ids": [
         "signal_9658c91f8493"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for PEVOLUTION; movement 3091.7% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -3992,7 +4055,7 @@
       "approval_source_signal_ids": [
         "signal_cb5d73fe77f5"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for VELVET; movement 56.3% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4041,7 +4104,7 @@
       "approval_source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4162,7 +4225,7 @@
       "approval_source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4211,7 +4274,7 @@
       "approval_source_signal_ids": [
         "signal_02890fa65739"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for GTAVI; movement 114.6% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4254,7 +4317,7 @@
       "approval_source_signal_ids": [
         "signal_66bbd1ef857a"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for WEN; movement 105.5% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4329,7 +4392,7 @@
       "approval_source_signal_ids": [
         "signal_e90969c08d96"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for OPG; movement 52.5% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4380,7 +4443,7 @@
       "approval_source_signal_ids": [
         "signal_1d74d4dec010"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4483,7 +4546,7 @@
       "approval_source_signal_ids": [
         "signal_62b0f07aaf79"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for DOT; movement 76.9% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4514,7 +4577,7 @@
       "approval_source_signal_ids": [
         "signal_d025f5481cc6"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_d025f5481cc6",
@@ -4616,7 +4679,7 @@
       "approval_source_signal_ids": [
         "signal_7821774ff59e"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for GIRLS; movement 3054.9% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4647,7 +4710,7 @@
       "approval_source_signal_ids": [
         "signal_66bbd1ef857a"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for WEN; movement 105.5% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4713,7 +4776,7 @@
       "approval_source_signal_ids": [
         "signal_f3e8bdb3735d"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for KOG; movement 3760.2% over h6; requires manual approval before rule sync.",
       "rule_mode": "account_plus_terms",
       "source_signal_ids": [
@@ -4779,7 +4842,7 @@
       "approval_source_signal_ids": [
         "signal_8168be171a95"
       ],
-      "approval_updated_at": "2026-06-27T19:54:44Z",
+      "approval_updated_at": "2026-06-28T00:22:42Z",
       "reason_added": "Suggested by movement explanation for ANSEM; movement 2692.3% over h6; requires manual approval before rule sync.",
       "source_signal_ids": [
         "signal_8168be171a95"
@@ -4826,16 +4889,16 @@
         "approved_alpha_source": 11,
         "approved_movement_chatter": 1,
         "rejected_late_reaction": 25,
-        "rejected_no_tweet_evidence": 20,
+        "rejected_no_tweet_evidence": 22,
         "rejected_stale_pre_move": 3,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 62,
+      "candidate_rules": 64,
       "watch_accounts_approved": 8,
       "watch_accounts_pending": 2,
       "watch_accounts_rejected": 43,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-27T19:54:44Z"
+    "updated_at": "2026-06-28T00:22:42Z"
   }
 }

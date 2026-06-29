@@ -81,7 +81,7 @@
       "value": "from:jotchuathememe (jotchua OR $jotchua) is:reply -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-29T21:10:40Z",
+  "rules_synced_at": "2026-06-29T21:22:31Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -1857,7 +1857,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-29T21:10:40Z",
+  "updated_at": "2026-06-29T21:22:31Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "account_type": "community_account",

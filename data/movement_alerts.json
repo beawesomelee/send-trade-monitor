@@ -1,26 +1,10 @@
 [
   {
     "chain_slug": "solana",
-    "address": "fe9v2qjfnpmgnf5ygfu4mjvafvrpctpcdrxes5mipump",
-    "symbol": "SKULLY",
-    "direction": "pump",
-    "price_change_h1_pct": 66.502,
-    "timestamp": 1782674577.2169638
-  },
-  {
-    "chain_slug": "solana",
-    "address": "7yk2ftuhzq4lhlrv6s9dptbcz7s2tqdkvzcyh2e6pump",
-    "symbol": "$\u70e6",
-    "direction": "pump",
-    "price_change_h1_pct": 3.269,
-    "timestamp": 1782674577.2169638
-  },
-  {
-    "chain_slug": "solana",
     "address": "epd8jj7bvhnh3o7wx1xz39aaacski8p2aban61yhunbh",
     "symbol": "\ud83d\udc02\ud83c\udc04\ufe0f",
     "direction": "pump",
-    "price_change_h1_pct": 100.137,
-    "timestamp": 1782662018.3465197
+    "price_change_h1_pct": 120.626,
+    "timestamp": 1782696166.569033
   }
 ]

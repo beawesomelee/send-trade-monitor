@@ -76,7 +76,7 @@
       "value": "from:darky1k (wynn OR $wynn OR \"james wynn\" OR \"james wynn just launched his own meme\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-06-29T13:22:33Z",
+  "rules_synced_at": "2026-06-29T14:22:49Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -1746,7 +1746,7 @@
       }
     }
   ],
-  "updated_at": "2026-06-29T13:22:33Z",
+  "updated_at": "2026-06-29T14:22:49Z",
   "watch_accounts": {
     "@0xalwaysonchain": {
       "account_type": "community_account",

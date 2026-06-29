@@ -4282,29 +4282,201 @@
         "keywords": [],
         "phrases": []
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@jameswynnreal",
+          "approval_evidence_url": "https://x.com/JamesWynnReal/status/2071219261343752648",
+          "approval_label": "rejected_stale_pre_move",
+          "approval_reason": "tweet was 836.2 minutes before the estimated move start, outside the freshness window",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-28T13:08:47Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -836.22,
+          "source_evidence_urls": [
+            "https://x.com/JamesWynnReal/status/2071219261343752648"
+          ],
+          "terms": [
+            "wynn",
+            "$wynn",
+            "james wynn",
+            "influencer coin",
+            "whoever lists $wynn first",
+            "james wynn just launched his own meme",
+            "kol post",
+            "listing vote"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@darky1k",
+          "approval_evidence_url": "https://x.com/Darky1k/status/2071274032725409853",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 618.6 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-06-28T16:46:26Z",
+          "approved_terms": [
+            "wynn",
+            "$wynn",
+            "james wynn",
+            "james wynn just launched his own meme"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -618.57,
+          "source_evidence_urls": [
+            "https://x.com/Darky1k/status/2071274032725409853"
+          ],
+          "terms": [
+            "wynn",
+            "$wynn",
+            "james wynn",
+            "influencer coin",
+            "whoever lists $wynn first",
+            "james wynn just launched his own meme",
+            "kol post",
+            "listing vote"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@yayaca11",
+          "approval_evidence_url": "https://x.com/YAYACA11/status/2071478546648703145",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 194.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-29T06:19:06Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 194.1,
+          "source_evidence_urls": [
+            "https://x.com/YAYACA11/status/2071478546648703145"
+          ],
+          "terms": [
+            "wynn",
+            "$wynn",
+            "james wynn",
+            "influencer coin",
+            "whoever lists $wynn first",
+            "james wynn just launched his own meme",
+            "kol post",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-29T06:22:45Z",
+      "event_id": "signal_b062e24a275e",
+      "evidence": [
+        {
+          "author_handle": "@JamesWynnReal",
+          "minutes_before_detection": 1033.95,
+          "minutes_from_window_start": -673.95,
+          "relevance": "direct post from namesake driving the token",
+          "text": "Whoever lists $WYNN first gets the fruits. Time is of the essence. [CA]",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-06-28T13:08:47Z",
+          "tweet_id": "2071219261343752648",
+          "type": "x_post",
+          "url": "https://x.com/JamesWynnReal/status/2071219261343752648"
+        },
+        {
+          "author_handle": "@Darky1k",
+          "minutes_before_detection": 816.31,
+          "minutes_from_window_start": -456.31,
+          "relevance": "early KOL call on the launch",
+          "text": "James Wynn just launched his own meme $WYNN. Same like $ANSEM",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-06-28T16:46:26Z",
+          "tweet_id": "2071274032725409853",
+          "type": "x_post",
+          "url": "https://x.com/Darky1k/status/2071274032725409853"
+        },
+        {
+          "author_handle": "@YAYACA11",
+          "minutes_before_detection": 3.64,
+          "minutes_from_window_start": 356.36,
+          "relevance": "explains ongoing engagement behind the move",
+          "text": "james wynn recently started actively mentioning $WYNN multiple times on X and interacting with community",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-29T06:19:06Z",
+          "tweet_id": "2071478546648703145",
+          "type": "x_post",
+          "url": "https://x.com/YAYACA11/status/2071478546648703145"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/G9ds9rppyJVZs4ZiRv6jVEq4Tq7kRcXxFgbhz232pump"
+      },
+      "lore": "james wynn posted the ca and listing asks on his own meme. voting spam for fomo/moonshot running in parallel. influencer narra live.",
+      "movement": {
+        "change_pct": 79.1,
+        "detected_at": "2026-06-29T06:22:45Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-29T06:05:00Z",
+        "estimated_start_at": "2026-06-29T03:05:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "FqRiBboRyiY8Lyq5hn8CTn8LGTCQYoknK6K2MSKwwD1q",
+        "pool_name": "WYNN / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-29T06:22:45Z",
+        "window_start_at": "2026-06-29T00:22:45Z"
+      },
+      "source_signal_id": "signal_b062e24a275e",
+      "token": {
+        "address": "G9ds9rppyJVZs4ZiRv6jVEq4Tq7kRcXxFgbhz232pump",
+        "chain_slug": "solana",
+        "symbol": "WYNN"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@JamesWynnReal",
+          "@Darky1k"
+        ],
+        "catalysts": [
+          "kol_post",
+          "listing_vote"
+        ],
+        "keywords": [
+          "$WYNN",
+          "james wynn",
+          "influencer coin"
+        ],
+        "phrases": [
+          "whoever lists $WYNN first",
+          "james wynn just launched his own meme"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-29T01:22:46Z",
+  "updated_at": "2026-06-29T06:22:47Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 12,
+        "approved_alpha_source": 13,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 37,
+        "rejected_late_reaction": 38,
         "rejected_no_tweet_evidence": 27,
-        "rejected_stale_pre_move": 3,
+        "rejected_stale_pre_move": 4,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 82,
-      "watch_accounts_approved": 9,
+      "candidate_rules": 85,
+      "watch_accounts_approved": 10,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 55,
+      "watch_accounts_rejected": 57,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-29T01:22:46Z"
+    "updated_at": "2026-06-29T06:22:47Z"
   }
 }

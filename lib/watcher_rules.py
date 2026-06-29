@@ -120,7 +120,7 @@ def _chunk_official_handles(handles: list[str], max_rule_chars: int) -> list[lis
 
 
 def _official_rule_value(handles: list[str]) -> str:
-    return f"({' OR '.join(f'from:{handle}' for handle in handles)}) -is:retweet"
+    return f"({' OR '.join(f'from:{handle}' for handle in handles)}) -is:retweet -is:reply"
 
 
 def _community_rule_value(handle: str, terms: list[str]) -> str:

@@ -100,6 +100,6 @@ def test_rule_builder_uses_account_only_rules_for_official_token_accounts():
     assert rules == [
         {
             "tag": "send_watcher:official:1",
-            "value": "(from:velvet_capital) -is:retweet",
+            "value": "(from:velvet_capital) -is:retweet -is:reply",
         }
     ]

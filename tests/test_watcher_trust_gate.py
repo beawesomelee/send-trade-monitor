@@ -62,6 +62,42 @@ def test_record_signals_preserves_extra_watcher_metadata(monkeypatch, tmp_path):
     assert state["watcher_approval"] == {"method": "existing"}
 
 
+def test_record_signals_preserves_existing_account_metadata(monkeypatch, tmp_path):
+    watcher_file = tmp_path / "watcher.json"
+    watcher_file.write_text(
+        """
+{
+  "schema_version": "watcher_state_v1",
+  "updated_at": "2026-06-10T00:00:00Z",
+  "signals": [],
+  "watch_accounts": {
+    "@candidatekol": {
+      "status": "approved",
+      "account_type": "official_token_account",
+      "rule_mode": "account_only",
+      "token": {
+        "symbol": "TEST",
+        "address": "0xabc",
+        "chain_slug": "base"
+      },
+      "terms": ["test"]
+    }
+  },
+  "rules": []
+}
+"""
+    )
+    monkeypatch.setattr(watcher_state, "WATCHER_FILE", watcher_file)
+
+    watcher_state.record_signals([_mover()], detected_at="2026-06-10T01:00:00Z")
+    account = watcher_state._load_state()["watch_accounts"]["@candidatekol"]
+
+    assert account["account_type"] == "official_token_account"
+    assert account["rule_mode"] == "account_only"
+    assert account["token"]["symbol"] == "TEST"
+    assert account["terms"] == ["test", "$test", "big launch", "kol post"]
+
+
 def test_rule_builder_uses_only_approved_watch_accounts():
     state = {
         "watch_accounts": {
@@ -102,4 +138,36 @@ def test_rule_builder_uses_account_only_rules_for_official_token_accounts():
             "tag": "send_watcher:official:1",
             "value": "(from:velvet_capital) -is:retweet -is:reply",
         }
+    ]
+
+
+def test_rule_builder_uses_keyword_reply_rules_for_official_accounts_with_community_context():
+    state = {
+        "watch_accounts": {
+            "@velvet_capital": {
+                "status": "approved",
+                "account_type": "official_token_account",
+                "rule_mode": "account_only",
+                "reason_added": "community movement evidence",
+                "terms": ["velvet", "$velvet"],
+                "token": {
+                    "symbol": "VELVET",
+                    "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+                    "chain_slug": "base",
+                },
+            },
+        }
+    }
+
+    rules = build_desired_rules(state)
+
+    assert rules == [
+        {
+            "tag": "send_watcher:community:velvet_capital:replies",
+            "value": "from:velvet_capital (velvet OR $velvet) is:reply -is:retweet",
+        },
+        {
+            "tag": "send_watcher:official:1",
+            "value": "(from:velvet_capital) -is:retweet -is:reply",
+        },
     ]

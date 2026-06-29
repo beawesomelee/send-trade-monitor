@@ -5810,7 +5810,10 @@
       "verified_source_updated_at": "2026-06-27T02:33:35Z"
     },
     "@velvet_capital": {
+      "account_type": "official_token_account",
       "reason_added": "Suggested by movement explanation; requires manual approval before rule sync.",
+      "rule_mode": "account_only",
+      "source": "send_verified_dexscreener_socials",
       "source_signal_ids": [
         "signal_d025f5481cc6",
         "signal_ae16415eb952"
@@ -5829,6 +5832,13 @@
         "team update",
         "price action"
       ],
+      "token": {
+        "address": "0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+        "chain_slug": "base",
+        "dexscreener_url": "https://dexscreener.com/base/0xbf927b841994731c573bdf09ceb0c6b0aa887cdd",
+        "name": "Velvet",
+        "symbol": "VELVET"
+      },
       "updated_at": "2026-06-27T13:22:44Z"
     },
     "@virtuals_io": {

@@ -37,6 +37,15 @@ def build_desired_rules(state: dict, max_rule_chars: int = MAX_RULE_CHARS) -> li
 
         if _account_type(config) == "official_token_account":
             official_handles.append(handle)
+            if _has_community_context(config):
+                terms = _clean_terms(config.get("terms") or [])
+                chunks = _chunk_terms(handle, terms, max_rule_chars=max_rule_chars, rule_value=_official_reply_rule_value)
+                for idx, chunk in enumerate(chunks, start=1):
+                    suffix = f":{idx}" if len(chunks) > 1 else ""
+                    rules.append({
+                        "value": _official_reply_rule_value(handle, chunk),
+                        "tag": f"send_watcher:community:{handle}:replies{suffix}",
+                    })
             continue
 
         terms = _clean_terms(config.get("terms") or [])
@@ -87,13 +96,14 @@ def official_token_for_payload(payload: dict, state: dict | None = None) -> dict
     return None
 
 
-def _chunk_terms(handle: str, terms: list[str], max_rule_chars: int) -> list[list[str]]:
+def _chunk_terms(handle: str, terms: list[str], max_rule_chars: int, rule_value=None) -> list[list[str]]:
+    rule_value = rule_value or _community_rule_value
     chunks = []
     current = []
 
     for term in terms:
         candidate = current + [term]
-        if current and len(_community_rule_value(handle, candidate)) > max_rule_chars:
+        if current and len(rule_value(handle, candidate)) > max_rule_chars:
             chunks.append(current)
             current = [term]
         else:
@@ -125,6 +135,10 @@ def _official_rule_value(handles: list[str]) -> str:
 
 def _community_rule_value(handle: str, terms: list[str]) -> str:
     return f"from:{handle} ({' OR '.join(_format_term(t) for t in terms)}) -is:retweet"
+
+
+def _official_reply_rule_value(handle: str, terms: list[str]) -> str:
+    return f"from:{handle} ({' OR '.join(_format_term(t) for t in terms)}) is:reply -is:retweet"
 
 
 def _format_term(term: str) -> str:
@@ -172,6 +186,15 @@ def _account_type(config: dict) -> str:
     if raw == "official_token_account":
         return "official_token_account"
     return "community_account"
+
+
+def _has_community_context(config: dict) -> bool:
+    source_ids = config.get("source_signal_ids")
+    return bool(
+        config.get("reason_added")
+        or config.get("approval_label")
+        or (isinstance(source_ids, list) and source_ids)
+    )
 
 
 def _matched_rule_handles(payload: dict) -> list[str]:

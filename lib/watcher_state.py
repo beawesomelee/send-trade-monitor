@@ -129,6 +129,7 @@ def _merge_watch_accounts(state: dict, signal: dict):
             source_ids = []
 
         watch_accounts[account] = {
+            **existing,
             "status": existing.get("status") or "pending",
             "terms": _dedupe(existing_terms + terms)[:120],
             "source_signal_ids": _dedupe(source_ids + [signal["id"]]),

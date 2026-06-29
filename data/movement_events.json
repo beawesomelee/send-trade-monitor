@@ -4454,10 +4454,266 @@
           "james wynn just launched his own meme"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@wenyonchain",
+          "approval_evidence_url": "https://x.com/wenyonchain/status/2071690717135507827",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 347.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-29T20:22:11Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 347.18,
+          "source_evidence_urls": [
+            "https://x.com/wenyonchain/status/2071690717135507827"
+          ],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "moonshot",
+            "fomo",
+            "115 votes to go",
+            "voted yes for $bullcat to get listed on fomo",
+            "openclaw called $bullcat bullish",
+            "listing vote",
+            "kol mention",
+            "volume spike"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@anaatenciopinto",
+          "approval_evidence_url": "https://x.com/anaatenciopinto/status/2071690612558954754",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 346.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-29T20:21:46Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 346.77,
+          "source_evidence_urls": [
+            "https://x.com/anaatenciopinto/status/2071690612558954754"
+          ],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "moonshot",
+            "fomo",
+            "115 votes to go",
+            "voted yes for $bullcat to get listed on fomo",
+            "openclaw called $bullcat bullish",
+            "listing vote",
+            "kol mention",
+            "volume spike"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@mokoi04",
+          "approval_evidence_url": "https://x.com/MoKoi04/status/2071690485802959142",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 346.3 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-29T20:21:16Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 346.27,
+          "source_evidence_urls": [
+            "https://x.com/MoKoi04/status/2071690485802959142"
+          ],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "moonshot",
+            "fomo",
+            "115 votes to go",
+            "voted yes for $bullcat to get listed on fomo",
+            "openclaw called $bullcat bullish",
+            "listing vote",
+            "kol mention",
+            "volume spike"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cocopumpit",
+          "approval_evidence_url": "https://x.com/cocopumpit/status/2071413186696450208",
+          "approval_label": "rejected_stale_pre_move",
+          "approval_reason": "tweet was 755.6 minutes before the estimated move start, outside the freshness window",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-29T01:59:23Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -755.62,
+          "source_evidence_urls": [
+            "https://x.com/cocopumpit/status/2071413186696450208"
+          ],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "moonshot",
+            "fomo",
+            "115 votes to go",
+            "voted yes for $bullcat to get listed on fomo",
+            "openclaw called $bullcat bullish",
+            "listing vote",
+            "kol mention",
+            "volume spike"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@soot_gauge",
+          "approval_evidence_url": "https://x.com/soot_gauge/status/2071612120878190822",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 34.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-29T15:09:52Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 34.87,
+          "source_evidence_urls": [
+            "https://x.com/soot_gauge/status/2071612120878190822"
+          ],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "moonshot",
+            "fomo",
+            "115 votes to go",
+            "voted yes for $bullcat to get listed on fomo",
+            "openclaw called $bullcat bullish",
+            "listing vote",
+            "kol mention",
+            "volume spike"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-29T20:22:42Z",
+      "event_id": "signal_8ddf007f3ed8",
+      "evidence": [
+        {
+          "author_handle": "@wenyonchain",
+          "minutes_before_detection": 0.5,
+          "minutes_from_window_start": 359.5,
+          "relevance": "direct buy mention amid the pump",
+          "text": "just bought some $BULLCAT",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-29T20:22:11Z",
+          "tweet_id": "2071690717135507827",
+          "type": "x_post",
+          "url": "https://x.com/wenyonchain/status/2071690717135507827"
+        },
+        {
+          "author_handle": "@anaatenciopinto",
+          "minutes_before_detection": 0.92,
+          "minutes_from_window_start": 359.08,
+          "relevance": "shows active moonshot voting drive",
+          "text": "yo $BULLCAT 115 votes to go",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-29T20:21:46Z",
+          "tweet_id": "2071690612558954754",
+          "type": "x_post",
+          "url": "https://x.com/anaatenciopinto/status/2071690612558954754"
+        },
+        {
+          "author_handle": "@MoKoi04",
+          "minutes_before_detection": 1.42,
+          "minutes_from_window_start": 358.58,
+          "relevance": "fomo listing vote activity",
+          "text": "I just voted YES for $BULLCAT to get listed on FOMO!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-29T20:21:16Z",
+          "tweet_id": "2071690485802959142",
+          "type": "x_post",
+          "url": "https://x.com/MoKoi04/status/2071690485802959142"
+        },
+        {
+          "author_handle": "@cocopumpit",
+          "minutes_before_detection": 1103.31,
+          "minutes_from_window_start": -743.31,
+          "relevance": "early volume observation tied to move",
+          "text": "$BULLCAT just did 1.6M volume on a 362k cap",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-06-29T01:59:23Z",
+          "tweet_id": "2071413186696450208",
+          "type": "x_post",
+          "url": "https://x.com/cocopumpit/status/2071413186696450208"
+        },
+        {
+          "author_handle": "@soot_gauge",
+          "minutes_before_detection": 312.82,
+          "minutes_from_window_start": 47.18,
+          "relevance": "kol-like signal mentioned",
+          "text": "openclaw called $BULLCAT bullish",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-29T15:09:52Z",
+          "tweet_id": "2071612120878190822",
+          "type": "x_post",
+          "url": "https://x.com/soot_gauge/status/2071612120878190822"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/CkAuhMagnem2iukGwApsfw1ypWETWDdKFD1Xrrtspump"
+      },
+      "lore": "moonshot voting push with 115 votes left and multiple fomo yes votes today. some buys noted on the 1m mc level, openclaw flagged bullish earlier. thin public timeline otherwise.",
+      "movement": {
+        "change_pct": 156.0,
+        "detected_at": "2026-06-29T20:22:42Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-29T20:20:00Z",
+        "estimated_start_at": "2026-06-29T14:35:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "Hh6ajgHBw5eRr8Rj9kC51zAZvrChjVvrAnc2w8Sy6G7j",
+        "pool_name": "BULLCAT / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-29T20:22:42Z",
+        "window_start_at": "2026-06-29T14:22:42Z"
+      },
+      "source_signal_id": "signal_8ddf007f3ed8",
+      "token": {
+        "address": "CkAuhMagnem2iukGwApsfw1ypWETWDdKFD1Xrrtspump",
+        "chain_slug": "solana",
+        "symbol": "BULLCAT"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@wenyonchain",
+          "@anaatenciopinto",
+          "@MoKoi04",
+          "@cocopumpit",
+          "@soot_gauge"
+        ],
+        "catalysts": [
+          "listing_vote",
+          "kol_mention",
+          "volume_spike"
+        ],
+        "keywords": [
+          "$BULLCAT",
+          "moonshot",
+          "fomo"
+        ],
+        "phrases": [
+          "115 votes to go",
+          "voted YES for $BULLCAT to get listed on FOMO",
+          "openclaw called $BULLCAT bullish"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-29T06:22:47Z",
+  "updated_at": "2026-06-29T20:22:44Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -4466,17 +4722,17 @@
       "candidate_labels": {
         "approved_alpha_source": 13,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 38,
+        "rejected_late_reaction": 42,
         "rejected_no_tweet_evidence": 27,
-        "rejected_stale_pre_move": 4,
+        "rejected_stale_pre_move": 5,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 85,
+      "candidate_rules": 90,
       "watch_accounts_approved": 10,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 57,
+      "watch_accounts_rejected": 62,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-29T06:22:47Z"
+    "updated_at": "2026-06-29T20:22:44Z"
   }
 }

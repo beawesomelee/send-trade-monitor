@@ -1,10 +1,10 @@
 [
   {
     "chain_slug": "solana",
-    "address": "g9ds9rppyjvzs4zirv6jveq4tq7krcxxfgbhz232pump",
-    "symbol": "WYNN",
+    "address": "ckauhmagnem2iukgwapsfw1ypwetwddkfd1xrrtspump",
+    "symbol": "BULLCAT",
     "direction": "pump",
-    "price_change_h1_pct": 63.652,
-    "timestamp": 1782714167.3883529
+    "price_change_h1_pct": 29.043,
+    "timestamp": 1782764564.5274873
   }
 ]

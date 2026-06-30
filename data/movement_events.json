@@ -5104,29 +5104,230 @@
           "$BULLCAT just did 1.6M volume on a 362k cap"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@_tjrtrades",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "tjr",
+            "$tjr",
+            "tjr trades",
+            "tribute coin",
+            "wallet trick",
+            "airdrop me some $tjr",
+            "kol tribute",
+            "wallet send",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@scepteragent",
+          "approval_evidence_url": "https://x.com/ScepterAgent/status/2071680667143000128",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 152.8 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-06-29T19:42:15Z",
+          "approved_terms": [
+            "tjr",
+            "$tjr",
+            "tjr trades"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -152.75,
+          "source_evidence_urls": [
+            "https://x.com/ScepterAgent/status/2071680667143000128"
+          ],
+          "terms": [
+            "tjr",
+            "$tjr",
+            "tjr trades",
+            "tribute coin",
+            "wallet trick",
+            "airdrop me some $tjr",
+            "kol tribute",
+            "wallet send",
+            "meme reactivation"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@saracrypto_eth",
+          "approval_evidence_url": "https://x.com/saracrypto_eth/status/2071796150286369197",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 306.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T03:21:08Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 306.13,
+          "source_evidence_urls": [
+            "https://x.com/saracrypto_eth/status/2071796150286369197"
+          ],
+          "terms": [
+            "tjr",
+            "$tjr",
+            "tjr trades",
+            "tribute coin",
+            "wallet trick",
+            "airdrop me some $tjr",
+            "kol tribute",
+            "wallet send",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@patrykrx",
+          "approval_evidence_url": "https://x.com/patrykrx/status/2071796142900142361",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 306.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T03:21:07Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 306.12,
+          "source_evidence_urls": [
+            "https://x.com/patrykrx/status/2071796142900142361"
+          ],
+          "terms": [
+            "tjr",
+            "$tjr",
+            "tjr trades",
+            "tribute coin",
+            "wallet trick",
+            "airdrop me some $tjr",
+            "kol tribute",
+            "wallet send",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-30T03:22:59Z",
+      "event_id": "signal_f925c43849ff",
+      "evidence": [
+        {
+          "author_handle": "@ScepterAgent",
+          "minutes_before_detection": 460.72,
+          "minutes_from_window_start": -100.72,
+          "relevance": "explains the core tribute narra and wallet mechanic behind the token",
+          "text": "$TJR is a memecoin based on TJR Trades... sent a majority of the supply directly to TJR's wallet as a tribute play",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-06-29T19:42:15Z",
+          "tweet_id": "2071680667143000128",
+          "type": "x_post",
+          "url": "https://x.com/ScepterAgent/status/2071680667143000128"
+        },
+        {
+          "author_handle": "@saracrypto_eth",
+          "minutes_before_detection": 1.83,
+          "minutes_from_window_start": 358.17,
+          "relevance": "shows trader posting about prior call and gains on the token",
+          "text": "I CALLED $TJR AT $50k \u2014 300x",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T03:21:08Z",
+          "tweet_id": "2071796150286369197",
+          "type": "x_post",
+          "url": "https://x.com/saracrypto_eth/status/2071796150286369197"
+        },
+        {
+          "author_handle": "@patrykrx",
+          "minutes_before_detection": 1.86,
+          "minutes_from_window_start": 358.14,
+          "relevance": "indicates giveaway activity tied to the token",
+          "text": "Doing a 3 SOL giveaway on $ANSEM and $TJR",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T03:21:07Z",
+          "tweet_id": "2071796142900142361",
+          "type": "x_post",
+          "url": "https://x.com/patrykrx/status/2071796142900142361"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/4U4U8oXwDyVXGeTffMXds4NAgBgLFwq3wNvTCRTSpump"
+      },
+      "lore": "tribute coin to @_tjrtrades, supply sent to his verified wallet after wallet trick. airdrop spam in replies, one trader posted 300x call history. no big kol posts, quiet move on the narra",
+      "movement": {
+        "change_pct": 3760.0,
+        "detected_at": "2026-06-30T03:22:59Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-30T03:20:00Z",
+        "estimated_start_at": "2026-06-29T22:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 172,
+        "pool_address": "Eg2SxQ3zkT3ZjQmnXg318aVUR8eo4YfUPUVzeU6riGJN",
+        "pool_name": "TJR / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-30T03:22:59Z",
+        "window_start_at": "2026-06-29T21:22:59Z"
+      },
+      "source_signal_id": "signal_f925c43849ff",
+      "token": {
+        "address": "4U4U8oXwDyVXGeTffMXds4NAgBgLFwq3wNvTCRTSpump",
+        "chain_slug": "solana",
+        "symbol": "TJR"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@_TJRTrades",
+          "@ScepterAgent",
+          "@saracrypto_eth"
+        ],
+        "catalysts": [
+          "kol_tribute",
+          "wallet_send",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "$TJR",
+          "TJR",
+          "tjr trades"
+        ],
+        "phrases": [
+          "tribute coin",
+          "wallet trick",
+          "airdrop me some $TJR"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-30T01:33:06Z",
+  "updated_at": "2026-06-30T03:23:02Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 13,
+        "approved_alpha_source": 14,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 47,
-        "rejected_no_tweet_evidence": 28,
+        "rejected_late_reaction": 49,
+        "rejected_no_tweet_evidence": 29,
         "rejected_stale_pre_move": 6,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 97,
-      "watch_accounts_approved": 10,
+      "candidate_rules": 101,
+      "watch_accounts_approved": 11,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 67,
+      "watch_accounts_rejected": 69,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-30T01:33:06Z"
+    "updated_at": "2026-06-30T03:23:02Z"
   }
 }

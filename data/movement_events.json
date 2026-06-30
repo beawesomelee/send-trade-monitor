@@ -4710,10 +4710,207 @@
           "openclaw called $BULLCAT bullish"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@dipwheeler",
+          "approval_evidence_url": "https://x.com/DipWheeler/status/2071756783258100154",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 59.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T00:44:43Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 59.72,
+          "source_evidence_urls": [
+            "https://x.com/DipWheeler/status/2071763221149876624",
+            "https://x.com/DipWheeler/status/2071756783258100154"
+          ],
+          "terms": [
+            "testibull",
+            "$testibull",
+            "bullsack",
+            "testicle",
+            "stimmy",
+            "pussy popper",
+            "stimmy just got a bit bigger",
+            "testibull rapes the small dog",
+            "165x up on my call",
+            "kol post",
+            "listing vote",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@crypt_mil",
+          "approval_evidence_url": "https://x.com/Crypt_mil/status/2071756002379129121",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 56.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T00:41:36Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 56.6,
+          "source_evidence_urls": [
+            "https://x.com/Crypt_mil/status/2071756002379129121"
+          ],
+          "terms": [
+            "testibull",
+            "$testibull",
+            "bullsack",
+            "testicle",
+            "stimmy",
+            "pussy popper",
+            "stimmy just got a bit bigger",
+            "testibull rapes the small dog",
+            "165x up on my call",
+            "kol post",
+            "listing vote",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@chubsters0x",
+          "approval_evidence_url": "https://x.com/Chubsters0x/status/2071765473340113135",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 94.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T01:19:15Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 94.25,
+          "source_evidence_urls": [
+            "https://x.com/Chubsters0x/status/2071765473340113135"
+          ],
+          "terms": [
+            "testibull",
+            "$testibull",
+            "bullsack",
+            "testicle",
+            "stimmy",
+            "pussy popper",
+            "stimmy just got a bit bigger",
+            "testibull rapes the small dog",
+            "165x up on my call",
+            "kol post",
+            "listing vote",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-30T01:22:46Z",
+      "event_id": "signal_13262593d51e",
+      "evidence": [
+        {
+          "author_handle": "@DipWheeler",
+          "minutes_before_detection": 12.47,
+          "minutes_from_window_start": 347.53,
+          "relevance": "project handle cryptic post tying into the move",
+          "text": "the testibull rapes the small dog when it barks.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T01:10:18Z",
+          "tweet_id": "2071763221149876624",
+          "type": "x_post",
+          "url": "https://x.com/DipWheeler/status/2071763221149876624"
+        },
+        {
+          "author_handle": "@DipWheeler",
+          "minutes_before_detection": 38.05,
+          "minutes_from_window_start": 321.95,
+          "relevance": "direct project post around the pump time",
+          "text": "stimmy just got a bit bigger. sack tf up boys.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T00:44:43Z",
+          "tweet_id": "2071756783258100154",
+          "type": "x_post",
+          "url": "https://x.com/DipWheeler/status/2071756783258100154"
+        },
+        {
+          "author_handle": "@Crypt_mil",
+          "minutes_before_detection": 41.15,
+          "minutes_from_window_start": 318.85,
+          "relevance": "early caller showing massive gains on the token",
+          "text": "$TESTIBULL CA C6kWVdLGAE3Eb8Xc6VRZbs9ZvouHhBMYbhd4BVagD4Da 165x up on my call",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T00:41:36Z",
+          "tweet_id": "2071756002379129121",
+          "type": "x_post",
+          "url": "https://x.com/Crypt_mil/status/2071756002379129121"
+        },
+        {
+          "author_handle": "@Chubsters0x",
+          "minutes_before_detection": 3.52,
+          "minutes_from_window_start": 356.48,
+          "relevance": "meme narrative tie-in post during the run",
+          "text": "$Testibull is running and $ANSEM is at 140M MC. ... Delegating all fees to Ansem's wallet.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T01:19:15Z",
+          "tweet_id": "2071765473340113135",
+          "type": "x_post",
+          "url": "https://x.com/Chubsters0x/status/2071765473340113135"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/C6kWVdLGAE3Eb8Xc6VRZbs9ZvouHhBMYbhd4BVagD4Da"
+      },
+      "lore": "dipwheeler posted stimmy just got bigger and testibull rapes the small dog, followed by calls hitting 160x on the ca. listing votes and airdrop chatter picking up. quiet on big accounts tho",
+      "movement": {
+        "change_pct": 9582.0,
+        "detected_at": "2026-06-30T01:22:46Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-30T00:40:00Z",
+        "estimated_start_at": "2026-06-29T23:45:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 31,
+        "pool_address": "8jpRBNmgrQm4dYhVUF18emhmkvaV3tdUpDz2CF6PdzwU",
+        "pool_name": "TESTIBULL / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-30T01:22:46Z",
+        "window_start_at": "2026-06-29T19:22:46Z"
+      },
+      "source_signal_id": "signal_13262593d51e",
+      "token": {
+        "address": "C6kWVdLGAE3Eb8Xc6VRZbs9ZvouHhBMYbhd4BVagD4Da",
+        "chain_slug": "solana",
+        "symbol": "TESTIBULL"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@DipWheeler",
+          "@Crypt_mil",
+          "@Chubsters0x"
+        ],
+        "catalysts": [
+          "kol_post",
+          "listing_vote",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "testibull",
+          "bullsack",
+          "testicle",
+          "stimmy",
+          "pussy popper"
+        ],
+        "phrases": [
+          "stimmy just got a bit bigger",
+          "testibull rapes the small dog",
+          "165x up on my call"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-29T20:22:44Z",
+  "updated_at": "2026-06-30T01:22:48Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -4722,17 +4919,17 @@
       "candidate_labels": {
         "approved_alpha_source": 13,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 42,
+        "rejected_late_reaction": 45,
         "rejected_no_tweet_evidence": 27,
         "rejected_stale_pre_move": 5,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 90,
+      "candidate_rules": 93,
       "watch_accounts_approved": 10,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 62,
+      "watch_accounts_rejected": 65,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-29T20:22:44Z"
+    "updated_at": "2026-06-30T01:22:48Z"
   }
 }

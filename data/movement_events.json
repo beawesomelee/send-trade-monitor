@@ -6022,10 +6022,217 @@
           "migration pump fun"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@cerrocoso",
+          "approval_evidence_url": "https://x.com/cerrocoso/status/2071910759525675172",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 261.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T10:56:33Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 261.55,
+          "source_evidence_urls": [
+            "https://x.com/cerrocoso/status/2071910759525675172"
+          ],
+          "terms": [
+            "luke",
+            "$luke",
+            "lukebelmar",
+            "ansem",
+            "tjr",
+            "luke belmar direct tease",
+            "same deployer as ansem",
+            "called at 10k mc",
+            "kol call",
+            "deployer cluster",
+            "normie pipeline"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@okada_defi0x",
+          "approval_evidence_url": "https://x.com/Okada_DeFi0x/status/2071858536976695376",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 54.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T07:29:03Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 54.05,
+          "source_evidence_urls": [
+            "https://x.com/Okada_DeFi0x/status/2071858536976695376"
+          ],
+          "terms": [
+            "luke",
+            "$luke",
+            "lukebelmar",
+            "ansem",
+            "tjr",
+            "luke belmar direct tease",
+            "same deployer as ansem",
+            "called at 10k mc",
+            "kol call",
+            "deployer cluster",
+            "normie pipeline"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@mastrxyz",
+          "approval_evidence_url": "https://x.com/MastrXYZ/status/2071890816872640722",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 182.3 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T09:37:19Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 182.32,
+          "source_evidence_urls": [
+            "https://x.com/MastrXYZ/status/2071890816872640722"
+          ],
+          "terms": [
+            "luke",
+            "$luke",
+            "lukebelmar",
+            "ansem",
+            "tjr",
+            "luke belmar direct tease",
+            "same deployer as ansem",
+            "called at 10k mc",
+            "kol call",
+            "deployer cluster",
+            "normie pipeline"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@lukebelmarsol",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "luke",
+            "$luke",
+            "lukebelmar",
+            "ansem",
+            "tjr",
+            "luke belmar direct tease",
+            "same deployer as ansem",
+            "called at 10k mc",
+            "kol call",
+            "deployer cluster",
+            "normie pipeline"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-06-30T11:22:46Z",
+      "event_id": "signal_4509d20383c6",
+      "evidence": [
+        {
+          "author_handle": "@cerrocoso",
+          "minutes_before_detection": 26.2,
+          "minutes_from_window_start": 333.8,
+          "relevance": "early KOL call driving momentum",
+          "text": "I showcased $LUKE at a $30K market cap... CA: 86CFcbZBJAqGVnfgnLNcw3tPmfaTigAR2UxbUPYTpump",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T10:56:33Z",
+          "tweet_id": "2071910759525675172",
+          "type": "x_post",
+          "url": "https://x.com/cerrocoso/status/2071910759525675172"
+        },
+        {
+          "author_handle": "@Okada_DeFi0x",
+          "minutes_before_detection": 233.71,
+          "minutes_from_window_start": 126.29,
+          "relevance": "direct reason for aping tied to luke belmar",
+          "text": "I aped a small bag of $LUKE Luke is basically a big normie pipeline, similar to TJR, and he\u2019s now teasing this coin pretty directly.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T07:29:03Z",
+          "tweet_id": "2071858536976695376",
+          "type": "x_post",
+          "url": "https://x.com/Okada_DeFi0x/status/2071858536976695376"
+        },
+        {
+          "author_handle": "@MastrXYZ",
+          "minutes_before_detection": 105.45,
+          "minutes_from_window_start": 254.55,
+          "relevance": "exposes deployer overlap explaining the play",
+          "text": "Investigation; $TJR $ANSEM and $LUKE from the same group/ deployer!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T09:37:19Z",
+          "tweet_id": "2071890816872640722",
+          "type": "x_post",
+          "url": "https://x.com/MastrXYZ/status/2071890816872640722"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/86CFcbZBJAqGVnfgnLNcw3tPmfaTigAR2UxbUPYTpump"
+      },
+      "lore": "cerrocoso called $luke at 10k mc. okada aped on luke belmar direct tease. same deployer cluster as ansem flagged in mastr post",
+      "movement": {
+        "change_pct": 34078.9,
+        "detected_at": "2026-06-30T11:22:46Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-30T11:10:00Z",
+        "estimated_start_at": "2026-06-30T06:35:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 62,
+        "pool_address": "GrUqhnde1Rn9JBvdw9xVx5hjja9uNMWKrMvXDvgcPcFU",
+        "pool_name": "LUKE / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-30T11:22:46Z",
+        "window_start_at": "2026-06-30T05:22:46Z"
+      },
+      "source_signal_id": "signal_4509d20383c6",
+      "token": {
+        "address": "86CFcbZBJAqGVnfgnLNcw3tPmfaTigAR2UxbUPYTpump",
+        "chain_slug": "solana",
+        "symbol": "LUKE"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@cerrocoso",
+          "@Okada_DeFi0x",
+          "@MastrXYZ",
+          "@lukebelmarsol"
+        ],
+        "catalysts": [
+          "kol_call",
+          "deployer_cluster",
+          "normie_pipeline"
+        ],
+        "keywords": [
+          "$LUKE",
+          "lukebelmar",
+          "ansem",
+          "tjr"
+        ],
+        "phrases": [
+          "luke belmar direct tease",
+          "same deployer as ansem",
+          "called at 10k mc"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-30T10:10:02Z",
+  "updated_at": "2026-06-30T11:22:48Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -6034,18 +6241,18 @@
       "candidate_labels": {
         "approved_alpha_source": 15,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 55,
+        "rejected_late_reaction": 58,
         "rejected_no_approved_terms": 1,
-        "rejected_no_tweet_evidence": 34,
+        "rejected_no_tweet_evidence": 35,
         "rejected_stale_pre_move": 6,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 114,
+      "candidate_rules": 118,
       "watch_accounts_approved": 12,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 78,
+      "watch_accounts_rejected": 82,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-30T10:10:02Z"
+    "updated_at": "2026-06-30T11:22:48Z"
   }
 }

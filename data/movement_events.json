@@ -5305,10 +5305,326 @@
           "airdrop me some $TJR"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@supermanonchain",
+          "approval_evidence_url": "https://x.com/Supermanonchain/status/2071832698717663330",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 86.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T05:46:22Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 86.37,
+          "source_evidence_urls": [
+            "https://x.com/Supermanonchain/status/2071832698717663330"
+          ],
+          "terms": [
+            "superman",
+            "$superman",
+            "barron",
+            "300+ sol has been bought back",
+            "this is just the beginning",
+            "team buyback",
+            "dev post"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@whalewatchalert",
+          "approval_evidence_url": "https://x.com/whalewatchalert/status/2071817773513162981",
+          "approval_label": "rejected_no_approved_terms",
+          "approval_reason": "candidate had timely evidence, but no token-specific rule terms survived pruning",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T04:47:04Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 27.07,
+          "source_evidence_urls": [
+            "https://x.com/whalewatchalert/status/2071817773513162981"
+          ],
+          "terms": [
+            "superman",
+            "$superman",
+            "barron",
+            "300+ sol has been bought back",
+            "this is just the beginning",
+            "team buyback",
+            "dev post"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-30T05:50:31Z",
+      "event_id": "signal_2001d0d6806e",
+      "evidence": [
+        {
+          "author_handle": "@Supermanonchain",
+          "minutes_before_detection": 4.14,
+          "minutes_from_window_start": 355.86,
+          "relevance": "direct dev buyback announcement tied to the pump",
+          "text": "300+ SOL has been bought back! This is just the beginning",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T05:46:22Z",
+          "tweet_id": "2071832698717663330",
+          "type": "x_post",
+          "url": "https://x.com/Supermanonchain/status/2071832698717663330"
+        },
+        {
+          "author_handle": "@whalewatchalert",
+          "minutes_before_detection": 63.44,
+          "minutes_from_window_start": 296.56,
+          "relevance": "whale alert showing momentum from low mc",
+          "text": "trending on Moby since $607.7K MC. Currently sitting at $1.9M MC",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T04:47:04Z",
+          "tweet_id": "2071817773513162981",
+          "type": "x_post",
+          "url": "https://x.com/whalewatchalert/status/2071817773513162981"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/CzigqJ9h9mnfXq3G3jKBVcApKu8Kh8JtZGxarzY2pump"
+      },
+      "lore": "dev bought back 300+ sol on the ca. bull posts from the handle. trending on moby since 600k mc",
+      "movement": {
+        "change_pct": 1704.1,
+        "detected_at": "2026-06-30T05:50:31Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-30T04:55:00Z",
+        "estimated_start_at": "2026-06-30T04:20:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 20,
+        "pool_address": "9u8KnTGmGUTHviN8EuJEdT2gWTu1gQvc3SpdmGaqUQiy",
+        "pool_name": "SUPERMAN / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-30T05:50:31Z",
+        "window_start_at": "2026-06-29T23:50:31Z"
+      },
+      "source_signal_id": "signal_2001d0d6806e",
+      "token": {
+        "address": "CzigqJ9h9mnfXq3G3jKBVcApKu8Kh8JtZGxarzY2pump",
+        "chain_slug": "solana",
+        "symbol": "SUPERMAN"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Supermanonchain",
+          "@whalewatchalert"
+        ],
+        "catalysts": [
+          "team_buyback",
+          "dev_post"
+        ],
+        "keywords": [
+          "$SUPERMAN",
+          "superman",
+          "barron"
+        ],
+        "phrases": [
+          "300+ SOL has been bought back",
+          "this is just the beginning"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@dipwheeler",
+          "approval_evidence_url": "https://x.com/DipWheeler/status/2071790517189566626",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 178.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T02:58:45Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 178.75,
+          "source_evidence_urls": [
+            "https://x.com/DipWheeler/status/2071790517189566626"
+          ],
+          "terms": [
+            "testibull",
+            "$testibull",
+            "moonshot",
+            "fomo",
+            "testibull testicle barbell",
+            "voted yes for $testibull",
+            "bag working $testibull",
+            "kol post",
+            "listing vote",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@paxx5x",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "testibull",
+            "$testibull",
+            "moonshot",
+            "fomo",
+            "testibull testicle barbell",
+            "voted yes for $testibull",
+            "bag working $testibull",
+            "kol post",
+            "listing vote",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@amynicholson_x",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "testibull",
+            "$testibull",
+            "moonshot",
+            "fomo",
+            "testibull testicle barbell",
+            "voted yes for $testibull",
+            "bag working $testibull",
+            "kol post",
+            "listing vote",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@seiya0207seiya",
+          "approval_evidence_url": "https://x.com/Seiya0207Seiya/status/2071833381755617749",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 349.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T05:49:05Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 349.08,
+          "source_evidence_urls": [
+            "https://x.com/Seiya0207Seiya/status/2071833381755617749"
+          ],
+          "terms": [
+            "testibull",
+            "$testibull",
+            "moonshot",
+            "fomo",
+            "testibull testicle barbell",
+            "voted yes for $testibull",
+            "bag working $testibull",
+            "kol post",
+            "listing vote",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-30T05:50:31Z",
+      "event_id": "signal_6bd6657254a8",
+      "evidence": [
+        {
+          "author_handle": "@DipWheeler",
+          "minutes_before_detection": 171.75,
+          "minutes_from_window_start": 188.25,
+          "relevance": "direct post from connected account sparking the move",
+          "text": "testibull testicle barbell.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T02:58:45Z",
+          "tweet_id": "2071790517189566626",
+          "type": "x_post",
+          "url": "https://x.com/DipWheeler/status/2071790517189566626"
+        },
+        {
+          "author_handle": "@Seiya0207Seiya",
+          "minutes_before_detection": 1.42,
+          "minutes_from_window_start": 358.58,
+          "relevance": "shows active voting raid for listings",
+          "text": "yooo $TESTIBULL is about to get listed on moonshot, theyre only missing 58 more votes",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T05:49:05Z",
+          "tweet_id": "2071833381755617749",
+          "type": "x_post",
+          "url": "https://x.com/Seiya0207Seiya/status/2071833381755617749"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/C6kWVdLGAE3Eb8Xc6VRZbs9ZvouHhBMYbhd4BVagD4Da"
+      },
+      "lore": "dipwheeler dropped testibull testicle barbell. community raiding moonshot and fomo listing votes with the ca",
+      "movement": {
+        "change_pct": 814.2,
+        "detected_at": "2026-06-30T05:50:31Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-30T00:40:00Z",
+        "estimated_start_at": "2026-06-30T00:00:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 85,
+        "pool_address": "8jpRBNmgrQm4dYhVUF18emhmkvaV3tdUpDz2CF6PdzwU",
+        "pool_name": "TESTIBULL / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-30T05:50:31Z",
+        "window_start_at": "2026-06-29T23:50:31Z"
+      },
+      "source_signal_id": "signal_6bd6657254a8",
+      "token": {
+        "address": "C6kWVdLGAE3Eb8Xc6VRZbs9ZvouHhBMYbhd4BVagD4Da",
+        "chain_slug": "solana",
+        "symbol": "TESTIBULL"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@DipWheeler",
+          "@Paxx5x",
+          "@AmyNicholson_x"
+        ],
+        "catalysts": [
+          "kol_post",
+          "listing_vote",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "$TESTIBULL",
+          "testibull",
+          "moonshot",
+          "fomo"
+        ],
+        "phrases": [
+          "testibull testicle barbell",
+          "voted YES for $TESTIBULL",
+          "bag working $testibull"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-30T03:23:02Z",
+  "updated_at": "2026-06-30T05:50:35Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -5317,17 +5633,18 @@
       "candidate_labels": {
         "approved_alpha_source": 14,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 49,
-        "rejected_no_tweet_evidence": 29,
+        "rejected_late_reaction": 52,
+        "rejected_no_approved_terms": 1,
+        "rejected_no_tweet_evidence": 31,
         "rejected_stale_pre_move": 6,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 101,
+      "candidate_rules": 107,
       "watch_accounts_approved": 11,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 69,
+      "watch_accounts_rejected": 74,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-30T03:23:02Z"
+    "updated_at": "2026-06-30T05:50:35Z"
   }
 }

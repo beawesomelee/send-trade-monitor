@@ -5665,10 +5665,130 @@
         ],
         "phrases": []
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@_tjrtrades",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "tjr",
+            "$tjr",
+            "tribute",
+            "topfloor",
+            "tjr wallet",
+            "79% supply",
+            "burn airdrop keep",
+            "kol wallet tribute",
+            "speculation debate"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@geckoterminal",
+          "approval_evidence_url": "https://x.com/GeckoTerminal/status/2071797040687018329",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 39.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T03:24:41Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 39.68,
+          "source_evidence_urls": [
+            "https://x.com/GeckoTerminal/status/2071797040687018329"
+          ],
+          "terms": [
+            "tjr",
+            "$tjr",
+            "tribute",
+            "topfloor",
+            "tjr wallet",
+            "79% supply",
+            "burn airdrop keep",
+            "kol wallet tribute",
+            "speculation debate"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-06-30T08:22:45Z",
+      "event_id": "signal_0830b034f869",
+      "evidence": [
+        {
+          "author_handle": "@GeckoTerminal",
+          "minutes_before_detection": 298.06,
+          "minutes_from_window_start": 61.94,
+          "relevance": "direct explanation of the catalyst behind the pump",
+          "text": "TLDR of why $TJR is trending: developer sent 79% of the token supply to TJR\u2019s wallet. Debate over whether TJR will burn, airdrop, or keep the tokens has fueled speculation",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T03:24:41Z",
+          "tweet_id": "2071797040687018329",
+          "type": "x_post",
+          "url": "https://x.com/GeckoTerminal/status/2071797040687018329"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/4U4U8oXwDyVXGeTffMXds4NAgBgLFwq3wNvTCRTSpump"
+      },
+      "lore": "tjr wallet got sent ~79% supply after dev asked for address, debate on burn/keep/airdrop from geckoterminal post driving the move",
+      "movement": {
+        "change_pct": 405.7,
+        "detected_at": "2026-06-30T08:22:45Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-30T03:50:00Z",
+        "estimated_start_at": "2026-06-30T02:45:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "Eg2SxQ3zkT3ZjQmnXg318aVUR8eo4YfUPUVzeU6riGJN",
+        "pool_name": "TJR / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-30T08:22:45Z",
+        "window_start_at": "2026-06-30T02:22:45Z"
+      },
+      "source_signal_id": "signal_0830b034f869",
+      "token": {
+        "address": "4U4U8oXwDyVXGeTffMXds4NAgBgLFwq3wNvTCRTSpump",
+        "chain_slug": "solana",
+        "symbol": "TJR"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@_TJRTrades",
+          "@GeckoTerminal"
+        ],
+        "catalysts": [
+          "kol_wallet_tribute",
+          "speculation_debate"
+        ],
+        "keywords": [
+          "$TJR",
+          "TJR",
+          "tribute",
+          "topfloor"
+        ],
+        "phrases": [
+          "tjr wallet",
+          "79% supply",
+          "burn airdrop keep"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-30T06:22:46Z",
+  "updated_at": "2026-06-30T08:22:47Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -5677,18 +5797,18 @@
       "candidate_labels": {
         "approved_alpha_source": 14,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 52,
+        "rejected_late_reaction": 53,
         "rejected_no_approved_terms": 1,
-        "rejected_no_tweet_evidence": 31,
+        "rejected_no_tweet_evidence": 32,
         "rejected_stale_pre_move": 6,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 107,
+      "candidate_rules": 109,
       "watch_accounts_approved": 11,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 74,
+      "watch_accounts_rejected": 75,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-30T06:22:46Z"
+    "updated_at": "2026-06-30T08:22:47Z"
   }
 }

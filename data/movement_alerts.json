@@ -1,26 +1,18 @@
 [
   {
     "chain_slug": "solana",
+    "address": "9gavatdnsrniw3gcwsvderpf5ejdjtt9s5bu1j7tpump",
+    "symbol": "dog",
+    "direction": "pump",
+    "price_change_h1_pct": 12.646,
+    "timestamp": 1782832973.2203739
+  },
+  {
+    "chain_slug": "solana",
     "address": "86cfcbzbjaqgvnfgnlncw3tpmfatigar2uxbupytpump",
     "symbol": "LUKE",
     "direction": "pump",
     "price_change_h1_pct": 76.997,
     "timestamp": 1782818568.587009
-  },
-  {
-    "chain_slug": "solana",
-    "address": "czigqj9h9mnfxq3g3jkbvcapku8kh8jtzgxarzy2pump",
-    "symbol": "SUPERMAN",
-    "direction": "pump",
-    "price_change_h1_pct": 2.976,
-    "timestamp": 1782814202.9733584
-  },
-  {
-    "chain_slug": "solana",
-    "address": "4u4u8oxwdyvxgetffmxds4nagbglfwq3wnvtcrtspump",
-    "symbol": "TJR",
-    "direction": "pump",
-    "price_change_h1_pct": 15.695,
-    "timestamp": 1782807767.786416
   }
 ]

@@ -6229,10 +6229,185 @@
           "called at 10k mc"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@cerrocoso",
+          "approval_evidence_url": "https://x.com/cerrocoso/status/2071964982040777170",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 67.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T14:32:01Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 67.02,
+          "source_evidence_urls": [
+            "https://x.com/cerrocoso/status/2071964982040777170",
+            "https://x.com/cerrocoso/status/2071977336635785569"
+          ],
+          "terms": [
+            "dog",
+            "$dog",
+            "pump.fun",
+            "fomo.community",
+            "$dog vote",
+            "fomo listing",
+            "founder sharing updates",
+            "kol call",
+            "listing vote",
+            "team update"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@duziin22",
+          "approval_evidence_url": "https://x.com/Duziin22/status/2071977403144909126",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 116.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T15:21:23Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 116.38,
+          "source_evidence_urls": [
+            "https://x.com/Duziin22/status/2071977403144909126"
+          ],
+          "terms": [
+            "dog",
+            "$dog",
+            "pump.fun",
+            "fomo.community",
+            "$dog vote",
+            "fomo listing",
+            "founder sharing updates",
+            "kol call",
+            "listing vote",
+            "team update"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@joopooranski",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "dog",
+            "$dog",
+            "pump.fun",
+            "fomo.community",
+            "$dog vote",
+            "fomo listing",
+            "founder sharing updates",
+            "kol call",
+            "listing vote",
+            "team update"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-06-30T15:22:51Z",
+      "event_id": "signal_5d1c63782182",
+      "evidence": [
+        {
+          "author_handle": "@cerrocoso",
+          "minutes_before_detection": 50.82,
+          "minutes_from_window_start": 309.18,
+          "relevance": "early call that preceded the move",
+          "text": "I showcased $dog at a $47K market cap",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T14:32:01Z",
+          "tweet_id": "2071964982040777170",
+          "type": "x_post",
+          "url": "https://x.com/cerrocoso/status/2071964982040777170"
+        },
+        {
+          "author_handle": "@cerrocoso",
+          "minutes_before_detection": 1.73,
+          "minutes_from_window_start": 358.27,
+          "relevance": "confirms the run and momentum",
+          "text": "$dog 142.55x+ ... touched $6.7M MC+",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T15:21:07Z",
+          "tweet_id": "2071977336635785569",
+          "type": "x_post",
+          "url": "https://x.com/cerrocoso/status/2071977336635785569"
+        },
+        {
+          "author_handle": "@Duziin22",
+          "minutes_before_detection": 1.47,
+          "minutes_from_window_start": 358.53,
+          "relevance": "listing vote fomo driving chatter",
+          "text": "if you see $DOG vote don\u2019t be late twice",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T15:21:23Z",
+          "tweet_id": "2071977403144909126",
+          "type": "x_post",
+          "url": "https://x.com/Duziin22/status/2071977403144909126"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/9gAVAtdnsrniW3GCwsvDeRPf5eJDjtT9S5bu1j7tpump"
+      },
+      "lore": "@cerrocoso called at 47k mc, now 6.7m with votes stacking on fomo listing push. live updates from creator side too",
+      "movement": {
+        "change_pct": 60.2,
+        "detected_at": "2026-06-30T15:22:51Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-30T13:50:00Z",
+        "estimated_start_at": "2026-06-30T13:25:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 122,
+        "pool_address": "HHXQfx5i2cez4WcBwXjai7TtnZTk5Byp3od6thPhETNe",
+        "pool_name": "dog / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-30T15:22:51Z",
+        "window_start_at": "2026-06-30T09:22:51Z"
+      },
+      "source_signal_id": "signal_5d1c63782182",
+      "token": {
+        "address": "9gAVAtdnsrniW3GCwsvDeRPf5eJDjtT9S5bu1j7tpump",
+        "chain_slug": "solana",
+        "symbol": "dog"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@cerrocoso",
+          "@Duziin22",
+          "@joopooranski"
+        ],
+        "catalysts": [
+          "kol_call",
+          "listing_vote",
+          "team_update"
+        ],
+        "keywords": [
+          "$dog",
+          "pump.fun",
+          "fomo.community"
+        ],
+        "phrases": [
+          "$dog vote",
+          "fomo listing",
+          "founder sharing updates"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-30T11:22:48Z",
+  "updated_at": "2026-06-30T15:22:53Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -6241,18 +6416,18 @@
       "candidate_labels": {
         "approved_alpha_source": 15,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 58,
+        "rejected_late_reaction": 60,
         "rejected_no_approved_terms": 1,
-        "rejected_no_tweet_evidence": 35,
+        "rejected_no_tweet_evidence": 36,
         "rejected_stale_pre_move": 6,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 118,
+      "candidate_rules": 121,
       "watch_accounts_approved": 12,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 82,
+      "watch_accounts_rejected": 84,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-30T11:22:48Z"
+    "updated_at": "2026-06-30T15:22:53Z"
   }
 }

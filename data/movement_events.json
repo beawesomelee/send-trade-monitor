@@ -4907,10 +4907,207 @@
           "165x up on my call"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@ru_a69",
+          "approval_evidence_url": "https://x.com/ru_a69/status/2071768708519804975",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 332.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T01:32:06Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 332.1,
+          "source_evidence_urls": [
+            "https://x.com/ru_a69/status/2071768708519804975"
+          ],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "fomo",
+            "moonshot",
+            "listing",
+            "voted yes for $bullcat to get listed on fomo",
+            "$bullcat just did 1.6m volume on a 362k cap",
+            "community vote",
+            "listing push"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cocopumpit",
+          "approval_evidence_url": "https://x.com/cocopumpit/status/2071413186696450208",
+          "approval_label": "rejected_stale_pre_move",
+          "approval_reason": "tweet was 1080.6 minutes before the estimated move start, outside the freshness window",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-29T01:59:23Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -1080.62,
+          "source_evidence_urls": [
+            "https://x.com/cocopumpit/status/2071413186696450208"
+          ],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "fomo",
+            "moonshot",
+            "listing",
+            "voted yes for $bullcat to get listed on fomo",
+            "$bullcat just did 1.6m volume on a 362k cap",
+            "community vote",
+            "listing push"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@rcris015",
+          "approval_evidence_url": "https://x.com/rcris015/status/2071768867349918140",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 332.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T01:32:44Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 332.73,
+          "source_evidence_urls": [
+            "https://x.com/rcris015/status/2071768867349918140"
+          ],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "fomo",
+            "moonshot",
+            "listing",
+            "voted yes for $bullcat to get listed on fomo",
+            "$bullcat just did 1.6m volume on a 362k cap",
+            "community vote",
+            "listing push"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@anaatenciopinto",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "fomo",
+            "moonshot",
+            "listing",
+            "voted yes for $bullcat to get listed on fomo",
+            "$bullcat just did 1.6m volume on a 362k cap",
+            "community vote",
+            "listing push"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-06-30T01:33:04Z",
+      "event_id": "signal_13a08cd9e04c",
+      "evidence": [
+        {
+          "author_handle": "@ru_a69",
+          "minutes_before_detection": 0.96,
+          "minutes_from_window_start": 359.04,
+          "relevance": "shows active listing vote push tied to recent activity",
+          "text": "I just voted YES for $BULLCAT to get listed on FOMO!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T01:32:06Z",
+          "tweet_id": "2071768708519804975",
+          "type": "x_post",
+          "url": "https://x.com/ru_a69/status/2071768708519804975"
+        },
+        {
+          "author_handle": "@cocopumpit",
+          "minutes_before_detection": 1413.68,
+          "minutes_from_window_start": -1053.68,
+          "relevance": "early volume observation matching the pump window",
+          "text": "$BULLCAT just did 1.6M volume on a 362k cap",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-06-29T01:59:23Z",
+          "tweet_id": "2071413186696450208",
+          "type": "x_post",
+          "url": "https://x.com/cocopumpit/status/2071413186696450208"
+        },
+        {
+          "author_handle": "@rcris015",
+          "minutes_before_detection": 0.33,
+          "minutes_from_window_start": 359.67,
+          "relevance": "community mobilization post around the move",
+          "text": "Assembly $Bullcat army Lets dominate the CT",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-06-30T01:32:44Z",
+          "tweet_id": "2071768867349918140",
+          "type": "x_post",
+          "url": "https://x.com/rcris015/status/2071768867349918140"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/CkAuhMagnem2iukGwApsfw1ypWETWDdKFD1Xrrtspump"
+      },
+      "lore": "community accounts pushing fomo and moonshot listing votes today, one noted 1.6m vol on 362k cap early. no big kol signal, thin pool but bid stacking.",
+      "movement": {
+        "change_pct": 51.4,
+        "detected_at": "2026-06-30T01:33:04Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-06-30T01:25:00Z",
+        "estimated_start_at": "2026-06-29T20:00:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "Hh6ajgHBw5eRr8Rj9kC51zAZvrChjVvrAnc2w8Sy6G7j",
+        "pool_name": "BULLCAT / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-06-30T01:33:04Z",
+        "window_start_at": "2026-06-29T19:33:04Z"
+      },
+      "source_signal_id": "signal_13a08cd9e04c",
+      "token": {
+        "address": "CkAuhMagnem2iukGwApsfw1ypWETWDdKFD1Xrrtspump",
+        "chain_slug": "solana",
+        "symbol": "BULLCAT"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@ru_a69",
+          "@cocopumpit",
+          "@rcris015",
+          "@anaatenciopinto"
+        ],
+        "catalysts": [
+          "community_vote",
+          "listing_push"
+        ],
+        "keywords": [
+          "$BULLCAT",
+          "fomo",
+          "moonshot",
+          "listing"
+        ],
+        "phrases": [
+          "voted YES for $BULLCAT to get listed on FOMO",
+          "$BULLCAT just did 1.6M volume on a 362k cap"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-30T01:22:48Z",
+  "updated_at": "2026-06-30T01:33:06Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -4919,17 +5116,17 @@
       "candidate_labels": {
         "approved_alpha_source": 13,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 45,
-        "rejected_no_tweet_evidence": 27,
-        "rejected_stale_pre_move": 5,
+        "rejected_late_reaction": 47,
+        "rejected_no_tweet_evidence": 28,
+        "rejected_stale_pre_move": 6,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 93,
+      "candidate_rules": 97,
       "watch_accounts_approved": 10,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 65,
+      "watch_accounts_rejected": 67,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-30T01:22:48Z"
+    "updated_at": "2026-06-30T01:33:06Z"
   }
 }

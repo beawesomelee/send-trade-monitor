@@ -176,6 +176,19 @@
     "decimals": 18
   },
   {
+    "chain_slug": "solana",
+    "chain_id": 501474,
+    "address": "86CFcbZBJAqGVnfgnLNcw3tPmfaTigAR2UxbUPYTpump",
+    "symbol": "LUKE",
+    "name": "Luke Belmar",
+    "market_cap_usd": 8709799,
+    "volume_24h_usd": 4712424,
+    "liquidity_usd": 226213,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/8hE7AbUwcluFKTuo?width=800&height=800&quality=95&format=auto",
+    "dexscreener_url": "https://dexscreener.com/solana/86CFcbZBJAqGVnfgnLNcw3tPmfaTigAR2UxbUPYTpump",
+    "decimals": 6
+  },
+  {
     "chain_slug": "base",
     "chain_id": 8453,
     "address": "0x311935cd80b76769bf2ecc9d8ab7635b2139cf82",
@@ -403,6 +416,19 @@
     "logo_uri": "https://cdn.dexscreener.com/cms/images/scBeN1UbyceDpZfh?width=800&height=800&quality=95&format=auto",
     "dexscreener_url": "https://dexscreener.com/solana/G9ds9rppyJVZs4ZiRv6jVEq4Tq7kRcXxFgbhz232pump",
     "decimals": 6
+  },
+  {
+    "chain_slug": "solana",
+    "chain_id": 501474,
+    "address": "CJMihkPYswa3k6az9SUbepjKnkJQ6KWpGG5p9qW9n7NV",
+    "symbol": "LIKE",
+    "name": "I LIKE THIS COIN",
+    "market_cap_usd": 9380843,
+    "volume_24h_usd": 1092914,
+    "liquidity_usd": 8388122,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/5a87cdbfd6af62aa233757dd3c7fde90f69766412fa3b1f08b3b0bb17d1feaae?width=800&height=800&quality=95&format=auto",
+    "dexscreener_url": "https://dexscreener.com/solana/CJMihkPYswa3k6az9SUbepjKnkJQ6KWpGG5p9qW9n7NV",
+    "decimals": 9
   },
   {
     "chain_slug": "base",

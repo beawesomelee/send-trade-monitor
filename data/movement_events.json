@@ -7044,10 +7044,198 @@
           "fomo listing"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@i4nfts",
+          "approval_evidence_url": "https://x.com/I4NFTS/status/2072316019452919838",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 51.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-01T13:46:55Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 51.92,
+          "source_evidence_urls": [
+            "https://x.com/I4NFTS/status/2072316019452919838"
+          ],
+          "terms": [
+            "world",
+            "$world",
+            "moby",
+            "moonshot",
+            "prediction market",
+            "world_xyz",
+            "listing votes",
+            "kol speculation",
+            "whale trade",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@whalewatchalert",
+          "approval_evidence_url": "https://x.com/whalewatchalert/status/2072337720844627994",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 138.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-01T15:13:09Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 138.15,
+          "source_evidence_urls": [
+            "https://x.com/whalewatchalert/status/2072337720844627994"
+          ],
+          "terms": [
+            "world",
+            "$world",
+            "moby",
+            "moonshot",
+            "prediction market",
+            "world_xyz",
+            "listing votes",
+            "kol speculation",
+            "whale trade",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@world_xyz",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "world",
+            "$world",
+            "moby",
+            "moonshot",
+            "prediction market",
+            "world_xyz",
+            "listing votes",
+            "kol speculation",
+            "whale trade",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@0ne618",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "world",
+            "$world",
+            "moby",
+            "moonshot",
+            "prediction market",
+            "world_xyz",
+            "listing votes",
+            "kol speculation",
+            "whale trade",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-01T15:22:47Z",
+      "event_id": "signal_46f2be989340",
+      "evidence": [
+        {
+          "author_handle": "@I4NFTS",
+          "minutes_before_detection": 95.86,
+          "minutes_from_window_start": 264.14,
+          "relevance": "explains the core speculation behind the move",
+          "text": "$world is pumping because @world_xyz had a product after all, a prediction market",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-01T13:46:55Z",
+          "tweet_id": "2072316019452919838",
+          "type": "x_post",
+          "url": "https://x.com/I4NFTS/status/2072316019452919838"
+        },
+        {
+          "author_handle": "@whalewatchalert",
+          "minutes_before_detection": 9.63,
+          "minutes_from_window_start": 350.37,
+          "relevance": "real trade observation confirming early interest and current mc",
+          "text": "A trader on Moby Mobile just closed a position of $world with a PnL of +396.01%. world has been trending on Moby since $129.85K MC. Currently sitting at $8.92M MC",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-01T15:13:09Z",
+          "tweet_id": "2072337720844627994",
+          "type": "x_post",
+          "url": "https://x.com/whalewatchalert/status/2072337720844627994"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/FMqh9mqR6drPZqqW6wPqLHxX4rqNDWGhYLaMfoaJpump"
+      },
+      "lore": "speculation on @world_xyz prediction market product link driving buys, no confirmed tie tho. whale closed +396% on moby from 130k mc, now 9m. listing votes piling up",
+      "movement": {
+        "change_pct": 261.9,
+        "detected_at": "2026-07-01T15:22:47Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-01T14:35:00Z",
+        "estimated_start_at": "2026-07-01T12:55:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "EwRxs61YB2sWiANgQCbG9vgeRKWDZ3FxXWtYZ2kFVbM8",
+        "pool_name": "world / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-01T15:22:47Z",
+        "window_start_at": "2026-07-01T09:22:47Z"
+      },
+      "source_signal_id": "signal_46f2be989340",
+      "token": {
+        "address": "FMqh9mqR6drPZqqW6wPqLHxX4rqNDWGhYLaMfoaJpump",
+        "chain_slug": "solana",
+        "symbol": "world"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@I4NFTS",
+          "@whalewatchalert",
+          "@world_xyz",
+          "@0ne618"
+        ],
+        "catalysts": [
+          "kol_speculation",
+          "whale_trade",
+          "listing_vote"
+        ],
+        "keywords": [
+          "$world",
+          "moby",
+          "moonshot"
+        ],
+        "phrases": [
+          "prediction market",
+          "world_xyz",
+          "listing votes"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-01T03:23:13Z",
+  "updated_at": "2026-07-01T15:22:49Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -7056,18 +7244,18 @@
       "candidate_labels": {
         "approved_alpha_source": 15,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 68,
+        "rejected_late_reaction": 70,
         "rejected_no_approved_terms": 1,
-        "rejected_no_tweet_evidence": 40,
+        "rejected_no_tweet_evidence": 42,
         "rejected_stale_pre_move": 7,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 134,
+      "candidate_rules": 138,
       "watch_accounts_approved": 12,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 96,
+      "watch_accounts_rejected": 99,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-01T03:23:13Z"
+    "updated_at": "2026-07-01T15:22:49Z"
   }
 }

@@ -6565,10 +6565,489 @@
           "$testibull spotted"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@vaultvigilnj33",
+          "approval_evidence_url": "https://x.com/VaultVigilnj33/status/2072158878440247418",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 307.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-01T03:22:30Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 307.5,
+          "source_evidence_urls": [
+            "https://x.com/VaultVigilnj33/status/2072158878440247418"
+          ],
+          "terms": [
+            "superman",
+            "$superman",
+            "czigqj9h9mnfxq3g3jkbvcapku8kh8jtzgxarzy2pump",
+            "supermanonchain",
+            "iscan ai",
+            "$superman should reach",
+            "voted yes for $superman to get listed",
+            "listing vote",
+            "ai scan"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@prinss_v",
+          "approval_evidence_url": "https://x.com/prinss_v/status/2072158067248996675",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 304.3 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-01T03:19:16Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 304.27,
+          "source_evidence_urls": [
+            "https://x.com/prinss_v/status/2072158067248996675"
+          ],
+          "terms": [
+            "superman",
+            "$superman",
+            "czigqj9h9mnfxq3g3jkbvcapku8kh8jtzgxarzy2pump",
+            "supermanonchain",
+            "iscan ai",
+            "$superman should reach",
+            "voted yes for $superman to get listed",
+            "listing vote",
+            "ai scan"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@trilleestt",
+          "approval_evidence_url": "https://x.com/trilleestt/status/2072158450348618197",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 305.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-01T03:20:48Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 305.8,
+          "source_evidence_urls": [
+            "https://x.com/trilleestt/status/2072158450348618197"
+          ],
+          "terms": [
+            "superman",
+            "$superman",
+            "czigqj9h9mnfxq3g3jkbvcapku8kh8jtzgxarzy2pump",
+            "supermanonchain",
+            "iscan ai",
+            "$superman should reach",
+            "voted yes for $superman to get listed",
+            "listing vote",
+            "ai scan"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-01T03:23:09Z",
+      "event_id": "signal_4eb5b427e858",
+      "evidence": [
+        {
+          "author_handle": "@VaultVigilnj33",
+          "minutes_before_detection": 0.65,
+          "minutes_from_window_start": 359.35,
+          "relevance": "ai scan post with price target on the exact ca",
+          "text": "popped CzigqJ9h9mnfXq3G3jKBVcApKu8Kh8JtZGxarzY2pump into @iScan_AI \u2014 $SUPERMAN should reach $16.8M they say",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-01T03:22:30Z",
+          "tweet_id": "2072158878440247418",
+          "type": "x_post",
+          "url": "https://x.com/VaultVigilnj33/status/2072158878440247418"
+        },
+        {
+          "author_handle": "@prinss_v",
+          "minutes_before_detection": 3.87,
+          "minutes_from_window_start": 356.13,
+          "relevance": "listing vote push on the ca",
+          "text": "I just voted YES for $SUPERMAN to get listed on FOMO!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-01T03:19:16Z",
+          "tweet_id": "2072158067248996675",
+          "type": "x_post",
+          "url": "https://x.com/prinss_v/status/2072158067248996675"
+        },
+        {
+          "author_handle": "@trilleestt",
+          "minutes_before_detection": 2.35,
+          "minutes_from_window_start": 357.65,
+          "relevance": "direct post to project handle, no reply visible",
+          "text": "@Supermanonchain hey this a long shot but can I get 150 sol this my last chance in the trenches please",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-01T03:20:48Z",
+          "tweet_id": "2072158450348618197",
+          "type": "x_post",
+          "url": "https://x.com/trilleestt/status/2072158450348618197"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/CzigqJ9h9mnfXq3G3jKBVcApKu8Kh8JtZGxarzY2pump"
+      },
+      "lore": "no big kols or protocols posted. just listing vote spam and iscan ai targets on the ca. thin liq runner.",
+      "movement": {
+        "change_pct": 65.1,
+        "detected_at": "2026-07-01T03:23:09Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-01T02:40:00Z",
+        "estimated_start_at": "2026-06-30T22:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "9u8KnTGmGUTHviN8EuJEdT2gWTu1gQvc3SpdmGaqUQiy",
+        "pool_name": "SUPERMAN / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-01T03:23:09Z",
+        "window_start_at": "2026-06-30T21:23:09Z"
+      },
+      "source_signal_id": "signal_4eb5b427e858",
+      "token": {
+        "address": "CzigqJ9h9mnfXq3G3jKBVcApKu8Kh8JtZGxarzY2pump",
+        "chain_slug": "solana",
+        "symbol": "SUPERMAN"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@VaultVigilnj33",
+          "@prinss_v",
+          "@trilleestt"
+        ],
+        "catalysts": [
+          "listing_vote",
+          "ai_scan"
+        ],
+        "keywords": [
+          "$SUPERMAN",
+          "CzigqJ9h9mnfXq3G3jKBVcApKu8Kh8JtZGxarzY2pump",
+          "supermanonchain"
+        ],
+        "phrases": [
+          "iscan ai",
+          "$SUPERMAN should reach",
+          "voted YES for $SUPERMAN to get listed"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@dogonpf",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "dog",
+            "$dog",
+            "9gavatdnsrniw3gcwsvderpf5ejdjtt9s5bu1j7tpump",
+            "moonshot",
+            "fomo",
+            "voted yes for $dog",
+            "$dog scan",
+            "moonshot voting",
+            "fomo listing",
+            "listing vote",
+            "ai scan",
+            "supply lock"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@degen_radar",
+          "approval_evidence_url": "https://x.com/Degen_Radar/status/2071849179522203847",
+          "approval_label": "rejected_stale_pre_move",
+          "approval_reason": "tweet was 973.1 minutes before the estimated move start, outside the freshness window",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-06-30T06:51:52Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -973.13,
+          "source_evidence_urls": [
+            "https://x.com/Degen_Radar/status/2071849179522203847"
+          ],
+          "terms": [
+            "dog",
+            "$dog",
+            "9gavatdnsrniw3gcwsvderpf5ejdjtt9s5bu1j7tpump",
+            "moonshot",
+            "fomo",
+            "voted yes for $dog",
+            "$dog scan",
+            "moonshot voting",
+            "fomo listing",
+            "listing vote",
+            "ai scan",
+            "supply lock"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@iscan_ai",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "dog",
+            "$dog",
+            "9gavatdnsrniw3gcwsvderpf5ejdjtt9s5bu1j7tpump",
+            "moonshot",
+            "fomo",
+            "voted yes for $dog",
+            "$dog scan",
+            "moonshot voting",
+            "fomo listing",
+            "listing vote",
+            "ai scan",
+            "supply lock"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@openclaw_ai_",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "dog",
+            "$dog",
+            "9gavatdnsrniw3gcwsvderpf5ejdjtt9s5bu1j7tpump",
+            "moonshot",
+            "fomo",
+            "voted yes for $dog",
+            "$dog scan",
+            "moonshot voting",
+            "fomo listing",
+            "listing vote",
+            "ai scan",
+            "supply lock"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@prakash270984",
+          "approval_evidence_url": "https://x.com/prakash270984/status/2072158957439737917",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 257.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-01T03:22:48Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 257.8,
+          "source_evidence_urls": [
+            "https://x.com/prakash270984/status/2072158957439737917"
+          ],
+          "terms": [
+            "dog",
+            "$dog",
+            "9gavatdnsrniw3gcwsvderpf5ejdjtt9s5bu1j7tpump",
+            "moonshot",
+            "fomo",
+            "voted yes for $dog",
+            "$dog scan",
+            "moonshot voting",
+            "fomo listing",
+            "listing vote",
+            "ai scan",
+            "supply lock"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@tashawiggins79",
+          "approval_evidence_url": "https://x.com/tashawiggins79/status/2072158942709297427",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 257.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-01T03:22:45Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 257.75,
+          "source_evidence_urls": [
+            "https://x.com/tashawiggins79/status/2072158942709297427"
+          ],
+          "terms": [
+            "dog",
+            "$dog",
+            "9gavatdnsrniw3gcwsvderpf5ejdjtt9s5bu1j7tpump",
+            "moonshot",
+            "fomo",
+            "voted yes for $dog",
+            "$dog scan",
+            "moonshot voting",
+            "fomo listing",
+            "listing vote",
+            "ai scan",
+            "supply lock"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@hashhollowfgks",
+          "approval_evidence_url": "https://x.com/HashHollowfgks/status/2072158875109794066",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 257.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-01T03:22:29Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 257.48,
+          "source_evidence_urls": [
+            "https://x.com/HashHollowfgks/status/2072158875109794066"
+          ],
+          "terms": [
+            "dog",
+            "$dog",
+            "9gavatdnsrniw3gcwsvderpf5ejdjtt9s5bu1j7tpump",
+            "moonshot",
+            "fomo",
+            "voted yes for $dog",
+            "$dog scan",
+            "moonshot voting",
+            "fomo listing",
+            "listing vote",
+            "ai scan",
+            "supply lock"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-01T03:23:09Z",
+      "event_id": "signal_ab89b0f7e8ad",
+      "evidence": [
+        {
+          "author_handle": "@prakash270984",
+          "minutes_before_detection": 0.33,
+          "minutes_from_window_start": 359.67,
+          "relevance": "shows active listing vote push tied to the pump",
+          "text": "I just voted YES for $DOG to get listed on FOMO!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-01T03:22:48Z",
+          "tweet_id": "2072158957439737917",
+          "type": "x_post",
+          "url": "https://x.com/prakash270984/status/2072158957439737917"
+        },
+        {
+          "author_handle": "@tashawiggins79",
+          "minutes_before_detection": 0.39,
+          "minutes_from_window_start": 359.61,
+          "relevance": "direct moonshot vote activity matching the move",
+          "text": "yooo $DOG is about to get listed on moonshot, theyre only missing 124 votes to go",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-01T03:22:45Z",
+          "tweet_id": "2072158942709297427",
+          "type": "x_post",
+          "url": "https://x.com/tashawiggins79/status/2072158942709297427"
+        },
+        {
+          "author_handle": "@Degen_Radar",
+          "minutes_before_detection": 1231.28,
+          "minutes_from_window_start": -871.28,
+          "relevance": "background on the supply dynamic behind scans",
+          "text": "$DOG - $3.1M MCap ... accidentally sent ~80% ... permanently locked, unintentionally creating a scarce supply",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-06-30T06:51:52Z",
+          "tweet_id": "2071849179522203847",
+          "type": "x_post",
+          "url": "https://x.com/Degen_Radar/status/2071849179522203847"
+        },
+        {
+          "author_handle": "@HashHollowfgks",
+          "minutes_before_detection": 0.66,
+          "minutes_from_window_start": 359.34,
+          "relevance": "example of ai bot target hype coinciding with votes",
+          "text": "popped 9gAVAtdnsrniW3GCwsvDeRPf5eJDjtT9S5bu1j7tpump into @iScan_AI \u2014 $dog should reach $47.2M they say",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-01T03:22:29Z",
+          "tweet_id": "2072158875109794066",
+          "type": "x_post",
+          "url": "https://x.com/HashHollowfgks/status/2072158875109794066"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/9gAVAtdnsrniW3GCwsvDeRPf5eJDjtT9S5bu1j7tpump"
+      },
+      "lore": "moonshot and fomo listing votes flooding timelines with the ca. ai scans tagging 10x targets on the locked supply setup",
+      "movement": {
+        "change_pct": 60.9,
+        "detected_at": "2026-07-01T03:23:09Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-01T03:05:00Z",
+        "estimated_start_at": "2026-06-30T23:05:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "HHXQfx5i2cez4WcBwXjai7TtnZTk5Byp3od6thPhETNe",
+        "pool_name": "dog / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-01T03:23:09Z",
+        "window_start_at": "2026-06-30T21:23:09Z"
+      },
+      "source_signal_id": "signal_ab89b0f7e8ad",
+      "token": {
+        "address": "9gAVAtdnsrniW3GCwsvDeRPf5eJDjtT9S5bu1j7tpump",
+        "chain_slug": "solana",
+        "symbol": "dog"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@dogonpf",
+          "@Degen_Radar",
+          "@iScan_AI",
+          "@OpenClaw_AI_"
+        ],
+        "catalysts": [
+          "listing_vote",
+          "ai_scan",
+          "supply_lock"
+        ],
+        "keywords": [
+          "$dog",
+          "9gAVAtdnsrniW3GCwsvDeRPf5eJDjtT9S5bu1j7tpump",
+          "moonshot",
+          "fomo"
+        ],
+        "phrases": [
+          "voted YES for $DOG",
+          "$dog scan",
+          "moonshot voting",
+          "fomo listing"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-06-30T22:22:46Z",
+  "updated_at": "2026-07-01T03:23:13Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -6577,18 +7056,18 @@
       "candidate_labels": {
         "approved_alpha_source": 15,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 62,
+        "rejected_late_reaction": 68,
         "rejected_no_approved_terms": 1,
-        "rejected_no_tweet_evidence": 37,
-        "rejected_stale_pre_move": 6,
+        "rejected_no_tweet_evidence": 40,
+        "rejected_stale_pre_move": 7,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 124,
+      "candidate_rules": 134,
       "watch_accounts_approved": 12,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 86,
+      "watch_accounts_rejected": 96,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-06-30T22:22:46Z"
+    "updated_at": "2026-07-01T03:23:13Z"
   }
 }

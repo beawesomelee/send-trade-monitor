@@ -91,7 +91,7 @@
       "value": "from:supermanonchain (superman OR supermanonchain) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-01T15:22:49Z",
+  "rules_synced_at": "2026-07-01T16:22:28Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -2895,7 +2895,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-01T15:22:49Z",
+  "updated_at": "2026-07-01T16:22:28Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

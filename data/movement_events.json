@@ -7232,10 +7232,220 @@
           "listing votes"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@manletonpf",
+          "approval_evidence_url": "https://x.com/manletonpf/status/2072689031171764262",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 279.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-02T14:29:08Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 279.13,
+          "source_evidence_urls": [
+            "https://x.com/manletonpf/status/2072700688870539714",
+            "https://x.com/manletonpf/status/2072689031171764262"
+          ],
+          "terms": [
+            "manlet",
+            "$manlet",
+            "ansem",
+            "moonshot votes",
+            "ansem airdrop",
+            "billboard design",
+            "listing vote",
+            "team update",
+            "kol supply"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@blknoiz06",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "manlet",
+            "$manlet",
+            "ansem",
+            "moonshot votes",
+            "ansem airdrop",
+            "billboard design",
+            "listing vote",
+            "team update",
+            "kol supply"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@kkashi_yt",
+          "approval_evidence_url": "https://x.com/kkashi_yt/status/2072657265317073155",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 152.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-02T12:22:54Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 152.9,
+          "source_evidence_urls": [
+            "https://x.com/kkashi_yt/status/2072657265317073155"
+          ],
+          "terms": [
+            "manlet",
+            "$manlet",
+            "ansem",
+            "moonshot votes",
+            "ansem airdrop",
+            "billboard design",
+            "listing vote",
+            "team update",
+            "kol supply"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@anderaz27a",
+          "approval_evidence_url": "https://x.com/Anderaz27a/status/2072702035267580397",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 330.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-02T15:20:48Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 330.8,
+          "source_evidence_urls": [
+            "https://x.com/Anderaz27a/status/2072702035267580397"
+          ],
+          "terms": [
+            "manlet",
+            "$manlet",
+            "ansem",
+            "moonshot votes",
+            "ansem airdrop",
+            "billboard design",
+            "listing vote",
+            "team update",
+            "kol supply"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-02T15:22:41Z",
+      "event_id": "signal_70bb50639c5f",
+      "evidence": [
+        {
+          "author_handle": "@kkashi_yt",
+          "minutes_before_detection": 179.77,
+          "minutes_from_window_start": 180.23,
+          "relevance": "shows call timing and mc growth behind the move",
+          "text": "$manlet just pumped by 51x since the call 2 days ago someone called it at about $66k mc",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-02T12:22:54Z",
+          "tweet_id": "2072657265317073155",
+          "type": "x_post",
+          "url": "https://x.com/kkashi_yt/status/2072657265317073155"
+        },
+        {
+          "author_handle": "@manletonpf",
+          "minutes_before_detection": 7.22,
+          "minutes_from_window_start": 352.78,
+          "relevance": "team update driving chatter",
+          "text": "hello fellow manlets we are currently working on a billboard for our token",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-02T15:15:27Z",
+          "tweet_id": "2072700688870539714",
+          "type": "x_post",
+          "url": "https://x.com/manletonpf/status/2072700688870539714"
+        },
+        {
+          "author_handle": "@manletonpf",
+          "minutes_before_detection": 53.54,
+          "minutes_from_window_start": 306.46,
+          "relevance": "ansem holder airdrop angle",
+          "text": "quick reminder for all the new manlets the website shows all the requirements to receive an airdrop",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-02T14:29:08Z",
+          "tweet_id": "2072689031171764262",
+          "type": "x_post",
+          "url": "https://x.com/manletonpf/status/2072689031171764262"
+        },
+        {
+          "author_handle": "@Anderaz27a",
+          "minutes_before_detection": 1.87,
+          "minutes_from_window_start": 358.13,
+          "relevance": "supply movement to known account",
+          "text": "og first $manlet 50% supply sent to @blknoiz06 now 25k new $manlet 40% supply to @blknoiz06 5m",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-02T15:20:48Z",
+          "tweet_id": "2072702035267580397",
+          "type": "x_post",
+          "url": "https://x.com/Anderaz27a/status/2072702035267580397"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/DdPrHYqM8Ueovnk9kAnAgoGhswkuaTqmxcoZzU3Zpump"
+      },
+      "lore": "listing votes for moonshot and fomo ramping fast with community spam. an sem airdrop tie in plus team billboard tease. 51x from a 66k mc call 2 days ago",
+      "movement": {
+        "change_pct": 1377.2,
+        "detected_at": "2026-07-02T15:22:41Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-02T13:50:00Z",
+        "estimated_start_at": "2026-07-02T09:50:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "8qDidAKuyNYKaR4dh2ZFZZVG5gBTUfyJcwQPgwt9FS1Y",
+        "pool_name": "manlet / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-02T15:22:41Z",
+        "window_start_at": "2026-07-02T09:22:41Z"
+      },
+      "source_signal_id": "signal_70bb50639c5f",
+      "token": {
+        "address": "DdPrHYqM8Ueovnk9kAnAgoGhswkuaTqmxcoZzU3Zpump",
+        "chain_slug": "solana",
+        "symbol": "manlet"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@manletonpf",
+          "@blknoiz06",
+          "@kkashi_yt"
+        ],
+        "catalysts": [
+          "listing_vote",
+          "team_update",
+          "kol_supply"
+        ],
+        "keywords": [
+          "manlet",
+          "$manlet",
+          "ansem"
+        ],
+        "phrases": [
+          "moonshot votes",
+          "ansem airdrop",
+          "billboard design"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-01T15:22:49Z",
+  "updated_at": "2026-07-02T15:22:43Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -7244,18 +7454,18 @@
       "candidate_labels": {
         "approved_alpha_source": 15,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 70,
+        "rejected_late_reaction": 73,
         "rejected_no_approved_terms": 1,
-        "rejected_no_tweet_evidence": 42,
+        "rejected_no_tweet_evidence": 43,
         "rejected_stale_pre_move": 7,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 138,
+      "candidate_rules": 142,
       "watch_accounts_approved": 12,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 99,
+      "watch_accounts_rejected": 102,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-01T15:22:49Z"
+    "updated_at": "2026-07-02T15:22:43Z"
   }
 }

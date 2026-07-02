@@ -348,6 +348,20 @@
     "decimals": 6
   },
   {
+    "chain_slug": "solana",
+    "chain_id": 501474,
+    "address": "ERPtViqckt1zqpS2abUx67CgLcP54CkhBPYz3yRUpump",
+    "symbol": "yep",
+    "name": "yepcat",
+    "market_cap_usd": 1048614,
+    "volume_24h_usd": 1482553,
+    "liquidity_usd": 85970,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/FJW68vC2vlqInh1h?width=800&height=800&quality=95&format=auto",
+    "pair_created_at_ms": 1782738732000,
+    "dexscreener_url": "https://dexscreener.com/solana/ERPtViqckt1zqpS2abUx67CgLcP54CkhBPYz3yRUpump",
+    "decimals": 6
+  },
+  {
     "chain_slug": "base",
     "chain_id": 8453,
     "address": "0xed664536023d8e4b1640c394777d34abaff1df8f",

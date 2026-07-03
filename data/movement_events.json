@@ -7442,30 +7442,209 @@
           "billboard design"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@blknoiz06",
+          "approval_evidence_url": "https://x.com/blknoiz06/status/2073035950750302704",
+          "approval_label": "rejected_no_approved_terms",
+          "approval_reason": "candidate had timely evidence, but no token-specific rule terms survived pruning",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-03T13:27:40Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": -222.33,
+          "source_evidence_urls": [
+            "https://x.com/blknoiz06/status/2073035950750302704"
+          ],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "bullpen",
+            "airdrop",
+            "claim dashboard is live",
+            "10x more followers",
+            "$100m marketing budget",
+            "kol post",
+            "milestone",
+            "tool integration"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@blackbullsol",
+          "approval_evidence_url": "https://x.com/BlackBullSol/status/2073067710179598758",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 96.1 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-03T15:33:52Z",
+          "approved_terms": [
+            "ansem",
+            "$ansem",
+            "bullpen"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": -96.13,
+          "source_evidence_urls": [
+            "https://x.com/BlackBullSol/status/2073067710179598758",
+            "https://x.com/BlackBullSol/status/2073059681346425076"
+          ],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "bullpen",
+            "airdrop",
+            "claim dashboard is live",
+            "10x more followers",
+            "$100m marketing budget",
+            "kol post",
+            "milestone",
+            "tool integration"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@bullpenfi",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "bullpen",
+            "airdrop",
+            "claim dashboard is live",
+            "10x more followers",
+            "$100m marketing budget",
+            "kol post",
+            "milestone",
+            "tool integration"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-03T19:22:42Z",
+      "event_id": "signal_647b304b3dc8",
+      "evidence": [
+        {
+          "author_handle": "@blknoiz06",
+          "minutes_before_detection": 355.03,
+          "minutes_from_window_start": 4.97,
+          "relevance": "direct from ansem on scale and tools driving attention",
+          "text": "i have 10x more followers this time and a $100M marketing budget... trading terminal @BullpenFi",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-03T13:27:40Z",
+          "tweet_id": "2073035950750302704",
+          "type": "x_post",
+          "url": "https://x.com/blknoiz06/status/2073035950750302704"
+        },
+        {
+          "author_handle": "@BlackBullSol",
+          "minutes_before_detection": 228.83,
+          "minutes_from_window_start": 131.17,
+          "relevance": "fan acct marking the mc level that aligns with pump",
+          "text": "we just hit $200mm... major milestone",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-03T15:33:52Z",
+          "tweet_id": "2073067710179598758",
+          "type": "x_post",
+          "url": "https://x.com/BlackBullSol/status/2073067710179598758"
+        },
+        {
+          "author_handle": "@BlackBullSol",
+          "minutes_before_detection": 260.73,
+          "minutes_from_window_start": 99.27,
+          "relevance": "bullpen integration and airdrop mechanics in play",
+          "text": "the $ANSEM claim dashboard is LIVE on bullpen",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-03T15:01:58Z",
+          "tweet_id": "2073059681346425076",
+          "type": "x_post",
+          "url": "https://x.com/BlackBullSol/status/2073059681346425076"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump"
+      },
+      "lore": "@blknoiz06 posted on 10x followers plus 100m marketing budget and bullpen terminal while fan acct noted 200m mc milestone and live claim dashboard. community airdrops and fee routing chatter picking up",
+      "movement": {
+        "change_pct": 52.3,
+        "detected_at": "2026-07-03T19:22:42Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-03T19:20:00Z",
+        "estimated_start_at": "2026-07-03T17:10:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "6e7V9eegCHw997T72MxgwwJipZ6GJyZF8NvjkzT1rvpN",
+        "pool_name": "ANSEM / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-03T19:22:42Z",
+        "window_start_at": "2026-07-03T13:22:42Z"
+      },
+      "source_signal_id": "signal_647b304b3dc8",
+      "token": {
+        "address": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+        "chain_slug": "solana",
+        "symbol": "ANSEM"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@blknoiz06",
+          "@BlackBullSol",
+          "@BullpenFi"
+        ],
+        "catalysts": [
+          "kol_post",
+          "milestone",
+          "tool_integration"
+        ],
+        "keywords": [
+          "ansem",
+          "bullpen",
+          "airdrop"
+        ],
+        "phrases": [
+          "claim dashboard is LIVE",
+          "10x more followers",
+          "$100M marketing budget"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-02T15:22:43Z",
+  "updated_at": "2026-07-03T19:22:44Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 15,
+        "approved_alpha_source": 16,
         "approved_movement_chatter": 1,
         "rejected_late_reaction": 73,
-        "rejected_no_approved_terms": 1,
-        "rejected_no_tweet_evidence": 43,
+        "rejected_no_approved_terms": 2,
+        "rejected_no_tweet_evidence": 44,
         "rejected_stale_pre_move": 7,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 142,
+      "candidate_rules": 145,
       "watch_accounts_approved": 12,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 102,
+      "watch_accounts_rejected": 103,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-02T15:22:43Z"
+    "updated_at": "2026-07-03T19:22:44Z"
   }
 }

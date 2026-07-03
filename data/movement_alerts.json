@@ -1,10 +1,10 @@
 [
   {
     "chain_slug": "solana",
-    "address": "ddprhyqm8ueovnk9kanagoghswkuatqmxcozzu3zpump",
-    "symbol": "manlet",
+    "address": "9crcn9rgt8v2imem2baks13yhmeais3rum3rpvtgpump",
+    "symbol": "ANSEM",
     "direction": "pump",
-    "price_change_h1_pct": -3.345,
-    "timestamp": 1783005763.6767006
+    "price_change_h1_pct": 16.755,
+    "timestamp": 1783106564.5262108
   }
 ]

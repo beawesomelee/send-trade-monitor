@@ -7621,10 +7621,178 @@
           "$100M marketing budget"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@blackbullsol",
+          "approval_evidence_url": "https://x.com/BlackBullSol/status/2073167332633936295",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 224.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-03T22:09:44Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 224.73,
+          "source_evidence_urls": [
+            "https://x.com/BlackBullSol/status/2073167332633936295"
+          ],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "100k holders",
+            "cleared 100,000 holders",
+            "milestone",
+            "holder count"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@blknoiz06",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "100k holders",
+            "cleared 100,000 holders",
+            "milestone",
+            "holder count"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@bullpenfi",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "100k holders",
+            "cleared 100,000 holders",
+            "milestone",
+            "holder count"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@saqlainali888",
+          "approval_evidence_url": "https://x.com/SaqlainAli888/status/2073185691828408612",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 297.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-03T23:22:41Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 297.68,
+          "source_evidence_urls": [
+            "https://x.com/SaqlainAli888/status/2073185691828408612"
+          ],
+          "terms": [
+            "ansem",
+            "$ansem",
+            "100k holders",
+            "cleared 100,000 holders",
+            "milestone",
+            "holder count"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-03T23:39:30Z",
+      "event_id": "signal_1f22f0592960",
+      "evidence": [
+        {
+          "author_handle": "@BlackBullSol",
+          "minutes_before_detection": 89.76,
+          "minutes_from_window_start": 270.24,
+          "relevance": "fan account announcing the milestone driving chatter",
+          "text": "WE HAVE CLEARED 100,000 HOLDERS $ANSEM @blknoiz06 @BullpenFi",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-03T22:09:44Z",
+          "tweet_id": "2073167332633936295",
+          "type": "x_post",
+          "url": "https://x.com/BlackBullSol/status/2073167332633936295"
+        },
+        {
+          "author_handle": "@SaqlainAli888",
+          "minutes_before_detection": 16.81,
+          "minutes_from_window_start": 343.19,
+          "relevance": "community confirmation of the 100k mark",
+          "text": "Congratulations Everyone & specially @blknoiz06 as $ANSEM crossed 100k holders milestone",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-03T23:22:41Z",
+          "tweet_id": "2073185691828408612",
+          "type": "x_post",
+          "url": "https://x.com/SaqlainAli888/status/2073185691828408612"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump"
+      },
+      "lore": "100k holders milestone cleared today, blackbullsol and community posting the count with @blknoiz06 tags. pumping on the holder push",
+      "movement": {
+        "change_pct": 50.5,
+        "detected_at": "2026-07-03T23:39:30Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-03T21:45:00Z",
+        "estimated_start_at": "2026-07-03T18:25:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "6e7V9eegCHw997T72MxgwwJipZ6GJyZF8NvjkzT1rvpN",
+        "pool_name": "ANSEM / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-03T23:39:30Z",
+        "window_start_at": "2026-07-03T17:39:30Z"
+      },
+      "source_signal_id": "signal_1f22f0592960",
+      "token": {
+        "address": "9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
+        "chain_slug": "solana",
+        "symbol": "ANSEM"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@BlackBullSol",
+          "@blknoiz06",
+          "@BullpenFi"
+        ],
+        "catalysts": [
+          "milestone",
+          "holder_count"
+        ],
+        "keywords": [
+          "$ANSEM",
+          "ansem"
+        ],
+        "phrases": [
+          "100k holders",
+          "cleared 100,000 holders"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-03T19:22:44Z",
+  "updated_at": "2026-07-03T23:39:32Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -7633,18 +7801,18 @@
       "candidate_labels": {
         "approved_alpha_source": 16,
         "approved_movement_chatter": 1,
-        "rejected_late_reaction": 73,
+        "rejected_late_reaction": 75,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 44,
+        "rejected_no_tweet_evidence": 46,
         "rejected_stale_pre_move": 7,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 145,
+      "candidate_rules": 149,
       "watch_accounts_approved": 12,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 103,
+      "watch_accounts_rejected": 104,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-03T19:22:44Z"
+    "updated_at": "2026-07-03T23:39:32Z"
   }
 }

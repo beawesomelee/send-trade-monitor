@@ -91,7 +91,7 @@
       "value": "from:blackbullsol (ansem OR $ansem OR bullpen) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-03T20:22:27Z",
+  "rules_synced_at": "2026-07-03T20:40:32Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -3067,7 +3067,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-03T20:22:27Z",
+  "updated_at": "2026-07-03T20:40:32Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

@@ -101,7 +101,7 @@
       "value": "from:cfm_sol (manlet OR $manlet OR ansem) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-04T17:22:30Z",
+  "rules_synced_at": "2026-07-04T17:36:36Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -3224,7 +3224,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-04T17:22:30Z",
+  "updated_at": "2026-07-04T17:36:36Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

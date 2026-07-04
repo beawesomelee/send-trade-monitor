@@ -7789,30 +7789,265 @@
           "cleared 100,000 holders"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@cfm_sol",
+          "approval_evidence_url": "https://x.com/cfm_sol/status/2073310975605047561",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 25.5 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-04T07:40:31Z",
+          "approved_terms": [
+            "manlet",
+            "$manlet",
+            "ansem"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 25.52,
+          "source_evidence_urls": [
+            "https://x.com/cfm_sol/status/2073310975605047561"
+          ],
+          "terms": [
+            "manlet",
+            "$manlet",
+            "ansem",
+            "ansem screenshot",
+            "solana manlets",
+            "moonshot vote",
+            "40% supply",
+            "kol post",
+            "airdrop",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@manletonpf",
+          "approval_evidence_url": "https://x.com/manletonpf/status/2073315104368504852",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 41.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-04T07:56:55Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 41.92,
+          "source_evidence_urls": [
+            "https://x.com/manletonpf/status/2073315104368504852"
+          ],
+          "terms": [
+            "manlet",
+            "$manlet",
+            "ansem",
+            "ansem screenshot",
+            "solana manlets",
+            "moonshot vote",
+            "40% supply",
+            "kol post",
+            "airdrop",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@blknoiz06",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "manlet",
+            "$manlet",
+            "ansem",
+            "ansem screenshot",
+            "solana manlets",
+            "moonshot vote",
+            "40% supply",
+            "kol post",
+            "airdrop",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@senmamiskxj",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "manlet",
+            "$manlet",
+            "ansem",
+            "ansem screenshot",
+            "solana manlets",
+            "moonshot vote",
+            "40% supply",
+            "kol post",
+            "airdrop",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@in_da_mist",
+          "approval_evidence_url": "https://x.com/In_da_mist/status/2073135288499744824",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 672.6 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-03T20:02:24Z",
+          "approved_terms": [
+            "manlet",
+            "ansem"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -672.6,
+          "source_evidence_urls": [
+            "https://x.com/In_da_mist/status/2073135288499744824"
+          ],
+          "terms": [
+            "manlet",
+            "$manlet",
+            "ansem",
+            "ansem screenshot",
+            "solana manlets",
+            "moonshot vote",
+            "40% supply",
+            "kol post",
+            "airdrop",
+            "listing vote"
+          ],
+          "timing_bucket": "pre_window"
+        }
+      ],
+      "detected_at": "2026-07-04T09:22:38Z",
+      "event_id": "signal_27c781eabd39",
+      "evidence": [
+        {
+          "author_handle": "@cfm_sol",
+          "minutes_before_detection": 102.11,
+          "minutes_from_window_start": 257.89,
+          "relevance": "explains the Ansem catalyst behind the pump",
+          "text": "$manlet 7.25m ... Ansem just sent a screenshot that included the Manlet token",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-04T07:40:31Z",
+          "tweet_id": "2073310975605047561",
+          "type": "x_post",
+          "url": "https://x.com/cfm_sol/status/2073310975605047561"
+        },
+        {
+          "author_handle": "@manletonpf",
+          "minutes_before_detection": 85.7,
+          "minutes_from_window_start": 274.3,
+          "relevance": "project account activity tied to Ansem narrative",
+          "text": "post with image, 258 likes",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-04T07:56:55Z",
+          "tweet_id": "2073315104368504852",
+          "type": "x_post",
+          "url": "https://x.com/manletonpf/status/2073315104368504852"
+        },
+        {
+          "author_handle": "@In_da_mist",
+          "minutes_before_detection": 800.23,
+          "minutes_from_window_start": -440.23,
+          "relevance": "confirms airdrop and Ansem connection",
+          "text": "@blknoiz06 holds 40% supply ... ansem ... solana manlet",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-03T20:02:24Z",
+          "tweet_id": "2073135288499744824",
+          "type": "x_post",
+          "url": "https://x.com/In_da_mist/status/2073135288499744824"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/DdPrHYqM8Ueovnk9kAnAgoGhswkuaTqmxcoZzU3Zpump"
+      },
+      "lore": "ansem screenshot with the token + 40% airdrop to holders sparked the move, community now flooding moonshot and fomo votes for listings",
+      "movement": {
+        "change_pct": 310.3,
+        "detected_at": "2026-07-04T09:22:38Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-04T08:45:00Z",
+        "estimated_start_at": "2026-07-04T07:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "8qDidAKuyNYKaR4dh2ZFZZVG5gBTUfyJcwQPgwt9FS1Y",
+        "pool_name": "manlet / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-04T09:22:38Z",
+        "window_start_at": "2026-07-04T03:22:38Z"
+      },
+      "source_signal_id": "signal_27c781eabd39",
+      "token": {
+        "address": "DdPrHYqM8Ueovnk9kAnAgoGhswkuaTqmxcoZzU3Zpump",
+        "chain_slug": "solana",
+        "symbol": "manlet"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@cfm_sol",
+          "@manletonpf",
+          "@blknoiz06",
+          "@senmamiskxj"
+        ],
+        "catalysts": [
+          "kol_post",
+          "airdrop",
+          "listing_vote"
+        ],
+        "keywords": [
+          "$manlet",
+          "manlet",
+          "ansem"
+        ],
+        "phrases": [
+          "ansem screenshot",
+          "solana manlets",
+          "moonshot vote",
+          "40% supply"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-03T23:39:32Z",
+  "updated_at": "2026-07-04T09:22:40Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 16,
-        "approved_movement_chatter": 1,
-        "rejected_late_reaction": 75,
+        "approved_alpha_source": 17,
+        "approved_movement_chatter": 2,
+        "rejected_late_reaction": 76,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 46,
+        "rejected_no_tweet_evidence": 48,
         "rejected_stale_pre_move": 7,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 149,
-      "watch_accounts_approved": 12,
+      "candidate_rules": 154,
+      "watch_accounts_approved": 14,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 104,
+      "watch_accounts_rejected": 105,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-03T23:39:32Z"
+    "updated_at": "2026-07-04T09:22:40Z"
   }
 }

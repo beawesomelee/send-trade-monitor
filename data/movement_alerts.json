@@ -1,10 +1,18 @@
 [
   {
-    "chain_slug": "solana",
-    "address": "ddprhyqm8ueovnk9kanagoghswkuatqmxcozzu3zpump",
-    "symbol": "manlet",
+    "chain_slug": "base",
+    "address": "0x9b88500c69cea66c329abd1c494319b197fb8453",
+    "symbol": "BRIAN",
     "direction": "pump",
-    "price_change_h1_pct": 13.408,
-    "timestamp": 1783156960.1530833
+    "price_change_h1_pct": 30.892,
+    "timestamp": 1783250335.84128
+  },
+  {
+    "chain_slug": "base",
+    "address": "0x50f88fe97f72cd3e75b9eb4f747f59bceba80d59",
+    "symbol": "jesse",
+    "direction": "pump",
+    "price_change_h1_pct": -5.424,
+    "timestamp": 1783250335.84128
   }
 ]

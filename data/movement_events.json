@@ -8024,30 +8024,431 @@
           "40% supply"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@brian0xbase",
+          "approval_evidence_url": "https://x.com/brian0xbase/status/2073711617133445373",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 67.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-05T10:12:31Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 67.52,
+          "source_evidence_urls": [
+            "https://x.com/brian0xbase/status/2073711617133445373"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "brian armstrong",
+            "barmstrong",
+            "first coin launch by",
+            "brian 5m",
+            "bald eagle",
+            "kol association",
+            "team post"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@barmstrong",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "brian",
+            "$brian",
+            "brian armstrong",
+            "barmstrong",
+            "first coin launch by",
+            "brian 5m",
+            "bald eagle",
+            "kol association",
+            "team post"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@clanker_world",
+          "approval_evidence_url": "https://x.com/clanker_world/status/2073624456983945497",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 278.8 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-05T04:26:11Z",
+          "approved_terms": [
+            "brian",
+            "$brian",
+            "brian armstrong",
+            "barmstrong"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -278.82,
+          "source_evidence_urls": [
+            "https://x.com/clanker_world/status/2073624456983945497"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "brian armstrong",
+            "barmstrong",
+            "first coin launch by",
+            "brian 5m",
+            "bald eagle",
+            "kol association",
+            "team post"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@thong261297",
+          "approval_evidence_url": "https://x.com/thong261297/status/2073728196923764755",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 133.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-05T11:18:24Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 133.4,
+          "source_evidence_urls": [
+            "https://x.com/thong261297/status/2073728196923764755"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "brian armstrong",
+            "barmstrong",
+            "first coin launch by",
+            "brian 5m",
+            "bald eagle",
+            "kol association",
+            "team post"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-05T11:18:51Z",
+      "event_id": "signal_c8c64a7b9645",
+      "evidence": [
+        {
+          "author_handle": "@brian0xbase",
+          "minutes_before_detection": 66.32,
+          "minutes_from_window_start": 293.68,
+          "relevance": "project self-hype post with engagement",
+          "text": "Brian 5M! Let\u2019s moon it!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T10:12:31Z",
+          "tweet_id": "2073711617133445373",
+          "type": "x_post",
+          "url": "https://x.com/brian0xbase/status/2073711617133445373"
+        },
+        {
+          "author_handle": "@thong261297",
+          "minutes_before_detection": 0.44,
+          "minutes_from_window_start": 359.56,
+          "relevance": "ties pump to brian armstrong launch narrative",
+          "text": "Send it . First coin launch by @brian_armstrong just 150k $brian",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T11:18:24Z",
+          "tweet_id": "2073728196923764755",
+          "type": "x_post",
+          "url": "https://x.com/thong261297/status/2073728196923764755"
+        },
+        {
+          "author_handle": "@clanker_world",
+          "minutes_before_detection": 412.66,
+          "minutes_from_window_start": -52.66,
+          "relevance": "early mention of armstrong deployment",
+          "text": "$BRIAN \"The Bald Eagle\" was deployed by @barmstrong (Brian Armstrong)",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-05T04:26:11Z",
+          "tweet_id": "2073624456983945497",
+          "type": "x_post",
+          "url": "https://x.com/clanker_world/status/2073624456983945497"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x9b88500c69cea66c329abd1c494319b197fb8453"
+      },
+      "lore": "barmstrong association in early posts as first coin launch. project posting 5m target with 18 likes. mostly vote spam and thin liq moves since",
+      "movement": {
+        "change_pct": 13390.1,
+        "detected_at": "2026-07-05T11:18:51Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-05T11:00:00Z",
+        "estimated_start_at": "2026-07-05T09:05:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 28,
+        "pool_address": "0x48faf25633d0e39fc7075f6d461dd50edec66a50",
+        "pool_name": "BRIAN / WETH 1%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-05T11:18:51Z",
+        "window_start_at": "2026-07-05T05:18:51Z"
+      },
+      "source_signal_id": "signal_c8c64a7b9645",
+      "token": {
+        "address": "0x9b88500c69cea66c329abd1c494319b197fb8453",
+        "chain_slug": "base",
+        "symbol": "BRIAN"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@brian0xbase",
+          "@barmstrong",
+          "@clanker_world"
+        ],
+        "catalysts": [
+          "kol_association",
+          "team_post"
+        ],
+        "keywords": [
+          "$brian",
+          "brian armstrong",
+          "barmstrong"
+        ],
+        "phrases": [
+          "first coin launch by",
+          "brian 5m",
+          "bald eagle"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@richwithm3",
+          "approval_evidence_url": "https://x.com/richwithm3/status/2073727545460375829",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 240.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-05T11:15:49Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 240.82,
+          "source_evidence_urls": [
+            "https://x.com/richwithm3/status/2073727545460375829"
+          ],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "jessepollak",
+            "base runner",
+            "base have $jesse",
+            "base trenches",
+            "$ansem equivalent",
+            "kol post",
+            "narrative build"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@vegasnipes",
+          "approval_evidence_url": "https://x.com/VegaSnipes/status/2073698274339328054",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 124.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-05T09:19:30Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 124.5,
+          "source_evidence_urls": [
+            "https://x.com/VegaSnipes/status/2073698274339328054"
+          ],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "jessepollak",
+            "base runner",
+            "base have $jesse",
+            "base trenches",
+            "$ansem equivalent",
+            "kol post",
+            "narrative build"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@0xdavoid",
+          "approval_evidence_url": "https://x.com/0xDavoid/status/2073669421030101452",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 9.8 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-05T07:24:51Z",
+          "approved_terms": [
+            "jesse",
+            "$jesse"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 9.85,
+          "source_evidence_urls": [
+            "https://x.com/0xDavoid/status/2073669421030101452"
+          ],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "jessepollak",
+            "base runner",
+            "base have $jesse",
+            "base trenches",
+            "$ansem equivalent",
+            "kol post",
+            "narrative build"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@jessepollak",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "jessepollak",
+            "base runner",
+            "base have $jesse",
+            "base trenches",
+            "$ansem equivalent",
+            "kol post",
+            "narrative build"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-05T11:18:51Z",
+      "event_id": "signal_f611ddb71dea",
+      "evidence": [
+        {
+          "author_handle": "@richwithm3",
+          "minutes_before_detection": 3.03,
+          "minutes_from_window_start": 356.97,
+          "relevance": "direct comparison driving the narrative",
+          "text": "Sol have $ANSEM BNB have $CZ Base have $JESSE by @jessepollak",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T11:15:49Z",
+          "tweet_id": "2073727545460375829",
+          "type": "x_post",
+          "url": "https://x.com/richwithm3/status/2073727545460375829"
+        },
+        {
+          "author_handle": "@VegaSnipes",
+          "minutes_before_detection": 119.34,
+          "minutes_from_window_start": 240.66,
+          "relevance": "notes the move and volume in context of the analogy",
+          "text": "looks like base trenches are trying to give us their own runner ... now $JESSE is starting to put up some interesting numbers",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T09:19:30Z",
+          "tweet_id": "2073698274339328054",
+          "type": "x_post",
+          "url": "https://x.com/VegaSnipes/status/2073698274339328054"
+        },
+        {
+          "author_handle": "@0xDavoid",
+          "minutes_before_detection": 233.99,
+          "minutes_from_window_start": 126.01,
+          "relevance": "ties pump to base connection and airdrop beta angle",
+          "text": "$JESSE is pumping, and it's not random. The direct link to @base is the real catalyst here",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T07:24:51Z",
+          "tweet_id": "2073669421030101452",
+          "type": "x_post",
+          "url": "https://x.com/0xDavoid/status/2073669421030101452"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x50f88fe97f72cd3e75b9eb4f747f59bceba80d59"
+      },
+      "lore": "base trenches framing $jesse as the chain's $ansem equivalent with direct jessepollak tie in, fresh posts comparing it to $cz on bnb pushing the tape. no update from the man himself",
+      "movement": {
+        "change_pct": 62.0,
+        "detected_at": "2026-07-05T11:18:51Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-05T09:25:00Z",
+        "estimated_start_at": "2026-07-05T07:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0xc39acb3ce11ebcd3e1c5d67cdfb8707ab12674449fdab859327a8aabee03cd10",
+        "pool_name": "jesse / ZORA 1%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-05T11:18:51Z",
+        "window_start_at": "2026-07-05T05:18:51Z"
+      },
+      "source_signal_id": "signal_f611ddb71dea",
+      "token": {
+        "address": "0x50f88fe97f72cd3e75b9eb4f747f59bceba80d59",
+        "chain_slug": "base",
+        "symbol": "jesse"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@richwithm3",
+          "@VegaSnipes",
+          "@0xDavoid",
+          "@jessepollak"
+        ],
+        "catalysts": [
+          "kol_post",
+          "narrative_build"
+        ],
+        "keywords": [
+          "$jesse",
+          "jessepollak",
+          "base runner"
+        ],
+        "phrases": [
+          "base have $jesse",
+          "base trenches",
+          "$ansem equivalent"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-04T09:22:40Z",
+  "updated_at": "2026-07-05T11:18:55Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 17,
-        "approved_movement_chatter": 2,
-        "rejected_late_reaction": 76,
+        "approved_alpha_source": 18,
+        "approved_movement_chatter": 3,
+        "rejected_late_reaction": 80,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 48,
+        "rejected_no_tweet_evidence": 50,
         "rejected_stale_pre_move": 7,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 154,
-      "watch_accounts_approved": 14,
+      "candidate_rules": 162,
+      "watch_accounts_approved": 16,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 105,
+      "watch_accounts_rejected": 110,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-04T09:22:40Z"
+    "updated_at": "2026-07-05T11:18:55Z"
   }
 }

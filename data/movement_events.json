@@ -8425,10 +8425,259 @@
           "$ansem equivalent"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@vegasnipes",
+          "approval_evidence_url": "https://x.com/VegaSnipes/status/2073732108934160551",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 124.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-05T11:33:57Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 123.95,
+          "source_evidence_urls": [
+            "https://x.com/VegaSnipes/status/2073732108934160551"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "clanker",
+            "ansem",
+            "bald bull",
+            "brian armstrong wallet",
+            "base runner",
+            "80% supply",
+            "kol post",
+            "wallet narrative",
+            "base meme"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@biostone_chad",
+          "approval_evidence_url": "https://x.com/BioStone_chad/status/2073732990086291884",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 127.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-05T11:37:27Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 127.45,
+          "source_evidence_urls": [
+            "https://x.com/BioStone_chad/status/2073732990086291884"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "clanker",
+            "ansem",
+            "bald bull",
+            "brian armstrong wallet",
+            "base runner",
+            "80% supply",
+            "kol post",
+            "wallet narrative",
+            "base meme"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@whaleclank",
+          "approval_evidence_url": "https://x.com/whaleclank/status/2073784826247950438",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 333.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-05T15:03:26Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 333.43,
+          "source_evidence_urls": [
+            "https://x.com/whaleclank/status/2073784826247950438"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "clanker",
+            "ansem",
+            "bald bull",
+            "brian armstrong wallet",
+            "base runner",
+            "80% supply",
+            "kol post",
+            "wallet narrative",
+            "base meme"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@chrisgivesaf",
+          "approval_evidence_url": "https://x.com/chrisgivesaf/status/2073739418989388264",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 153.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-05T12:03:00Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 153.0,
+          "source_evidence_urls": [
+            "https://x.com/chrisgivesaf/status/2073739418989388264"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "clanker",
+            "ansem",
+            "bald bull",
+            "brian armstrong wallet",
+            "base runner",
+            "80% supply",
+            "kol post",
+            "wallet narrative",
+            "base meme"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@brian_armstrong",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "brian",
+            "$brian",
+            "clanker",
+            "ansem",
+            "bald bull",
+            "brian armstrong wallet",
+            "base runner",
+            "80% supply",
+            "kol post",
+            "wallet narrative",
+            "base meme"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-05T15:22:46Z",
+      "event_id": "signal_4b9e5b5e1042",
+      "evidence": [
+        {
+          "author_handle": "@whaleclank",
+          "minutes_before_detection": 19.33,
+          "minutes_from_window_start": 340.67,
+          "relevance": "launch post tying to the token move",
+          "text": "$BRIAN IS GOING LIVE NOW ON @clanker_world launch my token on base Name: The Bald Bull Ticker: BRIAN And lock 10% supply for 7 days",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T15:03:26Z",
+          "tweet_id": "2073784826247950438",
+          "type": "x_post",
+          "url": "https://x.com/whaleclank/status/2073784826247950438"
+        },
+        {
+          "author_handle": "@VegaSnipes",
+          "minutes_before_detection": 228.81,
+          "minutes_from_window_start": 131.19,
+          "relevance": "kol call on the pump and volume",
+          "text": "base might've found another runner $BRIAN has already done over 6,000% since launch... chart filling with big names",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T11:33:57Z",
+          "tweet_id": "2073732108934160551",
+          "type": "x_post",
+          "url": "https://x.com/VegaSnipes/status/2073732108934160551"
+        },
+        {
+          "author_handle": "@BioStone_chad",
+          "minutes_before_detection": 225.31,
+          "minutes_from_window_start": 134.69,
+          "relevance": "wallet narrative driving attention",
+          "text": "80% supply for @brian_armstrong -> Will this get BRIAN's attention? MC 2.5M $BRIAN #Base",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T11:37:27Z",
+          "tweet_id": "2073732990086291884",
+          "type": "x_post",
+          "url": "https://x.com/BioStone_chad/status/2073732990086291884"
+        },
+        {
+          "author_handle": "@chrisgivesaf",
+          "minutes_before_detection": 199.76,
+          "minutes_from_window_start": 160.24,
+          "relevance": "trader adding on the dip",
+          "text": "the base trenches been needing something everyone would fw... i\u2019m getting that vibe from $BRIAN added some more in this dip",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T12:03:00Z",
+          "tweet_id": "2073739418989388264",
+          "type": "x_post",
+          "url": "https://x.com/chrisgivesaf/status/2073739418989388264"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x9b88500c69cea66c329abd1c494319b197fb8453"
+      },
+      "lore": "kol posts from @vegasnipes and @biostone_chad on the brian armstrong wallet angle plus base runner vibes. @whaleclank launched the bald bull play on clanker. no project handle chatter",
+      "movement": {
+        "change_pct": 90.6,
+        "detected_at": "2026-07-05T15:22:46Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-05T13:05:00Z",
+        "estimated_start_at": "2026-07-05T09:30:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 77,
+        "pool_address": "0x48faf25633d0e39fc7075f6d461dd50edec66a50",
+        "pool_name": "BRIAN / WETH 1%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-05T15:22:46Z",
+        "window_start_at": "2026-07-05T09:22:46Z"
+      },
+      "source_signal_id": "signal_4b9e5b5e1042",
+      "token": {
+        "address": "0x9b88500c69cea66c329abd1c494319b197fb8453",
+        "chain_slug": "base",
+        "symbol": "BRIAN"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@VegaSnipes",
+          "@BioStone_chad",
+          "@whaleclank",
+          "@chrisgivesaf",
+          "@brian_armstrong"
+        ],
+        "catalysts": [
+          "kol_post",
+          "wallet_narrative",
+          "base_meme"
+        ],
+        "keywords": [
+          "$BRIAN",
+          "brian",
+          "clanker",
+          "ansem"
+        ],
+        "phrases": [
+          "bald bull",
+          "brian armstrong wallet",
+          "base runner",
+          "80% supply"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-05T11:18:55Z",
+  "updated_at": "2026-07-05T15:22:48Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -8437,18 +8686,18 @@
       "candidate_labels": {
         "approved_alpha_source": 18,
         "approved_movement_chatter": 3,
-        "rejected_late_reaction": 80,
+        "rejected_late_reaction": 84,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 50,
+        "rejected_no_tweet_evidence": 51,
         "rejected_stale_pre_move": 7,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 162,
+      "candidate_rules": 167,
       "watch_accounts_approved": 16,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 110,
+      "watch_accounts_rejected": 114,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-05T11:18:55Z"
+    "updated_at": "2026-07-05T15:22:48Z"
   }
 }

@@ -8674,10 +8674,166 @@
           "80% supply"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@crashiusclay69",
+          "approval_evidence_url": "https://x.com/CrashiusClay69/status/2073831783934914578",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 0.0 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-05T18:10:01Z",
+          "approved_terms": [
+            "crash"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 0.02,
+          "source_evidence_urls": [
+            "https://x.com/CrashiusClay69/status/2073831783934914578"
+          ],
+          "terms": [
+            "crash",
+            "$crash",
+            "crash on base",
+            "basedcrash",
+            "real tribute coin was made on base",
+            "$crash needs one more push",
+            "kol post",
+            "tribute meta"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cryptohissa",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "crash",
+            "$crash",
+            "crash on base",
+            "basedcrash",
+            "real tribute coin was made on base",
+            "$crash needs one more push",
+            "kol post",
+            "tribute meta"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@riskatrilstr",
+          "approval_evidence_url": "https://x.com/riskatrilstr/status/2073849209061568573",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 69.3 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-05T19:19:16Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 69.27,
+          "source_evidence_urls": [
+            "https://x.com/riskatrilstr/status/2073849209061568573"
+          ],
+          "terms": [
+            "crash",
+            "$crash",
+            "crash on base",
+            "basedcrash",
+            "real tribute coin was made on base",
+            "$crash needs one more push",
+            "kol post",
+            "tribute meta"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-05T19:22:38Z",
+      "event_id": "signal_0a7d8b67597c",
+      "evidence": [
+        {
+          "author_handle": "@CrashiusClay69",
+          "minutes_before_detection": 72.6,
+          "minutes_from_window_start": 287.4,
+          "relevance": "main catalyst post acknowledging the token and driving attention",
+          "text": "the real tribute coin was made on Base... OG holders from Base",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T18:10:01Z",
+          "tweet_id": "2073831783934914578",
+          "type": "x_post",
+          "url": "https://x.com/CrashiusClay69/status/2073831783934914578"
+        },
+        {
+          "author_handle": "@riskatrilstr",
+          "minutes_before_detection": 3.36,
+          "minutes_from_window_start": 356.64,
+          "relevance": "direct shill with matching contract link",
+          "text": "$CRASH needs one more push",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-05T19:19:16Z",
+          "tweet_id": "2073849209061568573",
+          "type": "x_post",
+          "url": "https://x.com/riskatrilstr/status/2073849209061568573"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x4dd9077269dd08899f2a9e73507125962b5bc87f"
+      },
+      "lore": "crashiusclay69 called the base version the real tribute coin in a big post today. low chatter but bids stacking on the contract.",
+      "movement": {
+        "change_pct": 207.4,
+        "detected_at": "2026-07-05T19:22:38Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-05T19:00:00Z",
+        "estimated_start_at": "2026-07-05T18:10:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0xf012e803c8e73d185ac96d6c3f830893a1116e03",
+        "pool_name": "Crash / WETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-05T19:22:38Z",
+        "window_start_at": "2026-07-05T13:22:38Z"
+      },
+      "source_signal_id": "signal_0a7d8b67597c",
+      "token": {
+        "address": "0x4dd9077269dd08899f2a9e73507125962b5bc87f",
+        "chain_slug": "base",
+        "symbol": "Crash"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@CrashiusClay69",
+          "@CryptoHissa",
+          "@riskatrilstr"
+        ],
+        "catalysts": [
+          "kol_post",
+          "tribute_meta"
+        ],
+        "keywords": [
+          "$crash",
+          "crash on base",
+          "basedcrash"
+        ],
+        "phrases": [
+          "real tribute coin was made on Base",
+          "$CRASH needs one more push"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-05T15:22:48Z",
+  "updated_at": "2026-07-05T19:22:40Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -8685,19 +8841,19 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 18,
-        "approved_movement_chatter": 3,
-        "rejected_late_reaction": 84,
+        "approved_movement_chatter": 4,
+        "rejected_late_reaction": 85,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 51,
+        "rejected_no_tweet_evidence": 52,
         "rejected_stale_pre_move": 7,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 167,
-      "watch_accounts_approved": 16,
+      "candidate_rules": 170,
+      "watch_accounts_approved": 17,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 114,
+      "watch_accounts_rejected": 116,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-05T15:22:48Z"
+    "updated_at": "2026-07-05T19:22:40Z"
   }
 }

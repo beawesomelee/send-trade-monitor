@@ -1,6 +1,14 @@
 [
   {
     "chain_slug": "base",
+    "address": "0x4dd9077269dd08899f2a9e73507125962b5bc87f",
+    "symbol": "Crash",
+    "direction": "pump",
+    "price_change_h1_pct": 59.375,
+    "timestamp": 1783279360.5212748
+  },
+  {
+    "chain_slug": "base",
     "address": "0x9b88500c69cea66c329abd1c494319b197fb8453",
     "symbol": "BRIAN",
     "direction": "pump",

@@ -8999,10 +8999,125 @@
           "the white bull is charging"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@levirietveld",
+          "approval_evidence_url": "https://x.com/LeviRietveld/status/2073900122002665602",
+          "approval_label": "rejected_stale_pre_move",
+          "approval_reason": "tweet was 1133.4 minutes before the estimated move start, outside the freshness window",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-05T22:41:34Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -1133.43,
+          "source_evidence_urls": [
+            "https://x.com/LeviRietveld/status/2073900122002665602"
+          ],
+          "terms": [
+            "levi",
+            "$levi",
+            "white bull",
+            "airdrops coming soon",
+            "10k holders",
+            "team update",
+            "kol post"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@tkubowitz9tdk",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "levi",
+            "$levi",
+            "white bull",
+            "airdrops coming soon",
+            "10k holders",
+            "team update",
+            "kol post"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-06T23:22:41Z",
+      "event_id": "signal_9c3364621357",
+      "evidence": [
+        {
+          "author_handle": "@LeviRietveld",
+          "minutes_before_detection": 1481.1,
+          "minutes_from_window_start": -1121.1,
+          "relevance": "project dev post directly tied to the gains and forward catalyst",
+          "text": "So The White Bull $LEVI is just casually up 1,707.46% today \ud83d\ude02 We're going so much higher, airdrops coming soon.",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-05T22:41:34Z",
+          "tweet_id": "2073900122002665602",
+          "type": "x_post",
+          "url": "https://x.com/LeviRietveld/status/2073900122002665602"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/6baGyq4HLbUn93MQUGFqBktpXP8BRjpoxSsAap4ppump"
+      },
+      "lore": "levirietveld posted white bull up 1700% today with airdrops coming soon. 12m mc volume holding on the move.",
+      "movement": {
+        "change_pct": 51.0,
+        "detected_at": "2026-07-06T23:22:41Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-06T18:20:00Z",
+        "estimated_start_at": "2026-07-06T17:35:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "EqMxjt3vQvFuWamr5DUYajMALRKHogF4N3Yxaa7RGZak",
+        "pool_name": "LEVI / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-06T23:22:41Z",
+        "window_start_at": "2026-07-06T17:22:41Z"
+      },
+      "source_signal_id": "signal_9c3364621357",
+      "token": {
+        "address": "6baGyq4HLbUn93MQUGFqBktpXP8BRjpoxSsAap4ppump",
+        "chain_slug": "solana",
+        "symbol": "LEVI"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@LeviRietveld",
+          "@TKubowitz9tdk"
+        ],
+        "catalysts": [
+          "team_update",
+          "kol_post"
+        ],
+        "keywords": [
+          "$LEVI",
+          "levi",
+          "white bull"
+        ],
+        "phrases": [
+          "white bull",
+          "airdrops coming soon",
+          "10k holders"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-06T19:19:50Z",
+  "updated_at": "2026-07-06T23:22:43Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -9013,16 +9128,16 @@
         "approved_movement_chatter": 4,
         "rejected_late_reaction": 87,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 53,
-        "rejected_stale_pre_move": 7,
+        "rejected_no_tweet_evidence": 54,
+        "rejected_stale_pre_move": 8,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 173,
+      "candidate_rules": 175,
       "watch_accounts_approved": 17,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 118,
+      "watch_accounts_rejected": 119,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-06T19:19:50Z"
+    "updated_at": "2026-07-06T23:22:43Z"
   }
 }

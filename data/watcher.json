@@ -116,7 +116,7 @@
       "value": "from:crashiusclay69 (crash) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-06T07:22:29Z",
+  "rules_synced_at": "2026-07-06T08:22:36Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -3560,7 +3560,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-06T07:22:29Z",
+  "updated_at": "2026-07-06T08:22:36Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

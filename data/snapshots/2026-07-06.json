@@ -472,6 +472,19 @@
   {
     "chain_slug": "solana",
     "chain_id": 501474,
+    "address": "5u83eeMKS5drqAdchhJQeUpt7x4DNaU7ZBnaMZjUpump",
+    "symbol": "ARRR",
+    "name": "ARRR",
+    "market_cap_usd": 1262040,
+    "volume_24h_usd": 722558,
+    "liquidity_usd": 92297,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/_ko1jCOeIBohxq2x?width=800&height=800&quality=95&format=auto",
+    "dexscreener_url": "https://dexscreener.com/solana/5u83eeMKS5drqAdchhJQeUpt7x4DNaU7ZBnaMZjUpump",
+    "decimals": 6
+  },
+  {
+    "chain_slug": "solana",
+    "chain_id": 501474,
     "address": "GRnVdzDbv4hn1p4PotEPYZW5TknE9UuHPMAuiYt3pump",
     "symbol": "Tate",
     "name": "The Nigger Bull",

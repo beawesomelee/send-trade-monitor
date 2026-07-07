@@ -9155,30 +9155,198 @@
         "keywords": [],
         "phrases": []
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@adolfthedev",
+          "approval_evidence_url": "https://x.com/adolfthedev/status/2074331941839458577",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 77.5 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-07T03:17:28Z",
+          "approved_terms": [
+            "sapijiju",
+            "sapijiju dev"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -77.53,
+          "source_evidence_urls": [
+            "https://x.com/adolfthedev/status/2074331941839458577"
+          ],
+          "terms": [
+            "sapijiju",
+            "$sapijiju",
+            "pump fees",
+            "sapijiju dev",
+            "claiming the fees",
+            "flywheeling it into pump",
+            "first time a pump founder",
+            "founder activity",
+            "fee rotation",
+            "dev claim"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@cfm_sol",
+          "approval_evidence_url": "https://x.com/cfm_sol/status/2074338365282160657",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 52.0 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-07T03:43:00Z",
+          "approved_terms": [
+            "sapijiju"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -52.0,
+          "source_evidence_urls": [
+            "https://x.com/cfm_sol/status/2074338365282160657"
+          ],
+          "terms": [
+            "sapijiju",
+            "$sapijiju",
+            "pump fees",
+            "sapijiju dev",
+            "claiming the fees",
+            "flywheeling it into pump",
+            "first time a pump founder",
+            "founder activity",
+            "fee rotation",
+            "dev claim"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@sapijiju",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "sapijiju",
+            "$sapijiju",
+            "pump fees",
+            "sapijiju dev",
+            "claiming the fees",
+            "flywheeling it into pump",
+            "first time a pump founder",
+            "founder activity",
+            "fee rotation",
+            "dev claim"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-07T10:22:51Z",
+      "event_id": "signal_0765b1a9f02a",
+      "evidence": [
+        {
+          "author_handle": "@adolfthedev",
+          "minutes_before_detection": 425.37,
+          "minutes_from_window_start": -65.37,
+          "relevance": "direct claim from self-identified dev explaining the fee rotation driving the move",
+          "text": "I'm the Sapijiju dev (10M ATH) Sapijiju is running because he's claiming the fees of the coin at 5.3M, and flywheeling it into PUMP",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-07T03:17:28Z",
+          "tweet_id": "2074331941839458577",
+          "type": "x_post",
+          "url": "https://x.com/adolfthedev/status/2074331941839458577"
+        },
+        {
+          "author_handle": "@cfm_sol",
+          "minutes_before_detection": 399.85,
+          "minutes_from_window_start": -39.85,
+          "relevance": "detailed breakdown of the founder activity and supply concentration behind the pump",
+          "text": "Sapijiju is the co-founder of Pump... collected the token's fees and exchanged them for PUMP. This is the first time a Pump founder has used fees in this way... wallet holds 65% of the supply",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-07T03:43:00Z",
+          "tweet_id": "2074338365282160657",
+          "type": "x_post",
+          "url": "https://x.com/cfm_sol/status/2074338365282160657"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/8jayQDfRc3GYxftBJ2VAwjqmRBdYPC9KnjY15rc9pump"
+      },
+      "lore": "sapijiju dev posting about claiming pump fees and rotating into pump. first founder move like this. 65% supply in wallet.",
+      "movement": {
+        "change_pct": 74.2,
+        "detected_at": "2026-07-07T10:22:51Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-07T06:10:00Z",
+        "estimated_start_at": "2026-07-07T04:35:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 184,
+        "pool_address": "G1Dza1PDoDb91tFamu5TpnYHvmn7R4Wz3rmop93AKoZh",
+        "pool_name": "SAPIJIJU / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-07T10:22:51Z",
+        "window_start_at": "2026-07-07T04:22:51Z"
+      },
+      "source_signal_id": "signal_0765b1a9f02a",
+      "token": {
+        "address": "8jayQDfRc3GYxftBJ2VAwjqmRBdYPC9KnjY15rc9pump",
+        "chain_slug": "solana",
+        "symbol": "SAPIJIJU"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@adolfthedev",
+          "@cfm_sol",
+          "@sapijiju"
+        ],
+        "catalysts": [
+          "founder_activity",
+          "fee_rotation",
+          "dev_claim"
+        ],
+        "keywords": [
+          "$SAPIJIJU",
+          "sapijiju",
+          "pump fees"
+        ],
+        "phrases": [
+          "sapijiju dev",
+          "claiming the fees",
+          "flywheeling it into PUMP",
+          "first time a Pump founder"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-07T05:22:54Z",
+  "updated_at": "2026-07-07T10:22:53Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 18,
+        "approved_alpha_source": 20,
         "approved_movement_chatter": 4,
         "rejected_late_reaction": 87,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 54,
+        "rejected_no_tweet_evidence": 55,
         "rejected_stale_pre_move": 8,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 175,
-      "watch_accounts_approved": 17,
+      "candidate_rules": 178,
+      "watch_accounts_approved": 18,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 119,
+      "watch_accounts_rejected": 120,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-07T05:22:54Z"
+    "updated_at": "2026-07-07T10:22:53Z"
   }
 }

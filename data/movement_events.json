@@ -9793,10 +9793,189 @@
           "pay for a x30 boost dex"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@rwagmicom",
+          "approval_evidence_url": "https://x.com/rwagmicom/status/2074982929244078223",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 9.3 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-08T22:24:16Z",
+          "approved_terms": [
+            "rwagmi",
+            "$rwagmi",
+            "b20",
+            "base"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 9.27,
+          "source_evidence_urls": [
+            "https://x.com/rwagmicom/status/2074982929244078223",
+            "https://x.com/rwagmicom/status/2074984690872721864",
+            "https://x.com/rwagmicom/status/2074976407931822342"
+          ],
+          "terms": [
+            "rwagmi",
+            "$rwagmi",
+            "b20",
+            "base",
+            "b20 is live",
+            "first launchpad token",
+            "b20\u9f99\u5934",
+            "team update",
+            "kol post",
+            "listing"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@0xjaimeth",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "rwagmi",
+            "$rwagmi",
+            "b20",
+            "base",
+            "b20 is live",
+            "first launchpad token",
+            "b20\u9f99\u5934",
+            "team update",
+            "kol post",
+            "listing"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@cryptojimix",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "rwagmi",
+            "$rwagmi",
+            "b20",
+            "base",
+            "b20 is live",
+            "first launchpad token",
+            "b20\u9f99\u5934",
+            "team update",
+            "kol post",
+            "listing"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-08T23:22:40Z",
+      "event_id": "signal_52b5fd3338fe",
+      "evidence": [
+        {
+          "author_handle": "@rwagmicom",
+          "minutes_before_detection": 58.39,
+          "minutes_from_window_start": 301.61,
+          "relevance": "team confirming dexscreener verification amid the move",
+          "text": "Knowing that people like to see Dexscreener verification. You will see the official RWAGMI verified on Dexscreener here soon.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-08T22:24:16Z",
+          "tweet_id": "2074982929244078223",
+          "type": "x_post",
+          "url": "https://x.com/rwagmicom/status/2074982929244078223"
+        },
+        {
+          "author_handle": "@rwagmicom",
+          "minutes_before_detection": 51.39,
+          "minutes_from_window_start": 308.61,
+          "relevance": "direct evidence of traffic spike tied to launch",
+          "text": "Our website https://rwagmi.com/ might be struggling right now. To give you the numbers we got over 500K requests to the server in a minute.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-08T22:31:16Z",
+          "tweet_id": "2074984690872721864",
+          "type": "x_post",
+          "url": "https://x.com/rwagmicom/status/2074984690872721864"
+        },
+        {
+          "author_handle": "@rwagmicom",
+          "minutes_before_detection": 84.31,
+          "minutes_from_window_start": 275.69,
+          "relevance": "project announcement of b20 live coinciding with the pump",
+          "text": "B20 is live on Base. So is $RWAGMI. The official CA: 0xb200000000000000000000Bf0548AB2ebD00bA5e",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-08T21:58:21Z",
+          "tweet_id": "2074976407931822342",
+          "type": "x_post",
+          "url": "https://x.com/rwagmicom/status/2074976407931822342"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb200000000000000000000bf0548ab2ebd00ba5e"
+      },
+      "lore": "b20 live on base today, rwagmi as first token with dexscreener verification posted by the team, site slammed with 500k requests in a minute",
+      "movement": {
+        "change_pct": 10259.3,
+        "detected_at": "2026-07-08T23:22:40Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-08T23:15:00Z",
+        "estimated_start_at": "2026-07-08T22:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 18,
+        "pool_address": "0x8c9b0d2b28205b33b34f67c0c660eb8f46ae2272650d908776f509538ed914f1",
+        "pool_name": "RWAGMI / WETH 2%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-08T23:22:40Z",
+        "window_start_at": "2026-07-08T17:22:40Z"
+      },
+      "source_signal_id": "signal_52b5fd3338fe",
+      "token": {
+        "address": "0xb200000000000000000000bf0548ab2ebd00ba5e",
+        "chain_slug": "base",
+        "symbol": "RWAGMI"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@rwagmicom",
+          "@0xJaimeth",
+          "@CryptoJimiX"
+        ],
+        "catalysts": [
+          "team_update",
+          "kol_post",
+          "listing"
+        ],
+        "keywords": [
+          "b20",
+          "rwagmi",
+          "base"
+        ],
+        "phrases": [
+          "b20 is live",
+          "first launchpad token",
+          "b20\u9f99\u5934"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-08T17:01:15Z",
+  "updated_at": "2026-07-08T23:22:42Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -9804,19 +9983,19 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 20,
-        "approved_movement_chatter": 5,
+        "approved_movement_chatter": 6,
         "rejected_late_reaction": 91,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 61,
+        "rejected_no_tweet_evidence": 63,
         "rejected_stale_pre_move": 8,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 189,
-      "watch_accounts_approved": 19,
+      "candidate_rules": 192,
+      "watch_accounts_approved": 20,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 126,
+      "watch_accounts_rejected": 128,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-08T17:01:15Z"
+    "updated_at": "2026-07-08T23:22:42Z"
   }
 }

@@ -1,10 +1,10 @@
 [
   {
-    "chain_slug": "solana",
-    "address": "6nwarbvdkxhbyqvp2qkq5i9xbta2b3bwe8swgu9vpump",
-    "symbol": "Cupsey",
+    "chain_slug": "base",
+    "address": "0xb200000000000000000000bf0548ab2ebd00ba5e",
+    "symbol": "RWAGMI",
     "direction": "pump",
-    "price_change_h1_pct": -6.362,
-    "timestamp": 1783530075.9146457
+    "price_change_h1_pct": 65.008,
+    "timestamp": 1783552962.6458037
   }
 ]

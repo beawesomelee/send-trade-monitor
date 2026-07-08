@@ -131,7 +131,7 @@
       "value": "from:cupseytoken (cupsey OR \"pumpfun mascot\" OR happypillco) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-08T09:22:30Z",
+  "rules_synced_at": "2026-07-08T10:22:34Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -3877,7 +3877,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-08T09:22:30Z",
+  "updated_at": "2026-07-08T10:22:34Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

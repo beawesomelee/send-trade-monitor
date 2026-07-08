@@ -9586,10 +9586,217 @@
           "official pumpfun mascot"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@vishal420vishal",
+          "approval_evidence_url": "https://x.com/Vishal420Vishal/status/2074901524338159732",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 230.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-08T17:00:47Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 230.78,
+          "source_evidence_urls": [
+            "https://x.com/Vishal420Vishal/status/2074901524338159732"
+          ],
+          "terms": [
+            "cupsey",
+            "$cupsey",
+            "moonshot",
+            "fomo",
+            "listing",
+            "listing on moonshot",
+            "voted yes for $cupsey",
+            "pay for a x30 boost dex",
+            "listing vote",
+            "community boost",
+            "dev incentive"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@bazarmamaebebe",
+          "approval_evidence_url": "https://x.com/bazarmamaebebe/status/2074901519896350778",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 230.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-08T17:00:46Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 230.77,
+          "source_evidence_urls": [
+            "https://x.com/bazarmamaebebe/status/2074901519896350778"
+          ],
+          "terms": [
+            "cupsey",
+            "$cupsey",
+            "moonshot",
+            "fomo",
+            "listing",
+            "listing on moonshot",
+            "voted yes for $cupsey",
+            "pay for a x30 boost dex",
+            "listing vote",
+            "community boost",
+            "dev incentive"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@takuya__0627",
+          "approval_evidence_url": "https://x.com/takuya__0627/status/2074901504511582573",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 230.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-08T17:00:43Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 230.72,
+          "source_evidence_urls": [
+            "https://x.com/takuya__0627/status/2074901504511582573"
+          ],
+          "terms": [
+            "cupsey",
+            "$cupsey",
+            "moonshot",
+            "fomo",
+            "listing",
+            "listing on moonshot",
+            "voted yes for $cupsey",
+            "pay for a x30 boost dex",
+            "listing vote",
+            "community boost",
+            "dev incentive"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cfm_sol",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "cupsey",
+            "$cupsey",
+            "moonshot",
+            "fomo",
+            "listing",
+            "listing on moonshot",
+            "voted yes for $cupsey",
+            "pay for a x30 boost dex",
+            "listing vote",
+            "community boost",
+            "dev incentive"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-08T17:01:13Z",
+      "event_id": "signal_05ed8fd5ab6e",
+      "evidence": [
+        {
+          "author_handle": "@Vishal420Vishal",
+          "minutes_before_detection": 0.42,
+          "minutes_from_window_start": 359.58,
+          "relevance": "shows active listing vote campaign tied to recent price action",
+          "text": "yo $CUPSEY is about to get listed on moonshot, theyre only missing 144 votes left",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-08T17:00:47Z",
+          "tweet_id": "2074901524338159732",
+          "type": "x_post",
+          "url": "https://x.com/Vishal420Vishal/status/2074901524338159732"
+        },
+        {
+          "author_handle": "@bazarmamaebebe",
+          "minutes_before_detection": 0.44,
+          "minutes_from_window_start": 359.56,
+          "relevance": "another listing vote push from same timeframe",
+          "text": "I just voted YES for $CUPSEY to get listed on FOMO!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-08T17:00:46Z",
+          "tweet_id": "2074901519896350778",
+          "type": "x_post",
+          "url": "https://x.com/bazarmamaebebe/status/2074901519896350778"
+        },
+        {
+          "author_handle": "@takuya__0627",
+          "minutes_before_detection": 0.5,
+          "minutes_from_window_start": 359.5,
+          "relevance": "dev incentive directly linked to community growth and potential pump catalyst",
+          "text": "$Cupsey D3v mentioned he*ll pay for a x30 boost dex after 9 new members in coin community",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-08T17:00:43Z",
+          "tweet_id": "2074901504511582573",
+          "type": "x_post",
+          "url": "https://x.com/takuya__0627/status/2074901504511582573"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/6NwarBvDkXhByqVp2Qkq5i9XbtA2B3Bwe8SWGu9vpump"
+      },
+      "lore": "moonshot and fomo listing vote pushes pulling activity today, dev offering dex boost for community growth",
+      "movement": {
+        "change_pct": 70.2,
+        "detected_at": "2026-07-08T17:01:13Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-08T16:50:00Z",
+        "estimated_start_at": "2026-07-08T13:10:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "DPzKoJVewaH1wpchD3gWKeeGm7G2mXkBW48uRniAgbVx",
+        "pool_name": "Cupsey / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-08T17:01:13Z",
+        "window_start_at": "2026-07-08T11:01:13Z"
+      },
+      "source_signal_id": "signal_05ed8fd5ab6e",
+      "token": {
+        "address": "6NwarBvDkXhByqVp2Qkq5i9XbtA2B3Bwe8SWGu9vpump",
+        "chain_slug": "solana",
+        "symbol": "Cupsey"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Vishal420Vishal",
+          "@bazarmamaebebe",
+          "@takuya__0627",
+          "@cfm_sol"
+        ],
+        "catalysts": [
+          "listing_vote",
+          "community_boost",
+          "dev_incentive"
+        ],
+        "keywords": [
+          "$Cupsey",
+          "moonshot",
+          "fomo",
+          "listing"
+        ],
+        "phrases": [
+          "listing on moonshot",
+          "voted YES for $CUPSEY",
+          "pay for a x30 boost dex"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-07T21:56:14Z",
+  "updated_at": "2026-07-08T17:01:15Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -9598,18 +9805,18 @@
       "candidate_labels": {
         "approved_alpha_source": 20,
         "approved_movement_chatter": 5,
-        "rejected_late_reaction": 88,
+        "rejected_late_reaction": 91,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 60,
+        "rejected_no_tweet_evidence": 61,
         "rejected_stale_pre_move": 8,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 185,
+      "candidate_rules": 189,
       "watch_accounts_approved": 19,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 123,
+      "watch_accounts_rejected": 126,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-07T21:56:14Z"
+    "updated_at": "2026-07-08T17:01:15Z"
   }
 }

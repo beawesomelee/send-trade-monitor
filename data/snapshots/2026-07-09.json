@@ -381,6 +381,19 @@
   {
     "chain_slug": "solana",
     "chain_id": 501474,
+    "address": "6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump",
+    "symbol": "VINE",
+    "name": "Vine Coin",
+    "market_cap_usd": 176741401,
+    "volume_24h_usd": 1031103,
+    "liquidity_usd": 1458366,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/74a2255eb11fd430603a2ae1823456c98a5e241fa2e526c253c92ad16d1fa1ce?width=800&height=800&quality=95&format=auto",
+    "dexscreener_url": "https://dexscreener.com/solana/6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump",
+    "decimals": 6
+  },
+  {
+    "chain_slug": "solana",
+    "chain_id": 501474,
     "address": "8B3UJbbPWfg2DLF7iWzm9WnXH9y5jhYUUoZaLhqvpump",
     "symbol": "ANSEMWIFE",
     "name": "The Black Queen",

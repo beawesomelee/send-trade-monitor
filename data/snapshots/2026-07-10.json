@@ -137,6 +137,19 @@
   {
     "chain_slug": "solana",
     "chain_id": 501474,
+    "address": "4eKYoR1hBHnRaYyg2d57H36uUatRNyZr1NRP9ScNpump",
+    "symbol": "DONALT",
+    "name": "The Duck Bull",
+    "market_cap_usd": 413659,
+    "volume_24h_usd": 4378835,
+    "liquidity_usd": 47386,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/9DzCI49c9rvL_sPo?width=800&height=800&quality=95&format=auto",
+    "dexscreener_url": "https://dexscreener.com/solana/4eKYoR1hBHnRaYyg2d57H36uUatRNyZr1NRP9ScNpump",
+    "decimals": 6
+  },
+  {
+    "chain_slug": "solana",
+    "chain_id": 501474,
     "address": "J8PSdNP3QewKq2Z1JJJFDMaqF7KcaiJhR7gbr5KZpump",
     "symbol": "TripleT",
     "name": "Tung Tung Tung Sahur",

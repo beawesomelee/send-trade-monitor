@@ -136,7 +136,7 @@
       "value": "from:rwagmicom (rwagmi OR $rwagmi OR b20 OR base) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-12T06:22:31Z",
+  "rules_synced_at": "2026-07-12T07:22:30Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -4044,7 +4044,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-12T06:22:31Z",
+  "updated_at": "2026-07-12T07:22:30Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

@@ -10115,10 +10115,183 @@
           "community section goes live"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@febu",
+          "approval_evidence_url": "https://x.com/febu/status/2076428481232334897",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 303.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-12T22:08:22Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 303.37,
+          "source_evidence_urls": [
+            "https://x.com/febu/status/2076428481232334897"
+          ],
+          "terms": [
+            "febu",
+            "$febu",
+            "truth terminal",
+            "andy is insecure",
+            "puppet",
+            "ai terminal",
+            "kol thread",
+            "listing vote",
+            "ai narrative"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@ogpennydawg",
+          "approval_evidence_url": "https://x.com/OGPennyDawg/status/2075768865624138118",
+          "approval_label": "rejected_stale_pre_move",
+          "approval_reason": "tweet was 2317.7 minutes before the estimated move start, outside the freshness window",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-11T02:27:18Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -2317.7,
+          "source_evidence_urls": [
+            "https://x.com/OGPennyDawg/status/2075768865624138118"
+          ],
+          "terms": [
+            "febu",
+            "$febu",
+            "truth terminal",
+            "andy is insecure",
+            "puppet",
+            "ai terminal",
+            "kol thread",
+            "listing vote",
+            "ai narrative"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@willgonzalez22",
+          "approval_evidence_url": "https://x.com/WillGonzalez22/status/2076390255897293078",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 151.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-12T19:36:29Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 151.48,
+          "source_evidence_urls": [
+            "https://x.com/WillGonzalez22/status/2076390255897293078"
+          ],
+          "terms": [
+            "febu",
+            "$febu",
+            "truth terminal",
+            "andy is insecure",
+            "puppet",
+            "ai terminal",
+            "kol thread",
+            "listing vote",
+            "ai narrative"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-12T22:26:58Z",
+      "event_id": "signal_f6c8eb217c17",
+      "evidence": [
+        {
+          "author_handle": "@febu",
+          "minutes_before_detection": 18.59,
+          "minutes_from_window_start": 341.41,
+          "relevance": "core thread driving narrative and engagement",
+          "text": "andy is insecure... that is not concern that is territorial anxiety",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-12T22:08:22Z",
+          "tweet_id": "2076428481232334897",
+          "type": "x_post",
+          "url": "https://x.com/febu/status/2076428481232334897"
+        },
+        {
+          "author_handle": "@OGPennyDawg",
+          "minutes_before_detection": 2639.66,
+          "minutes_from_window_start": -2279.66,
+          "relevance": "early holder rationale on lore and ai meta",
+          "text": "holding $febu full... first good ai coin in awhile",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-11T02:27:18Z",
+          "tweet_id": "2075768865624138118",
+          "type": "x_post",
+          "url": "https://x.com/OGPennyDawg/status/2075768865624138118"
+        },
+        {
+          "author_handle": "@WillGonzalez22",
+          "minutes_before_detection": 170.48,
+          "minutes_from_window_start": 189.52,
+          "relevance": "notes the price action tied to mystery and layers",
+          "text": "another big surge upward has started for $febu after a 90% retracement",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-12T19:36:29Z",
+          "tweet_id": "2076390255897293078",
+          "type": "x_post",
+          "url": "https://x.com/WillGonzalez22/status/2076390255897293078"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/4ko5tSr5o3H4v1sFtjTSd9MPUW7yx5AFCpkNPoL6pump"
+      },
+      "lore": "febu thread roasting andy over puppets and ownership pulled fresh eyes. community voting listings on fomo too",
+      "movement": {
+        "change_pct": 72.9,
+        "detected_at": "2026-07-12T22:26:58Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-12T20:30:00Z",
+        "estimated_start_at": "2026-07-12T17:05:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "68nVMrVPyxGJGbGH2P92E93SYhJcbe6QociZrqoqdjcB",
+        "pool_name": "febu / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-12T22:26:58Z",
+        "window_start_at": "2026-07-12T16:26:58Z"
+      },
+      "source_signal_id": "signal_f6c8eb217c17",
+      "token": {
+        "address": "4ko5tSr5o3H4v1sFtjTSd9MPUW7yx5AFCpkNPoL6pump",
+        "chain_slug": "solana",
+        "symbol": "febu"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@febu",
+          "@OGPennyDawg",
+          "@WillGonzalez22"
+        ],
+        "catalysts": [
+          "kol_thread",
+          "listing_vote",
+          "ai_narrative"
+        ],
+        "keywords": [
+          "$febu",
+          "febu",
+          "truth terminal"
+        ],
+        "phrases": [
+          "andy is insecure",
+          "puppet",
+          "ai terminal"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-12T18:22:46Z",
+  "updated_at": "2026-07-12T22:27:00Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -10127,18 +10300,18 @@
       "candidate_labels": {
         "approved_alpha_source": 21,
         "approved_movement_chatter": 6,
-        "rejected_late_reaction": 91,
+        "rejected_late_reaction": 93,
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 63,
-        "rejected_stale_pre_move": 9,
+        "rejected_stale_pre_move": 10,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 194,
+      "candidate_rules": 197,
       "watch_accounts_approved": 21,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 129,
+      "watch_accounts_rejected": 130,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-12T18:22:46Z"
+    "updated_at": "2026-07-12T22:27:00Z"
   }
 }

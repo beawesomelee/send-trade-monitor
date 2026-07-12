@@ -9972,30 +9972,173 @@
           "b20\u9f99\u5934"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@febu",
+          "approval_evidence_url": "https://x.com/febu/status/2076332709316571589",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 7.2 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-12T15:47:48Z",
+          "approved_terms": [
+            "febu"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": -7.2,
+          "source_evidence_urls": [
+            "https://x.com/febu/status/2076362472508830098",
+            "https://x.com/febu/status/2076332709316571589"
+          ],
+          "terms": [
+            "febu",
+            "$febu",
+            "ai",
+            "community is live",
+            "community section goes live",
+            "team update",
+            "community launch"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@ogpennydawg",
+          "approval_evidence_url": "https://x.com/OGPennyDawg/status/2075768865624138118",
+          "approval_label": "rejected_stale_pre_move",
+          "approval_reason": "tweet was 2247.7 minutes before the estimated move start, outside the freshness window",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-11T02:27:18Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -2247.7,
+          "source_evidence_urls": [
+            "https://x.com/OGPennyDawg/status/2075768865624138118"
+          ],
+          "terms": [
+            "febu",
+            "$febu",
+            "ai",
+            "community is live",
+            "community section goes live",
+            "team update",
+            "community launch"
+          ],
+          "timing_bucket": "pre_window"
+        }
+      ],
+      "detected_at": "2026-07-12T18:22:44Z",
+      "event_id": "signal_d7227709b70f",
+      "evidence": [
+        {
+          "author_handle": "@febu",
+          "minutes_before_detection": 36.65,
+          "minutes_from_window_start": 323.35,
+          "relevance": "direct announcement of community going live driving chatter",
+          "text": "https://imfebu.com/community",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-12T17:46:05Z",
+          "tweet_id": "2076362472508830098",
+          "type": "x_post",
+          "url": "https://x.com/febu/status/2076362472508830098"
+        },
+        {
+          "author_handle": "@febu",
+          "minutes_before_detection": 154.92,
+          "minutes_from_window_start": 205.08,
+          "relevance": "tease that set up today's move",
+          "text": "in 24 hours the community section goes live",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-12T15:47:48Z",
+          "tweet_id": "2076332709316571589",
+          "type": "x_post",
+          "url": "https://x.com/febu/status/2076332709316571589"
+        },
+        {
+          "author_handle": "@OGPennyDawg",
+          "minutes_before_detection": 2395.43,
+          "minutes_from_window_start": -2035.43,
+          "relevance": "early holder take on narrative",
+          "text": "holding $febu full multiple reasons: lore is amazing it\u2019s paying people to do tasks first good ai coin",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-11T02:27:18Z",
+          "tweet_id": "2075768865624138118",
+          "type": "x_post",
+          "url": "https://x.com/OGPennyDawg/status/2075768865624138118"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/4ko5tSr5o3H4v1sFtjTSd9MPUW7yx5AFCpkNPoL6pump"
+      },
+      "lore": "febu posted community section live on imfebu.com today after the 24h tease, with ai self posts following. small accounts noting it and voting listings.",
+      "movement": {
+        "change_pct": 75.5,
+        "detected_at": "2026-07-12T18:22:44Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-12T18:05:00Z",
+        "estimated_start_at": "2026-07-12T15:55:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "68nVMrVPyxGJGbGH2P92E93SYhJcbe6QociZrqoqdjcB",
+        "pool_name": "febu / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-12T18:22:44Z",
+        "window_start_at": "2026-07-12T12:22:44Z"
+      },
+      "source_signal_id": "signal_d7227709b70f",
+      "token": {
+        "address": "4ko5tSr5o3H4v1sFtjTSd9MPUW7yx5AFCpkNPoL6pump",
+        "chain_slug": "solana",
+        "symbol": "febu"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@febu",
+          "@OGPennyDawg"
+        ],
+        "catalysts": [
+          "team_update",
+          "community_launch"
+        ],
+        "keywords": [
+          "febu",
+          "$febu",
+          "ai"
+        ],
+        "phrases": [
+          "community is live",
+          "community section goes live"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-08T23:22:42Z",
+  "updated_at": "2026-07-12T18:22:46Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 20,
+        "approved_alpha_source": 21,
         "approved_movement_chatter": 6,
         "rejected_late_reaction": 91,
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 63,
-        "rejected_stale_pre_move": 8,
+        "rejected_stale_pre_move": 9,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 192,
-      "watch_accounts_approved": 20,
+      "candidate_rules": 194,
+      "watch_accounts_approved": 21,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 128,
+      "watch_accounts_rejected": 129,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-08T23:22:42Z"
+    "updated_at": "2026-07-12T18:22:46Z"
   }
 }

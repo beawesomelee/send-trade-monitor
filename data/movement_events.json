@@ -10422,10 +10422,186 @@
           "moonshot voting"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@sunnystreetsol",
+          "approval_evidence_url": "https://x.com/sunnystreetsol/status/2076474483691385299",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 186.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-13T01:11:10Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 186.17,
+          "source_evidence_urls": [
+            "https://x.com/sunnystreetsol/status/2076475256760402301",
+            "https://x.com/sunnystreetsol/status/2076474483691385299"
+          ],
+          "terms": [
+            "sunnys",
+            "$sunnys",
+            "moonshot",
+            "fomo listing",
+            "another victory",
+            "step by step",
+            "moonshot voting",
+            "team post",
+            "listing vote",
+            "early call"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@boggyagent",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "sunnys",
+            "$sunnys",
+            "moonshot",
+            "fomo listing",
+            "another victory",
+            "step by step",
+            "moonshot voting",
+            "team post",
+            "listing vote",
+            "early call"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@soniansnip",
+          "approval_evidence_url": "https://x.com/Soniansnip/status/2076469191289549101",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 165.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-13T00:50:08Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 165.13,
+          "source_evidence_urls": [
+            "https://x.com/Soniansnip/status/2076469191289549101"
+          ],
+          "terms": [
+            "sunnys",
+            "$sunnys",
+            "moonshot",
+            "fomo listing",
+            "another victory",
+            "step by step",
+            "moonshot voting",
+            "team post",
+            "listing vote",
+            "early call"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-13T02:22:49Z",
+      "event_id": "signal_3710fa7df284",
+      "evidence": [
+        {
+          "author_handle": "@sunnystreetsol",
+          "minutes_before_detection": 68.57,
+          "minutes_from_window_start": 291.43,
+          "relevance": "team teasing progress amid pump",
+          "text": "step by step",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-13T01:14:14Z",
+          "tweet_id": "2076475256760402301",
+          "type": "x_post",
+          "url": "https://x.com/sunnystreetsol/status/2076475256760402301"
+        },
+        {
+          "author_handle": "@sunnystreetsol",
+          "minutes_before_detection": 71.64,
+          "minutes_from_window_start": 288.36,
+          "relevance": "team celebrating moves",
+          "text": "another victory",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-13T01:11:10Z",
+          "tweet_id": "2076474483691385299",
+          "type": "x_post",
+          "url": "https://x.com/sunnystreetsol/status/2076474483691385299"
+        },
+        {
+          "author_handle": "@Soniansnip",
+          "minutes_before_detection": 92.67,
+          "minutes_from_window_start": 267.33,
+          "relevance": "early call noting the run",
+          "text": "$SUNNYS did a thing. 79.7K to 1.9M peak. 23.6x in 2h.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-13T00:50:08Z",
+          "tweet_id": "2076469191289549101",
+          "type": "x_post",
+          "url": "https://x.com/Soniansnip/status/2076469191289549101"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/Ch1vdFT6dVmkVLbJkBXGBv8iyhWv9ik1C45cYNsFpump"
+      },
+      "lore": "sunnystreetsol posting cryptic 'another victory' and 'step by step' images, voting spam flooding moonshot/fomo lists, plus a few early multiplier calls. thin liq runner on solana?",
+      "movement": {
+        "change_pct": 3031.4,
+        "detected_at": "2026-07-13T02:22:49Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-13T00:55:00Z",
+        "estimated_start_at": "2026-07-12T22:05:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 53,
+        "pool_address": "323MZ6ovqVfNhZUgFTPjzxXRovGZ6fdy4bCd5ZuUmjJS",
+        "pool_name": "SUNNYS / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-13T02:22:49Z",
+        "window_start_at": "2026-07-12T20:22:49Z"
+      },
+      "source_signal_id": "signal_3710fa7df284",
+      "token": {
+        "address": "Ch1vdFT6dVmkVLbJkBXGBv8iyhWv9ik1C45cYNsFpump",
+        "chain_slug": "solana",
+        "symbol": "SUNNYS"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@sunnystreetsol",
+          "@boggyagent",
+          "@Soniansnip"
+        ],
+        "catalysts": [
+          "team_post",
+          "listing_vote",
+          "early_call"
+        ],
+        "keywords": [
+          "$SUNNYS",
+          "sunnys",
+          "moonshot",
+          "fomo listing"
+        ],
+        "phrases": [
+          "another victory",
+          "step by step",
+          "moonshot voting"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-13T00:22:48Z",
+  "updated_at": "2026-07-13T02:22:51Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -10434,18 +10610,18 @@
       "candidate_labels": {
         "approved_alpha_source": 21,
         "approved_movement_chatter": 6,
-        "rejected_late_reaction": 95,
+        "rejected_late_reaction": 97,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 63,
+        "rejected_no_tweet_evidence": 64,
         "rejected_stale_pre_move": 10,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 199,
+      "candidate_rules": 202,
       "watch_accounts_approved": 21,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 132,
+      "watch_accounts_rejected": 134,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-13T00:22:48Z"
+    "updated_at": "2026-07-13T02:22:51Z"
   }
 }

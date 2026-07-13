@@ -1,26 +1,18 @@
 [
   {
     "chain_slug": "solana",
+    "address": "4ko5tsr5o3h4v1sftjtsd9mpuw7yx5afcpknpol6pump",
+    "symbol": "febu",
+    "direction": "pump",
+    "price_change_h1_pct": 21.612,
+    "timestamp": 1783919099.6292522
+  },
+  {
+    "chain_slug": "solana",
     "address": "ch1vdft6dvmkvlbjkbxgbv8iyhwv9ik1c45cynsfpump",
     "symbol": "SUNNYS",
     "direction": "pump",
     "price_change_h1_pct": -17.399,
     "timestamp": 1783909371.6026466
-  },
-  {
-    "chain_slug": "solana",
-    "address": "fpffx4z4dhtgjkdbw2dsrszkpg8ykdaod535me4rpump",
-    "symbol": "gaycoin",
-    "direction": "pump",
-    "price_change_h1_pct": 73.125,
-    "timestamp": 1783902168.3837473
-  },
-  {
-    "chain_slug": "solana",
-    "address": "4ko5tsr5o3h4v1sftjtsd9mpuw7yx5afcpknpol6pump",
-    "symbol": "febu",
-    "direction": "pump",
-    "price_change_h1_pct": -19.746,
-    "timestamp": 1783895220.7125082
   }
 ]

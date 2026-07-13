@@ -10959,10 +10959,181 @@
           "$febu coded"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@duke_aw",
+          "approval_evidence_url": "https://x.com/Duke_AW/status/2076748067101974795",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 63.3 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-13T19:18:17Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 63.28,
+          "source_evidence_urls": [
+            "https://x.com/Duke_AW/status/2076748067101974795"
+          ],
+          "terms": [
+            "ansens",
+            "$ansens",
+            "bmdzpm7gjkvupepsqnttrlsimzfknpff32yjohvrpump",
+            "hype radar alpha",
+            "moonshot listing vote",
+            "new ath 1.13m mc",
+            "kol signal",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@eliasbrooksx",
+          "approval_evidence_url": "https://x.com/EliasBrooksX/status/2076750776257728636",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 74.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-13T19:29:03Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 74.05,
+          "source_evidence_urls": [
+            "https://x.com/EliasBrooksX/status/2076750776257728636"
+          ],
+          "terms": [
+            "ansens",
+            "$ansens",
+            "bmdzpm7gjkvupepsqnttrlsimzfknpff32yjohvrpump",
+            "hype radar alpha",
+            "moonshot listing vote",
+            "new ath 1.13m mc",
+            "kol signal",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@klausalphahq",
+          "approval_evidence_url": "https://x.com/KlausAlphaHQ/status/2076738639116316992",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 25.8 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-13T18:40:50Z",
+          "approved_terms": [
+            "ansens",
+            "$ansens"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 25.83,
+          "source_evidence_urls": [
+            "https://x.com/KlausAlphaHQ/status/2076738639116316992"
+          ],
+          "terms": [
+            "ansens",
+            "$ansens",
+            "bmdzpm7gjkvupepsqnttrlsimzfknpff32yjohvrpump",
+            "hype radar alpha",
+            "moonshot listing vote",
+            "new ath 1.13m mc",
+            "kol signal",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-13T20:40:28Z",
+      "event_id": "signal_05e657850709",
+      "evidence": [
+        {
+          "author_handle": "@Duke_AW",
+          "minutes_before_detection": 82.17,
+          "minutes_from_window_start": 277.83,
+          "relevance": "direct signal post tracking the pump from entry",
+          "text": "$ANSENS ca: BMdzPM7GjKVupEpsqNttRLSiMZfkNpff32YJoHvRpump It reached new ATH 1.13M mc. 8.3X from the signal",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-13T19:18:17Z",
+          "tweet_id": "2076748067101974795",
+          "type": "x_post",
+          "url": "https://x.com/Duke_AW/status/2076748067101974795"
+        },
+        {
+          "author_handle": "@EliasBrooksX",
+          "minutes_before_detection": 71.4,
+          "minutes_from_window_start": 288.6,
+          "relevance": "early explosion call confirming rapid move",
+          "text": "$ANSENS just exploded. 291K to 1.2M 4.29X in 51 minutes.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-13T19:29:03Z",
+          "tweet_id": "2076750776257728636",
+          "type": "x_post",
+          "url": "https://x.com/EliasBrooksX/status/2076750776257728636"
+        },
+        {
+          "author_handle": "@KlausAlphaHQ",
+          "minutes_before_detection": 119.63,
+          "minutes_from_window_start": 240.37,
+          "relevance": "kol entry call update on the move",
+          "text": "$ANSENS is up 3.2x secured from our entry calls and still pumping",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-13T18:40:50Z",
+          "tweet_id": "2076738639116316992",
+          "type": "x_post",
+          "url": "https://x.com/KlausAlphaHQ/status/2076738639116316992"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/BMdzPM7GjKVupEpsqNttRLSiMZfkNpff32YJoHvRpump"
+      },
+      "lore": "hype radar alpha called the ca, 8.3x to 1.13m mc ath. moonshot and fomo vote spam hitting hard with listing pushes. bigger narra or just thin liq runner?",
+      "movement": {
+        "change_pct": 4488.4,
+        "detected_at": "2026-07-13T20:40:28Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-13T20:05:00Z",
+        "estimated_start_at": "2026-07-13T18:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 31,
+        "pool_address": "J7fjPVEsE1WMU2Q8KhQS6TtGHX67BgSRyeNSgsuQtakK",
+        "pool_name": "ANSENS / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-13T20:40:28Z",
+        "window_start_at": "2026-07-13T14:40:28Z"
+      },
+      "source_signal_id": "signal_05e657850709",
+      "token": {
+        "address": "BMdzPM7GjKVupEpsqNttRLSiMZfkNpff32YJoHvRpump",
+        "chain_slug": "solana",
+        "symbol": "ANSENS"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Duke_AW",
+          "@EliasBrooksX",
+          "@KlausAlphaHQ"
+        ],
+        "catalysts": [
+          "kol_signal",
+          "listing_vote"
+        ],
+        "keywords": [
+          "$ANSENS",
+          "BMdzPM7GjKVupEpsqNttRLSiMZfkNpff32YJoHvRpump"
+        ],
+        "phrases": [
+          "hype radar alpha",
+          "moonshot listing vote",
+          "new ath 1.13m mc"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-13T15:22:52Z",
+  "updated_at": "2026-07-13T20:40:30Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -10970,19 +11141,19 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 21,
-        "approved_movement_chatter": 6,
-        "rejected_late_reaction": 100,
+        "approved_movement_chatter": 7,
+        "rejected_late_reaction": 102,
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 66,
         "rejected_stale_pre_move": 10,
         "unknown_tweet_timing": 4
       },
-      "candidate_rules": 209,
-      "watch_accounts_approved": 21,
+      "candidate_rules": 212,
+      "watch_accounts_approved": 22,
       "watch_accounts_pending": 3,
-      "watch_accounts_rejected": 138,
+      "watch_accounts_rejected": 140,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-13T15:22:52Z"
+    "updated_at": "2026-07-13T20:40:30Z"
   }
 }

@@ -141,7 +141,7 @@
       "value": "from:febu (febu) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-13T00:22:48Z",
+  "rules_synced_at": "2026-07-13T01:07:56Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -4273,7 +4273,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-13T00:22:48Z",
+  "updated_at": "2026-07-13T01:07:56Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

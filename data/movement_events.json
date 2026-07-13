@@ -10288,10 +10288,144 @@
           "ai terminal"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@gaycoinpumpfun",
+          "approval_evidence_url": "https://x.com/gaycoinpumpfun/status/2076459040268329151",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 94.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-13T00:09:48Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 94.8,
+          "source_evidence_urls": [
+            "https://x.com/gaycoinpumpfun/status/2076459040268329151"
+          ],
+          "terms": [
+            "gaycoin",
+            "$gaycoin",
+            "two boys",
+            "two boys coin",
+            "fomo voting",
+            "moonshot voting",
+            "kol call",
+            "listing vote",
+            "meme theme"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@dimeso_x",
+          "approval_evidence_url": "https://x.com/dimeso_x/status/2076462047257072045",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 106.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-13T00:21:45Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 106.75,
+          "source_evidence_urls": [
+            "https://x.com/dimeso_x/status/2076462047257072045"
+          ],
+          "terms": [
+            "gaycoin",
+            "$gaycoin",
+            "two boys",
+            "two boys coin",
+            "fomo voting",
+            "moonshot voting",
+            "kol call",
+            "listing vote",
+            "meme theme"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-13T00:22:46Z",
+      "event_id": "signal_9800a7b76bdd",
+      "evidence": [
+        {
+          "author_handle": "@gaycoinpumpfun",
+          "minutes_before_detection": 12.96,
+          "minutes_from_window_start": 347.04,
+          "relevance": "project's own recent post tying to the theme and ca",
+          "text": "The market has thousands of serious coins. We chose Two Boys Coin. \ud83c\udf08",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-13T00:09:48Z",
+          "tweet_id": "2076459040268329151",
+          "type": "x_post",
+          "url": "https://x.com/gaycoinpumpfun/status/2076459040268329151"
+        },
+        {
+          "author_handle": "@dimeso_x",
+          "minutes_before_detection": 1.01,
+          "minutes_from_window_start": 358.99,
+          "relevance": "small account call noting ath and vip push",
+          "text": "VIP alert \ud83d\udea8 2nd ath on\ud83c\udf08 #GAYCOIN -3x for Vip access",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-13T00:21:45Z",
+          "tweet_id": "2076462047257072045",
+          "type": "x_post",
+          "url": "https://x.com/dimeso_x/status/2076462047257072045"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/FPfFX4Z4DhtGJKDbw2dSrSZkPG8YKdaod535Me4rpump"
+      },
+      "lore": "project posting two boys coin theme with the ca, small accounts spamming fomo and moonshot votes. no big kol posts, quiet on major accounts. thin liq runner?",
+      "movement": {
+        "change_pct": 4617.0,
+        "detected_at": "2026-07-13T00:22:46Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-13T00:20:00Z",
+        "estimated_start_at": "2026-07-12T22:35:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 23,
+        "pool_address": "FmnoAkK7HxuZq33EDu6BQvRD4RGgGmtH3tnk1wankwoh",
+        "pool_name": "gaycoin / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-13T00:22:46Z",
+        "window_start_at": "2026-07-12T18:22:46Z"
+      },
+      "source_signal_id": "signal_9800a7b76bdd",
+      "token": {
+        "address": "FPfFX4Z4DhtGJKDbw2dSrSZkPG8YKdaod535Me4rpump",
+        "chain_slug": "solana",
+        "symbol": "gaycoin"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@gaycoinpumpfun",
+          "@dimeso_x"
+        ],
+        "catalysts": [
+          "kol_call",
+          "listing_vote",
+          "meme_theme"
+        ],
+        "keywords": [
+          "$gaycoin",
+          "gaycoin",
+          "two boys"
+        ],
+        "phrases": [
+          "two boys coin",
+          "fomo voting",
+          "moonshot voting"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-12T22:27:00Z",
+  "updated_at": "2026-07-13T00:22:48Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -10300,18 +10434,18 @@
       "candidate_labels": {
         "approved_alpha_source": 21,
         "approved_movement_chatter": 6,
-        "rejected_late_reaction": 93,
+        "rejected_late_reaction": 95,
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 63,
         "rejected_stale_pre_move": 10,
         "unknown_tweet_timing": 2
       },
-      "candidate_rules": 197,
+      "candidate_rules": 199,
       "watch_accounts_approved": 21,
       "watch_accounts_pending": 2,
-      "watch_accounts_rejected": 130,
+      "watch_accounts_rejected": 132,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-12T22:27:00Z"
+    "updated_at": "2026-07-13T00:22:48Z"
   }
 }

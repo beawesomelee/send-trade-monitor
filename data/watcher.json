@@ -181,7 +181,7 @@
       "value": "from:haal9k (haal9k OR babygirl OR \"babygirl era\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-14T22:33:16Z",
+  "rules_synced_at": "2026-07-14T23:22:32Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -5490,7 +5490,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-14T22:33:16Z",
+  "updated_at": "2026-07-14T23:22:32Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

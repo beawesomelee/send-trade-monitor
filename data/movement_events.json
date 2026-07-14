@@ -12996,10 +12996,160 @@
           "goal machine"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@cattearspump",
+          "approval_evidence_url": "https://x.com/CATTEARSPUMP/status/2077110051068645395",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 106.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T19:16:41Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 106.68,
+          "source_evidence_urls": [
+            "https://x.com/CATTEARSPUMP/status/2077111816082084009",
+            "https://x.com/CATTEARSPUMP/status/2077110051068645395"
+          ],
+          "terms": [
+            "cattears",
+            "$cattears",
+            "moonshot",
+            "fomo",
+            "1 million mcap complete",
+            "coingecko listing request",
+            "voted yes for $cattears",
+            "team update",
+            "listing vote",
+            "kol snipe"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@whale_pump_ups",
+          "approval_evidence_url": "https://x.com/whale_pump_ups/status/2077126495634346169",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 172.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T20:22:02Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 172.03,
+          "source_evidence_urls": [
+            "https://x.com/whale_pump_ups/status/2077126495634346169"
+          ],
+          "terms": [
+            "cattears",
+            "$cattears",
+            "moonshot",
+            "fomo",
+            "1 million mcap complete",
+            "coingecko listing request",
+            "voted yes for $cattears",
+            "team update",
+            "listing vote",
+            "kol snipe"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-14T20:22:40Z",
+      "event_id": "signal_99204602d5e7",
+      "evidence": [
+        {
+          "author_handle": "@CATTEARSPUMP",
+          "minutes_before_detection": 58.96,
+          "minutes_from_window_start": 301.04,
+          "relevance": "project's own milestone post aligning with the pump timing",
+          "text": "1 MILLION MCAP COMPLETE!!!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T19:23:42Z",
+          "tweet_id": "2077111816082084009",
+          "type": "x_post",
+          "url": "https://x.com/CATTEARSPUMP/status/2077111816082084009"
+        },
+        {
+          "author_handle": "@CATTEARSPUMP",
+          "minutes_before_detection": 65.97,
+          "minutes_from_window_start": 294.03,
+          "relevance": "direct team action on listings driving attention",
+          "text": "Preparing to submit an official @coingecko listing request for CATTEARS ($CATTEARS).",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T19:16:41Z",
+          "tweet_id": "2077110051068645395",
+          "type": "x_post",
+          "url": "https://x.com/CATTEARSPUMP/status/2077110051068645395"
+        },
+        {
+          "author_handle": "@whale_pump_ups",
+          "minutes_before_detection": 0.63,
+          "minutes_from_window_start": 359.37,
+          "relevance": "early entry call on the runner",
+          "text": "Sniped $Cattears in my VIP Tg group at $89K.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T20:22:02Z",
+          "tweet_id": "2077126495634346169",
+          "type": "x_post",
+          "url": "https://x.com/whale_pump_ups/status/2077126495634346169"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/9w47d5K1Whg4HoGFtk7L9XXV1P95tpuz6ehZSfaRpump"
+      },
+      "lore": "project hit 1m mc and submitted coingecko request today. community running votes on moonshot and fomo listings. early snipes at sub 100k noted",
+      "movement": {
+        "change_pct": 2964.2,
+        "detected_at": "2026-07-14T20:22:40Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-14T20:05:00Z",
+        "estimated_start_at": "2026-07-14T17:30:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 36,
+        "pool_address": "B7yjosTLeAFkQjTeMdJggSMk5gwicU3LswEH9KA1PJwM",
+        "pool_name": "CATTEARS / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-14T20:22:40Z",
+        "window_start_at": "2026-07-14T14:22:40Z"
+      },
+      "source_signal_id": "signal_99204602d5e7",
+      "token": {
+        "address": "9w47d5K1Whg4HoGFtk7L9XXV1P95tpuz6ehZSfaRpump",
+        "chain_slug": "solana",
+        "symbol": "CATTEARS"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@CATTEARSPUMP",
+          "@whale_pump_ups"
+        ],
+        "catalysts": [
+          "team_update",
+          "listing_vote",
+          "kol_snipe"
+        ],
+        "keywords": [
+          "$CATTEARS",
+          "CATTEARS",
+          "moonshot",
+          "fomo"
+        ],
+        "phrases": [
+          "1 MILLION MCAP COMPLETE",
+          "coingecko listing request",
+          "voted YES for $CATTEARS"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-14T19:22:41Z",
+  "updated_at": "2026-07-14T20:22:42Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -13008,18 +13158,18 @@
       "candidate_labels": {
         "approved_alpha_source": 27,
         "approved_movement_chatter": 9,
-        "rejected_late_reaction": 116,
+        "rejected_late_reaction": 118,
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 74,
         "rejected_stale_pre_move": 11,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 247,
+      "candidate_rules": 249,
       "watch_accounts_approved": 28,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 157,
+      "watch_accounts_rejected": 159,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-14T19:22:41Z"
+    "updated_at": "2026-07-14T20:22:42Z"
   }
 }

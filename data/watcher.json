@@ -181,7 +181,7 @@
       "value": "from:haal9k (haal9k) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-14T18:22:50Z",
+  "rules_synced_at": "2026-07-14T18:42:57Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -5355,7 +5355,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-14T18:22:50Z",
+  "updated_at": "2026-07-14T18:42:57Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

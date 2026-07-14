@@ -12672,10 +12672,208 @@
           "fomo listing"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@oxansemsol",
+          "approval_evidence_url": "https://x.com/oxansemsol/status/2077091097135009860",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 221.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T18:01:22Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 221.37,
+          "source_evidence_urls": [
+            "https://x.com/oxansemsol/status/2077091097135009860"
+          ],
+          "terms": [
+            "gersem",
+            "$gersem",
+            "pump.fun",
+            "buy $gersem at 35k mcap",
+            "bundled scam",
+            "moonshot top 100 leaderboard",
+            "kol call",
+            "project launch",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@gersemmemecoin",
+          "approval_evidence_url": "https://x.com/GERSEMMEMECOIN/status/2077085342746698104",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 198.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T17:38:30Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 198.5,
+          "source_evidence_urls": [
+            "https://x.com/GERSEMMEMECOIN/status/2077085342746698104"
+          ],
+          "terms": [
+            "gersem",
+            "$gersem",
+            "pump.fun",
+            "buy $gersem at 35k mcap",
+            "bundled scam",
+            "moonshot top 100 leaderboard",
+            "kol call",
+            "project launch",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@badattrading_",
+          "approval_evidence_url": "https://x.com/badattrading_/status/2077059461731025381",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 95.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T15:55:40Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 95.67,
+          "source_evidence_urls": [
+            "https://x.com/badattrading_/status/2077059461731025381"
+          ],
+          "terms": [
+            "gersem",
+            "$gersem",
+            "pump.fun",
+            "buy $gersem at 35k mcap",
+            "bundled scam",
+            "moonshot top 100 leaderboard",
+            "kol call",
+            "project launch",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@moonroninnft",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "gersem",
+            "$gersem",
+            "pump.fun",
+            "buy $gersem at 35k mcap",
+            "bundled scam",
+            "moonshot top 100 leaderboard",
+            "kol call",
+            "project launch",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-14T18:22:48Z",
+      "event_id": "signal_c426b52bc7bc",
+      "evidence": [
+        {
+          "author_handle": "@oxansemsol",
+          "minutes_before_detection": 21.42,
+          "minutes_from_window_start": 338.58,
+          "relevance": "early caller highlighting the gains driving attention",
+          "text": "I told you to buy $GERSEM at 35k mcap ( it did 112x )",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T18:01:22Z",
+          "tweet_id": "2077091097135009860",
+          "type": "x_post",
+          "url": "https://x.com/oxansemsol/status/2077091097135009860"
+        },
+        {
+          "author_handle": "@GERSEMMEMECOIN",
+          "minutes_before_detection": 44.29,
+          "minutes_from_window_start": 315.71,
+          "relevance": "project confirming the launch post",
+          "text": "$GERSEM live now on https://pump.fun/ CA:5poHHYifZcxnEfKySUJ4YcyyHnE7gnMivwryUhb9pump",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T17:38:30Z",
+          "tweet_id": "2077085342746698104",
+          "type": "x_post",
+          "url": "https://x.com/GERSEMMEMECOIN/status/2077085342746698104"
+        },
+        {
+          "author_handle": "@badattrading_",
+          "minutes_before_detection": 147.13,
+          "minutes_from_window_start": 212.87,
+          "relevance": "counter signal on the move",
+          "text": "$GERSEM (CA 5poHHYifZcxnEfKySUJ4YcyyHnE7gnMivwryUhb9pump) is a bundled scam, don't buy, stay away.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T15:55:40Z",
+          "tweet_id": "2077059461731025381",
+          "type": "x_post",
+          "url": "https://x.com/badattrading_/status/2077059461731025381"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/5poHHYifZcxnEfKySUJ4YcyyHnE7gnMivwryUhb9pump"
+      },
+      "lore": "@oxansemsol called $gersem at 35k mc for 112x, project dropped ca on pump today. scam warning from @badattrading_ with some likes. moonshot vote push too",
+      "movement": {
+        "change_pct": 5343.6,
+        "detected_at": "2026-07-14T18:22:48Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-14T18:15:00Z",
+        "estimated_start_at": "2026-07-14T14:20:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 50,
+        "pool_address": "FfR8id9nWsemSKfEyofjZiMzKvPuaQHa2qAZ5Xtqsn4B",
+        "pool_name": "GERSEM / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-14T18:22:48Z",
+        "window_start_at": "2026-07-14T12:22:48Z"
+      },
+      "source_signal_id": "signal_c426b52bc7bc",
+      "token": {
+        "address": "5poHHYifZcxnEfKySUJ4YcyyHnE7gnMivwryUhb9pump",
+        "chain_slug": "solana",
+        "symbol": "GERSEM"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@oxansemsol",
+          "@GERSEMMEMECOIN",
+          "@badattrading_",
+          "@MoonRoninNFT"
+        ],
+        "catalysts": [
+          "kol_call",
+          "project_launch",
+          "listing_vote"
+        ],
+        "keywords": [
+          "$GERSEM",
+          "GERSEM",
+          "pump.fun"
+        ],
+        "phrases": [
+          "buy $GERSEM at 35k mcap",
+          "bundled scam",
+          "moonshot top 100 leaderboard"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-14T15:10:01Z",
+  "updated_at": "2026-07-14T18:22:50Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -12684,18 +12882,18 @@
       "candidate_labels": {
         "approved_alpha_source": 26,
         "approved_movement_chatter": 9,
-        "rejected_late_reaction": 113,
+        "rejected_late_reaction": 116,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 72,
+        "rejected_no_tweet_evidence": 73,
         "rejected_stale_pre_move": 11,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 241,
+      "candidate_rules": 245,
       "watch_accounts_approved": 28,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 153,
+      "watch_accounts_rejected": 157,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-14T15:10:01Z"
+    "updated_at": "2026-07-14T18:22:50Z"
   }
 }

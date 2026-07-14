@@ -11895,10 +11895,213 @@
           "listing on Upbit is huge"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@pumpfuneco",
+          "approval_evidence_url": "https://x.com/PumpfunEco/status/2076982459900776830",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 319.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T10:49:41Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 319.68,
+          "source_evidence_urls": [
+            "https://x.com/PumpfunEco/status/2076982459900776830"
+          ],
+          "terms": [
+            "trumpcoin",
+            "$trumpcoin",
+            "pump.fun",
+            "64x return",
+            "moonshot voting",
+            "fomo listing",
+            "trump signature currency",
+            "kol quote",
+            "listing vote spam",
+            "pumpfun flip"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@coinnerves",
+          "approval_evidence_url": "https://x.com/coinnerves/status/2076987255965585915",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 338.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T11:08:45Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 338.75,
+          "source_evidence_urls": [
+            "https://x.com/coinnerves/status/2076987255965585915"
+          ],
+          "terms": [
+            "trumpcoin",
+            "$trumpcoin",
+            "pump.fun",
+            "64x return",
+            "moonshot voting",
+            "fomo listing",
+            "trump signature currency",
+            "kol quote",
+            "listing vote spam",
+            "pumpfun flip"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@chinapumprocket",
+          "approval_evidence_url": "https://x.com/chinapumprocket/status/2076928174731219445",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 104.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T07:13:58Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 103.97,
+          "source_evidence_urls": [
+            "https://x.com/chinapumprocket/status/2076928174731219445"
+          ],
+          "terms": [
+            "trumpcoin",
+            "$trumpcoin",
+            "pump.fun",
+            "64x return",
+            "moonshot voting",
+            "fomo listing",
+            "trump signature currency",
+            "kol quote",
+            "listing vote spam",
+            "pumpfun flip"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@ericldaugh",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "trumpcoin",
+            "$trumpcoin",
+            "pump.fun",
+            "64x return",
+            "moonshot voting",
+            "fomo listing",
+            "trump signature currency",
+            "kol quote",
+            "listing vote spam",
+            "pumpfun flip"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-14T11:09:58Z",
+      "event_id": "signal_3cd912c44a82",
+      "evidence": [
+        {
+          "author_handle": "@PumpfunEco",
+          "minutes_before_detection": 20.27,
+          "minutes_from_window_start": 339.73,
+          "relevance": "shows the 64x flip that coincided with the move",
+          "text": "This trader made $7,110 after buying $111 worth of $TrumpCoin at a $36K market cap",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T10:49:41Z",
+          "tweet_id": "2076982459900776830",
+          "type": "x_post",
+          "url": "https://x.com/PumpfunEco/status/2076982459900776830"
+        },
+        {
+          "author_handle": "@coinnerves",
+          "minutes_before_detection": 1.22,
+          "minutes_from_window_start": 358.78,
+          "relevance": "links the coin to recent trump-related news clip",
+          "text": "$trumpcoin quoting bessent clip on trump signature currency",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T11:08:45Z",
+          "tweet_id": "2076987255965585915",
+          "type": "x_post",
+          "url": "https://x.com/coinnerves/status/2076987255965585915"
+        },
+        {
+          "author_handle": "@chinapumprocket",
+          "minutes_before_detection": 235.98,
+          "minutes_from_window_start": 124.02,
+          "relevance": "confirms the price action and scale of the pump",
+          "text": "$Trumpcoin just break a new ATH at 2.75m - 74.5x",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T07:13:58Z",
+          "tweet_id": "2076928174731219445",
+          "type": "x_post",
+          "url": "https://x.com/chinapumprocket/status/2076928174731219445"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/F4GpAFr6vrxU3Y887F3XWkXRgybCVjZNk63m72f6pump"
+      },
+      "lore": "voting spam bots flooding moonshot/fomo listings on the ca. one flip 64x from 36k mc on pump.fun. loose tie to bessent trump currency clip. no big kol posts",
+      "movement": {
+        "change_pct": 2976.4,
+        "detected_at": "2026-07-14T11:09:58Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-14T07:45:00Z",
+        "estimated_start_at": "2026-07-14T05:30:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 69,
+        "pool_address": "FpJFWZ3nGFVYWkpDXZQM8QaLJzmy6U3NgaA8nc7SNDag",
+        "pool_name": "TrumpCoin / USDC",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-14T11:09:58Z",
+        "window_start_at": "2026-07-14T05:09:58Z"
+      },
+      "source_signal_id": "signal_3cd912c44a82",
+      "token": {
+        "address": "F4GpAFr6vrxU3Y887F3XWkXRgybCVjZNk63m72f6pump",
+        "chain_slug": "solana",
+        "symbol": "TrumpCoin"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@PumpfunEco",
+          "@coinnerves",
+          "@chinapumprocket",
+          "@EricLDaugh"
+        ],
+        "catalysts": [
+          "kol_quote",
+          "listing_vote_spam",
+          "pumpfun_flip"
+        ],
+        "keywords": [
+          "$TrumpCoin",
+          "TrumpCoin",
+          "pump.fun"
+        ],
+        "phrases": [
+          "64x return",
+          "moonshot voting",
+          "fomo listing",
+          "trump signature currency"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-14T08:52:38Z",
+  "updated_at": "2026-07-14T11:10:00Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -11907,18 +12110,18 @@
       "candidate_labels": {
         "approved_alpha_source": 22,
         "approved_movement_chatter": 8,
-        "rejected_late_reaction": 107,
+        "rejected_late_reaction": 110,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 69,
+        "rejected_no_tweet_evidence": 70,
         "rejected_stale_pre_move": 11,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 227,
+      "candidate_rules": 231,
       "watch_accounts_approved": 23,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 146,
+      "watch_accounts_rejected": 149,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-14T08:52:38Z"
+    "updated_at": "2026-07-14T11:10:00Z"
   }
 }

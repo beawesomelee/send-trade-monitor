@@ -12479,30 +12479,223 @@
           "The cooking continues"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@haal9k",
+          "approval_evidence_url": "https://x.com/haal9K/status/2076841983289479589",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 523.5 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-14T01:31:29Z",
+          "approved_terms": [
+            "haal9k"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -523.52,
+          "source_evidence_urls": [
+            "https://x.com/haal9K/status/2076841983289479589"
+          ],
+          "terms": [
+            "haal9k",
+            "$haal9k",
+            "wobycxyiabam6qbyxmubdespq3dplnusyqupmmbpump",
+            "babygirl era",
+            "moonshot listing",
+            "fomo listing",
+            "team update",
+            "listing vote"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@rektpaws",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "haal9k",
+            "$haal9k",
+            "wobycxyiabam6qbyxmubdespq3dplnusyqupmmbpump",
+            "babygirl era",
+            "moonshot listing",
+            "fomo listing",
+            "team update",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@nankey_kaur",
+          "approval_evidence_url": "https://x.com/nankey_kaur/status/2077047869177987077",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 294.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T15:09:36Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 294.6,
+          "source_evidence_urls": [
+            "https://x.com/nankey_kaur/status/2077047869177987077"
+          ],
+          "terms": [
+            "haal9k",
+            "$haal9k",
+            "wobycxyiabam6qbyxmubdespq3dplnusyqupmmbpump",
+            "babygirl era",
+            "moonshot listing",
+            "fomo listing",
+            "team update",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@carlosgonzal150",
+          "approval_evidence_url": "https://x.com/CarlosGonzal150/status/2077047869089923142",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 294.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T15:09:36Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 294.6,
+          "source_evidence_urls": [
+            "https://x.com/CarlosGonzal150/status/2077047869089923142"
+          ],
+          "terms": [
+            "haal9k",
+            "$haal9k",
+            "wobycxyiabam6qbyxmubdespq3dplnusyqupmmbpump",
+            "babygirl era",
+            "moonshot listing",
+            "fomo listing",
+            "team update",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-14T15:09:59Z",
+      "event_id": "signal_ff271a8476b0",
+      "evidence": [
+        {
+          "author_handle": "@haal9K",
+          "minutes_before_detection": 818.49,
+          "minutes_from_window_start": -458.49,
+          "relevance": "team narrative shift post that aligns with today's pump",
+          "text": "HAAL9K is now entering the BABYGIRL era. Same token. Same ticker. New visuals. New narrative.",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-14T01:31:29Z",
+          "tweet_id": "2076841983289479589",
+          "type": "x_post",
+          "url": "https://x.com/haal9K/status/2076841983289479589"
+        },
+        {
+          "author_handle": "@nankey_kaur",
+          "minutes_before_detection": 0.38,
+          "minutes_from_window_start": 359.62,
+          "relevance": "shows active listing vote push driving chatter",
+          "text": "yooo $HAAL9K is about to get listed on moonshot, theyre only missing 80 votes!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T15:09:36Z",
+          "tweet_id": "2077047869177987077",
+          "type": "x_post",
+          "url": "https://x.com/nankey_kaur/status/2077047869177987077"
+        },
+        {
+          "author_handle": "@CarlosGonzal150",
+          "minutes_before_detection": 0.38,
+          "minutes_from_window_start": 359.62,
+          "relevance": "multiple similar votes today indicate coordinated listing effort",
+          "text": "I just voted YES for $HAAL9K to get listed on FOMO!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T15:09:36Z",
+          "tweet_id": "2077047869089923142",
+          "type": "x_post",
+          "url": "https://x.com/CarlosGonzal150/status/2077047869089923142"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/wobYcxYiABaM6qByXMuBdespq3DPLNuSYqUpMmBpump"
+      },
+      "lore": "haal9k dropped the babygirl era update with haaland tie in yesterday, now moonshot and fomo listing votes stacking up on the ca",
+      "movement": {
+        "change_pct": 534.7,
+        "detected_at": "2026-07-14T15:09:59Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-14T14:40:00Z",
+        "estimated_start_at": "2026-07-14T10:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "GaNo23NXt3p4Jjq49hSjAxUV4xWpXimryTVNcsamqi8V",
+        "pool_name": "HAAL9K / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-14T15:09:59Z",
+        "window_start_at": "2026-07-14T09:09:59Z"
+      },
+      "source_signal_id": "signal_ff271a8476b0",
+      "token": {
+        "address": "wobYcxYiABaM6qByXMuBdespq3DPLNuSYqUpMmBpump",
+        "chain_slug": "solana",
+        "symbol": "HAAL9K"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@haal9K",
+          "@RektPaws"
+        ],
+        "catalysts": [
+          "team_update",
+          "listing_vote"
+        ],
+        "keywords": [
+          "$HAAL9K",
+          "HAAL9K",
+          "wobYcxYiABaM6qByXMuBdespq3DPLNuSYqUpMmBpump"
+        ],
+        "phrases": [
+          "babygirl era",
+          "moonshot listing",
+          "fomo listing"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-14T14:22:45Z",
+  "updated_at": "2026-07-14T15:10:01Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 25,
+        "approved_alpha_source": 26,
         "approved_movement_chatter": 9,
-        "rejected_late_reaction": 111,
+        "rejected_late_reaction": 113,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 71,
+        "rejected_no_tweet_evidence": 72,
         "rejected_stale_pre_move": 11,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 237,
-      "watch_accounts_approved": 27,
+      "candidate_rules": 241,
+      "watch_accounts_approved": 28,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 150,
+      "watch_accounts_rejected": 153,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-14T14:22:45Z"
+    "updated_at": "2026-07-14T15:10:01Z"
   }
 }

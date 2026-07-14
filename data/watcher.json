@@ -156,7 +156,7 @@
       "value": "from:official_upbit (drv OR upbit) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-14T11:10:01Z",
+  "rules_synced_at": "2026-07-14T11:22:28Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -4999,7 +4999,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-14T11:10:01Z",
+  "updated_at": "2026-07-14T11:22:28Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

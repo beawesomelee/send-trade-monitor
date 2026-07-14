@@ -12278,30 +12278,231 @@
           "velocity on solana"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@hyperbullsol",
+          "approval_evidence_url": "https://x.com/HyperBullSol/status/2076892084569616455",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 219.4 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-14T04:50:34Z",
+          "approved_terms": [
+            "hbull",
+            "$hbull",
+            "hyperbullsol",
+            "coingecko",
+            "$hbull is now live on @coingecko"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -219.43,
+          "source_evidence_urls": [
+            "https://x.com/HyperBullSol/status/2076892084569616455",
+            "https://x.com/HyperBullSol/status/2077012771363778700",
+            "https://x.com/HyperBullSol/status/2076880113845571624"
+          ],
+          "terms": [
+            "hbull",
+            "$hbull",
+            "hyperbullsol",
+            "moonshot",
+            "coingecko",
+            "$hbull is now live on @coingecko",
+            "submitting @moonshot application now",
+            "the cooking continues",
+            "listing",
+            "team update",
+            "kol post"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@vanillafunk713",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "hbull",
+            "$hbull",
+            "hyperbullsol",
+            "moonshot",
+            "coingecko",
+            "$hbull is now live on @coingecko",
+            "submitting @moonshot application now",
+            "the cooking continues",
+            "listing",
+            "team update",
+            "kol post"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@folklorianz",
+          "approval_evidence_url": "https://x.com/folklorianz/status/2076843938636337488",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 410.8 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-14T01:39:15Z",
+          "approved_terms": [
+            "hbull",
+            "$hbull"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -410.75,
+          "source_evidence_urls": [
+            "https://x.com/folklorianz/status/2076843938636337488"
+          ],
+          "terms": [
+            "hbull",
+            "$hbull",
+            "hyperbullsol",
+            "moonshot",
+            "coingecko",
+            "$hbull is now live on @coingecko",
+            "submitting @moonshot application now",
+            "the cooking continues",
+            "listing",
+            "team update",
+            "kol post"
+          ],
+          "timing_bucket": "pre_window"
+        }
+      ],
+      "detected_at": "2026-07-14T14:22:43Z",
+      "event_id": "signal_6ccdb539b980",
+      "evidence": [
+        {
+          "author_handle": "@HyperBullSol",
+          "minutes_before_detection": 572.14,
+          "minutes_from_window_start": -212.14,
+          "relevance": "direct catalyst post from project account",
+          "text": "$HBULL is now live on @coingecko",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-14T04:50:34Z",
+          "tweet_id": "2076892084569616455",
+          "type": "x_post",
+          "url": "https://x.com/HyperBullSol/status/2076892084569616455"
+        },
+        {
+          "author_handle": "@HyperBullSol",
+          "minutes_before_detection": 92.58,
+          "minutes_from_window_start": 267.42,
+          "relevance": "listing push driving attention",
+          "text": "submitting @moonshot application now",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T12:50:08Z",
+          "tweet_id": "2077012771363778700",
+          "type": "x_post",
+          "url": "https://x.com/HyperBullSol/status/2077012771363778700"
+        },
+        {
+          "author_handle": "@HyperBullSol",
+          "minutes_before_detection": 619.71,
+          "minutes_from_window_start": -259.71,
+          "relevance": "dev actions on locks and fees",
+          "text": "The cooking continues",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-14T04:03:00Z",
+          "tweet_id": "2076880113845571624",
+          "type": "x_post",
+          "url": "https://x.com/HyperBullSol/status/2076880113845571624"
+        },
+        {
+          "author_handle": "@folklorianz",
+          "minutes_before_detection": 763.46,
+          "minutes_from_window_start": -403.46,
+          "relevance": "early KOL call still circulating",
+          "text": "I highlighted $HBULL at a $19k market cap",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-14T01:39:15Z",
+          "tweet_id": "2076843938636337488",
+          "type": "x_post",
+          "url": "https://x.com/folklorianz/status/2076843938636337488"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/7V6Sk63y8Rr1MvcN5mYNp61wgFhy4EeQg5gUASk9pump"
+      },
+      "lore": "hyperbullsol hit coingecko and submitted moonshot app today, dev locked 10% and routing creator fees into another token for holders. early callers from 19k mc still posting strength.",
+      "movement": {
+        "change_pct": 264.1,
+        "detected_at": "2026-07-14T14:22:43Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-14T14:20:00Z",
+        "estimated_start_at": "2026-07-14T08:30:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 156,
+        "pool_address": "EDX18gJCdijqSLAJA2pp5C2VmA3bTRrx4utxkeJuFRtQ",
+        "pool_name": "HBULL / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-14T14:22:43Z",
+        "window_start_at": "2026-07-14T08:22:43Z"
+      },
+      "source_signal_id": "signal_6ccdb539b980",
+      "token": {
+        "address": "7V6Sk63y8Rr1MvcN5mYNp61wgFhy4EeQg5gUASk9pump",
+        "chain_slug": "solana",
+        "symbol": "HBULL"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@HyperBullSol",
+          "@vanillafunk713",
+          "@folklorianz"
+        ],
+        "catalysts": [
+          "listing",
+          "team_update",
+          "kol_post"
+        ],
+        "keywords": [
+          "HBULL",
+          "hyperbullsol",
+          "moonshot",
+          "coingecko"
+        ],
+        "phrases": [
+          "$HBULL is now live on @coingecko",
+          "submitting @moonshot application now",
+          "The cooking continues"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-14T13:22:48Z",
+  "updated_at": "2026-07-14T14:22:45Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 23,
+        "approved_alpha_source": 25,
         "approved_movement_chatter": 9,
         "rejected_late_reaction": 111,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 70,
+        "rejected_no_tweet_evidence": 71,
         "rejected_stale_pre_move": 11,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 234,
-      "watch_accounts_approved": 25,
+      "candidate_rules": 237,
+      "watch_accounts_approved": 27,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 149,
+      "watch_accounts_rejected": 150,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-14T13:22:48Z"
+    "updated_at": "2026-07-14T14:22:45Z"
   }
 }

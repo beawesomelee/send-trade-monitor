@@ -1,18 +1,10 @@
 [
   {
     "chain_slug": "solana",
-    "address": "4ko5tsr5o3h4v1sftjtsd9mpuw7yx5afcpknpol6pump",
-    "symbol": "febu",
+    "address": "9odndfic7rw42vzcmszactkmwe9kgeqnzwxdglskpump",
+    "symbol": "brain",
     "direction": "pump",
-    "price_change_h1_pct": 30.379,
-    "timestamp": 1783981885.8600624
-  },
-  {
-    "chain_slug": "solana",
-    "address": "bmdzpm7gjkvupepsqnttrlsimzfknpff32yjohvrpump",
-    "symbol": "ANSENS",
-    "direction": "pump",
-    "price_change_h1_pct": 18.475,
-    "timestamp": 1783975230.865974
+    "price_change_h1_pct": 121.344,
+    "timestamp": 1783999373.8595464
   }
 ]

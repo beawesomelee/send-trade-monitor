@@ -11759,10 +11759,146 @@
           "bonk meta coming"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@derivexyz",
+          "approval_evidence_url": "https://x.com/DeriveXYZ/status/2076905813915074792",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 30.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T05:45:07Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 30.12,
+          "source_evidence_urls": [
+            "https://x.com/DeriveXYZ/status/2076905813915074792"
+          ],
+          "terms": [
+            "drv",
+            "$drv",
+            "derive",
+            "upbit",
+            "bithumb",
+            "drv goes live on upbit",
+            "listing on upbit is huge",
+            "listing",
+            "exchange listing"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@official_upbit",
+          "approval_evidence_url": "https://x.com/Official_Upbit/status/2076899915750645783",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 6.7 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-14T05:21:41Z",
+          "approved_terms": [
+            "drv",
+            "upbit"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 6.68,
+          "source_evidence_urls": [
+            "https://x.com/Official_Upbit/status/2076899915750645783"
+          ],
+          "terms": [
+            "drv",
+            "$drv",
+            "derive",
+            "upbit",
+            "bithumb",
+            "drv goes live on upbit",
+            "listing on upbit is huge",
+            "listing",
+            "exchange listing"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-14T08:52:36Z",
+      "event_id": "signal_9fafbc6dcfbb",
+      "evidence": [
+        {
+          "author_handle": "@DeriveXYZ",
+          "minutes_before_detection": 187.47,
+          "minutes_from_window_start": 172.53,
+          "relevance": "project announcement confirming the listing timing that aligns with the pump",
+          "text": "DRV goes live on @Official_Upbit in approximately 2.5 hours.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T05:45:07Z",
+          "tweet_id": "2076905813915074792",
+          "type": "x_post",
+          "url": "https://x.com/DeriveXYZ/status/2076905813915074792"
+        },
+        {
+          "author_handle": "@Official_Upbit",
+          "minutes_before_detection": 210.91,
+          "minutes_from_window_start": 149.09,
+          "relevance": "official exchange listing announcement driving the move",
+          "text": "\uc2e0\uaddc \ub514\uc9c0\ud138 \uc790\uc0b0 \ub514\ub77c\uc774\ube0c(DRV) \uac70\ub798\uc9c0\uc6d0 \uc548\ub0b4",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-14T05:21:41Z",
+          "tweet_id": "2076899915750645783",
+          "type": "x_post",
+          "url": "https://x.com/Official_Upbit/status/2076899915750645783"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x9d0e8f5b25384c7310cb8c6ae32c8fbeb645d083"
+      },
+      "lore": "upbit listing went live today with bithumb also in, drv pumping on the korea exchange reaction",
+      "movement": {
+        "change_pct": 51.1,
+        "detected_at": "2026-07-14T08:52:36Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-14T08:35:00Z",
+        "estimated_start_at": "2026-07-14T05:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0xef7e596aef9e4c6301b4d1f1e88f8ffe8c306222",
+        "pool_name": "DRV / WETH 0.8%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-14T08:52:36Z",
+        "window_start_at": "2026-07-14T02:52:36Z"
+      },
+      "source_signal_id": "signal_9fafbc6dcfbb",
+      "token": {
+        "address": "0x9d0e8f5b25384c7310cb8c6ae32c8fbeb645d083",
+        "chain_slug": "base",
+        "symbol": "DRV"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@DeriveXYZ",
+          "@Official_Upbit"
+        ],
+        "catalysts": [
+          "listing",
+          "exchange_listing"
+        ],
+        "keywords": [
+          "$DRV",
+          "derive",
+          "upbit",
+          "bithumb"
+        ],
+        "phrases": [
+          "DRV goes live on Upbit",
+          "listing on Upbit is huge"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-14T06:22:53Z",
+  "updated_at": "2026-07-14T08:52:38Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -11770,19 +11906,19 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 22,
-        "approved_movement_chatter": 7,
-        "rejected_late_reaction": 106,
+        "approved_movement_chatter": 8,
+        "rejected_late_reaction": 107,
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 69,
         "rejected_stale_pre_move": 11,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 225,
-      "watch_accounts_approved": 22,
+      "candidate_rules": 227,
+      "watch_accounts_approved": 23,
       "watch_accounts_pending": 7,
       "watch_accounts_rejected": 146,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-14T06:22:53Z"
+    "updated_at": "2026-07-14T08:52:38Z"
   }
 }

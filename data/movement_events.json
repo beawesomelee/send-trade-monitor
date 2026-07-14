@@ -12870,30 +12870,156 @@
           "moonshot top 100 leaderboard"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@haal9k",
+          "approval_evidence_url": "https://x.com/haal9K/status/2076841983289479589",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 718.5 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-14T01:31:29Z",
+          "approved_terms": [
+            "haal9k",
+            "babygirl",
+            "babygirl era"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -718.52,
+          "source_evidence_urls": [
+            "https://x.com/haal9K/status/2076841983289479589"
+          ],
+          "terms": [
+            "haal9k",
+            "$haal9k",
+            "haaland",
+            "babygirl",
+            "babygirl era",
+            "final boss",
+            "goal machine",
+            "team update",
+            "narrative shift",
+            "listing vote"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@rektpaws",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "haal9k",
+            "$haal9k",
+            "haaland",
+            "babygirl",
+            "babygirl era",
+            "final boss",
+            "goal machine",
+            "team update",
+            "narrative shift",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-14T19:22:39Z",
+      "event_id": "signal_b1bb2d39e61d",
+      "evidence": [
+        {
+          "author_handle": "@haal9K",
+          "minutes_before_detection": 1071.16,
+          "minutes_from_window_start": -711.16,
+          "relevance": "project announcement driving the narrative shift and pump",
+          "text": "HAAL9K is now entering the BABYGIRL era. Same token. Same ticker. New visuals. New narrative.",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-14T01:31:29Z",
+          "tweet_id": "2076841983289479589",
+          "type": "x_post",
+          "url": "https://x.com/haal9K/status/2076841983289479589"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/wobYcxYiABaM6qByXMuBdespq3DPLNuSYqUpMmBpump"
+      },
+      "lore": "haal9k dropped the babygirl era rebrand post today with 33 likes, same token new narrative. listing vote spam running alongside.",
+      "movement": {
+        "change_pct": 80.5,
+        "detected_at": "2026-07-14T19:22:39Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-14T14:40:00Z",
+        "estimated_start_at": "2026-07-14T13:30:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "GaNo23NXt3p4Jjq49hSjAxUV4xWpXimryTVNcsamqi8V",
+        "pool_name": "HAAL9K / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-14T19:22:39Z",
+        "window_start_at": "2026-07-14T13:22:39Z"
+      },
+      "source_signal_id": "signal_b1bb2d39e61d",
+      "token": {
+        "address": "wobYcxYiABaM6qByXMuBdespq3DPLNuSYqUpMmBpump",
+        "chain_slug": "solana",
+        "symbol": "HAAL9K"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@haal9K",
+          "@RektPaws"
+        ],
+        "catalysts": [
+          "team_update",
+          "narrative_shift",
+          "listing_vote"
+        ],
+        "keywords": [
+          "HAAL9K",
+          "HAALAND",
+          "babygirl"
+        ],
+        "phrases": [
+          "babygirl era",
+          "final boss",
+          "goal machine"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-14T18:22:50Z",
+  "updated_at": "2026-07-14T19:22:41Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 26,
+        "approved_alpha_source": 27,
         "approved_movement_chatter": 9,
         "rejected_late_reaction": 116,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 73,
+        "rejected_no_tweet_evidence": 74,
         "rejected_stale_pre_move": 11,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 245,
+      "candidate_rules": 247,
       "watch_accounts_approved": 28,
       "watch_accounts_pending": 7,
       "watch_accounts_rejected": 157,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-14T18:22:50Z"
+    "updated_at": "2026-07-14T19:22:41Z"
   }
 }

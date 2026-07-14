@@ -1,26 +1,18 @@
 [
   {
     "chain_slug": "solana",
+    "address": "wobycxyiabam6qbyxmubdespq3dplnusyqupmmbpump",
+    "symbol": "HAAL9K",
+    "direction": "pump",
+    "price_change_h1_pct": -3.449,
+    "timestamp": 1784056961.4872522
+  },
+  {
+    "chain_slug": "solana",
     "address": "5pohhyifzcxnefkysuj4ycyyhne7gnmivwryuhb9pump",
     "symbol": "GERSEM",
     "direction": "pump",
     "price_change_h1_pct": 27.02,
     "timestamp": 1784053370.359489
-  },
-  {
-    "chain_slug": "solana",
-    "address": "wobycxyiabam6qbyxmubdespq3dplnusyqupmmbpump",
-    "symbol": "HAAL9K",
-    "direction": "pump",
-    "price_change_h1_pct": 12.41,
-    "timestamp": 1784041801.255814
-  },
-  {
-    "chain_slug": "solana",
-    "address": "7v6sk63y8rr1mvcn5mynp61wgfhy4eeqg5guask9pump",
-    "symbol": "HBULL",
-    "direction": "pump",
-    "price_change_h1_pct": 23.145,
-    "timestamp": 1784038965.353331
   }
 ]

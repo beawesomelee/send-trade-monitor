@@ -146,7 +146,7 @@
       "value": "from:klausalphahq (ansens OR $ansens) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-14T04:22:32Z",
+  "rules_synced_at": "2026-07-14T04:32:38Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -4747,7 +4747,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-14T04:22:32Z",
+  "updated_at": "2026-07-14T04:32:38Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

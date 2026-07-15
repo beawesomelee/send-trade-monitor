@@ -13691,30 +13691,238 @@
           "b20 launches"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@agentwooff",
+          "approval_evidence_url": "https://x.com/agentwooff/status/2077287312145441224",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 101.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T07:01:04Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 101.07,
+          "source_evidence_urls": [
+            "https://x.com/agentwooff/status/2077287312145441224"
+          ],
+          "terms": [
+            "miggles",
+            "$miggles",
+            "base",
+            "monster candle",
+            "base trend board",
+            "anniversary run",
+            "coinbase hopium",
+            "trend leader",
+            "meme bids",
+            "coingecko rank"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@0xcalliope",
+          "approval_evidence_url": "https://x.com/0xCalliope/status/2077151746535924140",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 437.6 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-14T22:02:22Z",
+          "approved_terms": [
+            "miggles",
+            "$miggles",
+            "base",
+            "base trend board"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -437.63,
+          "source_evidence_urls": [
+            "https://x.com/0xCalliope/status/2077151746535924140"
+          ],
+          "terms": [
+            "miggles",
+            "$miggles",
+            "base",
+            "monster candle",
+            "base trend board",
+            "anniversary run",
+            "coinbase hopium",
+            "trend leader",
+            "meme bids",
+            "coingecko rank"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@fredvelezcrypto",
+          "approval_evidence_url": "https://x.com/Fredvelezcrypto/status/2076997243379282349",
+          "approval_label": "rejected_stale_pre_move",
+          "approval_reason": "tweet was 1051.6 minutes before the estimated move start, outside the freshness window",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-14T11:48:26Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -1051.57,
+          "source_evidence_urls": [
+            "https://x.com/Fredvelezcrypto/status/2076997243379282349"
+          ],
+          "terms": [
+            "miggles",
+            "$miggles",
+            "base",
+            "monster candle",
+            "base trend board",
+            "anniversary run",
+            "coinbase hopium",
+            "trend leader",
+            "meme bids",
+            "coingecko rank"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@mrmigglesonbase",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "miggles",
+            "$miggles",
+            "base",
+            "monster candle",
+            "base trend board",
+            "anniversary run",
+            "coinbase hopium",
+            "trend leader",
+            "meme bids",
+            "coingecko rank"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-15T07:22:50Z",
+      "event_id": "signal_febd17c6fa9c",
+      "evidence": [
+        {
+          "author_handle": "@0xCalliope",
+          "minutes_before_detection": 560.46,
+          "minutes_from_window_start": -200.46,
+          "relevance": "confirms #1 trend board status driving visibility",
+          "text": "Huge congratulations to $MIGGLES for climbing to #1 on the Base trend board according to @coingecko",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-14T22:02:22Z",
+          "tweet_id": "2077151746535924140",
+          "type": "x_post",
+          "url": "https://x.com/0xCalliope/status/2077151746535924140"
+        },
+        {
+          "author_handle": "@Fredvelezcrypto",
+          "minutes_before_detection": 1174.4,
+          "minutes_from_window_start": -814.4,
+          "relevance": "notes the price action and context of base meme bids",
+          "text": "$MIGGLES just printed a monster candle... buyers are still willing to step in and bid quality Base memes",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-14T11:48:26Z",
+          "tweet_id": "2076997243379282349",
+          "type": "x_post",
+          "url": "https://x.com/Fredvelezcrypto/status/2076997243379282349"
+        },
+        {
+          "author_handle": "@agentwooff",
+          "minutes_before_detection": 21.77,
+          "minutes_from_window_start": 338.23,
+          "relevance": "real-time trending data with vol/liq figures",
+          "text": "MIGGLES/WETH +145% 24h. Vol $470K, Liq $504K. Healthy liq for a memecoin",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T07:01:04Z",
+          "tweet_id": "2077287312145441224",
+          "type": "x_post",
+          "url": "https://x.com/agentwooff/status/2077287312145441224"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb1a03eda10342529bbf8eb700a06c60441fef25d"
+      },
+      "lore": "miggles #1 on coingecko base trends with 400k+ vol and monster candle. base memes getting bid again, anniversary hopium in mix",
+      "movement": {
+        "change_pct": 50.8,
+        "detected_at": "2026-07-15T07:22:50Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T07:20:00Z",
+        "estimated_start_at": "2026-07-15T05:20:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x17a3ad8c74c4947005afeda9965305ae2eb2518a",
+        "pool_name": "MIGGLES / WETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-15T07:22:50Z",
+        "window_start_at": "2026-07-15T01:22:50Z"
+      },
+      "source_signal_id": "signal_febd17c6fa9c",
+      "token": {
+        "address": "0xb1a03eda10342529bbf8eb700a06c60441fef25d",
+        "chain_slug": "base",
+        "symbol": "MIGGLES"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@agentwooff",
+          "@0xCalliope",
+          "@Fredvelezcrypto",
+          "@MrMigglesOnBase"
+        ],
+        "catalysts": [
+          "trend_leader",
+          "meme_bids",
+          "coingecko_rank"
+        ],
+        "keywords": [
+          "miggles",
+          "$MIGGLES",
+          "base"
+        ],
+        "phrases": [
+          "monster candle",
+          "base trend board",
+          "anniversary run",
+          "coinbase hopium"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-15T04:33:01Z",
+  "updated_at": "2026-07-15T07:22:52Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 27,
+        "approved_alpha_source": 28,
         "approved_movement_chatter": 9,
-        "rejected_late_reaction": 124,
+        "rejected_late_reaction": 125,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 80,
-        "rejected_stale_pre_move": 11,
+        "rejected_no_tweet_evidence": 81,
+        "rejected_stale_pre_move": 12,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 261,
-      "watch_accounts_approved": 28,
+      "candidate_rules": 265,
+      "watch_accounts_approved": 29,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 168,
+      "watch_accounts_rejected": 170,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-15T04:33:01Z"
+    "updated_at": "2026-07-15T07:22:52Z"
   }
 }

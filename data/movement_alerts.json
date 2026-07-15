@@ -1,18 +1,18 @@
 [
   {
     "chain_slug": "base",
-    "address": "0xb1a03eda10342529bbf8eb700a06c60441fef25d",
-    "symbol": "MIGGLES",
+    "address": "0xb2000000000000000000000ee9988edd75453501",
+    "symbol": "PAMPU",
     "direction": "pump",
-    "price_change_h1_pct": 6.274,
-    "timestamp": 1784100172.6170406
+    "price_change_h1_pct": 8.985,
+    "timestamp": 1784125388.8262377
   },
   {
-    "chain_slug": "base",
-    "address": "0xb2000000000000000000007bf6d5cbb0e24cb301",
-    "symbol": "BRIAN",
+    "chain_slug": "solana",
+    "address": "g9j8wwdejxzdvwqgp82ooduhmpc3gy8ncsins71lpump",
+    "symbol": "BULLCAT",
     "direction": "pump",
-    "price_change_h1_pct": -10.488,
-    "timestamp": 1784089981.2895489
+    "price_change_h1_pct": 14.992,
+    "timestamp": 1784125388.8262377
   }
 ]

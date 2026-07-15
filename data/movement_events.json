@@ -13899,10 +13899,267 @@
           "coinbase hopium"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@pampuonbase",
+          "approval_evidence_url": "https://x.com/pampuonbase/status/2077387822810771962",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 275.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T13:40:27Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 275.45,
+          "source_evidence_urls": [
+            "https://x.com/pampuonbase/status/2077387822810771962"
+          ],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "b20 trending",
+            "buy pressure",
+            "base cat",
+            "kol post",
+            "team update",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@professorcornel",
+          "approval_evidence_url": "https://x.com/ProfessorCornel/status/2077395765497085964",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 307.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T14:12:01Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 307.02,
+          "source_evidence_urls": [
+            "https://x.com/ProfessorCornel/status/2077395765497085964"
+          ],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "b20 trending",
+            "buy pressure",
+            "base cat",
+            "kol post",
+            "team update",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@stambouli_o1",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "b20 trending",
+            "buy pressure",
+            "base cat",
+            "kol post",
+            "team update",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-15T14:23:04Z",
+      "event_id": "signal_a6e9d0537b93",
+      "evidence": [
+        {
+          "author_handle": "@pampuonbase",
+          "minutes_before_detection": 42.61,
+          "minutes_from_window_start": 317.39,
+          "relevance": "project's own moon call driving visibility",
+          "text": "founder ; @stambouli_o1 Ready? $PAMPU: Already pumping. im going to moon!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T13:40:27Z",
+          "tweet_id": "2077387822810771962",
+          "type": "x_post",
+          "url": "https://x.com/pampuonbase/status/2077387822810771962"
+        },
+        {
+          "author_handle": "@ProfessorCornel",
+          "minutes_before_detection": 11.05,
+          "minutes_from_window_start": 348.95,
+          "relevance": "on-chain stats and B20 narrative amplifying the move",
+          "text": "2295 buys 1208 sales 2x buy pressure... $PAMPU on Base B20 live",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T14:12:01Z",
+          "tweet_id": "2077395765497085964",
+          "type": "x_post",
+          "url": "https://x.com/ProfessorCornel/status/2077395765497085964"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb2000000000000000000000ee9988edd75453501"
+      },
+      "lore": "project posting moon calls and tagging @jessepollak @brian_armstrong while @professorcornel notes 2x buy pressure on the dexscreener pair. b20 trending chatter picking up. still early?",
+      "movement": {
+        "change_pct": 56.1,
+        "detected_at": "2026-07-15T14:23:04Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T13:00:00Z",
+        "estimated_start_at": "2026-07-15T09:05:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x4dc4dcca55db54a443dcea2ba72e9c35898458367f29cbd6c84f74cf94815d2f",
+        "pool_name": "PAMPU / ETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-15T14:23:04Z",
+        "window_start_at": "2026-07-15T08:23:04Z"
+      },
+      "source_signal_id": "signal_a6e9d0537b93",
+      "token": {
+        "address": "0xb2000000000000000000000ee9988edd75453501",
+        "chain_slug": "base",
+        "symbol": "PAMPU"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@pampuonbase",
+          "@ProfessorCornel",
+          "@stambouli_o1"
+        ],
+        "catalysts": [
+          "kol_post",
+          "team_update",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "pampu",
+          "b20"
+        ],
+        "phrases": [
+          "b20 trending",
+          "buy pressure",
+          "base cat"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@onchainse",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "early momentum building",
+            "extreme risk",
+            "quietly pushed",
+            "group mentions",
+            "listing votes"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@defade_",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "bullcat",
+            "$bullcat",
+            "early momentum building",
+            "extreme risk",
+            "quietly pushed",
+            "group mentions",
+            "listing votes"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-15T14:23:04Z",
+      "event_id": "signal_0bce610c3239",
+      "evidence": [],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/G9j8WWDeJXZdvwQgP82ooDuHmpc3Gy8NCSins71Lpump"
+      },
+      "lore": "early mentions in groups at 61k mc. momentum building on thin liq with no kols or team noise",
+      "movement": {
+        "change_pct": 50.3,
+        "detected_at": "2026-07-15T14:23:04Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T12:05:00Z",
+        "estimated_start_at": "2026-07-15T08:50:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "HuqmPUBBdq8w56Y6WGd8LiMbf4zgYXS2ACzLZs8MYLna",
+        "pool_name": "BULLCAT / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-15T14:23:04Z",
+        "window_start_at": "2026-07-15T08:23:04Z"
+      },
+      "source_signal_id": "signal_0bce610c3239",
+      "token": {
+        "address": "G9j8WWDeJXZdvwQgP82ooDuHmpc3Gy8NCSins71Lpump",
+        "chain_slug": "solana",
+        "symbol": "BULLCAT"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@onchainse",
+          "@DeFade_"
+        ],
+        "catalysts": [
+          "group_mentions",
+          "listing_votes"
+        ],
+        "keywords": [
+          "$BULLCAT",
+          "bullcat"
+        ],
+        "phrases": [
+          "early momentum building",
+          "extreme risk",
+          "quietly pushed"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-15T07:22:52Z",
+  "updated_at": "2026-07-15T14:23:08Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -13911,18 +14168,18 @@
       "candidate_labels": {
         "approved_alpha_source": 28,
         "approved_movement_chatter": 9,
-        "rejected_late_reaction": 125,
+        "rejected_late_reaction": 127,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 81,
+        "rejected_no_tweet_evidence": 84,
         "rejected_stale_pre_move": 12,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 265,
+      "candidate_rules": 270,
       "watch_accounts_approved": 29,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 170,
+      "watch_accounts_rejected": 174,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-15T07:22:52Z"
+    "updated_at": "2026-07-15T14:23:08Z"
   }
 }

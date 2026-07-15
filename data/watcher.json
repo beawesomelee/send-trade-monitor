@@ -206,7 +206,7 @@
       "value": "from:jessepollak (jesse OR base) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-15T16:52:25Z",
+  "rules_synced_at": "2026-07-15T17:22:31Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -6035,7 +6035,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-15T16:52:25Z",
+  "updated_at": "2026-07-15T17:22:31Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

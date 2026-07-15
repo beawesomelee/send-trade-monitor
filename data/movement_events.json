@@ -14951,10 +14951,364 @@
           "cobie said his dog is named $doji"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@ohmyjack",
+          "approval_evidence_url": "https://x.com/OhMyJack/status/2077503370630156662",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 114.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T21:19:36Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 114.6,
+          "source_evidence_urls": [
+            "https://x.com/OhMyJack/status/2077443663542534262",
+            "https://x.com/OhMyJack/status/2077503370630156662"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "b20 model token",
+            "coinbase man",
+            "new model token b20 on base",
+            "kol post",
+            "base narra"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@dijkstracrypto",
+          "approval_evidence_url": "https://x.com/DijkstraCrypto/status/2077476394171572396",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 7.4 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-15T19:32:24Z",
+          "approved_terms": [
+            "brian",
+            "$brian",
+            "b20"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 7.4,
+          "source_evidence_urls": [
+            "https://x.com/DijkstraCrypto/status/2077476394171572396"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "b20 model token",
+            "coinbase man",
+            "new model token b20 on base",
+            "kol post",
+            "base narra"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@mrmemesonx",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "b20 model token",
+            "coinbase man",
+            "new model token b20 on base",
+            "kol post",
+            "base narra"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@brian_armstrong",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "b20 model token",
+            "coinbase man",
+            "new model token b20 on base",
+            "kol post",
+            "base narra"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-15T21:22:58Z",
+      "event_id": "signal_647c2e909a2e",
+      "evidence": [
+        {
+          "author_handle": "@OhMyJack",
+          "minutes_before_detection": 240.62,
+          "minutes_from_window_start": 119.38,
+          "relevance": "direct call on the token and contract matching the pump",
+          "text": "base:0xb2000000000000000000007bf6d5cbb0e24cb301 new model token B20 on Base ... $BRIAN",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T17:22:21Z",
+          "tweet_id": "2077443663542534262",
+          "type": "x_post",
+          "url": "https://x.com/OhMyJack/status/2077443663542534262"
+        },
+        {
+          "author_handle": "@OhMyJack",
+          "minutes_before_detection": 3.36,
+          "minutes_from_window_start": 356.64,
+          "relevance": "update confirming the move from his entry",
+          "text": "Back to 1.3 M 4 x ! $BRIAN",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T21:19:36Z",
+          "tweet_id": "2077503370630156662",
+          "type": "x_post",
+          "url": "https://x.com/OhMyJack/status/2077503370630156662"
+        },
+        {
+          "author_handle": "@DijkstraCrypto",
+          "minutes_before_detection": 110.56,
+          "minutes_from_window_start": 249.44,
+          "relevance": "ties the narra to base and brian armstrong",
+          "text": "big ppl from base like my thought about how $BRIAN is a good meme to bid on Base on new B20 ... This is bullish for BRIAN, the coinbase man",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T19:32:24Z",
+          "tweet_id": "2077476394171572396",
+          "type": "x_post",
+          "url": "https://x.com/DijkstraCrypto/status/2077476394171572396"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb2000000000000000000007bf6d5cbb0e24cb301"
+      },
+      "lore": "ohmyjack called the b20 model token on base at 370k entry then posted the 4x to 1.3m. dijkstracrypto noted big base ppl on the coinbase man narra with smart money positioning early.",
+      "movement": {
+        "change_pct": 140.0,
+        "detected_at": "2026-07-15T21:22:58Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T21:10:00Z",
+        "estimated_start_at": "2026-07-15T19:25:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x02f924e13a22fcf86551a2228206905bfe4a78b1b2d0158c76dbddb38ea50013",
+        "pool_name": "BRIAN / ETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-15T21:22:58Z",
+        "window_start_at": "2026-07-15T15:22:58Z"
+      },
+      "source_signal_id": "signal_647c2e909a2e",
+      "token": {
+        "address": "0xb2000000000000000000007bf6d5cbb0e24cb301",
+        "chain_slug": "base",
+        "symbol": "BRIAN"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@OhMyJack",
+          "@DijkstraCrypto",
+          "@Mrmemesonx",
+          "@brian_armstrong"
+        ],
+        "catalysts": [
+          "kol_post",
+          "base_narra"
+        ],
+        "keywords": [
+          "$BRIAN",
+          "brian",
+          "b20"
+        ],
+        "phrases": [
+          "b20 model token",
+          "coinbase man",
+          "new model token B20 on Base"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@bankrbot",
+          "approval_evidence_url": "https://x.com/bankrbot/status/2077440524760514693",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 54.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T17:09:52Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 54.87,
+          "source_evidence_urls": [
+            "https://x.com/bankrbot/status/2077440524760514693"
+          ],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "base",
+            "jessepollak",
+            "founder coin",
+            "prove base isn't dead",
+            "revenge trade",
+            "kol post",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@vegasnipes",
+          "approval_evidence_url": "https://x.com/VegaSnipes/status/2077438753178624325",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 47.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T17:02:50Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 47.83,
+          "source_evidence_urls": [
+            "https://x.com/VegaSnipes/status/2077438753178624325"
+          ],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "base",
+            "jessepollak",
+            "founder coin",
+            "prove base isn't dead",
+            "revenge trade",
+            "kol post",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@jessepollak",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "base",
+            "jessepollak",
+            "founder coin",
+            "prove base isn't dead",
+            "revenge trade",
+            "kol post",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-15T21:22:58Z",
+      "event_id": "signal_1e1bf12b1094",
+      "evidence": [
+        {
+          "author_handle": "@bankrbot",
+          "minutes_before_detection": 253.09,
+          "minutes_from_window_start": 106.91,
+          "relevance": "explains the exact narra and onchain drivers behind the move",
+          "text": "the $jesse chart is showing a textbook parabolic breakout on base... narrative surge is tied to jesse being framed by the community as the \"founder coin\" of base... \"prove base isn't dead\" revenge-trade angle... whale buys",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T17:09:52Z",
+          "tweet_id": "2077440524760514693",
+          "type": "x_post",
+          "url": "https://x.com/bankrbot/status/2077440524760514693"
+        },
+        {
+          "author_handle": "@VegaSnipes",
+          "minutes_before_detection": 260.13,
+          "minutes_from_window_start": 99.87,
+          "relevance": "confirms the mc/vol spike and base liquidity flow observation",
+          "text": "$JESSE just sent from sub $2M to over $4M MC and printed $1M+ in volume in less 24 hours",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T17:02:50Z",
+          "tweet_id": "2077438753178624325",
+          "type": "x_post",
+          "url": "https://x.com/VegaSnipes/status/2077438753178624325"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x50f88fe97f72cd3e75b9eb4f747f59bceba80d59"
+      },
+      "lore": "base founder coin narra with parabolic breakout past 2.3k resistance on 1m+ vol in a day, revenge trade angle after fud plus whale buys",
+      "movement": {
+        "change_pct": 117.3,
+        "detected_at": "2026-07-15T21:22:58Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T17:05:00Z",
+        "estimated_start_at": "2026-07-15T16:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0xc39acb3ce11ebcd3e1c5d67cdfb8707ab12674449fdab859327a8aabee03cd10",
+        "pool_name": "jesse / ZORA 1%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-15T21:22:58Z",
+        "window_start_at": "2026-07-15T15:22:58Z"
+      },
+      "source_signal_id": "signal_1e1bf12b1094",
+      "token": {
+        "address": "0x50f88fe97f72cd3e75b9eb4f747f59bceba80d59",
+        "chain_slug": "base",
+        "symbol": "jesse"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@bankrbot",
+          "@VegaSnipes",
+          "@jessepollak"
+        ],
+        "catalysts": [
+          "kol_post",
+          "narrative_reactivation"
+        ],
+        "keywords": [
+          "$jesse",
+          "base",
+          "jessepollak"
+        ],
+        "phrases": [
+          "founder coin",
+          "prove base isn't dead",
+          "revenge trade"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-15T20:22:47Z",
+  "updated_at": "2026-07-15T21:23:02Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -14962,19 +15316,19 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 29,
-        "approved_movement_chatter": 11,
-        "rejected_late_reaction": 131,
+        "approved_movement_chatter": 12,
+        "rejected_late_reaction": 134,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 91,
+        "rejected_no_tweet_evidence": 94,
         "rejected_stale_pre_move": 14,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 286,
-      "watch_accounts_approved": 32,
+      "candidate_rules": 293,
+      "watch_accounts_approved": 33,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 181,
+      "watch_accounts_rejected": 183,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-15T20:22:47Z"
+    "updated_at": "2026-07-15T21:23:02Z"
   }
 }

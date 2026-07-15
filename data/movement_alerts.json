@@ -1,26 +1,26 @@
 [
   {
-    "chain_slug": "solana",
-    "address": "9w47d5k1whg4hogftk7l9xxv1p95tpuz6ehzsfarpump",
-    "symbol": "CATTEARS",
+    "chain_slug": "base",
+    "address": "0xb2000000000000000000007bf6d5cbb0e24cb301",
+    "symbol": "BRIAN",
     "direction": "pump",
-    "price_change_h1_pct": 19.381,
-    "timestamp": 1784060562.447618
+    "price_change_h1_pct": 1116.98,
+    "timestamp": 1784074978.7104712
   },
   {
     "chain_slug": "solana",
     "address": "wobycxyiabam6qbyxmubdespq3dplnusyqupmmbpump",
     "symbol": "HAAL9K",
     "direction": "pump",
-    "price_change_h1_pct": -3.449,
-    "timestamp": 1784056961.4872522
+    "price_change_h1_pct": 14.012,
+    "timestamp": 1784074978.7104712
   },
   {
     "chain_slug": "solana",
-    "address": "5pohhyifzcxnefkysuj4ycyyhne7gnmivwryuhb9pump",
-    "symbol": "GERSEM",
+    "address": "9w47d5k1whg4hogftk7l9xxv1p95tpuz6ehzsfarpump",
+    "symbol": "CATTEARS",
     "direction": "pump",
-    "price_change_h1_pct": 27.02,
-    "timestamp": 1784053370.359489
+    "price_change_h1_pct": 19.381,
+    "timestamp": 1784060562.447618
   }
 ]

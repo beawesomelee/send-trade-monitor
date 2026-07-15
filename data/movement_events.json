@@ -14468,10 +14468,338 @@
           "lets bullpost $jesse"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@badattrading_",
+          "approval_evidence_url": "https://x.com/badattrading_/status/2077471895000162423",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 329.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T19:14:31Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 329.52,
+          "source_evidence_urls": [
+            "https://x.com/badattrading_/status/2077471895000162423"
+          ],
+          "terms": [
+            "soldiers",
+            "$soldiers",
+            "report for duty $soldiers",
+            "mobile infantry",
+            "kol post"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@roundtipr",
+          "approval_evidence_url": "https://x.com/roundtipr/status/2077473940541186237",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 337.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T19:22:39Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 337.65,
+          "source_evidence_urls": [
+            "https://x.com/roundtipr/status/2077473940541186237"
+          ],
+          "terms": [
+            "soldiers",
+            "$soldiers",
+            "report for duty $soldiers",
+            "mobile infantry",
+            "kol post"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-15T19:22:59Z",
+      "event_id": "signal_8201ff9d8733",
+      "evidence": [
+        {
+          "author_handle": "@badattrading_",
+          "minutes_before_detection": 8.45,
+          "minutes_from_window_start": 351.55,
+          "relevance": "direct bull call sparking the move",
+          "text": "You too join the mobile infantry, to fight against the robinhood arachnids... SOLdiers your first mission is flipping the crash cat insiders garbage",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T19:14:31Z",
+          "tweet_id": "2077471895000162423",
+          "type": "x_post",
+          "url": "https://x.com/badattrading_/status/2077471895000162423"
+        },
+        {
+          "author_handle": "@roundtipr",
+          "minutes_before_detection": 0.32,
+          "minutes_from_window_start": 359.68,
+          "relevance": "amplifies the same narrative post",
+          "text": "Report for duty $SOLdiers",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T19:22:39Z",
+          "tweet_id": "2077473940541186237",
+          "type": "x_post",
+          "url": "https://x.com/roundtipr/status/2077473940541186237"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/B4ptaVsUe6YbtBwAS38WFeweSrVNfQLCcj9JRrtjU8vn"
+      },
+      "lore": "@badattrading_ posted report for duty $soldiers with mission flipping crash cat insiders. quiet before that.",
+      "movement": {
+        "change_pct": 6786.2,
+        "detected_at": "2026-07-15T19:22:59Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T19:05:00Z",
+        "estimated_start_at": "2026-07-15T13:45:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 69,
+        "pool_address": "B4JM2z5DAqNCJtSFm4F8v5pc88KA8Fk3oyCSwEfsq9bR",
+        "pool_name": "SOLdiers / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-15T19:22:59Z",
+        "window_start_at": "2026-07-15T13:22:59Z"
+      },
+      "source_signal_id": "signal_8201ff9d8733",
+      "token": {
+        "address": "B4ptaVsUe6YbtBwAS38WFeweSrVNfQLCcj9JRrtjU8vn",
+        "chain_slug": "solana",
+        "symbol": "SOLdiers"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@badattrading_"
+        ],
+        "catalysts": [
+          "kol_post"
+        ],
+        "keywords": [
+          "$soldiers",
+          "soldiers"
+        ],
+        "phrases": [
+          "report for duty $soldiers",
+          "mobile infantry"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@frostybabax",
+          "approval_evidence_url": "https://x.com/frostybabax/status/2077470013074661735",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 287.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T19:07:03Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 287.05,
+          "source_evidence_urls": [
+            "https://x.com/frostybabax/status/2077470013074661735"
+          ],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "base cat",
+            "base basket main runner",
+            "20x call",
+            "hodl $pampu today",
+            "base b20",
+            "kol post",
+            "team update",
+            "community hodl"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@professorcornel",
+          "approval_evidence_url": "https://x.com/ProfessorCornel/status/2076765264063189220",
+          "approval_label": "rejected_stale_pre_move",
+          "approval_reason": "tweet was 2513.4 minutes before the estimated move start, outside the freshness window",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-13T20:26:38Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -2513.37,
+          "source_evidence_urls": [
+            "https://x.com/ProfessorCornel/status/2076765264063189220"
+          ],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "base cat",
+            "base basket main runner",
+            "20x call",
+            "hodl $pampu today",
+            "base b20",
+            "kol post",
+            "team update",
+            "community hodl"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@pampuonbase",
+          "approval_evidence_url": "https://x.com/pampuonbase/status/2077460518571475161",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 249.3 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T18:29:19Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 249.32,
+          "source_evidence_urls": [
+            "https://x.com/pampuonbase/status/2077460518571475161"
+          ],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "base cat",
+            "base basket main runner",
+            "20x call",
+            "hodl $pampu today",
+            "base b20",
+            "kol post",
+            "team update",
+            "community hodl"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@jessepollak",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "base cat",
+            "base basket main runner",
+            "20x call",
+            "hodl $pampu today",
+            "base b20",
+            "kol post",
+            "team update",
+            "community hodl"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-15T19:22:59Z",
+      "event_id": "signal_8e1cd78fd25f",
+      "evidence": [
+        {
+          "author_handle": "@frostybabax",
+          "minutes_before_detection": 15.93,
+          "minutes_from_window_start": 344.07,
+          "relevance": "explains the specific backing and why it's the runner in his basket",
+          "text": "base taraf\u0131nda bir sepet yapt\u0131m... pampu... projenin arkas\u0131nda base taraf\u0131nda bilinen ve sa\u011flam networku olan @ProfessorCornel var, ayr\u0131ca @stambouli_o1'de a\u00e7\u0131k\u00e7a deste\u011fini g\u00f6steriyor, bu ki\u015fileri base kurucusu @jessepollak'de takip ediyor",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T19:07:03Z",
+          "tweet_id": "2077470013074661735",
+          "type": "x_post",
+          "url": "https://x.com/frostybabax/status/2077470013074661735"
+        },
+        {
+          "author_handle": "@ProfessorCornel",
+          "minutes_before_detection": 2816.35,
+          "minutes_from_window_start": -2456.35,
+          "relevance": "early flag on the b20 pump and top coin status",
+          "text": "$PAMPU on $BASE B20 is pumping hard \ud83c\udf89 20x call just in 4 hrs",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-13T20:26:38Z",
+          "tweet_id": "2076765264063189220",
+          "type": "x_post",
+          "url": "https://x.com/ProfessorCornel/status/2076765264063189220"
+        },
+        {
+          "author_handle": "@pampuonbase",
+          "minutes_before_detection": 53.66,
+          "minutes_from_window_start": 306.34,
+          "relevance": "project's own hodl messaging during the move",
+          "text": "Long-term holders are always the biggest winners. HODL $PAMPU today.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T18:29:19Z",
+          "tweet_id": "2077460518571475161",
+          "type": "x_post",
+          "url": "https://x.com/pampuonbase/status/2077460518571475161"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb2000000000000000000000ee9988edd75453501"
+      },
+      "lore": "frostybabax called pampu his base basket main runner citing professorcornel network and jessepollak follows. project posting hodl and holder vibes all day. b20 momentum holding?",
+      "movement": {
+        "change_pct": 71.8,
+        "detected_at": "2026-07-15T19:22:59Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T15:35:00Z",
+        "estimated_start_at": "2026-07-15T14:20:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x4dc4dcca55db54a443dcea2ba72e9c35898458367f29cbd6c84f74cf94815d2f",
+        "pool_name": "PAMPU / ETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-15T19:22:59Z",
+        "window_start_at": "2026-07-15T13:22:59Z"
+      },
+      "source_signal_id": "signal_8e1cd78fd25f",
+      "token": {
+        "address": "0xb2000000000000000000000ee9988edd75453501",
+        "chain_slug": "base",
+        "symbol": "PAMPU"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@frostybabax",
+          "@ProfessorCornel",
+          "@pampuonbase",
+          "@jessepollak"
+        ],
+        "catalysts": [
+          "kol_post",
+          "team_update",
+          "community_hodl"
+        ],
+        "keywords": [
+          "pampu",
+          "b20",
+          "base cat"
+        ],
+        "phrases": [
+          "base basket main runner",
+          "20x call",
+          "hodl $pampu today",
+          "base b20"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-15T16:52:24Z",
+  "updated_at": "2026-07-15T19:23:03Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -14480,18 +14808,18 @@
       "candidate_labels": {
         "approved_alpha_source": 29,
         "approved_movement_chatter": 11,
-        "rejected_late_reaction": 127,
+        "rejected_late_reaction": 131,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 86,
-        "rejected_stale_pre_move": 13,
+        "rejected_no_tweet_evidence": 87,
+        "rejected_stale_pre_move": 14,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 276,
+      "candidate_rules": 282,
       "watch_accounts_approved": 32,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 176,
+      "watch_accounts_rejected": 178,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-15T16:52:24Z"
+    "updated_at": "2026-07-15T19:23:03Z"
   }
 }

@@ -1,34 +1,26 @@
 [
   {
-    "chain_slug": "base",
-    "address": "0x50f88fe97f72cd3e75b9eb4f747f59bceba80d59",
-    "symbol": "jesse",
-    "direction": "pump",
-    "price_change_h1_pct": 95.302,
-    "timestamp": 1784134344.2896538
-  },
-  {
     "chain_slug": "solana",
     "address": "b4ptavsue6ybtbwas38wfewesrvnfqlccj9jrrtju8vn",
     "symbol": "SOLdiers",
     "direction": "pump",
-    "price_change_h1_pct": 55.856,
-    "timestamp": 1784128181.7924547
+    "price_change_h1_pct": 4.629,
+    "timestamp": 1784143383.810745
   },
   {
     "chain_slug": "base",
     "address": "0xb2000000000000000000000ee9988edd75453501",
     "symbol": "PAMPU",
     "direction": "pump",
-    "price_change_h1_pct": 8.985,
-    "timestamp": 1784125388.8262377
+    "price_change_h1_pct": 11.265,
+    "timestamp": 1784143383.810745
   },
   {
-    "chain_slug": "solana",
-    "address": "g9j8wwdejxzdvwqgp82ooduhmpc3gy8ncsins71lpump",
-    "symbol": "BULLCAT",
+    "chain_slug": "base",
+    "address": "0x50f88fe97f72cd3e75b9eb4f747f59bceba80d59",
+    "symbol": "jesse",
     "direction": "pump",
-    "price_change_h1_pct": 14.992,
-    "timestamp": 1784125388.8262377
+    "price_change_h1_pct": 95.302,
+    "timestamp": 1784134344.2896538
   }
 ]

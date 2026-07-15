@@ -191,7 +191,7 @@
       "value": "from:mrmigglesonbase (miggles OR $miggles OR base OR \"monster candle\" OR \"base trend board\" OR \"anniversary run\" OR \"coinbase hopium\" OR \"trend leader\" OR \"meme bids\" OR \"coingecko rank\") is:reply -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-15T11:22:29Z",
+  "rules_synced_at": "2026-07-15T12:22:32Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -5782,7 +5782,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-15T11:22:29Z",
+  "updated_at": "2026-07-15T12:22:32Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

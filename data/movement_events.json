@@ -14156,30 +14156,166 @@
           "quietly pushed"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@mert",
+          "approval_evidence_url": "https://x.com/mert/status/2077387825255690569",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 4.5 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-15T13:40:28Z",
+          "approved_terms": [
+            "soldiers",
+            "sol holders",
+            "how come sol holders arent called soldiers"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": -4.53,
+          "source_evidence_urls": [
+            "https://x.com/mert/status/2077387825255690569"
+          ],
+          "terms": [
+            "soldiers",
+            "$soldiers",
+            "solders",
+            "sol holders",
+            "how come sol holders arent called soldiers",
+            "literal soldiers in the trenches",
+            "kol post",
+            "meme launch"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@soldiers_mert",
+          "approval_evidence_url": "https://x.com/SOLdiers_mert/status/2077390624282542092",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 6.6 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-15T13:51:35Z",
+          "approved_terms": [
+            "soldiers"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 6.58,
+          "source_evidence_urls": [
+            "https://x.com/SOLdiers_mert/status/2077390624282542092"
+          ],
+          "terms": [
+            "soldiers",
+            "$soldiers",
+            "solders",
+            "sol holders",
+            "how come sol holders arent called soldiers",
+            "literal soldiers in the trenches",
+            "kol post",
+            "meme launch"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-15T15:09:39Z",
+      "event_id": "signal_3b844fa31b67",
+      "evidence": [
+        {
+          "author_handle": "@mert",
+          "minutes_before_detection": 89.18,
+          "minutes_from_window_start": 270.82,
+          "relevance": "origin post that sparked the token",
+          "text": "how come sol holders arent called soldiers",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T13:40:28Z",
+          "tweet_id": "2077387825255690569",
+          "type": "x_post",
+          "url": "https://x.com/mert/status/2077387825255690569"
+        },
+        {
+          "author_handle": "@SOLdiers_mert",
+          "minutes_before_detection": 78.06,
+          "minutes_from_window_start": 281.94,
+          "relevance": "project reply tying directly to mert's line",
+          "text": "SOLdiers CA: B4ptaVsUe6YbtBwAS38WFeweSrVNfQLCcj9JRrtjU8vn",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T13:51:35Z",
+          "tweet_id": "2077390624282542092",
+          "type": "x_post",
+          "url": "https://x.com/SOLdiers_mert/status/2077390624282542092"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/B4ptaVsUe6YbtBwAS38WFeweSrVNfQLCcj9JRrtjU8vn"
+      },
+      "lore": "mert asked why sol holders arent called soldiers, the token launched off it and hit 1.7m mc on the back of that post",
+      "movement": {
+        "change_pct": 5013.7,
+        "detected_at": "2026-07-15T15:09:39Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T14:35:00Z",
+        "estimated_start_at": "2026-07-15T13:45:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 18,
+        "pool_address": "B4JM2z5DAqNCJtSFm4F8v5pc88KA8Fk3oyCSwEfsq9bR",
+        "pool_name": "SOLdiers / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-15T15:09:39Z",
+        "window_start_at": "2026-07-15T09:09:39Z"
+      },
+      "source_signal_id": "signal_3b844fa31b67",
+      "token": {
+        "address": "B4ptaVsUe6YbtBwAS38WFeweSrVNfQLCcj9JRrtjU8vn",
+        "chain_slug": "solana",
+        "symbol": "SOLdiers"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@mert",
+          "@SOLdiers_mert"
+        ],
+        "catalysts": [
+          "kol_post",
+          "meme_launch"
+        ],
+        "keywords": [
+          "soldiers",
+          "solders",
+          "sol holders"
+        ],
+        "phrases": [
+          "how come sol holders arent called soldiers",
+          "literal soldiers in the trenches"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-15T14:23:08Z",
+  "updated_at": "2026-07-15T15:09:41Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 28,
-        "approved_movement_chatter": 9,
+        "approved_alpha_source": 29,
+        "approved_movement_chatter": 10,
         "rejected_late_reaction": 127,
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 84,
         "rejected_stale_pre_move": 12,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 270,
-      "watch_accounts_approved": 29,
+      "candidate_rules": 272,
+      "watch_accounts_approved": 31,
       "watch_accounts_pending": 7,
       "watch_accounts_rejected": 174,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-15T14:23:08Z"
+    "updated_at": "2026-07-15T15:09:41Z"
   }
 }

@@ -1,5 +1,13 @@
 [
   {
+    "chain_slug": "solana",
+    "address": "b4ptavsue6ybtbwas38wfewesrvnfqlccj9jrrtju8vn",
+    "symbol": "SOLdiers",
+    "direction": "pump",
+    "price_change_h1_pct": 55.856,
+    "timestamp": 1784128181.7924547
+  },
+  {
     "chain_slug": "base",
     "address": "0xb2000000000000000000000ee9988edd75453501",
     "symbol": "PAMPU",

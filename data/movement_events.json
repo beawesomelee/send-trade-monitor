@@ -14796,10 +14796,165 @@
           "base b20"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@cobie",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base app",
+            "cobie dog $doji",
+            "base app handover",
+            "cobie said his dog is named $doji",
+            "kol narrative",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@jessepollak",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base app",
+            "cobie dog $doji",
+            "base app handover",
+            "cobie said his dog is named $doji",
+            "kol narrative",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@0xlinx349",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base app",
+            "cobie dog $doji",
+            "base app handover",
+            "cobie said his dog is named $doji",
+            "kol narrative",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@hasannn4721",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base app",
+            "cobie dog $doji",
+            "base app handover",
+            "cobie said his dog is named $doji",
+            "kol narrative",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-15T20:22:45Z",
+      "event_id": "signal_82f2e9e24129",
+      "evidence": [],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x693b8de886712f0039eef578bbe5ac7ea3b598ce"
+      },
+      "lore": "cobie taking base app triggered the dog meme. old 2021 tweet about his dog doji resurfaced, one version sitting ~20k on base while the listed contract pumps",
+      "movement": {
+        "change_pct": 32730.0,
+        "detected_at": "2026-07-15T20:22:45Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T19:55:00Z",
+        "estimated_start_at": "2026-07-15T16:40:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 46,
+        "pool_address": "0x65df01dac03a314771d7525e0e350b92d1659829",
+        "pool_name": "doji / WETH 1%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-15T20:22:45Z",
+        "window_start_at": "2026-07-15T14:22:45Z"
+      },
+      "source_signal_id": "signal_82f2e9e24129",
+      "token": {
+        "address": "0x693b8de886712f0039eef578bbe5ac7ea3b598ce",
+        "chain_slug": "base",
+        "symbol": "doji"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@cobie",
+          "@jessepollak",
+          "@0xLINX349",
+          "@hasannn4721"
+        ],
+        "catalysts": [
+          "kol_narrative",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "$doji",
+          "doji",
+          "cobie",
+          "base app"
+        ],
+        "phrases": [
+          "cobie dog $doji",
+          "base app handover",
+          "cobie said his dog is named $doji"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-15T19:23:03Z",
+  "updated_at": "2026-07-15T20:22:47Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -14810,16 +14965,16 @@
         "approved_movement_chatter": 11,
         "rejected_late_reaction": 131,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 87,
+        "rejected_no_tweet_evidence": 91,
         "rejected_stale_pre_move": 14,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 282,
+      "candidate_rules": 286,
       "watch_accounts_approved": 32,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 178,
+      "watch_accounts_rejected": 181,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-15T19:23:03Z"
+    "updated_at": "2026-07-15T20:22:47Z"
   }
 }

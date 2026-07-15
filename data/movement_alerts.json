@@ -1,5 +1,13 @@
 [
   {
+    "chain_slug": "base",
+    "address": "0x693b8de886712f0039eef578bbe5ac7ea3b598ce",
+    "symbol": "doji",
+    "direction": "pump",
+    "price_change_h1_pct": 23.368,
+    "timestamp": 1784146967.8320353
+  },
+  {
     "chain_slug": "solana",
     "address": "b4ptavsue6ybtbwas38wfewesrvnfqlccj9jrrtju8vn",
     "symbol": "SOLdiers",

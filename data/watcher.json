@@ -201,7 +201,7 @@
       "value": "from:mert (soldiers OR \"sol holders\" OR \"how come sol holders arent called soldiers\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-15T15:22:34Z",
+  "rules_synced_at": "2026-07-15T16:22:41Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -5964,7 +5964,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-15T15:22:34Z",
+  "updated_at": "2026-07-15T16:22:41Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

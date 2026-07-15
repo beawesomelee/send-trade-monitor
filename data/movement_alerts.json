@@ -4,23 +4,7 @@
     "address": "0xb2000000000000000000007bf6d5cbb0e24cb301",
     "symbol": "BRIAN",
     "direction": "pump",
-    "price_change_h1_pct": 1116.98,
-    "timestamp": 1784074978.7104712
-  },
-  {
-    "chain_slug": "solana",
-    "address": "wobycxyiabam6qbyxmubdespq3dplnusyqupmmbpump",
-    "symbol": "HAAL9K",
-    "direction": "pump",
-    "price_change_h1_pct": 14.012,
-    "timestamp": 1784074978.7104712
-  },
-  {
-    "chain_slug": "solana",
-    "address": "9w47d5k1whg4hogftk7l9xxv1p95tpuz6ehzsfarpump",
-    "symbol": "CATTEARS",
-    "direction": "pump",
-    "price_change_h1_pct": 19.381,
-    "timestamp": 1784060562.447618
+    "price_change_h1_pct": -10.488,
+    "timestamp": 1784089981.2895489
   }
 ]

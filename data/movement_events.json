@@ -13471,10 +13471,230 @@
           "fomo listing"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@brianbaldbull",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "base",
+            "claim portal live",
+            "$brian holders wake up",
+            "b20 launches",
+            "claim live",
+            "kol post"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@cmfer",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "base",
+            "claim portal live",
+            "$brian holders wake up",
+            "b20 launches",
+            "claim live",
+            "kol post"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@cryptodeus2",
+          "approval_evidence_url": "https://x.com/CryptoDeus2/status/2077245877622640940",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 301.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T04:16:25Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 301.42,
+          "source_evidence_urls": [
+            "https://x.com/CryptoDeus2/status/2077245877622640940"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "base",
+            "claim portal live",
+            "$brian holders wake up",
+            "b20 launches",
+            "claim live",
+            "kol post"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@tomasbeta_",
+          "approval_evidence_url": "https://x.com/tomasbeta_/status/2077246922272751919",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 305.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T04:20:34Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 305.57,
+          "source_evidence_urls": [
+            "https://x.com/tomasbeta_/status/2077246922272751919"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "base",
+            "claim portal live",
+            "$brian holders wake up",
+            "b20 launches",
+            "claim live",
+            "kol post"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cryptomfer69",
+          "approval_evidence_url": "https://x.com/cryptomfer69/status/2077190516383339002",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 81.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T00:36:26Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 81.43,
+          "source_evidence_urls": [
+            "https://x.com/cryptomfer69/status/2077190516383339002"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "base",
+            "claim portal live",
+            "$brian holders wake up",
+            "b20 launches",
+            "claim live",
+            "kol post"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-15T04:32:58Z",
+      "event_id": "signal_2db243425c63",
+      "evidence": [
+        {
+          "author_handle": "@tomasbeta_",
+          "minutes_before_detection": 12.39,
+          "minutes_from_window_start": 347.61,
+          "relevance": "direct claim announcement tied to contract",
+          "text": "$BRIAN holders wake up portal live $30 for some wallets",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T04:20:34Z",
+          "tweet_id": "2077246922272751919",
+          "type": "x_post",
+          "url": "https://x.com/tomasbeta_/status/2077246922272751919"
+        },
+        {
+          "author_handle": "@CryptoDeus2",
+          "minutes_before_detection": 16.55,
+          "minutes_from_window_start": 343.45,
+          "relevance": "early ape on brian armstrong connection",
+          "text": "gambled into $BRIAN the coinbase man",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T04:16:25Z",
+          "tweet_id": "2077245877622640940",
+          "type": "x_post",
+          "url": "https://x.com/CryptoDeus2/status/2077245877622640940"
+        },
+        {
+          "author_handle": "@cryptomfer69",
+          "minutes_before_detection": 236.53,
+          "minutes_from_window_start": 123.47,
+          "relevance": "high % gain callout with base narra",
+          "text": "$BRIAN is up +46k% just fyi never fade base",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T00:36:26Z",
+          "tweet_id": "2077190516383339002",
+          "type": "x_post",
+          "url": "https://x.com/cryptomfer69/status/2077190516383339002"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb2000000000000000000007bf6d5cbb0e24cb301"
+      },
+      "lore": "claim portal live with $30 drops for some wallets, brian armstrong quote circulating, 5.9m vol on the b20 base runner",
+      "movement": {
+        "change_pct": 22819.7,
+        "detected_at": "2026-07-15T04:32:58Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T00:05:00Z",
+        "estimated_start_at": "2026-07-14T23:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 65,
+        "pool_address": "0x02f924e13a22fcf86551a2228206905bfe4a78b1b2d0158c76dbddb38ea50013",
+        "pool_name": "BRIAN / ETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-15T04:32:58Z",
+        "window_start_at": "2026-07-14T22:32:58Z"
+      },
+      "source_signal_id": "signal_2db243425c63",
+      "token": {
+        "address": "0xb2000000000000000000007bf6d5cbb0e24cb301",
+        "chain_slug": "base",
+        "symbol": "BRIAN"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@brianbaldbull",
+          "@cmfer",
+          "@CryptoDeus2"
+        ],
+        "catalysts": [
+          "claim_live",
+          "kol_post"
+        ],
+        "keywords": [
+          "$BRIAN",
+          "b20",
+          "base"
+        ],
+        "phrases": [
+          "claim portal live",
+          "$BRIAN holders wake up",
+          "b20 launches"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-15T00:22:58Z",
+  "updated_at": "2026-07-15T04:33:01Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -13483,18 +13703,18 @@
       "candidate_labels": {
         "approved_alpha_source": 27,
         "approved_movement_chatter": 9,
-        "rejected_late_reaction": 121,
+        "rejected_late_reaction": 124,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 78,
+        "rejected_no_tweet_evidence": 80,
         "rejected_stale_pre_move": 11,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 256,
+      "candidate_rules": 261,
       "watch_accounts_approved": 28,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 163,
+      "watch_accounts_rejected": 168,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-15T00:22:58Z"
+    "updated_at": "2026-07-15T04:33:01Z"
   }
 }

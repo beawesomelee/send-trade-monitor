@@ -1,6 +1,14 @@
 [
   {
     "chain_slug": "base",
+    "address": "0x693b8de886712f0039eef578bbe5ac7ea3b598ce",
+    "symbol": "doji",
+    "direction": "pump",
+    "price_change_h1_pct": 31.416,
+    "timestamp": 1784204565.0606682
+  },
+  {
+    "chain_slug": "base",
     "address": "0xb2000000000000000000000ee9988edd75453501",
     "symbol": "PAMPU",
     "direction": "pump",
@@ -14,13 +22,5 @@
     "direction": "pump",
     "price_change_h1_pct": 48.006,
     "timestamp": 1784190159.8194728
-  },
-  {
-    "chain_slug": "solana",
-    "address": "b4ptavsue6ybtbwas38wfewesrvnfqlccj9jrrtju8vn",
-    "symbol": "SOLdiers",
-    "direction": "pump",
-    "price_change_h1_pct": 10.194,
-    "timestamp": 1784179364.4553611
   }
 ]

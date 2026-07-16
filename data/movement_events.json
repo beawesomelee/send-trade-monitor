@@ -16333,10 +16333,193 @@
           "long term holders win"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@bscnews",
+          "approval_evidence_url": "https://x.com/BSCNews/status/2077722161918189805",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 314.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-16T11:49:00Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 314.0,
+          "source_evidence_urls": [
+            "https://x.com/BSCNews/status/2077722161918189805"
+          ],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "base meme season",
+            "cobie dog",
+            "base szn",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@sunapooh67",
+          "approval_evidence_url": "https://x.com/sunapooh67/status/2077723641526321412",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 319.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-16T11:54:53Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 319.88,
+          "source_evidence_urls": [
+            "https://x.com/sunapooh67/status/2077723641526321412"
+          ],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "base meme season",
+            "cobie dog",
+            "base szn",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@attilanx",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "base meme season",
+            "cobie dog",
+            "base szn",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@k9er25",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "base meme season",
+            "cobie dog",
+            "base szn",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-16T12:22:42Z",
+      "event_id": "signal_1814f89e73c4",
+      "evidence": [
+        {
+          "author_handle": "@BSCNews",
+          "minutes_before_detection": 33.7,
+          "minutes_from_window_start": 326.3,
+          "relevance": "main catalyst post tying the pump to cobie and base",
+          "text": "Base Chain Just Produced a 400X Runner! ... $DOJI on Base has sparked an anomaly, surging over 40,000% in the past 24 hours after nearly 8 months of inactivity. The memecoin, themed after Cobie's dog",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-16T11:49:00Z",
+          "tweet_id": "2077722161918189805",
+          "type": "x_post",
+          "url": "https://x.com/BSCNews/status/2077722161918189805"
+        },
+        {
+          "author_handle": "@sunapooh67",
+          "minutes_before_detection": 27.82,
+          "minutes_from_window_start": 332.18,
+          "relevance": "direct callout on the narrative driver",
+          "text": "Cobie just started the Base meme season $doji",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-16T11:54:53Z",
+          "tweet_id": "2077723641526321412",
+          "type": "x_post",
+          "url": "https://x.com/sunapooh67/status/2077723641526321412"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x693b8de886712f0039eef578bbe5ac7ea3b598ce"
+      },
+      "lore": "cobie dog meme on base waking after 8 months. bscnews flagged the 40k% run. base szn chatter starting",
+      "movement": {
+        "change_pct": 156.7,
+        "detected_at": "2026-07-16T12:22:42Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-16T12:10:00Z",
+        "estimated_start_at": "2026-07-16T06:35:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x65df01dac03a314771d7525e0e350b92d1659829",
+        "pool_name": "doji / WETH 1%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-16T12:22:42Z",
+        "window_start_at": "2026-07-16T06:22:42Z"
+      },
+      "source_signal_id": "signal_1814f89e73c4",
+      "token": {
+        "address": "0x693b8de886712f0039eef578bbe5ac7ea3b598ce",
+        "chain_slug": "base",
+        "symbol": "doji"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@BSCNews",
+          "@sunapooh67",
+          "@AttilanX",
+          "@K9er25"
+        ],
+        "catalysts": [
+          "kol_post",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "$doji",
+          "cobie",
+          "base"
+        ],
+        "phrases": [
+          "base meme season",
+          "cobie dog",
+          "base szn"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-16T09:22:47Z",
+  "updated_at": "2026-07-16T12:22:45Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -16345,18 +16528,18 @@
       "candidate_labels": {
         "approved_alpha_source": 34,
         "approved_movement_chatter": 12,
-        "rejected_late_reaction": 141,
+        "rejected_late_reaction": 143,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 101,
+        "rejected_no_tweet_evidence": 103,
         "rejected_stale_pre_move": 15,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 313,
+      "candidate_rules": 317,
       "watch_accounts_approved": 38,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 195,
+      "watch_accounts_rejected": 198,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-16T09:22:47Z"
+    "updated_at": "2026-07-16T12:22:45Z"
   }
 }

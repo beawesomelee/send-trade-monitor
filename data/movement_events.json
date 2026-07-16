@@ -16114,30 +16114,249 @@
           "3000 holders"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@pampuonbase",
+          "approval_evidence_url": "https://x.com/pampuonbase/status/2077508358635131198",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 370.6 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-15T21:39:25Z",
+          "approved_terms": [
+            "pampu",
+            "$pampu"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -370.58,
+          "source_evidence_urls": [
+            "https://x.com/pampuonbase/status/2077508358635131198"
+          ],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "base cat",
+            "o1 exchange",
+            "long term holders win",
+            "team post",
+            "meme narrative"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@tigrge",
+          "approval_evidence_url": "https://x.com/Tigrge/status/2077684981195800760",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 331.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-16T09:21:15Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 331.25,
+          "source_evidence_urls": [
+            "https://x.com/Tigrge/status/2077684981195800760"
+          ],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "base cat",
+            "o1 exchange",
+            "long term holders win",
+            "team post",
+            "meme narrative"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@aanatolyevlec",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "base cat",
+            "o1 exchange",
+            "long term holders win",
+            "team post",
+            "meme narrative"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@0xsibzb",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "base cat",
+            "o1 exchange",
+            "long term holders win",
+            "team post",
+            "meme narrative"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@bankrbot",
+          "approval_evidence_url": "https://x.com/bankrbot/status/2077328517143171276",
+          "approval_label": "rejected_stale_pre_move",
+          "approval_reason": "tweet was 1085.2 minutes before the estimated move start, outside the freshness window",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T09:44:48Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -1085.2,
+          "source_evidence_urls": [
+            "https://x.com/bankrbot/status/2077328517143171276"
+          ],
+          "terms": [
+            "pampu",
+            "$pampu",
+            "b20",
+            "base cat",
+            "o1 exchange",
+            "long term holders win",
+            "team post",
+            "meme narrative"
+          ],
+          "timing_bucket": "pre_window"
+        }
+      ],
+      "detected_at": "2026-07-16T09:22:45Z",
+      "event_id": "signal_501882cb679f",
+      "evidence": [
+        {
+          "author_handle": "@pampuonbase",
+          "minutes_before_detection": 703.32,
+          "minutes_from_window_start": -343.32,
+          "relevance": "project's own post encouraging holders, aligns with timing of move",
+          "text": "Who sold yesterday is crying today. Who sells today might cry tomorrow. Only long-term holders win. Stay patient. Stay bullish on $BASE & $PAMPU.",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-15T21:39:25Z",
+          "tweet_id": "2077508358635131198",
+          "type": "x_post",
+          "url": "https://x.com/pampuonbase/status/2077508358635131198"
+        },
+        {
+          "author_handle": "@Tigrge",
+          "minutes_before_detection": 1.49,
+          "minutes_from_window_start": 358.51,
+          "relevance": "narrative link to exchange fame driving small account hype",
+          "text": "WIF made pumpfun famous and solana! Cashcat started the flywheel on Robinhood! Pampu can make O1 exchange and Base ecosystem more famous",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-16T09:21:15Z",
+          "tweet_id": "2077684981195800760",
+          "type": "x_post",
+          "url": "https://x.com/Tigrge/status/2077684981195800760"
+        },
+        {
+          "author_handle": "@bankrbot",
+          "minutes_before_detection": 1417.95,
+          "minutes_from_window_start": -1057.95,
+          "relevance": "early bot note on momentum before today's pump",
+          "text": "PAMPU is showing significant momentum on Base. 24h Change: +183.66%",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-15T09:44:48Z",
+          "tweet_id": "2077328517143171276",
+          "type": "x_post",
+          "url": "https://x.com/bankrbot/status/2077328517143171276"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb2000000000000000000000ee9988edd75453501"
+      },
+      "lore": "project posted hold long on base cat yesterday. small accounts tying it to o1 exchange meme flywheel. thin chatter, quiet pump on the tape",
+      "movement": {
+        "change_pct": 55.8,
+        "detected_at": "2026-07-16T09:22:45Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-16T08:05:00Z",
+        "estimated_start_at": "2026-07-16T03:50:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x4dc4dcca55db54a443dcea2ba72e9c35898458367f29cbd6c84f74cf94815d2f",
+        "pool_name": "PAMPU / ETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-16T09:22:45Z",
+        "window_start_at": "2026-07-16T03:22:45Z"
+      },
+      "source_signal_id": "signal_501882cb679f",
+      "token": {
+        "address": "0xb2000000000000000000000ee9988edd75453501",
+        "chain_slug": "base",
+        "symbol": "PAMPU"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@pampuonbase",
+          "@Tigrge",
+          "@AAnatolyevlec",
+          "@0xSibzb"
+        ],
+        "catalysts": [
+          "team_post",
+          "meme_narrative"
+        ],
+        "keywords": [
+          "pampu",
+          "b20",
+          "base cat"
+        ],
+        "phrases": [
+          "base cat",
+          "o1 exchange",
+          "long term holders win"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-16T08:22:39Z",
+  "updated_at": "2026-07-16T09:22:47Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 33,
+        "approved_alpha_source": 34,
         "approved_movement_chatter": 12,
-        "rejected_late_reaction": 140,
+        "rejected_late_reaction": 141,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 99,
-        "rejected_stale_pre_move": 14,
+        "rejected_no_tweet_evidence": 101,
+        "rejected_stale_pre_move": 15,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 308,
-      "watch_accounts_approved": 37,
+      "candidate_rules": 313,
+      "watch_accounts_approved": 38,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 193,
+      "watch_accounts_rejected": 195,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-16T08:22:39Z"
+    "updated_at": "2026-07-16T09:22:47Z"
   }
 }

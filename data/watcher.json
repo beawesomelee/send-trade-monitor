@@ -241,7 +241,7 @@
       "value": "from:bankrbot (bnkr OR $bnkr OR jesse OR $jesse OR base OR jessepollak OR \"founder coin\" OR \"prove base isn't dead\" OR \"revenge trade\" OR \"kol post\" OR \"narrative reactivation\" OR pampu OR $pampu OR b20 OR \"base cat\" OR \"o1 exchange\" OR \"long term holders win\" OR \"team post\" OR \"meme narrative\") is:reply -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-16T22:33:20Z",
+  "rules_synced_at": "2026-07-16T23:22:35Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -6977,7 +6977,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-16T22:33:20Z",
+  "updated_at": "2026-07-16T23:22:35Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

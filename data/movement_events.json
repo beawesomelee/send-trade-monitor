@@ -16516,10 +16516,207 @@
           "base szn"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@k9er25",
+          "approval_evidence_url": "https://x.com/K9er25/status/2077846652392546480",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 318.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-16T20:03:41Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 318.68,
+          "source_evidence_urls": [
+            "https://x.com/K9er25/status/2077846652392546480"
+          ],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "cobie's dog",
+            "base szn",
+            "front run base szn",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@revivedeadmeta",
+          "approval_evidence_url": "https://x.com/revivedeadmeta/status/2077831353387684040",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 257.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-16T19:02:53Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 257.88,
+          "source_evidence_urls": [
+            "https://x.com/revivedeadmeta/status/2077831353387684040"
+          ],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "cobie's dog",
+            "base szn",
+            "front run base szn",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@klik_evm",
+          "approval_evidence_url": "https://x.com/klik_evm/status/2077818995579977814",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 208.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-16T18:13:47Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 208.78,
+          "source_evidence_urls": [
+            "https://x.com/klik_evm/status/2077818995579977814"
+          ],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "cobie's dog",
+            "base szn",
+            "front run base szn",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cobie",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "cobie's dog",
+            "base szn",
+            "front run base szn",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-16T20:22:46Z",
+      "event_id": "signal_b8a158553da0",
+      "evidence": [
+        {
+          "author_handle": "@K9er25",
+          "minutes_before_detection": 19.08,
+          "minutes_from_window_start": 340.92,
+          "relevance": "direct kol call on positioning for cobie/base narrative",
+          "text": "worth positioning into $doji to front run base szn with cobie now taking over.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-16T20:03:41Z",
+          "tweet_id": "2077846652392546480",
+          "type": "x_post",
+          "url": "https://x.com/K9er25/status/2077846652392546480"
+        },
+        {
+          "author_handle": "@revivedeadmeta",
+          "minutes_before_detection": 79.87,
+          "minutes_from_window_start": 280.13,
+          "relevance": "labels it explicitly as cobie's dog in hot coins list",
+          "text": "$doji - on base (cobie's dog)",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-16T19:02:53Z",
+          "tweet_id": "2077831353387684040",
+          "type": "x_post",
+          "url": "https://x.com/revivedeadmeta/status/2077831353387684040"
+        },
+        {
+          "author_handle": "@klik_evm",
+          "minutes_before_detection": 128.98,
+          "minutes_from_window_start": 231.02,
+          "relevance": "explains launch and ties to cobie original post",
+          "text": "DOJI is cobie's dog, launched through KLIK on @base",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-16T18:13:47Z",
+          "tweet_id": "2077818995579977814",
+          "type": "x_post",
+          "url": "https://x.com/klik_evm/status/2077818995579977814"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x693b8de886712f0039eef578bbe5ac7ea3b598ce"
+      },
+      "lore": "k9er25 and revivedeadmeta flagging cobie's dog doji for base szn rotation. old cobie post resurfacing, project handle quiet",
+      "movement": {
+        "change_pct": 88.5,
+        "detected_at": "2026-07-16T20:22:46Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-16T18:00:00Z",
+        "estimated_start_at": "2026-07-16T14:45:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x65df01dac03a314771d7525e0e350b92d1659829",
+        "pool_name": "doji / WETH 1%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-16T20:22:46Z",
+        "window_start_at": "2026-07-16T14:22:46Z"
+      },
+      "source_signal_id": "signal_b8a158553da0",
+      "token": {
+        "address": "0x693b8de886712f0039eef578bbe5ac7ea3b598ce",
+        "chain_slug": "base",
+        "symbol": "doji"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@K9er25",
+          "@revivedeadmeta",
+          "@klik_evm",
+          "@cobie"
+        ],
+        "catalysts": [
+          "kol_post",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "doji",
+          "cobie",
+          "base"
+        ],
+        "phrases": [
+          "cobie's dog",
+          "base szn",
+          "front run base szn"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-16T12:22:45Z",
+  "updated_at": "2026-07-16T20:22:48Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -16528,18 +16725,18 @@
       "candidate_labels": {
         "approved_alpha_source": 34,
         "approved_movement_chatter": 12,
-        "rejected_late_reaction": 143,
+        "rejected_late_reaction": 146,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 103,
+        "rejected_no_tweet_evidence": 104,
         "rejected_stale_pre_move": 15,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 317,
+      "candidate_rules": 321,
       "watch_accounts_approved": 38,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 198,
+      "watch_accounts_rejected": 200,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-16T12:22:45Z"
+    "updated_at": "2026-07-16T20:22:48Z"
   }
 }

@@ -15305,10 +15305,223 @@
           "revenge trade"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@wifargmemecoin",
+          "approval_evidence_url": "https://x.com/WIFARGMEMECOIN/status/2077529173963223434",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 57.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T23:02:08Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 57.13,
+          "source_evidence_urls": [
+            "https://x.com/WIFARGMEMECOIN/status/2077529173963223434"
+          ],
+          "terms": [
+            "wifarg",
+            "$wifarg",
+            "dex paid",
+            "went parabolic",
+            "team update",
+            "kol post"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@meme_trader100",
+          "approval_evidence_url": "https://x.com/meme_trader100/status/2077548759500853608",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 134.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-16T00:19:57Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 134.95,
+          "source_evidence_urls": [
+            "https://x.com/meme_trader100/status/2077548759500853608"
+          ],
+          "terms": [
+            "wifarg",
+            "$wifarg",
+            "dex paid",
+            "went parabolic",
+            "team update",
+            "kol post"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-16T00:22:56Z",
+      "event_id": "signal_c169f0d0a633",
+      "evidence": [
+        {
+          "author_handle": "@WIFARGMEMECOIN",
+          "minutes_before_detection": 80.79,
+          "minutes_from_window_start": 279.21,
+          "relevance": "project's own announcement coinciding with the move",
+          "text": "DEX PAID ! CV9dcP2D9hYtcnNtoHoY4NQEN9fYxfBbQN72wkd5pump",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T23:02:08Z",
+          "tweet_id": "2077529173963223434",
+          "type": "x_post",
+          "url": "https://x.com/WIFARGMEMECOIN/status/2077529173963223434"
+        },
+        {
+          "author_handle": "@meme_trader100",
+          "minutes_before_detection": 2.97,
+          "minutes_from_window_start": 357.03,
+          "relevance": "early caller noting the parabolic move from microcap",
+          "text": "$WIFARG went parabolic Called early at $9.6K MC, now sitting around $2.4M MC",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-16T00:19:57Z",
+          "tweet_id": "2077548759500853608",
+          "type": "x_post",
+          "url": "https://x.com/meme_trader100/status/2077548759500853608"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/CV9dcP2D9hYtcnNtoHoY4NQEN9fYxfBbQN72wkd5pump"
+      },
+      "lore": "project posted dex paid last night, a few signal accounts called the 12x from 124k mc. mostly listing vote spam and low engagement since. thin liq runner?",
+      "movement": {
+        "change_pct": 6242.7,
+        "detected_at": "2026-07-16T00:22:56Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-16T00:20:00Z",
+        "estimated_start_at": "2026-07-15T22:05:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 29,
+        "pool_address": "7owxXHA2BNrtHHimpK7QcxvZyVSd6RJbqM6jmLcTMZMk",
+        "pool_name": "WIFARG / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-16T00:22:56Z",
+        "window_start_at": "2026-07-15T18:22:56Z"
+      },
+      "source_signal_id": "signal_c169f0d0a633",
+      "token": {
+        "address": "CV9dcP2D9hYtcnNtoHoY4NQEN9fYxfBbQN72wkd5pump",
+        "chain_slug": "solana",
+        "symbol": "WIFARG"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@WIFARGMEMECOIN",
+          "@meme_trader100"
+        ],
+        "catalysts": [
+          "team_update",
+          "kol_post"
+        ],
+        "keywords": [
+          "$WIFARG",
+          "WIFARG"
+        ],
+        "phrases": [
+          "dex paid",
+          "went parabolic"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@pumpfuneco",
+          "approval_evidence_url": "https://x.com/PumpfunEco/status/2077537079920066605",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 38.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-15T23:33:33Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 38.55,
+          "source_evidence_urls": [
+            "https://x.com/PumpfunEco/status/2077537079920066605"
+          ],
+          "terms": [
+            "trumpcoin",
+            "$trumpcoin",
+            "trump coin",
+            "white house interacted",
+            "trump coin post",
+            "news interaction"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-16T00:22:56Z",
+      "event_id": "signal_11fda6d19128",
+      "evidence": [
+        {
+          "author_handle": "@PumpfunEco",
+          "minutes_before_detection": 49.38,
+          "minutes_from_window_start": 310.62,
+          "relevance": "directly explains the catalyst behind the recent pump",
+          "text": "$TrumpCoin surges to a $2M market cap after the White House interacted with a post about a commemorative Trump coin",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-15T23:33:33Z",
+          "tweet_id": "2077537079920066605",
+          "type": "x_post",
+          "url": "https://x.com/PumpfunEco/status/2077537079920066605"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/F4GpAFr6vrxU3Y887F3XWkXRgybCVjZNk63m72f6pump"
+      },
+      "lore": "white house interacted with a trump coin post, pushing it to 2m mc",
+      "movement": {
+        "change_pct": 335.2,
+        "detected_at": "2026-07-16T00:22:56Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T23:55:00Z",
+        "estimated_start_at": "2026-07-15T22:55:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "FpJFWZ3nGFVYWkpDXZQM8QaLJzmy6U3NgaA8nc7SNDag",
+        "pool_name": "TrumpCoin / USDC",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-16T00:22:56Z",
+        "window_start_at": "2026-07-15T18:22:56Z"
+      },
+      "source_signal_id": "signal_11fda6d19128",
+      "token": {
+        "address": "F4GpAFr6vrxU3Y887F3XWkXRgybCVjZNk63m72f6pump",
+        "chain_slug": "solana",
+        "symbol": "TrumpCoin"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@PumpfunEco"
+        ],
+        "catalysts": [
+          "news_interaction"
+        ],
+        "keywords": [
+          "trumpcoin",
+          "trump coin"
+        ],
+        "phrases": [
+          "white house interacted",
+          "trump coin post"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-15T21:23:02Z",
+  "updated_at": "2026-07-16T00:23:00Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -15317,18 +15530,18 @@
       "candidate_labels": {
         "approved_alpha_source": 29,
         "approved_movement_chatter": 12,
-        "rejected_late_reaction": 134,
+        "rejected_late_reaction": 137,
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 94,
         "rejected_stale_pre_move": 14,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 293,
+      "candidate_rules": 296,
       "watch_accounts_approved": 33,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 183,
+      "watch_accounts_rejected": 185,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-15T21:23:02Z"
+    "updated_at": "2026-07-16T00:23:00Z"
   }
 }

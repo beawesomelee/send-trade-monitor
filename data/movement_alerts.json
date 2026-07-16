@@ -1,5 +1,13 @@
 [
   {
+    "chain_slug": "base",
+    "address": "0x693b8de886712f0039eef578bbe5ac7ea3b598ce",
+    "symbol": "doji",
+    "direction": "pump",
+    "price_change_h1_pct": 37.938,
+    "timestamp": 1784163671.6138601
+  },
+  {
     "chain_slug": "solana",
     "address": "cv9dcp2d9hytcnntohoy4nqen9fyxfbbqn72wkd5pump",
     "symbol": "WIFARG",
@@ -30,13 +38,5 @@
     "direction": "pump",
     "price_change_h1_pct": 5.956,
     "timestamp": 1784150582.9487133
-  },
-  {
-    "chain_slug": "base",
-    "address": "0x693b8de886712f0039eef578bbe5ac7ea3b598ce",
-    "symbol": "doji",
-    "direction": "pump",
-    "price_change_h1_pct": 23.368,
-    "timestamp": 1784146967.8320353
   }
 ]

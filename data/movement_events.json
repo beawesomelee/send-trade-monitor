@@ -15518,30 +15518,216 @@
           "trump coin post"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@mathdreamz",
+          "approval_evidence_url": "https://x.com/mathdreamz/status/2077433944111280501",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 151.3 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-15T16:43:43Z",
+          "approved_terms": [
+            "doji",
+            "cobie"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -151.28,
+          "source_evidence_urls": [
+            "https://x.com/mathdreamz/status/2077433944111280501"
+          ],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "cobie dog",
+            "cobi's cat confirmed",
+            "doji on base",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@rynard_yup",
+          "approval_evidence_url": "https://x.com/rynard_yup/status/2077558743760621984",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 344.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-16T00:59:38Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 344.63,
+          "source_evidence_urls": [
+            "https://x.com/rynard_yup/status/2077558743760621984"
+          ],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "cobie dog",
+            "cobi's cat confirmed",
+            "doji on base",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@attilanx",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "cobie dog",
+            "cobi's cat confirmed",
+            "doji on base",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@solanawhale69",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "doji",
+            "$doji",
+            "cobie",
+            "base",
+            "cobie dog",
+            "cobi's cat confirmed",
+            "doji on base",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-16T01:01:09Z",
+      "event_id": "signal_1aecd4127f3c",
+      "evidence": [
+        {
+          "author_handle": "@mathdreamz",
+          "minutes_before_detection": 497.42,
+          "minutes_from_window_start": -137.42,
+          "relevance": "early ape call tying directly to the cobie narrative driving the move",
+          "text": "aped 0x693b8de886712f0039eef578bbe5ac7ea3b598ce Doji cobie's cat confirmed",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-15T16:43:43Z",
+          "tweet_id": "2077433944111280501",
+          "type": "x_post",
+          "url": "https://x.com/mathdreamz/status/2077433944111280501"
+        },
+        {
+          "author_handle": "@rynard_yup",
+          "minutes_before_detection": 1.51,
+          "minutes_from_window_start": 358.49,
+          "relevance": "recent bull post reinforcing the dog meme",
+          "text": "idc if cobie even has a dog or not $doji is the best name for a dog in crypto",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-16T00:59:38Z",
+          "tweet_id": "2077558743760621984",
+          "type": "x_post",
+          "url": "https://x.com/rynard_yup/status/2077558743760621984"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x693b8de886712f0039eef578bbe5ac7ea3b598ce"
+      },
+      "lore": "cobie dog meme bids hitting base, @mathdreamz aped the ca with confirmation post, old cobie denial quotes getting quoted again",
+      "movement": {
+        "change_pct": 133.2,
+        "detected_at": "2026-07-16T01:01:09Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-15T19:55:00Z",
+        "estimated_start_at": "2026-07-15T19:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 102,
+        "pool_address": "0x65df01dac03a314771d7525e0e350b92d1659829",
+        "pool_name": "doji / WETH 1%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-16T01:01:09Z",
+        "window_start_at": "2026-07-15T19:01:09Z"
+      },
+      "source_signal_id": "signal_1aecd4127f3c",
+      "token": {
+        "address": "0x693b8de886712f0039eef578bbe5ac7ea3b598ce",
+        "chain_slug": "base",
+        "symbol": "doji"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@mathdreamz",
+          "@rynard_yup",
+          "@AttilanX",
+          "@SolanaWhale69"
+        ],
+        "catalysts": [
+          "kol_post",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "$doji",
+          "cobie",
+          "base"
+        ],
+        "phrases": [
+          "cobie dog",
+          "cobi's cat confirmed",
+          "doji on base"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-16T00:23:00Z",
+  "updated_at": "2026-07-16T01:01:11Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 29,
+        "approved_alpha_source": 30,
         "approved_movement_chatter": 12,
-        "rejected_late_reaction": 137,
+        "rejected_late_reaction": 138,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 94,
+        "rejected_no_tweet_evidence": 96,
         "rejected_stale_pre_move": 14,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 296,
-      "watch_accounts_approved": 33,
+      "candidate_rules": 300,
+      "watch_accounts_approved": 34,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 185,
+      "watch_accounts_rejected": 188,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-16T00:23:00Z"
+    "updated_at": "2026-07-16T01:01:11Z"
   }
 }

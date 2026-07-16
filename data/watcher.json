@@ -221,7 +221,7 @@
       "value": "from:mathdreamz (doji OR cobie) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-16T03:22:32Z",
+  "rules_synced_at": "2026-07-16T04:22:29Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -6567,7 +6567,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-16T03:22:32Z",
+  "updated_at": "2026-07-16T04:22:29Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

@@ -266,7 +266,7 @@
       "value": "from:zippy257 (jesse OR $jesse OR \"base founder\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-17T03:23:04Z",
+  "rules_synced_at": "2026-07-17T04:22:30Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -7393,7 +7393,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-17T03:23:04Z",
+  "updated_at": "2026-07-17T04:22:30Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

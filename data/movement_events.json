@@ -19351,10 +19351,182 @@
           "holding $GITLAWB does something similar"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@crismorcillo",
+          "approval_evidence_url": "https://x.com/CrisMorcillo/status/2078183567620727280",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 257.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T18:22:27Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 257.45,
+          "source_evidence_urls": [
+            "https://x.com/CrisMorcillo/status/2078183567620727280"
+          ],
+          "terms": [
+            "housem",
+            "$housem",
+            "fomo",
+            "claim",
+            "fomo listing vote",
+            "holder claim is up",
+            "claim worked first try",
+            "listing vote",
+            "airdrop claim"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@machadopaulinho",
+          "approval_evidence_url": "https://x.com/machadopaulinho/status/2078183148639187169",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 255.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T18:20:48Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 255.8,
+          "source_evidence_urls": [
+            "https://x.com/machadopaulinho/status/2078183148639187169"
+          ],
+          "terms": [
+            "housem",
+            "$housem",
+            "fomo",
+            "claim",
+            "fomo listing vote",
+            "holder claim is up",
+            "claim worked first try",
+            "listing vote",
+            "airdrop claim"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@abidinn19546104",
+          "approval_evidence_url": "https://x.com/Abidinn19546104/status/2078183137729810689",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 255.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T18:20:45Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 255.75,
+          "source_evidence_urls": [
+            "https://x.com/Abidinn19546104/status/2078183137729810689"
+          ],
+          "terms": [
+            "housem",
+            "$housem",
+            "fomo",
+            "claim",
+            "fomo listing vote",
+            "holder claim is up",
+            "claim worked first try",
+            "listing vote",
+            "airdrop claim"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-17T18:22:46Z",
+      "event_id": "signal_7cabc88f1703",
+      "evidence": [
+        {
+          "author_handle": "@CrisMorcillo",
+          "minutes_before_detection": 0.3,
+          "minutes_from_window_start": 359.7,
+          "relevance": "shows listing vote activity tied to the token",
+          "text": "I just voted YES for $HOUSEM to get listed on FOMO!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T18:22:27Z",
+          "tweet_id": "2078183567620727280",
+          "type": "x_post",
+          "url": "https://x.com/CrisMorcillo/status/2078183567620727280"
+        },
+        {
+          "author_handle": "@machadopaulinho",
+          "minutes_before_detection": 1.97,
+          "minutes_from_window_start": 358.03,
+          "relevance": "direct mention of claims working",
+          "text": "$HOUSEM came outta nowhere with this claim worked first try",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T18:20:48Z",
+          "tweet_id": "2078183148639187169",
+          "type": "x_post",
+          "url": "https://x.com/machadopaulinho/status/2078183148639187169"
+        },
+        {
+          "author_handle": "@Abidinn19546104",
+          "minutes_before_detection": 2.01,
+          "minutes_from_window_start": 357.99,
+          "relevance": "confirms holder claims live",
+          "text": "ok $HOUSEM surprised me holder claim is up secured a small one",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T18:20:45Z",
+          "tweet_id": "2078183137729810689",
+          "type": "x_post",
+          "url": "https://x.com/Abidinn19546104/status/2078183137729810689"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/AZ1fowC7PCS4rKJCY7UFuDqwvGNRRxzJj9BQxiHfpump"
+      },
+      "lore": "fomo listing vote live, holder claims hitting for small accounts",
+      "movement": {
+        "change_pct": 5738.9,
+        "detected_at": "2026-07-17T18:22:46Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T18:20:00Z",
+        "estimated_start_at": "2026-07-17T14:05:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 53,
+        "pool_address": "5Z8zi47YaJE3ARqb8GiE39joXKjQXjnf3fsLnEtvV8fz",
+        "pool_name": "HOUSEM / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-17T18:22:46Z",
+        "window_start_at": "2026-07-17T12:22:46Z"
+      },
+      "source_signal_id": "signal_7cabc88f1703",
+      "token": {
+        "address": "AZ1fowC7PCS4rKJCY7UFuDqwvGNRRxzJj9BQxiHfpump",
+        "chain_slug": "solana",
+        "symbol": "HOUSEM"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@CrisMorcillo",
+          "@machadopaulinho",
+          "@Abidinn19546104"
+        ],
+        "catalysts": [
+          "listing_vote",
+          "airdrop_claim"
+        ],
+        "keywords": [
+          "$HOUSEM",
+          "fomo",
+          "claim"
+        ],
+        "phrases": [
+          "fomo listing vote",
+          "holder claim is up",
+          "claim worked first try"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-17T16:42:39Z",
+  "updated_at": "2026-07-17T18:22:48Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -19363,19 +19535,19 @@
       "candidate_labels": {
         "approved_alpha_source": 37,
         "approved_movement_chatter": 16,
-        "rejected_late_reaction": 168,
+        "rejected_late_reaction": 171,
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 119,
         "rejected_stale_pre_move": 16,
         "unknown_movement_start": 7,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 373,
+      "candidate_rules": 376,
       "watch_accounts_approved": 45,
       "watch_accounts_pending": 14,
-      "watch_accounts_rejected": 222,
+      "watch_accounts_rejected": 225,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-17T16:42:39Z"
+    "updated_at": "2026-07-17T18:22:48Z"
   }
 }

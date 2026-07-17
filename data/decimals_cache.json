@@ -512,5 +512,7 @@
   "base:0xb20000000000000000000033c22ab099bbf76001": 18,
   "base:0xb200000000000000000000d9dac57e31e1aceb01": 18,
   "solana:Ge87EtsjwRQbHaqQmKRno69RFTwh9bfSsm99XNxTpump": 6,
-  "base:0x14d6c649292c5c9790c5196d1a9ea039307947a1": 18
+  "base:0x14d6c649292c5c9790c5196d1a9ea039307947a1": 18,
+  "solana:3XhARh1nQiwGZLwAD8YyKhfZKVHaG8t3VzsRSejZpump": 6,
+  "base:0x600d601d8b9eb5de5ac90fefc68d0d08801bfd3f": 8
 }

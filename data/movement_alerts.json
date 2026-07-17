@@ -1,34 +1,18 @@
 [
   {
     "chain_slug": "solana",
+    "address": "ge87etsjwrqbhaqqmkrno69rftwh9bfssm99xnxtpump",
+    "symbol": "Jimothy",
+    "direction": "pump",
+    "price_change_h1_pct": 54.069,
+    "timestamp": 1784323367.7352679
+  },
+  {
+    "chain_slug": "solana",
     "address": "az1fowc7pcs4rkjcy7ufudqwvgnrrxzjj9bqxihfpump",
     "symbol": "HOUSEM",
     "direction": "pump",
     "price_change_h1_pct": 17.077,
     "timestamp": 1784312568.9259548
-  },
-  {
-    "chain_slug": "base",
-    "address": "0xae45b8fae07ffb2e5f4373bfcb6f4bd827a45b07",
-    "symbol": "Gitlawb",
-    "direction": "pump",
-    "price_change_h1_pct": 0.145,
-    "timestamp": 1784306559.9457312
-  },
-  {
-    "chain_slug": "solana",
-    "address": "3xharh1nqiwgzlwad8yykhfzkvhag8t3vzsrsejzpump",
-    "symbol": "TABLEPEDE",
-    "direction": "pump",
-    "price_change_h1_pct": -7.469,
-    "timestamp": 1784305368.464276
-  },
-  {
-    "chain_slug": "solana",
-    "address": "ge87etsjwrqbhaqqmkrno69rftwh9bfssm99xnxtpump",
-    "symbol": "Jimothy",
-    "direction": "pump",
-    "price_change_h1_pct": -26.339,
-    "timestamp": 1784300391.3321302
   }
 ]

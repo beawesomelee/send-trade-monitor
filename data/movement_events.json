@@ -19523,10 +19523,198 @@
           "claim worked first try"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@kkashi_yt",
+          "approval_evidence_url": "https://x.com/kkashi_yt/status/2078170261036421203",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 34.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T17:29:35Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 34.58,
+          "source_evidence_urls": [
+            "https://x.com/kkashi_yt/status/2078170261036421203"
+          ],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "raccoon",
+            "solbix",
+            "baby raccoon",
+            "never fade",
+            "solbix call",
+            "kol post",
+            "alpha call",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@pablo_cro",
+          "approval_evidence_url": "https://x.com/Pablo_cro/status/2078228699061829798",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 266.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T21:21:48Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 266.8,
+          "source_evidence_urls": [
+            "https://x.com/Pablo_cro/status/2078228699061829798"
+          ],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "raccoon",
+            "solbix",
+            "baby raccoon",
+            "never fade",
+            "solbix call",
+            "kol post",
+            "alpha call",
+            "listing vote"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@solwhaleentry",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "raccoon",
+            "solbix",
+            "baby raccoon",
+            "never fade",
+            "solbix call",
+            "kol post",
+            "alpha call",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@ardibags",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "raccoon",
+            "solbix",
+            "baby raccoon",
+            "never fade",
+            "solbix call",
+            "kol post",
+            "alpha call",
+            "listing vote"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-17T21:22:45Z",
+      "event_id": "signal_fccfce5a152d",
+      "evidence": [
+        {
+          "author_handle": "@kkashi_yt",
+          "minutes_before_detection": 233.16,
+          "minutes_from_window_start": 126.84,
+          "relevance": "early alpha call that triggered the move",
+          "text": "$Jimothy pumped by 9.8x since it was called at solbix. $460k mc to $4.5m mc",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T17:29:35Z",
+          "tweet_id": "2078170261036421203",
+          "type": "x_post",
+          "url": "https://x.com/kkashi_yt/status/2078170261036421203"
+        },
+        {
+          "author_handle": "@Pablo_cro",
+          "minutes_before_detection": 0.95,
+          "minutes_from_window_start": 359.05,
+          "relevance": "bull post pushing the raccoon narra",
+          "text": "Never fade a Baby Raccoon $jimothy",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T21:21:48Z",
+          "tweet_id": "2078228699061829798",
+          "type": "x_post",
+          "url": "https://x.com/Pablo_cro/status/2078228699061829798"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/Ge87EtsjwRQbHaqQmKRno69RFTwh9bfSsm99XNxTpump"
+      },
+      "lore": "solbix call at 460k mc sparked the 9.8x to 4.5m, baby raccoon posts from @pablo_cro and alphas piling on with listing votes. numeric handle quiet",
+      "movement": {
+        "change_pct": 116.4,
+        "detected_at": "2026-07-17T21:22:45Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T21:10:00Z",
+        "estimated_start_at": "2026-07-17T16:55:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "2VHM9pTZEU6pqeZoiNi8ZCeyerqhRYgS5Um7U8AEKrd9",
+        "pool_name": "Jimothy / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-17T21:22:45Z",
+        "window_start_at": "2026-07-17T15:22:45Z"
+      },
+      "source_signal_id": "signal_fccfce5a152d",
+      "token": {
+        "address": "Ge87EtsjwRQbHaqQmKRno69RFTwh9bfSsm99XNxTpump",
+        "chain_slug": "solana",
+        "symbol": "Jimothy"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@kkashi_yt",
+          "@Pablo_cro",
+          "@SOLWhaleEntry",
+          "@ardibags"
+        ],
+        "catalysts": [
+          "kol_post",
+          "alpha_call",
+          "listing_vote"
+        ],
+        "keywords": [
+          "$Jimothy",
+          "raccoon",
+          "solbix"
+        ],
+        "phrases": [
+          "baby raccoon",
+          "never fade",
+          "solbix call"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-17T18:22:48Z",
+  "updated_at": "2026-07-17T21:22:47Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -19535,19 +19723,19 @@
       "candidate_labels": {
         "approved_alpha_source": 37,
         "approved_movement_chatter": 16,
-        "rejected_late_reaction": 171,
+        "rejected_late_reaction": 173,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 119,
+        "rejected_no_tweet_evidence": 121,
         "rejected_stale_pre_move": 16,
         "unknown_movement_start": 7,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 376,
+      "candidate_rules": 380,
       "watch_accounts_approved": 45,
       "watch_accounts_pending": 14,
-      "watch_accounts_rejected": 225,
+      "watch_accounts_rejected": 228,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-17T18:22:48Z"
+    "updated_at": "2026-07-17T21:22:47Z"
   }
 }

@@ -276,7 +276,7 @@
       "value": "from:mrfrink (armstrong OR $armstrong) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-17T14:59:51Z",
+  "rules_synced_at": "2026-07-17T15:22:36Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -7902,7 +7902,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-17T14:59:51Z",
+  "updated_at": "2026-07-17T15:22:36Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

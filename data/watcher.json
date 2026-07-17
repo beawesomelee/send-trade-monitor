@@ -271,7 +271,7 @@
       "value": "from:tiger41690 (cobie OR $cobie OR $brian OR \"base memes\" OR \"$cobie the based man\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-17T08:22:27Z",
+  "rules_synced_at": "2026-07-17T09:22:32Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -7628,7 +7628,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-17T08:22:27Z",
+  "updated_at": "2026-07-17T09:22:32Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

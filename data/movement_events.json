@@ -17317,30 +17317,428 @@
           "needs a good companion"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@cobie",
+          "approval_evidence_url": "https://x.com/cobie/status/2077949916811325571",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 184.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T02:54:01Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 184.02,
+          "source_evidence_urls": [
+            "https://x.com/cobie/status/2077949916811325571"
+          ],
+          "terms": [
+            "cobie",
+            "$cobie",
+            "base",
+            "shaved",
+            "brian",
+            "next $brian",
+            "claim portal live",
+            "$cobie holders might be early",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@bigking6034",
+          "approval_evidence_url": "https://x.com/BigKing6034/status/2077956970154205327",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 212.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T03:22:02Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 212.03,
+          "source_evidence_urls": [
+            "https://x.com/BigKing6034/status/2077956970154205327"
+          ],
+          "terms": [
+            "cobie",
+            "$cobie",
+            "base",
+            "shaved",
+            "brian",
+            "next $brian",
+            "claim portal live",
+            "$cobie holders might be early",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@ruyadamx",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "cobie",
+            "$cobie",
+            "base",
+            "shaved",
+            "brian",
+            "next $brian",
+            "claim portal live",
+            "$cobie holders might be early",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@kykysik00",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "cobie",
+            "$cobie",
+            "base",
+            "shaved",
+            "brian",
+            "next $brian",
+            "claim portal live",
+            "$cobie holders might be early",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-17T03:22:58Z",
+      "event_id": "signal_6a1431f578ae",
+      "evidence": [
+        {
+          "author_handle": "@BigKing6034",
+          "minutes_before_detection": 0.92,
+          "minutes_from_window_start": 359.08,
+          "relevance": "directly quotes cobie shave post and links the pumping ca",
+          "text": "0xb20000000000000000000033c22ab099bbf76001 $cobie next $brian",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T03:22:02Z",
+          "tweet_id": "2077956970154205327",
+          "type": "x_post",
+          "url": "https://x.com/BigKing6034/status/2077956970154205327"
+        },
+        {
+          "author_handle": "@cobie",
+          "minutes_before_detection": 28.95,
+          "minutes_from_window_start": 331.05,
+          "relevance": "the trigger post being quoted across the pump",
+          "text": "I regret to inform you that i shaved my head",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T02:54:01Z",
+          "tweet_id": "2077949916811325571",
+          "type": "x_post",
+          "url": "https://x.com/cobie/status/2077949916811325571"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb20000000000000000000033c22ab099bbf76001"
+      },
+      "lore": "@cobie head shave post got quoted with the ca as next $brian on base. claim portal chatter on the old ca too. thin liq runner",
+      "movement": {
+        "change_pct": 5084.5,
+        "detected_at": "2026-07-17T03:22:58Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T03:05:00Z",
+        "estimated_start_at": "2026-07-16T23:50:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0xb221ead27c1ede1cedd1440a504813e50a16cf61ae9ef3354c07b6040296d9a2",
+        "pool_name": "COBIE / ETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-17T03:22:58Z",
+        "window_start_at": "2026-07-16T21:22:58Z"
+      },
+      "source_signal_id": "signal_6a1431f578ae",
+      "token": {
+        "address": "0xb20000000000000000000033c22ab099bbf76001",
+        "chain_slug": "base",
+        "symbol": "COBIE"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@cobie",
+          "@BigKing6034",
+          "@ruyadamx",
+          "@kykysik00"
+        ],
+        "catalysts": [
+          "kol_post",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "$cobie",
+          "base",
+          "shaved",
+          "brian"
+        ],
+        "phrases": [
+          "next $brian",
+          "claim portal live",
+          "$cobie holders might be early"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@jessepollak",
+          "approval_evidence_url": "https://x.com/jessepollak/status/2077953880504344665",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 194.8 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T03:09:46Z",
+          "approved_terms": [],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": 194.77,
+          "source_evidence_urls": [
+            "https://x.com/jessepollak/status/2077408656442970385",
+            "https://x.com/jessepollak/status/2077953880504344665"
+          ],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "$brian",
+            "$cobie",
+            "base founder",
+            "not going to just let $jesse fade away",
+            "founder meta",
+            "brian cobie jesse",
+            "kol post",
+            "founder commit",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@zippy257",
+          "approval_evidence_url": "https://x.com/zippy257/status/2077779626680836300",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 497.7 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-16T15:37:20Z",
+          "approved_terms": [
+            "jesse",
+            "$jesse",
+            "base founder"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -497.67,
+          "source_evidence_urls": [
+            "https://x.com/zippy257/status/2077779626680836300"
+          ],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "$brian",
+            "$cobie",
+            "base founder",
+            "not going to just let $jesse fade away",
+            "founder meta",
+            "brian cobie jesse",
+            "kol post",
+            "founder commit",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@0xmarkus1337",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "$brian",
+            "$cobie",
+            "base founder",
+            "not going to just let $jesse fade away",
+            "founder meta",
+            "brian cobie jesse",
+            "kol post",
+            "founder commit",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@kykysik00",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jesse",
+            "$jesse",
+            "$brian",
+            "$cobie",
+            "base founder",
+            "not going to just let $jesse fade away",
+            "founder meta",
+            "brian cobie jesse",
+            "kol post",
+            "founder commit",
+            "narrative reactivation"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-17T03:22:58Z",
+      "event_id": "signal_93a3f106bb02",
+      "evidence": [
+        {
+          "author_handle": "@zippy257",
+          "minutes_before_detection": 705.62,
+          "minutes_from_window_start": -345.62,
+          "relevance": "directly explains the initial pump from his long post",
+          "text": "Base founder @jessepollak just shilled $JESSE, sending the token up 10x within hours.",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-16T15:37:20Z",
+          "tweet_id": "2077779626680836300",
+          "type": "x_post",
+          "url": "https://x.com/zippy257/status/2077779626680836300"
+        },
+        {
+          "author_handle": "@jessepollak",
+          "minutes_before_detection": 2179.72,
+          "minutes_from_window_start": -1819.72,
+          "relevance": "core quote from the thread driving the narrative",
+          "text": "and I'm also not going to just let $jesse fade away - when I launch something, I'm in it for the long term",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-15T15:03:14Z",
+          "tweet_id": "2077408656442970385",
+          "type": "x_post",
+          "url": "https://x.com/jessepollak/status/2077408656442970385"
+        },
+        {
+          "author_handle": "@jessepollak",
+          "minutes_before_detection": 13.2,
+          "minutes_from_window_start": 346.8,
+          "relevance": "recent reaction post amid the chatter",
+          "text": "\ud83d\udd25",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T03:09:46Z",
+          "tweet_id": "2077953880504344665",
+          "type": "x_post",
+          "url": "https://x.com/jessepollak/status/2077953880504344665"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x50f88fe97f72cd3e75b9eb4f747f59bceba80d59"
+      },
+      "lore": "jessepollak posted he's not letting $jesse fade away and committed long term in his base update thread. tied to the founder meta with brian and cobie running on base. thin liq still holding the move?",
+      "movement": {
+        "change_pct": 50.6,
+        "detected_at": "2026-07-17T03:22:58Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T02:55:00Z",
+        "estimated_start_at": "2026-07-16T23:55:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0xc39acb3ce11ebcd3e1c5d67cdfb8707ab12674449fdab859327a8aabee03cd10",
+        "pool_name": "jesse / ZORA 1%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-17T03:22:58Z",
+        "window_start_at": "2026-07-16T21:22:58Z"
+      },
+      "source_signal_id": "signal_93a3f106bb02",
+      "token": {
+        "address": "0x50f88fe97f72cd3e75b9eb4f747f59bceba80d59",
+        "chain_slug": "base",
+        "symbol": "jesse"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@jessepollak",
+          "@zippy257",
+          "@0xMarkus1337",
+          "@kykysik00"
+        ],
+        "catalysts": [
+          "kol_post",
+          "founder_commit",
+          "narrative_reactivation"
+        ],
+        "keywords": [
+          "$jesse",
+          "$brian",
+          "$cobie",
+          "base founder"
+        ],
+        "phrases": [
+          "not going to just let $jesse fade away",
+          "founder meta",
+          "brian cobie jesse"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-17T02:23:12Z",
+  "updated_at": "2026-07-17T03:23:02Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 36,
+        "approved_alpha_source": 37,
         "approved_movement_chatter": 14,
-        "rejected_late_reaction": 151,
+        "rejected_late_reaction": 154,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 107,
+        "rejected_no_tweet_evidence": 111,
         "rejected_stale_pre_move": 15,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 333,
-      "watch_accounts_approved": 42,
+      "candidate_rules": 341,
+      "watch_accounts_approved": 43,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 205,
+      "watch_accounts_rejected": 208,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-17T02:23:12Z"
+    "updated_at": "2026-07-17T03:23:02Z"
   }
 }

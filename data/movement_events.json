@@ -19711,10 +19711,221 @@
           "solbix call"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@u7z__",
+          "approval_evidence_url": "https://x.com/U7Z__/status/2078164622742274136",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 17.2 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-17T17:07:11Z",
+          "approved_terms": [
+            "housem",
+            "$housem",
+            "$housem is pumping hard"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 17.18,
+          "source_evidence_urls": [
+            "https://x.com/U7Z__/status/2078164622742274136"
+          ],
+          "terms": [
+            "housem",
+            "$housem",
+            "moonshot",
+            "fomo",
+            "cto radar",
+            "$housem is pumping hard",
+            "14.86x+",
+            "so close for moonshot",
+            "listing vote",
+            "kol call",
+            "airdrop tease"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cerrocoso",
+          "approval_evidence_url": "https://x.com/cerrocoso/status/2078194911694713171",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 137.5 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T19:07:32Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 137.53,
+          "source_evidence_urls": [
+            "https://x.com/cerrocoso/status/2078194911694713171"
+          ],
+          "terms": [
+            "housem",
+            "$housem",
+            "moonshot",
+            "fomo",
+            "cto radar",
+            "$housem is pumping hard",
+            "14.86x+",
+            "so close for moonshot",
+            "listing vote",
+            "kol call",
+            "airdrop tease"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@jonathan2013_dj",
+          "approval_evidence_url": "https://x.com/jonathan2013_dj/status/2078244653057396752",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 335.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T22:25:11Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 335.18,
+          "source_evidence_urls": [
+            "https://x.com/jonathan2013_dj/status/2078244653057396752"
+          ],
+          "terms": [
+            "housem",
+            "$housem",
+            "moonshot",
+            "fomo",
+            "cto radar",
+            "$housem is pumping hard",
+            "14.86x+",
+            "so close for moonshot",
+            "listing vote",
+            "kol call",
+            "airdrop tease"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@abooodrrrrrt",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "housem",
+            "$housem",
+            "moonshot",
+            "fomo",
+            "cto radar",
+            "$housem is pumping hard",
+            "14.86x+",
+            "so close for moonshot",
+            "listing vote",
+            "kol call",
+            "airdrop tease"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-17T22:26:17Z",
+      "event_id": "signal_78a155ae046e",
+      "evidence": [
+        {
+          "author_handle": "@U7Z__",
+          "minutes_before_detection": 319.1,
+          "minutes_from_window_start": 40.9,
+          "relevance": "direct pump call with gains mention",
+          "text": "$HOUSEM IS PUMPING HARD",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T17:07:11Z",
+          "tweet_id": "2078164622742274136",
+          "type": "x_post",
+          "url": "https://x.com/U7Z__/status/2078164622742274136"
+        },
+        {
+          "author_handle": "@cerrocoso",
+          "minutes_before_detection": 198.74,
+          "minutes_from_window_start": 161.26,
+          "relevance": "tracks the exact move and breakout",
+          "text": "$HOUSEM 14.86x+ called around 148k mc to 2.2m mc",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T19:07:32Z",
+          "tweet_id": "2078194911694713171",
+          "type": "x_post",
+          "url": "https://x.com/cerrocoso/status/2078194911694713171"
+        },
+        {
+          "author_handle": "@jonathan2013_dj",
+          "minutes_before_detection": 1.09,
+          "minutes_from_window_start": 358.91,
+          "relevance": "listing vote push tied to timing",
+          "text": "yo $HOUSEM is so close for moonshot, just 122 votes",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T22:25:11Z",
+          "tweet_id": "2078244653057396752",
+          "type": "x_post",
+          "url": "https://x.com/jonathan2013_dj/status/2078244653057396752"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/AZ1fowC7PCS4rKJCY7UFuDqwvGNRRxzJj9BQxiHfpump"
+      },
+      "lore": "voting spam for moonshot and fomo listings plus alpha calls noting 14x from 148k mc to 2.2m. momentum on thin chatter",
+      "movement": {
+        "change_pct": 258.3,
+        "detected_at": "2026-07-17T22:26:17Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T22:05:00Z",
+        "estimated_start_at": "2026-07-17T16:50:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 102,
+        "pool_address": "5Z8zi47YaJE3ARqb8GiE39joXKjQXjnf3fsLnEtvV8fz",
+        "pool_name": "HOUSEM / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-17T22:26:17Z",
+        "window_start_at": "2026-07-17T16:26:17Z"
+      },
+      "source_signal_id": "signal_78a155ae046e",
+      "token": {
+        "address": "AZ1fowC7PCS4rKJCY7UFuDqwvGNRRxzJj9BQxiHfpump",
+        "chain_slug": "solana",
+        "symbol": "HOUSEM"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@U7Z__",
+          "@cerrocoso",
+          "@jonathan2013_dj",
+          "@AbooodRrrrrt"
+        ],
+        "catalysts": [
+          "listing_vote",
+          "kol_call",
+          "airdrop_tease"
+        ],
+        "keywords": [
+          "$HOUSEM",
+          "moonshot",
+          "fomo",
+          "cto radar"
+        ],
+        "phrases": [
+          "$HOUSEM IS PUMPING HARD",
+          "14.86x+",
+          "so close for moonshot"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-17T21:22:47Z",
+  "updated_at": "2026-07-17T22:26:19Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -19722,20 +19933,20 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 37,
-        "approved_movement_chatter": 16,
-        "rejected_late_reaction": 173,
+        "approved_movement_chatter": 17,
+        "rejected_late_reaction": 175,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 121,
+        "rejected_no_tweet_evidence": 122,
         "rejected_stale_pre_move": 16,
         "unknown_movement_start": 7,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 380,
-      "watch_accounts_approved": 45,
+      "candidate_rules": 384,
+      "watch_accounts_approved": 46,
       "watch_accounts_pending": 14,
-      "watch_accounts_rejected": 228,
+      "watch_accounts_rejected": 230,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-17T21:22:47Z"
+    "updated_at": "2026-07-17T22:26:19Z"
   }
 }

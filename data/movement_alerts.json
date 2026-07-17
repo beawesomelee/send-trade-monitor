@@ -1,6 +1,14 @@
 [
   {
     "chain_slug": "base",
+    "address": "0xe2d5bd0d349057d77fcd2fa5b690161336ebe999",
+    "symbol": "ARMSTRONG",
+    "direction": "pump",
+    "price_change_h1_pct": 101.693,
+    "timestamp": 1784286476.4663856
+  },
+  {
+    "chain_slug": "base",
     "address": "0xb20000000000000000000033c22ab099bbf76001",
     "symbol": "COBIE",
     "direction": "pump",
@@ -14,13 +22,5 @@
     "direction": "pump",
     "price_change_h1_pct": 76.961,
     "timestamp": 1784272965.906394
-  },
-  {
-    "chain_slug": "base",
-    "address": "0xb2000000000000000000007bf6d5cbb0e24cb301",
-    "symbol": "BRIAN",
-    "direction": "pump",
-    "price_change_h1_pct": -0.744,
-    "timestamp": 1784263556.4382327
   }
 ]

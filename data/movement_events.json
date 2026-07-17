@@ -18337,10 +18337,221 @@
           "founders name or founders pet"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@mr_lightspeed",
+          "approval_evidence_url": "https://x.com/Mr_Lightspeed/status/2078038810802188381",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 197.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T08:47:15Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 197.25,
+          "source_evidence_urls": [
+            "https://x.com/Mr_Lightspeed/status/2078038810802188381"
+          ],
+          "terms": [
+            "armstrong",
+            "$armstrong",
+            "brian",
+            "copycat",
+            "pfp",
+            "fighting the $brian copycat",
+            "stole my content",
+            "brian_armstrong pfp change",
+            "kol post",
+            "meme reactivation",
+            "drama"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@mrfrink",
+          "approval_evidence_url": "https://x.com/MrFrink/status/2077993368425017647",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 16.7 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-17T05:46:40Z",
+          "approved_terms": [
+            "armstrong",
+            "$armstrong"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 16.67,
+          "source_evidence_urls": [
+            "https://x.com/MrFrink/status/2077993368425017647"
+          ],
+          "terms": [
+            "armstrong",
+            "$armstrong",
+            "brian",
+            "copycat",
+            "pfp",
+            "fighting the $brian copycat",
+            "stole my content",
+            "brian_armstrong pfp change",
+            "kol post",
+            "meme reactivation",
+            "drama"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cryptchaz",
+          "approval_evidence_url": "https://x.com/CryptChaz/status/2078069457029644675",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 319.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T10:49:01Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 319.02,
+          "source_evidence_urls": [
+            "https://x.com/CryptChaz/status/2078069457029644675"
+          ],
+          "terms": [
+            "armstrong",
+            "$armstrong",
+            "brian",
+            "copycat",
+            "pfp",
+            "fighting the $brian copycat",
+            "stole my content",
+            "brian_armstrong pfp change",
+            "kol post",
+            "meme reactivation",
+            "drama"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@brian_armstrong",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "armstrong",
+            "$armstrong",
+            "brian",
+            "copycat",
+            "pfp",
+            "fighting the $brian copycat",
+            "stole my content",
+            "brian_armstrong pfp change",
+            "kol post",
+            "meme reactivation",
+            "drama"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-17T11:07:54Z",
+      "event_id": "signal_affe1b1bd00b",
+      "evidence": [
+        {
+          "author_handle": "@Mr_Lightspeed",
+          "minutes_before_detection": 140.65,
+          "minutes_from_window_start": 219.35,
+          "relevance": "creator directly addressing the copycat drama tied to the pump",
+          "text": "I am currently working to ensure BRIAN is not listed on LBANK and stealing my content. Instead, I will work to see that I am listed intead.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T08:47:15Z",
+          "tweet_id": "2078038810802188381",
+          "type": "x_post",
+          "url": "https://x.com/Mr_Lightspeed/status/2078038810802188381"
+        },
+        {
+          "author_handle": "@MrFrink",
+          "minutes_before_detection": 321.22,
+          "minutes_from_window_start": 38.78,
+          "relevance": "highlights the original token details vs new honeypot amid fomo",
+          "text": "This is the $ARMSTRONG coin on the BASE chain... @Mr_Lightspeed - creator... It was created 5 months ago by him.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T05:46:40Z",
+          "tweet_id": "2077993368425017647",
+          "type": "x_post",
+          "url": "https://x.com/MrFrink/status/2077993368425017647"
+        },
+        {
+          "author_handle": "@CryptChaz",
+          "minutes_before_detection": 18.87,
+          "minutes_from_window_start": 341.13,
+          "relevance": "trader noting the original ca in context of creator's post",
+          "text": "Interesting - $Armstrong 0xe2d5bd0d349057d77fcd2fa5b690161336ebe999",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T10:49:01Z",
+          "tweet_id": "2078069457029644675",
+          "type": "x_post",
+          "url": "https://x.com/CryptChaz/status/2078069457029644675"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xe2d5bd0d349057d77fcd2fa5b690161336ebe999"
+      },
+      "lore": "mr_lightspeed posting about fighting the $brian copycat that stole his 7mo old content, right as brian_armstrong pfp change sparks fomo on armstrong memes. original token catching bids on the drama",
+      "movement": {
+        "change_pct": 611.0,
+        "detected_at": "2026-07-17T11:07:54Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T10:45:00Z",
+        "estimated_start_at": "2026-07-17T05:30:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x96be5fc4701495921fb2a1bcbe6c302621cd8ad7094ec62be5f303ab9d6b90c8",
+        "pool_name": "ARMSTRONG / mr_lightspeed 1%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-17T11:07:54Z",
+        "window_start_at": "2026-07-17T05:07:54Z"
+      },
+      "source_signal_id": "signal_affe1b1bd00b",
+      "token": {
+        "address": "0xe2d5bd0d349057d77fcd2fa5b690161336ebe999",
+        "chain_slug": "base",
+        "symbol": "ARMSTRONG"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Mr_Lightspeed",
+          "@MrFrink",
+          "@CryptChaz",
+          "@brian_armstrong"
+        ],
+        "catalysts": [
+          "kol_post",
+          "meme_reactivation",
+          "drama"
+        ],
+        "keywords": [
+          "$ARMSTRONG",
+          "armstrong",
+          "brian",
+          "copycat",
+          "pfp"
+        ],
+        "phrases": [
+          "fighting the $brian copycat",
+          "stole my content",
+          "brian_armstrong pfp change"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-17T07:34:17Z",
+  "updated_at": "2026-07-17T11:07:56Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -18348,19 +18559,19 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 37,
-        "approved_movement_chatter": 15,
-        "rejected_late_reaction": 160,
+        "approved_movement_chatter": 16,
+        "rejected_late_reaction": 162,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 116,
+        "rejected_no_tweet_evidence": 117,
         "rejected_stale_pre_move": 16,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 354,
-      "watch_accounts_approved": 44,
+      "candidate_rules": 358,
+      "watch_accounts_approved": 45,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 214,
+      "watch_accounts_rejected": 216,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-17T07:34:17Z"
+    "updated_at": "2026-07-17T11:07:56Z"
   }
 }

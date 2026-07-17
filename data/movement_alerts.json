@@ -1,26 +1,26 @@
 [
   {
     "chain_slug": "base",
+    "address": "0xae45b8fae07ffb2e5f4373bfcb6f4bd827a45b07",
+    "symbol": "Gitlawb",
+    "direction": "pump",
+    "price_change_h1_pct": 0.516,
+    "timestamp": 1784290985.5171351
+  },
+  {
+    "chain_slug": "base",
+    "address": "0x4c433f4ef87fe506a7eed2fd1d822cbed411eba3",
+    "symbol": "TSG",
+    "direction": "pump",
+    "price_change_h1_pct": 508.669,
+    "timestamp": 1784290985.5171351
+  },
+  {
+    "chain_slug": "base",
     "address": "0xe2d5bd0d349057d77fcd2fa5b690161336ebe999",
     "symbol": "ARMSTRONG",
     "direction": "pump",
     "price_change_h1_pct": 101.693,
     "timestamp": 1784286476.4663856
-  },
-  {
-    "chain_slug": "base",
-    "address": "0xb20000000000000000000033c22ab099bbf76001",
-    "symbol": "COBIE",
-    "direction": "pump",
-    "price_change_h1_pct": 0.789,
-    "timestamp": 1784273657.6896908
-  },
-  {
-    "chain_slug": "base",
-    "address": "0xb200000000000000000000d9dac57e31e1aceb01",
-    "symbol": "JERRY",
-    "direction": "pump",
-    "price_change_h1_pct": 76.961,
-    "timestamp": 1784272965.906394
   }
 ]

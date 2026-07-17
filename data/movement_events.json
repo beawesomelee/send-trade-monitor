@@ -18548,10 +18548,216 @@
           "brian_armstrong pfp change"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@dex_kolwatcher",
+          "approval_evidence_url": "",
+          "approval_label": "unknown_movement_start",
+          "approval_reason": "event has no estimated movement start",
+          "approval_status": "pending",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [
+            "https://x.com/dex_kolwatcher/status/2078083957451845931"
+          ],
+          "terms": [
+            "gitlawb",
+            "$gitlawb",
+            "paid dexscreener",
+            "dex paid signal",
+            "volumebuy 24h",
+            "dex signal",
+            "paid boost"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@gemchasersol",
+          "approval_evidence_url": "",
+          "approval_label": "unknown_movement_start",
+          "approval_reason": "event has no estimated movement start",
+          "approval_status": "pending",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [
+            "https://x.com/GemChaserSOL/status/2078084272036941878"
+          ],
+          "terms": [
+            "gitlawb",
+            "$gitlawb",
+            "paid dexscreener",
+            "dex paid signal",
+            "volumebuy 24h",
+            "dex signal",
+            "paid boost"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@dexevents_miu",
+          "approval_evidence_url": "",
+          "approval_label": "unknown_movement_start",
+          "approval_reason": "event has no estimated movement start",
+          "approval_status": "pending",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [
+            "https://x.com/dexevents_miu/status/2078079827689590902"
+          ],
+          "terms": [
+            "gitlawb",
+            "$gitlawb",
+            "paid dexscreener",
+            "dex paid signal",
+            "volumebuy 24h",
+            "dex signal",
+            "paid boost"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-17T12:23:01Z",
+      "event_id": "signal_ab4b8348b9b6",
+      "evidence": [
+        {
+          "author_handle": "@dex_kolwatcher",
+          "minutes_before_detection": 36.37,
+          "minutes_from_window_start": 323.63,
+          "relevance": "direct signal post matching the contract and volume numbers behind the pump",
+          "text": "Detect PAID DEXScreener: $Gitlawb ... VolumeBuy 24H: $943,983 | VolumSell 24H: $0 ... MC: $1,000,594",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T11:46:39Z",
+          "tweet_id": "2078083957451845931",
+          "type": "x_post",
+          "url": "https://x.com/dex_kolwatcher/status/2078083957451845931"
+        },
+        {
+          "author_handle": "@GemChaserSOL",
+          "minutes_before_detection": 35.12,
+          "minutes_from_window_start": 324.88,
+          "relevance": "another paid signal post on the same ca",
+          "text": "DEX PAID SIGNAL Gitlawb ... CA: 0xAE45b8faE07fFB2E5f4373bFCB6f4Bd827A45b07",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T11:47:54Z",
+          "tweet_id": "2078084272036941878",
+          "type": "x_post",
+          "url": "https://x.com/GemChaserSOL/status/2078084272036941878"
+        },
+        {
+          "author_handle": "@dexevents_miu",
+          "minutes_before_detection": 52.78,
+          "minutes_from_window_start": 307.22,
+          "relevance": "dexscreener update post confirming the timing",
+          "text": "DEXSCREENER UPDATE ... Gitlawb ($GITLAWB) CA: 0xAE45b8faE07fFB2E5f4373bFCB6f4Bd827A45b07",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T11:30:14Z",
+          "tweet_id": "2078079827689590902",
+          "type": "x_post",
+          "url": "https://x.com/dexevents_miu/status/2078079827689590902"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xae45b8fae07ffb2e5f4373bfcb6f4bd827a45b07"
+      },
+      "lore": "paid dexscreener signals flagged the exact ca with 944k buy vol and zero sells today. thin liq runner on base",
+      "movement": {
+        "change_pct": 98378.7,
+        "detected_at": "2026-07-17T12:23:01Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T12:00:00Z",
+        "estimated_start_at": "",
+        "estimated_start_confidence": null,
+        "estimated_start_method": "",
+        "estimated_start_reason": "threshold_not_crossed",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 15,
+        "pool_address": "0x178775191a5ae2e4098b57de31f16029c1bffe7f0f93b0379494d61124d55cab",
+        "pool_name": "Gitlawb / USDC 0.01%",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-17T12:23:01Z",
+        "window_start_at": "2026-07-17T06:23:01Z"
+      },
+      "source_signal_id": "signal_ab4b8348b9b6",
+      "token": {
+        "address": "0xae45b8fae07ffb2e5f4373bfcb6f4bd827a45b07",
+        "chain_slug": "base",
+        "symbol": "Gitlawb"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@dex_kolwatcher",
+          "@GemChaserSOL",
+          "@dexevents_miu"
+        ],
+        "catalysts": [
+          "dex_signal",
+          "paid_boost"
+        ],
+        "keywords": [
+          "$Gitlawb",
+          "Gitlawb"
+        ],
+        "phrases": [
+          "paid dexscreener",
+          "dex paid signal",
+          "volumebuy 24h"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [],
+      "detected_at": "2026-07-17T12:23:01Z",
+      "event_id": "signal_3a0f2f17fc8c",
+      "evidence": [],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x4c433f4ef87fe506a7eed2fd1d822cbed411eba3"
+      },
+      "lore": "",
+      "movement": {
+        "change_pct": 625.3,
+        "detected_at": "2026-07-17T12:23:01Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T12:15:00Z",
+        "estimated_start_at": "2026-07-17T09:25:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x5e4c78bf666d78fa1e751abc84cf9933d17b1736d4605f400173ac63ac52b1f8",
+        "pool_name": "TSG / WETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-17T12:23:01Z",
+        "window_start_at": "2026-07-17T06:23:01Z"
+      },
+      "source_signal_id": "signal_3a0f2f17fc8c",
+      "token": {
+        "address": "0x4c433f4ef87fe506a7eed2fd1d822cbed411eba3",
+        "chain_slug": "base",
+        "symbol": "TSG"
+      },
+      "watcher_clues": {
+        "accounts": [],
+        "catalysts": [],
+        "keywords": [],
+        "phrases": []
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-17T11:07:56Z",
+  "updated_at": "2026-07-17T12:23:05Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -18564,14 +18770,15 @@
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 117,
         "rejected_stale_pre_move": 16,
+        "unknown_movement_start": 3,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 358,
+      "candidate_rules": 361,
       "watch_accounts_approved": 45,
-      "watch_accounts_pending": 7,
+      "watch_accounts_pending": 10,
       "watch_accounts_rejected": 216,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-17T11:07:56Z"
+    "updated_at": "2026-07-17T12:23:05Z"
   }
 }

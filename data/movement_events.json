@@ -17908,10 +17908,206 @@
           "b20 runner"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@stambouli_o1",
+          "approval_evidence_url": "https://x.com/stambouli_o1/status/2078015139601678623",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 308.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T07:13:11Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 308.18,
+          "source_evidence_urls": [
+            "https://x.com/stambouli_o1/status/2078015139601678623"
+          ],
+          "terms": [
+            "jerry",
+            "$jerry",
+            "b20",
+            "brian",
+            "jerry the goat has joined forces with brian",
+            "50% of the supply",
+            "kol post",
+            "narrative alignment",
+            "pfp change"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@basewhalealert",
+          "approval_evidence_url": "https://x.com/BaseWhaleAlert/status/2078017347076403490",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 316.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T07:21:57Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 316.95,
+          "source_evidence_urls": [
+            "https://x.com/BaseWhaleAlert/status/2078017347076403490"
+          ],
+          "terms": [
+            "jerry",
+            "$jerry",
+            "b20",
+            "brian",
+            "jerry the goat has joined forces with brian",
+            "50% of the supply",
+            "kol post",
+            "narrative alignment",
+            "pfp change"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@brian_armstrong",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jerry",
+            "$jerry",
+            "b20",
+            "brian",
+            "jerry the goat has joined forces with brian",
+            "50% of the supply",
+            "kol post",
+            "narrative alignment",
+            "pfp change"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@zhouyuan888",
+          "approval_evidence_url": "https://x.com/zhouyuan888/status/2078016780162007266",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 314.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T07:19:42Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 314.7,
+          "source_evidence_urls": [
+            "https://x.com/zhouyuan888/status/2078016780162007266"
+          ],
+          "terms": [
+            "jerry",
+            "$jerry",
+            "b20",
+            "brian",
+            "jerry the goat has joined forces with brian",
+            "50% of the supply",
+            "kol post",
+            "narrative alignment",
+            "pfp change"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-17T07:22:43Z",
+      "event_id": "signal_67c19fdcb2e4",
+      "evidence": [
+        {
+          "author_handle": "@stambouli_o1",
+          "minutes_before_detection": 9.52,
+          "minutes_from_window_start": 350.48,
+          "relevance": "founder post directly tying token to brian narrative and triggering chatter",
+          "text": "JERRY the Goat has joined forces with BRIAN, the Coinbase Man",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T07:13:11Z",
+          "tweet_id": "2078015139601678623",
+          "type": "x_post",
+          "url": "https://x.com/stambouli_o1/status/2078015139601678623"
+        },
+        {
+          "author_handle": "@BaseWhaleAlert",
+          "minutes_before_detection": 0.75,
+          "minutes_from_window_start": 359.25,
+          "relevance": "whale activity on the move",
+          "text": "A BRIAN whale just bought $1.67K of $JERRY at $1.85M MC",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T07:21:57Z",
+          "tweet_id": "2078017347076403490",
+          "type": "x_post",
+          "url": "https://x.com/BaseWhaleAlert/status/2078017347076403490"
+        },
+        {
+          "author_handle": "@zhouyuan888",
+          "minutes_before_detection": 3.0,
+          "minutes_from_window_start": 357.0,
+          "relevance": "notes founder avatar change and new highs",
+          "text": "\u65b0\u9ad8\u4e86 $jerry \u8fd9\u4f4d @stambouli_o1 \u76f4\u63a5\u6362\u4e86\u5934\u50cf",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T07:19:42Z",
+          "tweet_id": "2078016780162007266",
+          "type": "x_post",
+          "url": "https://x.com/zhouyuan888/status/2078016780162007266"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb200000000000000000000d9dac57e31e1aceb01"
+      },
+      "lore": "@stambouli_o1 posted jerry aligning with brian armstrong pfp change. 50% supply in his wallet, riding b20 base narrative to 1.7m mc",
+      "movement": {
+        "change_pct": 166.8,
+        "detected_at": "2026-07-17T07:22:43Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T07:20:00Z",
+        "estimated_start_at": "2026-07-17T02:05:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0xf594d4bb3db0bc3e25473c9e658b8da5f8b8d97ec910c0953cbc39829121ca1a",
+        "pool_name": "JERRY / ETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-17T07:22:43Z",
+        "window_start_at": "2026-07-17T01:22:43Z"
+      },
+      "source_signal_id": "signal_67c19fdcb2e4",
+      "token": {
+        "address": "0xb200000000000000000000d9dac57e31e1aceb01",
+        "chain_slug": "base",
+        "symbol": "JERRY"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@stambouli_o1",
+          "@BaseWhaleAlert",
+          "@brian_armstrong"
+        ],
+        "catalysts": [
+          "kol_post",
+          "narrative_alignment",
+          "pfp_change"
+        ],
+        "keywords": [
+          "$JERRY",
+          "b20",
+          "brian"
+        ],
+        "phrases": [
+          "jERRY the Goat has joined forces with BRIAN",
+          "50% of the supply"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-17T04:45:56Z",
+  "updated_at": "2026-07-17T07:22:45Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -17920,18 +18116,18 @@
       "candidate_labels": {
         "approved_alpha_source": 37,
         "approved_movement_chatter": 14,
-        "rejected_late_reaction": 155,
+        "rejected_late_reaction": 158,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 113,
+        "rejected_no_tweet_evidence": 114,
         "rejected_stale_pre_move": 16,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 345,
+      "candidate_rules": 349,
       "watch_accounts_approved": 43,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 209,
+      "watch_accounts_rejected": 210,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-17T04:45:56Z"
+    "updated_at": "2026-07-17T07:22:45Z"
   }
 }

@@ -18104,10 +18104,243 @@
           "50% of the supply"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@tiger41690",
+          "approval_evidence_url": "https://x.com/tiger41690/status/2077940219664380048",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 0.5 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-17T02:15:29Z",
+          "approved_terms": [
+            "cobie",
+            "$cobie",
+            "$brian",
+            "base memes",
+            "$cobie the based man"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 0.48,
+          "source_evidence_urls": [
+            "https://x.com/tiger41690/status/2077940219664380048"
+          ],
+          "terms": [
+            "cobie",
+            "$cobie",
+            "$brian",
+            "$jerry",
+            "base memes",
+            "base name meme rotation",
+            "$cobie the based man",
+            "founders name or founders pet",
+            "meme rotation",
+            "name token hype"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@cwuhn4",
+          "approval_evidence_url": "https://x.com/cwuhn4/status/2078017135100461326",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 306.1 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T07:21:07Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 306.12,
+          "source_evidence_urls": [
+            "https://x.com/cwuhn4/status/2078017135100461326"
+          ],
+          "terms": [
+            "cobie",
+            "$cobie",
+            "$brian",
+            "$jerry",
+            "base memes",
+            "base name meme rotation",
+            "$cobie the based man",
+            "founders name or founders pet",
+            "meme rotation",
+            "name token hype"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@liuueth",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "cobie",
+            "$cobie",
+            "$brian",
+            "$jerry",
+            "base memes",
+            "base name meme rotation",
+            "$cobie the based man",
+            "founders name or founders pet",
+            "meme rotation",
+            "name token hype"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@bonkatsukiclan",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "cobie",
+            "$cobie",
+            "$brian",
+            "$jerry",
+            "base memes",
+            "base name meme rotation",
+            "$cobie the based man",
+            "founders name or founders pet",
+            "meme rotation",
+            "name token hype"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@gairmartin",
+          "approval_evidence_url": "https://x.com/GairMartin/status/2078019604069470404",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 315.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T07:30:56Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 315.93,
+          "source_evidence_urls": [
+            "https://x.com/GairMartin/status/2078019604069470404"
+          ],
+          "terms": [
+            "cobie",
+            "$cobie",
+            "$brian",
+            "$jerry",
+            "base memes",
+            "base name meme rotation",
+            "$cobie the based man",
+            "founders name or founders pet",
+            "meme rotation",
+            "name token hype"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-17T07:34:15Z",
+      "event_id": "signal_6bdf41975307",
+      "evidence": [
+        {
+          "author_handle": "@tiger41690",
+          "minutes_before_detection": 318.76,
+          "minutes_from_window_start": 41.24,
+          "relevance": "direct mention of rotation and $cobie as next",
+          "text": "Base memes are running. Rotation from $cashcat and $ansem into $brian. And who is the new face of base? $COBIE the based man. Still under 1 million market cap",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T02:15:29Z",
+          "tweet_id": "2077940219664380048",
+          "type": "x_post",
+          "url": "https://x.com/tiger41690/status/2077940219664380048"
+        },
+        {
+          "author_handle": "@cwuhn4",
+          "minutes_before_detection": 13.13,
+          "minutes_from_window_start": 346.87,
+          "relevance": "ties $cobie to recent $jerry price action at similar mc",
+          "text": "$jerry hit 1.1m and dumped 85% to 120k. Now it\u2019s at 1.7m. And you think the two biggest base people $cobie and $jesse can\u2019t do that ?",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T07:21:07Z",
+          "tweet_id": "2078017135100461326",
+          "type": "x_post",
+          "url": "https://x.com/cwuhn4/status/2078017135100461326"
+        },
+        {
+          "author_handle": "@GairMartin",
+          "minutes_before_detection": 3.32,
+          "minutes_from_window_start": 356.68,
+          "relevance": "recent claim link drop on the token",
+          "text": "who still holding $COBIE?? check wallet something just went live",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T07:30:56Z",
+          "tweet_id": "2078019604069470404",
+          "type": "x_post",
+          "url": "https://x.com/GairMartin/status/2078019604069470404"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb20000000000000000000033c22ab099bbf76001"
+      },
+      "lore": "base name meme rotation, $cobie catching flow after $brian $jerry moves. 1.1m mc on thin tape",
+      "movement": {
+        "change_pct": 251.7,
+        "detected_at": "2026-07-17T07:34:15Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T03:05:00Z",
+        "estimated_start_at": "2026-07-17T02:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0xb221ead27c1ede1cedd1440a504813e50a16cf61ae9ef3354c07b6040296d9a2",
+        "pool_name": "COBIE / ETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-17T07:34:15Z",
+        "window_start_at": "2026-07-17T01:34:15Z"
+      },
+      "source_signal_id": "signal_6bdf41975307",
+      "token": {
+        "address": "0xb20000000000000000000033c22ab099bbf76001",
+        "chain_slug": "base",
+        "symbol": "COBIE"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@tiger41690",
+          "@cwuhn4",
+          "@Liuueth",
+          "@BONKatsukiClan"
+        ],
+        "catalysts": [
+          "meme_rotation",
+          "name_token_hype"
+        ],
+        "keywords": [
+          "$cobie",
+          "$brian",
+          "$jerry",
+          "base memes"
+        ],
+        "phrases": [
+          "base name meme rotation",
+          "$cobie the based man",
+          "founders name or founders pet"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-17T07:22:45Z",
+  "updated_at": "2026-07-17T07:34:17Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -18115,19 +18348,19 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 37,
-        "approved_movement_chatter": 14,
-        "rejected_late_reaction": 158,
+        "approved_movement_chatter": 15,
+        "rejected_late_reaction": 160,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 114,
+        "rejected_no_tweet_evidence": 116,
         "rejected_stale_pre_move": 16,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 349,
-      "watch_accounts_approved": 43,
+      "candidate_rules": 354,
+      "watch_accounts_approved": 44,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 210,
+      "watch_accounts_rejected": 214,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-17T07:22:45Z"
+    "updated_at": "2026-07-17T07:34:17Z"
   }
 }

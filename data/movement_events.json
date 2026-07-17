@@ -16713,10 +16713,214 @@
           "front run base szn"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@brian_armstrong",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "$brian 20x in 1 hour",
+            "brian armstrong pfp",
+            "b20 meme",
+            "ceo pfp update",
+            "kol quote",
+            "base meme"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@stambouli_o1",
+          "approval_evidence_url": "https://x.com/stambouli_o1/status/2077910956235989340",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 29.2 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-17T00:19:12Z",
+          "approved_terms": [
+            "brian",
+            "$brian",
+            "$brian 20x in 1 hour"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 29.2,
+          "source_evidence_urls": [
+            "https://x.com/stambouli_o1/status/2077910956235989340"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "$brian 20x in 1 hour",
+            "brian armstrong pfp",
+            "b20 meme",
+            "ceo pfp update",
+            "kol quote",
+            "base meme"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@mzemlu777",
+          "approval_evidence_url": "https://x.com/mzemlu777/status/2077911729388802456",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 32.3 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T00:22:16Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 32.27,
+          "source_evidence_urls": [
+            "https://x.com/mzemlu777/status/2077911729388802456"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "$brian 20x in 1 hour",
+            "brian armstrong pfp",
+            "b20 meme",
+            "ceo pfp update",
+            "kol quote",
+            "base meme"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@runecrypto_",
+          "approval_evidence_url": "https://x.com/RuneCrypto_/status/2077911081884725466",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 29.7 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-17T00:19:42Z",
+          "approved_terms": [
+            "brian",
+            "$brian"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 29.7,
+          "source_evidence_urls": [
+            "https://x.com/RuneCrypto_/status/2077911081884725466"
+          ],
+          "terms": [
+            "brian",
+            "$brian",
+            "b20",
+            "$brian 20x in 1 hour",
+            "brian armstrong pfp",
+            "b20 meme",
+            "ceo pfp update",
+            "kol quote",
+            "base meme"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-17T00:22:39Z",
+      "event_id": "signal_fe788d7f2aef",
+      "evidence": [
+        {
+          "author_handle": "@stambouli_o1",
+          "minutes_before_detection": 3.44,
+          "minutes_from_window_start": 356.56,
+          "relevance": "directly links the ceo pfp change to the instant pump",
+          "text": "$BRIAN 20x in 1 hour Only on @base Launched on @o1_exchange",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T00:19:12Z",
+          "tweet_id": "2077910956235989340",
+          "type": "x_post",
+          "url": "https://x.com/stambouli_o1/status/2077910956235989340"
+        },
+        {
+          "author_handle": "@mzemlu777",
+          "minutes_before_detection": 0.37,
+          "minutes_from_window_start": 359.63,
+          "relevance": "shows the narrative connecting armstrong to the token",
+          "text": "@brian_armstrong just threw out one last Hail Mary with $BRIAN",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T00:22:16Z",
+          "tweet_id": "2077911729388802456",
+          "type": "x_post",
+          "url": "https://x.com/mzemlu777/status/2077911729388802456"
+        },
+        {
+          "author_handle": "@RuneCrypto_",
+          "minutes_before_detection": 2.95,
+          "minutes_from_window_start": 357.05,
+          "relevance": "captures the immediate reaction to the pfp post",
+          "text": "so he's shilling $brian lmao",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T00:19:42Z",
+          "tweet_id": "2077911081884725466",
+          "type": "x_post",
+          "url": "https://x.com/RuneCrypto_/status/2077911081884725466"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb2000000000000000000007bf6d5cbb0e24cb301"
+      },
+      "lore": "brian armstrong swapped his pfp and base chat instantly tied it to the b20 meme. 20x in an hour on the quote tweets. more eyes or just the first wave",
+      "movement": {
+        "change_pct": 2398.9,
+        "detected_at": "2026-07-17T00:22:39Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T00:10:00Z",
+        "estimated_start_at": "2026-07-16T23:50:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0x02f924e13a22fcf86551a2228206905bfe4a78b1b2d0158c76dbddb38ea50013",
+        "pool_name": "BRIAN / ETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-17T00:22:39Z",
+        "window_start_at": "2026-07-16T18:22:39Z"
+      },
+      "source_signal_id": "signal_fe788d7f2aef",
+      "token": {
+        "address": "0xb2000000000000000000007bf6d5cbb0e24cb301",
+        "chain_slug": "base",
+        "symbol": "BRIAN"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@brian_armstrong",
+          "@stambouli_o1",
+          "@mzemlu777"
+        ],
+        "catalysts": [
+          "ceo_pfp_update",
+          "kol_quote",
+          "base_meme"
+        ],
+        "keywords": [
+          "$BRIAN",
+          "B20",
+          "brian"
+        ],
+        "phrases": [
+          "$BRIAN 20x in 1 hour",
+          "brian armstrong pfp",
+          "b20 meme"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-16T20:22:48Z",
+  "updated_at": "2026-07-17T00:22:41Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -16724,19 +16928,19 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 34,
-        "approved_movement_chatter": 12,
-        "rejected_late_reaction": 146,
+        "approved_movement_chatter": 14,
+        "rejected_late_reaction": 147,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 104,
+        "rejected_no_tweet_evidence": 105,
         "rejected_stale_pre_move": 15,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 321,
-      "watch_accounts_approved": 38,
+      "candidate_rules": 325,
+      "watch_accounts_approved": 40,
       "watch_accounts_pending": 7,
       "watch_accounts_rejected": 200,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-16T20:22:48Z"
+    "updated_at": "2026-07-17T00:22:41Z"
   }
 }

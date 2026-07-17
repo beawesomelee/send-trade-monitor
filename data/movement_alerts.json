@@ -1,18 +1,26 @@
 [
   {
     "chain_slug": "base",
+    "address": "0xb200000000000000000000d9dac57e31e1aceb01",
+    "symbol": "JERRY",
+    "direction": "pump",
+    "price_change_h1_pct": 75.974,
+    "timestamp": 1784254993.0098684
+  },
+  {
+    "chain_slug": "base",
+    "address": "0x0c5142bc58f9a61ab8c3d2085dd2f4e550c5ce0b",
+    "symbol": "RUSSELL",
+    "direction": "pump",
+    "price_change_h1_pct": 33.755,
+    "timestamp": 1784254993.0098684
+  },
+  {
+    "chain_slug": "base",
     "address": "0xb2000000000000000000007bf6d5cbb0e24cb301",
     "symbol": "BRIAN",
     "direction": "pump",
     "price_change_h1_pct": 3124.1,
     "timestamp": 1784247761.5759587
-  },
-  {
-    "chain_slug": "base",
-    "address": "0x693b8de886712f0039eef578bbe5ac7ea3b598ce",
-    "symbol": "doji",
-    "direction": "pump",
-    "price_change_h1_pct": 12.76,
-    "timestamp": 1784233368.9851315
   }
 ]

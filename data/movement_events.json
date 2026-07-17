@@ -16917,30 +16917,430 @@
           "b20 meme"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@stambouli_o1",
+          "approval_evidence_url": "https://x.com/stambouli_o1/status/2077910956235989340",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 159.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T00:19:12Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 159.2,
+          "source_evidence_urls": [
+            "https://x.com/stambouli_o1/status/2077910956235989340"
+          ],
+          "terms": [
+            "jerry",
+            "$jerry",
+            "$brian",
+            "o1",
+            "b20",
+            "$jerry will follow $brain",
+            "$brian 20x",
+            "50% to stambouli",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@ijeco",
+          "approval_evidence_url": "https://x.com/Ijeco/status/2077940082569257131",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 274.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T02:14:56Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 274.93,
+          "source_evidence_urls": [
+            "https://x.com/Ijeco/status/2077940082569257131"
+          ],
+          "terms": [
+            "jerry",
+            "$jerry",
+            "$brian",
+            "o1",
+            "b20",
+            "$jerry will follow $brain",
+            "$brian 20x",
+            "50% to stambouli",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@bigking6034",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jerry",
+            "$jerry",
+            "$brian",
+            "o1",
+            "b20",
+            "$jerry will follow $brain",
+            "$brian 20x",
+            "50% to stambouli",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@droplless",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jerry",
+            "$jerry",
+            "$brian",
+            "o1",
+            "b20",
+            "$jerry will follow $brain",
+            "$brian 20x",
+            "50% to stambouli",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@beyondertr",
+          "approval_evidence_url": "https://x.com/BeyonderTR/status/2077764874822664389",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 421.3 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-16T14:38:43Z",
+          "approved_terms": [
+            "jerry"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -421.28,
+          "source_evidence_urls": [
+            "https://x.com/BeyonderTR/status/2077764874822664389"
+          ],
+          "terms": [
+            "jerry",
+            "$jerry",
+            "$brian",
+            "o1",
+            "b20",
+            "$jerry will follow $brain",
+            "$brian 20x",
+            "50% to stambouli",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "pre_window"
+        }
+      ],
+      "detected_at": "2026-07-17T02:23:08Z",
+      "event_id": "signal_b327282c2b48",
+      "evidence": [
+        {
+          "author_handle": "@Ijeco",
+          "minutes_before_detection": 8.19,
+          "minutes_from_window_start": 351.81,
+          "relevance": "direct link from brian launch to jerry expectations",
+          "text": "$Jerry will follow $Brain. You heard it here first.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T02:14:56Z",
+          "tweet_id": "2077940082569257131",
+          "type": "x_post",
+          "url": "https://x.com/Ijeco/status/2077940082569257131"
+        },
+        {
+          "author_handle": "@stambouli_o1",
+          "minutes_before_detection": 123.93,
+          "minutes_from_window_start": 236.07,
+          "relevance": "founder post triggering the follow-on plays",
+          "text": "$BRIAN 20x in 1 hour only on @base launched on @o1_exchange",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T00:19:12Z",
+          "tweet_id": "2077910956235989340",
+          "type": "x_post",
+          "url": "https://x.com/stambouli_o1/status/2077910956235989340"
+        },
+        {
+          "author_handle": "@BeyonderTR",
+          "minutes_before_detection": 704.4,
+          "minutes_from_window_start": -344.4,
+          "relevance": "explains the supply dynamic behind the move",
+          "text": "50% of the JERRY token supply to @stambouli_o1",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-16T14:38:43Z",
+          "tweet_id": "2077764874822664389",
+          "type": "x_post",
+          "url": "https://x.com/BeyonderTR/status/2077764874822664389"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0xb200000000000000000000d9dac57e31e1aceb01"
+      },
+      "lore": "@stambouli_o1 posted $brian 20x in an hour on base via o1. $jerry next with 50% supply to him, base b20 season chatter picking up. 100m calls already",
+      "movement": {
+        "change_pct": 317.6,
+        "detected_at": "2026-07-17T02:23:08Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T02:15:00Z",
+        "estimated_start_at": "2026-07-16T21:40:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0xf594d4bb3db0bc3e25473c9e658b8da5f8b8d97ec910c0953cbc39829121ca1a",
+        "pool_name": "JERRY / ETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-17T02:23:08Z",
+        "window_start_at": "2026-07-16T20:23:08Z"
+      },
+      "source_signal_id": "signal_b327282c2b48",
+      "token": {
+        "address": "0xb200000000000000000000d9dac57e31e1aceb01",
+        "chain_slug": "base",
+        "symbol": "JERRY"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@stambouli_o1",
+          "@Ijeco",
+          "@BigKing6034",
+          "@droplless"
+        ],
+        "catalysts": [
+          "kol_post",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "$jerry",
+          "$brian",
+          "o1",
+          "b20"
+        ],
+        "phrases": [
+          "$jerry will follow $brain",
+          "$brian 20x",
+          "50% to stambouli"
+        ]
+      }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@russelldogcto",
+          "approval_evidence_url": "https://x.com/RussellDogCTO/status/2077809233240768831",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 375.0 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-16T17:34:59Z",
+          "approved_terms": [
+            "russell"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -375.02,
+          "source_evidence_urls": [
+            "https://x.com/RussellDogCTO/status/2077809233240768831"
+          ],
+          "terms": [
+            "russell",
+            "$russell",
+            "brian",
+            "base dog",
+            "claim portal",
+            "early checkers win",
+            "needs a good companion",
+            "meme rotation"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@abileighton1992",
+          "approval_evidence_url": "https://x.com/Abileighton1992/status/2077940344457752982",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 146.0 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T02:15:59Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 145.98,
+          "source_evidence_urls": [
+            "https://x.com/Abileighton1992/status/2077940344457752982"
+          ],
+          "terms": [
+            "russell",
+            "$russell",
+            "brian",
+            "base dog",
+            "claim portal",
+            "early checkers win",
+            "needs a good companion",
+            "meme rotation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@erg0tt",
+          "approval_evidence_url": "https://x.com/Erg0tt/status/2077941755505438937",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 151.6 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-17T02:21:35Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 151.58,
+          "source_evidence_urls": [
+            "https://x.com/Erg0tt/status/2077941755505438937"
+          ],
+          "terms": [
+            "russell",
+            "$russell",
+            "brian",
+            "base dog",
+            "claim portal",
+            "early checkers win",
+            "needs a good companion",
+            "meme rotation"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-17T02:23:08Z",
+      "event_id": "signal_60be50ef3ea7",
+      "evidence": [
+        {
+          "author_handle": "@Abileighton1992",
+          "minutes_before_detection": 7.15,
+          "minutes_from_window_start": 352.85,
+          "relevance": "direct mention of claim portal opening tied to the token",
+          "text": "$RUSSELL just opened the claim portal. Not much supply from what I see. Early checkers win here",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T02:15:59Z",
+          "tweet_id": "2077940344457752982",
+          "type": "x_post",
+          "url": "https://x.com/Abileighton1992/status/2077940344457752982"
+        },
+        {
+          "author_handle": "@RussellDogCTO",
+          "minutes_before_detection": 528.14,
+          "minutes_from_window_start": -168.14,
+          "relevance": "project's recent post on app icon update",
+          "text": "What about this new app icon",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-16T17:34:59Z",
+          "tweet_id": "2077809233240768831",
+          "type": "x_post",
+          "url": "https://x.com/RussellDogCTO/status/2077809233240768831"
+        },
+        {
+          "author_handle": "@Erg0tt",
+          "minutes_before_detection": 1.54,
+          "minutes_from_window_start": 358.46,
+          "relevance": "narrative extension to companion dog token",
+          "text": "$RUSSELL needs a good companion. I think the real @cobie's dog, $DUSTIN, definitely deserves some attention too.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-17T02:21:35Z",
+          "tweet_id": "2077941755505438937",
+          "type": "x_post",
+          "url": "https://x.com/Erg0tt/status/2077941755505438937"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/base/0x0c5142bc58f9a61ab8c3d2085dd2f4e550c5ce0b"
+      },
+      "lore": "claim portal just opened on thin supply, early checkers noting it. base dog meme chatter with brian nods picking up",
+      "movement": {
+        "change_pct": 77.4,
+        "detected_at": "2026-07-17T02:23:08Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-17T00:25:00Z",
+        "estimated_start_at": "2026-07-16T23:50:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "0xea8b7ed6170e0ea3703dde6b496b065a8ececd7b",
+        "pool_name": "RUSSELL / WETH",
+        "pool_network": "base",
+        "window": "h6",
+        "window_end_at": "2026-07-17T02:23:08Z",
+        "window_start_at": "2026-07-16T20:23:08Z"
+      },
+      "source_signal_id": "signal_60be50ef3ea7",
+      "token": {
+        "address": "0x0c5142bc58f9a61ab8c3d2085dd2f4e550c5ce0b",
+        "chain_slug": "base",
+        "symbol": "RUSSELL"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@russelldogcto",
+          "@abileighton1992",
+          "@erg0tt"
+        ],
+        "catalysts": [
+          "claim_portal",
+          "meme_rotation"
+        ],
+        "keywords": [
+          "$russell",
+          "brian",
+          "base dog"
+        ],
+        "phrases": [
+          "claim portal",
+          "early checkers win",
+          "needs a good companion"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-17T00:22:41Z",
+  "updated_at": "2026-07-17T02:23:12Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 34,
+        "approved_alpha_source": 36,
         "approved_movement_chatter": 14,
-        "rejected_late_reaction": 147,
+        "rejected_late_reaction": 151,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 105,
+        "rejected_no_tweet_evidence": 107,
         "rejected_stale_pre_move": 15,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 325,
-      "watch_accounts_approved": 40,
+      "candidate_rules": 333,
+      "watch_accounts_approved": 42,
       "watch_accounts_pending": 7,
-      "watch_accounts_rejected": 200,
+      "watch_accounts_rejected": 205,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-17T00:22:41Z"
+    "updated_at": "2026-07-17T02:23:12Z"
   }
 }

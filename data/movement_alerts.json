@@ -4,15 +4,7 @@
     "address": "ge87etsjwrqbhaqqmkrno69rftwh9bfssm99xnxtpump",
     "symbol": "Jimothy",
     "direction": "pump",
-    "price_change_h1_pct": 45.738,
-    "timestamp": 1784341370.3940454
-  },
-  {
-    "chain_slug": "solana",
-    "address": "az1fowc7pcs4rkjcy7ufudqwvgnrrxzjj9bqxihfpump",
-    "symbol": "HOUSEM",
-    "direction": "pump",
-    "price_change_h1_pct": -24.117,
-    "timestamp": 1784327179.892005
+    "price_change_h1_pct": -5.529,
+    "timestamp": 1784356244.6691132
   }
 ]

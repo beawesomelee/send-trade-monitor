@@ -20086,31 +20086,239 @@
           "spine deformity"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@tradermomike",
+          "approval_evidence_url": "https://x.com/Tradermomike/status/2078366751926931882",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 285.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-18T06:30:22Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 285.37,
+          "source_evidence_urls": [
+            "https://x.com/Tradermomike/status/2078366751926931882"
+          ],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "jimothycoin.com",
+            "raccoon",
+            "gave $jimothy to my community at $70k mc",
+            "jimothy is wholesome, viral and funny af",
+            "airdrop claims are active",
+            "kol post",
+            "airdrop",
+            "early call"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@rickyrozay007",
+          "approval_evidence_url": "https://x.com/rickyrozay007/status/2078120927326298469",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 691.5 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-17T14:13:33Z",
+          "approved_terms": [
+            "jimothy",
+            "jimothy is wholesome, viral and funny af"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -691.45,
+          "source_evidence_urls": [
+            "https://x.com/rickyrozay007/status/2078120927326298469"
+          ],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "jimothycoin.com",
+            "raccoon",
+            "gave $jimothy to my community at $70k mc",
+            "jimothy is wholesome, viral and funny af",
+            "airdrop claims are active",
+            "kol post",
+            "airdrop",
+            "early call"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@solwhaleentry",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "jimothycoin.com",
+            "raccoon",
+            "gave $jimothy to my community at $70k mc",
+            "jimothy is wholesome, viral and funny af",
+            "airdrop claims are active",
+            "kol post",
+            "airdrop",
+            "early call"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@promiz_eth",
+          "approval_evidence_url": "https://x.com/promiz_eth/status/2078137936755769352",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 623.9 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-17T15:21:08Z",
+          "approved_terms": [
+            "jimothy",
+            "$jimothy"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -623.87,
+          "source_evidence_urls": [
+            "https://x.com/promiz_eth/status/2078137936755769352"
+          ],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "jimothycoin.com",
+            "raccoon",
+            "gave $jimothy to my community at $70k mc",
+            "jimothy is wholesome, viral and funny af",
+            "airdrop claims are active",
+            "kol post",
+            "airdrop",
+            "early call"
+          ],
+          "timing_bucket": "pre_window"
+        }
+      ],
+      "detected_at": "2026-07-18T06:30:42Z",
+      "event_id": "signal_b33b7dae7d64",
+      "evidence": [
+        {
+          "author_handle": "@Tradermomike",
+          "minutes_before_detection": 0.32,
+          "minutes_from_window_start": 359.68,
+          "relevance": "early community call explaining current holders and move",
+          "text": "gave $JIMOTHY to my community at $70k MC... We bags over 300x",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-18T06:30:22Z",
+          "tweet_id": "2078366751926931882",
+          "type": "x_post",
+          "url": "https://x.com/Tradermomike/status/2078366751926931882"
+        },
+        {
+          "author_handle": "@rickyrozay007",
+          "minutes_before_detection": 977.14,
+          "minutes_from_window_start": -617.14,
+          "relevance": "KOL bull post on the meme qualities driving the pump",
+          "text": "Jimothy is wholesome, viral and funny AF.. perfect recipe for a GIGA sender",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-17T14:13:33Z",
+          "tweet_id": "2078120927326298469",
+          "type": "x_post",
+          "url": "https://x.com/rickyrozay007/status/2078120927326298469"
+        },
+        {
+          "author_handle": "@promiz_eth",
+          "minutes_before_detection": 909.55,
+          "minutes_from_window_start": -549.55,
+          "relevance": "confirms the rapid price action in last 24h",
+          "text": "$Jimothy is up with a massive pump from $200k to $4.5M market cap",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-17T15:21:08Z",
+          "tweet_id": "2078137936755769352",
+          "type": "x_post",
+          "url": "https://x.com/promiz_eth/status/2078137936755769352"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/Ge87EtsjwRQbHaqQmKRno69RFTwh9bfSsm99XNxTpump"
+      },
+      "lore": "momike called it to community at 70k mc for 300x bags. airdrop claims live as vol spikes. rickyrozay on the viral raccoon giga sender",
+      "movement": {
+        "change_pct": 87.1,
+        "detected_at": "2026-07-18T06:30:42Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-18T04:35:00Z",
+        "estimated_start_at": "2026-07-18T01:45:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 156,
+        "pool_address": "E3SotafntrgRg9XjppxqoJWSR4GUaJV7sA8u4a89rYo6",
+        "pool_name": "Jimothy / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-18T06:30:42Z",
+        "window_start_at": "2026-07-18T00:30:42Z"
+      },
+      "source_signal_id": "signal_b33b7dae7d64",
+      "token": {
+        "address": "Ge87EtsjwRQbHaqQmKRno69RFTwh9bfSsm99XNxTpump",
+        "chain_slug": "solana",
+        "symbol": "Jimothy"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Tradermomike",
+          "@rickyrozay007",
+          "@SOLWhaleEntry",
+          "@promiz_eth"
+        ],
+        "catalysts": [
+          "kol_post",
+          "airdrop",
+          "early_call"
+        ],
+        "keywords": [
+          "$Jimothy",
+          "jimothycoin.com",
+          "raccoon"
+        ],
+        "phrases": [
+          "gave $JIMOTHY to my community at $70k MC",
+          "Jimothy is wholesome, viral and funny AF",
+          "airdrop claims are active"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-18T02:22:50Z",
+  "updated_at": "2026-07-18T06:30:44Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 38,
+        "approved_alpha_source": 40,
         "approved_movement_chatter": 17,
-        "rejected_late_reaction": 176,
+        "rejected_late_reaction": 177,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 123,
+        "rejected_no_tweet_evidence": 124,
         "rejected_stale_pre_move": 16,
         "unknown_movement_start": 7,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 387,
-      "watch_accounts_approved": 47,
+      "candidate_rules": 391,
+      "watch_accounts_approved": 49,
       "watch_accounts_pending": 14,
       "watch_accounts_rejected": 232,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-18T02:22:50Z"
+    "updated_at": "2026-07-18T06:30:44Z"
   }
 }

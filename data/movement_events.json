@@ -19922,31 +19922,195 @@
           "so close for moonshot"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@jimothyonsol",
+          "approval_evidence_url": "https://x.com/JimothyOnSol/status/2078300030163730909",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 310.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-18T02:05:14Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 310.23,
+          "source_evidence_urls": [
+            "https://x.com/JimothyOnSol/status/2078300030163730909"
+          ],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "raccoon",
+            "wholesome",
+            "jimothy the raccoon",
+            "no beta",
+            "spine deformity",
+            "kol post",
+            "meme virality",
+            "organic pump"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@sitkapetrodolla",
+          "approval_evidence_url": "https://x.com/sitkapetrodolla/status/2078164958945370128",
+          "approval_label": "approved_alpha_source",
+          "approval_reason": "tweet was 226.5 minutes before the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-17T17:08:31Z",
+          "approved_terms": [
+            "jimothy"
+          ],
+          "initial_value_label": "potentially_predictive",
+          "minutes_from_estimated_start": -226.48,
+          "source_evidence_urls": [
+            "https://x.com/sitkapetrodolla/status/2078164958945370128"
+          ],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "raccoon",
+            "wholesome",
+            "jimothy the raccoon",
+            "no beta",
+            "spine deformity",
+            "kol post",
+            "meme virality",
+            "organic pump"
+          ],
+          "timing_bucket": "pre_window"
+        },
+        {
+          "account": "@tortillastown",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "jimothy",
+            "$jimothy",
+            "raccoon",
+            "wholesome",
+            "jimothy the raccoon",
+            "no beta",
+            "spine deformity",
+            "kol post",
+            "meme virality",
+            "organic pump"
+          ],
+          "timing_bucket": "unknown"
+        }
+      ],
+      "detected_at": "2026-07-18T02:22:48Z",
+      "event_id": "signal_ffe987111c12",
+      "evidence": [
+        {
+          "author_handle": "@sitkapetrodolla",
+          "minutes_before_detection": 554.28,
+          "minutes_from_window_start": -194.28,
+          "relevance": "driving the viral wholesome narrative behind the pump",
+          "text": "Jimothy with his family as a baby (video, 51k likes)",
+          "timing_bucket": "pre_window",
+          "tweet_at": "2026-07-17T17:08:31Z",
+          "tweet_id": "2078164958945370128",
+          "type": "x_post",
+          "url": "https://x.com/sitkapetrodolla/status/2078164958945370128"
+        },
+        {
+          "author_handle": "@JimothyOnSol",
+          "minutes_before_detection": 17.55,
+          "minutes_from_window_start": 342.45,
+          "relevance": "team reaction to the sudden move",
+          "text": "GM everybody \u2026. Like WTF just happened in these Hours",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-18T02:05:14Z",
+          "tweet_id": "2078300030163730909",
+          "type": "x_post",
+          "url": "https://x.com/JimothyOnSol/status/2078300030163730909"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/Ge87EtsjwRQbHaqQmKRno69RFTwh9bfSsm99XNxTpump"
+      },
+      "lore": "viral raccoon family clips hitting feeds, 51k like baby video today. 13m mc no beta runners yet. official account posting pics",
+      "movement": {
+        "change_pct": 215.0,
+        "detected_at": "2026-07-18T02:22:48Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-18T02:15:00Z",
+        "estimated_start_at": "2026-07-17T20:55:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "2VHM9pTZEU6pqeZoiNi8ZCeyerqhRYgS5Um7U8AEKrd9",
+        "pool_name": "Jimothy / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-18T02:22:48Z",
+        "window_start_at": "2026-07-17T20:22:48Z"
+      },
+      "source_signal_id": "signal_ffe987111c12",
+      "token": {
+        "address": "Ge87EtsjwRQbHaqQmKRno69RFTwh9bfSsm99XNxTpump",
+        "chain_slug": "solana",
+        "symbol": "Jimothy"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@JimothyOnSol",
+          "@sitkapetrodolla",
+          "@TortillasTown"
+        ],
+        "catalysts": [
+          "kol_post",
+          "meme_virality",
+          "organic_pump"
+        ],
+        "keywords": [
+          "jimothy",
+          "raccoon",
+          "wholesome"
+        ],
+        "phrases": [
+          "jimothy the raccoon",
+          "no beta",
+          "spine deformity"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-17T22:26:19Z",
+  "updated_at": "2026-07-18T02:22:50Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
     "method": "tweet_timing_vs_estimated_start",
     "stats": {
       "candidate_labels": {
-        "approved_alpha_source": 37,
+        "approved_alpha_source": 38,
         "approved_movement_chatter": 17,
-        "rejected_late_reaction": 175,
+        "rejected_late_reaction": 176,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 122,
+        "rejected_no_tweet_evidence": 123,
         "rejected_stale_pre_move": 16,
         "unknown_movement_start": 7,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 384,
-      "watch_accounts_approved": 46,
+      "candidate_rules": 387,
+      "watch_accounts_approved": 47,
       "watch_accounts_pending": 14,
-      "watch_accounts_rejected": 230,
+      "watch_accounts_rejected": 232,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-17T22:26:19Z"
+    "updated_at": "2026-07-18T02:22:50Z"
   }
 }

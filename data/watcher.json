@@ -286,7 +286,7 @@
       "value": "from:sitkapetrodolla (jimothy) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-18T05:22:29Z",
+  "rules_synced_at": "2026-07-18T06:22:31Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -8362,7 +8362,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-18T05:22:29Z",
+  "updated_at": "2026-07-18T06:22:31Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

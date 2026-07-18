@@ -296,7 +296,7 @@
       "value": "from:promiz_eth (jimothy OR $jimothy) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-18T13:59:36Z",
+  "rules_synced_at": "2026-07-18T14:22:29Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -8531,7 +8531,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-18T13:59:36Z",
+  "updated_at": "2026-07-18T14:22:29Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

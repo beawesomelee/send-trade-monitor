@@ -20294,10 +20294,175 @@
           "airdrop claims are active"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@bull_wizard0",
+          "approval_evidence_url": "https://x.com/BULL_WIZARD0/status/2078467541714788672",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 235.9 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-18T13:10:52Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 235.87,
+          "source_evidence_urls": [
+            "https://x.com/BULL_WIZARD0/status/2078467541714788672"
+          ],
+          "terms": [
+            "wingit",
+            "$wingit",
+            "25x profit",
+            "aviation theme",
+            "meme kit",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@emnirex",
+          "approval_evidence_url": "https://x.com/emnirex/status/2078438179263115432",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 119.2 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-18T11:14:12Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 119.2,
+          "source_evidence_urls": [
+            "https://x.com/emnirex/status/2078438179263115432"
+          ],
+          "terms": [
+            "wingit",
+            "$wingit",
+            "25x profit",
+            "aviation theme",
+            "meme kit",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@wingit404",
+          "approval_evidence_url": "https://x.com/WINGIT404/status/2078468248320831776",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 238.7 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-18T13:13:41Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 238.68,
+          "source_evidence_urls": [
+            "https://x.com/WINGIT404/status/2078468248320831776"
+          ],
+          "terms": [
+            "wingit",
+            "$wingit",
+            "25x profit",
+            "aviation theme",
+            "meme kit",
+            "kol post",
+            "meme reactivation"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-18T13:22:40Z",
+      "event_id": "signal_79f6f10f192c",
+      "evidence": [
+        {
+          "author_handle": "@BULL_WIZARD0",
+          "minutes_before_detection": 11.79,
+          "minutes_from_window_start": 348.21,
+          "relevance": "profit call shill driving attention",
+          "text": "Hurry massive 25X profit from my private tg call",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-18T13:10:52Z",
+          "tweet_id": "2078467541714788672",
+          "type": "x_post",
+          "url": "https://x.com/BULL_WIZARD0/status/2078467541714788672"
+        },
+        {
+          "author_handle": "@emnirex",
+          "minutes_before_detection": 128.46,
+          "minutes_from_window_start": 231.54,
+          "relevance": "explains the meme angle behind the move",
+          "text": "$WINGIT - @WINGIT404 Narrative: cheeky pilot/aviation theme, a downloadable meme kit inspired by the trending Russian mobile fire group training",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-18T11:14:12Z",
+          "tweet_id": "2078438179263115432",
+          "type": "x_post",
+          "url": "https://x.com/emnirex/status/2078438179263115432"
+        },
+        {
+          "author_handle": "@WINGIT404",
+          "minutes_before_detection": 8.98,
+          "minutes_from_window_start": 351.02,
+          "relevance": "project account active but not on token updates",
+          "text": "thanks!",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-18T13:13:41Z",
+          "tweet_id": "2078468248320831776",
+          "type": "x_post",
+          "url": "https://x.com/WINGIT404/status/2078468248320831776"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/CVhWiQ2SBhpTJ3xAR3ekf3uf8Ns2tNzj3mEtzKSpump"
+      },
+      "lore": "small callers dropping 25x profit screenshots and fresh entries on thin liq. @emnirex noted the aviation meme kit angle. no big accounts, project posting random memes instead",
+      "movement": {
+        "change_pct": 95.4,
+        "detected_at": "2026-07-18T13:22:40Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-18T12:05:00Z",
+        "estimated_start_at": "2026-07-18T09:15:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "5Kc5ssFZhTqUe628NY3D5z22ApPt9AU16HMX94JEXaz5",
+        "pool_name": "WINGIT / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-18T13:22:40Z",
+        "window_start_at": "2026-07-18T07:22:40Z"
+      },
+      "source_signal_id": "signal_79f6f10f192c",
+      "token": {
+        "address": "CVhWiQ2SBhpTJ3xAR3ekf3uf8Ns2tNzj3mEtzKSpump",
+        "chain_slug": "solana",
+        "symbol": "WINGIT"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@BULL_WIZARD0",
+          "@emnirex",
+          "@WINGIT404"
+        ],
+        "catalysts": [
+          "kol_post",
+          "meme_reactivation"
+        ],
+        "keywords": [
+          "$WINGIT",
+          "WINGIT"
+        ],
+        "phrases": [
+          "25X profit",
+          "aviation theme",
+          "meme kit"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-18T06:30:44Z",
+  "updated_at": "2026-07-18T13:22:42Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -20306,19 +20471,19 @@
       "candidate_labels": {
         "approved_alpha_source": 40,
         "approved_movement_chatter": 17,
-        "rejected_late_reaction": 177,
+        "rejected_late_reaction": 180,
         "rejected_no_approved_terms": 2,
         "rejected_no_tweet_evidence": 124,
         "rejected_stale_pre_move": 16,
         "unknown_movement_start": 7,
         "unknown_tweet_timing": 8
       },
-      "candidate_rules": 391,
+      "candidate_rules": 394,
       "watch_accounts_approved": 49,
       "watch_accounts_pending": 14,
-      "watch_accounts_rejected": 232,
+      "watch_accounts_rejected": 235,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-18T06:30:44Z"
+    "updated_at": "2026-07-18T13:22:42Z"
   }
 }

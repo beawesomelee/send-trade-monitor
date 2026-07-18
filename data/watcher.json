@@ -281,7 +281,7 @@
       "value": "from:u7z__ (housem OR $housem OR \"$housem is pumping hard\") -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-17T23:28:34Z",
+  "rules_synced_at": "2026-07-18T00:22:27Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -8289,7 +8289,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-17T23:28:34Z",
+  "updated_at": "2026-07-18T00:22:27Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

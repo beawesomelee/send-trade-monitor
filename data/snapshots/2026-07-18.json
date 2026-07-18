@@ -97,6 +97,20 @@
   {
     "chain_slug": "base",
     "chain_id": 8453,
+    "address": "0xae45b8fae07ffb2e5f4373bfcb6f4bd827a45b07",
+    "symbol": "Gitlawb",
+    "name": "Gitlawb",
+    "market_cap_usd": 1000505,
+    "volume_24h_usd": 8193716,
+    "liquidity_usd": 913442,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/ZcUHrD1FhQlbEzMM?width=800&height=800&quality=95&format=auto",
+    "pair_created_at_ms": 1784286603000,
+    "dexscreener_url": "https://dexscreener.com/base/0xae45b8fae07ffb2e5f4373bfcb6f4bd827a45b07",
+    "decimals": 18
+  },
+  {
+    "chain_slug": "base",
+    "chain_id": 8453,
     "address": "0xb2000000000000000000007bf6d5cbb0e24cb301",
     "symbol": "BRIAN",
     "name": "Coinbase Man",
@@ -414,6 +428,19 @@
     "logo_uri": "https://cdn.dexscreener.com/cms/images/ou69yypz7mK2Uqtq?width=800&height=800&quality=95&format=auto",
     "dexscreener_url": "https://dexscreener.com/base/0x600d601d8b9eb5de5ac90fefc68d0d08801bfd3f",
     "decimals": 8
+  },
+  {
+    "chain_slug": "base",
+    "chain_id": 8453,
+    "address": "0x14d6c649292c5c9790c5196d1a9ea039307947a1",
+    "symbol": "GULD",
+    "name": "GULD",
+    "market_cap_usd": 36340343,
+    "volume_24h_usd": 802358,
+    "liquidity_usd": 1614558,
+    "logo_uri": "https://cdn.dexscreener.com/cms/images/YHEvPNUMVz4bFKyq?width=800&height=800&quality=95&format=auto",
+    "dexscreener_url": "https://dexscreener.com/base/0x14d6c649292c5c9790c5196d1a9ea039307947a1",
+    "decimals": 18
   },
   {
     "chain_slug": "base",

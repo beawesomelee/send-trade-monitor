@@ -1,18 +1,10 @@
 [
   {
     "chain_slug": "solana",
-    "address": "ge87etsjwrqbhaqqmkrno69rftwh9bfssm99xnxtpump",
-    "symbol": "Jimothy",
+    "address": "5unfuzbfu34zv8cewfn33fxbntbfuihmxa4rgee1pump",
+    "symbol": "ANSEMCOIN",
     "direction": "pump",
-    "price_change_h1_pct": 27.154,
-    "timestamp": 1784398967.959245
-  },
-  {
-    "chain_slug": "base",
-    "address": "0xb2000000000000000000007bf6d5cbb0e24cb301",
-    "symbol": "BRIAN",
-    "direction": "pump",
-    "price_change_h1_pct": 124.866,
-    "timestamp": 1784391772.1427333
+    "price_change_h1_pct": 27.097,
+    "timestamp": 1784485366.4906585
   }
 ]

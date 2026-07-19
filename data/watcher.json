@@ -296,7 +296,7 @@
       "value": "from:bankrbot (bnkr OR $bnkr OR jesse OR $jesse OR base OR jessepollak OR \"founder coin\" OR \"prove base isn't dead\" OR \"revenge trade\" OR \"kol post\" OR \"narrative reactivation\" OR pampu OR $pampu OR b20 OR \"base cat\" OR \"o1 exchange\" OR \"long term holders win\" OR \"team post\" OR \"meme narrative\" OR brian OR $brian OR \"coinbase man\" OR \"brian armstrong flipped his pfp\" OR \"coinbase-man cartoon\" OR \"base flagship meme\" OR \"b20 runner\" OR \"pfp change\" OR \"base narrative\" OR \"base meme\" OR \"brian armstrong pfp\" OR \"whale bought\" OR \"32x its own liquidity\" OR \"whale buy\" OR \"pfp flip\" OR \"thin liq vol\") is:reply -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-19T07:40:25Z",
+  "rules_synced_at": "2026-07-19T08:22:33Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -8679,7 +8679,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-19T07:40:25Z",
+  "updated_at": "2026-07-19T08:22:33Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],

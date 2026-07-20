@@ -21036,10 +21036,194 @@
           "$ANSEMCOIN at a $5.7k"
         ]
       }
+    },
+    {
+      "candidate_watch_rules": [
+        {
+          "account": "@agamemnonssol",
+          "approval_evidence_url": "https://x.com/Agamemnonssol/status/2078974689586581723",
+          "approval_label": "approved_movement_chatter",
+          "approval_reason": "tweet was 11.1 minutes after the estimated pump start",
+          "approval_status": "approved",
+          "approval_tweet_at": "2026-07-19T22:46:06Z",
+          "approved_terms": [
+            "agamemnon"
+          ],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 11.1,
+          "source_evidence_urls": [
+            "https://x.com/Agamemnonssol/status/2078974689586581723",
+            "https://x.com/Agamemnonssol/status/2079005141827514432"
+          ],
+          "terms": [
+            "agamemnon",
+            "$agamemnon",
+            "odyssey",
+            "aura",
+            "moonshot",
+            "gates are open",
+            "throne is empty",
+            "game is live",
+            "63 votes left",
+            "team update",
+            "kol post",
+            "listing"
+          ],
+          "timing_bucket": "during_window"
+        },
+        {
+          "account": "@whalewatchalert",
+          "approval_evidence_url": "",
+          "approval_label": "rejected_no_tweet_evidence",
+          "approval_reason": "candidate account has no direct tweet evidence",
+          "approval_status": "rejected",
+          "approval_tweet_at": "",
+          "approved_terms": [],
+          "initial_value_label": "unknown_timing",
+          "minutes_from_estimated_start": null,
+          "source_evidence_urls": [],
+          "terms": [
+            "agamemnon",
+            "$agamemnon",
+            "odyssey",
+            "aura",
+            "moonshot",
+            "gates are open",
+            "throne is empty",
+            "game is live",
+            "63 votes left",
+            "team update",
+            "kol post",
+            "listing"
+          ],
+          "timing_bucket": "unknown"
+        },
+        {
+          "account": "@samyradelevedov",
+          "approval_evidence_url": "https://x.com/samyra delevedov/status/2079059335020204343",
+          "approval_label": "rejected_late_reaction",
+          "approval_reason": "tweet was 347.4 minutes after the estimated pump start",
+          "approval_status": "rejected",
+          "approval_tweet_at": "2026-07-20T04:22:27Z",
+          "approved_terms": [],
+          "initial_value_label": "during_move_not_proven_predictive",
+          "minutes_from_estimated_start": 347.45,
+          "source_evidence_urls": [
+            "https://x.com/samyra delevedov/status/2079059335020204343"
+          ],
+          "terms": [
+            "agamemnon",
+            "$agamemnon",
+            "odyssey",
+            "aura",
+            "moonshot",
+            "gates are open",
+            "throne is empty",
+            "game is live",
+            "63 votes left",
+            "team update",
+            "kol post",
+            "listing"
+          ],
+          "timing_bucket": "during_window"
+        }
+      ],
+      "detected_at": "2026-07-20T04:22:48Z",
+      "event_id": "signal_927758f439a5",
+      "evidence": [
+        {
+          "author_handle": "@Agamemnonssol",
+          "minutes_before_detection": 336.7,
+          "minutes_from_window_start": 23.3,
+          "relevance": "project announcement coinciding with pump",
+          "text": "THE GATES ARE OPEN. Website is live - full lore, live stats, and a game",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-19T22:46:06Z",
+          "tweet_id": "2078974689586581723",
+          "type": "x_post",
+          "url": "https://x.com/Agamemnonssol/status/2078974689586581723"
+        },
+        {
+          "author_handle": "@Agamemnonssol",
+          "minutes_before_detection": 215.69,
+          "minutes_from_window_start": 144.31,
+          "relevance": "direct follow up post on activity",
+          "text": "The throne is empty. The chart is moving. The game is live.",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-20T00:47:06Z",
+          "tweet_id": "2079005141827514432",
+          "type": "x_post",
+          "url": "https://x.com/Agamemnonssol/status/2079005141827514432"
+        },
+        {
+          "author_handle": "@samyradelevedov",
+          "minutes_before_detection": 0.35,
+          "minutes_from_window_start": 359.65,
+          "relevance": "moonshot listing momentum",
+          "text": "yooo $AGAMEMNON 63 votes left",
+          "timing_bucket": "during_window",
+          "tweet_at": "2026-07-20T04:22:27Z",
+          "tweet_id": "2079059335020204343",
+          "type": "x_post",
+          "url": "https://x.com/samyra delevedov/status/2079059335020204343"
+        }
+      ],
+      "links": {
+        "dexscreener": "https://dexscreener.com/solana/2cAtqsRafKS7baN3mvJARhyZiMRdW4fZYNUUWUrCpump"
+      },
+      "lore": "agamemnonssol posted throne empty chart moving game live. moonshot votes at 63 left with whale buy at 1.18m mc. odyssey aura meme timing",
+      "movement": {
+        "change_pct": 51.7,
+        "detected_at": "2026-07-20T04:22:48Z",
+        "direction": "pump",
+        "estimated_peak_at": "2026-07-19T23:35:00Z",
+        "estimated_start_at": "2026-07-19T22:35:00Z",
+        "estimated_start_confidence": 0.65,
+        "estimated_start_method": "ohlcv_local_extreme_15pct",
+        "estimated_start_reason": "local_low_threshold_cross",
+        "estimated_start_threshold_pct": 15.0,
+        "estimated_trough_at": "",
+        "ohlcv_candle_count": 200,
+        "pool_address": "636bkx7Ugs6Vdb9FhAJdwFdi4afupHDarrTW2nTVuEag",
+        "pool_name": "Agamemnon / SOL",
+        "pool_network": "solana",
+        "window": "h6",
+        "window_end_at": "2026-07-20T04:22:48Z",
+        "window_start_at": "2026-07-19T22:22:48Z"
+      },
+      "source_signal_id": "signal_927758f439a5",
+      "token": {
+        "address": "2cAtqsRafKS7baN3mvJARhyZiMRdW4fZYNUUWUrCpump",
+        "chain_slug": "solana",
+        "symbol": "Agamemnon"
+      },
+      "watcher_clues": {
+        "accounts": [
+          "@Agamemnonssol",
+          "@whalewatchalert"
+        ],
+        "catalysts": [
+          "team_update",
+          "kol_post",
+          "listing"
+        ],
+        "keywords": [
+          "agamemnon",
+          "odyssey",
+          "aura",
+          "moonshot"
+        ],
+        "phrases": [
+          "gates are open",
+          "throne is empty",
+          "game is live",
+          "63 votes left"
+        ]
+      }
     }
   ],
   "schema_version": "movement_events_v1",
-  "updated_at": "2026-07-19T18:22:46Z",
+  "updated_at": "2026-07-20T04:22:50Z",
   "watcher_approval": {
     "early_after_start_minutes": 30.0,
     "max_pre_start_lead_minutes": 720.0,
@@ -21047,20 +21231,20 @@
     "stats": {
       "candidate_labels": {
         "approved_alpha_source": 40,
-        "approved_movement_chatter": 17,
-        "rejected_late_reaction": 185,
+        "approved_movement_chatter": 18,
+        "rejected_late_reaction": 186,
         "rejected_no_approved_terms": 2,
-        "rejected_no_tweet_evidence": 128,
+        "rejected_no_tweet_evidence": 129,
         "rejected_stale_pre_move": 18,
         "unknown_movement_start": 7,
         "unknown_tweet_timing": 9
       },
-      "candidate_rules": 406,
-      "watch_accounts_approved": 49,
+      "candidate_rules": 409,
+      "watch_accounts_approved": 50,
       "watch_accounts_pending": 15,
-      "watch_accounts_rejected": 241,
+      "watch_accounts_rejected": 242,
       "watch_accounts_unchanged": 116
     },
-    "updated_at": "2026-07-19T18:22:46Z"
+    "updated_at": "2026-07-20T04:22:50Z"
   }
 }

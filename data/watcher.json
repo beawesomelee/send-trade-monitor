@@ -301,7 +301,7 @@
       "value": "from:agamemnonssol (agamemnon) -is:retweet"
     }
   ],
-  "rules_synced_at": "2026-07-20T07:22:31Z",
+  "rules_synced_at": "2026-07-20T08:22:32Z",
   "schema_version": "watcher_state_v1",
   "signals": [
     {
@@ -8846,7 +8846,7 @@
       }
     }
   ],
-  "updated_at": "2026-07-20T07:22:31Z",
+  "updated_at": "2026-07-20T08:22:32Z",
   "watch_accounts": {
     "@0ne618": {
       "approval_evidence_urls": [],
